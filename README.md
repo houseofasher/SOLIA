@@ -130,7 +130,7 @@ The **Aureon Files** collection is the primary intellectual brain of this algori
 | **Brain regions** | collector → verifier → labeler → trainer → evaluator → reward |
 | **Pipeline steps** | collect → label → train → evaluate → RLHF |
 | **Database** | PostgreSQL (Railway) or SQLite (local) |
-| **Web UI** | FastAPI + interactive demos at `/` |
+| **Web UI** | Chat at `/chat` · demos at `/` |
 
 **Repositories**
 
@@ -139,7 +139,78 @@ The **Aureon Files** collection is the primary intellectual brain of this algori
 
 ---
 
-## How it actually works
+## Grade mastery — how long?
+
+Each **micro-subdomain** (462 total) progresses through **7 grades**: Pre-School → Elementary → Middle School → High School → Undergraduate → Master's → Doctorate. It must **graduate** each grade before the next unlocks.
+
+| Scope | Default timing (1 grade / hour on Railway) |
+|-------|---------------------------------------------|
+| **One grade step** | ~1 hour (`AUREON_AUTO_LEARN_INTERVAL_SEC=3600`) |
+| **One micro-topic (all 7 grades)** | ~7 hours |
+| **Full corpus (462 × 7 steps)** | ~135 days sequential |
+
+Training epochs scale per grade (preschool ≈ 60 epochs, doctorate ≈ 195 at base 150). Failed grades retry; trainer needs **≥2 label classes** before accuracy gates fully apply.
+
+Lower the interval for faster learning:
+
+```env
+AUREON_AUTO_LEARN_INTERVAL_SEC=600
+```
+
+---
+
+## How do I know it's learning?
+
+1. **Railway logs** — JSON lines from `aureon.ai`: `auto_learn_cycle_start`, `region_complete`, `grade_cycle_complete`
+2. **`GET /api/brain/auto-learn`** — cycles completed, last result, next run, current target
+3. **`GET /security/status`** — organism vitals + brain document counts
+4. **`GET /api/chat/learning`** — combined snapshot for apps
+5. **Chat UI sidebar** — live cycles, graduations, target micro-topic
+
+Example:
+
+```bash
+curl https://YOUR-APP.up.railway.app/api/brain/auto-learn
+curl https://YOUR-APP.up.railway.app/api/chat/learning
+```
+
+---
+
+## Chat UI — connect to Railway
+
+Open the **2027 dark-theme chat** on your deployed app:
+
+```text
+https://YOUR-APP.up.railway.app/chat
+```
+
+- Set **API base** to your Railway URL (auto-filled when hosted on Railway)
+- Sidebar shows organism vitals, auto-learn cycles, grade timing
+- Commands: `/status`, `/grades`, `/help`
+- When a production classifier is promoted, messages are **classified by domain**
+
+### Connect from your own app
+
+**Chat (public — no API key required):**
+
+```bash
+curl -X POST https://YOUR-APP.up.railway.app/api/chat \
+  -H "Content-Type: application/json" \
+  -d '{"message": "Explain backpropagation", "session_id": "user-123"}'
+```
+
+**Learning snapshot (for dashboards):**
+
+```bash
+curl https://YOUR-APP.up.railway.app/api/chat/learning
+curl https://YOUR-APP.up.railway.app/api/chat/timeline
+```
+
+**Training / mutating routes** require `AUREON_API_KEY` plus replay headers — see [SECURITY.md](SECURITY.md).
+
+Embed in mobile or web: point fetches at your Railway domain; the chat UI source is `static/chat/index.html`.
+
+---
 
 Traditional software: **you write the algorithm.**
 

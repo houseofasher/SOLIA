@@ -7,10 +7,13 @@ import os
 from contextlib import asynccontextmanager
 from typing import Annotated, Any
 
+from pathlib import Path
+
 from fastapi import Depends, FastAPI, HTTPException, Query, Request
-from fastapi.responses import HTMLResponse
+from fastapi.responses import FileResponse, HTMLResponse
 
 from app.auto_learn import get_auto_learn_scheduler, start_auto_learn, stop_auto_learn
+from app.chat_service import chat, estimate_learning_timeline, learning_snapshot
 from app.brain_routes import get_grade_progress, get_taxonomy
 from brain.grades import curriculum_public, get_grade
 from app.middleware import SecurityGatewayMiddleware, SecurityHeadersMiddleware
@@ -119,6 +122,44 @@ def organism_vitals() -> dict:
     organism = get_organism()
     organism.pulse()
     return organism.get_vitals_report()
+
+
+@app.get("/chat")
+def chat_ui() -> FileResponse:
+    """Modern dark chat UI — connect to Railway or run same-origin locally."""
+    page = Path(__file__).resolve().parent.parent / "static" / "chat" / "index.html"
+    if not page.is_file():
+        raise HTTPException(status_code=404, detail="Chat UI not found")
+    return FileResponse(page)
+
+
+@app.get("/api/chat/learning")
+def api_chat_learning() -> dict:
+    """Public learning snapshot for chat sidebar and mobile apps."""
+    return learning_snapshot()
+
+
+@app.get("/api/chat/timeline")
+def api_chat_timeline() -> dict:
+    """Grade mastery time estimates."""
+    scheduler = get_auto_learn_scheduler().status()
+    cfg = scheduler.get("config", {})
+    return estimate_learning_timeline(
+        interval_sec=cfg.get("interval_sec", 3600),
+        max_grades_per_cycle=cfg.get("max_grades_per_cycle", 1),
+    )
+
+
+@app.post("/api/chat")
+def api_chat(body: dict[str, Any]) -> dict[str, Any]:
+    """Public chat — supervised classification + live learning context (no training)."""
+    try:
+        return chat(
+            str(body.get("message", "")),
+            session_id=body.get("session_id"),
+        )
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=safe_error_message(exc)) from exc
 
 
 @app.get("/api/concepts")
