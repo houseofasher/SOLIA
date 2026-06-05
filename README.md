@@ -4,7 +4,7 @@
 
 Aureon-LLM is not mystical “AI.” It is a production-oriented system built on **supervised learning**, **backpropagation**, and an industrial **5-step training pipeline** — wrapped in a **brain-inspired micro-agent architecture** where each region collects, verifies, labels, trains, evaluates, and rewards domain by domain.
 
-Deploy on [Railway](https://railway.app) with PostgreSQL. Run locally in minutes.
+Deploy on [Railway](https://railway.app) with PostgreSQL (~**$45.00/month** to run and build). Run locally in minutes.
 
 ---
 
@@ -345,6 +345,10 @@ python run_brain.py --domain-limit 5 --subdomain-limit 2 --micro-subdomain-limit
 ---
 
 ## Deploy on Railway
+
+### Cost to run & build
+
+**$45.00/month** — estimated cost to build and run this algorithm in production on Railway (web service + PostgreSQL, continuous auto-learn, and deploys).
 
 ### 1. Web service
 
