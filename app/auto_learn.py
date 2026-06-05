@@ -161,7 +161,7 @@ class AutoLearnScheduler:
             try:
                 organism = get_organism()
                 organism.pulse()
-                if organism.is_vital():
+                if organism.is_learning_allowed():
                     return
             except Exception:
                 logger.exception("Organism pulse failed during auto-learn wait")
@@ -197,14 +197,22 @@ class AutoLearnScheduler:
         try:
             organism = get_organism()
             organism.pulse()
-            if not organism.is_vital():
+            if not organism.is_learning_allowed():
+                vitals = organism.get_vitals_report()
                 self.state.last_error = "organism lockdown — auto-learn paused"
-                logger.warning("Auto-learn skipped: organism not vital")
+                logger.warning(
+                    "Auto-learn skipped: learning not allowed (vital=%s, lockdown=%s)",
+                    vitals.get("vital"),
+                    vitals.get("lockdown_reason"),
+                )
                 log_ai_activity(
                     "auto_learn_skipped",
                     cycle_id=cycle_id,
                     path=path,
                     reason="organism lockdown",
+                    vitals={
+                        o["id"]: o["state"] for o in vitals.get("organs", []) if isinstance(o, dict)
+                    },
                 )
                 return
 

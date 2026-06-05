@@ -107,7 +107,31 @@ def _deferred_startup() -> None:
         from app.organism import get_organism
 
         get_organism().pulse()
-        logger.info("Organism pulse complete — vital=%s", get_organism().is_vital())
+        vitals = get_organism().get_vitals_report()
+        logger.info(
+            "Organism pulse complete — vital=%s learning_allowed=%s",
+            vitals.get("vital"),
+            vitals.get("learning_allowed"),
+        )
+        if not vitals.get("learning_allowed"):
+            logger.warning(
+                "Auto-learn may be blocked — critical organs: %s",
+                [
+                    o["id"]
+                    for o in vitals.get("organs", [])
+                    if isinstance(o, dict) and o.get("state") == "critical"
+                ],
+            )
+        with _lock:
+            _state.details["organism"] = {
+                "vital": vitals.get("vital"),
+                "learning_allowed": vitals.get("learning_allowed"),
+                "organs": {
+                    o["id"]: o.get("state")
+                    for o in vitals.get("organs", [])
+                    if isinstance(o, dict)
+                },
+            }
 
         _warn_production_config()
 

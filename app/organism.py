@@ -52,8 +52,9 @@ class AureonOrganism:
                 "database_marrow": self._check_database(),
             }
             critical = [oid for oid, o in self._organs.items() if o["state"] == "critical"]
-            if critical:
-                self._lockdown_reason = f"critical organs: {', '.join(critical)}"
+            non_auth_critical = [oid for oid in critical if oid != "auth_gateway"]
+            if non_auth_critical:
+                self._lockdown_reason = f"critical organs: {', '.join(non_auth_critical)}"
             else:
                 self._lockdown_reason = None
 
@@ -66,6 +67,24 @@ class AureonOrganism:
         if self._lockdown_reason:
             return False
         return all(o["state"] in ("vital", "dormant") for o in self._organs.values()) if self._organs else True
+
+    def is_learning_allowed(self) -> bool:
+        """
+        Background auto-learn may run when storage/audit organs are healthy.
+
+        Missing API key makes auth_gateway critical for mutating HTTP routes but must
+        not block unattended learning on Railway.
+        """
+        if self._lockdown_reason:
+            return False
+        if not self._organs:
+            return True
+        for organ_id, organ in self._organs.items():
+            if organ_id == "auth_gateway":
+                continue
+            if organ["state"] == "critical":
+                return False
+        return True
 
     def require_vital(self, operation: str) -> None:
         if not self.is_vital():
@@ -92,6 +111,7 @@ class AureonOrganism:
             self.pulse()
         return {
             "vital": self.is_vital(),
+            "learning_allowed": self.is_learning_allowed(),
             "pulse_generation": self._pulse_generation,
             "organism_fingerprint": self.get_fingerprint(),
             "lockdown_reason": self._lockdown_reason,

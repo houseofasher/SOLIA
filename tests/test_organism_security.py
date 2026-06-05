@@ -108,5 +108,6 @@ def test_organism_lockdown_on_critical_auth(monkeypatch):
     org = AureonOrganism()
     org.pulse()
     assert org.is_vital() is False
+    assert org.is_learning_allowed() is True
     with pytest.raises(Exception, match="ORGANISM_LOCKDOWN"):
         org.require_vital("test op")

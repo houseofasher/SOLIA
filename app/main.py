@@ -77,8 +77,10 @@ def health() -> dict[str, str | bool]:
     from app.startup import get_startup_state
 
     state = get_startup_state()
+    build = os.environ.get("RAILWAY_GIT_COMMIT_SHA", "local")[:12]
     return {
         "status": "ok",
+        "build": build,
         "ready": state.ready,
         "bootstrap_done": state.bootstrap_done,
         "auto_learn": state.auto_learn_started,
