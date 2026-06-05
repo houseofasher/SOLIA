@@ -87,6 +87,7 @@ class CollectorAgent(MicroAgentBase):
             Document(
                 domain_id=ctx.domain_id,
                 subdomain_id=ctx.subdomain_id,
+                micro_subdomain_id=ctx.micro_subdomain_id,
                 source=doc.source,
                 title=doc.title,
                 text=doc.text,

@@ -20,6 +20,7 @@ logger = logging.getLogger(__name__)
 
 SLUG_PATTERN = re.compile(r"^[a-z][a-z0-9_]{0,63}$")
 MAX_SUBDOMAIN_LIMIT = 20
+MAX_MICRO_SUBDOMAIN_LIMIT = 10
 MAX_DOMAIN_LIMIT = 29
 MAX_EPOCHS = 500
 MAX_JSON_BYTES = 10 * 1024 * 1024
@@ -90,6 +91,12 @@ def clamp_subdomain_limit(limit: int | None) -> int | None:
     if limit is None:
         return None
     return max(1, min(limit, MAX_SUBDOMAIN_LIMIT))
+
+
+def clamp_micro_subdomain_limit(limit: int | None) -> int | None:
+    if limit is None:
+        return None
+    return max(1, min(limit, MAX_MICRO_SUBDOMAIN_LIMIT))
 
 
 def safe_error_message(exc: Exception, *, log: bool = True) -> str:

@@ -126,7 +126,7 @@ The **Aureon Files** collection is the primary intellectual brain of this algori
 | | |
 |---|---|
 | **Core engine** | Neural network with backpropagation (from scratch) |
-| **Knowledge coverage** | 29 domains · 154 subdomains · 1,098 micro-agents |
+| **Knowledge coverage** | 29 domains · 154 subdomains · 462 micro-subdomains · 3,870 micro-agents |
 | **Brain regions** | collector → verifier → labeler → trainer → evaluator → reward |
 | **Pipeline steps** | collect → label → train → evaluate → RLHF |
 | **Database** | PostgreSQL (Railway) or SQLite (local) |
@@ -206,30 +206,35 @@ flowchart TB
 
 ---
 
-## The brain — micro-algorithms like specialized brain regions
+## The brain — domain → subdomain → micro-subdomain
 
-Each **knowledge domain** and **subdomain** gets six specialized micro-agents. They run in sequence, share state through the database, and coordinate via the **cortex** (`brain/cortex.py`).
+Human knowledge is modeled in **three tiers**, each with dedicated micro-agents:
+
+```text
+Human Domain  →  Human Subdomain  →  Human Micro-Subdomain  →  6 brain regions
+  mathematics       algebra              linear_algebra           collector … reward
+```
+
+Each **micro-subdomain** gets six specialized micro-agents (the leaf training circuits). Subdomain and domain levels have coordinator agents that orchestrate the tier below.
 
 | Region | Role | What it does |
 |--------|------|----------------|
-| **collector** | Sensory input | Scrapes seeds, arXiv, Gutenberg, local inbox per domain |
+| **collector** | Sensory input | Scrapes seeds, arXiv, Gutenberg, local inbox per micro-subdomain |
 | **verifier** | Critical filter | Quality, verifiability, consistency checks |
 | **labeler** | Classification | Teacher model labels data; ~5–10% uncertain samples flagged for human review |
-| **trainer** | Learning | Backpropagation trains a classifier per domain/subdomain |
+| **trainer** | Learning | Backpropagation trains a classifier per micro-subdomain |
 | **evaluator** | Executive function | Reasoning, consistency, verification benchmarks; halts on regression |
 | **reward** | Preference system | RLHF-style reward model scores preferred vs rejected outputs |
 
 ### Knowledge taxonomy
 
-**29 top-level domains**, **154 subdomains**, **1,098 registered micro-agents**.
+**29 domains**, **154 subdomains**, **462 micro-subdomains**, **3,870 registered micro-agents** (6 regions × 462 leaves + subdomain/domain coordinators).
 
 Examples:
 
-- `mathematics` → algebra, calculus, topology, statistics…  
-- `computer_science` → algorithms, machine_learning, security…  
-- `biology` → genetics, neuroscience, molecular_biology…  
-- `linguistics` → syntax, sanskrit_studies, computational…  
-- `vedic_sciences` → jyotisha, vyakarana, darshana…  
+- `mathematics` → `algebra` → `linear_algebra`, `abstract_algebra`, `group_theory`  
+- `computer_science` → `machine_learning` → `supervised_learning`, `unsupervised_learning`, `reinforcement_learning`  
+- `vedic_sciences` → `astronomy_jyotisha` → `natal_chart`, `dashas_transits`, `muhurta_electional`  
 
 Full tree: `brain/domains/taxonomy.py` · API: `GET /api/brain/taxonomy`
 
@@ -300,8 +305,8 @@ Open **http://localhost:8000**
 
 ```bash
 python run_brain.py --status
-python run_brain.py --domain computer_science --subdomain machine_learning
-python run_brain.py --domain-limit 5 --subdomain-limit 2
+python run_brain.py --domain computer_science --subdomain machine_learning --micro-subdomain supervised_learning
+python run_brain.py --domain-limit 5 --subdomain-limit 2 --micro-subdomain-limit 2
 ```
 
 ---
@@ -354,9 +359,10 @@ See [SECURITY.md](SECURITY.md) for the full Aureon security audit.
 | `POST` | `/api/brain/bootstrap` | Seed domains + micro-agents |
 | `GET` | `/api/brain/status` | Domains, agents, document counts |
 | `GET` | `/api/brain/taxonomy` | Full knowledge tree |
-| `POST` | `/api/brain/run` | Run micro-agents across domains |
-| `POST` | `/api/brain/domain/{domain}` | Run all subdomains in one domain |
-| `POST` | `/api/brain/domain/{domain}/{subdomain}` | Run one subdomain circuit |
+| `POST` | `/api/brain/run` | Run micro-agents across domains (limits on each tier) |
+| `POST` | `/api/brain/domain/{domain}` | Run subdomains + micro-subdomains in one domain |
+| `POST` | `/api/brain/domain/{domain}/{subdomain}` | Run all micro-subdomains in one subdomain |
+| `POST` | `/api/brain/domain/{domain}/{subdomain}/{micro}` | Run one micro-subdomain circuit |
 
 ### Pipeline
 
@@ -389,7 +395,8 @@ Aureon-LLM/
 ├── brain/                  # Micro-agent architecture
 │   ├── cortex.py           # Orchestrator
 │   ├── base.py
-│   ├── domains/taxonomy.py # 29 domains · 154 subdomains
+│   ├── domains/taxonomy.py # domain → subdomain → micro-subdomain tree
+│   ├── domains/generate_micros.py
 │   └── regions/            # collector, verifier, labeler, …
 ├── db/                     # PostgreSQL / SQLite
 │   ├── models.py
@@ -423,8 +430,9 @@ Aureon-LLM/
 | Table | Purpose |
 |-------|---------|
 | `knowledge_domains` | Top-level domains (math, physics, …) |
-| `knowledge_subdomains` | Sub-domains under each |
-| `micro_agents` | One row per region × domain × subdomain |
+| `knowledge_subdomains` | Sub-domains under each domain |
+| `knowledge_micro_subdomains` | Micro-subdomains under each subdomain |
+| `micro_agents` | One row per region × scope (domain / subdomain / micro-subdomain) |
 | `documents` | Collected, filtered text |
 | `document_labels` | Teacher labels + human-review flags |
 | `training_runs` | Per-domain model artifacts |

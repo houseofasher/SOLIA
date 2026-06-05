@@ -18,6 +18,7 @@ from app.security import (
     api_key_required,
     clamp_domain_limit,
     clamp_epochs,
+    clamp_micro_subdomain_limit,
     clamp_subdomain_limit,
     exclusive_training_lock,
     require_mutating_access,
@@ -25,7 +26,14 @@ from app.security import (
     validate_slug,
 )
 from app.service import concepts, run_identify_demo, run_match_demo, run_synthetic_demo
-from brain.cortex import bootstrap_brain, brain_status, run_domain_cycle, run_full_brain, run_subdomain_cycle
+from brain.cortex import (
+    bootstrap_brain,
+    brain_status,
+    run_domain_cycle,
+    run_full_brain,
+    run_micro_subdomain_cycle,
+    run_subdomain_cycle,
+)
 from brain.domains.taxonomy import KNOWLEDGE_TAXONOMY
 
 logger = logging.getLogger(__name__)
@@ -157,6 +165,7 @@ def brain_run(
     epochs: int = Query(default=150, ge=50, le=500),
     domain_limit: int | None = Query(default=3, ge=1, le=29),
     subdomain_limit: int | None = Query(default=1, ge=1, le=20),
+    micro_subdomain_limit: int | None = Query(default=1, ge=1, le=10),
 ) -> dict:
     try:
         with exclusive_training_lock():
@@ -164,6 +173,7 @@ def brain_run(
                 epochs=clamp_epochs(epochs),
                 domain_limit=clamp_domain_limit(domain_limit),
                 subdomain_limit=clamp_subdomain_limit(subdomain_limit),
+                micro_subdomain_limit=clamp_micro_subdomain_limit(micro_subdomain_limit),
             )
     except HTTPException:
         raise
@@ -177,15 +187,19 @@ def brain_run_domain(
     _auth: Mutating,
     epochs: int = Query(default=150, ge=50, le=500),
     subdomain_limit: int | None = Query(default=5, ge=1, le=20),
+    micro_subdomain_limit: int | None = Query(default=1, ge=1, le=10),
 ) -> dict:
     domain_slug = validate_slug(domain_slug, label="domain")
     if domain_slug not in KNOWLEDGE_TAXONOMY:
         raise HTTPException(status_code=404, detail="Unknown domain")
     try:
         with exclusive_training_lock():
-            subs = KNOWLEDGE_TAXONOMY[domain_slug][: clamp_subdomain_limit(subdomain_limit) or 5]
-            cycles = [run_subdomain_cycle(domain_slug, sub, epochs=epochs) for sub in subs]
-            return {"domain": domain_slug, "subdomains_processed": len(cycles), "cycles": cycles}
+            return run_domain_cycle(
+                domain_slug,
+                epochs=epochs,
+                subdomain_limit=clamp_subdomain_limit(subdomain_limit) or 5,
+                micro_subdomain_limit=clamp_micro_subdomain_limit(micro_subdomain_limit),
+            )
     except HTTPException:
         raise
     except Exception as exc:
@@ -198,6 +212,7 @@ def brain_run_subdomain(
     subdomain_slug: str,
     _auth: Mutating,
     epochs: int = Query(default=150, ge=50, le=500),
+    micro_subdomain_limit: int | None = Query(default=3, ge=1, le=10),
 ) -> dict:
     domain_slug = validate_slug(domain_slug, label="domain")
     subdomain_slug = validate_slug(subdomain_slug, label="subdomain")
@@ -207,7 +222,43 @@ def brain_run_subdomain(
         raise HTTPException(status_code=404, detail="Unknown subdomain")
     try:
         with exclusive_training_lock():
-            return run_subdomain_cycle(domain_slug, subdomain_slug, epochs=epochs)
+            return run_subdomain_cycle(
+                domain_slug,
+                subdomain_slug,
+                epochs=epochs,
+                micro_subdomain_limit=clamp_micro_subdomain_limit(micro_subdomain_limit),
+            )
+    except HTTPException:
+        raise
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=safe_error_message(exc)) from exc
+
+
+@app.post("/api/brain/domain/{domain_slug}/{subdomain_slug}/{micro_subdomain_slug}")
+def brain_run_micro_subdomain(
+    domain_slug: str,
+    subdomain_slug: str,
+    micro_subdomain_slug: str,
+    _auth: Mutating,
+    epochs: int = Query(default=150, ge=50, le=500),
+) -> dict:
+    domain_slug = validate_slug(domain_slug, label="domain")
+    subdomain_slug = validate_slug(subdomain_slug, label="subdomain")
+    micro_subdomain_slug = validate_slug(micro_subdomain_slug, label="micro_subdomain")
+    if domain_slug not in KNOWLEDGE_TAXONOMY:
+        raise HTTPException(status_code=404, detail="Unknown domain")
+    if subdomain_slug not in KNOWLEDGE_TAXONOMY[domain_slug]:
+        raise HTTPException(status_code=404, detail="Unknown subdomain")
+    if micro_subdomain_slug not in KNOWLEDGE_TAXONOMY[domain_slug][subdomain_slug]:
+        raise HTTPException(status_code=404, detail="Unknown micro_subdomain")
+    try:
+        with exclusive_training_lock():
+            return run_micro_subdomain_cycle(
+                domain_slug,
+                subdomain_slug,
+                micro_subdomain_slug,
+                epochs=epochs,
+            )
     except HTTPException:
         raise
     except Exception as exc:
@@ -375,8 +426,7 @@ INDEX_HTML = """<!DOCTYPE html>
     <div class="card" style="margin-bottom: 2rem;">
       <h2>Brain — micro-algorithms per domain</h2>
       <p style="min-height: auto; color: var(--text);">
-        29 knowledge domains, 180+ subdomains, 6 brain regions each (collector, verifier,
-        labeler, trainer, evaluator, reward). Stored in PostgreSQL on Railway.
+        29 knowledge domains, 154 subdomains, 462 micro-subdomains, 6 brain regions each.
       </p>
       <button id="runBrainBtn" style="max-width: 320px;">Run brain cycle</button>
     </div>

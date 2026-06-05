@@ -132,18 +132,26 @@ class AureonOrganism:
 
     def _check_audit_immune(self) -> dict[str, Any]:
         chain = get_audit_log().verify_chain()
-        if not chain["valid"]:
+        if chain["valid"]:
             return {
                 "name": "Audit Immune System",
                 "role": "Tamper-evident audit chain",
-                "state": "critical",
-                "detail": "; ".join(chain["errors"][:3]),
+                "state": "vital",
+                "detail": f"chain intact ({chain['length']} entries)",
+            }
+        audit_key_set = bool(os.environ.get("AUREON_AUDIT_CHAIN_KEY", "").strip())
+        if not audit_key_set:
+            return {
+                "name": "Audit Immune System",
+                "role": "Tamper-evident audit chain",
+                "state": "dormant",
+                "detail": "Dev mode — ephemeral audit key (set AUREON_AUDIT_CHAIN_KEY in production)",
             }
         return {
             "name": "Audit Immune System",
             "role": "Tamper-evident audit chain",
-            "state": "vital",
-            "detail": f"chain intact ({chain['length']} entries)",
+            "state": "critical",
+            "detail": "; ".join(chain["errors"][:3]),
         }
 
     def _check_rate_limit_nerves(self) -> dict[str, Any]:

@@ -18,7 +18,9 @@ class LabelerAgent(MicroAgentBase):
             select(Document)
             .where(Document.domain_id == ctx.domain_id, Document.verified.is_(True))
         )
-        if ctx.subdomain_id:
+        if ctx.micro_subdomain_id:
+            query = query.where(Document.micro_subdomain_id == ctx.micro_subdomain_id)
+        elif ctx.subdomain_id:
             query = query.where(Document.subdomain_id == ctx.subdomain_id)
         docs = session.scalars(query).all()
 
@@ -64,7 +66,7 @@ class LabelerAgent(MicroAgentBase):
                     document_id=doc.id,
                     domain_id=ctx.domain_id,
                     subdomain_id=ctx.subdomain_id,
-                    label=row.get("label", ctx.subdomain_slug or ctx.domain_slug),
+                    label=row.get("label", ctx.scope_slug),
                     confidence=float(row.get("label_confidence", 0.5)),
                     label_source=row.get("label_source", "teacher_model"),
                     needs_review=needs_review,

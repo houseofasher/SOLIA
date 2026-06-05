@@ -18,7 +18,9 @@ class VerifierAgent(MicroAgentBase):
 
     def run(self, session: Session, ctx: AgentContext) -> AgentResult:
         query = select(Document).where(Document.domain_id == ctx.domain_id)
-        if ctx.subdomain_id:
+        if ctx.micro_subdomain_id:
+            query = query.where(Document.micro_subdomain_id == ctx.micro_subdomain_id)
+        elif ctx.subdomain_id:
             query = query.where(Document.subdomain_id == ctx.subdomain_id)
         docs = session.scalars(query).all()
 

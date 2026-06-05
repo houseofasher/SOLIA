@@ -27,7 +27,9 @@ class TrainerAgent(MicroAgentBase):
                 DocumentLabel.needs_review.is_(False),
             )
         )
-        if ctx.subdomain_id:
+        if ctx.micro_subdomain_id:
+            labels_q = labels_q.where(Document.micro_subdomain_id == ctx.micro_subdomain_id)
+        elif ctx.subdomain_id:
             labels_q = labels_q.where(DocumentLabel.subdomain_id == ctx.subdomain_id)
 
         pairs = session.execute(labels_q).all()
@@ -64,7 +66,7 @@ class TrainerAgent(MicroAgentBase):
 
         ensure_dirs()
         run_id = str(uuid.uuid4())[:8]
-        scope = ctx.subdomain_slug or ctx.domain_slug
+        scope = ctx.scope_slug
         artifact_dir = MODELS_DIR / f"brain_{scope}_{run_id}"
         artifact_dir.mkdir(parents=True, exist_ok=True)
         model_path = artifact_dir / "classifier.json"

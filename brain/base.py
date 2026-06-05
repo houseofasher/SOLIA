@@ -16,10 +16,20 @@ from db.models import AgentRun, MicroAgent, PipelineEvent
 class AgentContext:
     domain_slug: str
     subdomain_slug: str | None
+    micro_subdomain_slug: str | None
     domain_id: int
     subdomain_id: int | None
+    micro_subdomain_id: int | None
     epochs: int = 200
     extra: dict[str, Any] = field(default_factory=dict)
+
+    @property
+    def scope_slug(self) -> str:
+        if self.micro_subdomain_slug:
+            return self.micro_subdomain_slug
+        if self.subdomain_slug:
+            return self.subdomain_slug
+        return self.domain_slug
 
 
 @dataclass
@@ -56,7 +66,12 @@ class MicroAgentBase(ABC):
                     step=f"brain_{self.region}",
                     event_type=result.status,
                     domain_id=ctx.domain_id,
-                    payload={"domain": ctx.domain_slug, "subdomain": ctx.subdomain_slug, **result.metrics},
+                    payload={
+                        "domain": ctx.domain_slug,
+                        "subdomain": ctx.subdomain_slug,
+                        "micro_subdomain": ctx.micro_subdomain_slug,
+                        **result.metrics,
+                    },
                 )
             )
             return result

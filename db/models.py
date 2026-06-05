@@ -54,18 +54,45 @@ class KnowledgeSubdomain(Base):
     active: Mapped[bool] = mapped_column(Boolean, default=True)
 
     domain: Mapped[KnowledgeDomain] = relationship(back_populates="subdomains")
+    micro_subdomains: Mapped[list[KnowledgeMicroSubdomain]] = relationship(back_populates="subdomain")
     micro_agents: Mapped[list[MicroAgent]] = relationship(back_populates="subdomain")
+
+
+class KnowledgeMicroSubdomain(Base):
+    """Micro-subdomain — finest human knowledge slice (e.g. linear_algebra under algebra)."""
+
+    __tablename__ = "knowledge_micro_subdomains"
+    __table_args__ = (
+        UniqueConstraint("subdomain_id", "slug", name="uq_micro_subdomain_sub_slug"),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    domain_id: Mapped[int] = mapped_column(ForeignKey("knowledge_domains.id"), index=True)
+    subdomain_id: Mapped[int] = mapped_column(ForeignKey("knowledge_subdomains.id"), index=True)
+    slug: Mapped[str] = mapped_column(String(64), index=True)
+    name: Mapped[str] = mapped_column(String(128))
+    active: Mapped[bool] = mapped_column(Boolean, default=True)
+
+    subdomain: Mapped[KnowledgeSubdomain] = relationship(back_populates="micro_subdomains")
+    micro_agents: Mapped[list[MicroAgent]] = relationship(back_populates="micro_subdomain")
 
 
 class MicroAgent(Base):
     """
-    A specialized micro-algorithm — one brain region for one domain/subdomain.
+    A specialized micro-algorithm — one brain region for one knowledge scope.
+    Leaf agents bind to a micro-subdomain; coordinators bind at subdomain or domain level.
     Regions: collector, verifier, labeler, trainer, evaluator, reward
     """
 
     __tablename__ = "micro_agents"
     __table_args__ = (
-        UniqueConstraint("region", "domain_id", "subdomain_id", name="uq_agent_region_scope"),
+        UniqueConstraint(
+            "region",
+            "domain_id",
+            "subdomain_id",
+            "micro_subdomain_id",
+            name="uq_agent_region_scope",
+        ),
     )
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
@@ -74,12 +101,16 @@ class MicroAgent(Base):
     subdomain_id: Mapped[int | None] = mapped_column(
         ForeignKey("knowledge_subdomains.id"), nullable=True, index=True
     )
+    micro_subdomain_id: Mapped[int | None] = mapped_column(
+        ForeignKey("knowledge_micro_subdomains.id"), nullable=True, index=True
+    )
     status: Mapped[str] = mapped_column(String(32), default="idle")
     config: Mapped[dict | None] = mapped_column(JSON, nullable=True)
     last_run_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
 
     domain: Mapped[KnowledgeDomain] = relationship(back_populates="micro_agents")
     subdomain: Mapped[KnowledgeSubdomain | None] = relationship(back_populates="micro_agents")
+    micro_subdomain: Mapped[KnowledgeMicroSubdomain | None] = relationship(back_populates="micro_agents")
     runs: Mapped[list[AgentRun]] = relationship(back_populates="agent")
 
 
@@ -109,6 +140,9 @@ class Document(Base):
     domain_id: Mapped[int | None] = mapped_column(ForeignKey("knowledge_domains.id"), index=True)
     subdomain_id: Mapped[int | None] = mapped_column(
         ForeignKey("knowledge_subdomains.id"), nullable=True, index=True
+    )
+    micro_subdomain_id: Mapped[int | None] = mapped_column(
+        ForeignKey("knowledge_micro_subdomains.id"), nullable=True, index=True
     )
     source: Mapped[str] = mapped_column(String(64))
     title: Mapped[str] = mapped_column(String(512))
