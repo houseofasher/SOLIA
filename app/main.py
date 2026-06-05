@@ -11,7 +11,8 @@ from fastapi import Depends, FastAPI, HTTPException, Query, Request
 from fastapi.responses import HTMLResponse
 
 from app.brain_routes import get_taxonomy
-from app.middleware import SecurityHeadersMiddleware
+from app.middleware import SecurityGatewayMiddleware, SecurityHeadersMiddleware
+from app.organism import get_organism
 from app.pipeline_routes import run_pipeline_all, run_pipeline_step
 from app.security import (
     api_key_required,
@@ -46,6 +47,10 @@ async def lifespan(_: FastAPI):
             "Set AUREON_API_KEY on Railway for production."
         )
     try:
+        get_organism().pulse()
+    except Exception:
+        logger.exception("Initial organism pulse failed")
+    try:
         from sklearn.datasets import fetch_olivetti_faces
 
         fetch_olivetti_faces()
@@ -61,6 +66,7 @@ app = FastAPI(
     lifespan=lifespan,
 )
 app.add_middleware(SecurityHeadersMiddleware)
+app.add_middleware(SecurityGatewayMiddleware)
 
 Mutating = Annotated[None, Depends(require_mutating_access)]
 
@@ -68,6 +74,14 @@ Mutating = Annotated[None, Depends(require_mutating_access)]
 @app.get("/health")
 def health() -> dict[str, str]:
     return {"status": "ok"}
+
+
+@app.get("/organism/vitals")
+def organism_vitals() -> dict:
+    """Security organism health — nomad_cyber_algorithm pattern."""
+    organism = get_organism()
+    organism.pulse()
+    return organism.get_vitals_report()
 
 
 @app.get("/api/concepts")
@@ -404,7 +418,12 @@ INDEX_HTML = """<!DOCTYPE html>
     function apiHeaders() {
       const headers = { 'Content-Type': 'application/json' };
       const key = window.AUREON_API_KEY;
-      if (key) headers['X-API-Key'] = key;
+      if (key) {
+        headers['X-API-Key'] = key;
+        headers['X-Timestamp'] = String(Date.now());
+        headers['X-Nonce'] = crypto.randomUUID();
+        headers['X-Correlation-ID'] = crypto.randomUUID();
+      }
       return headers;
     }
 

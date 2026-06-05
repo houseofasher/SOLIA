@@ -16,3 +16,4 @@ data/benchmarks/
 data/queue/
 !data/seeds/
 data/aureon.db
+data/audit/

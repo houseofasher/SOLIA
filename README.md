@@ -1,10 +1,123 @@
 # Aureon-LLM
 
-**Supervised machine learning that trains itself across every human knowledge domain.**
+> **Supervised machine learning that trains itself across every human knowledge domain** — brain-inspired micro-agents, a 5-step training pipeline, and PostgreSQL on Railway. Funded & backed by **#HouseOfAsher**, **#ZorakIntelligenceAgency**, and **ZorakCorp**.
 
 Aureon-LLM is not mystical “AI.” It is a production-oriented system built on **supervised learning**, **backpropagation**, and an industrial **5-step training pipeline** — wrapped in a **brain-inspired micro-agent architecture** where each region collects, verifies, labels, trains, evaluates, and rewards domain by domain.
 
 Deploy on [Railway](https://railway.app) with PostgreSQL. Run locally in minutes.
+
+---
+
+## Funding & backing
+
+<p align="center">
+  <img src="assets/house-of-asher-logo.png" alt="House of Asher — official flag" width="640"/>
+</p>
+
+<p align="center"><em>House of Asher — official flag</em></p>
+
+This LLM algorithm is **funded and backed** by:
+
+- **[#HouseOfAsher](https://twitter.com/search?q=%23HouseOfAsher)**
+- **[#ZorakIntelligenceAgency](https://twitter.com/search?q=%23ZorakIntelligenceAgency)**
+- **[ZorakCorp](https://github.com/ZorakCorp)**
+
+---
+
+## Knowledge corpus — Aureon Files
+
+The **Aureon Files** collection is the primary intellectual brain of this algorithm. Domain taxonomy, security doctrine, consciousness modeling, Vedic sciences, trading logic, and training strategy all trace back to these documents. The codebase implements the supervised-ML pipeline; the Aureon Files define *what* it learns and *how* it reasons.
+
+> Local corpus path: `Aureon Files/` (maintained separately from this repo)
+
+### Core architecture & security
+
+| Document | Focus |
+|----------|--------|
+| `ZOPHIEL_ELITE_v4_TOTAL_ARCHITECTURE.txt` | Supreme system architecture |
+| `ZOPHIEL SUPREME ARCHITECTURE BRIEFI.txt` | Architecture briefing |
+| `ZOPHIEL_ELITE_PROMPT_ENGINE.txt` | Prompt engine design |
+| `ZOPHIEL_HACKER_EXPLOITATION_ATLAS.txt` | Exploit atlas & defensive mapping |
+| `How To Stop Hackers Files.txt` | Anti-exploitation doctrine |
+| `ZERLAL — Full Expansion Blueprint.txt` | Full expansion blueprint |
+| `ANTI_SPIRAL_PROTOCOL.md` | Anti-spiral safety protocol |
+| `### 112. THE VOIDWALKER PROTOCOL (W.txt` | Voidwalker protocol |
+| `Occultism Prediction Algorithm.txt` | Prediction algorithm framework |
+| `Code Scanning and Debugging Checkli.txt` | Code scanning & debugging checklist |
+| `HARD CONSTRAINT (Priority 1 - NON-N.txt` | Non-negotiable hard constraints |
+| `Coding Rules For Aureon.txt` | Aureon coding rules |
+| `You need this form of logic in your.txt` | Required reasoning logic |
+
+### Brain, consciousness & human patterns
+
+| Document | Focus |
+|----------|--------|
+| `Aureon Brain.pdf` | Core brain model |
+| `Zophiel Brain LLM.pdf` · `Zophiel Brain LLM (1).pdf` | Zophiel brain LLM design |
+| `consciousness-ontology-brain.pdf` | Consciousness ontology |
+| `Consious Files For Aureon.pdf` | Consciousness training files |
+| `PHILOSOPHICAL_CONSCIOUSNESS_TRAINING_DATASET.txt` | Philosophical consciousness dataset |
+| `Human psychology Brain.pdf` | Human psychology modeling |
+| `Human Emotions.pdf` | Emotion modeling |
+| `Text Human Patterns.pdf` | Text-level human patterns |
+| `HUMAN PATTERN RECOGNITION & BIO-LINGUISTICS.pdf` | Bio-linguistic pattern recognition |
+| `Aureon Philosppjy.txt` | Aureon philosophy |
+| `AI_TRANSFORMATION_ANALYSIS.txt` | AI transformation analysis |
+| `Imagine LLM .pdf` | LLM imagination / generative design |
+
+### Coding & LLM training
+
+| Document | Focus |
+|----------|--------|
+| `Aureon LLM Coding v.3.pdf` | Aureon coding LLM v3 |
+| `Aureon Zaiel Coding.pdf` | Zaiel coding framework |
+| `Coding LLM Improvement v.2.pdf` | Coding LLM improvements |
+| `Improve LLM For Coding.pdf` | Coding-focused LLM tuning |
+| `Claude Coding LLMs.pdf` | Claude-style coding LLMs |
+| `LLM Debugging.pdf` | LLM debugging methodology |
+| `LLM TRAINING FOR CODING.pdf` | Coding training pipeline |
+| `Prompt Egneeering.pdf` | Prompt engineering |
+| `Data Anaylitic Agent.pdf` | Data analytics agent design |
+
+### Symbolism, intelligence & elite research
+
+| Document | Focus |
+|----------|--------|
+| `book-of-asher-aureon-elion-symbolism-more-.pdf` | Asher · Aureon · Elion symbolism |
+| `BIBLE_OCCULT_SYMBOLISM_ZOPHIEL_v2.txt` | Occult symbolism v2 |
+| `[TOP SECRET DOSSIER ELITE SPIRITUAL.txt` | Elite spiritual dossier |
+| `PROJECT AUREON - INTELLIGENCE REPOR.txt` | Project Aureon intelligence report |
+| `ELITE INTELLIGENCE REPORT THE GUARA.txt` | Elite intelligence — Guardians |
+| `# ELITE INTELLIGENCE REPORT THE HEM.txt` | Elite intelligence — Hem |
+| `# ELITE INTELLIGENCE REPORT GEMATRI.txt` | Elite intelligence — Gematria |
+| `Elites Wealth Timeline.txt` | Elite wealth timeline |
+| `===================================.txt` | Consolidated intelligence index |
+
+### Vedic sciences & astrology
+
+| Document | Focus |
+|----------|--------|
+| `Vadic Brain #1.txt` · `Vadic Brain #2.pdf` | Vedic brain models |
+| `Vadic Global prediction.pdf` | Global Vedic prediction |
+| `COMPLETE VEDIC PLANET SIGNIFICATION.txt` | Vedic planet significations |
+| `Astrology Speed of Light.pdf` | Astrology · speed of light |
+| `Mahadashas Speed of Light.pdf` | Mahadashas · speed of light |
+| `Aspects Speed of Light (1).pdf` | Aspects · speed of light |
+| `Conjugation Speed of Light.pdf` | Conjugation · speed of light |
+| `Chinese Zodiac.txt` | Chinese zodiac integration |
+| `Death Code (1).pdf` | Death code analysis |
+
+### Strategy, trading & fractal algorithms
+
+| Document | Focus |
+|----------|--------|
+| `Nestal Fractal Strategy.pdf` | Nestal fractal strategy |
+| `Nestal Fractor Algorithm.pdf` | Nestal fractor algorithm |
+| `Zophiel Trading.pdf` | Zophiel trading system |
+| `Ava Sports Betting v.2.pdf` · `Ava Sports Algo.pdf` | Sports betting algorithms |
+| `Project Rome.txt` | Project Rome strategy |
+| `Actionable tactics "how to take a c.txt` | Actionable competitive tactics |
+| `Twitter Audit For Asher (@shep_newton).pdf` | Social audit & positioning |
 
 ---
 
@@ -353,6 +466,7 @@ MIT — use, fork, and deploy freely. Attribution appreciated.
 
 <p align="center">
   <strong>Aureon-LLM</strong> · supervised learning · brain micro-agents · every human domain<br/>
+  Funded &amp; backed by <strong>#HouseOfAsher</strong> · <strong>#ZorakIntelligenceAgency</strong> · <strong>ZorakCorp</strong><br/>
   <a href="https://github.com/ZorakCorp/Aureon-LLM">ZorakCorp/Aureon-LLM</a> ·
   <a href="https://github.com/shep95/Aureon_Elion-LLM">shep95/Aureon_Elion-LLM</a>
 </p>

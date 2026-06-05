@@ -34,12 +34,20 @@ def api_key_required() -> bool:
     return bool(os.environ.get("AUREON_API_KEY", "").strip())
 
 
-def verify_api_key(provided: str | None) -> None:
+def verify_api_key(provided: str | None, *, correlation_id: str | None = None, peer: str | None = None) -> None:
     """Constant-time API key check for mutating endpoints."""
     expected = os.environ.get("AUREON_API_KEY", "").strip()
     if not expected:
         return
     if not provided or not hmac.compare_digest(provided.strip(), expected):
+        from app.audit import get_audit_log
+
+        get_audit_log().record(
+            "auth_failed",
+            correlation_id=correlation_id,
+            peer=peer,
+            detail="Invalid or missing API key",
+        )
         raise HTTPException(status_code=401, detail="Invalid or missing API key")
 
 
@@ -48,7 +56,18 @@ def get_api_key_from_request(request: Request) -> str | None:
 
 
 def require_mutating_access(request: Request) -> None:
-    verify_api_key(get_api_key_from_request(request))
+    from app.organism import get_organism
+
+    organism = get_organism()
+    organism.require_vital(f"{request.method} {request.url.path}")
+    peer = None
+    if request.client:
+        peer = request.client.host
+    verify_api_key(
+        get_api_key_from_request(request),
+        correlation_id=getattr(request.state, "correlation_id", None),
+        peer=peer,
+    )
 
 
 def validate_slug(slug: str, *, label: str = "slug") -> str:

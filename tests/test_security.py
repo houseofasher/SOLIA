@@ -3,7 +3,9 @@
 from __future__ import annotations
 
 import os
+import secrets
 import tempfile
+import time
 from pathlib import Path
 
 import pytest
@@ -23,6 +25,17 @@ from app.security import (
 
 
 client = TestClient(app)
+
+
+def _auth_headers(key: str | None = None) -> dict[str, str]:
+    headers = {
+        "X-Timestamp": str(int(time.time() * 1000)),
+        "X-Nonce": secrets.token_hex(16),
+        "X-Correlation-ID": f"sec-{secrets.token_hex(8)}",
+    }
+    if key:
+        headers["X-API-Key"] = key
+    return headers
 
 
 def test_slug_validation_rejects_injection():
@@ -71,9 +84,12 @@ def test_model_payload_bounds():
 
 def test_mutating_endpoints_require_api_key_when_set(monkeypatch):
     monkeypatch.setenv("AUREON_API_KEY", "test-secret-key")
-    response = client.post("/api/brain/bootstrap")
+    response = client.post("/api/brain/bootstrap", headers=_auth_headers())
     assert response.status_code == 401
-    response = client.post("/api/brain/bootstrap", headers={"X-API-Key": "test-secret-key"})
+    response = client.post(
+        "/api/brain/bootstrap",
+        headers=_auth_headers("test-secret-key"),
+    )
     assert response.status_code == 200
 
 
