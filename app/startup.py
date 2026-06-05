@@ -6,6 +6,7 @@ import logging
 import os
 import threading
 from dataclasses import dataclass, field
+from pathlib import Path
 
 logger = logging.getLogger(__name__)
 
@@ -66,6 +67,33 @@ def _warn_production_config() -> None:
             "if you do not mount a persistent volume on the data directory.",
             report.get("secrets_file"),
         )
+
+
+def _bind_vault_fingerprint() -> None:
+    """Stamp organism fingerprint into secrets vault (nomad vault_marrow binding)."""
+    if os.environ.get("AUREON_VAULT_BIND_FINGERPRINT", "1").strip().lower() in ("0", "false", "no"):
+        return
+    from app.railway_env import get_railway_bootstrap_report
+
+    report = get_railway_bootstrap_report()
+    path = report.get("secrets_file")
+    if not path:
+        return
+    secrets_path = Path(str(path))
+    if not secrets_path.is_file():
+        return
+    try:
+        import json
+
+        from app.organism import get_organism
+
+        payload = json.loads(secrets_path.read_text(encoding="utf-8"))
+        if not isinstance(payload, dict):
+            return
+        payload["organism_fingerprint"] = get_organism().get_fingerprint()
+        secrets_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    except Exception:
+        logger.debug("Vault fingerprint bind skipped", exc_info=True)
 
 
 def _preload_olivetti_background() -> None:
@@ -134,6 +162,8 @@ def _deferred_startup() -> None:
                 },
             }
 
+        _bind_vault_fingerprint()
+
         with _lock:
             from app.railway_env import get_railway_bootstrap_report
 
@@ -170,6 +200,10 @@ def _deferred_startup() -> None:
             _state.error = None
         log_ai_activity("startup_ready", details=_state.details)
         logger.info("Aureon startup ready.")
+
+        from app.nomad.organism_pulse import start_organism_pulse
+
+        start_organism_pulse()
     except Exception as exc:
         log_ai_activity("startup_failed", error=str(exc)[:500])
         logger.exception("Deferred startup failed")

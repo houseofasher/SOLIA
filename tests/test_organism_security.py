@@ -79,7 +79,7 @@ def test_organism_vitals_endpoint():
     assert "vital" in body
     assert "organs" in body
     assert "organism_fingerprint" in body
-    assert len(body["organs"]) >= 4
+    assert len(body["organs"]) >= 11
 
 
 def test_mutating_requires_replay_headers_when_api_key_set(monkeypatch):

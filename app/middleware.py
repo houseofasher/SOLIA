@@ -11,6 +11,7 @@ from starlette.requests import Request
 from starlette.responses import JSONResponse, Response
 
 from app.audit import get_audit_log
+from app.nomad.chaos_veil import apply_chaos_veil
 from app.organism import OrganismLockdownError, get_organism
 from app.rate_limit import get_rate_limiter
 from app.replay_guard import get_replay_guard, replay_guard_enabled
@@ -19,7 +20,16 @@ from app.security import MAX_JSON_BYTES, api_key_required
 logger = logging.getLogger(__name__)
 
 MUTATING_METHODS = frozenset({"POST", "PUT", "PATCH", "DELETE"})
-PUBLIC_PATHS = frozenset({"/health", "/organism/vitals", "/docs", "/openapi.json", "/redoc"})
+PUBLIC_PATHS = frozenset({
+    "/health",
+    "/health/ready",
+    "/organism/vitals",
+    "/security/doctrine",
+    "/security/status",
+    "/docs",
+    "/openapi.json",
+    "/redoc",
+})
 
 
 def _client_ip(request: Request) -> str:
@@ -74,6 +84,7 @@ class SecurityGatewayMiddleware(BaseHTTPMiddleware):
         ip = _client_ip(request)
 
         if method in MUTATING_METHODS:
+            apply_chaos_veil()
             content_length = request.headers.get("Content-Length")
             if content_length:
                 try:

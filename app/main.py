@@ -27,6 +27,7 @@ from app.security import (
     safe_error_message,
     validate_slug,
 )
+from app.security_routes import router as security_router
 from app.service import concepts, run_identify_demo, run_match_demo, run_synthetic_demo
 from brain.cortex import (
     bootstrap_brain,
@@ -53,10 +54,16 @@ async def lifespan(_: FastAPI):
     configure_logging()
     logging.basicConfig(level=logging.INFO, force=True)
     bootstrap_railway_environment()
+    from app.nomad.supply_spleen import verify_supply_chain
+
+    verify_supply_chain()
     init_db()
     start_deferred_startup()
     yield
     try:
+        from app.nomad.organism_pulse import stop_organism_pulse
+
+        stop_organism_pulse()
         stop_auto_learn()
     except Exception:
         logger.exception("Auto-learn shutdown failed")
@@ -70,6 +77,7 @@ app = FastAPI(
 )
 app.add_middleware(SecurityHeadersMiddleware)
 app.add_middleware(SecurityGatewayMiddleware)
+app.include_router(security_router)
 
 Mutating = Annotated[None, Depends(require_mutating_access)]
 

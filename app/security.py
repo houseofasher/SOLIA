@@ -51,6 +51,21 @@ def verify_api_key(provided: str | None, *, correlation_id: str | None = None, p
         )
         raise HTTPException(status_code=401, detail="Invalid or missing API key")
 
+    from app.nomad.client_allowlist import verify_client_allowlist
+
+    try:
+        verify_client_allowlist(provided.strip())
+    except ValueError as exc:
+        from app.audit import get_audit_log
+
+        get_audit_log().record(
+            "auth_failed",
+            correlation_id=correlation_id,
+            peer=peer,
+            detail=str(exc),
+        )
+        raise HTTPException(status_code=403, detail=str(exc)) from exc
+
 
 def get_api_key_from_request(request: Request) -> str | None:
     return request.headers.get("X-API-Key") or request.headers.get("Authorization", "").removeprefix("Bearer ").strip() or None
@@ -172,3 +187,10 @@ def exclusive_training_lock():
         yield
     finally:
         _training_lock.release()
+
+
+def training_lock_available() -> bool:
+    if _training_lock.acquire(blocking=False):
+        _training_lock.release()
+        return True
+    return False
