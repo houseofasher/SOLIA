@@ -133,6 +133,38 @@ def chat_ui() -> FileResponse:
     return FileResponse(page)
 
 
+@app.get("/api/chat/access")
+def api_chat_access() -> dict[str, Any]:
+    """How to get your free Aureon API key — metadata only (never exposes the secret)."""
+    from app.railway_env import get_railway_bootstrap_report
+    from app.security import api_key_required
+
+    report = get_railway_bootstrap_report()
+    configured = api_key_required()
+    source = report.get("api_key", "none") if report.get("railway") else ("env" if configured else "none")
+
+    return {
+        "free_custom_api_key": True,
+        "included_with": "Aureon-LLM on Railway — no extra charge for your personal key",
+        "configured": configured,
+        "source": source,
+        "secrets_file": report.get("secrets_file"),
+        "how_to_get": [
+            "Deploy Aureon-LLM on Railway — a unique AUREON_API_KEY is auto-generated for you at no cost.",
+            "Open Railway → your web service → Variables and copy AUREON_API_KEY "
+            "(or read data/railway-secrets.json on the server after first boot).",
+            "Paste the key in this UI or send header X-API-Key from your own app for training endpoints.",
+        ],
+        "chat_is_free": True,
+        "training_requires_key": True,
+        "learning_logs": {
+            "railway_logs": "Filter deploy logs for aureon.ai — every grade cycle and brain region is logged as JSON.",
+            "audit_chain": "Tamper-evident audit log at AUREON_AUDIT_LOG_DIR (nomad audit_immune pattern).",
+            "endpoints": ["/api/brain/auto-learn", "/api/chat/learning", "/security/audit"],
+        },
+    }
+
+
 @app.get("/api/chat/learning")
 def api_chat_learning() -> dict:
     """Public learning snapshot for chat sidebar and mobile apps."""
