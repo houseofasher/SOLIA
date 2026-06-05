@@ -171,7 +171,19 @@ def _command_response(message: str) -> dict[str, Any] | None:
         )
         if al.get("last_result"):
             lr = al["last_result"]
-            reply += f"**Last cycle:** {lr.get('target')} · steps={lr.get('steps')} · graduation={lr.get('graduation')}.\n"
+            if lr.get("batch"):
+                reply += (
+                    f"**Last batch:** {lr.get('targets_processed', 0)}/{lr.get('targets_total', 0)} "
+                    f"micro-topics · {lr.get('graduations_passed', 0)} graduations passed.\n"
+                )
+                if lr.get("last_target"):
+                    lt = lr["last_target"]
+                    reply += (
+                        f"**Last in batch:** {lt.get('domain')}.{lt.get('subdomain')}."
+                        f"{lt.get('micro_subdomain')} · graduation={lr.get('last_graduation')}.\n"
+                    )
+            else:
+                reply += f"**Last cycle:** {lr.get('target')} · steps={lr.get('steps')} · graduation={lr.get('graduation')}.\n"
         if al.get("last_error"):
             reply += f"**Last error:** {al['last_error']}\n"
         return {"reply": reply.strip(), "kind": "status", "snapshot": snap}

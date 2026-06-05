@@ -283,6 +283,126 @@ def run_graduation_ladder(
     }
 
 
+def iter_training_targets(
+    *,
+    domain_limit: int | None = None,
+    subdomain_limit: int | None = None,
+    micro_subdomain_limit: int | None = None,
+    domain_slugs: list[str] | None = None,
+) -> list[tuple[str, str, str]]:
+    """Expand domain/subdomain/micro limits into (domain, subdomain, micro) triples."""
+    from app.security import (
+        clamp_domain_limit,
+        clamp_micro_subdomain_limit,
+        clamp_subdomain_limit,
+    )
+
+    domains = domain_slugs if domain_slugs is not None else list(KNOWLEDGE_TAXONOMY.keys())
+    if domain_limit is not None:
+        domains = domains[: clamp_domain_limit(domain_limit) or len(domains)]
+
+    targets: list[tuple[str, str, str]] = []
+    for domain_slug in domains:
+        if domain_slug not in KNOWLEDGE_TAXONOMY:
+            continue
+        subs = subdomains_for(domain_slug)
+        if subdomain_limit is not None:
+            subs = subs[: clamp_subdomain_limit(subdomain_limit) or len(subs)]
+        for sub in subs:
+            micros = micro_subdomains_for(domain_slug, sub)
+            if micro_subdomain_limit is not None:
+                micros = micros[: clamp_micro_subdomain_limit(micro_subdomain_limit) or len(micros)]
+            for micro in micros:
+                targets.append((domain_slug, sub, micro))
+    return targets
+
+
+def run_batch_graduation_ladder(
+    *,
+    epochs: int = 150,
+    max_grades: int | None = 1,
+    domain_limit: int | None = None,
+    subdomain_limit: int | None = None,
+    micro_subdomain_limit: int | None = None,
+    domain_slugs: list[str] | None = None,
+    source: str = "auto_learn",
+) -> dict[str, Any]:
+    """Run graduation ladders across many domain/subdomain/micro targets in one batch."""
+    from app.activity_log import clear_cycle_id, log_ai_activity, new_cycle_id
+
+    bootstrap_brain()
+    targets = iter_training_targets(
+        domain_limit=domain_limit,
+        subdomain_limit=subdomain_limit,
+        micro_subdomain_limit=micro_subdomain_limit,
+        domain_slugs=domain_slugs,
+    )
+    cycle_id = new_cycle_id("batch")
+    log_ai_activity(
+        "batch_graduation_start",
+        cycle_id=cycle_id,
+        source=source,
+        targets=len(targets),
+        domain_limit=domain_limit,
+        subdomain_limit=subdomain_limit,
+        micro_subdomain_limit=micro_subdomain_limit,
+        max_grades=max_grades,
+        epochs=epochs,
+    )
+
+    results: list[dict[str, Any]] = []
+    try:
+        for domain_slug, subdomain_slug, micro_slug in targets:
+            path = f"{domain_slug}.{subdomain_slug}.{micro_slug}"
+            log_ai_activity(
+                "batch_graduation_target_start",
+                cycle_id=cycle_id,
+                source=source,
+                path=path,
+            )
+            ladder_result = run_graduation_ladder(
+                domain_slug,
+                subdomain_slug,
+                micro_slug,
+                epochs=epochs,
+                max_grades=max_grades,
+                source=source,
+            )
+            graduation = (
+                ladder_result.get("ladder", [{}])[-1].get("graduation")
+                if ladder_result.get("ladder")
+                else {}
+            )
+            results.append(
+                {
+                    "target": {
+                        "domain": domain_slug,
+                        "subdomain": subdomain_slug,
+                        "micro_subdomain": micro_slug,
+                    },
+                    "path": path,
+                    "steps": ladder_result.get("steps_completed", 0),
+                    "graduation": graduation,
+                }
+            )
+    finally:
+        log_ai_activity(
+            "batch_graduation_complete",
+            cycle_id=cycle_id,
+            source=source,
+            targets_processed=len(results),
+            targets_total=len(targets),
+        )
+        clear_cycle_id()
+
+    return {
+        "targets_total": len(targets),
+        "targets_processed": len(results),
+        "results": results,
+        "completed_at": datetime.now(timezone.utc).isoformat(),
+    }
+
+
 def run_micro_subdomain_cycle(
     domain_slug: str,
     subdomain_slug: str,

@@ -10,16 +10,12 @@ from dataclasses import dataclass, field
 from datetime import datetime, timedelta, timezone
 from typing import Any
 
-from brain.cortex import bootstrap_brain, run_graduation_ladder
-from brain.domains.taxonomy import all_micro_triples
-from brain.graduation import current_grade
-from db.models import KnowledgeDomain, KnowledgeMicroSubdomain, KnowledgeSubdomain
-from db.session import get_session
-from fastapi import HTTPException
+from brain.cortex import run_batch_graduation_ladder
+from brain.domains.taxonomy import KNOWLEDGE_TAXONOMY
 
 from app.organism import get_organism
 from app.security import exclusive_training_lock
-from sqlalchemy import select
+from fastapi import HTTPException
 
 logger = logging.getLogger(__name__)
 
@@ -41,6 +37,22 @@ def _env_int(name: str, default: int, *, minimum: int = 1, maximum: int = 10_000
         return default
 
 
+def _env_limit(name: str, default: int | None, *, maximum: int) -> int | None:
+    """Parse tier limit. 0 or 'all' = no cap (train entire tier)."""
+    raw = os.environ.get(name, "").strip().lower()
+    if raw in ("0", "all", "*"):
+        return None
+    if not raw:
+        return default
+    try:
+        val = int(raw)
+        if val <= 0:
+            return None
+        return min(val, maximum)
+    except ValueError:
+        return default
+
+
 @dataclass
 class AutoLearnConfig:
     enabled: bool = False
@@ -48,24 +60,33 @@ class AutoLearnConfig:
     interval_sec: int = 3600
     epochs: int = 150
     max_grades_per_cycle: int = 1
-    domain_limit: int = 29
-    subdomain_limit: int = 1
-    micro_limit: int = 1
+    train_all: bool = False
+    domain_limit: int | None = 29
+    subdomain_limit: int | None = 7
+    micro_limit: int | None = 3
 
     @classmethod
     def from_env(cls) -> AutoLearnConfig:
         from app.startup import is_railway
 
         enabled = _env_bool("AUREON_AUTO_LEARN", default=is_railway())
+        train_all = _env_bool("AUREON_AUTO_LEARN_ALL", default=False)
+        if train_all:
+            limits = {"domain_limit": None, "subdomain_limit": None, "micro_limit": None}
+        else:
+            limits = {
+                "domain_limit": _env_limit("AUREON_AUTO_LEARN_DOMAIN_LIMIT", 29, maximum=29),
+                "subdomain_limit": _env_limit("AUREON_AUTO_LEARN_SUBDOMAIN_LIMIT", 7, maximum=20),
+                "micro_limit": _env_limit("AUREON_AUTO_LEARN_MICRO_LIMIT", 3, maximum=10),
+            }
         return cls(
             enabled=enabled,
             on_startup=_env_bool("AUREON_AUTO_LEARN_ON_STARTUP", default=True),
             interval_sec=_env_int("AUREON_AUTO_LEARN_INTERVAL_SEC", 3600, minimum=300),
             epochs=_env_int("AUREON_AUTO_LEARN_EPOCHS", 150, minimum=50, maximum=500),
             max_grades_per_cycle=_env_int("AUREON_AUTO_LEARN_MAX_GRADES", 1, minimum=1, maximum=7),
-            domain_limit=_env_int("AUREON_AUTO_LEARN_DOMAIN_LIMIT", 2, minimum=1, maximum=29),
-            subdomain_limit=_env_int("AUREON_AUTO_LEARN_SUBDOMAIN_LIMIT", 1, minimum=1, maximum=20),
-            micro_limit=_env_int("AUREON_AUTO_LEARN_MICRO_LIMIT", 1, minimum=1, maximum=10),
+            train_all=train_all,
+            **limits,
         )
 
 
@@ -101,8 +122,7 @@ class AutoLearnScheduler:
         self.state = AutoLearnState()
         self._stop = threading.Event()
         self._thread: threading.Thread | None = None
-        self._cursor = 0
-        self._triples: list[tuple[str, str, str]] = []
+        self._domain_cursor = 0
 
     def status(self) -> dict[str, Any]:
         return {
@@ -112,6 +132,7 @@ class AutoLearnScheduler:
                 "interval_sec": self.config.interval_sec,
                 "epochs": self.config.epochs,
                 "max_grades_per_cycle": self.config.max_grades_per_cycle,
+                "train_all": self.config.train_all,
                 "domain_limit": self.config.domain_limit,
                 "subdomain_limit": self.config.subdomain_limit,
                 "micro_limit": self.config.micro_limit,
@@ -127,17 +148,21 @@ class AutoLearnScheduler:
             return
         if self._thread and self._thread.is_alive():
             return
-        self._triples = all_micro_triples()
         self.state.running = True
         self.state.started_at = datetime.now(timezone.utc).isoformat()
         self._stop.clear()
         self._thread = threading.Thread(target=self._loop, name="aureon-auto-learn", daemon=True)
         self._thread.start()
         logger.info(
-            "Auto-learn started — interval=%ss, epochs=%s, max_grades=%s",
+            "Auto-learn started — interval=%ss, epochs=%s, max_grades=%s, "
+            "domains=%s subs=%s micros=%s train_all=%s",
             self.config.interval_sec,
             self.config.epochs,
             self.config.max_grades_per_cycle,
+            self.config.domain_limit if self.config.domain_limit is not None else "all",
+            self.config.subdomain_limit if self.config.subdomain_limit is not None else "all",
+            self.config.micro_limit if self.config.micro_limit is not None else "all",
+            self.config.train_all,
         )
 
     def stop(self) -> None:
@@ -167,31 +192,34 @@ class AutoLearnScheduler:
                 logger.exception("Organism pulse failed during auto-learn wait")
             time.sleep(5)
 
-    def _next_target(self) -> tuple[str, str, str] | None:
-        if not self._triples:
-            self._triples = all_micro_triples()
-        if not self._triples:
+    def _domain_batch(self) -> list[str] | None:
+        """When domain_limit < 29, rotate through domains across cycles."""
+        all_domains = list(KNOWLEDGE_TAXONOMY.keys())
+        if self.config.domain_limit is None:
             return None
-        domain, sub, micro = self._triples[self._cursor % len(self._triples)]
-        self._cursor += 1
-        return domain, sub, micro
+        if self.config.domain_limit >= len(all_domains):
+            return None
+        start = self._domain_cursor % len(all_domains)
+        batch = [
+            all_domains[(start + i) % len(all_domains)] for i in range(self.config.domain_limit)
+        ]
+        self._domain_cursor += self.config.domain_limit
+        return batch
 
     def _run_one_cycle(self) -> None:
         from app.activity_log import clear_cycle_id, log_ai_activity, new_cycle_id
 
-        target = self._next_target()
-        if not target:
-            self.state.last_error = "no micro-subdomains in taxonomy"
-            log_ai_activity("auto_learn_skipped", reason="no micro-subdomains in taxonomy")
-            return
-
-        domain_slug, subdomain_slug, micro_slug = target
+        domain_slugs = self._domain_batch()
         cycle_id = new_cycle_id("auto")
-        path = f"{domain_slug}.{subdomain_slug}.{micro_slug}"
+        limits_label = (
+            f"domains={self.config.domain_limit or 'all'} "
+            f"subs={self.config.subdomain_limit or 'all'} "
+            f"micros={self.config.micro_limit or 'all'}"
+        )
         self.state.current_target = {
-            "domain": domain_slug,
-            "subdomain": subdomain_slug,
-            "micro_subdomain": micro_slug,
+            "mode": "batch",
+            "limits": limits_label,
+            "domain_slugs": domain_slugs,
         }
 
         try:
@@ -208,7 +236,6 @@ class AutoLearnScheduler:
                 log_ai_activity(
                     "auto_learn_skipped",
                     cycle_id=cycle_id,
-                    path=path,
                     reason="organism lockdown",
                     vitals={
                         o["id"]: o["state"] for o in vitals.get("organs", []) if isinstance(o, dict)
@@ -216,64 +243,41 @@ class AutoLearnScheduler:
                 )
                 return
 
-            bootstrap_brain()
-
-            with get_session() as session:
-                domain = session.scalar(
-                    select(KnowledgeDomain).where(KnowledgeDomain.slug == domain_slug)
-                )
-                if not domain:
-                    self.state.last_error = f"unknown domain: {domain_slug}"
-                    log_ai_activity("auto_learn_skipped", cycle_id=cycle_id, path=path, reason=self.state.last_error)
-                    return
-                subdomain = session.scalar(
-                    select(KnowledgeSubdomain).where(
-                        KnowledgeSubdomain.domain_id == domain.id,
-                        KnowledgeSubdomain.slug == subdomain_slug,
-                    )
-                )
-                if not subdomain:
-                    self.state.last_error = f"unknown subdomain: {subdomain_slug}"
-                    log_ai_activity("auto_learn_skipped", cycle_id=cycle_id, path=path, reason=self.state.last_error)
-                    return
-                micro = session.scalar(
-                    select(KnowledgeMicroSubdomain).where(
-                        KnowledgeMicroSubdomain.subdomain_id == subdomain.id,
-                        KnowledgeMicroSubdomain.slug == micro_slug,
-                    )
-                )
-                if not micro:
-                    self.state.last_error = f"unknown micro_subdomain: {micro_slug}"
-                    log_ai_activity("auto_learn_skipped", cycle_id=cycle_id, path=path, reason=self.state.last_error)
-                    return
-                grade_row = current_grade(session, micro.id)
-                grade_slug = grade_row.grade_slug if grade_row else "graduated"
-
             log_ai_activity(
                 "auto_learn_cycle_start",
                 cycle_id=cycle_id,
                 source="auto_learn",
-                path=path,
                 cycle_number=self.state.cycles_completed + 1,
-                grade=grade_slug,
+                limits=limits_label,
+                train_all=self.config.train_all,
                 epochs=self.config.epochs,
+                max_grades=self.config.max_grades_per_cycle,
+                domain_slugs=domain_slugs,
             )
             logger.info(
-                "Auto-learn cycle #%s — %s @ grade %s",
+                "Auto-learn cycle #%s — batch %s",
                 self.state.cycles_completed + 1,
-                path,
-                grade_slug,
+                limits_label,
             )
 
             with exclusive_training_lock():
-                result = run_graduation_ladder(
-                    domain_slug,
-                    subdomain_slug,
-                    micro_slug,
+                batch = run_batch_graduation_ladder(
                     epochs=self.config.epochs,
                     max_grades=self.config.max_grades_per_cycle,
+                    domain_limit=self.config.domain_limit if domain_slugs is None else None,
+                    subdomain_limit=self.config.subdomain_limit,
+                    micro_subdomain_limit=self.config.micro_limit,
+                    domain_slugs=domain_slugs,
                     source="auto_learn",
                 )
+
+            if batch["targets_total"] == 0:
+                self.state.last_error = "no micro-subdomains matched batch limits"
+                log_ai_activity("auto_learn_skipped", cycle_id=cycle_id, reason=self.state.last_error)
+                return
+
+            graduations = [r for r in batch["results"] if r.get("graduation", {}).get("passed")]
+            last = batch["results"][-1] if batch["results"] else {}
 
             self.state.cycles_completed += 1
             self.state.last_run_at = datetime.now(timezone.utc).isoformat()
@@ -281,17 +285,19 @@ class AutoLearnScheduler:
                 datetime.now(timezone.utc) + timedelta(seconds=self.config.interval_sec)
             ).isoformat()
             self.state.last_result = {
-                "target": self.state.current_target,
-                "grade_before": grade_slug,
-                "graduation": result.get("ladder", [{}])[-1].get("graduation") if result.get("ladder") else {},
-                "steps": result.get("steps_completed", 0),
+                "batch": True,
+                "targets_total": batch["targets_total"],
+                "targets_processed": batch["targets_processed"],
+                "graduations_passed": len(graduations),
+                "last_target": last.get("target"),
+                "last_graduation": last.get("graduation"),
+                "sample_paths": [r["path"] for r in batch["results"][:5]],
             }
             self.state.last_error = None
             log_ai_activity(
                 "auto_learn_cycle_complete",
                 cycle_id=cycle_id,
                 source="auto_learn",
-                path=path,
                 cycle_number=self.state.cycles_completed,
                 result=self.state.last_result,
             )
@@ -303,7 +309,6 @@ class AutoLearnScheduler:
             log_ai_activity(
                 "auto_learn_skipped",
                 cycle_id=cycle_id,
-                path=path,
                 reason=str(exc.detail),
             )
         except Exception as exc:
@@ -312,7 +317,6 @@ class AutoLearnScheduler:
             log_ai_activity(
                 "auto_learn_failed",
                 cycle_id=cycle_id,
-                path=path,
                 error=str(exc)[:500],
             )
         finally:

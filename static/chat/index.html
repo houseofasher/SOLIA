@@ -438,7 +438,15 @@
         $("docs").textContent = learning.brain?.documents ?? "—";
         $("grads").textContent = learning.brain?.grade_levels_graduated ?? "—";
 
-        if (auto.last_result?.target) {
+        if (auto.last_result?.batch) {
+          const lr = auto.last_result;
+          pushLog(`Batch: ${lr.targets_processed}/${lr.targets_total} topics · ${lr.graduations_passed} graduated`);
+          if (lr.last_target) {
+            const t = lr.last_target;
+            const g = lr.last_graduation?.unlocked_next || "cycle done";
+            pushLog(`Last: ${t.domain}.${t.subdomain}.${t.micro_subdomain} → ${g}`);
+          }
+        } else if (auto.last_result?.target) {
           const t = auto.last_result.target;
           const g = auto.last_result.graduation?.unlocked_next || auto.last_result.grade_before;
           pushLog(`Learned: ${t.domain}.${t.subdomain}.${t.micro_subdomain} → ${g || "cycle done"}`);
