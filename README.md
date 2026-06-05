@@ -215,11 +215,14 @@ Without Postgres, the app falls back to SQLite at `data/aureon.db`.
 
 | Variable | Required | Purpose |
 |----------|----------|---------|
+| `AUREON_API_KEY` | **Yes (production)** | Protects all POST/training endpoints via `X-API-Key` header |
 | `DATABASE_URL` | Railway Postgres | Domain tree, documents, agents, models |
 | `PORT` | Auto-set by Railway | HTTP port |
 | `KAFKA_BOOTSTRAP_SERVERS` | Optional | Kafka instead of local JSONL queue |
-| `ALERT_WEBHOOK_URL` | Optional | Webhook when benchmarks fail |
+| `ALERT_WEBHOOK_URL` | Optional | HTTPS webhook when benchmarks fail (internal IPs blocked) |
 | `PIPELINE_DATA_DIR` | Optional | Override local data directory |
+
+See [SECURITY.md](SECURITY.md) for the full Aureon security audit.
 
 ---
 

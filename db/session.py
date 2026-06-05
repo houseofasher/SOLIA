@@ -30,7 +30,12 @@ def get_engine():
     if _engine is None:
         url = get_database_url()
         connect_args = {"check_same_thread": False} if url.startswith("sqlite") else {}
-        _engine = create_engine(url, pool_pre_ping=True, connect_args=connect_args)
+        pool_kwargs = {}
+        if url.startswith("postgresql"):
+            pool_kwargs = {"pool_size": 5, "max_overflow": 10, "pool_recycle": 1800}
+        _engine = create_engine(
+            url, pool_pre_ping=True, connect_args=connect_args, **pool_kwargs
+        )
         _SessionLocal = sessionmaker(bind=_engine, autoflush=False, autocommit=False)
     return _engine
 

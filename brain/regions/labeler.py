@@ -39,7 +39,14 @@ class LabelerAgent(MicroAgentBase):
         ]
         labeler = TeacherLabeler()
         labeled = labeler.label(rows)
-        auto, review = active_learning_split(labeled)
+        if len(labeled) != len(docs):
+            return AgentResult(
+                region=self.region,
+                status="failed",
+                metrics={"reason": "label count mismatch"},
+                error="teacher returned unexpected label count",
+            )
+        _auto, review = active_learning_split(labeled)
         review_set = {id(r) for r in review}
 
         labels_written = 0

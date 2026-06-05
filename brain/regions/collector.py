@@ -10,6 +10,7 @@ from sqlalchemy.orm import Session
 
 from brain.base import AgentContext, AgentResult, MicroAgentBase
 from db.models import Document
+from app.security import load_json_file_bounded, resolve_path_under
 from pipeline.config import SEEDS_DIR
 from pipeline.step1_collection.collectors import ArxivCollector, RawDocument
 from pipeline.step1_collection.filters import filter_document
@@ -57,7 +58,9 @@ class CollectorAgent(MicroAgentBase):
         if not SEEDS_DIR.exists():
             return 0
         for path in SEEDS_DIR.glob("*.json"):
-            payload = json.loads(path.read_text(encoding="utf-8"))
+            if not path.is_file():
+                continue
+            payload = load_json_file_bounded(path)
             for item in payload.get("documents", []):
                 if item.get("metadata", {}).get("domain") != ctx.domain_slug:
                     continue

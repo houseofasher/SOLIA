@@ -2,31 +2,52 @@
 
 from __future__ import annotations
 
+import logging
 import os
 from contextlib import asynccontextmanager
-from typing import Any
+from typing import Annotated, Any
 
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import Depends, FastAPI, HTTPException, Query, Request
 from fastapi.responses import HTMLResponse
 
 from app.brain_routes import get_taxonomy
+from app.middleware import SecurityHeadersMiddleware
 from app.pipeline_routes import run_pipeline_all, run_pipeline_step
+from app.security import (
+    api_key_required,
+    clamp_domain_limit,
+    clamp_epochs,
+    clamp_subdomain_limit,
+    exclusive_training_lock,
+    require_mutating_access,
+    safe_error_message,
+    validate_slug,
+)
 from app.service import concepts, run_identify_demo, run_match_demo, run_synthetic_demo
 from brain.cortex import bootstrap_brain, brain_status, run_domain_cycle, run_full_brain, run_subdomain_cycle
+from brain.domains.taxonomy import KNOWLEDGE_TAXONOMY
+
+logger = logging.getLogger(__name__)
 
 
 @asynccontextmanager
 async def lifespan(_: FastAPI):
     from db.session import init_db
-    from brain.cortex import bootstrap_brain
 
+    logging.basicConfig(level=logging.INFO)
     init_db()
     try:
         bootstrap_brain()
     except Exception:
-        pass
+        logger.exception("Bootstrap failed on startup")
+    if not api_key_required():
+        logger.warning(
+            "AUREON_API_KEY is not set — mutating endpoints are unauthenticated. "
+            "Set AUREON_API_KEY on Railway for production."
+        )
     try:
         from sklearn.datasets import fetch_olivetti_faces
+
         fetch_olivetti_faces()
     except Exception:
         pass
@@ -36,9 +57,12 @@ async def lifespan(_: FastAPI):
 app = FastAPI(
     title="Aureon-LLM",
     description="Supervised machine learning demo — neural networks with backpropagation",
-    version="1.0.0",
+    version="1.1.0",
     lifespan=lifespan,
 )
+app.add_middleware(SecurityHeadersMiddleware)
+
+Mutating = Annotated[None, Depends(require_mutating_access)]
 
 
 @app.get("/health")
@@ -53,41 +77,53 @@ def get_concepts() -> dict[str, Any]:
 
 @app.post("/api/demo/synthetic")
 def demo_synthetic(
+    _auth: Mutating,
     epochs: int = Query(default=200, ge=1, le=500),
-    seed: int = Query(default=42),
+    seed: int = Query(default=42, ge=0, le=2_147_483_647),
 ) -> dict[str, Any]:
     try:
-        return run_synthetic_demo(epochs=epochs, seed=seed)
+        with exclusive_training_lock():
+            return run_synthetic_demo(epochs=epochs, seed=seed)
+    except HTTPException:
+        raise
     except Exception as exc:
-        raise HTTPException(status_code=500, detail=str(exc)) from exc
+        raise HTTPException(status_code=500, detail=safe_error_message(exc)) from exc
 
 
 @app.post("/api/demo/match")
 def demo_match(
+    _auth: Mutating,
     epochs: int = Query(default=200, ge=1, le=500),
     people: int = Query(default=40, ge=2, le=40),
-    seed: int = Query(default=42),
+    seed: int = Query(default=42, ge=0, le=2_147_483_647),
 ) -> dict[str, Any]:
     try:
-        return run_match_demo(epochs=epochs, people=people, seed=seed)
+        with exclusive_training_lock():
+            return run_match_demo(epochs=epochs, people=people, seed=seed)
+    except HTTPException:
+        raise
     except Exception as exc:
-        raise HTTPException(status_code=500, detail=str(exc)) from exc
+        raise HTTPException(status_code=500, detail=safe_error_message(exc)) from exc
 
 
 @app.post("/api/demo/identify")
 def demo_identify(
+    _auth: Mutating,
     epochs: int = Query(default=200, ge=1, le=500),
     people: int = Query(default=10, ge=2, le=10),
-    seed: int = Query(default=42),
+    seed: int = Query(default=42, ge=0, le=2_147_483_647),
 ) -> dict[str, Any]:
     try:
-        return run_identify_demo(epochs=epochs, people=people, seed=seed)
+        with exclusive_training_lock():
+            return run_identify_demo(epochs=epochs, people=people, seed=seed)
+    except HTTPException:
+        raise
     except Exception as exc:
-        raise HTTPException(status_code=500, detail=str(exc)) from exc
+        raise HTTPException(status_code=500, detail=safe_error_message(exc)) from exc
 
 
 @app.post("/api/brain/bootstrap")
-def brain_bootstrap() -> dict:
+def brain_bootstrap(_auth: Mutating) -> dict:
     return bootstrap_brain()
 
 
@@ -103,56 +139,96 @@ def get_brain_taxonomy() -> dict:
 
 @app.post("/api/brain/run")
 def brain_run(
+    _auth: Mutating,
     epochs: int = Query(default=150, ge=50, le=500),
     domain_limit: int | None = Query(default=3, ge=1, le=29),
-    subdomain_limit: int | None = Query(default=1, ge=1),
+    subdomain_limit: int | None = Query(default=1, ge=1, le=20),
 ) -> dict:
     try:
-        return run_full_brain(
-            epochs=epochs,
-            domain_limit=domain_limit,
-            subdomain_limit=subdomain_limit,
-        )
+        with exclusive_training_lock():
+            return run_full_brain(
+                epochs=clamp_epochs(epochs),
+                domain_limit=clamp_domain_limit(domain_limit),
+                subdomain_limit=clamp_subdomain_limit(subdomain_limit),
+            )
+    except HTTPException:
+        raise
     except Exception as exc:
-        raise HTTPException(status_code=500, detail=str(exc)) from exc
+        raise HTTPException(status_code=500, detail=safe_error_message(exc)) from exc
 
 
 @app.post("/api/brain/domain/{domain_slug}")
 def brain_run_domain(
     domain_slug: str,
+    _auth: Mutating,
     epochs: int = Query(default=150, ge=50, le=500),
+    subdomain_limit: int | None = Query(default=5, ge=1, le=20),
 ) -> dict:
+    domain_slug = validate_slug(domain_slug, label="domain")
+    if domain_slug not in KNOWLEDGE_TAXONOMY:
+        raise HTTPException(status_code=404, detail="Unknown domain")
     try:
-        return run_domain_cycle(domain_slug, epochs=epochs)
+        with exclusive_training_lock():
+            subs = KNOWLEDGE_TAXONOMY[domain_slug][: clamp_subdomain_limit(subdomain_limit) or 5]
+            cycles = [run_subdomain_cycle(domain_slug, sub, epochs=epochs) for sub in subs]
+            return {"domain": domain_slug, "subdomains_processed": len(cycles), "cycles": cycles}
+    except HTTPException:
+        raise
     except Exception as exc:
-        raise HTTPException(status_code=500, detail=str(exc)) from exc
+        raise HTTPException(status_code=500, detail=safe_error_message(exc)) from exc
 
 
 @app.post("/api/brain/domain/{domain_slug}/{subdomain_slug}")
 def brain_run_subdomain(
     domain_slug: str,
     subdomain_slug: str,
+    _auth: Mutating,
     epochs: int = Query(default=150, ge=50, le=500),
 ) -> dict:
+    domain_slug = validate_slug(domain_slug, label="domain")
+    subdomain_slug = validate_slug(subdomain_slug, label="subdomain")
+    if domain_slug not in KNOWLEDGE_TAXONOMY:
+        raise HTTPException(status_code=404, detail="Unknown domain")
+    if subdomain_slug not in KNOWLEDGE_TAXONOMY[domain_slug]:
+        raise HTTPException(status_code=404, detail="Unknown subdomain")
     try:
-        return run_subdomain_cycle(domain_slug, subdomain_slug, epochs=epochs)
+        with exclusive_training_lock():
+            return run_subdomain_cycle(domain_slug, subdomain_slug, epochs=epochs)
+    except HTTPException:
+        raise
     except Exception as exc:
-        raise HTTPException(status_code=500, detail=str(exc)) from exc
+        raise HTTPException(status_code=500, detail=safe_error_message(exc)) from exc
 
 
 @app.post("/api/pipeline/run")
-def pipeline_run_all(
+def pipeline_run_all_endpoint(
+    _auth: Mutating,
     epochs: int = Query(default=200, ge=50, le=500),
 ) -> dict:
-    return run_pipeline_all(epochs=epochs)
+    try:
+        with exclusive_training_lock():
+            return run_pipeline_all(epochs=epochs)
+    except HTTPException:
+        raise
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=safe_error_message(exc)) from exc
 
 
 @app.post("/api/pipeline/step/{step}")
-def pipeline_run_step(
+def pipeline_run_step_endpoint(
     step: int,
+    _auth: Mutating,
     epochs: int = Query(default=200, ge=50, le=500),
 ) -> dict:
-    return run_pipeline_step(step=step, epochs=epochs)
+    if step not in (1, 2, 3, 4, 5):
+        raise HTTPException(status_code=400, detail="step must be 1-5")
+    try:
+        with exclusive_training_lock():
+            return run_pipeline_step(step=step, epochs=epochs)
+    except HTTPException:
+        raise
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=safe_error_message(exc)) from exc
 
 
 @app.get("/api/pipeline/status")
@@ -169,13 +245,18 @@ def pipeline_status() -> dict:
     if latest.exists():
         import json
 
-        payload["latest_run"] = json.loads(latest.read_text(encoding="utf-8"))
+        from app.security import load_json_file_bounded
+
+        payload["latest_run"] = load_json_file_bounded(latest)
     return payload
 
 
 @app.get("/", response_class=HTMLResponse)
 def index() -> str:
-    return """<!DOCTYPE html>
+    return INDEX_HTML
+
+
+INDEX_HTML = """<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -283,7 +364,7 @@ def index() -> str:
         29 knowledge domains, 180+ subdomains, 6 brain regions each (collector, verifier,
         labeler, trainer, evaluator, reward). Stored in PostgreSQL on Railway.
       </p>
-      <button onclick="runBrain()" style="max-width: 320px;">Run brain cycle</button>
+      <button id="runBrainBtn" style="max-width: 320px;">Run brain cycle</button>
     </div>
 
     <div class="card" style="margin-bottom: 2rem;">
@@ -291,24 +372,24 @@ def index() -> str:
       <p style="min-height: auto; color: var(--text);">
         Run all 5 steps in order: collect &rarr; label &rarr; train &rarr; evaluate &rarr; RLHF.
       </p>
-      <button onclick="runPipeline()" style="max-width: 320px;">Run full pipeline</button>
+      <button id="runPipelineBtn" style="max-width: 320px;">Run full pipeline</button>
     </div>
 
     <div class="grid">
       <div class="card">
         <h2>Synthetic features</h2>
         <p>Eye, nose, chin weights — the lecture&rsquo;s core example.</p>
-        <button onclick="runDemo('synthetic')">Run demo</button>
+        <button data-demo="synthetic">Run demo</button>
       </div>
       <div class="card">
         <h2>Face matching</h2>
         <p>Binary yes/no: do two faces belong to the same person?</p>
-        <button onclick="runDemo('match')">Run demo</button>
+        <button data-demo="match">Run demo</button>
       </div>
       <div class="card">
         <h2>Person ID</h2>
         <p>Multi-class identification + edge-case fragility demo.</p>
-        <button onclick="runDemo('identify')">Run demo</button>
+        <button data-demo="identify">Run demo</button>
       </div>
     </div>
 
@@ -320,16 +401,30 @@ def index() -> str:
     const outputEl = document.getElementById('output');
     const buttons = document.querySelectorAll('button');
 
+    function apiHeaders() {
+      const headers = { 'Content-Type': 'application/json' };
+      const key = window.AUREON_API_KEY;
+      if (key) headers['X-API-Key'] = key;
+      return headers;
+    }
+
+    async function postJson(url) {
+      const res = await fetch(url, { method: 'POST', headers: apiHeaders() });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.detail || res.statusText);
+      return data;
+    }
+
     async function runBrain() {
       buttons.forEach(b => b.disabled = true);
       statusEl.textContent = 'Running brain micro-algorithms across knowledge domains…';
       statusEl.className = 'running';
       outputEl.textContent = '';
       try {
-        const res = await fetch('/api/brain/run?epochs=150&domain_limit=2&subdomain_limit=1', { method: 'POST' });
-        const data = await res.json();
-        if (!res.ok) throw new Error(data.detail || res.statusText);
-        outputEl.textContent = JSON.stringify(data, null, 2);
+        outputEl.textContent = JSON.stringify(
+          await postJson('/api/brain/run?epochs=150&domain_limit=2&subdomain_limit=1'),
+          null, 2
+        );
         statusEl.textContent = 'Brain cycle complete.';
         statusEl.className = 'done';
       } catch (err) {
@@ -343,13 +438,11 @@ def index() -> str:
 
     async function runPipeline() {
       buttons.forEach(b => b.disabled = true);
-      statusEl.textContent = 'Running 5-step pipeline (collect → label → train → evaluate → RLHF)…';
+      statusEl.textContent = 'Running 5-step pipeline…';
       statusEl.className = 'running';
       outputEl.textContent = '';
       try {
-        const res = await fetch('/api/pipeline/run?epochs=200', { method: 'POST' });
-        const data = await res.json();
-        if (!res.ok) throw new Error(data.detail || res.statusText);
+        const data = await postJson('/api/pipeline/run?epochs=200');
         outputEl.textContent = JSON.stringify(data, null, 2);
         statusEl.textContent = 'Pipeline ' + (data.status || 'done') + '.';
         statusEl.className = 'done';
@@ -367,12 +460,8 @@ def index() -> str:
       statusEl.textContent = 'Training neural network via backpropagation…';
       statusEl.className = 'running';
       outputEl.textContent = '';
-
       try {
-        const res = await fetch(`/api/demo/${name}?epochs=200`, { method: 'POST' });
-        const data = await res.json();
-        if (!res.ok) throw new Error(data.detail || res.statusText);
-        outputEl.textContent = JSON.stringify(data, null, 2);
+        outputEl.textContent = JSON.stringify(await postJson('/api/demo/' + name + '?epochs=200'), null, 2);
         statusEl.textContent = 'Done.';
         statusEl.className = 'done';
       } catch (err) {
@@ -383,6 +472,12 @@ def index() -> str:
         buttons.forEach(b => b.disabled = false);
       }
     }
+
+    document.getElementById('runBrainBtn').addEventListener('click', runBrain);
+    document.getElementById('runPipelineBtn').addEventListener('click', runPipeline);
+    document.querySelectorAll('[data-demo]').forEach(btn => {
+      btn.addEventListener('click', () => runDemo(btn.dataset.demo));
+    });
   </script>
 </body>
 </html>"""

@@ -7,6 +7,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from app.security import load_json_file_bounded
 from pipeline.config import MODELS_DIR, REGISTRY_DIR, ensure_dirs
 
 
@@ -28,7 +29,7 @@ class ModelRegistry:
             self._save_registry({"runs": []})
 
     def _load_registry(self) -> dict:
-        return json.loads(self.registry_path.read_text(encoding="utf-8"))
+        return load_json_file_bounded(self.registry_path)
 
     def _save_registry(self, payload: dict) -> None:
         self.registry_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
@@ -64,7 +65,7 @@ class ModelRegistry:
     def get_production(self) -> dict | None:
         if not self.production_path.exists():
             return None
-        return json.loads(self.production_path.read_text(encoding="utf-8"))
+        return load_json_file_bounded(self.production_path)
 
     def promote(self, run: dict) -> dict:
         payload = {

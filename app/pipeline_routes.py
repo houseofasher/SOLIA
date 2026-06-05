@@ -4,7 +4,9 @@ from __future__ import annotations
 
 from typing import Any
 
-from fastapi import HTTPException, Query
+from fastapi import HTTPException
+
+from app.security import safe_error_message
 
 from pipeline.orchestrator import run_full_pipeline
 from pipeline.step1_collection.runner import run_step1
@@ -27,11 +29,11 @@ def run_pipeline_step(step: int, epochs: int = 300) -> dict[str, Any]:
     try:
         return runners[step]()
     except Exception as exc:
-        raise HTTPException(status_code=500, detail=str(exc)) from exc
+        raise HTTPException(status_code=500, detail=safe_error_message(exc)) from exc
 
 
 def run_pipeline_all(epochs: int = 300) -> dict[str, Any]:
     try:
         return run_full_pipeline(epochs=epochs, arxiv_limit=5, gutenberg_limit=0)
     except Exception as exc:
-        raise HTTPException(status_code=500, detail=str(exc)) from exc
+        raise HTTPException(status_code=500, detail=safe_error_message(exc)) from exc

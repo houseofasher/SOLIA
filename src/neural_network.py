@@ -238,15 +238,19 @@ class NeuralNetwork:
 
     @classmethod
     def load(cls, path: str | Path) -> NeuralNetwork:
-        payload = json.loads(Path(path).read_text(encoding="utf-8"))
+        from app.security import load_json_file_bounded, validate_model_payload
+
+        model_path = Path(path)
+        payload = load_json_file_bounded(model_path, max_bytes=50 * 1024 * 1024)
+        validate_model_payload(payload)
         net = cls(
             layer_sizes=payload["layer_sizes"],
-            learning_rate=payload["learning_rate"],
-            seed=payload["seed"],
+            learning_rate=float(payload["learning_rate"]),
+            seed=int(payload["seed"]),
             output_activation=payload.get("output_activation", "sigmoid"),
         )
-        net.weights = [np.array(w) for w in payload["weights"]]
-        net.biases = [np.array(b) for b in payload["biases"]]
+        net.weights = [np.array(w, dtype=float) for w in payload["weights"]]
+        net.biases = [np.array(b, dtype=float) for b in payload["biases"]]
         return net
 
 

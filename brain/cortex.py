@@ -98,10 +98,14 @@ def run_subdomain_cycle(
     }
 
 
-def run_domain_cycle(domain_slug: str, epochs: int = 200) -> dict[str, Any]:
-    """Run all subdomains within one knowledge domain."""
-    subdomains = KNOWLEDGE_TAXONOMY.get(domain_slug, [])
-    cycles = [run_subdomain_cycle(domain_slug, sub, epochs=epochs) for sub in subdomains]
+def run_domain_cycle(domain_slug: str, epochs: int = 200, subdomain_limit: int = 5) -> dict[str, Any]:
+    """Run subdomains within one knowledge domain (capped)."""
+    from app.security import clamp_subdomain_limit
+
+    if domain_slug not in KNOWLEDGE_TAXONOMY:
+        return {"error": f"unknown domain: {domain_slug}"}
+    subs = KNOWLEDGE_TAXONOMY[domain_slug][: clamp_subdomain_limit(subdomain_limit) or 5]
+    cycles = [run_subdomain_cycle(domain_slug, sub, epochs=epochs) for sub in subs]
     return {
         "domain": domain_slug,
         "subdomains_processed": len(cycles),

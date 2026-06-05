@@ -8,6 +8,7 @@ from typing import Any
 
 import requests
 
+from app.security import is_safe_webhook_url
 from pipeline.config import ALERT_WEBHOOK_URL, BENCHMARKS_DIR, ensure_dirs
 
 
@@ -30,11 +31,14 @@ def fire_alert(title: str, details: dict[str, Any]) -> dict[str, Any]:
 
     webhook_status = "skipped"
     if ALERT_WEBHOOK_URL:
-        try:
-            response = requests.post(ALERT_WEBHOOK_URL, json=alert, timeout=10)
-            webhook_status = f"sent_{response.status_code}"
-        except requests.RequestException as exc:
-            webhook_status = f"failed_{exc.__class__.__name__}"
+        if not is_safe_webhook_url(ALERT_WEBHOOK_URL):
+            webhook_status = "blocked_unsafe_url"
+        else:
+            try:
+                response = requests.post(ALERT_WEBHOOK_URL, json=alert, timeout=10)
+                webhook_status = f"sent_{response.status_code}"
+            except requests.RequestException as exc:
+                webhook_status = f"failed_{exc.__class__.__name__}"
 
     alert["webhook_status"] = webhook_status
     return alert

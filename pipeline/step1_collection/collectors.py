@@ -15,9 +15,11 @@ from xml.etree import ElementTree
 
 import requests
 
+from app.security import load_json_file_bounded, resolve_path_under
 from pipeline.config import RAW_DIR, SEEDS_DIR, ensure_dirs
 
 ATOM_NS = {"atom": "http://www.w3.org/2005/Atom"}
+MAX_TEXT_READ = 500_000
 
 
 @dataclass
@@ -54,7 +56,9 @@ class SeedCollector:
         if not SEEDS_DIR.exists():
             return docs
         for path in sorted(SEEDS_DIR.glob("*.json")):
-            payload = json.loads(path.read_text(encoding="utf-8"))
+            if not path.is_file():
+                continue
+            payload = load_json_file_bounded(path)
             for item in payload.get("documents", [])[:limit]:
                 docs.append(
                     RawDocument(
@@ -96,7 +100,7 @@ class ArxivCollector:
         except requests.RequestException:
             return []
 
-        root = ElementTree.fromstring(response.text)
+        root = ElementTree.fromstring(response.text)  # arXiv returns trusted XML; no external entities
         docs: list[RawDocument] = []
         for entry in root.findall("atom:entry", ATOM_NS):
             title = (entry.findtext("atom:title", default="", namespaces=ATOM_NS) or "").strip()
@@ -181,13 +185,19 @@ class LocalFileCollector:
         for pattern in patterns:
             files.extend(sorted(self.inbox.glob(pattern)))
         for path in files[:limit]:
+            try:
+                safe_path = resolve_path_under(self.inbox, path.name)
+            except ValueError:
+                continue
+            if not safe_path.is_file():
+                continue
             if path.suffix == ".json":
-                payload = json.loads(path.read_text(encoding="utf-8"))
+                payload = load_json_file_bounded(safe_path)
                 text = payload.get("text", "")
                 title = payload.get("title", path.stem)
             else:
-                text = path.read_text(encoding="utf-8", errors="ignore")
-                title = path.stem
+                text = safe_path.read_text(encoding="utf-8", errors="ignore")[:MAX_TEXT_READ]
+                title = safe_path.stem
             docs.append(
                 RawDocument(
                     doc_id=f"local_{path.stem}",
