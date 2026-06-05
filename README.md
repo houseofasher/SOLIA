@@ -1,6 +1,6 @@
 # Aureon-LLM
 
-> **Supervised machine learning that trains itself across every human knowledge domain** — brain-inspired micro-agents, a 5-step training pipeline, and PostgreSQL on Railway. Funded & backed by **#HouseOfAsher**, **#ZorakIntelligenceAgency**, and **ZorakCorp**.
+> **Supervised machine learning that trains itself across every human knowledge domain** — brain-inspired micro-agents, a 5-step training pipeline, and PostgreSQL on Railway. Funded & backed by **#HouseOfAsher**, **#ZophielIntelligenceAgency**, and **ZorakCorp**.
 
 Aureon-LLM is not mystical “AI.” It is a production-oriented system built on **supervised learning**, **backpropagation**, and an industrial **5-step training pipeline** — wrapped in a **brain-inspired micro-agent architecture** where each region collects, verifies, labels, trains, evaluates, and rewards domain by domain.
 
@@ -19,7 +19,7 @@ Deploy on [Railway](https://railway.app) with PostgreSQL. Run locally in minutes
 This LLM algorithm is **funded and backed** by:
 
 - **[#HouseOfAsher](https://twitter.com/search?q=%23HouseOfAsher)**
-- **[#ZorakIntelligenceAgency](https://twitter.com/search?q=%23ZorakIntelligenceAgency)**
+- **[#ZophielIntelligenceAgency](https://twitter.com/search?q=%23ZophielIntelligenceAgency)**
 - **[ZorakCorp](https://github.com/ZorakCorp)**
 
 ---
@@ -474,7 +474,7 @@ MIT — use, fork, and deploy freely. Attribution appreciated.
 
 <p align="center">
   <strong>Aureon-LLM</strong> · supervised learning · brain micro-agents · every human domain<br/>
-  Funded &amp; backed by <strong>#HouseOfAsher</strong> · <strong>#ZorakIntelligenceAgency</strong> · <strong>ZorakCorp</strong><br/>
+  Funded &amp; backed by <strong>#HouseOfAsher</strong> · <strong>#ZophielIntelligenceAgency</strong> · <strong>ZorakCorp</strong><br/>
   <a href="https://github.com/ZorakCorp/Aureon-LLM">ZorakCorp/Aureon-LLM</a> ·
   <a href="https://github.com/shep95/Aureon_Elion-LLM">shep95/Aureon_Elion-LLM</a>
 </p>
