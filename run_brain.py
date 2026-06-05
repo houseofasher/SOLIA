@@ -15,6 +15,8 @@ from brain.cortex import (
     brain_status,
     run_domain_cycle,
     run_full_brain,
+    run_grade_cycle,
+    run_graduation_ladder,
     run_micro_subdomain_cycle,
     run_subdomain_cycle,
 )
@@ -29,6 +31,9 @@ def main() -> None:
     parser.add_argument("--domain", type=str, help="Run one domain")
     parser.add_argument("--subdomain", type=str, help="Run one subdomain (requires --domain)")
     parser.add_argument("--micro-subdomain", type=str, help="Run one micro-subdomain (requires --domain and --subdomain)")
+    parser.add_argument("--grade", type=str, help="Academic grade slug (preschool … doctorate)")
+    parser.add_argument("--graduate", action="store_true", help="Climb grade ladder until fail or max")
+    parser.add_argument("--max-grades", type=int, default=3, help="Max grade steps for --graduate")
     parser.add_argument("--epochs", type=int, default=150)
     parser.add_argument("--domain-limit", type=int, default=3)
     parser.add_argument("--subdomain-limit", type=int, default=1)
@@ -42,12 +47,27 @@ def main() -> None:
         print(json.dumps(brain_status(), indent=2))
         return
     if args.domain and args.subdomain and args.micro_subdomain:
+        if args.graduate:
+            print(
+                json.dumps(
+                    run_graduation_ladder(
+                        args.domain,
+                        args.subdomain,
+                        args.micro_subdomain,
+                        epochs=args.epochs,
+                        max_grades=args.max_grades,
+                    ),
+                    indent=2,
+                )
+            )
+            return
         print(
             json.dumps(
-                run_micro_subdomain_cycle(
+                run_grade_cycle(
                     args.domain,
                     args.subdomain,
                     args.micro_subdomain,
+                    grade_slug=args.grade,
                     epochs=args.epochs,
                 ),
                 indent=2,

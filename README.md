@@ -206,16 +206,49 @@ flowchart TB
 
 ---
 
-## The brain — domain → subdomain → micro-subdomain
+## The brain — domain → subdomain → micro-subdomain → grade level
 
-Human knowledge is modeled in **three tiers**, each with dedicated micro-agents:
+Human knowledge is modeled in **four tiers**. The algorithm learns like a student: **Pre-School through Doctorate (PhD)** in every micro-subdomain before it fully graduates.
 
 ```text
-Human Domain  →  Human Subdomain  →  Human Micro-Subdomain  →  6 brain regions
-  mathematics       algebra              linear_algebra           collector … reward
+Domain  →  Subdomain  →  Micro-Subdomain  →  Grade Level  →  6 brain regions
+math       algebra       linear_algebra       preschool      collector … reward
+                                              elementary
+                                              middle_school
+                                              high_school
+                                              undergraduate
+                                              masters
+                                              doctorate
 ```
 
-Each **micro-subdomain** gets six specialized micro-agents (the leaf training circuits). Subdomain and domain levels have coordinator agents that orchestrate the tier below.
+### Grade curriculum (7 levels)
+
+| Order | Grade | Phase | What it learns |
+|------:|-------|-------|----------------|
+| 0 | Pre-School | early | Simple patterns and naming |
+| 1 | Elementary | basic | Foundational vocabulary |
+| 2 | Middle School | basic | Connecting ideas |
+| 3 | High School | intermediate | Structured problems |
+| 4 | Undergraduate | intermediate | College theory |
+| 5 | Master's | advanced | Graduate research |
+| 6 | Doctorate (PhD) | advanced | Original synthesis |
+
+**Graduation rules:** each grade must pass training accuracy + benchmark gates before the next grade unlocks. Preschool starts unlocked; doctorate is full graduation.
+
+```bash
+# Run current grade for a micro-subdomain
+POST /api/brain/domain/computer_science/machine_learning/supervised_learning
+
+# Run a specific grade
+POST /api/brain/domain/computer_science/machine_learning/supervised_learning/grade/elementary
+
+# Climb the ladder (up to 3 grades per call by default)
+POST /api/brain/domain/computer_science/machine_learning/supervised_learning/graduate
+
+# Check progress
+GET /api/brain/grades/computer_science/machine_learning/supervised_learning
+GET /api/brain/grades
+```
 
 | Region | Role | What it does |
 |--------|------|----------------|
@@ -362,7 +395,11 @@ See [SECURITY.md](SECURITY.md) for the full Aureon security audit.
 | `POST` | `/api/brain/run` | Run micro-agents across domains (limits on each tier) |
 | `POST` | `/api/brain/domain/{domain}` | Run subdomains + micro-subdomains in one domain |
 | `POST` | `/api/brain/domain/{domain}/{subdomain}` | Run all micro-subdomains in one subdomain |
-| `POST` | `/api/brain/domain/{domain}/{subdomain}/{micro}` | Run one micro-subdomain circuit |
+| `POST` | `/api/brain/domain/{domain}/{subdomain}/{micro}` | Run current grade level |
+| `POST` | `/api/brain/domain/{domain}/{subdomain}/{micro}/grade/{grade}` | Run specific grade (preschool … doctorate) |
+| `POST` | `/api/brain/domain/{domain}/{subdomain}/{micro}/graduate` | Climb grade ladder |
+| `GET` | `/api/brain/grades` | Full grade curriculum |
+| `GET` | `/api/brain/grades/{domain}/{subdomain}/{micro}` | Grade progress for one micro-subdomain |
 
 ### Pipeline
 
@@ -432,6 +469,7 @@ Aureon-LLM/
 | `knowledge_domains` | Top-level domains (math, physics, …) |
 | `knowledge_subdomains` | Sub-domains under each domain |
 | `knowledge_micro_subdomains` | Micro-subdomains under each subdomain |
+| `grade_progress` | Academic level per micro-subdomain (preschool → doctorate) |
 | `micro_agents` | One row per region × scope (domain / subdomain / micro-subdomain) |
 | `documents` | Collected, filtered text |
 | `document_labels` | Teacher labels + human-review flags |

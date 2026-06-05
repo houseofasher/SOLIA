@@ -10,7 +10,8 @@ from typing import Annotated, Any
 from fastapi import Depends, FastAPI, HTTPException, Query, Request
 from fastapi.responses import HTMLResponse
 
-from app.brain_routes import get_taxonomy
+from app.brain_routes import get_grade_progress, get_taxonomy
+from brain.grades import curriculum_public, get_grade
 from app.middleware import SecurityGatewayMiddleware, SecurityHeadersMiddleware
 from app.organism import get_organism
 from app.pipeline_routes import run_pipeline_all, run_pipeline_step
@@ -31,6 +32,8 @@ from brain.cortex import (
     brain_status,
     run_domain_cycle,
     run_full_brain,
+    run_grade_cycle,
+    run_graduation_ladder,
     run_micro_subdomain_cycle,
     run_subdomain_cycle,
 )
@@ -227,6 +230,92 @@ def brain_run_subdomain(
                 subdomain_slug,
                 epochs=epochs,
                 micro_subdomain_limit=clamp_micro_subdomain_limit(micro_subdomain_limit),
+            )
+    except HTTPException:
+        raise
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=safe_error_message(exc)) from exc
+
+
+@app.get("/api/brain/grades")
+def get_grade_curriculum() -> dict:
+    return {"curriculum": curriculum_public(), "total_levels": len(curriculum_public())}
+
+
+@app.get("/api/brain/grades/{domain_slug}/{subdomain_slug}/{micro_subdomain_slug}")
+def get_micro_grade_progress(
+    domain_slug: str,
+    subdomain_slug: str,
+    micro_subdomain_slug: str,
+) -> dict:
+    domain_slug = validate_slug(domain_slug, label="domain")
+    subdomain_slug = validate_slug(subdomain_slug, label="subdomain")
+    micro_subdomain_slug = validate_slug(micro_subdomain_slug, label="micro_subdomain")
+    return get_grade_progress(domain_slug, subdomain_slug, micro_subdomain_slug)
+
+
+@app.post("/api/brain/domain/{domain_slug}/{subdomain_slug}/{micro_subdomain_slug}/grade/{grade_slug}")
+def brain_run_grade(
+    domain_slug: str,
+    subdomain_slug: str,
+    micro_subdomain_slug: str,
+    grade_slug: str,
+    _auth: Mutating,
+    epochs: int = Query(default=150, ge=50, le=500),
+) -> dict:
+    domain_slug = validate_slug(domain_slug, label="domain")
+    subdomain_slug = validate_slug(subdomain_slug, label="subdomain")
+    micro_subdomain_slug = validate_slug(micro_subdomain_slug, label="micro_subdomain")
+    grade_slug = validate_slug(grade_slug, label="grade")
+    if not get_grade(grade_slug):
+        raise HTTPException(status_code=404, detail="Unknown grade level")
+    if domain_slug not in KNOWLEDGE_TAXONOMY:
+        raise HTTPException(status_code=404, detail="Unknown domain")
+    if subdomain_slug not in KNOWLEDGE_TAXONOMY[domain_slug]:
+        raise HTTPException(status_code=404, detail="Unknown subdomain")
+    if micro_subdomain_slug not in KNOWLEDGE_TAXONOMY[domain_slug][subdomain_slug]:
+        raise HTTPException(status_code=404, detail="Unknown micro_subdomain")
+    try:
+        with exclusive_training_lock():
+            return run_grade_cycle(
+                domain_slug,
+                subdomain_slug,
+                micro_subdomain_slug,
+                grade_slug=grade_slug,
+                epochs=epochs,
+            )
+    except HTTPException:
+        raise
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=safe_error_message(exc)) from exc
+
+
+@app.post("/api/brain/domain/{domain_slug}/{subdomain_slug}/{micro_subdomain_slug}/graduate")
+def brain_run_graduation_ladder(
+    domain_slug: str,
+    subdomain_slug: str,
+    micro_subdomain_slug: str,
+    _auth: Mutating,
+    epochs: int = Query(default=150, ge=50, le=500),
+    max_grades: int | None = Query(default=3, ge=1, le=7),
+) -> dict:
+    domain_slug = validate_slug(domain_slug, label="domain")
+    subdomain_slug = validate_slug(subdomain_slug, label="subdomain")
+    micro_subdomain_slug = validate_slug(micro_subdomain_slug, label="micro_subdomain")
+    if domain_slug not in KNOWLEDGE_TAXONOMY:
+        raise HTTPException(status_code=404, detail="Unknown domain")
+    if subdomain_slug not in KNOWLEDGE_TAXONOMY[domain_slug]:
+        raise HTTPException(status_code=404, detail="Unknown subdomain")
+    if micro_subdomain_slug not in KNOWLEDGE_TAXONOMY[domain_slug][subdomain_slug]:
+        raise HTTPException(status_code=404, detail="Unknown micro_subdomain")
+    try:
+        with exclusive_training_lock():
+            return run_graduation_ladder(
+                domain_slug,
+                subdomain_slug,
+                micro_subdomain_slug,
+                epochs=epochs,
+                max_grades=max_grades,
             )
     except HTTPException:
         raise

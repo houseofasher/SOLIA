@@ -15,13 +15,21 @@ from brain.domains.taxonomy import (
     total_micro_subdomains,
     total_subdomains,
 )
+from brain.grades import get_grade, grade_slugs
+from brain.graduation import (
+    current_grade,
+    mark_grade_in_progress,
+    process_graduation,
+    progress_report,
+    require_grade_unlocked,
+)
 from brain.regions.collector import CollectorAgent
 from brain.regions.evaluator import EvaluatorAgent
 from brain.regions.labeler import LabelerAgent
 from brain.regions.reward import RewardAgent
 from brain.regions.trainer import TrainerAgent
 from brain.regions.verifier import VerifierAgent
-from db.models import Document, KnowledgeDomain, KnowledgeMicroSubdomain, KnowledgeSubdomain, MicroAgent
+from db.models import Document, GradeProgress, KnowledgeDomain, KnowledgeMicroSubdomain, KnowledgeSubdomain, MicroAgent
 from db.seed import seed_knowledge_taxonomy
 from db.session import get_session, init_db
 
@@ -74,13 +82,14 @@ def _run_region_cycle(
     return results
 
 
-def run_micro_subdomain_cycle(
+def run_grade_cycle(
     domain_slug: str,
     subdomain_slug: str,
     micro_subdomain_slug: str,
+    grade_slug: str | None = None,
     epochs: int = 200,
 ) -> dict[str, Any]:
-    """Run all 6 micro-agents for one micro-subdomain — leaf brain circuit."""
+    """Run the 6 brain regions at a specific academic grade level."""
     bootstrap_brain()
 
     with get_session() as session:
@@ -108,6 +117,26 @@ def run_micro_subdomain_cycle(
         if not micro:
             return {"error": f"unknown micro_subdomain: {micro_subdomain_slug}"}
 
+        if grade_slug is None:
+            row = current_grade(session, micro.id)
+            if not row:
+                return {
+                    "domain": domain_slug,
+                    "subdomain": subdomain_slug,
+                    "micro_subdomain": micro_subdomain_slug,
+                    "fully_graduated": True,
+                    "progress": progress_report(session, micro.id),
+                }
+            grade_slug = row.grade_slug
+
+        try:
+            grade = require_grade_unlocked(session, micro.id, grade_slug)
+        except ValueError as exc:
+            return {"error": str(exc)}
+
+        mark_grade_in_progress(session, micro.id, grade_slug)
+        session.commit()
+
         ctx = AgentContext(
             domain_slug=domain_slug,
             subdomain_slug=subdomain_slug,
@@ -116,16 +145,96 @@ def run_micro_subdomain_cycle(
             subdomain_id=subdomain.id,
             micro_subdomain_id=micro.id,
             epochs=epochs,
+            grade_slug=grade.slug,
+            grade=grade,
         )
         results = _run_region_cycle(session, domain, subdomain, micro, ctx)
+
+        trainer_row = next((r for r in results if r["region"] == "trainer"), {})
+        evaluator_row = next((r for r in results if r["region"] == "evaluator"), {})
+        trainer_payload = {**trainer_row.get("metrics", {}), "status": trainer_row.get("status")}
+        evaluator_payload = {**evaluator_row.get("metrics", {}), "status": evaluator_row.get("status")}
+        graduation = process_graduation(
+            session,
+            micro.id,
+            grade_slug,
+            trainer_metrics=trainer_payload,
+            evaluator_metrics=evaluator_payload,
+        )
+        report = progress_report(session, micro.id)
+        session.commit()
 
     return {
         "domain": domain_slug,
         "subdomain": subdomain_slug,
         "micro_subdomain": micro_subdomain_slug,
+        "grade": grade_slug,
+        "grade_name": grade.name,
         "regions": results,
+        "graduation": graduation,
+        "progress": report,
         "completed_at": datetime.now(timezone.utc).isoformat(),
     }
+
+
+def run_graduation_ladder(
+    domain_slug: str,
+    subdomain_slug: str,
+    micro_subdomain_slug: str,
+    epochs: int = 200,
+    max_grades: int | None = None,
+) -> dict[str, Any]:
+    """Advance through grade levels until failure or doctorate graduation."""
+    bootstrap_brain()
+    ladder: list[dict] = []
+    steps = 0
+
+    while True:
+        if max_grades is not None and steps >= max_grades:
+            break
+        step = run_grade_cycle(
+            domain_slug,
+            subdomain_slug,
+            micro_subdomain_slug,
+            grade_slug=None,
+            epochs=epochs,
+        )
+        ladder.append(step)
+        steps += 1
+
+        if step.get("error") or step.get("fully_graduated"):
+            break
+        graduation = step.get("graduation", {})
+        if not graduation.get("passed"):
+            break
+        if graduation.get("fully_graduated"):
+            break
+
+    return {
+        "domain": domain_slug,
+        "subdomain": subdomain_slug,
+        "micro_subdomain": micro_subdomain_slug,
+        "steps_completed": steps,
+        "ladder": ladder,
+        "completed_at": datetime.now(timezone.utc).isoformat(),
+    }
+
+
+def run_micro_subdomain_cycle(
+    domain_slug: str,
+    subdomain_slug: str,
+    micro_subdomain_slug: str,
+    epochs: int = 200,
+    grade_slug: str | None = None,
+) -> dict[str, Any]:
+    """Run brain circuit at current (or specified) grade level."""
+    return run_grade_cycle(
+        domain_slug,
+        subdomain_slug,
+        micro_subdomain_slug,
+        grade_slug=grade_slug,
+        epochs=epochs,
+    )
 
 
 def run_subdomain_cycle(
@@ -268,6 +377,16 @@ def brain_status() -> dict[str, Any]:
             micro_count = seed_stats["micro_subdomains"]
             agent_count = seed_stats["agents"]
 
+        grade_graduated = (
+            session.scalar(
+                select(func.count())
+                .select_from(GradeProgress)
+                .where(GradeProgress.status == "graduated")
+            )
+            or 0
+        )
+        grade_total = session.scalar(select(func.count()).select_from(GradeProgress)) or 0
+
     return {
         "domains": domain_count,
         "subdomains": subdomain_count,
@@ -275,7 +394,10 @@ def brain_status() -> dict[str, Any]:
         "micro_agents": agent_count,
         "documents": doc_count,
         "verified_documents": verified,
+        "grade_progress_rows": grade_total,
+        "grade_levels_graduated": grade_graduated,
+        "grade_curriculum": grade_slugs(),
         "regions": [r[0] for r in REGION_ORDER],
         "taxonomy_domains": list(KNOWLEDGE_TAXONOMY.keys()),
-        "hierarchy": "domain → subdomain → micro_subdomain → micro_agent (6 regions)",
+        "hierarchy": "domain → subdomain → micro_subdomain → grade → micro_agent (6 regions)",
     }

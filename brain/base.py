@@ -12,6 +12,8 @@ from sqlalchemy.orm import Session
 from db.models import AgentRun, MicroAgent, PipelineEvent
 
 
+from brain.grades import GradeLevel
+
 @dataclass
 class AgentContext:
     domain_slug: str
@@ -21,6 +23,8 @@ class AgentContext:
     subdomain_id: int | None
     micro_subdomain_id: int | None
     epochs: int = 200
+    grade_slug: str | None = None
+    grade: GradeLevel | None = None
     extra: dict[str, Any] = field(default_factory=dict)
 
     @property
@@ -70,6 +74,7 @@ class MicroAgentBase(ABC):
                         "domain": ctx.domain_slug,
                         "subdomain": ctx.subdomain_slug,
                         "micro_subdomain": ctx.micro_subdomain_slug,
+                        "grade": ctx.grade_slug,
                         **result.metrics,
                     },
                 )

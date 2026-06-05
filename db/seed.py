@@ -6,6 +6,7 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from brain.domains.taxonomy import KNOWLEDGE_TAXONOMY
+from brain.graduation import seed_grade_progress
 from db.models import (
     KnowledgeDomain,
     KnowledgeMicroSubdomain,
@@ -141,6 +142,9 @@ def seed_knowledge_taxonomy(session: Session) -> dict[str, int]:
                 stats["agents"] += 1
 
     session.commit()
+    grade_rows = seed_grade_progress(session)
+    session.commit()
+    stats["grade_progress_rows"] = grade_rows
     return stats
 
 

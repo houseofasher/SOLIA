@@ -38,9 +38,14 @@ class CollectorAgent(MicroAgentBase):
 
         query = DOMAIN_QUERIES.get(ctx.domain_slug)
         if query:
+            limit = 3
+            if ctx.grade:
+                limit = ctx.grade.collection_limit
             collector = ArxivCollector(query=query)
-            for doc in collector.collect(limit=3):
+            for doc in collector.collect(limit=limit):
                 attempts += 1
+                if ctx.grade_slug:
+                    doc.metadata["grade"] = ctx.grade_slug
                 self._persist_doc(session, ctx, doc)
 
         after = session.scalar(

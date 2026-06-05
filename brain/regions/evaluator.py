@@ -5,10 +5,10 @@ from __future__ import annotations
 from sqlalchemy.orm import Session
 
 from brain.base import AgentContext, AgentResult, MicroAgentBase
+from brain.grades import evaluate_grade_gates
 from db.models import BenchmarkResult
 from pipeline.step4_evaluation.benchmarks import (
     _load_production_model,
-    evaluate_gates,
     run_consistency_benchmark,
     run_reasoning_benchmark,
     run_verification_benchmark,
@@ -33,16 +33,21 @@ class EvaluatorAgent(MicroAgentBase):
             "consistency": run_consistency_benchmark(network, labels, extractor),
             "verification": run_verification_benchmark(network, labels, extractor),
         }
-        gates = evaluate_gates(benchmarks)
+        if ctx.grade:
+            gates = evaluate_grade_gates(ctx.grade, benchmarks)
+        else:
+            from pipeline.step4_evaluation.benchmarks import evaluate_gates
+
+            gates = evaluate_gates(benchmarks)
 
         for bench_type, result in benchmarks.items():
             session.add(
                 BenchmarkResult(
                     domain_id=ctx.domain_id,
-                    benchmark_type=bench_type,
+                    benchmark_type=f"{bench_type}_{ctx.grade_slug or 'default'}",
                     score=result["score"],
                     passed=result["passed"],
-                    details={"cases": result.get("cases", [])},
+                    details={"cases": result.get("cases", []), "grade": ctx.grade_slug},
                 )
             )
 

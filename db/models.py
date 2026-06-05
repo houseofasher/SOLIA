@@ -226,3 +226,27 @@ class PreferencePair(Base):
     preferred: Mapped[str] = mapped_column(Text)
     rejected: Mapped[str] = mapped_column(Text)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=_utcnow)
+
+
+class GradeProgress(Base):
+    """Academic grade progress per micro-subdomain — preschool through doctorate."""
+
+    __tablename__ = "grade_progress"
+    __table_args__ = (
+        UniqueConstraint("micro_subdomain_id", "grade_slug", name="uq_grade_micro_slug"),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    domain_id: Mapped[int] = mapped_column(ForeignKey("knowledge_domains.id"), index=True)
+    subdomain_id: Mapped[int] = mapped_column(ForeignKey("knowledge_subdomains.id"), index=True)
+    micro_subdomain_id: Mapped[int] = mapped_column(
+        ForeignKey("knowledge_micro_subdomains.id"), index=True
+    )
+    grade_slug: Mapped[str] = mapped_column(String(32), index=True)
+    grade_order: Mapped[int] = mapped_column(Integer, index=True)
+    status: Mapped[str] = mapped_column(String(32), default="locked")
+    attempts: Mapped[int] = mapped_column(Integer, default=0)
+    metrics: Mapped[dict | None] = mapped_column(JSON, nullable=True)
+    last_attempt_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    graduated_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=_utcnow)

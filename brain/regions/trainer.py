@@ -10,6 +10,7 @@ from sqlalchemy.orm import Session
 
 from brain.base import AgentContext, AgentResult, MicroAgentBase
 from db.models import Document, DocumentLabel, TrainingRun
+from brain.grades import epochs_for_grade
 from pipeline.config import LEARNING_RATE, MODELS_DIR, ensure_dirs
 from pipeline.step3_training.registry import ModelRegistry
 from src.neural_network import NeuralNetwork
@@ -56,12 +57,15 @@ class TrainerAgent(MicroAgentBase):
         x = extractor.fit_transform(texts)
 
         hidden = min(64, max(8, x.shape[1] // 2))
+        train_epochs = ctx.epochs
+        if ctx.grade:
+            train_epochs = epochs_for_grade(ctx.epochs, ctx.grade)
         network = NeuralNetwork(
             layer_sizes=[x.shape[1], hidden, len(label_names)],
             learning_rate=LEARNING_RATE,
             output_activation="softmax",
         )
-        network.train(x, y, epochs=ctx.epochs, verbose_every=0)
+        network.train(x, y, epochs=train_epochs, verbose_every=0)
         metrics_dict = network.evaluate(x, y)
 
         ensure_dirs()
@@ -74,7 +78,12 @@ class TrainerAgent(MicroAgentBase):
 
         import json
 
-        meta = {"labels": label_names, "feature_extractor": extractor.to_dict(), "scope": scope}
+        meta = {
+            "labels": label_names,
+            "feature_extractor": extractor.to_dict(),
+            "scope": scope,
+            "grade": ctx.grade_slug,
+        }
         (artifact_dir / "metadata.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
 
         registry = ModelRegistry()
@@ -93,7 +102,7 @@ class TrainerAgent(MicroAgentBase):
                 subdomain_id=ctx.subdomain_id,
                 metrics=run_metrics,
                 artifact_path=str(model_path),
-                params={"epochs": ctx.epochs, "scope": scope},
+                params={"epochs": train_epochs, "scope": scope, "grade": ctx.grade_slug},
                 promoted=promoted,
             )
         )
