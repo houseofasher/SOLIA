@@ -46,11 +46,13 @@ logger = logging.getLogger(__name__)
 @asynccontextmanager
 async def lifespan(_: FastAPI):
     from app.activity_log import configure_logging
+    from app.railway_env import bootstrap_railway_environment
     from db.session import init_db
     from app.startup import start_deferred_startup
 
     configure_logging()
     logging.basicConfig(level=logging.INFO, force=True)
+    bootstrap_railway_environment()
     init_db()
     start_deferred_startup()
     yield
@@ -92,9 +94,15 @@ def health_ready() -> dict:
     from app.startup import get_startup_state
 
     state = get_startup_state()
-    if not state.ready:
+    if not get_startup_state().ready:
         raise HTTPException(status_code=503, detail="Startup in progress")
-    return {"status": "ready", "details": state.details}
+    from app.railway_env import get_railway_bootstrap_report
+
+    return {
+        "status": "ready",
+        "details": state.details,
+        "railway_bootstrap": get_railway_bootstrap_report(),
+    }
 
 
 @app.get("/organism/vitals")

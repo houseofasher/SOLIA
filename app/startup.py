@@ -47,24 +47,25 @@ def get_startup_state() -> StartupState:
 
 
 def _warn_production_config() -> None:
-    from app.security import api_key_required
+    """Log optional improvements only — required vars are auto-provisioned on Railway."""
+    from app.railway_env import get_railway_bootstrap_report
 
-    if is_railway() or os.environ.get("AUREON_ENV", "").lower() in ("production", "prod"):
-        if not api_key_required():
-            logger.warning(
-                "AUREON_API_KEY is not set — mutating endpoints are unauthenticated. "
-                "Set AUREON_API_KEY on Railway for production."
-            )
-        if not os.environ.get("AUREON_AUDIT_CHAIN_KEY", "").strip():
-            logger.warning(
-                "AUREON_AUDIT_CHAIN_KEY is not set — audit chain resets on each deploy. "
-                "Generate 32 random bytes as hex and set on Railway."
-            )
-        db = os.environ.get("DATABASE_URL", "")
-        if not db.startswith(("postgres://", "postgresql://")):
-            logger.warning(
-                "DATABASE_URL is not PostgreSQL — attach Railway Postgres for persistent brain state."
-            )
+    report = get_railway_bootstrap_report()
+    if not report.get("railway"):
+        return
+
+    if report.get("database") == "sqlite":
+        logger.info(
+            "Optional: attach Railway Postgres and set DATABASE_URL=${{Postgres.DATABASE_URL}} "
+            "for multi-replica persistence (currently using SQLite at %s).",
+            report.get("data_dir", "data"),
+        )
+    if report.get("api_key") in ("generated", "restored"):
+        logger.info(
+            "Optional: copy AUREON_API_KEY from %s into Railway service variables "
+            "if you do not mount a persistent volume on the data directory.",
+            report.get("secrets_file"),
+        )
 
 
 def _preload_olivetti_background() -> None:
@@ -132,6 +133,11 @@ def _deferred_startup() -> None:
                     if isinstance(o, dict)
                 },
             }
+
+        with _lock:
+            from app.railway_env import get_railway_bootstrap_report
+
+            _state.details["railway_bootstrap"] = get_railway_bootstrap_report()
 
         _warn_production_config()
 
