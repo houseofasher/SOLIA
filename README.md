@@ -373,7 +373,23 @@ Without Postgres, the app falls back to SQLite at `data/aureon.db`.
 | `ALERT_WEBHOOK_URL` | Optional | HTTPS webhook when benchmarks fail (internal IPs blocked) |
 | `PIPELINE_DATA_DIR` | Optional | Override local data directory |
 
-See [SECURITY.md](SECURITY.md) for the full Aureon security audit.
+### Automated learning on Railway
+
+When deployed on Railway, **auto-learn starts automatically** (unless `AUREON_AUTO_LEARN=0`):
+
+1. **On boot** — runs one grade step across the next micro-subdomain in the rotation (preschool first).
+2. **Every hour** (default) — repeats, advancing grade levels as the algorithm graduates.
+3. **Status** — `GET /api/brain/auto-learn` shows last run, next run, and current target.
+
+| Variable | Default on Railway | Purpose |
+|----------|-------------------|---------|
+| `AUREON_AUTO_LEARN` | `1` (auto on Railway) | Enable background learning |
+| `AUREON_AUTO_LEARN_ON_STARTUP` | `1` | Run first cycle immediately after deploy |
+| `AUREON_AUTO_LEARN_INTERVAL_SEC` | `3600` | Seconds between cycles (min 300) |
+| `AUREON_AUTO_LEARN_EPOCHS` | `150` | Training epochs per cycle |
+| `AUREON_AUTO_LEARN_MAX_GRADES` | `1` | Grade steps per cycle (1 = one school year at a time) |
+
+Auto-learn uses the same training lock as manual POST requests — if you trigger a demo while a cycle runs, one will wait or skip.
 
 ---
 
@@ -398,7 +414,7 @@ See [SECURITY.md](SECURITY.md) for the full Aureon security audit.
 | `POST` | `/api/brain/domain/{domain}/{subdomain}/{micro}` | Run current grade level |
 | `POST` | `/api/brain/domain/{domain}/{subdomain}/{micro}/grade/{grade}` | Run specific grade (preschool … doctorate) |
 | `POST` | `/api/brain/domain/{domain}/{subdomain}/{micro}/graduate` | Climb grade ladder |
-| `GET` | `/api/brain/grades` | Full grade curriculum |
+| `GET` | `/api/brain/auto-learn` | Automated learning scheduler status |
 | `GET` | `/api/brain/grades/{domain}/{subdomain}/{micro}` | Grade progress for one micro-subdomain |
 
 ### Pipeline

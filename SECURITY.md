@@ -34,6 +34,12 @@ Security review applied per Aureon brain corpus, with patterns adapted from [nom
 | `AUREON_AUDIT_LOG_DIR` | Audit log directory (default `data/audit`) |
 | `AUREON_RATE_LIMIT_PER_MINUTE` | Mutating requests per IP per minute (default 30) |
 | `AUREON_REPLAY_GUARD` | Set `0` to disable replay headers (dev only) |
+| `AUREON_AUTO_LEARN` | `1` on Railway by default — background grade learning |
+| `AUREON_AUTO_LEARN_INTERVAL_SEC` | Seconds between auto-learn cycles (default 3600) |
+
+## Automated learning (Railway)
+
+When `RAILWAY_ENVIRONMENT` is detected, background learning starts without manual API calls. It rotates through micro-subdomains and advances one grade level per cycle. Disable with `AUREON_AUTO_LEARN=0`. Monitor at `GET /api/brain/auto-learn`.
 
 ## Fixes applied
 

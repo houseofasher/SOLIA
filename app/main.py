@@ -10,6 +10,7 @@ from typing import Annotated, Any
 from fastapi import Depends, FastAPI, HTTPException, Query, Request
 from fastapi.responses import HTMLResponse
 
+from app.auto_learn import get_auto_learn_scheduler, start_auto_learn, stop_auto_learn
 from app.brain_routes import get_grade_progress, get_taxonomy
 from brain.grades import curriculum_public, get_grade
 from app.middleware import SecurityGatewayMiddleware, SecurityHeadersMiddleware
@@ -67,7 +68,15 @@ async def lifespan(_: FastAPI):
         fetch_olivetti_faces()
     except Exception:
         pass
+    try:
+        start_auto_learn()
+    except Exception:
+        logger.exception("Auto-learn scheduler failed to start")
     yield
+    try:
+        stop_auto_learn()
+    except Exception:
+        logger.exception("Auto-learn shutdown failed")
 
 
 app = FastAPI(
@@ -235,6 +244,12 @@ def brain_run_subdomain(
         raise
     except Exception as exc:
         raise HTTPException(status_code=500, detail=safe_error_message(exc)) from exc
+
+
+@app.get("/api/brain/auto-learn")
+def get_auto_learn_status() -> dict:
+    """Automated learning scheduler status (Railway background cycles)."""
+    return get_auto_learn_scheduler().status()
 
 
 @app.get("/api/brain/grades")
