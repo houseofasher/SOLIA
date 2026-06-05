@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -29,6 +30,23 @@ def vault_binding_enabled() -> bool:
     )
 
 
+def vault_binding_fingerprint() -> str:
+    """
+    Stable vault seal — must NOT change every organism pulse.
+
+    The operational organism fingerprint includes audit head and pulse count;
+    using that for vault binding causes false critical states during learning.
+    """
+    from app.nomad.supply_spleen import verify_supply_chain
+
+    data_dir = os.environ.get("AUREON_DATA_DIR", "data").strip() or "data"
+    has_api_key = "1" if os.environ.get("AUREON_API_KEY", "").strip() else "0"
+    has_audit_key = "1" if os.environ.get("AUREON_AUDIT_CHAIN_KEY", "").strip() else "0"
+    supply = verify_supply_chain().get("hash", "no-supply") or "no-supply"
+    payload = f"aureon-vault-v1|{data_dir}|{supply}|{has_api_key}|{has_audit_key}"
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+
 def _env_secrets_configured() -> bool:
     return bool(os.environ.get("AUREON_API_KEY", "").strip())
 
@@ -41,7 +59,28 @@ def _ensure_secrets_file_from_env() -> Path | None:
     return sync_env_secrets_to_file()
 
 
-def check_vault_marrow(organism_fingerprint: str) -> dict[str, str | bool]:
+def seal_vault_fingerprint(path: Path | None = None) -> Path | None:
+    """Write stable vault binding fingerprint into the secrets file."""
+    target = path or secrets_file_path()
+    if not target:
+        target = _ensure_secrets_file_from_env()
+    if not target or not target.is_file():
+        return None
+    try:
+        payload = json.loads(target.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        payload = {}
+    if not isinstance(payload, dict):
+        payload = {}
+    payload["organism_fingerprint"] = vault_binding_fingerprint()
+    target.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    return target
+
+
+def check_vault_marrow(_organism_fingerprint: str | None = None) -> dict[str, str | bool]:
+    """Validate secrets vault. Operational fingerprint arg is ignored (stable bind used)."""
+    _ = _organism_fingerprint
+    binding_fp = vault_binding_fingerprint()
     path = secrets_file_path()
     if not path:
         if _env_secrets_configured():
@@ -63,14 +102,13 @@ def check_vault_marrow(organism_fingerprint: str) -> dict[str, str | bool]:
 
     if vault_binding_enabled():
         bound = str(payload.get("organism_fingerprint", "")).strip()
-        if bound and bound != organism_fingerprint:
-            # Redeploy or first bind — re-seal vault with current organism fingerprint.
-            payload["organism_fingerprint"] = organism_fingerprint
-            try:
-                path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
-            except OSError as exc:
-                return {"ok": False, "detail": f"Could not re-seal vault: {exc}"}
-            return {"ok": True, "detail": f"Vault marrow re-sealed to current fingerprint ({path.name})"}
+        if not bound or bound != binding_fp:
+            sealed = seal_vault_fingerprint(path)
+            if not sealed:
+                return {"ok": False, "detail": "Could not seal vault fingerprint"}
+            if bound and bound != binding_fp:
+                return {"ok": True, "detail": f"Vault marrow re-sealed ({path.name})"}
+            return {"ok": True, "detail": f"Vault marrow sealed ({path.name})"}
 
     keys = [k for k in payload if k.startswith("AUREON_")]
     return {"ok": True, "detail": f"Vault marrow sealed ({len(keys)} secrets at {path.name})"}

@@ -36,10 +36,16 @@ def _pulse_loop() -> None:
         try:
             organism = get_organism()
             organism.pulse()
-            if not organism.is_vital():
+            if not organism.is_vital() and not organism.is_learning_allowed():
+                vitals = organism.get_vitals_report()
+                critical = [
+                    o["id"]
+                    for o in vitals.get("organs", [])
+                    if isinstance(o, dict) and o.get("state") == "critical"
+                ]
                 logger.warning(
-                    "Organism pulse: not vital — %s",
-                    organism.get_vitals_report().get("lockdown_reason"),
+                    "Organism pulse: not vital — critical organs: %s",
+                    ", ".join(critical) if critical else vitals.get("lockdown_reason"),
                 )
         except Exception:
             logger.exception("Organism background pulse failed")

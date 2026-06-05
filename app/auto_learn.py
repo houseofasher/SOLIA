@@ -70,7 +70,7 @@ class AutoLearnConfig:
         from app.startup import is_railway
 
         enabled = _env_bool("AUREON_AUTO_LEARN", default=is_railway())
-        train_all = _env_bool("AUREON_AUTO_LEARN_ALL", default=False)
+        train_all = _env_bool("AUREON_AUTO_LEARN_ALL", default=is_railway())
         if train_all:
             limits = {"domain_limit": None, "subdomain_limit": None, "micro_limit": None}
         else:

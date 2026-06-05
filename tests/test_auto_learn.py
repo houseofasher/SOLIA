@@ -35,9 +35,8 @@ def test_auto_learn_config_railway_default(monkeypatch):
     monkeypatch.delenv("AUREON_AUTO_LEARN_ALL", raising=False)
     cfg = AutoLearnConfig.from_env()
     assert cfg.enabled is True
-    assert cfg.domain_limit == 30
-    assert cfg.subdomain_limit == 8
-    assert cfg.micro_limit == 17
+    assert cfg.train_all is True
+    assert cfg.domain_limit is None
 
 
 def test_auto_learn_config_train_all(monkeypatch):
@@ -47,6 +46,14 @@ def test_auto_learn_config_train_all(monkeypatch):
     assert cfg.domain_limit is None
     assert cfg.subdomain_limit is None
     assert cfg.micro_limit is None
+
+
+def test_auto_learn_config_railway_defaults_train_all(monkeypatch):
+    monkeypatch.setenv("RAILWAY_ENVIRONMENT", "production")
+    monkeypatch.delenv("AUREON_AUTO_LEARN_ALL", raising=False)
+    cfg = AutoLearnConfig.from_env()
+    assert cfg.train_all is True
+    assert cfg.domain_limit is None
 
 
 def test_auto_learn_config_railway_via_postgres(monkeypatch):
