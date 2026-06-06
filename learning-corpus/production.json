@@ -1,9 +1,9 @@
 {
-  "promoted_at": "2026-06-06T14:09:14.720209+00:00",
-  "run_id": "72f146f2",
+  "promoted_at": "2026-06-06T15:31:38.056804+00:00",
+  "run_id": "54ab3519",
   "metrics": {
     "train_accuracy": 1.0,
     "val_accuracy": 1.0
   },
-  "artifact_path": "/app/data/models/brain_thermodynamics_72f146f2/classifier.json"
+  "artifact_path": "/app/data/models/brain_thermodynamics_54ab3519/classifier.json"
 }
