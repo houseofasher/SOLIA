@@ -1,6 +1,6 @@
 # Aureon learning corpus (auto-synced)
 
-**Exported:** 2026-06-06T20:35:15.018033+00:00
+**Exported:** 2026-06-06T21:21:27.957643+00:00
 
 Full export of everything Aureon has learned — not just self-inquiry.
 
