@@ -170,8 +170,10 @@ def _deferred_startup() -> None:
                 status=scheduler.status(),
             )
             logger.info(
-                "Auto-learn ACTIVE — first cycle starts in background, interval=%ss",
-                scheduler.config.interval_sec,
+                "Auto-learn ACTIVE — first cycle starts in background, %s",
+                "continuous 24/7"
+                if scheduler.config.continuous
+                else f"interval={scheduler.config.interval_sec}s",
             )
         else:
             logger.info(

@@ -62,6 +62,57 @@ def test_sync_repo_uploads_files(mock_get, mock_post, mock_put):
     assert mock_put.called
 
 
+@patch("app.learning_github_sync.requests.put")
+@patch("app.learning_github_sync.requests.post")
+@patch("app.learning_github_sync.requests.get")
+def test_sync_repo_git_refs_404_falls_back_to_contents_api(mock_get, mock_post, mock_put):
+    """git/refs 404 should not abort sync — Contents API creates the branch."""
+    branch_ref = MagicMock(status_code=404)
+    main_ref = MagicMock(
+        status_code=200,
+        json=lambda: {"object": {"sha": "abc123" * 5 + "abcd"}},
+        raise_for_status=lambda: None,
+    )
+    file_ref = MagicMock(status_code=404, raise_for_status=lambda: None)
+    repo_meta = MagicMock(
+        status_code=200,
+        json=lambda: {"default_branch": "main"},
+        raise_for_status=lambda: None,
+    )
+    mock_get.side_effect = [branch_ref, repo_meta, main_ref, file_ref]
+    mock_post.return_value = MagicMock(status_code=404)
+    mock_put.return_value = MagicMock(status_code=201, raise_for_status=lambda: None)
+
+    files = {"learning-corpus/README.md": b"# test"}
+    result = sync_repo("shep95", "Aureon_Elion-LLM", branch="learning-data", token="tok", files=files)
+    assert result["files_uploaded"] == 1
+    assert mock_put.called
+
+
+@patch("app.learning_github_sync.build_export_files")
+@patch("app.learning_github_sync.sync_repo")
+def test_run_github_sync_partial_success(mock_sync_repo, mock_build, monkeypatch):
+    monkeypatch.setenv("AUREON_GITHUB_SYNC", "1")
+    monkeypatch.setenv("AUREON_GITHUB_TOKEN", "ghp_test")
+    monkeypatch.setenv(
+        "AUREON_GITHUB_REPOS",
+        "houseofasher/Aureon-LLM,shep95/Aureon_Elion-LLM",
+    )
+    mock_build.return_value = {"learning-corpus/README.md": b"# test"}
+
+    def _sync(owner, repo, **kwargs):
+        if owner == "shep95":
+            raise RuntimeError("404 Client Error: Not Found for url: git/refs")
+        return {"repo": f"{owner}/{repo}", "files_uploaded": 1, "branch": "learning-data", "paths": []}
+
+    mock_sync_repo.side_effect = _sync
+    result = run_github_sync(reason="test")
+    assert result["ok"] is True
+    assert result["partial"] is True
+    assert len(result["repos"]) == 1
+    assert len(result["repos_failed"]) == 1
+
+
 def test_run_github_sync_requires_token(monkeypatch):
     monkeypatch.delenv("AUREON_GITHUB_TOKEN", raising=False)
     monkeypatch.setenv("AUREON_GITHUB_SYNC", "0")

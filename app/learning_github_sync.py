@@ -105,9 +105,16 @@ def get_github_sync_state() -> GitHubSyncState:
         return _state
 
 
+def _auth_header(token: str) -> str:
+    # Classic PATs (ghp_*) are more reliable with the legacy token scheme on Git Data endpoints.
+    if token.startswith(("ghp_", "gho_", "ghu_", "ghs_", "ghr_")):
+        return f"token {token}"
+    return f"Bearer {token}"
+
+
 def _headers(token: str) -> dict[str, str]:
     return {
-        "Authorization": f"Bearer {token}",
+        "Authorization": _auth_header(token),
         "Accept": "application/vnd.github+json",
         "X-GitHub-Api-Version": "2022-11-28",
     }
@@ -143,8 +150,18 @@ def _ensure_branch(owner: str, repo: str, branch: str, token: str) -> None:
         json={"ref": f"refs/heads/{branch}", "sha": sha},
         timeout=30,
     )
-    if create.status_code not in (201, 422):
-        create.raise_for_status()
+    if create.status_code in (201, 422):
+        return
+    # Some fine-grained PATs return 404 on git/refs for collaborator-owned repos even
+    # with contents write. Contents API PUT creates the branch on the first file upload.
+    logger.warning(
+        "Git ref create failed for %s/%s branch=%s (HTTP %s); "
+        "deferring branch creation to Contents API",
+        owner,
+        repo,
+        branch,
+        create.status_code,
+    )
 
 
 def _upsert_file(
@@ -216,22 +233,53 @@ def run_github_sync(*, reason: str = "manual") -> dict[str, Any]:
     try:
         files = build_export_files()
         results: list[dict[str, Any]] = []
+        errors: list[dict[str, str]] = []
+        seen: set[str] = set()
         for spec in config.repos:
             if "/" not in spec:
                 continue
             owner, repo = spec.split("/", 1)
-            results.append(sync_repo(owner, repo.strip(), branch=config.branch, token=token, files=files))
+            repo = repo.strip()
+            repo_key = f"{owner}/{repo}"
+            if repo_key in seen:
+                continue
+            seen.add(repo_key)
+            try:
+                results.append(
+                    sync_repo(owner, repo, branch=config.branch, token=token, files=files)
+                )
+            except Exception as exc:
+                err = str(exc)[:500]
+                errors.append({"repo": repo_key, "error": err})
+                logger.exception("GitHub sync failed for %s", repo_key)
 
-        payload = {
+        if not results:
+            err = errors[0]["error"] if errors else "no repos configured"
+            with _lock:
+                _state.last_error = err
+            log_ai_activity(
+                "github_learning_sync_failed",
+                error=err,
+                reason=reason,
+                repos_failed=errors,
+            )
+            logger.error("GitHub learning sync failed: %s", errors)
+            return {"ok": False, "error": err, "repos_failed": errors}
+
+        payload: dict[str, Any] = {
             "ok": True,
             "reason": reason,
             "repos": results,
             "file_count": len(files),
             "synced_at": datetime.now(timezone.utc).isoformat(),
         }
+        if errors:
+            payload["partial"] = True
+            payload["repos_failed"] = errors
         with _lock:
             _state.last_sync_at = payload["synced_at"]
             _state.last_result = payload
+            _state.last_error = errors[0]["error"] if errors else None
         log_ai_activity("github_learning_sync_complete", **payload)
         logger.info("GitHub learning sync complete: %s", payload)
         return payload

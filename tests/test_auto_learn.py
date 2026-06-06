@@ -42,11 +42,30 @@ def test_auto_learn_config_railway_default(monkeypatch):
     monkeypatch.delenv("AUREON_AUTO_LEARN", raising=False)
     monkeypatch.delenv("AUREON_AUTO_LEARN_ALL", raising=False)
     monkeypatch.delenv("AUREON_AUTO_LEARN_BATCH_SIZE", raising=False)
+    monkeypatch.delenv("AUREON_AUTO_LEARN_INTERVAL_SEC", raising=False)
+    monkeypatch.delenv("AUREON_AUTO_LEARN_CONTINUOUS", raising=False)
     cfg = AutoLearnConfig.from_env()
     assert cfg.enabled is True
     assert cfg.train_all is True
+    assert cfg.continuous is True
+    assert cfg.interval_sec == 0
     assert cfg.domain_limit is None
     assert cfg.batch_size == 25
+
+
+def test_auto_learn_config_explicit_interval_disables_continuous(monkeypatch):
+    monkeypatch.setenv("AUREON_AUTO_LEARN_CONTINUOUS", "1")
+    monkeypatch.setenv("AUREON_AUTO_LEARN_INTERVAL_SEC", "600")
+    cfg = AutoLearnConfig.from_env()
+    assert cfg.continuous is False
+    assert cfg.interval_sec == 600
+
+
+def test_auto_learn_config_interval_zero_enables_continuous(monkeypatch):
+    monkeypatch.setenv("AUREON_AUTO_LEARN_INTERVAL_SEC", "0")
+    cfg = AutoLearnConfig.from_env()
+    assert cfg.continuous is True
+    assert cfg.interval_sec == 0
 
 
 def test_auto_learn_config_batch_size_zero_means_all(monkeypatch):

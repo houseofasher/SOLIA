@@ -106,7 +106,9 @@ def _env_limit(name: str, default: int | None, *, maximum: int) -> int | None:
 class AutoLearnConfig:
     enabled: bool = False
     on_startup: bool = True
+    continuous: bool = False
     interval_sec: int = 3600
+    cycle_pause_sec: int = 5
     epochs: int = 150
     max_grades_per_cycle: int = 1
     train_all: bool = False
@@ -140,10 +142,25 @@ class AutoLearnConfig:
         else:
             batch_size = None
 
+        continuous = _env_bool("AUREON_AUTO_LEARN_CONTINUOUS", default=is_railway())
+        interval_raw = os.environ.get("AUREON_AUTO_LEARN_INTERVAL_SEC", "").strip().lower()
+        if interval_raw in ("0", "continuous"):
+            interval_sec = 0
+            continuous = True
+        elif interval_raw:
+            interval_sec = _env_int("AUREON_AUTO_LEARN_INTERVAL_SEC", 3600, minimum=60)
+            continuous = False
+        elif continuous:
+            interval_sec = 0
+        else:
+            interval_sec = 3600
+
         return cls(
             enabled=enabled,
             on_startup=_env_bool("AUREON_AUTO_LEARN_ON_STARTUP", default=True),
-            interval_sec=_env_int("AUREON_AUTO_LEARN_INTERVAL_SEC", 3600, minimum=300),
+            continuous=continuous,
+            interval_sec=interval_sec,
+            cycle_pause_sec=_env_int("AUREON_AUTO_LEARN_CYCLE_PAUSE_SEC", 5, minimum=0, maximum=120),
             epochs=_env_int("AUREON_AUTO_LEARN_EPOCHS", 150, minimum=50, maximum=500),
             max_grades_per_cycle=_env_int("AUREON_AUTO_LEARN_MAX_GRADES", 1, minimum=1, maximum=7),
             train_all=train_all,
@@ -191,7 +208,9 @@ class AutoLearnScheduler:
             "enabled": self.config.enabled,
             "config": {
                 "on_startup": self.config.on_startup,
+                "continuous": self.config.continuous,
                 "interval_sec": self.config.interval_sec,
+                "cycle_pause_sec": self.config.cycle_pause_sec,
                 "epochs": self.config.epochs,
                 "max_grades_per_cycle": self.config.max_grades_per_cycle,
                 "train_all": self.config.train_all,
@@ -216,10 +235,15 @@ class AutoLearnScheduler:
         self._stop.clear()
         self._thread = threading.Thread(target=self._loop, name="aureon-auto-learn", daemon=True)
         self._thread.start()
+        mode = (
+            f"continuous (pause={self.config.cycle_pause_sec}s)"
+            if self.config.continuous
+            else f"interval={self.config.interval_sec}s"
+        )
         logger.info(
-            "Auto-learn started — interval=%ss, epochs=%s, max_grades=%s, "
+            "Auto-learn started — %s, epochs=%s, max_grades=%s, "
             "domains=%s subs=%s micros=%s train_all=%s batch_size=%s",
-            self.config.interval_sec,
+            mode,
             self.config.epochs,
             self.config.max_grades_per_cycle,
             self.config.domain_limit if self.config.domain_limit is not None else "all",
@@ -239,7 +263,14 @@ class AutoLearnScheduler:
         if self.config.on_startup:
             self._sleep_until_organism_vital()
             self._run_one_cycle()
-        while not self._stop.wait(self.config.interval_sec):
+        while not self._stop.is_set():
+            wait_sec = (
+                self.config.cycle_pause_sec
+                if self.config.continuous
+                else self.config.interval_sec
+            )
+            if wait_sec > 0 and self._stop.wait(wait_sec):
+                break
             self._sleep_until_organism_vital()
             self._run_one_cycle()
 
@@ -366,8 +397,13 @@ class AutoLearnScheduler:
 
             self.state.cycles_completed += 1
             self.state.last_run_at = datetime.now(timezone.utc).isoformat()
+            next_delay = (
+                self.config.cycle_pause_sec
+                if self.config.continuous
+                else self.config.interval_sec
+            )
             self.state.next_run_at = (
-                datetime.now(timezone.utc) + timedelta(seconds=self.config.interval_sec)
+                datetime.now(timezone.utc) + timedelta(seconds=next_delay)
             ).isoformat()
             self.state.last_result = {
                 "batch": True,
