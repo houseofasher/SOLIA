@@ -7398,5 +7398,930 @@
       "status": "completed"
     },
     "graduated_at": "2026-06-06T12:36:07.754114"
+  },
+  {
+    "path": "religion_and_spirituality.ancient_religions.ancient_anatolian_religion",
+    "micro_name": "Ancient Anatolian Religion",
+    "grade": "preschool",
+    "train_accuracy": 0.0,
+    "trainer_status": "skipped",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T13:36:29.987484"
+  },
+  {
+    "path": "religion_and_spirituality.esoteric_and_occult_traditions.hermeticism",
+    "micro_name": "Hermeticism",
+    "grade": "preschool",
+    "train_accuracy": 0.0,
+    "trainer_status": "skipped",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T13:36:34.400890"
+  },
+  {
+    "path": "religion_and_spirituality.esoteric_and_occult_traditions.gnosticism",
+    "micro_name": "Gnosticism (Systems)",
+    "grade": "preschool",
+    "train_accuracy": 0.0,
+    "trainer_status": "skipped",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T13:36:54.120403"
+  },
+  {
+    "path": "religion_and_spirituality.esoteric_and_occult_traditions.kabbalah",
+    "micro_name": "Kabbalah (Esoteric)",
+    "grade": "preschool",
+    "train_accuracy": 0.0,
+    "trainer_status": "skipped",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T13:37:13.931878"
+  },
+  {
+    "path": "religion_and_spirituality.esoteric_and_occult_traditions.rosicrucianism",
+    "micro_name": "Rosicrucianism",
+    "grade": "preschool",
+    "train_accuracy": 0.0,
+    "trainer_status": "skipped",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T13:37:38.291781"
+  },
+  {
+    "path": "religion_and_spirituality.esoteric_and_occult_traditions.freemasonry",
+    "micro_name": "Freemasonry",
+    "grade": "preschool",
+    "train_accuracy": 0.0,
+    "trainer_status": "skipped",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T13:38:02.695963"
+  },
+  {
+    "path": "religion_and_spirituality.esoteric_and_occult_traditions.theosophy",
+    "micro_name": "Theosophy",
+    "grade": "preschool",
+    "train_accuracy": 0.0,
+    "trainer_status": "skipped",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T13:38:27.115611"
+  },
+  {
+    "path": "religion_and_spirituality.esoteric_and_occult_traditions.anthroposophy",
+    "micro_name": "Anthroposophy (Steiner)",
+    "grade": "preschool",
+    "train_accuracy": 0.0,
+    "trainer_status": "skipped",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T13:38:31.649886"
+  },
+  {
+    "path": "religion_and_spirituality.esoteric_and_occult_traditions.thelema",
+    "micro_name": "Thelema (Crowley)",
+    "grade": "preschool",
+    "train_accuracy": 0.0,
+    "trainer_status": "skipped",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T13:38:51.345276"
+  },
+  {
+    "path": "religion_and_spirituality.esoteric_and_occult_traditions.golden_dawn_tradition",
+    "micro_name": "Golden Dawn Tradition",
+    "grade": "preschool",
+    "train_accuracy": 0.0,
+    "trainer_status": "skipped",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T13:38:55.790170"
+  },
+  {
+    "path": "religion_and_spirituality.esoteric_and_occult_traditions.chaos_magick",
+    "micro_name": "Chaos Magick",
+    "grade": "preschool",
+    "train_accuracy": 0.0,
+    "trainer_status": "skipped",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T13:39:00.769488"
+  },
+  {
+    "path": "religion_and_spirituality.esoteric_and_occult_traditions.wicca_and_witchcraft",
+    "micro_name": "Wicca & Witchcraft",
+    "grade": "preschool",
+    "train_accuracy": 0.0,
+    "trainer_status": "skipped",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T13:39:05.323738"
+  },
+  {
+    "path": "religion_and_spirituality.esoteric_and_occult_traditions.ceremonial_magick",
+    "micro_name": "Ceremonial Magick",
+    "grade": "preschool",
+    "train_accuracy": 0.0,
+    "trainer_status": "skipped",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T13:39:20.003406"
+  },
+  {
+    "path": "religion_and_spirituality.esoteric_and_occult_traditions.alchemy",
+    "micro_name": "Alchemy (Spiritual)",
+    "grade": "preschool",
+    "train_accuracy": 0.0,
+    "trainer_status": "skipped",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T13:39:24.361800"
+  },
+  {
+    "path": "religion_and_spirituality.esoteric_and_occult_traditions.astrology",
+    "micro_name": "Astrology (Spiritual/Occult)",
+    "grade": "preschool",
+    "train_accuracy": 0.0,
+    "trainer_status": "skipped",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T13:39:28.876208"
+  },
+  {
+    "path": "religion_and_spirituality.esoteric_and_occult_traditions.tarot_as_spiritual_system",
+    "micro_name": "Tarot as Spiritual System",
+    "grade": "preschool",
+    "train_accuracy": 0.0,
+    "trainer_status": "skipped",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T13:39:53.162600"
+  },
+  {
+    "path": "religion_and_spirituality.esoteric_and_occult_traditions.numerology",
+    "micro_name": "Numerology (Spiritual)",
+    "grade": "preschool",
+    "train_accuracy": 0.0,
+    "trainer_status": "skipped",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T13:40:17.526910"
+  },
+  {
+    "path": "religion_and_spirituality.esoteric_and_occult_traditions.sacred_geometry",
+    "micro_name": "Sacred Geometry",
+    "grade": "preschool",
+    "train_accuracy": 0.0,
+    "trainer_status": "skipped",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T13:40:29.534501"
+  },
+  {
+    "path": "religion_and_spirituality.new_religious_movements.new_age_movement",
+    "micro_name": "New Age Movement",
+    "grade": "preschool",
+    "train_accuracy": 0.0,
+    "trainer_status": "skipped",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T13:40:39.615363"
+  },
+  {
+    "path": "religion_and_spirituality.new_religious_movements.scientology",
+    "micro_name": "Scientology",
+    "grade": "preschool",
+    "train_accuracy": 0.0,
+    "trainer_status": "skipped",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T13:41:03.900209"
+  },
+  {
+    "path": "religion_and_spirituality.new_religious_movements.raelism",
+    "micro_name": "Raëlism",
+    "grade": "preschool",
+    "train_accuracy": 0.0,
+    "trainer_status": "skipped",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T13:41:08.716251"
+  },
+  {
+    "path": "religion_and_spirituality.new_religious_movements.eckankar",
+    "micro_name": "Eckankar",
+    "grade": "preschool",
+    "train_accuracy": 0.0,
+    "trainer_status": "skipped",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T13:41:13.200666"
+  },
+  {
+    "path": "religion_and_spirituality.new_religious_movements.spiritualism",
+    "micro_name": "Spiritualism",
+    "grade": "preschool",
+    "train_accuracy": 0.0,
+    "trainer_status": "skipped",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T13:41:19.381629"
+  },
+  {
+    "path": "religion_and_spirituality.new_religious_movements.neopaganism",
+    "micro_name": "Neopaganism",
+    "grade": "preschool",
+    "train_accuracy": 0.0,
+    "trainer_status": "skipped",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T13:41:39.818335"
+  },
+  {
+    "path": "religion_and_spirituality.new_religious_movements.hare_krishna",
+    "micro_name": "Hare Krishna (ISKCON)",
+    "grade": "preschool",
+    "train_accuracy": 0.0,
+    "trainer_status": "skipped",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T13:41:45.153294"
   }
 ]
