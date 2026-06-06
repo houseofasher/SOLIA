@@ -100,6 +100,7 @@ def test_predict_with_steps_capital_france(tmp_path, monkeypatch):
     monkeypatch.setenv("AUREON_DATA_DIR", str(tmp_path))
     monkeypatch.setenv("PIPELINE_DATA_DIR", str(tmp_path))
     monkeypatch.setenv("AUREON_PREDICT_EPOCHS", "80")
+    monkeypatch.setenv("AUREON_PREDICT_FAST_EPOCHS", "40")
     monkeypatch.setenv("AUREON_PREDICT_MAX_SEQ", "128")
     monkeypatch.setenv("AUREON_PREDICT_D_MODEL", "48")
     monkeypatch.setenv("AUREON_PREDICT_LAYERS", "4")
@@ -114,3 +115,51 @@ def test_predict_with_steps_capital_france(tmp_path, monkeypatch):
     assert result["pipeline"][2]["name"] == "context"
     assert result["pipeline"][5]["name"] == "reasoning"
     assert result["pipeline"][6]["name"] == "next_token"
+
+
+def test_model_to_dict_roundtrip():
+    tok = WordTokenizer()
+    tok.build_vocab(BOOTSTRAP_LINES, min_freq=1, max_vocab=500)
+    cfg = AttentionLMConfig(d_model=24, n_layers=2, d_ff=48, learning_rate=0.12, model_version=7)
+    model = StackedAttentionLM.create(tok, cfg)
+    model.train(BOOTSTRAP_LINES[:12], epochs=5)
+    restored = StackedAttentionLM.from_dict(model.to_dict())
+    assert restored.config.d_model == model.config.d_model
+    assert restored.tokenizer.vocab_size == model.tokenizer.vocab_size
+    assert restored.embeddings.shape == model.embeddings.shape
+
+
+def test_predict_brain_db_persist_and_load(tmp_path, monkeypatch):
+    import json
+
+    import brain.predict_engine as pe
+    import db.session as db_session
+    from db.models import SystemConfig
+    from db.session import get_session, init_db
+    from sqlalchemy import select
+
+    db_path = tmp_path / "predict.db"
+    monkeypatch.setenv("DATABASE_URL", f"sqlite:///{db_path}")
+    monkeypatch.setenv("AUREON_DATA_DIR", str(tmp_path))
+    monkeypatch.setenv("PIPELINE_DATA_DIR", str(tmp_path))
+    db_session._engine = None
+    db_session._SessionLocal = None
+    init_db()
+    tok = WordTokenizer()
+    tok.build_vocab(BOOTSTRAP_LINES, min_freq=1, max_vocab=500)
+    model = StackedAttentionLM.create(
+        tok, AttentionLMConfig(d_model=24, n_layers=2, d_ff=48, model_version=7)
+    )
+    model.train(BOOTSTRAP_LINES[:10], epochs=3)
+    monkeypatch.setattr(pe, "_model_config_compatible", lambda _loaded: True)
+    pe._save_model_to_db(model)
+
+    with get_session() as session:
+        row = session.scalar(select(SystemConfig).where(SystemConfig.key == pe.DB_MODEL_KEY))
+        assert row is not None
+        payload = json.loads(row.value)
+        assert payload["config"]["model_version"] == 7
+
+    loaded = pe._load_model_from_db()
+    assert loaded is not None
+    assert loaded.tokenizer.vocab_size == model.tokenizer.vocab_size

@@ -18,6 +18,7 @@ from src.tokenizer import WordTokenizer
 logger = logging.getLogger(__name__)
 
 MODEL_DIR = MODELS_DIR / "predict_brain"
+DB_MODEL_KEY = "predict_brain_model"
 CURRENT_MODEL_VERSION = 7
 _lock = threading.Lock()
 _model: StackedAttentionLM | None = None
@@ -380,22 +381,116 @@ def _bootstrap_answer(question: str) -> str | None:
     return None
 
 
+def _model_config_compatible(loaded: StackedAttentionLM) -> bool:
+    expected = predict_config_from_env()
+    saved_version = getattr(loaded.config, "model_version", 1)
+    return (
+        saved_version >= CURRENT_MODEL_VERSION
+        and loaded.config.max_seq_len >= expected.max_seq_len // 2
+        and loaded.tokenizer.vocab_size >= 500
+    )
+
+
+def _db_persist_enabled() -> bool:
+    return os.environ.get("AUREON_PREDICT_DB_PERSIST", "1").strip().lower() not in (
+        "0",
+        "false",
+        "no",
+        "off",
+    )
+
+
+def _save_model_to_db(model: StackedAttentionLM) -> None:
+    """Save model weights to PostgreSQL — survives Railway deploys."""
+    if not _db_persist_enabled():
+        return
+    try:
+        import json
+
+        from sqlalchemy import select
+
+        from db.models import SystemConfig
+        from db.session import get_session
+
+        model_data = json.dumps(model.to_dict())
+        with get_session() as session:
+            row = session.scalar(select(SystemConfig).where(SystemConfig.key == DB_MODEL_KEY))
+            if row:
+                row.value = model_data
+            else:
+                session.add(SystemConfig(key=DB_MODEL_KEY, value=model_data))
+        logger.info("Predict brain saved to database")
+    except Exception as exc:
+        logger.warning("Could not save model to DB: %s", exc)
+
+
+def _load_model_from_db() -> StackedAttentionLM | None:
+    """Load model weights from PostgreSQL."""
+    if not _db_persist_enabled():
+        return None
+    try:
+        import json
+
+        from sqlalchemy import select
+
+        from db.models import SystemConfig
+        from db.session import get_session
+
+        with get_session() as session:
+            row = session.scalar(select(SystemConfig).where(SystemConfig.key == DB_MODEL_KEY))
+            if not row or not row.value:
+                return None
+            data = json.loads(row.value)
+        loaded = StackedAttentionLM.from_dict(data)
+        if not _model_config_compatible(loaded):
+            return None
+        return loaded
+    except Exception:
+        logger.debug("Predict brain DB load failed", exc_info=True)
+        return None
+
+
+def _persist_model(model: StackedAttentionLM) -> None:
+    model.save(MODEL_DIR)
+    _save_model_to_db(model)
+
+
+def _background_retrain(model: StackedAttentionLM, corpus: list[str], *, fast_epochs: int) -> None:
+    """Full-quality retrain after fast cold-start model is already serving."""
+    try:
+        full_epochs = _env_int("AUREON_PREDICT_EPOCHS", 200, minimum=fast_epochs, maximum=2000)
+        extra = max(0, full_epochs - fast_epochs)
+        if extra <= 0:
+            return
+        model.train(corpus, epochs=extra, verbose=False)
+        _persist_model(model)
+        logger.info("Predict brain background retrain complete (%s extra epochs)", extra)
+    except Exception as exc:
+        logger.warning("Predict brain background retrain failed: %s", exc)
+
+
 def _train_or_load() -> StackedAttentionLM:
     global _model, _ready
     ensure_dirs()
-    expected = predict_config_from_env()
+
+    db_model = _load_model_from_db()
+    if db_model is not None:
+        _model = db_model
+        _ready = True
+        logger.info("Predict brain loaded from database")
+        return _model
+
     if MODEL_DIR.is_dir() and (MODEL_DIR / "model.json").is_file():
         try:
             loaded = StackedAttentionLM.load(MODEL_DIR)
-            saved_version = getattr(loaded.config, "model_version", 1)
-            if (
-                saved_version >= CURRENT_MODEL_VERSION
-                and loaded.config.max_seq_len >= expected.max_seq_len // 2
-                and loaded.tokenizer.vocab_size >= 500
-            ):
+            if _model_config_compatible(loaded):
                 _model = loaded
                 _ready = True
+                _save_model_to_db(loaded)
+                logger.info("Predict brain loaded from filesystem")
                 return _model
+            expected = predict_config_from_env()
+            saved_version = getattr(loaded.config, "model_version", 1)
             logger.info(
                 "Predict brain config upgraded (v%s→v%s, ctx %s→%s) — retraining",
                 saved_version,
@@ -416,6 +511,7 @@ def _train_or_load() -> StackedAttentionLM:
     tokenizer = BPETokenizer()
     tokenizer.build_vocab(corpus, min_freq=1, max_vocab=max_vocab)
 
+    expected = predict_config_from_env()
     config = expected
     if config.d_model % config.n_heads != 0:
         config = AttentionLMConfig(
@@ -428,18 +524,26 @@ def _train_or_load() -> StackedAttentionLM:
             model_version=config.model_version,
         )
     model = StackedAttentionLM.create(tokenizer, config)
-    epochs = _env_int("AUREON_PREDICT_EPOCHS", 200, minimum=20, maximum=2000)
-    model.train(corpus, epochs=epochs, verbose=False)
-    model.save(MODEL_DIR)
+    fast_epochs = _env_int("AUREON_PREDICT_FAST_EPOCHS", 50, minimum=10, maximum=500)
+    model.train(corpus, epochs=fast_epochs, verbose=False)
+    _persist_model(model)
     _model = model
     _ready = True
     logger.info(
-        "Predict brain trained — vocab=%s ctx=%s layers=%s epochs=%s",
+        "Predict brain fast-trained — vocab=%s ctx=%s layers=%s epochs=%s",
         tokenizer.vocab_size,
         config.max_seq_len,
         config.n_layers,
-        epochs,
+        fast_epochs,
     )
+
+    threading.Thread(
+        target=_background_retrain,
+        args=(model, corpus),
+        kwargs={"fast_epochs": fast_epochs},
+        daemon=True,
+        name="predict-retrain",
+    ).start()
     return model
 
 
@@ -714,10 +818,11 @@ def retrain_predict_brain_background(*, reason: str = "auto_learn") -> None:
             with _lock:
                 _model = None
                 _ready = False
-            get_predict_model()
+            model = get_predict_model()
             from brain.vector_rag import invalidate_rag_index
 
             invalidate_rag_index()
+            _persist_model(model)
             logger.info("Predict brain retrained (reason=%s)", reason)
         except Exception:
             logger.exception("Predict brain retrain failed (reason=%s)", reason)

@@ -228,6 +228,17 @@ class PreferencePair(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=_utcnow)
 
 
+class SystemConfig(Base):
+    """Key-value store for durable system state (survives Railway filesystem resets)."""
+
+    __tablename__ = "system_config"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    key: Mapped[str] = mapped_column(String(128), unique=True, index=True)
+    value: Mapped[str] = mapped_column(Text)
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=_utcnow)
+
+
 class GradeProgress(Base):
     """Academic grade progress per micro-subdomain — preschool through doctorate."""
 

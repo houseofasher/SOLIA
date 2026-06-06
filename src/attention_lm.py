@@ -662,12 +662,15 @@ class StackedAttentionLM:
 
         return history
 
-    def save(self, directory: str | Path) -> None:
-        path = Path(directory)
-        path.mkdir(parents=True, exist_ok=True)
-        self.tokenizer.save(path / "tokenizer.json")
-        payload = {
+    def to_dict(self) -> dict[str, Any]:
+        tok_payload: dict[str, Any]
+        if hasattr(self.tokenizer, "to_dict"):
+            tok_payload = self.tokenizer.to_dict()
+        else:
+            tok_payload = {"id_to_word": self.tokenizer.id_to_word, "tokenizer_type": "word"}
+        return {
             "config": self.config.__dict__,
+            "tokenizer": tok_payload,
             "quantized": self._quantized,
             "embeddings": self.embeddings.tolist(),
             "w_out": self.w_out.tolist(),
@@ -697,21 +700,22 @@ class StackedAttentionLM:
                 for a in self.attn_layers
             ],
         }
-        (path / "model.json").write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
     @classmethod
-    def load(cls, directory: str | Path) -> StackedAttentionLM:
-        path = Path(directory)
-        tok_path = path / "tokenizer.json"
-        payload_raw = json.loads((path / "model.json").read_text(encoding="utf-8"))
-        if payload_raw.get("config", {}).get("model_version", 1) >= 7:
+    def from_dict(cls, payload: dict[str, Any]) -> StackedAttentionLM:
+        tok_payload = payload.get("tokenizer") or {}
+        if tok_payload.get("tokenizer_type") == "bpe":
             from src.bpe_tokenizer import BPETokenizer
 
-            tokenizer = BPETokenizer.load(tok_path)
+            tokenizer = BPETokenizer.from_dict(tok_payload)
         else:
-            tokenizer = WordTokenizer.load(tok_path)
-        payload = payload_raw
-        cfg_raw = dict(payload["config"])
+            from src.tokenizer import WordTokenizer
+
+            tokenizer = WordTokenizer()
+            tokenizer.id_to_word = list(tok_payload.get("id_to_word", []))
+            tokenizer.word_to_id = {word: idx for idx, word in enumerate(tokenizer.id_to_word)}
+
+        cfg_raw = dict(payload.get("config", {}))
         cfg_raw.setdefault("model_version", 1)
         allowed = {f.name for f in AttentionLMConfig.__dataclass_fields__.values()}
         config = AttentionLMConfig(**{k: v for k, v in cfg_raw.items() if k in allowed})
@@ -729,7 +733,7 @@ class StackedAttentionLM:
                 w2=np.array(layer["w2"], dtype=float),
                 b2=np.array(layer["b2"], dtype=float),
             )
-            for layer in payload["layers"]
+            for layer in payload.get("layers", [])
         ]
         model.attn_layers = []
         for attn in payload.get("attn_layers", []):
@@ -751,3 +755,28 @@ class StackedAttentionLM:
         if model.embeddings.dtype == np.float16:
             model._quantized = True
         return model
+
+    def save(self, directory: str | Path) -> None:
+        path = Path(directory)
+        path.mkdir(parents=True, exist_ok=True)
+        self.tokenizer.save(path / "tokenizer.json")
+        (path / "model.json").write_text(json.dumps(self.to_dict(), indent=2), encoding="utf-8")
+
+    @classmethod
+    def load(cls, directory: str | Path) -> StackedAttentionLM:
+        path = Path(directory)
+        payload = json.loads((path / "model.json").read_text(encoding="utf-8"))
+        if "tokenizer" not in payload:
+            tok_path = path / "tokenizer.json"
+            if payload.get("config", {}).get("model_version", 1) >= 7:
+                from src.bpe_tokenizer import BPETokenizer
+
+                payload["tokenizer"] = BPETokenizer.load(tok_path).to_dict()
+            else:
+                from src.tokenizer import WordTokenizer
+
+                payload["tokenizer"] = {
+                    "id_to_word": WordTokenizer.load(tok_path).id_to_word,
+                    "tokenizer_type": "word",
+                }
+        return cls.from_dict(payload)
