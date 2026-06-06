@@ -16,9 +16,9 @@
     },
     "running": true,
     "started_at": "2026-06-06T04:47:24.721904+00:00",
-    "last_run_at": "2026-06-06T06:07:30.811161+00:00",
-    "next_run_at": "2026-06-06T07:07:30.811167+00:00",
-    "cycles_completed": 2,
+    "last_run_at": "2026-06-06T07:09:27.831504+00:00",
+    "next_run_at": "2026-06-06T08:09:27.831510+00:00",
+    "cycles_completed": 3,
     "last_result": {
       "batch": true,
       "targets_total": 25,
@@ -27,25 +27,25 @@
       "graduations_passed": 25,
       "last_target": {
         "domain": "medicine_and_health_sciences",
-        "subdomain": "clinical_medicine",
-        "micro_subdomain": "obstetrics_and_gynecology"
+        "subdomain": "traditional_and_alternative_medicine",
+        "micro_subdomain": "naturopathy"
       },
       "last_graduation": {
         "grade": "preschool",
         "passed": true,
-        "train_accuracy": 1.0,
+        "train_accuracy": 0.0,
         "min_train_accuracy": 0.45,
         "evaluator_passed": true,
         "unlocked_next": "elementary"
       },
       "sample_paths": [
-        "science_and_natural_philosophy.biology.zoology",
-        "science_and_natural_philosophy.biology.microbiology",
-        "science_and_natural_philosophy.biology.neuroscience",
-        "science_and_natural_philosophy.biology.physiology",
-        "science_and_natural_philosophy.biology.immunology"
+        "medicine_and_health_sciences.clinical_medicine.pediatrics",
+        "medicine_and_health_sciences.clinical_medicine.ophthalmology",
+        "medicine_and_health_sciences.clinical_medicine.dermatology",
+        "medicine_and_health_sciences.clinical_medicine.orthopedics",
+        "medicine_and_health_sciences.clinical_medicine.urology"
       ],
-      "batch_cursor": 50
+      "batch_cursor": 75
     },
     "last_error": null,
     "current_target": {
@@ -58,8 +58,8 @@
     "domains": 30,
     "micro_subdomains": 862,
     "micro_agents": 6162,
-    "documents": 157,
-    "grade_levels_graduated": 50,
+    "documents": 247,
+    "grade_levels_graduated": 75,
     "grade_progress_rows": 6034
   },
   "timeline": {
@@ -138,106 +138,106 @@
     "enabled": true,
     "recent": [
       {
-        "question": "What type of Gynecology, Gynecology, Urogynecology, the Obstetrics & Gynecology?",
-        "answer": "Gynecology is a core concept within Obstetrics & Gynecology….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "medicine_and_health_sciences.clinical_medicine.obstetrics_and_gynecology",
+        "question": "What type of Naturopathy: Naturopathy?",
+        "answer": "Semantic Web of Things (SWoT) applications focus on….",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "medicine_and_health_sciences.traditional_and_alternative_medicine.naturopathy",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-06T06:07:30.810771+00:00"
+        "ts": "2026-06-06T07:09:27.831150+00:00"
       },
       {
-        "question": "What is Obstetrics & Gynecology?",
-        "answer": "Gynecology is a core concept within Obstetrics & Gynecology….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "medicine_and_health_sciences.clinical_medicine.obstetrics_and_gynecology",
+        "question": "What is Naturopathy?",
+        "answer": "Semantic Web of Things (SWoT) applications focus on….",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "medicine_and_health_sciences.traditional_and_alternative_medicine.naturopathy",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-06T06:07:30.810510+00:00"
+        "ts": "2026-06-06T07:09:27.830897+00:00"
       },
       {
-        "question": "What type of Transcultural Psychiatry, Transcultural Psychiatry, Clinical Psychiatry, Forensic Psychiatry, the Child & Adolescent Psychiatry?",
-        "answer": "Forensic Psychiatry is a core concept within Psychiatry….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "medicine_and_health_sciences.clinical_medicine.psychiatry",
+        "question": "What type of Homeopathy: Homeopathy?",
+        "answer": "Randomness is a fundamental resource in quantum….",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "medicine_and_health_sciences.traditional_and_alternative_medicine.homeopathy",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-06T06:07:26.040993+00:00"
+        "ts": "2026-06-06T07:09:23.207517+00:00"
       },
       {
-        "question": "What is Psychiatry?",
-        "answer": "Forensic Psychiatry is a core concept within Psychiatry….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "medicine_and_health_sciences.clinical_medicine.psychiatry",
+        "question": "What is Homeopathy?",
+        "answer": "Randomness is a fundamental resource in quantum….",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "medicine_and_health_sciences.traditional_and_alternative_medicine.homeopathy",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-06T06:07:26.040714+00:00"
+        "ts": "2026-06-06T07:09:23.207246+00:00"
       },
       {
-        "question": "What type of Sleep Medicine (Neuro), Sleep Medicine (Neuro), Headache Medicine, Maternal-Fetal Medicine, the Sports Medicine (Ortho)?",
-        "answer": "Epileptology is a core concept within Neurology (CLINICAL….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "medicine_and_health_sciences.clinical_medicine.neurology",
+        "question": "What type of Unani Medicine, Headache Medicine, Sleep Medicine (Neuro), Maternal-Fetal Medicine, the Sports Medicine (Ortho)?",
+        "answer": "Like other fields of Traditional Medicines, Unani Medicines….",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "medicine_and_health_sciences.traditional_and_alternative_medicine.unani_medicine",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-06T06:07:21.206686+00:00"
+        "ts": "2026-06-06T07:09:18.760634+00:00"
       },
       {
-        "question": "What is Neurology?",
-        "answer": "Epileptology is a core concept within Neurology (CLINICAL….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "medicine_and_health_sciences.clinical_medicine.neurology",
+        "question": "What is one word I would use to describe Unani Medicine?",
+        "answer": "research",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "medicine_and_health_sciences.traditional_and_alternative_medicine.unani_medicine",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-06T06:07:21.206359+00:00"
+        "ts": "2026-06-06T07:09:18.760354+00:00"
       },
       {
-        "question": "What type of Trauma Surgery, Trauma Surgery, Trauma Medicine, Trauma & PTSD, the General Surgery?",
-        "answer": "Neurosurgery is a core concept within Surgery (CLINICAL….",
+        "question": "What type of Ayurvedic Dietetics, Ayurvedic Herbalism, the Ayurvedic Dietetics?",
+        "answer": "Panchakarma is a core concept within Ayurveda (TRADITIONAL….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "medicine_and_health_sciences.clinical_medicine.surgery",
+        "path": "medicine_and_health_sciences.traditional_and_alternative_medicine.ayurveda",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-06T06:07:11.437710+00:00"
+        "ts": "2026-06-06T07:09:14.197780+00:00"
       },
       {
-        "question": "What is Surgery?",
-        "answer": "Neurosurgery is a core concept within Surgery (CLINICAL….",
+        "question": "What is Ayurveda?",
+        "answer": "Panchakarma is a core concept within Ayurveda (TRADITIONAL….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "medicine_and_health_sciences.clinical_medicine.surgery",
+        "path": "medicine_and_health_sciences.traditional_and_alternative_medicine.ayurveda",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-06T06:07:11.437476+00:00"
+        "ts": "2026-06-06T07:09:14.197555+00:00"
       }
     ]
   },
-  "exported_at": "2026-06-06T06:48:42.144187+00:00",
+  "exported_at": "2026-06-06T07:09:27.831964+00:00",
   "github_sync": {
-    "batch_cursor": 50,
+    "batch_cursor": 75,
     "include_document_text": true,
     "max_documents": 5000,
     "export_version": 2
