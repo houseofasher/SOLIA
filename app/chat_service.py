@@ -314,9 +314,9 @@ def is_opinion_request(text: str) -> bool:
 
 def is_opinion_or_identity(text: str) -> bool:
     from brain.identity_handler import is_identity_question
-    from brain.philosophy_handler import is_personal_belief_question
+    from brain.philosophy_handler import is_directed_opinion_question
 
-    return is_identity_question(text) or is_personal_belief_question(text)
+    return is_identity_question(text) or is_directed_opinion_question(text) or is_opinion_request(text)
 
 
 _PHILOSOPHY_DEEP_CONCEPT_EXCLUSIONS = (
@@ -551,11 +551,9 @@ def _fallback_to_predict(question: str, *, session_id: str | None) -> str:
 
 def _handle_identity_or_belief(text: str, *, session_id: str | None) -> dict[str, Any]:
     from brain.identity_handler import handle_identity, is_identity_question
-    from brain.philosophy_handler import handle_philosophy_question, is_personal_belief_question
+    from brain.philosophy_handler import handle_philosophy_question, is_directed_opinion_question
 
-    if is_identity_question(text):
-        return handle_identity(text, session_id=session_id)
-    if is_personal_belief_question(text):
+    if is_directed_opinion_question(text):
         phil = handle_philosophy_question(
             text,
             session_id=session_id,
@@ -565,6 +563,10 @@ def _handle_identity_or_belief(text: str, *, session_id: str | None) -> dict[str
         )
         if phil:
             return phil
+
+    if is_identity_question(text):
+        return handle_identity(text, session_id=session_id)
+
     return handle_identity(text, session_id=session_id)
 
 
@@ -1473,8 +1475,10 @@ def chat(message: str, *, session_id: str | None = None) -> dict[str, Any]:
     if is_identity_question(text):
         return done(handle_identity(text, session_id=session_id))
 
-    # Rule 3 — personal belief before philosophy concepts
-    if is_personal_belief_question(text):
+    # Rule 3 — personal belief / directed opinion before philosophy concepts
+    from brain.philosophy_handler import is_directed_opinion_question
+
+    if is_directed_opinion_question(text):
         phil = handle_philosophy_question(
             text,
             session_id=session_id,

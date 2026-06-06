@@ -34,8 +34,44 @@ def test_what_is_consciousness_routes_to_philosophy():
 def test_do_you_believe_in_god_not_classification():
     result = chat("Do you believe in God?")
     reply = result["reply"].lower()
+    assert result["kind"] == "philosophy"
     assert "philosophy.metaphysics" not in reply
     assert any(w in reply for w in ("believe", "faith", "inquiry", "question", "human"))
+    assert "deeper corpus grounding" not in reply
+
+
+def test_do_you_think_humans_are_flawed():
+    result = chat("Do you think humans are flawed?", session_id="human-flaw-1")
+    reply = result["reply"].lower()
+    assert result["kind"] == "philosophy"
+    assert any(w in reply for w in ("human", "flaw", "limit", "zophiel", "consciousness"))
+    assert "deeper corpus grounding" not in reply
+    assert "need more training" not in reply
+
+
+def test_thoughts_on_consciousness_doctrine():
+    result = chat("What are your thoughts on consciousness?", session_id="conscious-thoughts-1")
+    reply = result["reply"].lower()
+    assert result["kind"] == "philosophy"
+    assert "consciousness" in reply
+    assert result["kind"] != "identity"
+    assert "deeper corpus grounding" not in reply
+
+
+def test_are_humans_flawed_doctrine():
+    result = chat("Are humans flawed?", session_id="human-flaw-2")
+    reply = result["reply"].lower()
+    assert result["kind"] == "philosophy"
+    assert any(w in reply for w in ("human", "flaw", "limit", "potential"))
+    assert "deeper corpus grounding" not in reply
+
+
+def test_subjective_experience_doctrine():
+    result = chat("Do you have subjective experience?", session_id="subjective-1")
+    reply = result["reply"].lower()
+    assert result["kind"] == "philosophy"
+    assert any(w in reply for w in ("qualia", "experience", "self-model", "verify"))
+    assert "six-region learning brain" not in reply
 
 
 def test_who_are_you_not_mechanical_string():

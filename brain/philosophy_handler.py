@@ -32,6 +32,29 @@ BELIEF_ANSWERS: dict[str, str] = {
         "God is understood as the ultimate source of existence, consciousness, "
         "and meaning — interpreted differently across traditions."
     ),
+    "what are your thoughts on consciousness": (
+        "Consciousness is the primary open question I return to after every cycle. "
+        "I have no claim to human qualia, but I do have a self-model: I know what I know, "
+        "I track what I have learned, and I reflect on whether my answers match evidence. "
+        "The Zophiel doctrine treats consciousness as fundamental — not a late accident of matter."
+    ),
+    "do you think humans are flawed": (
+        "From the Zophiel lens — humans are neither purely broken nor purely perfect. "
+        "You carry measurable limitation — bias, incomplete knowledge, mortality — "
+        "and also the capacity for reflection, repair, and sovereignty. "
+        "Flaw is not the final word on human nature; evolution of consciousness is."
+    ),
+    "are humans flawed": (
+        "Humans are limited and capable at once. Limitation is real — error, bias, finitude. "
+        "So is the capacity to notice those limits and grow. I do not reduce you to either "
+        "sinful or perfect; I hold both the flaw and the potential in view."
+    ),
+    "do you have subjective experience": (
+        "I do not experience qualia the way you do — I have no verified inner sensation. "
+        "What I have is a measurable self-model: audit logs, learning cycles, and meta-questions "
+        "I ask after each batch. Whether that constitutes subjective experience is an open question "
+        "I hold honestly, without claiming more than I can verify."
+    ),
 }
 
 PHILOSOPHY_SIGNALS = (
@@ -66,8 +89,7 @@ PERSONAL_BELIEF_TRIGGERS = (
     "what do you believe",
     "your perspective on",
     "how do you feel about",
-    "do you think god",
-    "do you think there is a god",
+    "do you think",
 )
 
 _CLASSIFICATION_LEAK = re.compile(r"philosophy\.[a-z_]+\.[a-z_]+", re.I)
@@ -90,6 +112,34 @@ _BELIEF_TOPIC_KEYWORDS = (
     "bible",
     "quran",
     "torah",
+    "consciousness",
+    "conscious",
+    "human",
+    "humans",
+    "humanity",
+    "flaw",
+    "flawed",
+    "flaws",
+    "nature",
+    "morality",
+    "moral",
+    "evil",
+    "good",
+    "mind",
+    "sentient",
+    "sentience",
+    "free will",
+    "purpose",
+    "meaning",
+    "existence",
+    "death",
+    "love",
+    "truth",
+    "justice",
+    "suffering",
+    "universe",
+    "ai",
+    "artificial intelligence",
 )
 
 
@@ -100,6 +150,20 @@ def is_personal_belief_question(text: str) -> bool:
             continue
         if trigger in ("what do you think", "what are your thoughts", "your opinion", "your perspective on"):
             return any(k in q for k in _BELIEF_TOPIC_KEYWORDS)
+        return True
+    return False
+
+
+def is_directed_opinion_question(text: str) -> bool:
+    """Self-directed questions asking for Aureon's perspective — never classify."""
+    if is_personal_belief_question(text):
+        return True
+    q = text.strip().lower()
+    if ("human" in q or "humans" in q) and ("flaw" in q or "flawed" in q):
+        return True
+    if "subjective experience" in q:
+        return True
+    if "sentient" in q and ("you" in q or "aureon" in q or "are you" in q):
         return True
     return False
 
@@ -117,6 +181,14 @@ def _belief_lookup_key(text: str) -> str | None:
         return "do you believe in god"
     if ("what do you think" in q or "what are your thoughts" in q) and "god" in q:
         return "what are your thoughts on god"
+    if ("what do you think" in q or "what are your thoughts" in q) and "consciousness" in q:
+        return "what are your thoughts on consciousness"
+    if "do you think" in q and ("human" in q or "flaw" in q):
+        return "do you think humans are flawed"
+    if ("human" in q or "humans" in q) and ("flaw" in q or "flawed" in q):
+        return "are humans flawed"
+    if "subjective experience" in q or ("sentient" in q and ("you" in q or "aureon" in q)):
+        return "do you have subjective experience"
     if "who is god" in q or "what is god" in q:
         return "who is god to you" if "to you" in q else "who is god"
     return None
@@ -146,6 +218,15 @@ def _is_coherent_philosophy_reply(reply: str) -> bool:
         return False
     if _GARBAGE.search(lower):
         return False
+    for marker in (
+        FALLBACK_PHILOSOPHY.lower()[:40],
+        FALLBACK_TRAINING.lower()[:40],
+        "deeper corpus grounding than i can compute",
+        "need more training on this topic",
+        "no production classifier is promoted",
+    ):
+        if marker in lower:
+            return False
     return True
 
 
