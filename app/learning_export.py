@@ -385,7 +385,7 @@ def build_export_files() -> dict[str, bytes]:
             "| `preference_pairs.json` | Reward/RLHF preference data |",
             "| `pipeline_events.json` | Recent pipeline events |",
             "| `models/` | Trained classifier weights (JSON) |",
-            "| `self_inquiry.jsonl` | Questions Aureon asked itself |",
+            "| `self_inquiry.jsonl` | Learning reflections — document excerpts + cycle metrics |",
             "| `snapshot.json` | Live brain + auto-learn status |",
             "",
             "Auto-generated on Railway. Secrets and audit logs are never included.",

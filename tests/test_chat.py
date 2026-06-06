@@ -47,6 +47,14 @@ def test_api_chat_post():
     assert r.json()["kind"] == "status"
 
 
+def test_chat_simple_question():
+    result = chat("What is Aureon?")
+    assert result["kind"] == "chat"
+    assert result.get("simple_qa") is True
+    assert len(result["reply"]) <= 160
+    assert "supervised" in result["reply"].lower()
+
+
 def test_api_chat_learning():
     r = client.get("/api/chat/learning")
     assert r.status_code == 200

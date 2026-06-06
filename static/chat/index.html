@@ -280,10 +280,10 @@
       </div>
 
       <div class="panel">
-        <h3>Inner voice</h3>
-        <p>While learning, Aureon <strong>asks itself questions</strong> — Socratic self-inquiry after each grade cycle.</p>
+        <h3>Learning reflections</h3>
+        <p>After each grade cycle: <strong>Simple Question, Simple Answer</strong> + <strong>Marie/Ciper</strong> drill-down on broad topics.</p>
         <div class="log-feed" id="mindFeed" style="margin-top:0.5rem">
-          <div>Waiting for self-inquiry…</div>
+          <div>Waiting for learning reflections…</div>
         </div>
       </div>
 
@@ -402,7 +402,8 @@
     function pushMind(item) {
       const feed = $("mindFeed");
       const div = document.createElement("div");
-      div.textContent = "Q: " + (item.question || "").slice(0, 120);
+      const answer = (item.answer || "").split("\n")[0].slice(0, 100);
+      div.textContent = "Q: " + (item.question || "").slice(0, 80) + (answer ? " · " + answer : "");
       feed.prepend(div);
       while (feed.children.length > 6) feed.removeChild(feed.lastChild);
     }

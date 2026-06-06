@@ -11,7 +11,10 @@ from brain.cortex import brain_status
 from brain.domains.taxonomy import total_micro_subdomains
 from brain.grades import GRADE_CURRICULUM, curriculum_public, epochs_for_grade, get_grade
 from brain.graduation import current_grade, progress_report
+from brain.ciper_logic import ciper_research
+from brain.psychology_brain import finalize_chat_payload
 from brain.self_inquiry import is_self_inquiry_enabled, recent_inquiries
+from brain.simple_qa import is_simple_question, to_simple_answer
 from db.models import KnowledgeDomain, KnowledgeMicroSubdomain, KnowledgeSubdomain
 from db.session import get_session
 from pipeline.step4_evaluation.benchmarks import _load_production_model, _predict_label
@@ -149,6 +152,99 @@ def _classify_message(text: str) -> dict[str, Any] | None:
     }
 
 
+def _ciper_chat_payload(text: str, *, session_id: str | None) -> dict[str, Any] | None:
+    """Marie/Ciper decomposition + cross-domain research when applicable."""
+    result = ciper_research(text)
+    if not result:
+        return None
+    payload: dict[str, Any] = {
+        "reply": result.reply,
+        "kind": "chat",
+        "session_id": session_id,
+        "learning": learning_snapshot(),
+        "ciper": result.to_dict(),
+        "simple_qa": result.mode in ("answer", "decompose", "cross_domain"),
+    }
+    if result.mode == "answer" and result.grounded:
+        payload["grounded"] = True
+    return payload
+
+
+def _simple_nl_response(text: str) -> str | None:
+    """Short answers for common natural-language questions."""
+    q = text.strip().lower().rstrip("?").strip()
+    if not q:
+        return None
+
+    if "what are you learning" in q or "what you learning" in q:
+        scheduler = get_auto_learn_scheduler()
+        status = scheduler.status()
+        brain = brain_status()
+        cycles = status.get("cycles_completed", 0)
+        docs = brain.get("documents", 0)
+        lr = status.get("last_result") or {}
+        if lr.get("batch"):
+            cursor = lr.get("batch_cursor", lr.get("targets_processed", 0))
+            total = lr.get("targets_in_corpus", 862)
+            return f"Batch topic {cursor}/{total}, preschool grade, {docs} docs, {cycles} cycles done."
+        return f"{docs} docs ingested, {cycles} auto-learn cycles done."
+
+    if q in ("what is aureon", "who are you", "what are you"):
+        return "Supervised ML brain — collect, label, train, evaluate, graduate."
+
+    if "how do you work" in q or "how does aureon work" in q:
+        return "Inputs and labels in, backpropagation finds weights, measurable accuracy out."
+
+    if q in ("what is ai", "what is artificial intelligence"):
+        return "Supervised machine learning — labels plus weights, not magic."
+
+    if "what are you asking" in q or "questions do you ask" in q:
+        items = recent_inquiries(1)
+        if not items:
+            return "No reflections yet — wait for the next auto-learn cycle."
+        item = items[0]
+        return f"{item.get('question')} → {item.get('answer')}"
+
+    return None
+
+
+def _simple_chat_reply(text: str) -> dict[str, Any]:
+    """Simple Question, Simple Answer path for chat."""
+    nl = _simple_nl_response(text)
+    if nl:
+        return {"reply": to_simple_answer(nl), "kind": "chat", "simple_qa": True}
+
+    classification = _classify_message(text)
+    if classification:
+        label = classification["label"]
+        conf = classification["confidence"]
+        return {
+            "reply": to_simple_answer(f"{label} ({conf:.0%} confidence)"),
+            "kind": "chat",
+            "simple_qa": True,
+            "classification": classification,
+        }
+
+    with get_session() as session:
+        from db.models import Document
+
+        doc_count = session.scalar(select(func.count()).select_from(Document)) or 0
+        active = _active_micro_progress(session)
+
+    if active:
+        reply = f"Still training — {doc_count} docs, focus {active['path']} @ {active['current_grade']}."
+    else:
+        reply = f"Still training — {doc_count} docs, no promoted classifier yet."
+
+    return {
+        "reply": to_simple_answer(reply),
+        "kind": "chat",
+        "simple_qa": True,
+        "classification": None,
+        "active_micro": active,
+    }
+
+
 def _command_response(message: str) -> dict[str, Any] | None:
     cmd = message.strip().lower()
     if cmd in ("/help", "help"):
@@ -160,10 +256,14 @@ def _command_response(message: str) -> dict[str, Any] | None:
                 "Commands:\n"
                 "• `/status` — brain + auto-learn snapshot\n"
                 "• `/grades` — curriculum and time estimates\n"
-                "• `/mind` — recent questions Aureon asked itself\n"
+                "• `/mind` — recent learning reflections (collected docs + cycle metrics)\n"
+                "• `/research <topic>` — cross-domain taxonomy + Ciper drill-down\n"
                 "• `/vitals` — security organism (nomad stack)\n\n"
-                "While training, I ask myself Socratic questions — like a child "
-                "building an inner voice. Filter Railway logs for `self_inquiry`.\n\n"
+                "Logic: **Marie/Ciper** — broad claims get facet drill-down; "
+                "specific questions get cross-domain answers when corpus supports it.\n"
+                "**Two brains:** psychology layer (how I act human) + algorithm layer "
+                "(six regions, supervised learning).\n"
+                "Rule: **Simple Question, Simple Answer** — ask short, get short.\n\n"
                 "Ask about a topic — I'll classify it when a production model exists."
             ),
             "kind": "help",
@@ -217,33 +317,66 @@ def _command_response(message: str) -> dict[str, Any] | None:
         if not items:
             return {
                 "reply": (
-                    "No self-inquiry yet. When auto-learn runs, I ask myself questions "
-                    "after each grade cycle — check back after the first cycle or filter "
-                    "Railway logs for `self_inquiry`."
+                    "No learning reflections yet. When auto-learn runs, I cite collected "
+                    "documents after each grade cycle — check back after the first cycle or "
+                    "filter Railway logs for `self_inquiry`."
                 ),
                 "kind": "mind",
             }
-        lines = ["**Questions I asked myself while learning:**\n"]
+        lines = ["**Learning reflections** (Simple Question, Simple Answer):\n"]
         for item in items:
             lines.append(f"**Q:** {item.get('question')}")
             answer = str(item.get("answer", ""))
-            if len(answer) > 280:
-                answer = answer[:277] + "..."
+            cycle = item.get("cycle")
+            if cycle:
+                answer = f"{answer} ({cycle})"
+            if len(answer) > 200:
+                answer = answer[:197] + "..."
             lines.append(f"**A:** {answer}\n")
         return {"reply": "\n".join(lines).strip(), "kind": "mind", "inquiries": items}
+    if cmd.startswith("/research"):
+        topic = message.strip()[9:].strip(" ?.")
+        if not topic:
+            return {
+                "reply": "Usage: `/research blood` — cross-domain taxonomy search + Ciper facets.",
+                "kind": "research",
+            }
+        result = ciper_research(topic)
+        if not result:
+            return {"reply": f"No taxonomy match for «{topic}» yet.", "kind": "research"}
+        lines = [
+            f"**Subject:** {result.subject}",
+            f"**Mode:** {result.mode}",
+            f"**Reply:** {result.reply}",
+        ]
+        if result.domains_spanned:
+            lines.append(f"**Domains:** {', '.join(result.domains_spanned)}")
+        if result.cross_domain_paths:
+            lines.append("**Paths:** " + ", ".join(result.cross_domain_paths[:5]))
+        if result.facets:
+            lines.append("**Ciper facets:** " + ", ".join(result.facets))
+        if result.agi_traits:
+            lines.append("**AGI traits:** " + ", ".join(result.agi_traits))
+        return {"reply": "\n".join(lines), "kind": "research", "ciper": result.to_dict()}
     if cmd == "/vitals":
         return {"reply": "Open `/security/status` or `/organism/vitals` for live organ vitals.", "kind": "vitals"}
     return None
 
 
 def chat(message: str, *, session_id: str | None = None) -> dict[str, Any]:
-    """Process a chat message — commands, classification, or contextual reply."""
+    """Process a chat message — psychology brain wraps algorithm brain output."""
     text = (message or "").strip()
     if not text:
-        return {"error": "empty message", "reply": "Send a message or try `/help`."}
+        return finalize_chat_payload(
+            {"error": "empty message", "reply": "Send a message or try `/help`."},
+            text,
+        )
 
     if len(text) > 8000:
-        return {"error": "message too long", "reply": "Please keep messages under 8000 characters."}
+        return finalize_chat_payload(
+            {"error": "message too long", "reply": "Please keep messages under 8000 characters."},
+            text,
+        )
 
     cmd = _command_response(text)
     if cmd:
@@ -257,9 +390,40 @@ def chat(message: str, *, session_id: str | None = None) -> dict[str, Any]:
             payload["snapshot"] = cmd["snapshot"]
         if "timeline" in cmd:
             payload["timeline"] = cmd["timeline"]
-        return payload
+        if "ciper" in cmd:
+            payload["ciper"] = cmd["ciper"]
+        return finalize_chat_payload(payload, text)
+
+    nl = _simple_nl_response(text)
+    if nl:
+        return finalize_chat_payload(
+            {
+                "reply": to_simple_answer(nl),
+                "kind": "chat",
+                "session_id": session_id,
+                "learning": learning_snapshot(),
+                "simple_qa": True,
+            },
+            text,
+        )
+
+    ciper_payload = _ciper_chat_payload(text, session_id=session_id)
+    if ciper_payload:
+        return finalize_chat_payload(ciper_payload, text)
+
+    if is_simple_question(text):
+        simple = _simple_chat_reply(text)
+        simple["session_id"] = session_id
+        simple["learning"] = learning_snapshot()
+        return finalize_chat_payload(simple, text)
 
     classification = _classify_message(text)
+    ciper_payload = _ciper_chat_payload(text, session_id=session_id)
+    if ciper_payload:
+        if classification:
+            ciper_payload["classification"] = classification
+        return finalize_chat_payload(ciper_payload, text)
+
     learning = learning_snapshot()
 
     with get_session() as session:
@@ -269,7 +433,6 @@ def chat(message: str, *, session_id: str | None = None) -> dict[str, Any]:
         active = _active_micro_progress(session)
 
     if classification:
-        grade = get_grade("preschool")
         reply = (
             f"I classified your message as **{classification['label']}** "
             f"({classification['confidence']:.0%} confidence) using the production supervised model.\n\n"
@@ -288,11 +451,14 @@ def chat(message: str, *, session_id: str | None = None) -> dict[str, Any]:
                 f"**Current focus:** `{active['path']}` @ grade **{active['current_grade']}**."
             )
 
-    return {
-        "reply": reply,
-        "kind": "chat",
-        "session_id": session_id,
-        "classification": classification,
-        "learning": learning,
-        "active_micro": active,
-    }
+    return finalize_chat_payload(
+        {
+            "reply": reply,
+            "kind": "chat",
+            "session_id": session_id,
+            "classification": classification,
+            "learning": learning,
+            "active_micro": active,
+        },
+        text,
+    )

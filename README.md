@@ -139,6 +139,163 @@ The **Aureon Files** collection is the primary intellectual brain of this algori
 
 ---
 
+## How AI actually works
+
+> Based on the supervised-learning teaching in **How To Create AI** (Aureon corpus) — technical core only; marketing hype stripped away.
+
+Most products labeled “AI” are **supervised machine learning** — not magic, not consciousness, not a deity. A human supplies **inputs**, **correct labels**, and a **measurable goal**; the computer adjusts internal **weights** until its predictions match those labels. That adjustment loop is **backpropagation** (often marketed as “deep learning”). The weight system is often called a **neural network**. The whole stack is often marketed simply as “AI.”
+
+Aureon-LLM is built on that honest foundation: collect data → verify → label → train with backpropagation → evaluate → reward. No mystery box required for the pipeline itself.
+
+### Traditional program vs supervised learning
+
+```mermaid
+flowchart TB
+    subgraph classic["Traditional program — you write the rule"]
+        ALG["Algorithm: a + b"]
+        IN1["Input: 1"]
+        OUT1["Output: 2"]
+        ALG --> OUT1
+        IN1 --> ALG
+    end
+
+    subgraph sml["Supervised machine learning — you write the labels"]
+        IN2["Input: face image"]
+        LB["Label you control: Person A / yes · no"]
+        NN["Weight matrix<br/>(eye, nose, jaw, …)"]
+        PRED["Prediction"]
+        BP["Backpropagation<br/>adjust weights until match"]
+        MODEL["Trained classifier"]
+
+        IN2 --> NN
+        NN --> PRED
+        PRED --> BP
+        LB --> BP
+        BP --> NN
+        BP --> MODEL
+    end
+```
+
+| Mode | Who decides the rule? | Example |
+|------|------------------------|---------|
+| **Traditional** | Programmer writes `output = f(input)` | `1 + 1 → 2` |
+| **Supervised ML** | Programmer writes **labels**; machine finds **weights** | “Does this face match ID #482?” → yes/no |
+
+### The facial-recognition intuition (1966 → today)
+
+Hard problems — like telling a million faces apart — have too many weight combinations for a human to tune by hand. You know **which features matter** (eyes, nose, chin, spacing), but not **how much** each matters.
+
+Supervised learning fixes that:
+
+1. Feed the system **labeled examples** (this image = Person A, this one = not Person A).
+2. Let **backpropagation** nudge millions of weights until matches are correct on the training set.
+3. Each face becomes a **distinct numeric fingerprint** in weight space — a mathematical model, not “understanding.”
+
+That is the core idea behind Aureon’s **trainer** region: text features in, softmax classifier out, weights updated by backpropagation.
+
+### Fancy names for the same thing
+
+The lecture’s point: the **process is simple**; the **branding is inflated**.
+
+| What it actually is | What the industry often calls it |
+|---------------------|----------------------------------|
+| Weight matrix tuned on labeled examples | **Neural network** (“a brain”) |
+| Backpropagation loop | **Deep learning** |
+| Supervised machine learning | **“AI”** |
+
+Aureon uses plain language in code and logs; the README keeps the honest terms above.
+
+### What chatbots do differently (ELIZA → ChatGPT)
+
+Early chatbots (e.g. MIT’s **ELIZA**, 1966) showed that humans **project intelligence** onto pattern matchers. A script that only says *“Tell me more”* and *“That’s interesting”* can feel like a therapist.
+
+Modern **large language models** scale the same trick: they ingest huge text corpora and predict **the most plausible next words**, not verified truth. They optimize for **sounding right**, which is why **hallucination** is built in — the goal is convincing continuation, not guaranteed fact.
+
+```mermaid
+flowchart LR
+    subgraph llm["Large language model (pattern matcher)"]
+        Q["Your question"]
+        CORP["Internet-scale text"]
+        STAT["Statistical next-token guess"]
+        ANS["Fluent paragraph<br/>(may be wrong)"]
+        Q --> STAT
+        CORP --> STAT
+        STAT --> ANS
+    end
+
+    subgraph aureon["Aureon supervised pipeline"]
+        DOC["Verified documents"]
+        LBL["Explicit labels<br/>(topic, domain, grade)"]
+        TR["Backpropagation trainer"]
+        CLS["Classifier with<br/>measurable accuracy"]
+        DOC --> LBL --> TR --> CLS
+    end
+```
+
+| | **LLM chat (typical)** | **Aureon (this repo)** |
+|---|------------------------|-------------------------|
+| Goal | Sound human; maximize engagement | Match **labels** you define |
+| Truth | Not guaranteed; hallucination is normal | Verifier + measurable train/eval gates |
+| Training signal | “What text usually comes next?” | “Which class does this example belong to?” |
+| Success metric | Fluency, retention | **Accuracy**, benchmarks, graduation rules |
+
+### Three constraints — if any fail, the system breaks
+
+Supervised learning only works when:
+
+1. **Clean data** — structured inputs (images, labeled text, verified documents), not vague opinions like “I like computers.”
+2. **Measurable goal** — yes/no, class ID, match score — not unanswerable questions like “What is good?” or “What is God?”
+3. **Defined parameters** — a bounded, labeled database the model can train against.
+
+**Edge cases** are the enemy: a self-driving model trained mostly on crosswalks may fail on a pedestrian **beside** a crosswalk. Rare scenarios break statistical matchers because they never appeared cleanly in training data. Aureon mitigates this with **verifier** quality gates, **human review** on uncertain labels, and **grade-level** curriculum instead of one-shot “know everything.”
+
+### The black box
+
+Inside a trained neural network is often a **chain of abstract numbers** — weights the machine discovered, not rules a human wrote line-by-line. Researchers call deep models a **black box**: behavior is measurable on tests, but not always explainable step-by-step. Aureon logs **metrics**, **training runs**, and **benchmark results** in PostgreSQL so you can audit *what passed*, even when the internal weights stay opaque.
+
+### How Aureon maps theory → code
+
+```mermaid
+flowchart TB
+    subgraph constraints["Three constraints enforced"]
+        C1["Clean data<br/>collector + verifier"]
+        C2["Measurable goal<br/>labels + grade gates"]
+        C3["Defined database<br/>PostgreSQL / SQLite"]
+    end
+
+    subgraph brain["Six brain regions"]
+        direction TB
+        col["collector"]
+        ver["verifier"]
+        lab["labeler"]
+        tra["trainer · backpropagation"]
+        eva["evaluator"]
+        rew["reward · RLHF"]
+        col --> ver --> lab --> tra --> eva --> rew
+    end
+
+    constraints --> brain
+    brain --> DB[("Documents · labels · models · grade_progress")]
+```
+
+| Lecture concept | Aureon implementation |
+|-----------------|------------------------|
+| Inputs + labels | `documents` + `document_labels` tables |
+| Weight finding | `src/neural_network.py` — backpropagation |
+| Measurable goal | Grade graduation: train accuracy + benchmark gates |
+| Clean data | Verifier region + quality scores |
+| Edge cases | Active learning → human review queue |
+| Depends on humans | Taxonomy seeds, teacher labeler, optional review |
+
+**Bottom line:** “AI” in production is **supervised learning with good data, clear labels, and honest evaluation**. Aureon automates that loop across 862 micro-topics instead of pretending a chatbot already “knows” everything.
+
+**Response rules**
+
+- **Simple Question, Simple Answer** — short questions get one short line from collected data or metrics.
+- **Marie/Ciper logic** — broad claims (`I can move blood`) get facet drill-down (`blood type, plasma, red cells, iron`); specific questions trigger **cross-domain research** across the 862-topic taxonomy when the corpus supports an answer.
+
+---
+
 ## Grade mastery — how long?
 
 Each **micro-subdomain** (462 total) progresses through **7 grades**: Pre-School → Elementary → Middle School → High School → Undergraduate → Master's → Doctorate. It must **graduate** each grade before the next unlocks.
@@ -212,25 +369,52 @@ Embed in mobile or web: point fetches at your Railway domain; the chat UI source
 
 ---
 
-Traditional software: **you write the algorithm.**
+## Two brains — algorithm vs psychology
 
-```text
-output = algorithm(input)     # e.g. 1 + 1 = 2
+Aureon uses **two brain layers** from your Aureon Files corpus. They are not the same thing.
+
+```mermaid
+flowchart TB
+    subgraph psych["Psychology brain — HOW to act human"]
+        P1["Human psychology Brain"]
+        P2["Human Emotions · Text Human Patterns"]
+        P3["Bio-linguistics · Marie/Ciper logic"]
+        P4["Simple Question, Simple Answer"]
+    end
+
+    subgraph algo["Algorithm brain — WHAT to know & measure"]
+        A1["collector → verifier → labeler"]
+        A2["trainer → evaluator → reward"]
+        A3["862 micro-topics · grade ladder"]
+        A4["backpropagation · PostgreSQL corpus"]
+    end
+
+    USER["User message"] --> psych
+    psych --> algo
+    algo --> psych
+    psych --> REPLY["Human-shaped reply"]
 ```
 
-Supervised machine learning: **you provide inputs and correct labels.** The computer discovers weights via **backpropagation** — what the industry calls “deep learning” at scale.
+| Layer | Aureon Files sources | Role in code |
+|-------|----------------------|--------------|
+| **Psychology brain** | `Human psychology Brain.pdf`, `Human Emotions.pdf`, `Text Human Patterns.pdf`, `HUMAN PATTERN RECOGNITION & BIO-LINGUISTICS.pdf`, `You need this form of logic in your.txt` | `brain/psychology_brain.py` — tone, pacing, clarifier questions, honest limits (no fake ELIZA theater) |
+| **Algorithm brain** | `Aureon Brain.pdf`, `Zophiel Brain LLM.pdf`, `How To Create AI.txt`, taxonomy + pipeline docs | `brain/regions/*`, `brain/cortex.py`, `brain/ciper_logic.py` — collect, label, train, evaluate, cross-domain research |
 
-```text
-1. Provide inputs   (documents, face images, features)
-2. Provide labels   (domain, person ID, match yes/no)
-3. Backpropagation  adjusts weights until predictions match labels
+**Flow:** user speaks → psychology brain interprets *how* to respond → algorithm brain supplies *facts, labels, and metrics* → psychology brain shapes the final reply.
+
+Chat API responses include both:
+
+```json
+{
+  "reply": "What type of blood, blood type (ABO/Rh), plasma, red cells, the iron / hemoglobin?",
+  "ciper": { "mode": "decompose", "facets": ["..."] },
+  "psychology": { "mode": "curious_clarifier", "traits": ["marie_ciper_logic", "social_clarification"] },
+  "brains": {
+    "psychology": "response_layer — how Aureon acts human",
+    "algorithm": "six_regions — collector, verifier, labeler, trainer, evaluator, reward"
+  }
+}
 ```
-
-Three constraints must hold or the system breaks:
-
-1. **Clean data** — structured labels, not opinions  
-2. **Measurable goal** — yes/no or class ID, not “what is good?”  
-3. **Defined parameters** — a bounded, labeled database  
 
 ---
 
