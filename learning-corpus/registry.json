@@ -349,6 +349,258 @@
         "epochs": 150
       },
       "status": "completed"
+    },
+    {
+      "run_id": "cd4d68cf",
+      "created_at": "2026-06-06T23:13:03.452263+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_zoology_cd4d68cf/classifier.json",
+      "params": {
+        "scope": "zoology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "974a2335",
+      "created_at": "2026-06-06T23:13:51.841642+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_microbiology_974a2335/classifier.json",
+      "params": {
+        "scope": "microbiology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "ef1f013e",
+      "created_at": "2026-06-06T23:14:28.560726+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_neuroscience_ef1f013e/classifier.json",
+      "params": {
+        "scope": "neuroscience",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "fd3cb352",
+      "created_at": "2026-06-06T23:15:11.568012+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_physiology_fd3cb352/classifier.json",
+      "params": {
+        "scope": "physiology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "4a83d8cb",
+      "created_at": "2026-06-06T23:15:48.361948+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_immunology_4a83d8cb/classifier.json",
+      "params": {
+        "scope": "immunology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "cee57c4b",
+      "created_at": "2026-06-06T23:16:34.861524+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_developmental_biology_cee57c4b/classifier.json",
+      "params": {
+        "scope": "developmental_biology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "a3b599d0",
+      "created_at": "2026-06-06T23:17:16.950725+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_marine_biology_a3b599d0/classifier.json",
+      "params": {
+        "scope": "marine_biology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "292a8565",
+      "created_at": "2026-06-06T23:18:02.354014+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_pure_mathematics_292a8565/classifier.json",
+      "params": {
+        "scope": "pure_mathematics",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "3aeff9cd",
+      "created_at": "2026-06-06T23:18:38.156241+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_applied_mathematics_3aeff9cd/classifier.json",
+      "params": {
+        "scope": "applied_mathematics",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "eba5a4e8",
+      "created_at": "2026-06-06T23:19:08.257553+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_statistics_and_probability_eba5a4e8/classifier.json",
+      "params": {
+        "scope": "statistics_and_probability",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "75befead",
+      "created_at": "2026-06-06T23:19:52.042041+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_computational_mathematics_75befead/classifier.json",
+      "params": {
+        "scope": "computational_mathematics",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "b2439e38",
+      "created_at": "2026-06-06T23:20:28.944662+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_geology_b2439e38/classifier.json",
+      "params": {
+        "scope": "geology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "bf2f51cf",
+      "created_at": "2026-06-06T23:21:09.754683+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_atmospheric_science_bf2f51cf/classifier.json",
+      "params": {
+        "scope": "atmospheric_science",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "c4af9047",
+      "created_at": "2026-06-06T23:21:53.651617+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_oceanography_c4af9047/classifier.json",
+      "params": {
+        "scope": "oceanography",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "1170d988",
+      "created_at": "2026-06-06T23:22:31.051828+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_hydrology_1170d988/classifier.json",
+      "params": {
+        "scope": "hydrology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "08e7cff8",
+      "created_at": "2026-06-06T23:23:07.955341+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_glaciology_08e7cff8/classifier.json",
+      "params": {
+        "scope": "glaciology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "44902e44",
+      "created_at": "2026-06-06T23:23:42.948305+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_soil_science_44902e44/classifier.json",
+      "params": {
+        "scope": "soil_science",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "ffc2c740",
+      "created_at": "2026-06-06T23:24:21.454796+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_observational_astronomy_ffc2c740/classifier.json",
+      "params": {
+        "scope": "observational_astronomy",
+        "epochs": 150
+      },
+      "status": "completed"
     }
   ]
 }
