@@ -1,5 +1,124 @@
 [
   {
+    "run_id": "7d9aadc8",
+    "domain_id": 2,
+    "subdomain_id": 7,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_obstetrics_and_gynecology_7d9aadc8/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "obstetrics_and_gynecology",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T23:29:12.862086"
+  },
+  {
+    "run_id": "bc610ee6",
+    "domain_id": 2,
+    "subdomain_id": 7,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_psychiatry_bc610ee6/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "psychiatry",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T23:28:35.453980"
+  },
+  {
+    "run_id": "4a80453c",
+    "domain_id": 2,
+    "subdomain_id": 7,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_neurology_4a80453c/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "neurology",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T23:28:05.453917"
+  },
+  {
+    "run_id": "b738990d",
+    "domain_id": 2,
+    "subdomain_id": 7,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_surgery_b738990d/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "surgery",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T23:27:18.547999"
+  },
+  {
+    "run_id": "cb8cea23",
+    "domain_id": 2,
+    "subdomain_id": 7,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_internal_medicine_cb8cea23/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "internal_medicine",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T23:26:35.641138"
+  },
+  {
+    "run_id": "fab6ff2f",
+    "domain_id": 1,
+    "subdomain_id": 6,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_planetary_science_fab6ff2f/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "planetary_science",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T23:25:48.056086"
+  },
+  {
+    "run_id": "0b1d33eb",
+    "domain_id": 1,
+    "subdomain_id": 6,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_theoretical_astronomy_0b1d33eb/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "theoretical_astronomy",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T23:25:03.552978"
+  },
+  {
     "run_id": "ffc2c740",
     "domain_id": 1,
     "subdomain_id": 6,
