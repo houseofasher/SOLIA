@@ -11,12 +11,18 @@ from typing import Any
 
 from brain.multimodal_processors import (
     AUDIO_EXT,
+    CODE_EXT,
+    CSV_EXT,
+    EXCEL_EXT,
     IMAGE_EXT,
     PDF_EXT,
     TEXT_EXT,
     extract_pdf,
     extract_text_file,
     process_audio,
+    process_code_file,
+    process_csv,
+    process_excel,
     process_image,
     text_embedding,
     tier_status,
@@ -77,6 +83,18 @@ def route_bytes(filename: str, data: bytes, *, message: str = "") -> FileIngestR
     elif ext in AUDIO_EXT:
         text, meta = process_audio(data, filename)
         modality = "audio"
+        title = Path(filename).stem.replace("_", " ").title()
+    elif ext in CODE_EXT:
+        text, meta = process_code_file(data, filename)
+        modality = "code"
+        title = Path(filename).stem.replace("_", " ").title()
+    elif ext in CSV_EXT:
+        text, meta = process_csv(data, filename)
+        modality = "csv"
+        title = Path(filename).stem.replace("_", " ").title()
+    elif ext in EXCEL_EXT:
+        text, meta = process_excel(data, filename)
+        modality = "excel"
         title = Path(filename).stem.replace("_", " ").title()
     elif ext in TEXT_EXT or ext == "":
         text = extract_text_file(data, filename)
@@ -148,7 +166,13 @@ def persist_to_corpus(result: FileIngestResult) -> int | None:
     init_db()
     domain_slug = "technology_and_engineering"
     subdomain_slug = "computer_science"
-    micro_slug = "python_functions" if result.modality in ("text", "pdf") else "data_structures"
+    micro_slug = {
+        "text": "python_functions",
+        "pdf": "python_functions",
+        "code": "python_functions",
+        "csv": "data_structures",
+        "excel": "data_structures",
+    }.get(result.modality, "data_structures")
 
     with get_session() as session:
         domain = session.scalar(select(KnowledgeDomain).where(KnowledgeDomain.slug == domain_slug))
