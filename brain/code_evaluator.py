@@ -16,6 +16,74 @@ from pipeline.config import ROOT
 HUMANEVAL_PATH = ROOT / "data" / "code" / "humaneval-python.jsonl"
 MBPP_PATH = ROOT / "data" / "code" / "mbpp.jsonl"
 
+MAX_CODE_BYTES = int(os.environ.get("AUREON_CODE_MAX_BYTES", "65536"))
+EXEC_TIMEOUT = int(os.environ.get("AUREON_CODE_EXEC_TIMEOUT_SEC", "3"))
+
+_FORBIDDEN_NAMES = frozenset(
+    {
+        "os",
+        "sys",
+        "subprocess",
+        "socket",
+        "shutil",
+        "pathlib",
+        "ctypes",
+        "pickle",
+        "builtins",
+        "__import__",
+        "eval",
+        "exec",
+        "compile",
+        "input",
+    }
+)
+
+
+class _ForbiddenImportVisitor(ast.NodeVisitor):
+    def __init__(self) -> None:
+        self.violations: list[str] = []
+
+    def visit_Import(self, node: ast.Import) -> None:
+        for alias in node.names:
+            root = alias.name.split(".")[0]
+            if root in _FORBIDDEN_NAMES:
+                self.violations.append(alias.name)
+        self.generic_visit(node)
+
+    def visit_ImportFrom(self, node: ast.ImportFrom) -> None:
+        if node.module:
+            root = node.module.split(".")[0]
+            if root in _FORBIDDEN_NAMES:
+                self.violations.append(node.module)
+        self.generic_visit(node)
+
+    def visit_Call(self, node: ast.Call) -> None:
+        if isinstance(node.func, ast.Name) and node.func.id in _FORBIDDEN_NAMES:
+            self.violations.append(node.func.id)
+        self.generic_visit(node)
+
+
+def check_forbidden_constructs(code: str) -> dict[str, Any]:
+    """Static deny-list for dangerous imports and calls before execution."""
+    try:
+        tree = ast.parse(code)
+    except SyntaxError as exc:
+        return {"safe": False, "error": str(exc)}
+    visitor = _ForbiddenImportVisitor()
+    visitor.visit(tree)
+    if visitor.violations:
+        return {"safe": False, "error": f"forbidden constructs: {', '.join(sorted(set(visitor.violations)))}"}
+    return {"safe": True, "error": None}
+
+
+def _isolated_env() -> dict[str, str]:
+    """Minimal environment for code subprocess — no secrets, no user site."""
+    return {
+        "PATH": os.environ.get("PATH", ""),
+        "PYTHONNOUSERSITE": "1",
+        "PYTHONDONTWRITEBYTECODE": "1",
+    }
+
 
 def extract_python_code(text: str) -> str:
     """Pull executable Python from model output — preserves leading imports."""
@@ -41,19 +109,33 @@ def check_syntax(code: str) -> dict[str, Any]:
         return {"valid": False, "error": str(exc)}
 
 
-def run_with_timeout(code: str, test: str, timeout: int = 3) -> dict[str, Any]:
+def run_with_timeout(code: str, test: str, timeout: int | None = None) -> dict[str, Any]:
     """Execute code + test in isolated subprocess with hard timeout."""
+    from app.code_exec_limit import try_acquire_code_exec
+
+    if len(code.encode("utf-8")) > MAX_CODE_BYTES or len(test.encode("utf-8")) > MAX_CODE_BYTES:
+        return {"passed": False, "timeout": False, "stderr": "Code or test exceeds size limit"}
+
+    forbidden = check_forbidden_constructs(code)
+    if not forbidden["safe"]:
+        return {"passed": False, "timeout": False, "stderr": forbidden["error"]}
+
+    if not try_acquire_code_exec():
+        return {"passed": False, "timeout": False, "stderr": "Code execution rate limit exceeded"}
+
+    limit = timeout if timeout is not None else EXEC_TIMEOUT
     full_code = code + "\n\n" + test
     with tempfile.NamedTemporaryFile(mode="w", suffix=".py", delete=False, encoding="utf-8") as handle:
         handle.write(full_code)
         tmpfile = handle.name
     try:
         result = subprocess.run(
-            ["python", tmpfile],
+            ["python", "-I", "-S", tmpfile],
             capture_output=True,
             text=True,
-            timeout=timeout,
-            env={"PATH": os.environ.get("PATH", "")},
+            timeout=limit,
+            env=_isolated_env(),
+            cwd=tempfile.gettempdir(),
         )
         passed = result.returncode == 0
         return {

@@ -3,11 +3,14 @@
 from __future__ import annotations
 
 import os
+import re
 import threading
 from typing import Any
 
 _lock = threading.Lock()
 _sessions: dict[str, list[dict[str, str]]] = {}
+
+_SESSION_ID_RE = re.compile(r"^[a-zA-Z0-9_-]{1,64}$")
 
 
 def _max_turns() -> int:
@@ -18,22 +21,46 @@ def _max_turns() -> int:
         return 10
 
 
+def _max_sessions() -> int:
+    raw = os.environ.get("AUREON_SESSION_MAX_SESSIONS", "5000").strip()
+    try:
+        return max(100, min(int(raw), 100_000))
+    except ValueError:
+        return 5000
+
+
+def _sanitize_session_id(session_id: str | None) -> str | None:
+    if not session_id:
+        return None
+    sid = session_id.strip()
+    if not _SESSION_ID_RE.match(sid):
+        return None
+    return sid
+
+
 def append_turn(session_id: str | None, *, user: str, assistant: str) -> None:
-    if not session_id or not user.strip():
+    sid = _sanitize_session_id(session_id)
+    if not sid or not user.strip():
         return
+    user_text = user.strip()[:4000]
+    assistant_text = assistant.strip()[:8000]
     with _lock:
-        turns = _sessions.setdefault(session_id, [])
-        turns.append({"user": user.strip(), "assistant": assistant.strip()})
+        if sid not in _sessions and len(_sessions) >= _max_sessions():
+            oldest = next(iter(_sessions))
+            del _sessions[oldest]
+        turns = _sessions.setdefault(sid, [])
+        turns.append({"user": user_text, "assistant": assistant_text})
         if len(turns) > _max_turns():
-            _sessions[session_id] = turns[-_max_turns() :]
+            _sessions[sid] = turns[-_max_turns() :]
 
 
 def get_history(session_id: str | None, *, limit: int | None = None) -> list[dict[str, str]]:
-    if not session_id:
+    sid = _sanitize_session_id(session_id)
+    if not sid:
         return []
     cap = limit if limit is not None else _max_turns()
     with _lock:
-        return list(_sessions.get(session_id, [])[-cap:])
+        return list(_sessions.get(sid, [])[-cap:])
 
 
 def history_as_context(session_id: str | None) -> str:
@@ -43,8 +70,8 @@ def history_as_context(session_id: str | None) -> str:
         return ""
     parts: list[str] = []
     for turn in turns:
-        parts.append(f"user said {turn['user']}")
-        parts.append(f"assistant said {turn['assistant']}")
+        parts.append(f"user said {turn['user'][:500]}")
+        parts.append(f"assistant said {turn['assistant'][:500]}")
     return "conversation " + " ".join(parts) + " "
 
 

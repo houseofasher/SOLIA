@@ -198,7 +198,7 @@ def api_chat_self_inquiry(limit: int = Query(default=20, ge=1, le=100)) -> dict:
 
 
 @app.post("/api/brain/think")
-def api_brain_think(count: int = Query(default=3, ge=1, le=5)) -> dict:
+def api_brain_think(_: Mutating, count: int = Query(default=3, ge=1, le=5)) -> dict:
     """Trigger meta-cognitive self-inquiry on demand."""
     from brain.meta_consciousness import is_meta_consciousness_enabled, run_meta_inquiry
 
@@ -226,6 +226,7 @@ def api_github_sync_run(_: Mutating) -> dict:
 
 @app.get("/api/labels/review")
 def api_labels_review_pending(
+    _: Mutating,
     limit: int = Query(default=50, ge=1, le=200),
     domain_slug: str | None = Query(default=None),
 ) -> dict:
@@ -250,8 +251,13 @@ def api_labels_review_resolve(label_id: int, body: dict[str, Any], _: Mutating) 
 
 
 @app.post("/api/chat")
-def api_chat(body: dict[str, Any]) -> dict[str, Any]:
+def api_chat(request: Request, body: dict[str, Any]) -> dict[str, Any]:
     """Public chat — supervised classification + live learning context (no training)."""
+    from app.chat_rate_limit import get_chat_rate_limiter
+    from app.middleware import _client_ip
+
+    if not get_chat_rate_limiter().try_acquire(_client_ip(request)):
+        raise HTTPException(status_code=429, detail="Chat rate limit exceeded — try again shortly")
     try:
         return chat(
             str(body.get("message", "")),
@@ -350,7 +356,7 @@ def get_brain_benchmark() -> dict:
 
 
 @app.get("/api/brain/benchmark/humaneval")
-def get_humaneval_benchmark(limit: int = Query(default=20, ge=1, le=164)) -> dict:
+def get_humaneval_benchmark(_: Mutating, limit: int = Query(default=20, ge=1, le=164)) -> dict:
     """HumanEval pass@1 — retrieval + verification pipeline."""
     from brain.code_master import benchmark_humaneval
 
@@ -375,7 +381,7 @@ def rag_index_status() -> dict:
 
 
 @app.post("/api/brain/agent")
-def api_brain_agent(body: dict[str, Any]) -> dict:
+def api_brain_agent(body: dict[str, Any], _: Mutating) -> dict:
     """Multi-step agent tool loop — search, calculate, classify, verify."""
     from brain.agent_loop import run_agent_loop
 
@@ -384,6 +390,30 @@ def api_brain_agent(body: dict[str, Any]) -> dict:
         raise HTTPException(status_code=400, detail="message required")
     max_steps = int(body.get("max_steps", 5))
     return run_agent_loop(question, max_steps=max(1, min(max_steps, 10)))
+
+
+@app.post("/api/brain/code/generate")
+def api_brain_code_generate(body: dict[str, Any], _: Mutating) -> dict:
+    """Doctorate-level code generation — retrieval + verification pipeline."""
+    from brain.code_master import generate_master_code
+
+    question = str(body.get("message", body.get("question", ""))).strip()
+    if not question:
+        raise HTTPException(status_code=400, detail="message or question required")
+    result = generate_master_code(question)
+    pred = result.get("prediction")
+    if isinstance(pred, dict):
+        result = {**result, "prediction": {k: v for k, v in pred.items() if k != "error"}}
+    return result
+
+
+@app.post("/api/brain/code/ingest")
+def api_brain_code_ingest(_: Mutating, limit: int = Query(default=2000, ge=1, le=5000)) -> dict:
+    """Ingest HumanEval + MBPP into document corpus."""
+    from brain.code_corpus_ingest import ingest_code_corpus
+
+    added = ingest_code_corpus(limit=limit)
+    return {"ok": True, "documents_added": added}
 
 
 @app.get("/api/brain/inference/profile")

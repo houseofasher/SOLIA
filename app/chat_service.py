@@ -353,6 +353,9 @@ def is_code_question(text: str) -> bool:
         "write a function",
         "write a python",
         "write code",
+        "create a function",
+        "implement a function",
+        "implement ",
         "def ",
         "how do i code",
         "write a script",
@@ -360,8 +363,9 @@ def is_code_question(text: str) -> bool:
         "fix this code",
         "what does this code do",
         "write a program",
-        "implement",
         "code that",
+        "generate python",
+        "python function",
     )
     return any(t in q for t in triggers)
 
@@ -389,7 +393,7 @@ def _code_payload(text: str, *, session_id: str | None) -> dict[str, Any] | None
     elif evaluation.get("passed_tests") is False:
         answer = f"{code}\n\n# Note: unit tests did not pass."
 
-    return {
+    payload: dict[str, Any] = {
         "reply": answer,
         "kind": "code",
         "session_id": session_id,
@@ -403,8 +407,11 @@ def _code_payload(text: str, *, session_id: str | None) -> dict[str, Any] | None
             "confidence": master.get("confidence"),
         },
         "citations": master.get("citations", []),
-        "prediction": master.get("prediction"),
     }
+    pred = master.get("prediction")
+    if isinstance(pred, dict):
+        payload["prediction"] = {k: v for k, v in pred.items() if k != "error"}
+    return payload
 
 
 def _ciper_chat_payload(text: str, *, session_id: str | None) -> dict[str, Any] | None:
@@ -788,7 +795,6 @@ def chat(message: str, *, session_id: str | None = None) -> dict[str, Any]:
         return done(simple)
 
     classification = _classify_message(text)
-    ciper_payload = _ciper_chat_payload(text, session_id=session_id)
     if ciper_payload:
         if classification:
             ciper_payload["classification"] = classification

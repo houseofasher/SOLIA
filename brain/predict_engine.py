@@ -498,7 +498,6 @@ def predict_with_steps(
             "citations": [],
             "model": "stacked_attention_lm",
             "model_version": CURRENT_MODEL_VERSION,
-            "error": str(exc)[:200],
         }
 
     q = question.strip().lower().rstrip("?")

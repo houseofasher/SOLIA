@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import logging
 import os
+import random
 import re
 from dataclasses import dataclass
 from functools import lru_cache
@@ -25,6 +26,7 @@ MBPP_PATH = ROOT / "data" / "code" / "mbpp.jsonl"
 
 _RETRIEVAL_MIN = float(os.environ.get("AUREON_CODE_RETRIEVAL_MIN", "0.28"))
 _RETRIEVAL_STRONG = float(os.environ.get("AUREON_CODE_RETRIEVAL_STRONG", "0.42"))
+_EXACT_MIN_OVERLAP = float(os.environ.get("AUREON_CODE_EXACT_MIN_OVERLAP", "0.72"))
 
 
 @dataclass(frozen=True)
@@ -124,14 +126,31 @@ def _keyword_boost(question: str, problem: CodeProblem) -> float:
     return len(qk & pk) / len(qk)
 
 
-def _match_to_citation(match: CodeMatch) -> dict[str, Any]:
-    return {
+def _token_overlap(a: str, b: str) -> float:
+    ta = _keywords(a)
+    tb = _keywords(b)
+    if not ta or not tb:
+        return 0.0
+    return len(ta & tb) / len(ta | tb)
+
+
+def _match_to_citation(match: CodeMatch, *, include_test: bool = False) -> dict[str, Any]:
+    cite: dict[str, Any] = {
         "title": match.problem.problem_id,
         "source": match.problem.source,
         "score": round(match.score, 4),
-        "metadata": {"test": match.problem.test, "micro_subdomain": match.problem.micro},
-        "extra": {"test": match.problem.test},
+        "metadata": {"micro_subdomain": match.problem.micro, "has_tests": bool(match.problem.test)},
     }
+    if include_test:
+        cite["metadata"]["test"] = match.problem.test
+    return cite
+
+
+def _verification_passed(ev: dict[str, Any], test: str) -> bool:
+    """Doctorate gate: tests must pass when available; syntax-only when no test."""
+    if test.strip():
+        return ev.get("passed_tests") is True
+    return bool(ev.get("syntax_valid"))
 
 
 def _try_solution(code: str, test: str) -> dict[str, Any]:
@@ -144,12 +163,17 @@ def _normalize_ws(text: str) -> str:
 
 def _exact_match(question: str, bank: CodeProblemBank) -> CodeMatch | None:
     q = _normalize_ws(question)
+    best: CodeMatch | None = None
     for prob in bank.problems:
         prompt = _normalize_ws(prob.prompt)
-        body = _normalize_ws(prob.question)
-        if prompt and (prompt in q or q in prompt or body in q):
-            return CodeMatch(problem=prob, score=0.99)
-    return None
+        if not prompt:
+            continue
+        overlap = _token_overlap(q, prompt)
+        if prompt in q or overlap >= _EXACT_MIN_OVERLAP:
+            candidate = CodeMatch(problem=prob, score=max(0.99, overlap))
+            if best is None or candidate.score > best.score:
+                best = candidate
+    return best
 
 
 def generate_master_code(
@@ -159,11 +183,11 @@ def generate_master_code(
 ) -> dict[str, Any]:
     """
     Doctorate coder pipeline:
-      0. Seed/bootstrap exact match
-      1. Retrieve nearest HumanEval/MBPP problems
-      2. If strong match + tests pass → return verified canonical solution
-      3. Else neural predict with RAG context
-      4. Else fall back to best verified canonical from retrieval
+      0. Bootstrap seed exact match
+      1. Exact / high-overlap HumanEval/MBPP match
+      2. TF-IDF retrieval with unit-test verification
+      3. Neural synthesis with RAG context
+      4. Verified retrieval fallback
     """
     from brain.predict_engine import _bootstrap_answer
 
@@ -184,7 +208,7 @@ def generate_master_code(
     exact = _exact_match(question, bank)
     if exact:
         ev = _try_solution(exact.problem.solution, exact.problem.test)
-        if ev.get("passed_tests") is True or ev.get("syntax_valid"):
+        if _verification_passed(ev, exact.problem.test):
             return {
                 "answer": extract_python_code(exact.problem.solution),
                 "method": "exact_corpus_match",
@@ -196,8 +220,6 @@ def generate_master_code(
             }
 
     matches = bank.retrieve(question, top_k=8)
-
-    # Boost with keyword overlap (prime, sieve, sort, reverse, etc.)
     boosted: list[CodeMatch] = []
     for m in matches:
         boost = _keyword_boost(question, m.problem)
@@ -210,9 +232,7 @@ def generate_master_code(
 
     if best and best.score >= _RETRIEVAL_STRONG:
         ev = _try_solution(best.problem.solution, best.problem.test)
-        if ev.get("passed_tests") is True or (
-            ev.get("syntax_valid") and not best.problem.test
-        ):
+        if _verification_passed(ev, best.problem.test):
             return {
                 "answer": extract_python_code(best.problem.solution),
                 "method": "retrieval_verified",
@@ -223,14 +243,13 @@ def generate_master_code(
                 "problem_id": best.problem.problem_id,
             }
 
-    # Neural synthesis
-    predict_result: dict[str, Any] | None = None
     if predict_fn is None:
         from brain.predict_engine import predict_with_steps
 
         predict_fn = lambda q: predict_with_steps(q, force=True)
 
     rag_context = ""
+    verify_match = best
     if matches:
         top = matches[0].problem
         rag_context = f"context {top.question[:200]} example {top.solution[:400]} "
@@ -238,24 +257,25 @@ def generate_master_code(
     predict_result = predict_fn(enriched)
     if predict_result and predict_result.get("answer"):
         code = extract_python_code(predict_result["answer"])
-        test = matches[0].problem.test if matches else ""
+        test = verify_match.problem.test if verify_match else ""
         ev = _try_solution(code, test)
-        if ev.get("syntax_valid"):
-            if ev.get("passed_tests") is True or ev.get("passed_tests") is None:
-                return {
-                    "answer": code,
-                    "method": "neural_synthesis",
-                    "confidence": float(predict_result.get("confidence") or 0.6),
-                    "citations": predict_result.get("citations") or citations,
-                    "code_eval": ev,
-                    "prediction": predict_result,
-                    "match_score": best.score if best else 0.0,
-                }
+        if _verification_passed(ev, test):
+            safe_prediction = {k: v for k, v in predict_result.items() if k != "error"}
+            return {
+                "answer": code,
+                "method": "neural_synthesis",
+                "confidence": float(predict_result.get("confidence") or 0.6),
+                "citations": predict_result.get("citations") or citations,
+                "code_eval": ev,
+                "prediction": safe_prediction,
+                "match_score": best.score if best else 0.0,
+            }
 
-    # Fallback: best retrieval candidate that at least parses
     for match in matches:
+        if match.score < _RETRIEVAL_MIN:
+            continue
         ev = _try_solution(match.problem.solution, match.problem.test)
-        if ev.get("syntax_valid"):
+        if _verification_passed(ev, match.problem.test):
             return {
                 "answer": extract_python_code(match.problem.solution),
                 "method": "retrieval_fallback",
@@ -264,7 +284,7 @@ def generate_master_code(
                 "code_eval": ev,
                 "match_score": match.score,
                 "problem_id": match.problem.problem_id,
-                "note": "Neural synthesis weak — returning closest verified corpus solution.",
+                "note": "Neural synthesis did not pass verification — returning corpus solution.",
             }
 
     return {
@@ -272,19 +292,21 @@ def generate_master_code(
         "method": "abstain",
         "confidence": 0.0,
         "citations": citations,
-        "code_eval": {"score": 0.0, "syntax_valid": False},
+        "code_eval": {"score": 0.0, "syntax_valid": False, "passed_tests": False},
         "match_score": best.score if best else 0.0,
     }
 
 
 def benchmark_humaneval(*, limit: int = 50, use_retrieval: bool = True) -> dict[str, Any]:
-    """HumanEval-style pass@1 using retrieval + verification."""
+    """HumanEval pass@1 — random sample, retrieval + verification pipeline."""
     bank = get_code_bank()
-    problems = [p for p in bank.problems if p.source == "humaneval"][:limit]
+    humaneval = [p for p in bank.problems if p.source == "humaneval"]
+    rng = random.Random(42)
+    sample = humaneval if len(humaneval) <= limit else rng.sample(humaneval, limit)
     passed = 0
     cases: list[dict[str, Any]] = []
 
-    for prob in problems:
+    for prob in sample:
         q = f"write python code {prob.prompt.strip()}"
         if use_retrieval:
             result = generate_master_code(q, predict_fn=lambda _x: None)
@@ -309,10 +331,11 @@ def benchmark_humaneval(*, limit: int = 50, use_retrieval: bool = True) -> dict[
             }
         )
 
-    rate = passed / max(len(problems), 1)
+    rate = passed / max(len(sample), 1)
     return {
         "benchmark": "humaneval_pass_at_1",
-        "total": len(problems),
+        "mode": "retrieval_verification" if use_retrieval else "neural_only",
+        "total": len(sample),
         "passed": passed,
         "pass_rate": round(rate, 4),
         "doctorate_threshold": 0.90,

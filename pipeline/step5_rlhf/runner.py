@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import logging
 import uuid
 from pathlib import Path
 from typing import Any
@@ -14,6 +15,8 @@ from pipeline.config import MODELS_DIR, PREFERENCES_DIR, ensure_dirs
 from pipeline.step3_training.registry import ModelRegistry
 from src.neural_network import NeuralNetwork
 from src.text_features import TextFeatureExtractor
+
+logger = logging.getLogger(__name__)
 
 # Preference pairs: (prompt_context, preferred_response, rejected_response)
 DEFAULT_PREFERENCES = [
@@ -72,6 +75,37 @@ _EXTRA_PREFERENCES: list[dict[str, str]] = [
 ]
 
 DEFAULT_PREFERENCES = DEFAULT_PREFERENCES + _EXTRA_PREFERENCES
+
+
+def _load_preferences() -> list[dict[str, str]]:
+    """Merge file-based defaults with DB preference pairs from chat feedback."""
+    prefs_path = PREFERENCES_DIR / "preferences.json"
+    if prefs_path.exists():
+        preferences: list[dict[str, str]] = json.loads(prefs_path.read_text(encoding="utf-8"))
+    else:
+        preferences = list(DEFAULT_PREFERENCES)
+        prefs_path.write_text(json.dumps(preferences, indent=2), encoding="utf-8")
+
+    try:
+        from sqlalchemy import select
+
+        from db.models import PreferencePair
+        from db.session import get_session
+
+        with get_session() as session:
+            rows = session.scalars(select(PreferencePair).order_by(PreferencePair.id)).all()
+            seen = {(p["context"], p["preferred"], p["rejected"]) for p in preferences}
+            for row in rows:
+                key = (row.context, row.preferred, row.rejected)
+                if key not in seen:
+                    preferences.append(
+                        {"context": row.context, "preferred": row.preferred, "rejected": row.rejected}
+                    )
+                    seen.add(key)
+    except Exception as exc:
+        logger.warning("Could not load DB preference pairs: %s", exc)
+
+    return preferences
 
 
 def _build_preference_dataset(
@@ -140,10 +174,8 @@ def run_step5(epochs: int = 400) -> dict[str, Any]:
         }
 
     prefs_path = PREFERENCES_DIR / "preferences.json"
-    if prefs_path.exists():
-        preferences = json.loads(prefs_path.read_text(encoding="utf-8"))
-    else:
-        preferences = DEFAULT_PREFERENCES
+    preferences = _load_preferences()
+    if not prefs_path.exists():
         prefs_path.write_text(json.dumps(preferences, indent=2), encoding="utf-8")
 
     reward_model, extractor, val_metrics = train_reward_model(preferences, epochs=epochs)
