@@ -280,6 +280,14 @@
       </div>
 
       <div class="panel">
+        <h3>Inner voice</h3>
+        <p>While learning, Aureon <strong>asks itself questions</strong> — Socratic self-inquiry after each grade cycle.</p>
+        <div class="log-feed" id="mindFeed" style="margin-top:0.5rem">
+          <div>Waiting for self-inquiry…</div>
+        </div>
+      </div>
+
+      <div class="panel">
         <h3>Learning log</h3>
         <p>Aureon logs <strong>everything it learns</strong> — grade cycles, all 6 brain regions, graduations, and security events.</p>
         <ul>
@@ -323,7 +331,7 @@
         <div class="intro-card">
           <h2>◈ Full learning transparency</h2>
           <p>Every auto-learn cycle is recorded: collector → verifier → labeler → trainer → evaluator → reward. Preschool through doctorate graduations appear in logs and in this dashboard.</p>
-          <p style="margin-top:0.5rem">Try <strong>/status</strong> or <strong>/grades</strong> in chat to see what Aureon knows right now.</p>
+          <p style="margin-top:0.5rem">Try <strong>/status</strong>, <strong>/mind</strong>, or <strong>/grades</strong> in chat.</p>
         </div>
       </div>
 
@@ -336,6 +344,7 @@
 
       <div class="composer-wrap">
         <div class="chips">
+          <button type="button" class="chip" data-cmd="/mind">What are you asking yourself?</button>
           <button type="button" class="chip" data-cmd="/status">What are you learning?</button>
           <button type="button" class="chip" data-cmd="/grades">Grade timeline</button>
           <button type="button" class="chip" data-cmd="/help">Help</button>
@@ -390,6 +399,14 @@
       messagesEl.scrollTop = messagesEl.scrollHeight;
     }
 
+    function pushMind(item) {
+      const feed = $("mindFeed");
+      const div = document.createElement("div");
+      div.textContent = "Q: " + (item.question || "").slice(0, 120);
+      feed.prepend(div);
+      while (feed.children.length > 6) feed.removeChild(feed.lastChild);
+    }
+
     function pushLog(line) {
       const feed = $("logFeed");
       const div = document.createElement("div");
@@ -424,11 +441,12 @@
 
     async function refreshSidebar() {
       try {
-        const [vitals, auto, health, learning] = await Promise.all([
+        const [vitals, auto, health, learning, mind] = await Promise.all([
           fetchJson("/organism/vitals"),
           fetchJson("/api/brain/auto-learn"),
           fetchJson("/health"),
           fetchJson("/api/chat/learning"),
+          fetchJson("/api/chat/self-inquiry"),
         ]);
         $("vitalLine").innerHTML =
           `<span class="vital-dot" style="background:${vitals.vital ? "#22c55e" : "#ef4444"}"></span>` +
@@ -453,6 +471,10 @@
         }
         if (auto.last_run_at) {
           pushLog(`Last cycle: ${new Date(auto.last_run_at).toLocaleString()}`);
+        }
+        if (mind.inquiries?.length) {
+          $("mindFeed").innerHTML = "";
+          mind.inquiries.slice(0, 6).forEach(pushMind);
         }
       } catch (e) {
         $("vitalLine").textContent = "Offline — set Railway URL above";

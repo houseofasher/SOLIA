@@ -31,6 +31,7 @@ PUBLIC_PATHS = frozenset({
     "/api/chat/access",
     "/api/chat/learning",
     "/api/chat/timeline",
+    "/api/chat/self-inquiry",
     "/docs",
     "/openapi.json",
     "/redoc",

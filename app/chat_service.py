@@ -11,6 +11,7 @@ from brain.cortex import brain_status
 from brain.domains.taxonomy import total_micro_subdomains
 from brain.grades import GRADE_CURRICULUM, curriculum_public, epochs_for_grade, get_grade
 from brain.graduation import current_grade, progress_report
+from brain.self_inquiry import is_self_inquiry_enabled, recent_inquiries
 from db.models import KnowledgeDomain, KnowledgeMicroSubdomain, KnowledgeSubdomain
 from db.session import get_session
 from pipeline.step4_evaluation.benchmarks import _load_production_model, _predict_label
@@ -91,6 +92,10 @@ def learning_snapshot() -> dict[str, Any]:
             "grade_progress_rows": brain.get("grade_progress_rows"),
         },
         "timeline": timeline,
+        "self_inquiry": {
+            "enabled": is_self_inquiry_enabled(),
+            "recent": recent_inquiries(8),
+        },
     }
 
 
@@ -155,7 +160,10 @@ def _command_response(message: str) -> dict[str, Any] | None:
                 "Commands:\n"
                 "• `/status` — brain + auto-learn snapshot\n"
                 "• `/grades` — curriculum and time estimates\n"
+                "• `/mind` — recent questions Aureon asked itself\n"
                 "• `/vitals` — security organism (nomad stack)\n\n"
+                "While training, I ask myself Socratic questions — like a child "
+                "building an inner voice. Filter Railway logs for `self_inquiry`.\n\n"
                 "Ask about a topic — I'll classify it when a production model exists."
             ),
             "kind": "help",
@@ -204,6 +212,25 @@ def _command_response(message: str) -> dict[str, Any] | None:
             f"_{est['note']}_"
         )
         return {"reply": "\n".join(lines), "kind": "grades", "timeline": timeline}
+    if cmd in ("/mind", "/reflect", "/questions"):
+        items = recent_inquiries(6)
+        if not items:
+            return {
+                "reply": (
+                    "No self-inquiry yet. When auto-learn runs, I ask myself questions "
+                    "after each grade cycle — check back after the first cycle or filter "
+                    "Railway logs for `self_inquiry`."
+                ),
+                "kind": "mind",
+            }
+        lines = ["**Questions I asked myself while learning:**\n"]
+        for item in items:
+            lines.append(f"**Q:** {item.get('question')}")
+            answer = str(item.get("answer", ""))
+            if len(answer) > 280:
+                answer = answer[:277] + "..."
+            lines.append(f"**A:** {answer}\n")
+        return {"reply": "\n".join(lines).strip(), "kind": "mind", "inquiries": items}
     if cmd == "/vitals":
         return {"reply": "Open `/security/status` or `/organism/vitals` for live organ vitals.", "kind": "vitals"}
     return None

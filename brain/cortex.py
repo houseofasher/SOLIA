@@ -211,6 +211,11 @@ def run_grade_cycle(
         graduation=graduation,
         regions_summary=[{"region": r["region"], "status": r["status"]} for r in results],
     )
+    from brain.self_inquiry import run_self_inquiry_for_cycle
+
+    inquiry = run_self_inquiry_for_cycle(outcome, source=source)
+    if inquiry:
+        outcome["self_inquiry"] = inquiry
     return outcome
 
 
@@ -329,8 +334,10 @@ def run_batch_graduation_ladder(
 ) -> dict[str, Any]:
     """Run graduation ladders across many domain/subdomain/micro targets in one batch."""
     from app.activity_log import clear_cycle_id, log_ai_activity, new_cycle_id
+    from brain.self_inquiry import reset_batch_inquiry_budget
 
     bootstrap_brain()
+    reset_batch_inquiry_budget()
     targets = iter_training_targets(
         domain_limit=domain_limit,
         subdomain_limit=subdomain_limit,

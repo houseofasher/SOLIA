@@ -15,6 +15,12 @@ def test_chat_help():
     result = chat("/help")
     assert result["kind"] == "help"
     assert "supervised" in result["reply"].lower()
+    assert "mind" in result["reply"].lower()
+
+
+def test_chat_mind_command():
+    result = chat("/mind")
+    assert result["kind"] == "mind"
 
 
 def test_chat_grades_timeline():

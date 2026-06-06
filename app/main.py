@@ -182,6 +182,17 @@ def api_chat_timeline() -> dict:
     )
 
 
+@app.get("/api/chat/self-inquiry")
+def api_chat_self_inquiry(limit: int = Query(default=20, ge=1, le=100)) -> dict:
+    """Recent inner monologue — questions Aureon asked itself during learning."""
+    from brain.self_inquiry import is_self_inquiry_enabled, recent_inquiries
+
+    return {
+        "enabled": is_self_inquiry_enabled(),
+        "inquiries": recent_inquiries(limit),
+    }
+
+
 @app.post("/api/chat")
 def api_chat(body: dict[str, Any]) -> dict[str, Any]:
     """Public chat — supervised classification + live learning context (no training)."""
