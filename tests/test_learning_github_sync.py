@@ -35,9 +35,14 @@ def test_build_export_files_has_corpus_prefix():
     files = build_export_files()
     assert "learning-corpus/snapshot.json" in files
     assert "learning-corpus/README.md" in files
+    assert "learning-corpus/learned_corpus.jsonl" in files
+    assert "learning-corpus/documents.jsonl" in files
+    assert "learning-corpus/document_labels.json" in files
+    assert "learning-corpus/graduation_summary.json" in files
     snapshot = json.loads(files["learning-corpus/snapshot.json"].decode("utf-8"))
     assert "auto_learn" in snapshot
     assert "exported_at" in snapshot
+    assert snapshot["github_sync"]["export_version"] == 2
 
 
 @patch("app.learning_github_sync.requests.put")
