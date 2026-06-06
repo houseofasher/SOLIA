@@ -601,6 +601,104 @@
         "epochs": 150
       },
       "status": "completed"
+    },
+    {
+      "run_id": "0b1d33eb",
+      "created_at": "2026-06-06T23:25:03.545606+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_theoretical_astronomy_0b1d33eb/classifier.json",
+      "params": {
+        "scope": "theoretical_astronomy",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "fab6ff2f",
+      "created_at": "2026-06-06T23:25:48.050022+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_planetary_science_fab6ff2f/classifier.json",
+      "params": {
+        "scope": "planetary_science",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "cb8cea23",
+      "created_at": "2026-06-06T23:26:35.550814+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_internal_medicine_cb8cea23/classifier.json",
+      "params": {
+        "scope": "internal_medicine",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "b738990d",
+      "created_at": "2026-06-06T23:27:18.544683+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_surgery_b738990d/classifier.json",
+      "params": {
+        "scope": "surgery",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "4a80453c",
+      "created_at": "2026-06-06T23:28:05.449591+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_neurology_4a80453c/classifier.json",
+      "params": {
+        "scope": "neurology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "bc610ee6",
+      "created_at": "2026-06-06T23:28:35.451987+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_psychiatry_bc610ee6/classifier.json",
+      "params": {
+        "scope": "psychiatry",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "7d9aadc8",
+      "created_at": "2026-06-06T23:29:12.859834+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_obstetrics_and_gynecology_7d9aadc8/classifier.json",
+      "params": {
+        "scope": "obstetrics_and_gynecology",
+        "epochs": 150
+      },
+      "status": "completed"
     }
   ]
 }
