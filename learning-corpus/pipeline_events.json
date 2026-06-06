@@ -1,1 +1,2877 @@
-[]
+[
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "biology",
+      "micro_subdomain": "botany",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.5,
+      "ranking_accuracy": 0.75,
+      "preference_pairs_used": 4
+    },
+    "created_at": "2026-06-06T01:10:52.581404"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "biology",
+      "micro_subdomain": "botany",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-06T01:10:52.572015"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "biology",
+      "micro_subdomain": "botany",
+      "grade": "preschool",
+      "run_id": "524b7ba5",
+      "samples": 3,
+      "classes": 3,
+      "train_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-06T01:10:52.570334"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "biology",
+      "micro_subdomain": "botany",
+      "grade": "preschool",
+      "labeled": 3,
+      "auto_labeled": 3,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-06T01:10:52.564194"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "biology",
+      "micro_subdomain": "botany",
+      "grade": "preschool",
+      "documents_checked": 3,
+      "newly_verified": 3,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-06T01:10:52.559161"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "biology",
+      "micro_subdomain": "botany",
+      "grade": "preschool",
+      "collection_attempts": 4,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-06T01:10:52.557856"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "biology",
+      "micro_subdomain": "ecology",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.5,
+      "ranking_accuracy": 0.75,
+      "preference_pairs_used": 4
+    },
+    "created_at": "2026-06-06T01:10:49.550212"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "biology",
+      "micro_subdomain": "ecology",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-06T01:10:49.540562"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "biology",
+      "micro_subdomain": "ecology",
+      "grade": "preschool",
+      "run_id": "4b189afb",
+      "samples": 3,
+      "classes": 3,
+      "train_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-06T01:10:49.538892"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "biology",
+      "micro_subdomain": "ecology",
+      "grade": "preschool",
+      "labeled": 3,
+      "auto_labeled": 3,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-06T01:10:49.532895"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "biology",
+      "micro_subdomain": "ecology",
+      "grade": "preschool",
+      "documents_checked": 3,
+      "newly_verified": 3,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-06T01:10:49.527863"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "biology",
+      "micro_subdomain": "ecology",
+      "grade": "preschool",
+      "collection_attempts": 4,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-06T01:10:49.526586"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "biology",
+      "micro_subdomain": "evolutionary_biology",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.5,
+      "ranking_accuracy": 0.75,
+      "preference_pairs_used": 4
+    },
+    "created_at": "2026-06-06T01:10:46.460821"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "biology",
+      "micro_subdomain": "evolutionary_biology",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-06T01:10:46.450583"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "biology",
+      "micro_subdomain": "evolutionary_biology",
+      "grade": "preschool",
+      "run_id": "af844c18",
+      "samples": 3,
+      "classes": 3,
+      "train_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-06T01:10:46.448736"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "biology",
+      "micro_subdomain": "evolutionary_biology",
+      "grade": "preschool",
+      "labeled": 3,
+      "auto_labeled": 3,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-06T01:10:46.442418"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "biology",
+      "micro_subdomain": "evolutionary_biology",
+      "grade": "preschool",
+      "documents_checked": 3,
+      "newly_verified": 3,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-06T01:10:46.436751"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "biology",
+      "micro_subdomain": "evolutionary_biology",
+      "grade": "preschool",
+      "collection_attempts": 4,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-06T01:10:46.435363"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "biology",
+      "micro_subdomain": "genetics",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.5,
+      "ranking_accuracy": 0.75,
+      "preference_pairs_used": 4
+    },
+    "created_at": "2026-06-06T01:10:43.347243"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "biology",
+      "micro_subdomain": "genetics",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-06T01:10:43.337689"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "biology",
+      "micro_subdomain": "genetics",
+      "grade": "preschool",
+      "run_id": "17767235",
+      "samples": 3,
+      "classes": 3,
+      "train_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-06T01:10:43.335939"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "biology",
+      "micro_subdomain": "genetics",
+      "grade": "preschool",
+      "labeled": 3,
+      "auto_labeled": 3,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-06T01:10:43.329809"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "biology",
+      "micro_subdomain": "genetics",
+      "grade": "preschool",
+      "documents_checked": 3,
+      "newly_verified": 3,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-06T01:10:43.324887"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "biology",
+      "micro_subdomain": "genetics",
+      "grade": "preschool",
+      "collection_attempts": 4,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-06T01:10:43.323608"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "biology",
+      "micro_subdomain": "molecular_biology",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.5,
+      "ranking_accuracy": 0.75,
+      "preference_pairs_used": 4
+    },
+    "created_at": "2026-06-06T01:10:40.285503"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "biology",
+      "micro_subdomain": "molecular_biology",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-06T01:10:40.276037"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "biology",
+      "micro_subdomain": "molecular_biology",
+      "grade": "preschool",
+      "run_id": "edeae2b5",
+      "samples": 3,
+      "classes": 3,
+      "train_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-06T01:10:40.274363"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "biology",
+      "micro_subdomain": "molecular_biology",
+      "grade": "preschool",
+      "labeled": 3,
+      "auto_labeled": 3,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-06T01:10:40.268391"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "biology",
+      "micro_subdomain": "molecular_biology",
+      "grade": "preschool",
+      "documents_checked": 3,
+      "newly_verified": 3,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-06T01:10:40.263268"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "biology",
+      "micro_subdomain": "molecular_biology",
+      "grade": "preschool",
+      "collection_attempts": 4,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-06T01:10:40.261923"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "biology",
+      "micro_subdomain": "cell_biology",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.5,
+      "ranking_accuracy": 0.75,
+      "preference_pairs_used": 4
+    },
+    "created_at": "2026-06-06T01:10:37.100437"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "biology",
+      "micro_subdomain": "cell_biology",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-06T01:10:37.090548"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "biology",
+      "micro_subdomain": "cell_biology",
+      "grade": "preschool",
+      "run_id": "12b4304e",
+      "samples": 3,
+      "classes": 3,
+      "train_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-06T01:10:37.088848"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "biology",
+      "micro_subdomain": "cell_biology",
+      "grade": "preschool",
+      "labeled": 3,
+      "auto_labeled": 3,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-06T01:10:37.082947"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "biology",
+      "micro_subdomain": "cell_biology",
+      "grade": "preschool",
+      "documents_checked": 3,
+      "newly_verified": 3,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-06T01:10:37.077574"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "biology",
+      "micro_subdomain": "cell_biology",
+      "grade": "preschool",
+      "collection_attempts": 4,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-06T01:10:37.076256"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "materials_chemistry",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.5,
+      "ranking_accuracy": 0.75,
+      "preference_pairs_used": 4
+    },
+    "created_at": "2026-06-06T01:10:34.011100"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "materials_chemistry",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-06T01:10:34.001774"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "materials_chemistry",
+      "grade": "preschool",
+      "run_id": "0fc79fe0",
+      "samples": 3,
+      "classes": 3,
+      "train_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-06T01:10:34.000067"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "materials_chemistry",
+      "grade": "preschool",
+      "labeled": 3,
+      "auto_labeled": 3,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-06T01:10:33.994228"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "materials_chemistry",
+      "grade": "preschool",
+      "documents_checked": 3,
+      "newly_verified": 3,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-06T01:10:33.989276"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "materials_chemistry",
+      "grade": "preschool",
+      "collection_attempts": 4,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-06T01:10:33.988017"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "medicinal_chemistry",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.5,
+      "ranking_accuracy": 0.75,
+      "preference_pairs_used": 4
+    },
+    "created_at": "2026-06-06T01:10:30.919876"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "medicinal_chemistry",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-06T01:10:30.910192"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "medicinal_chemistry",
+      "grade": "preschool",
+      "run_id": "02de78e4",
+      "samples": 3,
+      "classes": 3,
+      "train_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-06T01:10:30.908462"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "medicinal_chemistry",
+      "grade": "preschool",
+      "labeled": 3,
+      "auto_labeled": 3,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-06T01:10:30.902260"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "medicinal_chemistry",
+      "grade": "preschool",
+      "documents_checked": 3,
+      "newly_verified": 3,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-06T01:10:30.896755"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "medicinal_chemistry",
+      "grade": "preschool",
+      "collection_attempts": 4,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-06T01:10:30.895342"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "environmental_chemistry",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.5,
+      "ranking_accuracy": 0.75,
+      "preference_pairs_used": 4
+    },
+    "created_at": "2026-06-06T01:10:27.764103"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "environmental_chemistry",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-06T01:10:27.753234"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "environmental_chemistry",
+      "grade": "preschool",
+      "run_id": "fccecd8e",
+      "samples": 3,
+      "classes": 3,
+      "train_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-06T01:10:27.751362"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "environmental_chemistry",
+      "grade": "preschool",
+      "labeled": 3,
+      "auto_labeled": 3,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-06T01:10:27.744357"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "environmental_chemistry",
+      "grade": "preschool",
+      "documents_checked": 3,
+      "newly_verified": 3,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-06T01:10:27.738021"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "environmental_chemistry",
+      "grade": "preschool",
+      "collection_attempts": 4,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-06T01:10:27.736208"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "polymer_chemistry",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.5,
+      "ranking_accuracy": 0.75,
+      "preference_pairs_used": 4
+    },
+    "created_at": "2026-06-06T01:10:24.391781"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "polymer_chemistry",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-06T01:10:24.382564"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "polymer_chemistry",
+      "grade": "preschool",
+      "run_id": "3eee1f78",
+      "samples": 3,
+      "classes": 3,
+      "train_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-06T01:10:24.380822"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "polymer_chemistry",
+      "grade": "preschool",
+      "labeled": 3,
+      "auto_labeled": 3,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-06T01:10:24.373885"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "polymer_chemistry",
+      "grade": "preschool",
+      "documents_checked": 3,
+      "newly_verified": 3,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-06T01:10:24.368461"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "polymer_chemistry",
+      "grade": "preschool",
+      "collection_attempts": 4,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-06T01:10:24.367197"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "biochemistry",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.5,
+      "ranking_accuracy": 0.75,
+      "preference_pairs_used": 4
+    },
+    "created_at": "2026-06-06T01:10:21.159652"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "biochemistry",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-06T01:10:21.149693"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "biochemistry",
+      "grade": "preschool",
+      "run_id": "c57b5e74",
+      "samples": 3,
+      "classes": 3,
+      "train_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-06T01:10:21.147912"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "biochemistry",
+      "grade": "preschool",
+      "labeled": 3,
+      "auto_labeled": 3,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-06T01:10:21.141290"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "biochemistry",
+      "grade": "preschool",
+      "documents_checked": 3,
+      "newly_verified": 3,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-06T01:10:21.135903"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "biochemistry",
+      "grade": "preschool",
+      "collection_attempts": 4,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-06T01:10:21.134582"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "analytical_chemistry",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.5,
+      "ranking_accuracy": 0.75,
+      "preference_pairs_used": 4
+    },
+    "created_at": "2026-06-06T01:10:17.863678"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "analytical_chemistry",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-06T01:10:17.853839"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "analytical_chemistry",
+      "grade": "preschool",
+      "run_id": "c2c985b3",
+      "samples": 3,
+      "classes": 3,
+      "train_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-06T01:10:17.852146"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "analytical_chemistry",
+      "grade": "preschool",
+      "labeled": 3,
+      "auto_labeled": 3,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-06T01:10:17.845950"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "analytical_chemistry",
+      "grade": "preschool",
+      "documents_checked": 3,
+      "newly_verified": 3,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-06T01:10:17.840646"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "analytical_chemistry",
+      "grade": "preschool",
+      "collection_attempts": 4,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-06T01:10:17.839371"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "physical_chemistry",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.5,
+      "ranking_accuracy": 0.75,
+      "preference_pairs_used": 4
+    },
+    "created_at": "2026-06-06T01:10:14.622730"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "physical_chemistry",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-06T01:10:14.613134"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "physical_chemistry",
+      "grade": "preschool",
+      "run_id": "5819f7a1",
+      "samples": 3,
+      "classes": 3,
+      "train_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-06T01:10:14.611482"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "physical_chemistry",
+      "grade": "preschool",
+      "labeled": 3,
+      "auto_labeled": 3,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-06T01:10:14.605281"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "physical_chemistry",
+      "grade": "preschool",
+      "documents_checked": 3,
+      "newly_verified": 3,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-06T01:10:14.599932"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "physical_chemistry",
+      "grade": "preschool",
+      "collection_attempts": 4,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-06T01:10:14.598495"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "organic_chemistry",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.5,
+      "ranking_accuracy": 0.75,
+      "preference_pairs_used": 4
+    },
+    "created_at": "2026-06-06T01:10:11.468525"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "organic_chemistry",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-06T01:10:11.459063"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "organic_chemistry",
+      "grade": "preschool",
+      "run_id": "8eef6fde",
+      "samples": 3,
+      "classes": 3,
+      "train_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-06T01:10:11.457373"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "organic_chemistry",
+      "grade": "preschool",
+      "labeled": 3,
+      "auto_labeled": 3,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-06T01:10:11.451481"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "organic_chemistry",
+      "grade": "preschool",
+      "documents_checked": 3,
+      "newly_verified": 3,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-06T01:10:11.446329"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "organic_chemistry",
+      "grade": "preschool",
+      "collection_attempts": 4,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-06T01:10:11.444998"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "inorganic_chemistry",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.5,
+      "ranking_accuracy": 0.75,
+      "preference_pairs_used": 4
+    },
+    "created_at": "2026-06-06T01:10:08.360413"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "inorganic_chemistry",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-06T01:10:08.351227"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "inorganic_chemistry",
+      "grade": "preschool",
+      "run_id": "dc913e2f",
+      "samples": 3,
+      "classes": 3,
+      "train_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-06T01:10:08.349443"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "inorganic_chemistry",
+      "grade": "preschool",
+      "labeled": 3,
+      "auto_labeled": 3,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-06T01:10:08.343070"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "inorganic_chemistry",
+      "grade": "preschool",
+      "documents_checked": 3,
+      "newly_verified": 3,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-06T01:10:08.337026"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "chemistry",
+      "micro_subdomain": "inorganic_chemistry",
+      "grade": "preschool",
+      "collection_attempts": 4,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-06T01:10:08.335510"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "acoustics",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.5,
+      "ranking_accuracy": 0.75,
+      "preference_pairs_used": 4
+    },
+    "created_at": "2026-06-06T01:10:05.215189"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "acoustics",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-06T01:10:05.205518"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "acoustics",
+      "grade": "preschool",
+      "run_id": "c996fbe2",
+      "samples": 3,
+      "classes": 3,
+      "train_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-06T01:10:05.203810"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "acoustics",
+      "grade": "preschool",
+      "labeled": 3,
+      "auto_labeled": 3,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-06T01:10:05.197440"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "acoustics",
+      "grade": "preschool",
+      "documents_checked": 3,
+      "newly_verified": 3,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-06T01:10:05.192131"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "acoustics",
+      "grade": "preschool",
+      "collection_attempts": 4,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-06T01:10:05.190553"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "atomic_and_molecular_physics",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.5,
+      "ranking_accuracy": 0.75,
+      "preference_pairs_used": 4
+    },
+    "created_at": "2026-06-06T01:10:02.070904"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "atomic_and_molecular_physics",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-06T01:10:02.061087"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "atomic_and_molecular_physics",
+      "grade": "preschool",
+      "run_id": "42868189",
+      "samples": 3,
+      "classes": 3,
+      "train_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-06T01:10:02.059245"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "atomic_and_molecular_physics",
+      "grade": "preschool",
+      "labeled": 3,
+      "auto_labeled": 3,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-06T01:10:02.053128"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "atomic_and_molecular_physics",
+      "grade": "preschool",
+      "documents_checked": 3,
+      "newly_verified": 3,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-06T01:10:02.047672"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "atomic_and_molecular_physics",
+      "grade": "preschool",
+      "collection_attempts": 4,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-06T01:10:02.046233"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "condensed_matter_physics",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.5,
+      "ranking_accuracy": 0.75,
+      "preference_pairs_used": 4
+    },
+    "created_at": "2026-06-06T01:09:58.764942"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "condensed_matter_physics",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-06T01:09:58.751950"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "condensed_matter_physics",
+      "grade": "preschool",
+      "run_id": "bdbabf9c",
+      "samples": 3,
+      "classes": 3,
+      "train_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-06T01:09:58.748760"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "condensed_matter_physics",
+      "grade": "preschool",
+      "labeled": 3,
+      "auto_labeled": 3,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-06T01:09:58.721101"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "condensed_matter_physics",
+      "grade": "preschool",
+      "documents_checked": 3,
+      "newly_verified": 3,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-06T01:09:58.715160"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "condensed_matter_physics",
+      "grade": "preschool",
+      "collection_attempts": 4,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-06T01:09:58.712950"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "nuclear_and_particle_physics",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.5,
+      "ranking_accuracy": 0.75,
+      "preference_pairs_used": 4
+    },
+    "created_at": "2026-06-06T01:09:55.326030"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "nuclear_and_particle_physics",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-06T01:09:55.315667"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "nuclear_and_particle_physics",
+      "grade": "preschool",
+      "run_id": "2ec50f3b",
+      "samples": 3,
+      "classes": 3,
+      "train_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-06T01:09:55.314023"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "nuclear_and_particle_physics",
+      "grade": "preschool",
+      "labeled": 3,
+      "auto_labeled": 3,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-06T01:09:55.308049"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "nuclear_and_particle_physics",
+      "grade": "preschool",
+      "documents_checked": 3,
+      "newly_verified": 3,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-06T01:09:55.302874"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "nuclear_and_particle_physics",
+      "grade": "preschool",
+      "collection_attempts": 4,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-06T01:09:55.301481"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "astrophysics_and_cosmology",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.5,
+      "ranking_accuracy": 0.75,
+      "preference_pairs_used": 4
+    },
+    "created_at": "2026-06-06T01:09:52.213475"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "astrophysics_and_cosmology",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-06T01:09:52.204093"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "astrophysics_and_cosmology",
+      "grade": "preschool",
+      "run_id": "213c2e0f",
+      "samples": 3,
+      "classes": 3,
+      "train_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-06T01:09:52.202439"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "astrophysics_and_cosmology",
+      "grade": "preschool",
+      "labeled": 3,
+      "auto_labeled": 3,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-06T01:09:52.196566"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "astrophysics_and_cosmology",
+      "grade": "preschool",
+      "documents_checked": 3,
+      "newly_verified": 3,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-06T01:09:52.191277"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "astrophysics_and_cosmology",
+      "grade": "preschool",
+      "collection_attempts": 4,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-06T01:09:52.189905"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "relativity",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.5,
+      "ranking_accuracy": 0.75,
+      "preference_pairs_used": 4
+    },
+    "created_at": "2026-06-06T01:09:49.050871"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "relativity",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-06T01:09:49.041163"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "relativity",
+      "grade": "preschool",
+      "run_id": "1ff6ddd3",
+      "samples": 3,
+      "classes": 3,
+      "train_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-06T01:09:49.039408"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "relativity",
+      "grade": "preschool",
+      "labeled": 3,
+      "auto_labeled": 3,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-06T01:09:49.033238"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "relativity",
+      "grade": "preschool",
+      "documents_checked": 3,
+      "newly_verified": 3,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-06T01:09:49.027436"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "relativity",
+      "grade": "preschool",
+      "collection_attempts": 4,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-06T01:09:49.025826"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "quantum_mechanics",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.5,
+      "ranking_accuracy": 0.75,
+      "preference_pairs_used": 4
+    },
+    "created_at": "2026-06-06T01:09:45.772158"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "quantum_mechanics",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-06T01:09:45.762628"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "quantum_mechanics",
+      "grade": "preschool",
+      "run_id": "d339dbe9",
+      "samples": 3,
+      "classes": 3,
+      "train_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-06T01:09:45.760800"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "quantum_mechanics",
+      "grade": "preschool",
+      "labeled": 3,
+      "auto_labeled": 3,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-06T01:09:45.754711"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "quantum_mechanics",
+      "grade": "preschool",
+      "documents_checked": 3,
+      "newly_verified": 3,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-06T01:09:45.749415"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "quantum_mechanics",
+      "grade": "preschool",
+      "collection_attempts": 4,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-06T01:09:45.748147"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "electromagnetism",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.5,
+      "ranking_accuracy": 0.75,
+      "preference_pairs_used": 4
+    },
+    "created_at": "2026-06-06T01:09:42.676709"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "electromagnetism",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-06T01:09:42.667331"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "electromagnetism",
+      "grade": "preschool",
+      "run_id": "5830d805",
+      "samples": 3,
+      "classes": 3,
+      "train_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-06T01:09:42.665656"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "electromagnetism",
+      "grade": "preschool",
+      "labeled": 3,
+      "auto_labeled": 3,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-06T01:09:42.659972"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "electromagnetism",
+      "grade": "preschool",
+      "documents_checked": 3,
+      "newly_verified": 3,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-06T01:09:42.654970"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "electromagnetism",
+      "grade": "preschool",
+      "collection_attempts": 4,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-06T01:09:42.653680"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "thermodynamics",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.5,
+      "ranking_accuracy": 0.75,
+      "preference_pairs_used": 4
+    },
+    "created_at": "2026-06-06T01:09:39.497116"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "thermodynamics",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-06T01:09:39.487741"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "thermodynamics",
+      "grade": "preschool",
+      "run_id": "c4364fa4",
+      "samples": 3,
+      "classes": 3,
+      "train_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-06T01:09:39.486004"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "thermodynamics",
+      "grade": "preschool",
+      "labeled": 3,
+      "auto_labeled": 3,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-06T01:09:39.480086"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "thermodynamics",
+      "grade": "preschool",
+      "documents_checked": 3,
+      "newly_verified": 3,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-06T01:09:39.474570"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "thermodynamics",
+      "grade": "preschool",
+      "collection_attempts": 4,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-06T01:09:39.473127"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "classical_mechanics",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.5,
+      "ranking_accuracy": 0.75,
+      "preference_pairs_used": 4
+    },
+    "created_at": "2026-06-06T01:09:36.344726"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "classical_mechanics",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-06T01:09:36.333032"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "classical_mechanics",
+      "grade": "preschool",
+      "run_id": "ae7ac46b",
+      "samples": 4,
+      "classes": 4,
+      "train_accuracy": 1.0,
+      "promoted": true
+    },
+    "created_at": "2026-06-06T01:09:36.330339"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "classical_mechanics",
+      "grade": "preschool",
+      "labeled": 4,
+      "auto_labeled": 4,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-06T01:09:36.321967"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "classical_mechanics",
+      "grade": "preschool",
+      "documents_checked": 4,
+      "newly_verified": 4,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-06T01:09:36.312238"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 1,
+    "payload": {
+      "domain": "science_and_natural_philosophy",
+      "subdomain": "physics",
+      "micro_subdomain": "classical_mechanics",
+      "grade": "preschool",
+      "collection_attempts": 4,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-06T01:09:36.309454"
+  }
+]
