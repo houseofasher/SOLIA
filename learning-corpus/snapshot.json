@@ -13,9 +13,9 @@
       "batch_size": 25
     },
     "running": true,
-    "started_at": "2026-06-06T00:23:50.131990+00:00",
-    "last_run_at": "2026-06-06T00:25:12.683019+00:00",
-    "next_run_at": "2026-06-06T01:25:12.683022+00:00",
+    "started_at": "2026-06-06T00:46:22.148458+00:00",
+    "last_run_at": "2026-06-06T00:49:39.730327+00:00",
+    "next_run_at": "2026-06-06T01:49:39.730332+00:00",
     "cycles_completed": 1,
     "last_result": {
       "batch": true,
@@ -136,22 +136,22 @@
     "enabled": true,
     "recent": [
       {
-        "question": "What is one word I would use to describe Plant Molecular Biology?",
-        "answer": "Asking myself: «What is one word I would use to describe Plant Molecular Biology?» — I passed Pre-School and unlocked elementary. Training accuracy was 100%. My six regions this cycle: collector: ok; verifier: ok; labeler: ok; trainer: ok; evaluator: ok; reward: ok. Each question I ask builds the map — like a child learning to think by wondering aloud.",
-        "path": "science_and_natural_philosophy.biology.botany",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "ts": "2026-06-06T00:25:12.682765+00:00"
-      },
-      {
         "question": "What is Botany (Plant Biology)?",
         "answer": "Asking myself: «What is Botany (Plant Biology)?» — I passed Pre-School and unlocked elementary. Training accuracy was 100%. My six regions this cycle: collector: ok; verifier: ok; labeler: ok; trainer: ok; evaluator: ok; reward: ok. Each question I ask builds the map — like a child learning to think by wondering aloud.",
         "path": "science_and_natural_philosophy.biology.botany",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
-        "ts": "2026-06-06T00:25:12.682630+00:00"
+        "ts": "2026-06-06T00:49:39.729809+00:00"
+      },
+      {
+        "question": "What is one word I would use to describe Plant Physiology?",
+        "answer": "Asking myself: «What is one word I would use to describe Plant Physiology?» — I passed Pre-School and unlocked elementary. Training accuracy was 100%. My six regions this cycle: collector: ok; verifier: ok; labeler: ok; trainer: ok; evaluator: ok; reward: ok. Each question I ask builds the map — like a child learning to think by wondering aloud.",
+        "path": "science_and_natural_philosophy.biology.botany",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "ts": "2026-06-06T00:49:39.729604+00:00"
       },
       {
         "question": "What is Ecology?",
@@ -160,16 +160,16 @@
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
-        "ts": "2026-06-06T00:25:09.334495+00:00"
+        "ts": "2026-06-06T00:49:32.397036+00:00"
       },
       {
-        "question": "What is one word I would use to describe Terrestrial Ecology?",
-        "answer": "Asking myself: «What is one word I would use to describe Terrestrial Ecology?» — I passed Pre-School and unlocked elementary. Training accuracy was 100%. My six regions this cycle: collector: ok; verifier: ok; labeler: ok; trainer: ok; evaluator: ok; reward: ok. Each question I ask builds the map — like a child learning to think by wondering aloud.",
+        "question": "What is one word I would use to describe Population Ecology?",
+        "answer": "Asking myself: «What is one word I would use to describe Population Ecology?» — I passed Pre-School and unlocked elementary. Training accuracy was 100%. My six regions this cycle: collector: ok; verifier: ok; labeler: ok; trainer: ok; evaluator: ok; reward: ok. Each question I ask builds the map — like a child learning to think by wondering aloud.",
         "path": "science_and_natural_philosophy.biology.ecology",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
-        "ts": "2026-06-06T00:25:09.334381+00:00"
+        "ts": "2026-06-06T00:49:32.396739+00:00"
       },
       {
         "question": "What is one word I would use to describe Phylogenetics?",
@@ -178,7 +178,7 @@
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
-        "ts": "2026-06-06T00:25:06.180326+00:00"
+        "ts": "2026-06-06T00:49:24.846970+00:00"
       },
       {
         "question": "What is Evolutionary Biology?",
@@ -187,16 +187,7 @@
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
-        "ts": "2026-06-06T00:25:06.180220+00:00"
-      },
-      {
-        "question": "What is one word I would use to describe Pharmacogenomics?",
-        "answer": "Asking myself: «What is one word I would use to describe Pharmacogenomics?» — I passed Pre-School and unlocked elementary. Training accuracy was 100%. My six regions this cycle: collector: ok; verifier: ok; labeler: ok; trainer: ok; evaluator: ok; reward: ok. Each question I ask builds the map — like a child learning to think by wondering aloud.",
-        "path": "science_and_natural_philosophy.biology.genetics",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "ts": "2026-06-06T00:25:02.926843+00:00"
+        "ts": "2026-06-06T00:49:24.846667+00:00"
       },
       {
         "question": "What is Genetics?",
@@ -205,14 +196,24 @@
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
-        "ts": "2026-06-06T00:25:02.926734+00:00"
+        "ts": "2026-06-06T00:49:17.359807+00:00"
+      },
+      {
+        "question": "What is one word I would use to describe Population Genetics?",
+        "answer": "Asking myself: «What is one word I would use to describe Population Genetics?» — I passed Pre-School and unlocked elementary. Training accuracy was 100%. My six regions this cycle: collector: ok; verifier: ok; labeler: ok; trainer: ok; evaluator: ok; reward: ok. Each question I ask builds the map — like a child learning to think by wondering aloud.",
+        "path": "science_and_natural_philosophy.biology.genetics",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "ts": "2026-06-06T00:49:17.359536+00:00"
       }
     ]
   },
-  "exported_at": "2026-06-06T00:25:12.686995+00:00",
+  "exported_at": "2026-06-06T00:49:39.741290+00:00",
   "github_sync": {
     "batch_cursor": 25,
     "include_document_text": true,
-    "max_documents": 5000
+    "max_documents": 5000,
+    "export_version": 2
   }
 }
