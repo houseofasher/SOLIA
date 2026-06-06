@@ -1,1 +1,427 @@
-[]
+[
+  {
+    "run_id": "1d2940ec",
+    "domain_id": 1,
+    "subdomain_id": 3,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_botany_1d2940ec/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "botany",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T14:34:51.257251"
+  },
+  {
+    "run_id": "5f7ef279",
+    "domain_id": 1,
+    "subdomain_id": 3,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_ecology_5f7ef279/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "ecology",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T14:33:44.906676"
+  },
+  {
+    "run_id": "cb706eee",
+    "domain_id": 1,
+    "subdomain_id": 3,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_evolutionary_biology_cb706eee/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "evolutionary_biology",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T14:32:35.546794"
+  },
+  {
+    "run_id": "4ced910e",
+    "domain_id": 1,
+    "subdomain_id": 3,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_genetics_4ced910e/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "genetics",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T14:31:29.759644"
+  },
+  {
+    "run_id": "8596ad4a",
+    "domain_id": 1,
+    "subdomain_id": 3,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_molecular_biology_8596ad4a/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "molecular_biology",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T14:30:25.509586"
+  },
+  {
+    "run_id": "732fc3f5",
+    "domain_id": 1,
+    "subdomain_id": 3,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_cell_biology_732fc3f5/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "cell_biology",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T14:29:23.065600"
+  },
+  {
+    "run_id": "18ee176a",
+    "domain_id": 1,
+    "subdomain_id": 2,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_materials_chemistry_18ee176a/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "materials_chemistry",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T14:28:14.721961"
+  },
+  {
+    "run_id": "9c2c9384",
+    "domain_id": 1,
+    "subdomain_id": 2,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_medicinal_chemistry_9c2c9384/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "medicinal_chemistry",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T14:27:13.002482"
+  },
+  {
+    "run_id": "f4002eb5",
+    "domain_id": 1,
+    "subdomain_id": 2,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_environmental_chemistry_f4002eb5/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "environmental_chemistry",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T14:26:07.961413"
+  },
+  {
+    "run_id": "8d6f2ac9",
+    "domain_id": 1,
+    "subdomain_id": 2,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_polymer_chemistry_8d6f2ac9/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "polymer_chemistry",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T14:24:53.325019"
+  },
+  {
+    "run_id": "8bc0b905",
+    "domain_id": 1,
+    "subdomain_id": 2,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_biochemistry_8bc0b905/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "biochemistry",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T14:23:45.905568"
+  },
+  {
+    "run_id": "62a09eac",
+    "domain_id": 1,
+    "subdomain_id": 2,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_analytical_chemistry_62a09eac/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "analytical_chemistry",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T14:22:29.602014"
+  },
+  {
+    "run_id": "9f5b239a",
+    "domain_id": 1,
+    "subdomain_id": 2,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_physical_chemistry_9f5b239a/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "physical_chemistry",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T14:21:22.155826"
+  },
+  {
+    "run_id": "3bf50a0b",
+    "domain_id": 1,
+    "subdomain_id": 2,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_organic_chemistry_3bf50a0b/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "organic_chemistry",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T14:20:20.918086"
+  },
+  {
+    "run_id": "4769f502",
+    "domain_id": 1,
+    "subdomain_id": 2,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_inorganic_chemistry_4769f502/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "inorganic_chemistry",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T14:19:09.055139"
+  },
+  {
+    "run_id": "9058816f",
+    "domain_id": 1,
+    "subdomain_id": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_acoustics_9058816f/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "acoustics",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T14:17:52.957352"
+  },
+  {
+    "run_id": "e3b47acc",
+    "domain_id": 1,
+    "subdomain_id": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_atomic_and_molecular_physics_e3b47acc/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "atomic_and_molecular_physics",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T14:16:48.358487"
+  },
+  {
+    "run_id": "334bcae8",
+    "domain_id": 1,
+    "subdomain_id": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_condensed_matter_physics_334bcae8/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "condensed_matter_physics",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T14:15:50.114612"
+  },
+  {
+    "run_id": "2c41ef72",
+    "domain_id": 1,
+    "subdomain_id": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_nuclear_and_particle_physics_2c41ef72/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "nuclear_and_particle_physics",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T14:14:46.166161"
+  },
+  {
+    "run_id": "46e96ce8",
+    "domain_id": 1,
+    "subdomain_id": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_astrophysics_and_cosmology_46e96ce8/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "astrophysics_and_cosmology",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T14:13:33.945855"
+  },
+  {
+    "run_id": "7b27fb01",
+    "domain_id": 1,
+    "subdomain_id": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_relativity_7b27fb01/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "relativity",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T14:12:26.083120"
+  },
+  {
+    "run_id": "22468d11",
+    "domain_id": 1,
+    "subdomain_id": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_quantum_mechanics_22468d11/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "quantum_mechanics",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T14:11:26.264599"
+  },
+  {
+    "run_id": "e809c10e",
+    "domain_id": 1,
+    "subdomain_id": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_electromagnetism_e809c10e/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "electromagnetism",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T14:10:24.325633"
+  },
+  {
+    "run_id": "72f146f2",
+    "domain_id": 1,
+    "subdomain_id": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_thermodynamics_72f146f2/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "thermodynamics",
+      "grade": "preschool"
+    },
+    "promoted": true,
+    "created_at": "2026-06-06T14:09:14.724777"
+  },
+  {
+    "run_id": "cebd1d68",
+    "domain_id": 1,
+    "subdomain_id": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 0.0
+    },
+    "artifact_path": "/app/data/models/brain_classical_mechanics_cebd1d68/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "classical_mechanics",
+      "grade": "preschool"
+    },
+    "promoted": true,
+    "created_at": "2026-06-06T14:08:06.495805"
+  }
+]
