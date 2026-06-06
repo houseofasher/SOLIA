@@ -109,7 +109,7 @@ def check_syntax(code: str) -> dict[str, Any]:
         return {"valid": False, "error": str(exc)}
 
 
-def run_with_timeout(code: str, test: str, timeout: int | None = None) -> dict[str, Any]:
+def run_with_timeout(code: str, test: str, timeout: int | None = None, *, skip_rate_limit: bool = False) -> dict[str, Any]:
     """Execute code + test in isolated subprocess with hard timeout."""
     from app.code_exec_limit import try_acquire_code_exec
 
@@ -120,7 +120,10 @@ def run_with_timeout(code: str, test: str, timeout: int | None = None) -> dict[s
     if not forbidden["safe"]:
         return {"passed": False, "timeout": False, "stderr": forbidden["error"]}
 
-    if not try_acquire_code_exec():
+    if not skip_rate_limit and os.environ.get("AUREON_CODE_BENCHMARK", "").strip() in ("1", "true", "yes"):
+        skip_rate_limit = True
+
+    if not skip_rate_limit and not try_acquire_code_exec():
         return {"passed": False, "timeout": False, "stderr": "Code execution rate limit exceeded"}
 
     limit = timeout if timeout is not None else EXEC_TIMEOUT

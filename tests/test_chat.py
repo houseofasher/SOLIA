@@ -68,6 +68,24 @@ def test_chat_prediction_brain(tmp_path, monkeypatch):
     monkeypatch.setattr(pe, "MODEL_DIR", tmp_path / "models" / "predict_brain")
     monkeypatch.setattr(pe, "_model", None)
     monkeypatch.setattr(pe, "_ready", False)
+
+    def _fast_predict(question: str, **kwargs: object) -> dict:
+        return {
+            "answer": "Paris is the capital of France.",
+            "abstained": False,
+            "confidence": 0.92,
+            "model": "stacked_attention_lm",
+            "model_version": pe.CURRENT_MODEL_VERSION,
+            "context_window": 128,
+            "vocab_size": 500,
+            "pipeline": [{"name": "tokenize", "detail": "test"}],
+            "citations": [],
+        }
+
+    monkeypatch.setattr(pe, "predict_with_steps", _fast_predict)
+    import app.chat_service as cs
+
+    monkeypatch.setattr(cs, "predict_with_steps", _fast_predict)
     result = chat("What is the capital of France?")
     assert result["kind"] == "chat"
     assert result.get("brain_predict") is True

@@ -9,6 +9,7 @@ from brain.brain_classifiers import classify_moe
 from brain.deterministic_qa import try_arithmetic_answer
 from brain.predict_engine import predict_with_steps
 from brain.vector_rag import retrieve_with_citations
+from app.session_memory import history_as_context
 
 ToolFn = Callable[..., dict[str, Any]]
 

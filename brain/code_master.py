@@ -299,6 +299,18 @@ def generate_master_code(
 
 def benchmark_humaneval(*, limit: int = 50, use_retrieval: bool = True) -> dict[str, Any]:
     """HumanEval pass@1 — random sample, retrieval + verification pipeline."""
+    prev = os.environ.get("AUREON_CODE_BENCHMARK")
+    os.environ["AUREON_CODE_BENCHMARK"] = "1"
+    try:
+        return _benchmark_humaneval_inner(limit=limit, use_retrieval=use_retrieval)
+    finally:
+        if prev is None:
+            os.environ.pop("AUREON_CODE_BENCHMARK", None)
+        else:
+            os.environ["AUREON_CODE_BENCHMARK"] = prev
+
+
+def _benchmark_humaneval_inner(*, limit: int = 50, use_retrieval: bool = True) -> dict[str, Any]:
     bank = get_code_bank()
     humaneval = [p for p in bank.problems if p.source == "humaneval"]
     rng = random.Random(42)
