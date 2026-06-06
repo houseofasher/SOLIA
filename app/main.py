@@ -193,6 +193,22 @@ def api_chat_self_inquiry(limit: int = Query(default=20, ge=1, le=100)) -> dict:
     }
 
 
+@app.get("/api/learning/github-sync")
+def api_github_sync_status() -> dict:
+    """GitHub learning corpus sync status (export → learning-data branch)."""
+    from app.learning_github_sync import get_github_sync_state
+
+    return get_github_sync_state().to_dict()
+
+
+@app.post("/api/learning/github-sync")
+def api_github_sync_run(_: Mutating) -> dict:
+    """Export learning data and push to configured GitHub repos."""
+    from app.learning_github_sync import run_github_sync
+
+    return run_github_sync(reason="api")
+
+
 @app.post("/api/chat")
 def api_chat(body: dict[str, Any]) -> dict[str, Any]:
     """Public chat — supervised classification + live learning context (no training)."""

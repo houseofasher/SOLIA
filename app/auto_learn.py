@@ -390,6 +390,10 @@ class AutoLearnScheduler:
             )
             logger.info("Auto-learn cycle complete: %s", self.state.last_result)
 
+            from app.learning_github_sync import run_github_sync_background
+
+            run_github_sync_background(reason="auto_learn_cycle")
+
         except HTTPException as exc:
             self.state.last_error = f"training busy: {exc.detail}"
             logger.warning("Auto-learn skipped — %s", exc.detail)
