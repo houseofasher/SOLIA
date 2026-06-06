@@ -15,7 +15,7 @@
       "batch_size": 25
     },
     "running": true,
-    "started_at": "2026-06-06T19:30:48.144708+00:00",
+    "started_at": "2026-06-06T19:33:31.488444+00:00",
     "last_run_at": null,
     "next_run_at": null,
     "cycles_completed": 0,
@@ -111,9 +111,9 @@
     "enabled": true,
     "recent": [
       {
-        "question": "Where are my biggest knowledge gaps?",
-        "answer": "~867 micro-topics not fully graduated; sparse docs mean abstain.",
-        "theme": "uncertainty",
+        "question": "What makes my self-model different from theater?",
+        "answer": "Every answer ties to docs, cycles, or audit JSON — not performed empathy.",
+        "theme": "consciousness",
         "source": "startup",
         "grounded": false,
         "state_snapshot": {
@@ -121,12 +121,12 @@
           "cycles": 0,
           "focus": ""
         },
-        "ts": "2026-06-06T19:30:48.142633+00:00",
+        "ts": "2026-06-06T19:33:31.486208+00:00",
         "kind": "meta"
       }
     ]
   },
-  "exported_at": "2026-06-06T19:30:48.151083+00:00",
+  "exported_at": "2026-06-06T19:33:31.494573+00:00",
   "github_sync": {
     "batch_cursor": 0,
     "include_document_text": true,
