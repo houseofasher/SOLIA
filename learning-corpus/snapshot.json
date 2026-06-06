@@ -15,7 +15,7 @@
       "batch_size": 25
     },
     "running": true,
-    "started_at": "2026-06-06T17:31:18.238837+00:00",
+    "started_at": "2026-06-06T18:02:47.795542+00:00",
     "last_run_at": null,
     "next_run_at": null,
     "cycles_completed": 0,
@@ -121,12 +121,12 @@
           "cycles": 0,
           "focus": ""
         },
-        "ts": "2026-06-06T17:31:18.236424+00:00",
+        "ts": "2026-06-06T18:02:47.793528+00:00",
         "kind": "meta"
       }
     ]
   },
-  "exported_at": "2026-06-06T17:31:18.246076+00:00",
+  "exported_at": "2026-06-06T18:02:47.801799+00:00",
   "github_sync": {
     "batch_cursor": 0,
     "include_document_text": true,
