@@ -15,13 +15,17 @@
       "batch_size": 25
     },
     "running": true,
-    "started_at": "2026-06-06T18:41:08.904735+00:00",
+    "started_at": "2026-06-06T18:43:14.700245+00:00",
     "last_run_at": null,
     "next_run_at": null,
     "cycles_completed": 0,
     "last_result": {},
     "last_error": null,
-    "current_target": null
+    "current_target": {
+      "mode": "batch",
+      "limits": "domains=all subs=all micros=all",
+      "domain_slugs": null
+    }
   },
   "brain": {
     "domains": 30,
@@ -111,9 +115,9 @@
     "enabled": true,
     "recent": [
       {
-        "question": "What would I verify before trusting my own reply?",
-        "answer": "Run verifier region, cite document_id, check confidence threshold.",
-        "theme": "reflection",
+        "question": "What was the last thing I asked myself?",
+        "answer": "Nothing logged yet — this may be my first reflection.",
+        "theme": "meta_cognition",
         "source": "startup",
         "grounded": false,
         "state_snapshot": {
@@ -121,12 +125,12 @@
           "cycles": 0,
           "focus": ""
         },
-        "ts": "2026-06-06T18:41:08.902701+00:00",
+        "ts": "2026-06-06T18:43:14.697198+00:00",
         "kind": "meta"
       }
     ]
   },
-  "exported_at": "2026-06-06T18:41:08.911111+00:00",
+  "exported_at": "2026-06-06T18:43:14.710116+00:00",
   "github_sync": {
     "batch_cursor": 0,
     "include_document_text": true,
