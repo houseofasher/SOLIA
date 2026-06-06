@@ -2,15 +2,17 @@
 
 from __future__ import annotations
 
+import json
 import logging
 import os
 import threading
 import time
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta, timezone
+from pathlib import Path
 from typing import Any
 
-from brain.cortex import run_batch_graduation_ladder
+from brain.cortex import iter_training_targets, run_batch_graduation_ladder
 from brain.domains.taxonomy import KNOWLEDGE_TAXONOMY
 
 from app.organism import get_organism
@@ -18,6 +20,53 @@ from app.security import exclusive_training_lock
 from fastapi import HTTPException
 
 logger = logging.getLogger(__name__)
+
+_CURSOR_FILENAME = "auto_learn_cursor.json"
+
+
+def _cursor_path() -> Path:
+    data_dir = os.environ.get("AUREON_DATA_DIR", "data").strip() or "data"
+    return Path(data_dir) / _CURSOR_FILENAME
+
+
+def load_target_cursor() -> int:
+    path = _cursor_path()
+    if not path.is_file():
+        return 0
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        return max(0, int(payload.get("offset", 0)))
+    except (OSError, ValueError, TypeError, json.JSONDecodeError):
+        return 0
+
+
+def save_target_cursor(offset: int, *, total: int) -> None:
+    path = _cursor_path()
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        json.dumps({"offset": offset % max(total, 1), "total": total}, indent=2),
+        encoding="utf-8",
+    )
+
+
+def select_batch_targets(
+    targets: list[tuple[str, str, str]],
+    *,
+    cursor: int,
+    batch_size: int | None,
+) -> tuple[list[tuple[str, str, str]], int]:
+    """Return a slice of targets and the next cursor (wraps at end)."""
+    if not targets or batch_size is None or batch_size >= len(targets):
+        return targets, 0
+    start = cursor % len(targets)
+    end = start + batch_size
+    if end <= len(targets):
+        chunk = targets[start:end]
+        next_cursor = end if end < len(targets) else 0
+    else:
+        chunk = targets[start:]
+        next_cursor = 0
+    return chunk, next_cursor
 
 
 def _env_bool(name: str, default: bool = False) -> bool:
@@ -64,6 +113,7 @@ class AutoLearnConfig:
     domain_limit: int | None = 30
     subdomain_limit: int | None = 8
     micro_limit: int | None = 17
+    batch_size: int | None = None
 
     @classmethod
     def from_env(cls) -> AutoLearnConfig:
@@ -79,6 +129,17 @@ class AutoLearnConfig:
                 "subdomain_limit": _env_limit("AUREON_AUTO_LEARN_SUBDOMAIN_LIMIT", 8, maximum=20),
                 "micro_limit": _env_limit("AUREON_AUTO_LEARN_MICRO_LIMIT", 17, maximum=20),
             }
+
+        batch_raw = os.environ.get("AUREON_AUTO_LEARN_BATCH_SIZE", "").strip().lower()
+        if batch_raw in ("0", "all", "*"):
+            batch_size: int | None = None
+        elif batch_raw:
+            batch_size = _env_int("AUREON_AUTO_LEARN_BATCH_SIZE", 25, minimum=1, maximum=500)
+        elif train_all and is_railway():
+            batch_size = 25
+        else:
+            batch_size = None
+
         return cls(
             enabled=enabled,
             on_startup=_env_bool("AUREON_AUTO_LEARN_ON_STARTUP", default=True),
@@ -86,6 +147,7 @@ class AutoLearnConfig:
             epochs=_env_int("AUREON_AUTO_LEARN_EPOCHS", 150, minimum=50, maximum=500),
             max_grades_per_cycle=_env_int("AUREON_AUTO_LEARN_MAX_GRADES", 1, minimum=1, maximum=7),
             train_all=train_all,
+            batch_size=batch_size,
             **limits,
         )
 
@@ -136,6 +198,7 @@ class AutoLearnScheduler:
                 "domain_limit": self.config.domain_limit,
                 "subdomain_limit": self.config.subdomain_limit,
                 "micro_limit": self.config.micro_limit,
+                "batch_size": self.config.batch_size,
             },
             **self.state.to_dict(),
         }
@@ -155,7 +218,7 @@ class AutoLearnScheduler:
         self._thread.start()
         logger.info(
             "Auto-learn started — interval=%ss, epochs=%s, max_grades=%s, "
-            "domains=%s subs=%s micros=%s train_all=%s",
+            "domains=%s subs=%s micros=%s train_all=%s batch_size=%s",
             self.config.interval_sec,
             self.config.epochs,
             self.config.max_grades_per_cycle,
@@ -163,6 +226,7 @@ class AutoLearnScheduler:
             self.config.subdomain_limit if self.config.subdomain_limit is not None else "all",
             self.config.micro_limit if self.config.micro_limit is not None else "all",
             self.config.train_all,
+            self.config.batch_size if self.config.batch_size is not None else "all",
         )
 
     def stop(self) -> None:
@@ -261,15 +325,36 @@ class AutoLearnScheduler:
             )
 
             with exclusive_training_lock():
-                batch = run_batch_graduation_ladder(
-                    epochs=self.config.epochs,
-                    max_grades=self.config.max_grades_per_cycle,
+                all_targets = iter_training_targets(
                     domain_limit=self.config.domain_limit if domain_slugs is None else None,
                     subdomain_limit=self.config.subdomain_limit,
                     micro_subdomain_limit=self.config.micro_limit,
                     domain_slugs=domain_slugs,
+                )
+                cursor = load_target_cursor()
+                batch_targets, next_cursor = select_batch_targets(
+                    all_targets,
+                    cursor=cursor,
+                    batch_size=self.config.batch_size,
+                )
+                log_ai_activity(
+                    "auto_learn_batch_slice",
+                    cycle_id=cycle_id,
+                    source="auto_learn",
+                    targets_total=len(all_targets),
+                    targets_in_batch=len(batch_targets),
+                    cursor=cursor,
+                    next_cursor=next_cursor,
+                    batch_size=self.config.batch_size,
+                )
+                batch = run_batch_graduation_ladder(
+                    epochs=self.config.epochs,
+                    max_grades=self.config.max_grades_per_cycle,
+                    targets=batch_targets,
                     source="auto_learn",
                 )
+                if batch_targets and len(all_targets) > len(batch_targets):
+                    save_target_cursor(next_cursor, total=len(all_targets))
 
             if batch["targets_total"] == 0:
                 self.state.last_error = "no micro-subdomains matched batch limits"
@@ -287,11 +372,13 @@ class AutoLearnScheduler:
             self.state.last_result = {
                 "batch": True,
                 "targets_total": batch["targets_total"],
+                "targets_in_corpus": len(all_targets),
                 "targets_processed": batch["targets_processed"],
                 "graduations_passed": len(graduations),
                 "last_target": last.get("target"),
                 "last_graduation": last.get("graduation"),
                 "sample_paths": [r["path"] for r in batch["results"][:5]],
+                "batch_cursor": next_cursor,
             }
             self.state.last_error = None
             log_ai_activity(

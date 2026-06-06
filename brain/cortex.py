@@ -330,6 +330,7 @@ def run_batch_graduation_ladder(
     subdomain_limit: int | None = None,
     micro_subdomain_limit: int | None = None,
     domain_slugs: list[str] | None = None,
+    targets: list[tuple[str, str, str]] | None = None,
     source: str = "auto_learn",
 ) -> dict[str, Any]:
     """Run graduation ladders across many domain/subdomain/micro targets in one batch."""
@@ -338,12 +339,13 @@ def run_batch_graduation_ladder(
 
     bootstrap_brain()
     reset_batch_inquiry_budget()
-    targets = iter_training_targets(
-        domain_limit=domain_limit,
-        subdomain_limit=subdomain_limit,
-        micro_subdomain_limit=micro_subdomain_limit,
-        domain_slugs=domain_slugs,
-    )
+    if targets is None:
+        targets = iter_training_targets(
+            domain_limit=domain_limit,
+            subdomain_limit=subdomain_limit,
+            micro_subdomain_limit=micro_subdomain_limit,
+            domain_slugs=domain_slugs,
+        )
     cycle_id = new_cycle_id("batch")
     log_ai_activity(
         "batch_graduation_start",
