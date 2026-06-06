@@ -16,9 +16,9 @@
     },
     "running": true,
     "started_at": "2026-06-06T04:47:24.721904+00:00",
-    "last_run_at": "2026-06-06T09:23:58.602565+00:00",
-    "next_run_at": "2026-06-06T10:23:58.602569+00:00",
-    "cycles_completed": 5,
+    "last_run_at": "2026-06-06T10:25:56.879489+00:00",
+    "next_run_at": "2026-06-06T11:25:56.879493+00:00",
+    "cycles_completed": 6,
     "last_result": {
       "batch": true,
       "targets_total": 25,
@@ -26,26 +26,26 @@
       "targets_processed": 25,
       "graduations_passed": 25,
       "last_target": {
-        "domain": "technology_and_engineering",
-        "subdomain": "nuclear_engineering",
-        "micro_subdomain": "radiation_protection"
+        "domain": "philosophy",
+        "subdomain": "political_philosophy",
+        "micro_subdomain": "ideology_analysis"
       },
       "last_graduation": {
         "grade": "preschool",
         "passed": true,
-        "train_accuracy": 0.0,
+        "train_accuracy": 1.0,
         "min_train_accuracy": 0.45,
         "evaluator_passed": true,
         "unlocked_next": "elementary"
       },
       "sample_paths": [
-        "technology_and_engineering.mechanical_engineering.machine_design",
-        "technology_and_engineering.mechanical_engineering.manufacturing_engineering",
-        "technology_and_engineering.mechanical_engineering.robotics_and_automation",
-        "technology_and_engineering.mechanical_engineering.aerospace_and_aeronautical_engineering",
-        "technology_and_engineering.civil_engineering.structural_engineering"
+        "technology_and_engineering.nuclear_engineering.nuclear_fuel_cycle",
+        "technology_and_engineering.nuclear_engineering.fusion_engineering",
+        "technology_and_engineering.agricultural_and_biosystems_engineering.irrigation_engineering",
+        "technology_and_engineering.agricultural_and_biosystems_engineering.farm_machinery",
+        "technology_and_engineering.agricultural_and_biosystems_engineering.post_harvest_technology"
       ],
-      "batch_cursor": 125
+      "batch_cursor": 150
     },
     "last_error": null,
     "current_target": {
@@ -58,8 +58,8 @@
     "domains": 30,
     "micro_subdomains": 862,
     "micro_agents": 6162,
-    "documents": 388,
-    "grade_levels_graduated": 125,
+    "documents": 462,
+    "grade_levels_graduated": 150,
     "grade_progress_rows": 6034
   },
   "timeline": {
@@ -138,106 +138,106 @@
     "enabled": true,
     "recent": [
       {
-        "question": "What type of Radiation Protection, Radiation, Radiation Oncology, Power System Protection, the Radiation Protection?",
-        "answer": "Pick one facet of Radiation Protection.",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "technology_and_engineering.nuclear_engineering.radiation_protection",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": false,
-        "ciper": true,
-        "ts": "2026-06-06T09:23:58.602232+00:00"
-      },
-      {
-        "question": "What is Radiation Protection?",
-        "answer": "No verified text for Radiation Protection yet.",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "technology_and_engineering.nuclear_engineering.radiation_protection",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": false,
-        "ciper": false,
-        "ts": "2026-06-06T09:23:58.601931+00:00"
-      },
-      {
-        "question": "What type of Nuclear Safety, Nuclear Structure, Nuclear Reactions, Nuclear Magnetic Resonance (NMR), the Nuclear Medicine?",
-        "answer": "Pick one facet of Nuclear Safety.",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "technology_and_engineering.nuclear_engineering.nuclear_safety",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": false,
-        "ciper": true,
-        "ts": "2026-06-06T09:23:34.207748+00:00"
-      },
-      {
-        "question": "What is one word I would use to describe Nuclear Safety?",
-        "answer": "safety",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "technology_and_engineering.nuclear_engineering.nuclear_safety",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": false,
-        "ciper": false,
-        "ts": "2026-06-06T09:23:34.207533+00:00"
-      },
-      {
-        "question": "What type of Reactor Design, Chemical Reactor Design, Polymerization Reactors, Bioreactor Design, the Drug Design?",
-        "answer": "Pick one facet of Reactor Design.",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "technology_and_engineering.nuclear_engineering.reactor_design",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": false,
-        "ciper": true,
-        "ts": "2026-06-06T09:23:09.830302+00:00"
-      },
-      {
-        "question": "What is one word I would use to describe Reactor Design?",
-        "answer": "design",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "technology_and_engineering.nuclear_engineering.reactor_design",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": false,
-        "ciper": false,
-        "ts": "2026-06-06T09:23:09.830096+00:00"
-      },
-      {
-        "question": "What type of Carbon Nanomaterials, Carbon Nanomaterials, Carbon Pricing, Nanomaterials Chemistry, the Carbon Science?",
-        "answer": "Metal Nanoparticles is a core concept within Nanomaterials….",
+        "question": "What type of Socialism, Socialism, the Democratic Socialism?",
+        "answer": "Conservatism is a core concept within Ideology Analysis….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.materials_science_and_engineering.nanomaterials",
+        "path": "philosophy.political_philosophy.ideology_analysis",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-06T09:22:45.391551+00:00"
+        "ts": "2026-06-06T10:25:56.879131+00:00"
       },
       {
-        "question": "What is one word I would use to describe Carbon Nanomaterials?",
-        "answer": "Quantum Dots",
+        "question": "What is Ideology Analysis?",
+        "answer": "Conservatism is a core concept within Ideology Analysis….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.materials_science_and_engineering.nanomaterials",
+        "path": "philosophy.political_philosophy.ideology_analysis",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-06T09:22:45.391319+00:00"
+        "ts": "2026-06-06T10:25:56.878903+00:00"
+      },
+      {
+        "question": "What type of Positive vs Negative Liberty, Positive vs Negative Liberty, Positive Psychology, the Rights & Liberty?",
+        "answer": "Civil Liberties is a core concept within Rights & Liberty….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "philosophy.political_philosophy.rights_and_liberty",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": true,
+        "ts": "2026-06-06T10:25:52.164772+00:00"
+      },
+      {
+        "question": "What is Rights & Liberty?",
+        "answer": "Civil Liberties is a core concept within Rights & Liberty….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "philosophy.political_philosophy.rights_and_liberty",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-06T10:25:52.164538+00:00"
+      },
+      {
+        "question": "What type of Legitimacy & Obligation: Legitimacy & Obligation?",
+        "answer": "Anarchist Theory is a core concept within Political….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "philosophy.political_philosophy.political_authority",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": true,
+        "ts": "2026-06-06T10:25:47.585382+00:00"
+      },
+      {
+        "question": "What is Political Authority?",
+        "answer": "Anarchist Theory is a core concept within Political….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "philosophy.political_philosophy.political_authority",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-06T10:25:47.585135+00:00"
+      },
+      {
+        "question": "What type of Egalitarianism: Egalitarianism?",
+        "answer": "Communitarian Justice is a core concept within Theories of….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "philosophy.political_philosophy.theories_of_justice",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": true,
+        "ts": "2026-06-06T10:25:43.039479+00:00"
+      },
+      {
+        "question": "What is one word I would use to describe Egalitarianism?",
+        "answer": "research",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "philosophy.political_philosophy.theories_of_justice",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-06T10:25:43.039241+00:00"
       }
     ]
   },
-  "exported_at": "2026-06-06T09:53:48.102970+00:00",
+  "exported_at": "2026-06-06T10:25:56.879894+00:00",
   "github_sync": {
-    "batch_cursor": 125,
+    "batch_cursor": 150,
     "include_document_text": true,
     "max_documents": 5000,
     "export_version": 2
