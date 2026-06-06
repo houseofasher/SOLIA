@@ -16,10 +16,37 @@
     },
     "running": true,
     "started_at": "2026-06-06T02:01:18.548911+00:00",
-    "last_run_at": null,
-    "next_run_at": null,
-    "cycles_completed": 0,
-    "last_result": {},
+    "last_run_at": "2026-06-06T02:03:50.082333+00:00",
+    "next_run_at": "2026-06-06T03:03:50.082339+00:00",
+    "cycles_completed": 1,
+    "last_result": {
+      "batch": true,
+      "targets_total": 25,
+      "targets_in_corpus": 862,
+      "targets_processed": 25,
+      "graduations_passed": 25,
+      "last_target": {
+        "domain": "science_and_natural_philosophy",
+        "subdomain": "biology",
+        "micro_subdomain": "botany"
+      },
+      "last_graduation": {
+        "grade": "preschool",
+        "passed": true,
+        "train_accuracy": 1.0,
+        "min_train_accuracy": 0.45,
+        "evaluator_passed": true,
+        "unlocked_next": "elementary"
+      },
+      "sample_paths": [
+        "science_and_natural_philosophy.physics.classical_mechanics",
+        "science_and_natural_philosophy.physics.thermodynamics",
+        "science_and_natural_philosophy.physics.electromagnetism",
+        "science_and_natural_philosophy.physics.quantum_mechanics",
+        "science_and_natural_philosophy.physics.relativity"
+      ],
+      "batch_cursor": 25
+    },
     "last_error": null,
     "current_target": {
       "mode": "batch",
@@ -31,8 +58,8 @@
     "domains": 30,
     "micro_subdomains": 862,
     "micro_agents": 6162,
-    "documents": 0,
-    "grade_levels_graduated": 0,
+    "documents": 76,
+    "grade_levels_graduated": 25,
     "grade_progress_rows": 6034
   },
   "timeline": {
@@ -109,11 +136,108 @@
   },
   "self_inquiry": {
     "enabled": true,
-    "recent": []
+    "recent": [
+      {
+        "question": "What type of Plant Ecology, Plant Anatomy, Plant Physiology, Plant Taxonomy, the Plant Ecology?",
+        "answer": "Plant Physiology is a core concept within Botany (Plant….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "science_and_natural_philosophy.biology.botany",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": true,
+        "ts": "2026-06-06T02:03:50.081901+00:00"
+      },
+      {
+        "question": "What is Botany (Plant Biology)?",
+        "answer": "Plant Physiology is a core concept within Botany (Plant….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "science_and_natural_philosophy.biology.botany",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-06T02:03:50.081584+00:00"
+      },
+      {
+        "question": "What type of Landscape Ecology, Landscape Ecology, Landscape Photography, Urban Landscape, the Ecological Landscape?",
+        "answer": "Population Ecology is a core concept within Ecology….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "science_and_natural_philosophy.biology.ecology",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": true,
+        "ts": "2026-06-06T02:03:44.276711+00:00"
+      },
+      {
+        "question": "What is Ecology?",
+        "answer": "Population Ecology is a core concept within Ecology….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "science_and_natural_philosophy.biology.ecology",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-06T02:03:44.276354+00:00"
+      },
+      {
+        "question": "What type of Neo-Darwinian Synthesis, Neo-Darwinian Synthesis, Neonatology, Neo-Aristotelian Ethics, the Neoplatonism?",
+        "answer": "Phylogenetics is a core concept within Evolutionary Biology….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "science_and_natural_philosophy.biology.evolutionary_biology",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": true,
+        "ts": "2026-06-06T02:03:38.507312+00:00"
+      },
+      {
+        "question": "What is Evolutionary Biology?",
+        "answer": "Phylogenetics is a core concept within Evolutionary Biology….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "science_and_natural_philosophy.biology.evolutionary_biology",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-06T02:03:38.506925+00:00"
+      },
+      {
+        "question": "What type of Comparative Genomics, Comparative Genomics, Comparative Physiology, Comparative Linguistics, the Comparative Historical Methods?",
+        "answer": "Population Genetics is a core concept within Genetics….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "science_and_natural_philosophy.biology.genetics",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": true,
+        "ts": "2026-06-06T02:03:32.748027+00:00"
+      },
+      {
+        "question": "What is Genetics?",
+        "answer": "Population Genetics is a core concept within Genetics….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "science_and_natural_philosophy.biology.genetics",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-06T02:03:32.747558+00:00"
+      }
+    ]
   },
-  "exported_at": "2026-06-06T02:01:18.560760+00:00",
+  "exported_at": "2026-06-06T02:03:50.082863+00:00",
   "github_sync": {
-    "batch_cursor": 0,
+    "batch_cursor": 25,
     "include_document_text": true,
     "max_documents": 5000,
     "export_version": 2
