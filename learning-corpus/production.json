@@ -1,8 +1,8 @@
 {
-  "promoted_at": "2026-06-06T01:09:36.329314+00:00",
-  "run_id": "ae7ac46b",
+  "promoted_at": "2026-06-06T02:01:28.010156+00:00",
+  "run_id": "1a324a07",
   "metrics": {
     "train_accuracy": 1.0
   },
-  "artifact_path": "/app/data/models/brain_classical_mechanics_ae7ac46b/classifier.json"
+  "artifact_path": "/app/data/models/brain_classical_mechanics_1a324a07/classifier.json"
 }
