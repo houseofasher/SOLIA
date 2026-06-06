@@ -42,6 +42,19 @@ DOMAIN_KEYWORDS: dict[str, tuple[str, ...]] = {
 }
 
 
+def _pseudo_label(row: dict) -> str:
+    """Prefer taxonomy topic labels so multi-topic corpora yield distinct classes."""
+    meta = row.get("metadata", {})
+    topic = meta.get("topic")
+    if topic:
+        return str(topic)
+    meta_domain = meta.get("domain")
+    if meta_domain and meta_domain in DOMAIN_KEYWORDS:
+        return str(meta_domain)
+    domain, _ = _keyword_teacher(row["text"], row["title"])
+    return domain
+
+
 def _keyword_teacher(text: str, title: str) -> tuple[str, float]:
     """Strong heuristic teacher — baseline when sklearn teacher is uncertain."""
     combined = f"{title} {text}".lower()
@@ -68,14 +81,7 @@ class TeacherLabeler:
 
     def _bootstrap_fit(self, rows: list[dict]) -> None:
         texts = [f"{r['title']} {r['text']}" for r in rows]
-        pseudo_labels = []
-        for row in rows:
-            meta_domain = row.get("metadata", {}).get("domain")
-            if meta_domain and meta_domain in DOMAIN_KEYWORDS:
-                pseudo_labels.append(meta_domain)
-            else:
-                domain, _ = _keyword_teacher(row["text"], row["title"])
-                pseudo_labels.append(domain)
+        pseudo_labels = [_pseudo_label(row) for row in rows]
 
         self.domains = sorted(set(pseudo_labels))
         x = self.vectorizer.fit_transform(texts)
@@ -110,13 +116,18 @@ class TeacherLabeler:
             confidences = np.array(confidences)
 
         for row, pred_idx, confidence in zip(rows, predictions, confidences):
-            domain = self.domains[int(pred_idx)] if self.domains else "research"
-            keyword_domain, keyword_conf = _keyword_teacher(row["text"], row["title"])
+            topic = row.get("metadata", {}).get("topic")
+            if topic:
+                domain = str(topic)
+                confidence = max(float(confidence), 0.85)
+            else:
+                domain = self.domains[int(pred_idx)] if self.domains else "research"
+                keyword_domain, keyword_conf = _keyword_teacher(row["text"], row["title"])
 
-            # Ensemble teacher + keyword for verifiability
-            if keyword_conf > float(confidence):
-                domain = keyword_domain
-                confidence = keyword_conf
+                # Ensemble teacher + keyword for verifiability
+                if keyword_conf > float(confidence):
+                    domain = keyword_domain
+                    confidence = keyword_conf
 
             labeled.append(
                 {

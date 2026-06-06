@@ -175,7 +175,7 @@ class AureonOrganism:
 
             if training_lock_available():
                 return {"state": "vital", "detail": "Exclusive training lock ready"}
-            return {"state": "critical", "detail": "Training lock held — capacity saturated"}
+            return {"state": "dormant", "detail": "Training in progress — lock held"}
 
         if organ_id == "gateway_skin":
             return {"state": "vital", "detail": "SecurityGatewayMiddleware + headers armed"}

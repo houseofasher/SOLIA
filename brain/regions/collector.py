@@ -2,15 +2,16 @@
 
 from __future__ import annotations
 
-import json
 import uuid
 
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
 from brain.base import AgentContext, AgentResult, MicroAgentBase
+from brain.domains.generate_micros import topics_for
+from brain.domains.taxonomy import lookup_names
 from db.models import Document
-from app.security import load_json_file_bounded, resolve_path_under
+from app.security import load_json_file_bounded
 from pipeline.config import SEEDS_DIR
 from pipeline.step1_collection.collectors import ArxivCollector, RawDocument
 from pipeline.step1_collection.filters import filter_document
@@ -22,7 +23,42 @@ DOMAIN_QUERIES: dict[str, str] = {
     "biology": "all:genetics OR all:molecular biology",
     "linguistics": "all:grammar OR all:phonology OR all:syntax",
     "vedic_sciences": "all:sanskrit OR all:jyotisha",
+    "science_and_natural_philosophy": "cat:physics OR cat:math OR all:chemistry OR all:biology",
 }
+
+SUBDOMAIN_ARXIV_QUERIES: dict[str, str] = {
+    "chemistry": "cat:physics.chem-ph OR all:chemistry",
+    "physics": "cat:physics.gen-ph OR all:physics",
+    "biology": "all:biology OR all:genetics OR all:ecology",
+    "mathematics": "cat:math.* OR all:mathematics",
+    "earth_and_environmental_sciences": "all:geology OR all:climate OR all:ecology",
+    "astronomy_and_cosmology": "cat:astro-ph OR all:astronomy",
+}
+
+
+def _arxiv_query(ctx: AgentContext) -> str | None:
+    if ctx.domain_slug in DOMAIN_QUERIES:
+        return DOMAIN_QUERIES[ctx.domain_slug]
+    if ctx.subdomain_slug and ctx.subdomain_slug in SUBDOMAIN_ARXIV_QUERIES:
+        return SUBDOMAIN_ARXIV_QUERIES[ctx.subdomain_slug]
+    if ctx.micro_subdomain_slug:
+        term = ctx.micro_subdomain_slug.replace("_", " ")
+        return f'all:"{term}"'
+    return None
+
+
+def _topic_seed_text(topic: str, names: dict[str, str]) -> str:
+    domain = names.get("domain", "knowledge")
+    subdomain = names.get("subdomain", "field")
+    micro = names.get("micro_subdomain", "specialty")
+    return (
+        f"{topic} is a core concept within {micro} ({subdomain}) in the broader domain of {domain}. "
+        f"Understanding {topic} requires studying definitions, historical development, key principles, "
+        f"methods of analysis, and relationships to neighboring fields. Researchers and practitioners "
+        f"apply {topic} to explain phenomena, design experiments, solve practical problems, and extend "
+        f"theoretical frameworks. Mastery includes vocabulary, foundational models, common techniques, "
+        f"and awareness of open questions and contemporary applications across academic and professional settings."
+    )
 
 
 class CollectorAgent(MicroAgentBase):
@@ -34,9 +70,10 @@ class CollectorAgent(MicroAgentBase):
         ) or 0
         attempts = 0
 
+        attempts += self._ingest_taxonomy_topics(session, ctx)
         attempts += self._ingest_seeds(session, ctx)
 
-        query = DOMAIN_QUERIES.get(ctx.domain_slug)
+        query = _arxiv_query(ctx)
         if query:
             limit = 3
             if ctx.grade:
@@ -57,6 +94,43 @@ class CollectorAgent(MicroAgentBase):
             status="completed",
             metrics={"collection_attempts": attempts, "new_documents": after - before},
         )
+
+    def _ingest_taxonomy_topics(self, session: Session, ctx: AgentContext) -> int:
+        """Seed documents from Zophiel leaf topics for the current micro-subdomain."""
+        if not ctx.micro_subdomain_slug:
+            return 0
+
+        topics = topics_for(ctx.domain_slug, ctx.subdomain_slug or "", ctx.micro_subdomain_slug)
+        if not topics:
+            return 0
+
+        limit = 3
+        if ctx.grade:
+            limit = max(ctx.grade.collection_limit, 3)
+        names = lookup_names(ctx.domain_slug, ctx.subdomain_slug, ctx.micro_subdomain_slug)
+
+        count = 0
+        for topic in topics[:limit]:
+            slug = topic.lower().replace(" ", "_").replace("(", "").replace(")", "")
+            doc = RawDocument(
+                doc_id=f"taxonomy_{ctx.domain_slug}_{ctx.subdomain_slug}_{ctx.micro_subdomain_slug}_{slug}",
+                source="taxonomy",
+                title=topic,
+                text=_topic_seed_text(topic, names),
+                url=f"seed://taxonomy/{ctx.domain_slug}/{ctx.subdomain_slug}/{ctx.micro_subdomain_slug}/{slug}",
+                metadata={
+                    "domain": ctx.domain_slug,
+                    "subdomain": ctx.subdomain_slug,
+                    "micro_subdomain": ctx.micro_subdomain_slug,
+                    "topic": topic,
+                    "source_type": "taxonomy_seed",
+                },
+            )
+            if ctx.grade_slug:
+                doc.metadata["grade"] = ctx.grade_slug
+            count += 1
+            self._persist_doc(session, ctx, doc)
+        return count
 
     def _ingest_seeds(self, session: Session, ctx: AgentContext) -> int:
         count = 0
