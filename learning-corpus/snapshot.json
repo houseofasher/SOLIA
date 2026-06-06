@@ -13,51 +13,20 @@
       "batch_size": 25
     },
     "running": true,
-    "started_at": "2026-06-06T01:07:04.626703+00:00",
-    "last_run_at": "2026-06-06T01:08:23.084672+00:00",
-    "next_run_at": "2026-06-06T02:08:23.084675+00:00",
-    "cycles_completed": 1,
-    "last_result": {
-      "batch": true,
-      "targets_total": 25,
-      "targets_in_corpus": 862,
-      "targets_processed": 25,
-      "graduations_passed": 25,
-      "last_target": {
-        "domain": "science_and_natural_philosophy",
-        "subdomain": "biology",
-        "micro_subdomain": "botany"
-      },
-      "last_graduation": {
-        "grade": "preschool",
-        "passed": true,
-        "train_accuracy": 1.0,
-        "min_train_accuracy": 0.45,
-        "evaluator_passed": true,
-        "unlocked_next": "elementary"
-      },
-      "sample_paths": [
-        "science_and_natural_philosophy.physics.classical_mechanics",
-        "science_and_natural_philosophy.physics.thermodynamics",
-        "science_and_natural_philosophy.physics.electromagnetism",
-        "science_and_natural_philosophy.physics.quantum_mechanics",
-        "science_and_natural_philosophy.physics.relativity"
-      ],
-      "batch_cursor": 25
-    },
+    "started_at": "2026-06-06T01:09:31.490245+00:00",
+    "last_run_at": null,
+    "next_run_at": null,
+    "cycles_completed": 0,
+    "last_result": {},
     "last_error": null,
-    "current_target": {
-      "mode": "batch",
-      "limits": "domains=all subs=all micros=all",
-      "domain_slugs": null
-    }
+    "current_target": null
   },
   "brain": {
     "domains": 30,
     "micro_subdomains": 862,
     "micro_agents": 6162,
-    "documents": 76,
-    "grade_levels_graduated": 25,
+    "documents": 0,
+    "grade_levels_graduated": 0,
     "grade_progress_rows": 6034
   },
   "timeline": {
@@ -134,108 +103,11 @@
   },
   "self_inquiry": {
     "enabled": true,
-    "recent": [
-      {
-        "question": "What type of Paleobotany: Paleobotany?",
-        "answer": "Plant Physiology is a core concept within Botany (Plant….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.biology.botany",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": true,
-        "ts": "2026-06-06T01:08:23.084412+00:00"
-      },
-      {
-        "question": "What is Botany (Plant Biology)?",
-        "answer": "Plant Physiology is a core concept within Botany (Plant….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.biology.botany",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-06T01:08:23.084247+00:00"
-      },
-      {
-        "question": "What type of Community Ecology, Community Ecology, Community Health, Community Nursing, the Community Theatre?",
-        "answer": "Population Ecology is a core concept within Ecology….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.biology.ecology",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": true,
-        "ts": "2026-06-06T01:08:20.074448+00:00"
-      },
-      {
-        "question": "What is one word I would use to describe Community Ecology?",
-        "answer": "Population Ecology",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.biology.ecology",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-06T01:08:20.074279+00:00"
-      },
-      {
-        "question": "What type of Phylogenetics: Phylogenetics?",
-        "answer": "Phylogenetics is a core concept within Evolutionary Biology….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.biology.evolutionary_biology",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": true,
-        "ts": "2026-06-06T01:08:17.071257+00:00"
-      },
-      {
-        "question": "What is one word I would use to describe Phylogenetics?",
-        "answer": "Phylogenetics",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.biology.evolutionary_biology",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-06T01:08:17.071093+00:00"
-      },
-      {
-        "question": "What type of Metagenomics: Metagenomics?",
-        "answer": "Population Genetics is a core concept within Genetics….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.biology.genetics",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": true,
-        "ts": "2026-06-06T01:08:14.079085+00:00"
-      },
-      {
-        "question": "What is Genetics?",
-        "answer": "Population Genetics is a core concept within Genetics….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.biology.genetics",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-06T01:08:14.078930+00:00"
-      }
-    ]
+    "recent": []
   },
-  "exported_at": "2026-06-06T01:08:23.089902+00:00",
+  "exported_at": "2026-06-06T01:09:31.496395+00:00",
   "github_sync": {
-    "batch_cursor": 25,
+    "batch_cursor": 0,
     "include_document_text": true,
     "max_documents": 5000,
     "export_version": 2
