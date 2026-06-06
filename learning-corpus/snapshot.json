@@ -13,9 +13,9 @@
       "batch_size": 25
     },
     "running": true,
-    "started_at": "2026-06-06T00:46:22.148458+00:00",
-    "last_run_at": "2026-06-06T00:49:39.730327+00:00",
-    "next_run_at": "2026-06-06T01:49:39.730332+00:00",
+    "started_at": "2026-06-06T01:07:04.626703+00:00",
+    "last_run_at": "2026-06-06T01:08:23.084672+00:00",
+    "next_run_at": "2026-06-06T02:08:23.084675+00:00",
     "cycles_completed": 1,
     "last_result": {
       "batch": true,
@@ -136,80 +136,104 @@
     "enabled": true,
     "recent": [
       {
+        "question": "What type of Paleobotany: Paleobotany?",
+        "answer": "Plant Physiology is a core concept within Botany (Plant….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "science_and_natural_philosophy.biology.botany",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": true,
+        "ts": "2026-06-06T01:08:23.084412+00:00"
+      },
+      {
         "question": "What is Botany (Plant Biology)?",
-        "answer": "Asking myself: «What is Botany (Plant Biology)?» — I passed Pre-School and unlocked elementary. Training accuracy was 100%. My six regions this cycle: collector: ok; verifier: ok; labeler: ok; trainer: ok; evaluator: ok; reward: ok. Each question I ask builds the map — like a child learning to think by wondering aloud.",
+        "answer": "Plant Physiology is a core concept within Botany (Plant….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
         "path": "science_and_natural_philosophy.biology.botany",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
-        "ts": "2026-06-06T00:49:39.729809+00:00"
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-06T01:08:23.084247+00:00"
       },
       {
-        "question": "What is one word I would use to describe Plant Physiology?",
-        "answer": "Asking myself: «What is one word I would use to describe Plant Physiology?» — I passed Pre-School and unlocked elementary. Training accuracy was 100%. My six regions this cycle: collector: ok; verifier: ok; labeler: ok; trainer: ok; evaluator: ok; reward: ok. Each question I ask builds the map — like a child learning to think by wondering aloud.",
-        "path": "science_and_natural_philosophy.biology.botany",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "ts": "2026-06-06T00:49:39.729604+00:00"
-      },
-      {
-        "question": "What is Ecology?",
-        "answer": "Asking myself: «What is Ecology?» — I passed Pre-School and unlocked elementary. Training accuracy was 100%. My six regions this cycle: collector: ok; verifier: ok; labeler: ok; trainer: ok; evaluator: ok; reward: ok. Each question I ask builds the map — like a child learning to think by wondering aloud.",
+        "question": "What type of Community Ecology, Community Ecology, Community Health, Community Nursing, the Community Theatre?",
+        "answer": "Population Ecology is a core concept within Ecology….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
         "path": "science_and_natural_philosophy.biology.ecology",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
-        "ts": "2026-06-06T00:49:32.397036+00:00"
+        "grounded": true,
+        "ciper": true,
+        "ts": "2026-06-06T01:08:20.074448+00:00"
       },
       {
-        "question": "What is one word I would use to describe Population Ecology?",
-        "answer": "Asking myself: «What is one word I would use to describe Population Ecology?» — I passed Pre-School and unlocked elementary. Training accuracy was 100%. My six regions this cycle: collector: ok; verifier: ok; labeler: ok; trainer: ok; evaluator: ok; reward: ok. Each question I ask builds the map — like a child learning to think by wondering aloud.",
+        "question": "What is one word I would use to describe Community Ecology?",
+        "answer": "Population Ecology",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
         "path": "science_and_natural_philosophy.biology.ecology",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
-        "ts": "2026-06-06T00:49:32.396739+00:00"
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-06T01:08:20.074279+00:00"
+      },
+      {
+        "question": "What type of Phylogenetics: Phylogenetics?",
+        "answer": "Phylogenetics is a core concept within Evolutionary Biology….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "science_and_natural_philosophy.biology.evolutionary_biology",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": true,
+        "ts": "2026-06-06T01:08:17.071257+00:00"
       },
       {
         "question": "What is one word I would use to describe Phylogenetics?",
-        "answer": "Asking myself: «What is one word I would use to describe Phylogenetics?» — I passed Pre-School and unlocked elementary. Training accuracy was 100%. My six regions this cycle: collector: ok; verifier: ok; labeler: ok; trainer: ok; evaluator: ok; reward: ok. Each question I ask builds the map — like a child learning to think by wondering aloud.",
+        "answer": "Phylogenetics",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
         "path": "science_and_natural_philosophy.biology.evolutionary_biology",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
-        "ts": "2026-06-06T00:49:24.846970+00:00"
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-06T01:08:17.071093+00:00"
       },
       {
-        "question": "What is Evolutionary Biology?",
-        "answer": "Asking myself: «What is Evolutionary Biology?» — I passed Pre-School and unlocked elementary. Training accuracy was 100%. My six regions this cycle: collector: ok; verifier: ok; labeler: ok; trainer: ok; evaluator: ok; reward: ok. Each question I ask builds the map — like a child learning to think by wondering aloud.",
-        "path": "science_and_natural_philosophy.biology.evolutionary_biology",
+        "question": "What type of Metagenomics: Metagenomics?",
+        "answer": "Population Genetics is a core concept within Genetics….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "science_and_natural_philosophy.biology.genetics",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
-        "ts": "2026-06-06T00:49:24.846667+00:00"
+        "grounded": true,
+        "ciper": true,
+        "ts": "2026-06-06T01:08:14.079085+00:00"
       },
       {
         "question": "What is Genetics?",
-        "answer": "Asking myself: «What is Genetics?» — I passed Pre-School and unlocked elementary. Training accuracy was 100%. My six regions this cycle: collector: ok; verifier: ok; labeler: ok; trainer: ok; evaluator: ok; reward: ok. Each question I ask builds the map — like a child learning to think by wondering aloud.",
+        "answer": "Population Genetics is a core concept within Genetics….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
         "path": "science_and_natural_philosophy.biology.genetics",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
-        "ts": "2026-06-06T00:49:17.359807+00:00"
-      },
-      {
-        "question": "What is one word I would use to describe Population Genetics?",
-        "answer": "Asking myself: «What is one word I would use to describe Population Genetics?» — I passed Pre-School and unlocked elementary. Training accuracy was 100%. My six regions this cycle: collector: ok; verifier: ok; labeler: ok; trainer: ok; evaluator: ok; reward: ok. Each question I ask builds the map — like a child learning to think by wondering aloud.",
-        "path": "science_and_natural_philosophy.biology.genetics",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "ts": "2026-06-06T00:49:17.359536+00:00"
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-06T01:08:14.078930+00:00"
       }
     ]
   },
-  "exported_at": "2026-06-06T00:49:39.741290+00:00",
+  "exported_at": "2026-06-06T01:08:23.089902+00:00",
   "github_sync": {
     "batch_cursor": 25,
     "include_document_text": true,
