@@ -1,5 +1,379 @@
 [
   {
+    "run_id": "80476019",
+    "domain_id": 3,
+    "subdomain_id": 16,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_nanomaterials_80476019/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "nanomaterials",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T09:22:45.359603"
+  },
+  {
+    "run_id": "17cdb7a5",
+    "domain_id": 3,
+    "subdomain_id": 16,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_biomaterials_17cdb7a5/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "biomaterials",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T09:22:20.758011"
+  },
+  {
+    "run_id": "b45f01a1",
+    "domain_id": 3,
+    "subdomain_id": 16,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_electronic_materials_b45f01a1/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "electronic_materials",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T09:21:56.312357"
+  },
+  {
+    "run_id": "1a4b5594",
+    "domain_id": 3,
+    "subdomain_id": 16,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_polymers_and_composites_1a4b5594/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "polymers_and_composites",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T09:21:31.887937"
+  },
+  {
+    "run_id": "583e780d",
+    "domain_id": 3,
+    "subdomain_id": 16,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_ceramics_and_glasses_583e780d/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "ceramics_and_glasses",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T09:21:07.431697"
+  },
+  {
+    "run_id": "2b627447",
+    "domain_id": 3,
+    "subdomain_id": 16,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_metals_and_alloys_2b627447/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "metals_and_alloys",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T09:20:43.008955"
+  },
+  {
+    "run_id": "e9cb6726",
+    "domain_id": 3,
+    "subdomain_id": 15,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_petroleum_engineering_e9cb6726/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "petroleum_engineering",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T09:20:18.599852"
+  },
+  {
+    "run_id": "eb6a66f0",
+    "domain_id": 3,
+    "subdomain_id": 15,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_biochemical_engineering_eb6a66f0/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "biochemical_engineering",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T09:19:54.148906"
+  },
+  {
+    "run_id": "037275cf",
+    "domain_id": 3,
+    "subdomain_id": 15,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_process_systems_engineering_037275cf/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "process_systems_engineering",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T09:19:39.532240"
+  },
+  {
+    "run_id": "ab5ccaae",
+    "domain_id": 3,
+    "subdomain_id": 15,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_separation_processes_ab5ccaae/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "separation_processes",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T09:19:15.030530"
+  },
+  {
+    "run_id": "155a04ca",
+    "domain_id": 3,
+    "subdomain_id": 15,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_reaction_engineering_155a04ca/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "reaction_engineering",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T09:19:10.523696"
+  },
+  {
+    "run_id": "8187fa0e",
+    "domain_id": 3,
+    "subdomain_id": 15,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_transport_phenomena_8187fa0e/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "transport_phenomena",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T09:18:46.050298"
+  },
+  {
+    "run_id": "3c5bc388",
+    "domain_id": 3,
+    "subdomain_id": 14,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_construction_engineering_3c5bc388/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "construction_engineering",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T09:18:21.543629"
+  },
+  {
+    "run_id": "0bc9957f",
+    "domain_id": 3,
+    "subdomain_id": 14,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_environmental_engineering_0bc9957f/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "environmental_engineering",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T09:17:56.967416"
+  },
+  {
+    "run_id": "c6b5d89f",
+    "domain_id": 3,
+    "subdomain_id": 14,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_water_resources_engineering_c6b5d89f/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "water_resources_engineering",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T09:17:32.620871"
+  },
+  {
+    "run_id": "1cffa975",
+    "domain_id": 3,
+    "subdomain_id": 14,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_transportation_engineering_1cffa975/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "transportation_engineering",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T09:17:08.174844"
+  },
+  {
+    "run_id": "c3191021",
+    "domain_id": 3,
+    "subdomain_id": 14,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_geotechnical_engineering_c3191021/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "geotechnical_engineering",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T09:16:43.787634"
+  },
+  {
+    "run_id": "a99c773c",
+    "domain_id": 3,
+    "subdomain_id": 14,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_structural_engineering_a99c773c/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "structural_engineering",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T09:16:19.409969"
+  },
+  {
+    "run_id": "5f850a68",
+    "domain_id": 3,
+    "subdomain_id": 13,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_aerospace_and_aeronautical_engineering_5f850a68/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "aerospace_and_aeronautical_engineering",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T09:15:59.021581"
+  },
+  {
+    "run_id": "8096b0bc",
+    "domain_id": 3,
+    "subdomain_id": 13,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_robotics_and_automation_8096b0bc/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "robotics_and_automation",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T09:15:54.579527"
+  },
+  {
+    "run_id": "09be19da",
+    "domain_id": 3,
+    "subdomain_id": 13,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_manufacturing_engineering_09be19da/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "manufacturing_engineering",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T09:15:49.962455"
+  },
+  {
+    "run_id": "5f808f7c",
+    "domain_id": 3,
+    "subdomain_id": 13,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_machine_design_5f808f7c/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "machine_design",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T09:15:25.647337"
+  },
+  {
     "run_id": "5f216a37",
     "domain_id": 3,
     "subdomain_id": 13,
