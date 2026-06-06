@@ -1623,6 +1623,258 @@
         "epochs": 150
       },
       "status": "completed"
+    },
+    {
+      "run_id": "6b27b60d",
+      "created_at": "2026-06-06T10:24:37.739369+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_ontology_6b27b60d/classifier.json",
+      "params": {
+        "scope": "ontology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "79c4f0b3",
+      "created_at": "2026-06-06T10:24:42.350357+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_cosmology_79c4f0b3/classifier.json",
+      "params": {
+        "scope": "cosmology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "61965f5c",
+      "created_at": "2026-06-06T10:24:46.886139+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_philosophy_of_mind_61965f5c/classifier.json",
+      "params": {
+        "scope": "philosophy_of_mind",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "9efd4048",
+      "created_at": "2026-06-06T10:24:51.471667+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_philosophy_of_religion_9efd4048/classifier.json",
+      "params": {
+        "scope": "philosophy_of_religion",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "9ecede81",
+      "created_at": "2026-06-06T10:24:56.126760+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_theory_of_knowledge_9ecede81/classifier.json",
+      "params": {
+        "scope": "theory_of_knowledge",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "9b190e65",
+      "created_at": "2026-06-06T10:25:00.781238+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_philosophy_of_perception_9b190e65/classifier.json",
+      "params": {
+        "scope": "philosophy_of_perception",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "1bec2975",
+      "created_at": "2026-06-06T10:25:05.346351+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_skepticism_1bec2975/classifier.json",
+      "params": {
+        "scope": "skepticism",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "741a011e",
+      "created_at": "2026-06-06T10:25:09.877294+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_social_epistemology_741a011e/classifier.json",
+      "params": {
+        "scope": "social_epistemology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "235fe906",
+      "created_at": "2026-06-06T10:25:14.532547+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_normative_ethics_235fe906/classifier.json",
+      "params": {
+        "scope": "normative_ethics",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "df33d52c",
+      "created_at": "2026-06-06T10:25:19.169481+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_metaethics_df33d52c/classifier.json",
+      "params": {
+        "scope": "metaethics",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "138d7ab8",
+      "created_at": "2026-06-06T10:25:23.762504+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_applied_ethics_138d7ab8/classifier.json",
+      "params": {
+        "scope": "applied_ethics",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "9bdfde31",
+      "created_at": "2026-06-06T10:25:28.687148+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_classical_logic_9bdfde31/classifier.json",
+      "params": {
+        "scope": "classical_logic",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "56f69324",
+      "created_at": "2026-06-06T10:25:33.282082+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_non_classical_logic_56f69324/classifier.json",
+      "params": {
+        "scope": "non_classical_logic",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "31994953",
+      "created_at": "2026-06-06T10:25:38.503680+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_philosophy_of_logic_31994953/classifier.json",
+      "params": {
+        "scope": "philosophy_of_logic",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "d8edbd5c",
+      "created_at": "2026-06-06T10:25:43.007841+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_theories_of_justice_d8edbd5c/classifier.json",
+      "params": {
+        "scope": "theories_of_justice",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "8ea037ac",
+      "created_at": "2026-06-06T10:25:47.550747+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_political_authority_8ea037ac/classifier.json",
+      "params": {
+        "scope": "political_authority",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "58cbac99",
+      "created_at": "2026-06-06T10:25:52.126924+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_rights_and_liberty_58cbac99/classifier.json",
+      "params": {
+        "scope": "rights_and_liberty",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "5499f4ab",
+      "created_at": "2026-06-06T10:25:56.843582+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_ideology_analysis_5499f4ab/classifier.json",
+      "params": {
+        "scope": "ideology_analysis",
+        "epochs": 150
+      },
+      "status": "completed"
     }
   ]
 }
