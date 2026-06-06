@@ -89,6 +89,9 @@ BOOTSTRAP_LINES: list[str] = [
     "question what is a python class answer class MyClass: def __init__(self): pass",
     "question write a python function to sort a list answer def sort_list(lst): return sorted(lst)",
     "question write a python function to count words in a string answer def count_words(s): return len(s.split())",
+    "question write a python function count_vowels answer def count_vowels(s): return sum(1 for c in s.lower() if c in 'aeiou')",
+    "question write a python function merge_sorted answer def merge_sorted(a, b):\n    i = j = 0\n    out = []\n    while i < len(a) and j < len(b):\n        if a[i] <= b[j]:\n            out.append(a[i])\n            i += 1\n        else:\n            out.append(b[j])\n            j += 1\n    return out + a[i:] + b[j:]",
+    "question write a python function fib answer def fib(n):\n    if n <= 1:\n        return n\n    a, b = 0, 1\n    for _ in range(2, n + 1):\n        a, b = b, a + b\n    return b",
 ]
 
 # Chain-of-thought reasoning lines (context → think → therefore → answer).
@@ -369,7 +372,7 @@ def _format_bootstrap_answer(raw: str) -> str | None:
 
 
 def _bootstrap_answer(question: str) -> str | None:
-    key = question.strip().lower().rstrip("?").strip()
+    key = question.strip().lower().rstrip("?.!").strip()
     for alias in _question_aliases(key):
         prefix = f"question {alias} answer "
         for line in BOOTSTRAP_LINES:

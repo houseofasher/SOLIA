@@ -18,7 +18,13 @@ def test_retrieval_verified_add_two_numbers():
     assert result["answer"]
     assert "def " in result["answer"]
     assert result["code_eval"]["syntax_valid"] is True
-    assert result["method"] in ("bootstrap_seed", "retrieval_verified", "retrieval_fallback", "neural_synthesis")
+    assert result["method"] in (
+        "bootstrap_seed",
+        "retrieval_verified",
+        "retrieval_fallback",
+        "neural_synthesis",
+        "verified_catalog",
+    )
 
 
 def test_retrieval_reverse_string():

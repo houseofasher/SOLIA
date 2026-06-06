@@ -928,6 +928,14 @@ def is_code_question(text: str) -> bool:
     triggers = (
         "write a function",
         "write a python",
+        "write a javascript",
+        "write a typescript",
+        "write a java",
+        "write a go",
+        "write a golang",
+        "write a rust",
+        "write a c++",
+        "write a cpp",
         "write code",
         "create a function",
         "implement a function",
@@ -941,23 +949,35 @@ def is_code_question(text: str) -> bool:
         "write a program",
         "code that",
         "generate python",
+        "generate javascript",
+        "generate typescript",
+        "generate java",
+        "generate go",
+        "generate rust",
         "python function",
+        "javascript function",
+        "typescript function",
+        "java function",
+        "golang function",
+        "rust function",
     )
     return any(t in q for t in triggers)
 
 
 def _code_payload(text: str, *, session_id: str | None) -> dict[str, Any] | None:
-    from brain.code_evaluator import extract_python_code
+    from brain.code_languages import detect_code_language, extract_code
     from brain.code_master import generate_master_code
+
+    language = detect_code_language(text)
 
     def _predict(q: str) -> dict[str, Any] | None:
         return _predict_with_timeout(q, session_id=session_id, force=True)
 
-    master = generate_master_code(text, predict_fn=_predict)
+    master = generate_master_code(text, predict_fn=_predict, language=language)
     if not master.get("answer"):
         return None
 
-    code = extract_python_code(master["answer"])
+    code = extract_code(master["answer"], language)
     evaluation = master.get("code_eval") or {}
 
     answer = code
@@ -975,12 +995,14 @@ def _code_payload(text: str, *, session_id: str | None) -> dict[str, Any] | None
         "session_id": session_id,
         "learning": learning_snapshot(),
         "code_eval": evaluation,
+        "language": master.get("language") or language,
         "brain_predict": master.get("method") == "neural_synthesis",
         "code_master": {
             "method": master.get("method"),
             "match_score": master.get("match_score"),
             "problem_id": master.get("problem_id"),
             "confidence": master.get("confidence"),
+            "task": master.get("task"),
         },
         "citations": master.get("citations", []),
     }
@@ -1510,6 +1532,22 @@ def chat(message: str, *, session_id: str | None = None) -> dict[str, Any]:
     if is_creation_request(text):
         return done(handle_creation_request(text, session_id=session_id))
 
+    if is_code_question(text):
+        code_payload = _code_payload(text, session_id=session_id)
+        if code_payload:
+            return done(code_payload)
+        return done(
+            {
+                "reply": (
+                    "I couldn't produce verified code for that yet. "
+                    "Try naming the function explicitly, e.g. `Write a Python function add(a, b)`."
+                ),
+                "kind": "code_abstain",
+                "session_id": session_id,
+                "learning": learning_snapshot(),
+            }
+        )
+
     if (
         web_search_enabled()
         and is_search_question(text)
@@ -1536,11 +1574,6 @@ def chat(message: str, *, session_id: str | None = None) -> dict[str, Any]:
                 "simple_qa": True,
             }
         )
-
-    if is_code_question(text):
-        code_payload = _code_payload(text, session_id=session_id)
-        if code_payload:
-            return done(code_payload)
 
     if is_prediction_question(text):
         return done(_brain_predict_payload(text, session_id=session_id))

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import ast
 import json
 import logging
 import os
@@ -27,6 +28,9 @@ MBPP_PATH = ROOT / "data" / "code" / "mbpp.jsonl"
 _RETRIEVAL_MIN = float(os.environ.get("AUREON_CODE_RETRIEVAL_MIN", "0.28"))
 _RETRIEVAL_STRONG = float(os.environ.get("AUREON_CODE_RETRIEVAL_STRONG", "0.42"))
 _EXACT_MIN_OVERLAP = float(os.environ.get("AUREON_CODE_EXACT_MIN_OVERLAP", "0.72"))
+_CODE_STOP = frozenset(
+    {"write", "python", "function", "that", "returns", "return", "the", "and", "with", "using", "into", "from"}
+)
 
 
 @dataclass(frozen=True)
@@ -114,6 +118,79 @@ def get_code_bank() -> CodeProblemBank:
     return CodeProblemBank()
 
 
+def _normalize_code_question(question: str) -> str:
+    return question.strip().lower().rstrip("?.!").strip()
+
+
+_CODE_NAME_STOP = frozenset({"to", "a", "an", "the", "that", "returns", "return", "is", "in", "if"})
+
+
+def _expected_def_names(question: str) -> list[str]:
+    q = _normalize_code_question(question)
+    names: list[str] = []
+    for pattern in (
+        r"function\s+([a-z_][a-z0-9_]*)",
+        r"\bdef\s+([a-z_][a-z0-9_]*)",
+    ):
+        for name in re.findall(pattern, q):
+            if name not in _CODE_NAME_STOP:
+                names.append(name)
+    return list(dict.fromkeys(names))
+
+
+def _defined_names(code: str) -> set[str]:
+    try:
+        tree = ast.parse(code)
+    except SyntaxError:
+        return set()
+    return {node.name for node in ast.walk(tree) if isinstance(node, ast.FunctionDef)}
+
+
+def _solution_matches_prompt(question: str, code: str) -> bool:
+    """Reject corpus solutions whose function names don't match the user's ask."""
+    expected = _expected_def_names(question)
+    defined = _defined_names(code)
+    if expected:
+        return any(name in defined for name in expected)
+
+    qk = _keywords(question) - _CODE_STOP
+    if defined and qk & defined:
+        return True
+    ck = _keywords(code) - _CODE_STOP
+    if not qk:
+        return True
+    overlap = len(qk & ck) / len(qk)
+    return overlap >= 0.35
+
+
+def _try_bootstrap_code(question: str) -> str | None:
+    """Bootstrap lookup with punctuation-normalized keys and code-specific token match."""
+    from brain.predict_engine import BOOTSTRAP_LINES, _bootstrap_answer, _format_bootstrap_answer
+
+    key = _normalize_code_question(question)
+    direct = _bootstrap_answer(key)
+    if direct and direct.strip().startswith("def "):
+        return direct
+
+    best: str | None = None
+    best_score = 0
+    for line in BOOTSTRAP_LINES:
+        if " answer def " not in line:
+            continue
+        q_part = line[len("question ") :].split(" answer ", 1)[0].strip()
+        key_words = set(re.findall(r"[a-z_]+", key))
+        tokens = [t for t in re.findall(r"[a-z_]+", q_part) if t not in _CODE_STOP and len(t) > 2]
+        if not tokens or not all(token in key_words for token in tokens):
+            continue
+        answer = line.split(" answer ", 1)[1].strip()
+        formatted = _format_bootstrap_answer(answer)
+        if formatted and formatted.startswith("def "):
+            if best is None or len(tokens) > best_score:
+                best = formatted
+                best_score = len(tokens)
+    return best
+
+
 def _keywords(text: str) -> set[str]:
     return {w for w in re.findall(r"[a-zA-Z_]{3,}", text.lower())}
 
@@ -180,21 +257,40 @@ def generate_master_code(
     question: str,
     *,
     predict_fn: Any | None = None,
+    language: str | None = None,
 ) -> dict[str, Any]:
     """
     Doctorate coder pipeline:
-      0. Bootstrap seed exact match
-      1. Exact / high-overlap HumanEval/MBPP match
-      2. TF-IDF retrieval with unit-test verification
-      3. Neural synthesis with RAG context
-      4. Verified retrieval fallback
+      0. Verified multi-language catalog (non-Python or explicit language)
+      1. Bootstrap seed exact match
+      2. Exact / high-overlap HumanEval/MBPP match
+      3. TF-IDF retrieval with unit-test verification
+      4. Neural synthesis with RAG context
+      5. Verified retrieval fallback
     """
-    from brain.predict_engine import _bootstrap_answer
+    from brain.code_languages import detect_code_language, generate_from_catalog
 
-    boot = _bootstrap_answer(question.strip().lower().rstrip("?"))
+    lang = language or detect_code_language(question)
+    catalog = generate_from_catalog(question, lang)
+    if catalog:
+        return catalog
+
+    if lang != "python":
+        return {
+            "answer": "",
+            "method": "abstain",
+            "confidence": 0.0,
+            "language": lang,
+            "citations": [],
+            "code_eval": {"score": 0.0, "syntax_valid": False, "passed_tests": False},
+            "match_score": 0.0,
+            "note": f"No verified catalog entry for {lang}.",
+        }
+
+    boot = _try_bootstrap_code(question)
     if boot:
         ev = _try_solution(boot, "")
-        if ev.get("syntax_valid"):
+        if ev.get("syntax_valid") and _solution_matches_prompt(question, boot):
             return {
                 "answer": extract_python_code(boot),
                 "method": "bootstrap_seed",
@@ -206,7 +302,7 @@ def generate_master_code(
 
     bank = get_code_bank()
     exact = _exact_match(question, bank)
-    if exact:
+    if exact and _solution_matches_prompt(question, exact.problem.solution):
         ev = _try_solution(exact.problem.solution, exact.problem.test)
         if _verification_passed(ev, exact.problem.test):
             return {
@@ -231,16 +327,30 @@ def generate_master_code(
     best = matches[0] if matches else None
 
     if best and best.score >= _RETRIEVAL_STRONG:
-        ev = _try_solution(best.problem.solution, best.problem.test)
-        if _verification_passed(ev, best.problem.test):
+        if _solution_matches_prompt(question, best.problem.solution):
+            ev = _try_solution(best.problem.solution, best.problem.test)
+            if _verification_passed(ev, best.problem.test):
+                return {
+                    "answer": extract_python_code(best.problem.solution),
+                    "method": "retrieval_verified",
+                    "confidence": min(0.99, 0.7 + best.score),
+                    "citations": citations,
+                    "code_eval": ev,
+                    "match_score": best.score,
+                    "problem_id": best.problem.problem_id,
+                }
+
+    boot = _try_bootstrap_code(question)
+    if boot:
+        ev = _try_solution(boot, "")
+        if ev.get("syntax_valid") and _solution_matches_prompt(question, boot):
             return {
-                "answer": extract_python_code(best.problem.solution),
-                "method": "retrieval_verified",
-                "confidence": min(0.99, 0.7 + best.score),
-                "citations": citations,
+                "answer": extract_python_code(boot),
+                "method": "bootstrap_seed",
+                "confidence": 0.9,
+                "citations": [],
                 "code_eval": ev,
-                "match_score": best.score,
-                "problem_id": best.problem.problem_id,
+                "match_score": 1.0,
             }
 
     if predict_fn is None:
@@ -258,21 +368,24 @@ def generate_master_code(
     if predict_result and predict_result.get("answer"):
         code = extract_python_code(predict_result["answer"])
         test = verify_match.problem.test if verify_match else ""
-        ev = _try_solution(code, test)
-        if _verification_passed(ev, test):
-            safe_prediction = {k: v for k, v in predict_result.items() if k != "error"}
-            return {
-                "answer": code,
-                "method": "neural_synthesis",
-                "confidence": float(predict_result.get("confidence") or 0.6),
-                "citations": predict_result.get("citations") or citations,
-                "code_eval": ev,
-                "prediction": safe_prediction,
-                "match_score": best.score if best else 0.0,
-            }
+        if _solution_matches_prompt(question, code):
+            ev = _try_solution(code, test)
+            if _verification_passed(ev, test):
+                safe_prediction = {k: v for k, v in predict_result.items() if k != "error"}
+                return {
+                    "answer": code,
+                    "method": "neural_synthesis",
+                    "confidence": float(predict_result.get("confidence") or 0.6),
+                    "citations": predict_result.get("citations") or citations,
+                    "code_eval": ev,
+                    "prediction": safe_prediction,
+                    "match_score": best.score if best else 0.0,
+                }
 
     for match in matches:
         if match.score < _RETRIEVAL_MIN:
+            continue
+        if not _solution_matches_prompt(question, match.problem.solution):
             continue
         ev = _try_solution(match.problem.solution, match.problem.test)
         if _verification_passed(ev, match.problem.test):
@@ -285,6 +398,19 @@ def generate_master_code(
                 "match_score": match.score,
                 "problem_id": match.problem.problem_id,
                 "note": "Neural synthesis did not pass verification — returning corpus solution.",
+            }
+
+    boot = _try_bootstrap_code(question)
+    if boot and _solution_matches_prompt(question, boot):
+        ev = _try_solution(boot, "")
+        if ev.get("syntax_valid"):
+            return {
+                "answer": extract_python_code(boot),
+                "method": "bootstrap_seed",
+                "confidence": 0.88,
+                "citations": [],
+                "code_eval": ev,
+                "match_score": 1.0,
             }
 
     return {
