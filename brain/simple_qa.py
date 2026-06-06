@@ -60,6 +60,6 @@ def to_simple_answer(text: str, *, max_len: int = ANSWER_MAX_CHAT) -> str:
     if len(cleaned) > max_len:
         cut = cleaned[:max_len].rsplit(" ", 1)[0]
         cleaned = (cut or cleaned[:max_len]).rstrip(".,;:")
-    if cleaned and cleaned[-1] not in ".?!":
+    if cleaned and cleaned[-1] not in ".?!" and not re.fullmatch(r"-?\d+(\.\d+)?", cleaned):
         cleaned += "."
     return cleaned

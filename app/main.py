@@ -313,6 +313,19 @@ def get_brain_taxonomy() -> dict:
     return get_taxonomy()
 
 
+@app.get("/api/brain/roadmap")
+def get_brain_roadmap(
+    months: int = Query(default=12, ge=1, le=36),
+) -> dict:
+    """Capability matrix + simulated timeline toward surpassing frontier LLMs."""
+    from brain.capability_roadmap import roadmap_snapshot, simulate_future_timeline
+
+    return {
+        "roadmap": roadmap_snapshot(),
+        "simulation": simulate_future_timeline(months_ahead=months),
+    }
+
+
 @app.post("/api/brain/run")
 def brain_run(
     _auth: Mutating,

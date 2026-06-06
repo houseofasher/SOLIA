@@ -10,6 +10,7 @@ from pathlib import Path
 from typing import Any
 
 from pipeline.config import MODELS_DIR, SEEDS_DIR, ensure_dirs
+from brain.deterministic_qa import is_arithmetic_question
 from src.attention_lm import AttentionLMConfig, StackedAttentionLM
 from src.tokenizer import WordTokenizer
 
@@ -141,6 +142,8 @@ def predict_config_from_env() -> AttentionLMConfig:
 
 def is_prediction_question(text: str) -> bool:
     """True for factual questions best answered by next-token prediction."""
+    if is_arithmetic_question(text):
+        return False
     q = text.strip().lower().rstrip("?").strip()
     if not q or q.startswith("/"):
         return False

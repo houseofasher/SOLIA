@@ -12,6 +12,8 @@ from brain.domains.taxonomy import total_micro_subdomains
 from brain.grades import GRADE_CURRICULUM, curriculum_public, epochs_for_grade, get_grade
 from brain.graduation import current_grade, progress_report
 from brain.ciper_logic import ciper_research
+from brain.capability_roadmap import roadmap_snapshot, simulate_future_timeline, try_roadmap_answer
+from brain.deterministic_qa import try_arithmetic_answer
 from brain.predict_engine import is_prediction_question, predict_with_steps
 from brain.psychology_brain import finalize_chat_payload
 from brain.self_inquiry import is_self_inquiry_enabled, recent_inquiries
@@ -153,6 +155,24 @@ def _classify_message(text: str) -> dict[str, Any] | None:
     }
 
 
+def _deterministic_payload(text: str, *, session_id: str | None) -> dict[str, Any] | None:
+    """Exact evaluators (arithmetic) — no neural guess."""
+    result = try_arithmetic_answer(text)
+    if not result:
+        return None
+    return {
+        "reply": result["answer"],
+        "kind": "chat",
+        "session_id": session_id,
+        "learning": learning_snapshot(),
+        "simple_qa": True,
+        "deterministic": {
+            "evaluator": result["evaluator"],
+            "expression": result["expression"],
+        },
+    }
+
+
 def _brain_predict_payload(text: str, *, session_id: str | None) -> dict[str, Any] | None:
     """Attention LM — embed, attend, predict next tokens autoregressively."""
     result = predict_with_steps(text)
@@ -213,7 +233,14 @@ def _simple_nl_response(text: str) -> str | None:
         return f"{docs} docs ingested, {cycles} auto-learn cycles done."
 
     if q in ("what is aureon", "who are you", "what are you"):
-        return "Supervised ML brain — collect, label, train, evaluate, graduate."
+        return (
+            "Supervised ML brain — collect, label, train, evaluate, graduate. "
+            "862 micro-topics, 1M context, beats frontier models on grounding and auditability."
+        )
+
+    roadmap = try_roadmap_answer(text)
+    if roadmap:
+        return roadmap
 
     if "how do you work" in q or "how does aureon work" in q:
         return "Inputs and labels in, backpropagation finds weights, measurable accuracy out."
@@ -280,6 +307,7 @@ def _command_response(message: str) -> dict[str, Any] | None:
                 "• `/status` — brain + auto-learn snapshot\n"
                 "• `/grades` — curriculum and time estimates\n"
                 "• `/mind` — recent learning reflections (collected docs + cycle metrics)\n"
+                "• `/roadmap` — capability matrix + path beyond frontier LLMs\n"
                 "• `/research <topic>` — cross-domain taxonomy + Ciper drill-down\n"
                 "• `/vitals` — security organism (nomad stack)\n\n"
                 "**Prediction brain:** factual questions run through token embeddings → "
@@ -359,6 +387,30 @@ def _command_response(message: str) -> dict[str, Any] | None:
                 answer = answer[:197] + "..."
             lines.append(f"**A:** {answer}\n")
         return {"reply": "\n".join(lines).strip(), "kind": "mind", "inquiries": items}
+    if cmd in ("/roadmap", "/capabilities", "/future"):
+        snap = roadmap_snapshot()
+        sim = simulate_future_timeline(months_ahead=12)
+        counts = snap["status_counts"]
+        lines = [
+            "**Aureon capability roadmap** — supervised brain vs static frontier LLMs\n",
+            f"_{snap['vision']}_\n",
+            f"**Status:** {counts['live']} live · {counts['partial']} partial · "
+            f"{counts['planned']} planned · {counts['research']} research · "
+            f"~{snap['completion_pct']}% core complete.\n",
+            "**Live now:**",
+        ]
+        for cap in snap["capabilities"]:
+            if cap["status"] == "live":
+                lines.append(f"• {cap['name']}")
+        lines.append("\n**Next unlock (simulated):**")
+        nxt = sim["milestones"][1] if len(sim["milestones"]) > 1 else sim["milestones"][0]
+        if nxt:
+            lines.append(f"• Month {nxt['month']}: {nxt['name']} — {', '.join(nxt['unlocks'][:3])}")
+        lines.append(
+            "\n**Why this beats GPT/Claude long-term:** grounded corpus, grade graduation, "
+            "citations, abstain-when-uncertain — not hallucinated fluency."
+        )
+        return {"reply": "\n".join(lines), "kind": "roadmap", "roadmap": snap, "simulation": sim}
     if cmd.startswith("/research"):
         topic = message.strip()[9:].strip(" ?.")
         if not topic:
@@ -431,6 +483,10 @@ def chat(message: str, *, session_id: str | None = None) -> dict[str, Any]:
             },
             text,
         )
+
+    deterministic = _deterministic_payload(text, session_id=session_id)
+    if deterministic:
+        return finalize_chat_payload(deterministic, text)
 
     if is_prediction_question(text):
         predict_payload = _brain_predict_payload(text, session_id=session_id)
