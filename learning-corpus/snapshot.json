@@ -15,63 +15,20 @@
       "batch_size": 25
     },
     "running": true,
-    "started_at": "2026-06-06T15:30:12.209008+00:00",
-    "last_run_at": "2026-06-06T15:45:09.372098+00:00",
-    "next_run_at": "2026-06-06T16:45:09.372107+00:00",
-    "cycles_completed": 1,
-    "last_result": {
-      "batch": true,
-      "targets_total": 25,
-      "targets_in_corpus": 867,
-      "targets_processed": 25,
-      "graduations_passed": 25,
-      "last_target": {
-        "domain": "science_and_natural_philosophy",
-        "subdomain": "biology",
-        "micro_subdomain": "botany"
-      },
-      "last_graduation": {
-        "grade": "preschool",
-        "passed": true,
-        "train_accuracy": 1.0,
-        "min_train_accuracy": 0.45,
-        "evaluator_passed": true,
-        "unlocked_next": "elementary"
-      },
-      "sample_paths": [
-        "science_and_natural_philosophy.physics.classical_mechanics",
-        "science_and_natural_philosophy.physics.thermodynamics",
-        "science_and_natural_philosophy.physics.electromagnetism",
-        "science_and_natural_philosophy.physics.quantum_mechanics",
-        "science_and_natural_philosophy.physics.relativity"
-      ],
-      "batch_cursor": 25,
-      "meta_consciousness": [
-        {
-          "question": "What do I actually know versus what I guess?",
-          "answer": "77 verified docs ground me; unverified text I treat as weak.",
-          "theme": "meta_cognition"
-        },
-        {
-          "question": "Where are my biggest knowledge gaps?",
-          "answer": "~842 micro-topics not fully graduated; sparse docs mean abstain.",
-          "theme": "uncertainty"
-        }
-      ]
-    },
+    "started_at": "2026-06-06T16:05:34.818939+00:00",
+    "last_run_at": null,
+    "next_run_at": null,
+    "cycles_completed": 0,
+    "last_result": {},
     "last_error": null,
-    "current_target": {
-      "mode": "batch",
-      "limits": "domains=all subs=all micros=all",
-      "domain_slugs": null
-    }
+    "current_target": null
   },
   "brain": {
     "domains": 30,
     "micro_subdomains": 867,
     "micro_agents": 6192,
-    "documents": 77,
-    "grade_levels_graduated": 25,
+    "documents": 0,
+    "grade_levels_graduated": 0,
     "grade_progress_rows": 6069
   },
   "timeline": {
@@ -148,217 +105,30 @@
   },
   "self_inquiry": {
     "enabled": true,
-    "recent": [
-      {
-        "question": "What type of Plant Physiology, Plant Anatomy, Plant Physiology, Plant Taxonomy, the Plant Ecology?",
-        "answer": "Plant Physiology is a core concept within Botany (Plant….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.biology.botany",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": true,
-        "ts": "2026-06-06T15:45:09.371533+00:00"
-      },
-      {
-        "question": "What is Botany (Plant Biology)?",
-        "answer": "Plant Physiology is a core concept within Botany (Plant….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.biology.botany",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-06T15:45:09.371071+00:00"
-      },
-      {
-        "question": "What type of Behavioral Ecology, Behavioral Ecology, Behavioral Medicine, Community Ecology, the Ecosystem Ecology?",
-        "answer": "Population Ecology is a core concept within Ecology….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.biology.ecology",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": true,
-        "ts": "2026-06-06T15:44:35.071945+00:00"
-      },
-      {
-        "question": "What is one word I would use to describe Behavioral Ecology?",
-        "answer": "Population Ecology",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.biology.ecology",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-06T15:44:35.071327+00:00"
-      },
-      {
-        "question": "What type of Darwinian Evolution, Darwinian Evolution, Neo-Darwinian Synthesis, Molecular Evolution, the Stellar Evolution?",
-        "answer": "Phylogenetics is a core concept within Evolutionary Biology….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.biology.evolutionary_biology",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": true,
-        "ts": "2026-06-06T15:44:01.972043+00:00"
-      },
-      {
-        "question": "What is Evolutionary Biology?",
-        "answer": "Phylogenetics is a core concept within Evolutionary Biology….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.biology.evolutionary_biology",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-06T15:44:01.971688+00:00"
-      },
-      {
-        "question": "What type of Quantitative Genetics, Quantitative Analysis, Quantitative Genetics, Quantitative Methods, the Classical Genetics?",
-        "answer": "Population Genetics is a core concept within Genetics….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.biology.genetics",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": true,
-        "ts": "2026-06-06T15:43:31.276068+00:00"
-      },
-      {
-        "question": "What is Genetics?",
-        "answer": "Population Genetics is a core concept within Genetics….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.biology.genetics",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-06T15:43:31.274149+00:00"
-      }
-    ]
+    "recent": []
   },
   "meta_consciousness": {
     "enabled": true,
     "recent": [
       {
-        "question": "What type of Plant Physiology, Plant Anatomy, Plant Physiology, Plant Taxonomy, the Plant Ecology?",
-        "answer": "Plant Physiology is a core concept within Botany (Plant….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.biology.botany",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": true,
-        "ts": "2026-06-06T15:45:09.371533+00:00",
-        "kind": "learning"
-      },
-      {
-        "question": "What is Botany (Plant Biology)?",
-        "answer": "Plant Physiology is a core concept within Botany (Plant….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.biology.botany",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-06T15:45:09.371071+00:00",
-        "kind": "learning"
-      },
-      {
-        "question": "What type of Behavioral Ecology, Behavioral Ecology, Behavioral Medicine, Community Ecology, the Ecosystem Ecology?",
-        "answer": "Population Ecology is a core concept within Ecology….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.biology.ecology",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": true,
-        "ts": "2026-06-06T15:44:35.071945+00:00",
-        "kind": "learning"
-      },
-      {
-        "question": "What is one word I would use to describe Behavioral Ecology?",
-        "answer": "Population Ecology",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.biology.ecology",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-06T15:44:35.071327+00:00",
-        "kind": "learning"
-      },
-      {
-        "question": "What type of Darwinian Evolution, Darwinian Evolution, Neo-Darwinian Synthesis, Molecular Evolution, the Stellar Evolution?",
-        "answer": "Phylogenetics is a core concept within Evolutionary Biology….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.biology.evolutionary_biology",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": true,
-        "ts": "2026-06-06T15:44:01.972043+00:00",
-        "kind": "learning"
-      },
-      {
-        "question": "What is Evolutionary Biology?",
-        "answer": "Phylogenetics is a core concept within Evolutionary Biology….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.biology.evolutionary_biology",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-06T15:44:01.971688+00:00",
-        "kind": "learning"
-      },
-      {
-        "question": "What type of Quantitative Genetics, Quantitative Analysis, Quantitative Genetics, Quantitative Methods, the Classical Genetics?",
-        "answer": "Population Genetics is a core concept within Genetics….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.biology.genetics",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": true,
-        "ts": "2026-06-06T15:43:31.276068+00:00",
-        "kind": "learning"
-      },
-      {
-        "question": "What is Genetics?",
-        "answer": "Population Genetics is a core concept within Genetics….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.biology.genetics",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-06T15:43:31.274149+00:00",
-        "kind": "learning"
+        "question": "Do I persist between conversations?",
+        "answer": "State persists in DB + /data; this chat session is ephemeral.",
+        "theme": "continuity",
+        "source": "startup",
+        "grounded": false,
+        "state_snapshot": {
+          "documents": 0,
+          "cycles": 0,
+          "focus": ""
+        },
+        "ts": "2026-06-06T16:05:34.815950+00:00",
+        "kind": "meta"
       }
     ]
   },
-  "exported_at": "2026-06-06T15:45:09.372775+00:00",
+  "exported_at": "2026-06-06T16:05:34.830504+00:00",
   "github_sync": {
-    "batch_cursor": 25,
+    "batch_cursor": 0,
     "include_document_text": true,
     "max_documents": 5000,
     "export_version": 2
