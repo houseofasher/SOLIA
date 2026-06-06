@@ -1875,6 +1875,174 @@
         "epochs": 150
       },
       "status": "completed"
+    },
+    {
+      "run_id": "a2feb291",
+      "created_at": "2026-06-06T11:26:03.566510+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_scientific_method_a2feb291/classifier.json",
+      "params": {
+        "scope": "scientific_method",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "64723de2",
+      "created_at": "2026-06-06T11:26:08.244192+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_scientific_realism_64723de2/classifier.json",
+      "params": {
+        "scope": "scientific_realism",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "3f68f05c",
+      "created_at": "2026-06-06T11:26:54.432247+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_ancient_greek_philosophy_3f68f05c/classifier.json",
+      "params": {
+        "scope": "ancient_greek_philosophy",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "a72de55d",
+      "created_at": "2026-06-06T11:26:58.967941+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_roman_philosophy_a72de55d/classifier.json",
+      "params": {
+        "scope": "roman_philosophy",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "c8802d43",
+      "created_at": "2026-06-06T11:27:03.538197+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_medieval_philosophy_c8802d43/classifier.json",
+      "params": {
+        "scope": "medieval_philosophy",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "d9970d3a",
+      "created_at": "2026-06-06T11:27:07.998094+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_modern_western_philosophy_d9970d3a/classifier.json",
+      "params": {
+        "scope": "modern_western_philosophy",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "6a7549ae",
+      "created_at": "2026-06-06T11:27:12.502865+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_eastern_philosophy_6a7549ae/classifier.json",
+      "params": {
+        "scope": "eastern_philosophy",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "18cc50ed",
+      "created_at": "2026-06-06T11:27:16.954768+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_judaism_18cc50ed/classifier.json",
+      "params": {
+        "scope": "judaism",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "b3c7cdf3",
+      "created_at": "2026-06-06T11:27:21.453525+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_christianity_b3c7cdf3/classifier.json",
+      "params": {
+        "scope": "christianity",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "4f67fb42",
+      "created_at": "2026-06-06T11:27:25.996131+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_islam_4f67fb42/classifier.json",
+      "params": {
+        "scope": "islam",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "d9a7fb50",
+      "created_at": "2026-06-06T11:27:49.222039+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_hinduism_d9a7fb50/classifier.json",
+      "params": {
+        "scope": "hinduism",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "b89b1209",
+      "created_at": "2026-06-06T11:27:53.869474+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_buddhism_b89b1209/classifier.json",
+      "params": {
+        "scope": "buddhism",
+        "epochs": 150
+      },
+      "status": "completed"
     }
   ]
 }
