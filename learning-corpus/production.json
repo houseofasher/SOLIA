@@ -1,8 +1,9 @@
 {
-  "promoted_at": "2026-06-06T03:02:34.702572+00:00",
-  "run_id": "4e4b0891",
+  "promoted_at": "2026-06-06T03:59:28.090815+00:00",
+  "run_id": "41760559",
   "metrics": {
-    "train_accuracy": 1.0
+    "train_accuracy": 1.0,
+    "val_accuracy": 1.0
   },
-  "artifact_path": "/app/data/models/brain_classical_mechanics_4e4b0891/classifier.json"
+  "artifact_path": "/app/data/models/brain_thermodynamics_41760559/classifier.json"
 }
