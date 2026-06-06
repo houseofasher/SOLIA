@@ -16,9 +16,9 @@
     },
     "running": true,
     "started_at": "2026-06-06T04:47:24.721904+00:00",
-    "last_run_at": "2026-06-06T05:05:20.587435+00:00",
-    "next_run_at": "2026-06-06T06:05:20.587441+00:00",
-    "cycles_completed": 1,
+    "last_run_at": "2026-06-06T06:07:30.811161+00:00",
+    "next_run_at": "2026-06-06T07:07:30.811167+00:00",
+    "cycles_completed": 2,
     "last_result": {
       "batch": true,
       "targets_total": 25,
@@ -26,9 +26,9 @@
       "targets_processed": 25,
       "graduations_passed": 25,
       "last_target": {
-        "domain": "science_and_natural_philosophy",
-        "subdomain": "biology",
-        "micro_subdomain": "botany"
+        "domain": "medicine_and_health_sciences",
+        "subdomain": "clinical_medicine",
+        "micro_subdomain": "obstetrics_and_gynecology"
       },
       "last_graduation": {
         "grade": "preschool",
@@ -39,13 +39,13 @@
         "unlocked_next": "elementary"
       },
       "sample_paths": [
-        "science_and_natural_philosophy.physics.classical_mechanics",
-        "science_and_natural_philosophy.physics.thermodynamics",
-        "science_and_natural_philosophy.physics.electromagnetism",
-        "science_and_natural_philosophy.physics.quantum_mechanics",
-        "science_and_natural_philosophy.physics.relativity"
+        "science_and_natural_philosophy.biology.zoology",
+        "science_and_natural_philosophy.biology.microbiology",
+        "science_and_natural_philosophy.biology.neuroscience",
+        "science_and_natural_philosophy.biology.physiology",
+        "science_and_natural_philosophy.biology.immunology"
       ],
-      "batch_cursor": 25
+      "batch_cursor": 50
     },
     "last_error": null,
     "current_target": {
@@ -58,8 +58,8 @@
     "domains": 30,
     "micro_subdomains": 862,
     "micro_agents": 6162,
-    "documents": 77,
-    "grade_levels_graduated": 25,
+    "documents": 157,
+    "grade_levels_graduated": 50,
     "grade_progress_rows": 6034
   },
   "timeline": {
@@ -138,106 +138,106 @@
     "enabled": true,
     "recent": [
       {
-        "question": "What type of Plant Physiology, Plant Anatomy, Plant Physiology, Plant Taxonomy, the Plant Ecology?",
-        "answer": "Plant Physiology is a core concept within Botany (Plant….",
+        "question": "What type of Gynecology, Gynecology, Urogynecology, the Obstetrics & Gynecology?",
+        "answer": "Gynecology is a core concept within Obstetrics & Gynecology….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.biology.botany",
+        "path": "medicine_and_health_sciences.clinical_medicine.obstetrics_and_gynecology",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-06T05:05:20.586991+00:00"
+        "ts": "2026-06-06T06:07:30.810771+00:00"
       },
       {
-        "question": "What is one word I would use to describe Plant Physiology?",
-        "answer": "Plant Taxonomy",
+        "question": "What is Obstetrics & Gynecology?",
+        "answer": "Gynecology is a core concept within Obstetrics & Gynecology….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.biology.botany",
+        "path": "medicine_and_health_sciences.clinical_medicine.obstetrics_and_gynecology",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-06T05:05:20.586617+00:00"
+        "ts": "2026-06-06T06:07:30.810510+00:00"
       },
       {
-        "question": "What type of Chemical Ecology, Chemical Kinetics, Chemical Thermodynamics, Chemical Ecology, the Chemical Oceanography?",
-        "answer": "Population Ecology is a core concept within Ecology….",
+        "question": "What type of Transcultural Psychiatry, Transcultural Psychiatry, Clinical Psychiatry, Forensic Psychiatry, the Child & Adolescent Psychiatry?",
+        "answer": "Forensic Psychiatry is a core concept within Psychiatry….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.biology.ecology",
+        "path": "medicine_and_health_sciences.clinical_medicine.psychiatry",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-06T05:04:39.082529+00:00"
+        "ts": "2026-06-06T06:07:26.040993+00:00"
       },
       {
-        "question": "What is Ecology?",
-        "answer": "Population Ecology is a core concept within Ecology….",
+        "question": "What is Psychiatry?",
+        "answer": "Forensic Psychiatry is a core concept within Psychiatry….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.biology.ecology",
+        "path": "medicine_and_health_sciences.clinical_medicine.psychiatry",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-06T05:04:39.080626+00:00"
+        "ts": "2026-06-06T06:07:26.040714+00:00"
       },
       {
-        "question": "What type of Molecular Evolution, Molecular Spectroscopy, Molecular Evolution, Plant Molecular Biology, the Molecular Epidemiology?",
-        "answer": "Phylogenetics is a core concept within Evolutionary Biology….",
+        "question": "What type of Sleep Medicine (Neuro), Sleep Medicine (Neuro), Headache Medicine, Maternal-Fetal Medicine, the Sports Medicine (Ortho)?",
+        "answer": "Epileptology is a core concept within Neurology (CLINICAL….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.biology.evolutionary_biology",
+        "path": "medicine_and_health_sciences.clinical_medicine.neurology",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-06T05:03:54.436067+00:00"
+        "ts": "2026-06-06T06:07:21.206686+00:00"
       },
       {
-        "question": "What is one word I would use to describe Molecular Evolution?",
-        "answer": "Phylogenetics",
+        "question": "What is Neurology?",
+        "answer": "Epileptology is a core concept within Neurology (CLINICAL….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.biology.evolutionary_biology",
+        "path": "medicine_and_health_sciences.clinical_medicine.neurology",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-06T05:03:54.382923+00:00"
+        "ts": "2026-06-06T06:07:21.206359+00:00"
       },
       {
-        "question": "What type of Genomics, Genomics, Comparative Genomics, Metagenomics, the Pharmacogenomics?",
-        "answer": "Population Genetics is a core concept within Genetics….",
+        "question": "What type of Trauma Surgery, Trauma Surgery, Trauma Medicine, Trauma & PTSD, the General Surgery?",
+        "answer": "Neurosurgery is a core concept within Surgery (CLINICAL….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.biology.genetics",
+        "path": "medicine_and_health_sciences.clinical_medicine.surgery",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-06T05:03:12.486674+00:00"
+        "ts": "2026-06-06T06:07:11.437710+00:00"
       },
       {
-        "question": "What is one word I would use to describe Genomics?",
-        "answer": "Population Genetics",
+        "question": "What is Surgery?",
+        "answer": "Neurosurgery is a core concept within Surgery (CLINICAL….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.biology.genetics",
+        "path": "medicine_and_health_sciences.clinical_medicine.surgery",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-06T05:03:12.486398+00:00"
+        "ts": "2026-06-06T06:07:11.437476+00:00"
       }
     ]
   },
-  "exported_at": "2026-06-06T05:47:39.072756+00:00",
+  "exported_at": "2026-06-06T06:07:30.812300+00:00",
   "github_sync": {
-    "batch_cursor": 25,
+    "batch_cursor": 50,
     "include_document_text": true,
     "max_documents": 5000,
     "export_version": 2
