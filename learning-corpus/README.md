@@ -1,17 +1,17 @@
 # Aureon learning corpus (auto-synced)
 
-**Exported:** 2026-06-06T05:47:39.072756+00:00
+**Exported:** 2026-06-06T06:07:30.812300+00:00
 
 Full export of everything Aureon has learned — not just self-inquiry.
 
 ## Summary
 
-- **Documents (full corpus):** 77
-- **Labels:** 77
-- **Graduated grade steps:** 25
+- **Documents (full corpus):** 157
+- **Labels:** 157
+- **Graduated grade steps:** 50
 - **In progress:** 0
-- **Training runs:** 25
-- **Benchmarks:** 75
+- **Training runs:** 50
+- **Benchmarks:** 150
 - **Preference pairs (RLHF):** 0
 
 ## Files
