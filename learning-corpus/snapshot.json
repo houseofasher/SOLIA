@@ -15,7 +15,7 @@
       "batch_size": 25
     },
     "running": true,
-    "started_at": "2026-06-06T18:24:56.735468+00:00",
+    "started_at": "2026-06-06T18:32:17.521603+00:00",
     "last_run_at": null,
     "next_run_at": null,
     "cycles_completed": 0,
@@ -111,9 +111,9 @@
     "enabled": true,
     "recent": [
       {
-        "question": "What makes my self-model different from theater?",
-        "answer": "Every answer ties to docs, cycles, or audit JSON — not performed empathy.",
-        "theme": "consciousness",
+        "question": "Do I persist between conversations?",
+        "answer": "State persists in DB + /data; this chat session is ephemeral.",
+        "theme": "continuity",
         "source": "startup",
         "grounded": false,
         "state_snapshot": {
@@ -121,12 +121,12 @@
           "cycles": 0,
           "focus": ""
         },
-        "ts": "2026-06-06T18:24:56.733161+00:00",
+        "ts": "2026-06-06T18:32:17.517267+00:00",
         "kind": "meta"
       }
     ]
   },
-  "exported_at": "2026-06-06T18:24:56.742160+00:00",
+  "exported_at": "2026-06-06T18:32:17.531956+00:00",
   "github_sync": {
     "batch_cursor": 0,
     "include_document_text": true,
