@@ -16,9 +16,9 @@
     },
     "running": true,
     "started_at": "2026-06-06T04:47:24.721904+00:00",
-    "last_run_at": "2026-06-06T08:14:58.780904+00:00",
-    "next_run_at": "2026-06-06T09:14:58.780909+00:00",
-    "cycles_completed": 4,
+    "last_run_at": "2026-06-06T09:23:58.602565+00:00",
+    "next_run_at": "2026-06-06T10:23:58.602569+00:00",
+    "cycles_completed": 5,
     "last_result": {
       "batch": true,
       "targets_total": 25,
@@ -27,25 +27,25 @@
       "graduations_passed": 25,
       "last_target": {
         "domain": "technology_and_engineering",
-        "subdomain": "mechanical_engineering",
-        "micro_subdomain": "heat_and_mass_transfer"
+        "subdomain": "nuclear_engineering",
+        "micro_subdomain": "radiation_protection"
       },
       "last_graduation": {
         "grade": "preschool",
         "passed": true,
-        "train_accuracy": 1.0,
+        "train_accuracy": 0.0,
         "min_train_accuracy": 0.45,
         "evaluator_passed": true,
         "unlocked_next": "elementary"
       },
       "sample_paths": [
-        "medicine_and_health_sciences.traditional_and_alternative_medicine.chiropractic",
-        "medicine_and_health_sciences.traditional_and_alternative_medicine.osteopathy",
-        "medicine_and_health_sciences.traditional_and_alternative_medicine.shamanic_medicine",
-        "medicine_and_health_sciences.traditional_and_alternative_medicine.african_traditional_medicine",
-        "medicine_and_health_sciences.traditional_and_alternative_medicine.indigenous_healing_systems"
+        "technology_and_engineering.mechanical_engineering.machine_design",
+        "technology_and_engineering.mechanical_engineering.manufacturing_engineering",
+        "technology_and_engineering.mechanical_engineering.robotics_and_automation",
+        "technology_and_engineering.mechanical_engineering.aerospace_and_aeronautical_engineering",
+        "technology_and_engineering.civil_engineering.structural_engineering"
       ],
-      "batch_cursor": 100
+      "batch_cursor": 125
     },
     "last_error": null,
     "current_target": {
@@ -58,8 +58,8 @@
     "domains": 30,
     "micro_subdomains": 862,
     "micro_agents": 6162,
-    "documents": 322,
-    "grade_levels_graduated": 100,
+    "documents": 388,
+    "grade_levels_graduated": 125,
     "grade_progress_rows": 6034
   },
   "timeline": {
@@ -138,106 +138,106 @@
     "enabled": true,
     "recent": [
       {
-        "question": "What type of Conduction: Conduction?",
-        "answer": "Convection is a core concept within Heat & Mass Transfer….",
+        "question": "What type of Radiation Protection, Radiation, Radiation Oncology, Power System Protection, the Radiation Protection?",
+        "answer": "Pick one facet of Radiation Protection.",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "technology_and_engineering.nuclear_engineering.radiation_protection",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": false,
+        "ciper": true,
+        "ts": "2026-06-06T09:23:58.602232+00:00"
+      },
+      {
+        "question": "What is Radiation Protection?",
+        "answer": "No verified text for Radiation Protection yet.",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "technology_and_engineering.nuclear_engineering.radiation_protection",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": false,
+        "ciper": false,
+        "ts": "2026-06-06T09:23:58.601931+00:00"
+      },
+      {
+        "question": "What type of Nuclear Safety, Nuclear Structure, Nuclear Reactions, Nuclear Magnetic Resonance (NMR), the Nuclear Medicine?",
+        "answer": "Pick one facet of Nuclear Safety.",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "technology_and_engineering.nuclear_engineering.nuclear_safety",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": false,
+        "ciper": true,
+        "ts": "2026-06-06T09:23:34.207748+00:00"
+      },
+      {
+        "question": "What is one word I would use to describe Nuclear Safety?",
+        "answer": "safety",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "technology_and_engineering.nuclear_engineering.nuclear_safety",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": false,
+        "ciper": false,
+        "ts": "2026-06-06T09:23:34.207533+00:00"
+      },
+      {
+        "question": "What type of Reactor Design, Chemical Reactor Design, Polymerization Reactors, Bioreactor Design, the Drug Design?",
+        "answer": "Pick one facet of Reactor Design.",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "technology_and_engineering.nuclear_engineering.reactor_design",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": false,
+        "ciper": true,
+        "ts": "2026-06-06T09:23:09.830302+00:00"
+      },
+      {
+        "question": "What is one word I would use to describe Reactor Design?",
+        "answer": "design",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "technology_and_engineering.nuclear_engineering.reactor_design",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": false,
+        "ciper": false,
+        "ts": "2026-06-06T09:23:09.830096+00:00"
+      },
+      {
+        "question": "What type of Carbon Nanomaterials, Carbon Nanomaterials, Carbon Pricing, Nanomaterials Chemistry, the Carbon Science?",
+        "answer": "Metal Nanoparticles is a core concept within Nanomaterials….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.mechanical_engineering.heat_and_mass_transfer",
+        "path": "technology_and_engineering.materials_science_and_engineering.nanomaterials",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-06T08:14:58.780529+00:00"
+        "ts": "2026-06-06T09:22:45.391551+00:00"
       },
       {
-        "question": "What is Heat & Mass Transfer?",
-        "answer": "Convection is a core concept within Heat & Mass Transfer….",
+        "question": "What is one word I would use to describe Carbon Nanomaterials?",
+        "answer": "Quantum Dots",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.mechanical_engineering.heat_and_mass_transfer",
+        "path": "technology_and_engineering.materials_science_and_engineering.nanomaterials",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-06T08:14:58.780272+00:00"
-      },
-      {
-        "question": "What type of Computational Fluid Dynamics, Computational Chemistry, Computational Neuroscience, Computational Fluid Dynamics, the Computational Archaeology?",
-        "answer": "Turbulence is a core concept within Fluid Mechanics….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.mechanical_engineering.fluid_mechanics",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": true,
-        "ts": "2026-06-06T08:14:54.074419+00:00"
-      },
-      {
-        "question": "What is Fluid Mechanics?",
-        "answer": "Turbulence is a core concept within Fluid Mechanics….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.mechanical_engineering.fluid_mechanics",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-06T08:14:54.074128+00:00"
-      },
-      {
-        "question": "What type of Fracture Mechanics, Fracture Mechanics, Newtonian Mechanics, Lagrangian Mechanics, the Hamiltonian Mechanics?",
-        "answer": "Stress & Strain is a core concept within Mechanics of….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.mechanical_engineering.mechanics_of_materials",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": true,
-        "ts": "2026-06-06T08:14:49.329139+00:00"
-      },
-      {
-        "question": "What is Mechanics of Materials?",
-        "answer": "Stress & Strain is a core concept within Mechanics of….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.mechanical_engineering.mechanics_of_materials",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-06T08:14:49.328879+00:00"
-      },
-      {
-        "question": "What type of FPGA Design, FPGA Design, Drug Design, Data Structure Design, the Language Design?",
-        "answer": "Microcontroller Programming is a core concept within….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.electrical_engineering.embedded_systems",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": true,
-        "ts": "2026-06-06T08:14:44.739343+00:00"
-      },
-      {
-        "question": "What is one word I would use to describe FPGA Design?",
-        "answer": "research",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.electrical_engineering.embedded_systems",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-06T08:14:44.739071+00:00"
+        "ts": "2026-06-06T09:22:45.391319+00:00"
       }
     ]
   },
-  "exported_at": "2026-06-06T08:51:54.247611+00:00",
+  "exported_at": "2026-06-06T09:23:58.602987+00:00",
   "github_sync": {
-    "batch_cursor": 100,
+    "batch_cursor": 125,
     "include_document_text": true,
     "max_documents": 5000,
     "export_version": 2
