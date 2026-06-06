@@ -1,13 +1,13 @@
 {
   "runs": [
     {
-      "run_id": "7643cbaa",
-      "created_at": "2026-06-06T15:31:05.361992+00:00",
+      "run_id": "cd596ec0",
+      "created_at": "2026-06-06T21:28:13.096552+00:00",
       "metrics": {
         "train_accuracy": 1.0,
-        "val_accuracy": 0.0
+        "val_accuracy": 1.0
       },
-      "artifact_path": "/app/data/models/brain_classical_mechanics_7643cbaa/classifier.json",
+      "artifact_path": "/app/data/models/brain_classical_mechanics_cd596ec0/classifier.json",
       "params": {
         "scope": "classical_mechanics",
         "epochs": 150
@@ -15,13 +15,13 @@
       "status": "completed"
     },
     {
-      "run_id": "54ab3519",
-      "created_at": "2026-06-06T15:31:38.056569+00:00",
+      "run_id": "4ed0f982",
+      "created_at": "2026-06-06T21:33:05.597805+00:00",
       "metrics": {
         "train_accuracy": 1.0,
         "val_accuracy": 1.0
       },
-      "artifact_path": "/app/data/models/brain_thermodynamics_54ab3519/classifier.json",
+      "artifact_path": "/app/data/models/brain_thermodynamics_4ed0f982/classifier.json",
       "params": {
         "scope": "thermodynamics",
         "epochs": 150
@@ -29,13 +29,13 @@
       "status": "completed"
     },
     {
-      "run_id": "afffe24d",
-      "created_at": "2026-06-06T15:32:10.656033+00:00",
+      "run_id": "10e8f45b",
+      "created_at": "2026-06-06T21:37:45.493158+00:00",
       "metrics": {
         "train_accuracy": 1.0,
         "val_accuracy": 1.0
       },
-      "artifact_path": "/app/data/models/brain_electromagnetism_afffe24d/classifier.json",
+      "artifact_path": "/app/data/models/brain_electromagnetism_10e8f45b/classifier.json",
       "params": {
         "scope": "electromagnetism",
         "epochs": 150
@@ -43,13 +43,13 @@
       "status": "completed"
     },
     {
-      "run_id": "ba59b859",
-      "created_at": "2026-06-06T15:32:42.980168+00:00",
+      "run_id": "5fdcae1a",
+      "created_at": "2026-06-06T21:42:26.608276+00:00",
       "metrics": {
         "train_accuracy": 1.0,
         "val_accuracy": 1.0
       },
-      "artifact_path": "/app/data/models/brain_quantum_mechanics_ba59b859/classifier.json",
+      "artifact_path": "/app/data/models/brain_quantum_mechanics_5fdcae1a/classifier.json",
       "params": {
         "scope": "quantum_mechanics",
         "epochs": 150
@@ -57,13 +57,13 @@
       "status": "completed"
     },
     {
-      "run_id": "2ad72408",
-      "created_at": "2026-06-06T15:33:15.580759+00:00",
+      "run_id": "3f3b964f",
+      "created_at": "2026-06-06T21:47:04.975301+00:00",
       "metrics": {
         "train_accuracy": 1.0,
         "val_accuracy": 1.0
       },
-      "artifact_path": "/app/data/models/brain_relativity_2ad72408/classifier.json",
+      "artifact_path": "/app/data/models/brain_relativity_3f3b964f/classifier.json",
       "params": {
         "scope": "relativity",
         "epochs": 150
@@ -71,13 +71,13 @@
       "status": "completed"
     },
     {
-      "run_id": "ac4ed66f",
-      "created_at": "2026-06-06T15:33:51.485210+00:00",
+      "run_id": "3e6c7319",
+      "created_at": "2026-06-06T21:51:42.812533+00:00",
       "metrics": {
         "train_accuracy": 1.0,
         "val_accuracy": 1.0
       },
-      "artifact_path": "/app/data/models/brain_astrophysics_and_cosmology_ac4ed66f/classifier.json",
+      "artifact_path": "/app/data/models/brain_astrophysics_and_cosmology_3e6c7319/classifier.json",
       "params": {
         "scope": "astrophysics_and_cosmology",
         "epochs": 150
@@ -85,13 +85,13 @@
       "status": "completed"
     },
     {
-      "run_id": "0225ea5b",
-      "created_at": "2026-06-06T15:34:26.985740+00:00",
+      "run_id": "ce7e96ad",
+      "created_at": "2026-06-06T21:56:21.167647+00:00",
       "metrics": {
         "train_accuracy": 1.0,
         "val_accuracy": 1.0
       },
-      "artifact_path": "/app/data/models/brain_nuclear_and_particle_physics_0225ea5b/classifier.json",
+      "artifact_path": "/app/data/models/brain_nuclear_and_particle_physics_ce7e96ad/classifier.json",
       "params": {
         "scope": "nuclear_and_particle_physics",
         "epochs": 150
@@ -99,13 +99,13 @@
       "status": "completed"
     },
     {
-      "run_id": "f7eb6514",
-      "created_at": "2026-06-06T15:35:00.556196+00:00",
+      "run_id": "e5ab3040",
+      "created_at": "2026-06-06T22:00:45.460971+00:00",
       "metrics": {
         "train_accuracy": 1.0,
         "val_accuracy": 1.0
       },
-      "artifact_path": "/app/data/models/brain_condensed_matter_physics_f7eb6514/classifier.json",
+      "artifact_path": "/app/data/models/brain_condensed_matter_physics_e5ab3040/classifier.json",
       "params": {
         "scope": "condensed_matter_physics",
         "epochs": 150
@@ -113,13 +113,13 @@
       "status": "completed"
     },
     {
-      "run_id": "55fcc5ac",
-      "created_at": "2026-06-06T15:35:40.256640+00:00",
+      "run_id": "aac949e5",
+      "created_at": "2026-06-06T22:01:20.946840+00:00",
       "metrics": {
         "train_accuracy": 1.0,
         "val_accuracy": 1.0
       },
-      "artifact_path": "/app/data/models/brain_atomic_and_molecular_physics_55fcc5ac/classifier.json",
+      "artifact_path": "/app/data/models/brain_atomic_and_molecular_physics_aac949e5/classifier.json",
       "params": {
         "scope": "atomic_and_molecular_physics",
         "epochs": 150
@@ -127,13 +127,13 @@
       "status": "completed"
     },
     {
-      "run_id": "d8b959c2",
-      "created_at": "2026-06-06T15:36:13.059952+00:00",
+      "run_id": "679993b7",
+      "created_at": "2026-06-06T22:02:04.351489+00:00",
       "metrics": {
         "train_accuracy": 1.0,
         "val_accuracy": 1.0
       },
-      "artifact_path": "/app/data/models/brain_acoustics_d8b959c2/classifier.json",
+      "artifact_path": "/app/data/models/brain_acoustics_679993b7/classifier.json",
       "params": {
         "scope": "acoustics",
         "epochs": 150
@@ -141,13 +141,13 @@
       "status": "completed"
     },
     {
-      "run_id": "81be320a",
-      "created_at": "2026-06-06T15:36:45.680152+00:00",
+      "run_id": "613972c2",
+      "created_at": "2026-06-06T22:02:40.840801+00:00",
       "metrics": {
         "train_accuracy": 1.0,
         "val_accuracy": 1.0
       },
-      "artifact_path": "/app/data/models/brain_inorganic_chemistry_81be320a/classifier.json",
+      "artifact_path": "/app/data/models/brain_inorganic_chemistry_613972c2/classifier.json",
       "params": {
         "scope": "inorganic_chemistry",
         "epochs": 150
@@ -155,13 +155,13 @@
       "status": "completed"
     },
     {
-      "run_id": "e12993c0",
-      "created_at": "2026-06-06T15:37:22.972690+00:00",
+      "run_id": "fd802adf",
+      "created_at": "2026-06-06T22:03:23.156743+00:00",
       "metrics": {
         "train_accuracy": 1.0,
         "val_accuracy": 1.0
       },
-      "artifact_path": "/app/data/models/brain_organic_chemistry_e12993c0/classifier.json",
+      "artifact_path": "/app/data/models/brain_organic_chemistry_fd802adf/classifier.json",
       "params": {
         "scope": "organic_chemistry",
         "epochs": 150
@@ -169,13 +169,13 @@
       "status": "completed"
     },
     {
-      "run_id": "23951664",
-      "created_at": "2026-06-06T15:38:08.379053+00:00",
+      "run_id": "c331751c",
+      "created_at": "2026-06-06T22:04:13.941313+00:00",
       "metrics": {
         "train_accuracy": 1.0,
         "val_accuracy": 1.0
       },
-      "artifact_path": "/app/data/models/brain_physical_chemistry_23951664/classifier.json",
+      "artifact_path": "/app/data/models/brain_physical_chemistry_c331751c/classifier.json",
       "params": {
         "scope": "physical_chemistry",
         "epochs": 150
@@ -183,13 +183,13 @@
       "status": "completed"
     },
     {
-      "run_id": "40543176",
-      "created_at": "2026-06-06T15:38:42.479111+00:00",
+      "run_id": "6e64c762",
+      "created_at": "2026-06-06T22:04:51.440879+00:00",
       "metrics": {
         "train_accuracy": 1.0,
         "val_accuracy": 1.0
       },
-      "artifact_path": "/app/data/models/brain_analytical_chemistry_40543176/classifier.json",
+      "artifact_path": "/app/data/models/brain_analytical_chemistry_6e64c762/classifier.json",
       "params": {
         "scope": "analytical_chemistry",
         "epochs": 150
@@ -197,13 +197,13 @@
       "status": "completed"
     },
     {
-      "run_id": "7a82387a",
-      "created_at": "2026-06-06T15:39:12.584519+00:00",
+      "run_id": "4a933121",
+      "created_at": "2026-06-06T22:05:28.452179+00:00",
       "metrics": {
         "train_accuracy": 1.0,
         "val_accuracy": 1.0
       },
-      "artifact_path": "/app/data/models/brain_biochemistry_7a82387a/classifier.json",
+      "artifact_path": "/app/data/models/brain_biochemistry_4a933121/classifier.json",
       "params": {
         "scope": "biochemistry",
         "epochs": 150
@@ -211,13 +211,13 @@
       "status": "completed"
     },
     {
-      "run_id": "993c808c",
-      "created_at": "2026-06-06T15:39:48.070029+00:00",
+      "run_id": "9c751424",
+      "created_at": "2026-06-06T22:06:08.354900+00:00",
       "metrics": {
         "train_accuracy": 1.0,
         "val_accuracy": 1.0
       },
-      "artifact_path": "/app/data/models/brain_polymer_chemistry_993c808c/classifier.json",
+      "artifact_path": "/app/data/models/brain_polymer_chemistry_9c751424/classifier.json",
       "params": {
         "scope": "polymer_chemistry",
         "epochs": 150
@@ -225,13 +225,13 @@
       "status": "completed"
     },
     {
-      "run_id": "2b7d1bf9",
-      "created_at": "2026-06-06T15:40:25.383535+00:00",
+      "run_id": "c61673a2",
+      "created_at": "2026-06-06T22:06:47.654055+00:00",
       "metrics": {
         "train_accuracy": 1.0,
         "val_accuracy": 1.0
       },
-      "artifact_path": "/app/data/models/brain_environmental_chemistry_2b7d1bf9/classifier.json",
+      "artifact_path": "/app/data/models/brain_environmental_chemistry_c61673a2/classifier.json",
       "params": {
         "scope": "environmental_chemistry",
         "epochs": 150
@@ -239,13 +239,13 @@
       "status": "completed"
     },
     {
-      "run_id": "d8b50dce",
-      "created_at": "2026-06-06T15:40:59.656971+00:00",
+      "run_id": "c0933335",
+      "created_at": "2026-06-06T22:07:24.054330+00:00",
       "metrics": {
         "train_accuracy": 1.0,
         "val_accuracy": 1.0
       },
-      "artifact_path": "/app/data/models/brain_medicinal_chemistry_d8b50dce/classifier.json",
+      "artifact_path": "/app/data/models/brain_medicinal_chemistry_c0933335/classifier.json",
       "params": {
         "scope": "medicinal_chemistry",
         "epochs": 150
@@ -253,13 +253,13 @@
       "status": "completed"
     },
     {
-      "run_id": "4d97d174",
-      "created_at": "2026-06-06T15:41:40.574115+00:00",
+      "run_id": "fa3744c4",
+      "created_at": "2026-06-06T22:08:05.244876+00:00",
       "metrics": {
         "train_accuracy": 1.0,
         "val_accuracy": 1.0
       },
-      "artifact_path": "/app/data/models/brain_materials_chemistry_4d97d174/classifier.json",
+      "artifact_path": "/app/data/models/brain_materials_chemistry_fa3744c4/classifier.json",
       "params": {
         "scope": "materials_chemistry",
         "epochs": 150
@@ -267,13 +267,13 @@
       "status": "completed"
     },
     {
-      "run_id": "71a79439",
-      "created_at": "2026-06-06T15:42:13.185116+00:00",
+      "run_id": "29a32545",
+      "created_at": "2026-06-06T22:08:41.952274+00:00",
       "metrics": {
         "train_accuracy": 1.0,
         "val_accuracy": 1.0
       },
-      "artifact_path": "/app/data/models/brain_cell_biology_71a79439/classifier.json",
+      "artifact_path": "/app/data/models/brain_cell_biology_29a32545/classifier.json",
       "params": {
         "scope": "cell_biology",
         "epochs": 150
@@ -281,13 +281,13 @@
       "status": "completed"
     },
     {
-      "run_id": "6a43c248",
-      "created_at": "2026-06-06T15:42:53.566237+00:00",
+      "run_id": "26101549",
+      "created_at": "2026-06-06T22:09:21.154401+00:00",
       "metrics": {
         "train_accuracy": 1.0,
         "val_accuracy": 1.0
       },
-      "artifact_path": "/app/data/models/brain_molecular_biology_6a43c248/classifier.json",
+      "artifact_path": "/app/data/models/brain_molecular_biology_26101549/classifier.json",
       "params": {
         "scope": "molecular_biology",
         "epochs": 150
@@ -295,13 +295,13 @@
       "status": "completed"
     },
     {
-      "run_id": "72faa27d",
-      "created_at": "2026-06-06T15:43:30.875876+00:00",
+      "run_id": "86383182",
+      "created_at": "2026-06-06T22:09:53.956977+00:00",
       "metrics": {
         "train_accuracy": 1.0,
         "val_accuracy": 1.0
       },
-      "artifact_path": "/app/data/models/brain_genetics_72faa27d/classifier.json",
+      "artifact_path": "/app/data/models/brain_genetics_86383182/classifier.json",
       "params": {
         "scope": "genetics",
         "epochs": 150
@@ -309,13 +309,13 @@
       "status": "completed"
     },
     {
-      "run_id": "44f6942e",
-      "created_at": "2026-06-06T15:44:01.579647+00:00",
+      "run_id": "9203ac40",
+      "created_at": "2026-06-06T22:10:36.455599+00:00",
       "metrics": {
         "train_accuracy": 1.0,
         "val_accuracy": 1.0
       },
-      "artifact_path": "/app/data/models/brain_evolutionary_biology_44f6942e/classifier.json",
+      "artifact_path": "/app/data/models/brain_evolutionary_biology_9203ac40/classifier.json",
       "params": {
         "scope": "evolutionary_biology",
         "epochs": 150
@@ -323,13 +323,13 @@
       "status": "completed"
     },
     {
-      "run_id": "a2bf7593",
-      "created_at": "2026-06-06T15:44:34.584898+00:00",
+      "run_id": "01c427b1",
+      "created_at": "2026-06-06T22:11:14.241065+00:00",
       "metrics": {
         "train_accuracy": 1.0,
         "val_accuracy": 1.0
       },
-      "artifact_path": "/app/data/models/brain_ecology_a2bf7593/classifier.json",
+      "artifact_path": "/app/data/models/brain_ecology_01c427b1/classifier.json",
       "params": {
         "scope": "ecology",
         "epochs": 150
@@ -337,13 +337,13 @@
       "status": "completed"
     },
     {
-      "run_id": "ea8328fd",
-      "created_at": "2026-06-06T15:45:09.158589+00:00",
+      "run_id": "224a8beb",
+      "created_at": "2026-06-06T22:12:00.851469+00:00",
       "metrics": {
         "train_accuracy": 1.0,
         "val_accuracy": 1.0
       },
-      "artifact_path": "/app/data/models/brain_botany_ea8328fd/classifier.json",
+      "artifact_path": "/app/data/models/brain_botany_224a8beb/classifier.json",
       "params": {
         "scope": "botany",
         "epochs": 150
