@@ -407,13 +407,29 @@ def _disambiguation_payload(text: str, matches: list[dict[str, Any]]) -> dict[st
     }
 
 
+def _predict_result_from_search(text: str, *, session_id: str | None) -> dict[str, Any] | None:
+    """Run deterministic search+opinion — no transformer. Returns predict-shaped dict or None."""
+    payload = _search_and_opine(text, session_id=session_id)
+    kind = payload.get("kind")
+    if kind not in ("search_opinion",):
+        return None
+    return {
+        "answer": payload["reply"],
+        "confidence": float(payload.get("confidence", 0) or 0),
+        "abstained": False,
+        "citations": [],
+        "sources": payload.get("sources", []),
+        "search_opinion": True,
+    }
+
+
 def _predict_with_search_fallback(
     text: str,
     *,
     session_id: str | None = None,
     force: bool = False,
 ) -> dict[str, Any]:
-    """Predict brain; auto-search when confidence drops below threshold."""
+    """Predict brain; auto-search deterministically when confidence drops below threshold."""
     result = _predict_with_timeout(text, session_id=session_id, force=force)
     confidence = float(result.get("confidence", 0) or 0) if result else 0.0
     if confidence >= _SEARCH_CONFIDENCE_THRESHOLD:
@@ -421,22 +437,14 @@ def _predict_with_search_fallback(
     if result.get("rate_limited") or result.get("timed_out"):
         return result
 
-    from brain.web_search import format_for_context, search, web_search_enabled
+    from brain.web_search import web_search_enabled
 
     if not web_search_enabled():
         return result
     try:
-        search_results = search(text)
-        context = format_for_context(search_results)
-        if context:
-            enriched = f"{context} question {text}"
-            boosted = _predict_with_timeout(enriched, session_id=session_id, force=True)
-            if boosted and boosted.get("answer"):
-                boosted_conf = float(boosted.get("confidence", 0) or 0)
-                if boosted_conf > confidence or len(str(boosted["answer"])) > len(
-                    str(result.get("answer", ""))
-                ):
-                    return boosted
+        search_result = _predict_result_from_search(text, session_id=session_id)
+        if search_result:
+            return search_result
     except Exception:
         pass
     return result
@@ -596,13 +604,22 @@ def _handle_named_entity(text: str, *, session_id: str | None) -> dict[str, Any]
         citations = list(result.get("citations") or [])
         if not citations and rag_citations:
             citations = rag_citations[:3]
+        kind = "search_opinion" if result.get("search_opinion") else "named_entity"
         return {
             "reply": result["answer"],
-            "kind": "named_entity",
+            "kind": kind,
             "session_id": session_id,
             "learning": learning_snapshot(),
             "citations": citations,
+            "sources": result.get("sources", []),
         }
+
+    from brain.web_search import web_search_enabled
+
+    if web_search_enabled():
+        search_payload = _search_and_opine(text, session_id=session_id)
+        if search_payload.get("kind") == "search_opinion":
+            return search_payload
 
     return {
         "reply": (
@@ -642,49 +659,57 @@ def is_search_question(text: str) -> bool:
 
 
 def _search_and_opine(text: str, *, session_id: str | None) -> dict[str, Any]:
-    """Search DuckDuckGo, form opinion, return grounded response."""
+    """Search DuckDuckGo, form opinion deterministically — no transformer reasoning."""
     from brain.opinion_brain import form_opinion
-    from brain.web_search import format_for_context, search
+    from brain.web_search import search
 
     results = search(text)
-    opinion_data = form_opinion(text, results)
 
-    if not opinion_data.get("opinion"):
+    if not results or all(r.get("error") for r in results):
         return {
             "reply": (
-                "I searched for that but could not find reliable results. "
-                "Try a more specific question."
+                "Web search returned no results for that. "
+                "Try rephrasing or ask me from my trained corpus."
             ),
             "kind": "search_empty",
             "session_id": session_id,
             "learning": learning_snapshot(),
         }
 
-    search_context = format_for_context(results)
-    enriched_question = f"{search_context} question {text}"
+    opinion_data = form_opinion(text, results)
 
+    if not opinion_data.get("opinion"):
+        return {
+            "reply": (
+                "I found results but could not form a grounded response. "
+                "Try a more specific question."
+            ),
+            "kind": "search_no_opinion",
+            "session_id": session_id,
+            "learning": learning_snapshot(),
+        }
+
+    corpus_context = ""
     try:
-        result = _predict_with_timeout(enriched_question, session_id=session_id, force=True)
-        if result and result.get("answer") and len(str(result["answer"])) > 30:
-            if not is_system_echo(str(result["answer"])):
-                combined_reply = (
-                    f"{opinion_data['opinion']}\n\n"
-                    f"My perspective: {result['answer']}"
-                )
-            else:
-                combined_reply = opinion_data["opinion"]
-        else:
-            combined_reply = opinion_data["opinion"]
+        from brain.vector_rag import retrieve_with_citations
+
+        corpus_context, _hits, _citations = retrieve_with_citations(text)
     except Exception:
-        combined_reply = opinion_data["opinion"]
+        pass
+
+    reply_parts = [opinion_data["opinion"]]
+    if corpus_context and len(corpus_context) > 50:
+        reply_parts.append(f"\n\nFrom my trained corpus: {corpus_context[:300]}")
+    sources = opinion_data.get("sources") or ["web"]
+    reply_parts.append(f"\n\nSources: {', '.join(sources)}")
 
     return {
-        "reply": combined_reply,
+        "reply": "\n".join(reply_parts),
         "kind": "search_opinion",
-        "sources": opinion_data.get("sources", []),
+        "session_id": session_id,
+        "sources": sources,
         "evidence_count": opinion_data.get("evidence_count", 0),
         "confidence": opinion_data.get("confidence", 0.0),
-        "session_id": session_id,
         "learning": learning_snapshot(),
     }
 
@@ -1423,16 +1448,19 @@ def chat(message: str, *, session_id: str | None = None) -> dict[str, Any]:
         if result and result.get("answer") and not result.get("abstained"):
             reply = str(result["answer"]).strip()
             if len(reply) > 20 and not _is_classification_leak(reply):
-                return done(
-                    {
-                        "reply": reply,
-                        "kind": "predict",
-                        "session_id": session_id,
-                        "learning": learning,
-                        "brain_predict": True,
-                        "classification": classification,
-                    }
-                )
+                kind = "search_opinion" if result.get("search_opinion") else "predict"
+                payload: dict[str, Any] = {
+                    "reply": reply,
+                    "kind": kind,
+                    "session_id": session_id,
+                    "learning": learning,
+                    "brain_predict": not result.get("search_opinion"),
+                    "classification": classification,
+                }
+                if result.get("sources"):
+                    payload["sources"] = result["sources"]
+                return done(payload)
+
         from brain.philosophy_handler import philosophy_fallback_if_needed
 
         fallback = philosophy_fallback_if_needed(text, result)
@@ -1441,6 +1469,13 @@ def chat(message: str, *, session_id: str | None = None) -> dict[str, Any]:
             fallback["learning"] = learning
             fallback["classification"] = classification
             return done(fallback)
+
+        confidence = float(result.get("confidence", 0) or 0) if result else 0.0
+        if confidence < _SEARCH_CONFIDENCE_THRESHOLD and web_search_enabled():
+            search_payload = _search_and_opine(text, session_id=session_id)
+            if search_payload.get("kind") == "search_opinion":
+                search_payload["classification"] = classification
+                return done(search_payload)
 
         reply = (
             f"I mapped your question to **{classification['label']}** "

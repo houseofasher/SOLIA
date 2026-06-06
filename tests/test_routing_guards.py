@@ -170,5 +170,6 @@ def test_search_fallback_on_low_confidence(monkeypatch):
     from app.chat_service import _predict_with_search_fallback
 
     result = _predict_with_search_fallback("what is quantum gravity", session_id="search-fb")
-    assert len(calls) == 2
-    assert "Web-grounded" in result["answer"]
+    assert len(calls) == 1
+    assert result.get("search_opinion") is True
+    assert "quantum gravity" in result["answer"].lower()

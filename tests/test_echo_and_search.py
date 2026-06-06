@@ -72,12 +72,25 @@ def test_search_and_opine_mocked(monkeypatch):
         "brain.web_search.search",
         lambda q, **kw: [{"text": "AI models continue rapid progress in 2026.", "source": "web"}],
     )
-    monkeypatch.setattr(
-        "app.chat_service._predict_with_timeout",
-        lambda *a, **kw: {"answer": "Scale and alignment remain central tensions.", "abstained": False},
-    )
 
     result = chat("What happened with AI stock today?", session_id="search-1")
     assert result["kind"] == "search_opinion"
     assert "2026" in result["reply"] or "progress" in result["reply"].lower()
     assert result.get("sources")
+    assert "My perspective:" not in result["reply"]
+
+
+def test_low_confidence_named_entity_uses_deterministic_search(monkeypatch):
+    monkeypatch.setenv("AUREON_WEB_SEARCH_ENABLED", "1")
+    monkeypatch.setattr(
+        "app.chat_service._predict_with_timeout",
+        lambda *a, **kw: {"answer": "weak", "confidence": 0.1, "abstained": False, "citations": []},
+    )
+    monkeypatch.setattr(
+        "brain.web_search.search",
+        lambda q, **kw: [{"text": "Adam and Eve are figures in Genesis.", "source": "web"}],
+    )
+
+    result = chat("Who is Adam and Eve?", session_id="named-search-1")
+    assert result["kind"] == "search_opinion"
+    assert "genesis" in result["reply"].lower() or "adam" in result["reply"].lower()
