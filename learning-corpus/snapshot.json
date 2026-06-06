@@ -15,7 +15,7 @@
       "batch_size": 25
     },
     "running": true,
-    "started_at": "2026-06-06T13:56:57.030024+00:00",
+    "started_at": "2026-06-06T14:06:24.419594+00:00",
     "last_run_at": null,
     "next_run_at": null,
     "cycles_completed": 0,
@@ -107,7 +107,26 @@
     "enabled": true,
     "recent": []
   },
-  "exported_at": "2026-06-06T13:56:57.036550+00:00",
+  "meta_consciousness": {
+    "enabled": true,
+    "recent": [
+      {
+        "question": "Do I persist between conversations?",
+        "answer": "State persists in DB + /data; this chat session is ephemeral.",
+        "theme": "continuity",
+        "source": "startup",
+        "grounded": false,
+        "state_snapshot": {
+          "documents": 0,
+          "cycles": 0,
+          "focus": ""
+        },
+        "ts": "2026-06-06T14:06:24.416366+00:00",
+        "kind": "meta"
+      }
+    ]
+  },
+  "exported_at": "2026-06-06T14:06:24.431799+00:00",
   "github_sync": {
     "batch_cursor": 0,
     "include_document_text": true,
