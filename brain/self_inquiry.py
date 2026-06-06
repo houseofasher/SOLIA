@@ -204,7 +204,7 @@ def generate_question_items(
     chosen = pool[:count]
     items = [{**ctx, "question": q.format(**ctx)} for q in chosen]
 
-    ciper_q = ciper_follow_up_question(topic)
+    ciper_q = ciper_follow_up_question(ctx["micro_display"])
     if ciper_q and items:
         items[-1] = {**ctx, "question": ciper_q, "ciper": True}
 

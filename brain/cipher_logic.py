@@ -227,7 +227,7 @@ def cross_domain_hits(text: str, *, limit: int = 12) -> list[TaxonomyHit]:
 def facets_for_subject(subject: str, hits: list[TaxonomyHit]) -> list[str]:
     key = subject.lower().split()[0] if subject else ""
     if key in FACET_DECOMPOSITIONS:
-        return list(FACET_DECOMPOSITIONS[key])
+        return _dedupe_facets(subject, FACET_DECOMPOSITIONS[key])
 
     facets: list[str] = []
     seen: set[str] = set()
@@ -242,19 +242,42 @@ def facets_for_subject(subject: str, hits: list[TaxonomyHit]) -> list[str]:
             break
 
     if facets:
-        return facets
+        return _dedupe_facets(subject, facets)
 
     leaf = topics_for(hits[0].domain, hits[0].subdomain, hits[0].micro) if hits else []
-    return leaf[:4] if leaf else []
+    return _dedupe_facets(subject, leaf[:4] if leaf else [])
+
+
+def _dedupe_facets(subject: str, facets: list[str]) -> list[str]:
+    """Remove facets that repeat the subject or each other."""
+    subj = re.sub(r"\s+", " ", (subject or "").strip().lower())
+    out: list[str] = []
+    seen: set[str] = set()
+    for facet in facets:
+        label = re.sub(r"\s+", " ", (facet or "").strip())
+        if not label:
+            continue
+        low = label.lower()
+        if low in seen:
+            continue
+        if low == subj:
+            continue
+        if subj and (low.startswith(subj) or subj.startswith(low)):
+            continue
+        seen.add(low)
+        out.append(label)
+    return out
 
 
 def format_ciper_question(subject: str, facets: list[str]) -> str:
+    subject = re.sub(r"\s+", " ", (subject or "").strip())
+    facets = _dedupe_facets(subject, facets)
     if not facets:
-        return f"What type of {subject}?"
+        return f"What is {subject}?"
     if len(facets) == 1:
-        return f"What type of {subject}: {facets[0]}?"
-    body = ", ".join(facets[:-1]) + f", the {facets[-1]}"
-    return f"What type of {subject}, {body}?"
+        return f"What is {facets[0]}?"
+    body = ", ".join(facets[:-1]) + f", and {facets[-1]}"
+    return f"What are the main kinds of {subject} — {body}?"
 
 
 def _is_broad(text: str, subject: str, hits: list[TaxonomyHit]) -> bool:
@@ -422,4 +445,19 @@ def ciper_follow_up_question(subject: str, hits: list[TaxonomyHit] | None = None
     facets = facets_for_subject(subject, hits)
     if not facets:
         return None
-    return format_ciper_question(subject, facets[:4])
+    question = format_ciper_question(subject, facets[:4])
+    if _is_garbled_ciper_question(question):
+        return None
+    return question
+
+
+def _is_garbled_ciper_question(question: str) -> bool:
+    """Reject questions with repeated comma-separated phrases."""
+    q = re.sub(r"\s+", " ", (question or "").strip().lower())
+    if not q:
+        return True
+    tail = q.split("—", 1)[-1] if "—" in q else q
+    parts = [p.strip() for p in tail.replace("?", "").split(",") if p.strip()]
+    if len(parts) >= 2 and len(parts) != len(set(parts)):
+        return True
+    return False

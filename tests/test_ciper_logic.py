@@ -24,8 +24,17 @@ def test_format_ciper_question():
         "blood",
         ["blood type (ABO/Rh)", "plasma / water fraction", "red blood cells", "iron / hemoglobin"],
     )
-    assert q.startswith("What type of blood,")
-    assert "the iron / hemoglobin" in q
+    assert q.startswith("What are the main kinds of blood")
+    assert "iron / hemoglobin" in q
+
+
+def test_ciper_follow_up_thermodynamics_not_garbled():
+    from brain.ciper_logic import ciper_follow_up_question
+
+    q = ciper_follow_up_question("Thermodynamics")
+    assert q is not None
+    assert "Irreversible Thermodynamics, Irreversible Thermodynamics" not in q
+    assert "What are the main kinds of Thermodynamics" in q
 
 
 def test_cross_domain_hits_learning():
@@ -38,7 +47,8 @@ def test_cross_domain_hits_learning():
 def test_facets_for_blood():
     hits = cross_domain_hits("blood")
     facets = facets_for_subject("blood", hits)
-    assert "plasma" in facets[1].lower() or "blood type" in facets[0].lower()
+    joined = " ".join(facets).lower()
+    assert "plasma" in joined or "blood type" in joined
 
 
 def test_chat_blood_decompose():

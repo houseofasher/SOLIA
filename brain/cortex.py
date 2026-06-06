@@ -54,7 +54,12 @@ def bootstrap_brain() -> dict[str, int]:
     init_db()
     with get_session() as session:
         stats = seed_knowledge_taxonomy(session)
-    log_ai_activity("bootstrap_complete", stats=stats)
+    already_seeded = all(v == 0 for v in stats.values())
+    log_ai_activity(
+        "bootstrap_complete",
+        stats=stats,
+        already_seeded=already_seeded,
+    )
     return stats
 
 
