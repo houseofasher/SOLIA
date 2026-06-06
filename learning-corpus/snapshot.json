@@ -14,19 +14,50 @@
     },
     "running": true,
     "started_at": "2026-06-06T01:09:31.490245+00:00",
-    "last_run_at": null,
-    "next_run_at": null,
-    "cycles_completed": 0,
-    "last_result": {},
+    "last_run_at": "2026-06-06T01:10:52.587445+00:00",
+    "next_run_at": "2026-06-06T02:10:52.587448+00:00",
+    "cycles_completed": 1,
+    "last_result": {
+      "batch": true,
+      "targets_total": 25,
+      "targets_in_corpus": 862,
+      "targets_processed": 25,
+      "graduations_passed": 25,
+      "last_target": {
+        "domain": "science_and_natural_philosophy",
+        "subdomain": "biology",
+        "micro_subdomain": "botany"
+      },
+      "last_graduation": {
+        "grade": "preschool",
+        "passed": true,
+        "train_accuracy": 1.0,
+        "min_train_accuracy": 0.45,
+        "evaluator_passed": true,
+        "unlocked_next": "elementary"
+      },
+      "sample_paths": [
+        "science_and_natural_philosophy.physics.classical_mechanics",
+        "science_and_natural_philosophy.physics.thermodynamics",
+        "science_and_natural_philosophy.physics.electromagnetism",
+        "science_and_natural_philosophy.physics.quantum_mechanics",
+        "science_and_natural_philosophy.physics.relativity"
+      ],
+      "batch_cursor": 25
+    },
     "last_error": null,
-    "current_target": null
+    "current_target": {
+      "mode": "batch",
+      "limits": "domains=all subs=all micros=all",
+      "domain_slugs": null
+    }
   },
   "brain": {
     "domains": 30,
     "micro_subdomains": 862,
     "micro_agents": 6162,
-    "documents": 0,
-    "grade_levels_graduated": 0,
+    "documents": 76,
+    "grade_levels_graduated": 25,
     "grade_progress_rows": 6034
   },
   "timeline": {
@@ -103,11 +134,108 @@
   },
   "self_inquiry": {
     "enabled": true,
-    "recent": []
+    "recent": [
+      {
+        "question": "What type of Plant Anatomy, Plant Anatomy, Plant Physiology, Plant Taxonomy, the Plant Ecology?",
+        "answer": "Plant Physiology is a core concept within Botany (Plant….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "science_and_natural_philosophy.biology.botany",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": true,
+        "ts": "2026-06-06T01:10:52.587181+00:00"
+      },
+      {
+        "question": "What is one word I would use to describe Plant Anatomy?",
+        "answer": "Plant Taxonomy",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "science_and_natural_philosophy.biology.botany",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-06T01:10:52.587010+00:00"
+      },
+      {
+        "question": "What type of Landscape Ecology, Landscape Ecology, Landscape Photography, Urban Landscape, the Ecological Landscape?",
+        "answer": "Population Ecology is a core concept within Ecology….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "science_and_natural_philosophy.biology.ecology",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": true,
+        "ts": "2026-06-06T01:10:49.556276+00:00"
+      },
+      {
+        "question": "What is Ecology?",
+        "answer": "Population Ecology is a core concept within Ecology….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "science_and_natural_philosophy.biology.ecology",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-06T01:10:49.556102+00:00"
+      },
+      {
+        "question": "What type of Phylogenetics: Phylogenetics?",
+        "answer": "Phylogenetics is a core concept within Evolutionary Biology….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "science_and_natural_philosophy.biology.evolutionary_biology",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": true,
+        "ts": "2026-06-06T01:10:46.466654+00:00"
+      },
+      {
+        "question": "What is one word I would use to describe Phylogenetics?",
+        "answer": "Phylogenetics",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "science_and_natural_philosophy.biology.evolutionary_biology",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-06T01:10:46.466458+00:00"
+      },
+      {
+        "question": "What type of Mendelian Genetics, Mendelian Genetics, Classical Genetics, Population Genetics, the Quantitative Genetics?",
+        "answer": "Population Genetics is a core concept within Genetics….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "science_and_natural_philosophy.biology.genetics",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": true,
+        "ts": "2026-06-06T01:10:43.353058+00:00"
+      },
+      {
+        "question": "What is Genetics?",
+        "answer": "Population Genetics is a core concept within Genetics….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "science_and_natural_philosophy.biology.genetics",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-06T01:10:43.352878+00:00"
+      }
+    ]
   },
-  "exported_at": "2026-06-06T01:09:31.496395+00:00",
+  "exported_at": "2026-06-06T01:10:52.587956+00:00",
   "github_sync": {
-    "batch_cursor": 0,
+    "batch_cursor": 25,
     "include_document_text": true,
     "max_documents": 5000,
     "export_version": 2
