@@ -16,9 +16,9 @@
     },
     "running": true,
     "started_at": "2026-06-06T04:47:24.721904+00:00",
-    "last_run_at": "2026-06-06T10:25:56.879489+00:00",
-    "next_run_at": "2026-06-06T11:25:56.879493+00:00",
-    "cycles_completed": 6,
+    "last_run_at": "2026-06-06T11:27:53.904991+00:00",
+    "next_run_at": "2026-06-06T12:27:53.904997+00:00",
+    "cycles_completed": 7,
     "last_result": {
       "batch": true,
       "targets_total": 25,
@@ -26,9 +26,9 @@
       "targets_processed": 25,
       "graduations_passed": 25,
       "last_target": {
-        "domain": "philosophy",
-        "subdomain": "political_philosophy",
-        "micro_subdomain": "ideology_analysis"
+        "domain": "religion_and_spirituality",
+        "subdomain": "dharmic_religions",
+        "micro_subdomain": "buddhism"
       },
       "last_graduation": {
         "grade": "preschool",
@@ -39,13 +39,13 @@
         "unlocked_next": "elementary"
       },
       "sample_paths": [
-        "technology_and_engineering.nuclear_engineering.nuclear_fuel_cycle",
-        "technology_and_engineering.nuclear_engineering.fusion_engineering",
-        "technology_and_engineering.agricultural_and_biosystems_engineering.irrigation_engineering",
-        "technology_and_engineering.agricultural_and_biosystems_engineering.farm_machinery",
-        "technology_and_engineering.agricultural_and_biosystems_engineering.post_harvest_technology"
+        "philosophy.philosophy_of_science.scientific_method",
+        "philosophy.philosophy_of_science.scientific_realism",
+        "philosophy.philosophy_of_science.philosophy_of_physics",
+        "philosophy.philosophy_of_science.philosophy_of_biology",
+        "philosophy.philosophy_of_science.philosophy_of_chemistry"
       ],
-      "batch_cursor": 150
+      "batch_cursor": 175
     },
     "last_error": null,
     "current_target": {
@@ -58,8 +58,8 @@
     "domains": 30,
     "micro_subdomains": 862,
     "micro_agents": 6162,
-    "documents": 462,
-    "grade_levels_graduated": 150,
+    "documents": 512,
+    "grade_levels_graduated": 175,
     "grade_progress_rows": 6034
   },
   "timeline": {
@@ -138,106 +138,106 @@
     "enabled": true,
     "recent": [
       {
-        "question": "What type of Socialism, Socialism, the Democratic Socialism?",
-        "answer": "Conservatism is a core concept within Ideology Analysis….",
+        "question": "What type of Theosophical Buddhism, Theosophical Buddhism, the Buddhism?",
+        "answer": "Theravada is a core concept within Buddhism (DHARMIC….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "philosophy.political_philosophy.ideology_analysis",
+        "path": "religion_and_spirituality.dharmic_religions.buddhism",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-06T10:25:56.879131+00:00"
+        "ts": "2026-06-06T11:27:53.904659+00:00"
       },
       {
-        "question": "What is Ideology Analysis?",
-        "answer": "Conservatism is a core concept within Ideology Analysis….",
+        "question": "What is one word I would use to describe Theosophical Buddhism?",
+        "answer": "Vajrayana (Tibetan)",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "philosophy.political_philosophy.ideology_analysis",
+        "path": "religion_and_spirituality.dharmic_religions.buddhism",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-06T10:25:56.878903+00:00"
+        "ts": "2026-06-06T11:27:53.904426+00:00"
       },
       {
-        "question": "What type of Positive vs Negative Liberty, Positive vs Negative Liberty, Positive Psychology, the Rights & Liberty?",
-        "answer": "Civil Liberties is a core concept within Rights & Liberty….",
+        "question": "What type of Folk Hinduism, Folk Hinduism, Folk Shinto, Folk Music (Global), the Folk Dance (Global)?",
+        "answer": "Vaishnavism is a core concept within Hinduism (DHARMIC….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "philosophy.political_philosophy.rights_and_liberty",
+        "path": "religion_and_spirituality.dharmic_religions.hinduism",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-06T10:25:52.164772+00:00"
+        "ts": "2026-06-06T11:27:49.256247+00:00"
       },
       {
-        "question": "What is Rights & Liberty?",
-        "answer": "Civil Liberties is a core concept within Rights & Liberty….",
+        "question": "What is one word I would use to describe Folk Hinduism?",
+        "answer": "Vaishnavism",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "philosophy.political_philosophy.rights_and_liberty",
+        "path": "religion_and_spirituality.dharmic_religions.hinduism",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-06T10:25:52.164538+00:00"
+        "ts": "2026-06-06T11:27:49.256026+00:00"
       },
       {
-        "question": "What type of Legitimacy & Obligation: Legitimacy & Obligation?",
-        "answer": "Anarchist Theory is a core concept within Political….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "philosophy.political_philosophy.political_authority",
+        "question": "What type of Yazidism: Yazidism?",
+        "answer": "In this paper, using altering distance functions we obtain….",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "religion_and_spirituality.abrahamic_religions.yazidism",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-06T10:25:47.585382+00:00"
+        "ts": "2026-06-06T11:27:44.647919+00:00"
       },
       {
-        "question": "What is Political Authority?",
-        "answer": "Anarchist Theory is a core concept within Political….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "philosophy.political_philosophy.political_authority",
+        "question": "What is Yazidism?",
+        "answer": "In this paper, using altering distance functions we obtain….",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "religion_and_spirituality.abrahamic_religions.yazidism",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-06T10:25:47.585135+00:00"
+        "ts": "2026-06-06T11:27:44.647690+00:00"
       },
       {
-        "question": "What type of Egalitarianism: Egalitarianism?",
-        "answer": "Communitarian Justice is a core concept within Theories of….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "philosophy.political_philosophy.theories_of_justice",
+        "question": "What type of Mandaeism: Mandaeism?",
+        "answer": "Pick one facet of Mandaeism.",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "religion_and_spirituality.abrahamic_religions.mandaeism",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
-        "grounded": true,
+        "grounded": false,
         "ciper": true,
-        "ts": "2026-06-06T10:25:43.039479+00:00"
+        "ts": "2026-06-06T11:27:39.515678+00:00"
       },
       {
-        "question": "What is one word I would use to describe Egalitarianism?",
-        "answer": "research",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "philosophy.political_philosophy.theories_of_justice",
+        "question": "What is one word I would use to describe Mandaeism?",
+        "answer": "mandaeism",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "religion_and_spirituality.abrahamic_religions.mandaeism",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
-        "grounded": true,
+        "grounded": false,
         "ciper": false,
-        "ts": "2026-06-06T10:25:43.039241+00:00"
+        "ts": "2026-06-06T11:27:39.515427+00:00"
       }
     ]
   },
-  "exported_at": "2026-06-06T10:55:42.644038+00:00",
+  "exported_at": "2026-06-06T11:27:53.905431+00:00",
   "github_sync": {
-    "batch_cursor": 150,
+    "batch_cursor": 175,
     "include_document_text": true,
     "max_documents": 5000,
     "export_version": 2
