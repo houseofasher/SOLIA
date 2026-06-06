@@ -699,6 +699,314 @@
         "epochs": 150
       },
       "status": "completed"
+    },
+    {
+      "run_id": "11380a1f",
+      "created_at": "2026-06-06T07:07:37.429080+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_pediatrics_11380a1f/classifier.json",
+      "params": {
+        "scope": "pediatrics",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "615b9273",
+      "created_at": "2026-06-06T07:07:41.929710+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_ophthalmology_615b9273/classifier.json",
+      "params": {
+        "scope": "ophthalmology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "b78f4aa9",
+      "created_at": "2026-06-06T07:07:46.489649+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_dermatology_b78f4aa9/classifier.json",
+      "params": {
+        "scope": "dermatology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "1a7b0219",
+      "created_at": "2026-06-06T07:07:51.119246+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_orthopedics_1a7b0219/classifier.json",
+      "params": {
+        "scope": "orthopedics",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "e6ca3822",
+      "created_at": "2026-06-06T07:07:56.330829+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_urology_e6ca3822/classifier.json",
+      "params": {
+        "scope": "urology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "fd4bf674",
+      "created_at": "2026-06-06T07:08:00.972939+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_ent_fd4bf674/classifier.json",
+      "params": {
+        "scope": "ent",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "0e16cb00",
+      "created_at": "2026-06-06T07:08:05.580348+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_emergency_medicine_0e16cb00/classifier.json",
+      "params": {
+        "scope": "emergency_medicine",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "6d746a0f",
+      "created_at": "2026-06-06T07:08:10.488536+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_anesthesiology_6d746a0f/classifier.json",
+      "params": {
+        "scope": "anesthesiology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "10bdcaee",
+      "created_at": "2026-06-06T07:08:15.243724+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_radiology_10bdcaee/classifier.json",
+      "params": {
+        "scope": "radiology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "8205ce23",
+      "created_at": "2026-06-06T07:08:19.779835+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_oncology_8205ce23/classifier.json",
+      "params": {
+        "scope": "oncology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "ece56f41",
+      "created_at": "2026-06-06T07:08:24.209256+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_epidemiology_ece56f41/classifier.json",
+      "params": {
+        "scope": "epidemiology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "136d26c7",
+      "created_at": "2026-06-06T07:08:28.689924+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_public_health_136d26c7/classifier.json",
+      "params": {
+        "scope": "public_health",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "969e45d8",
+      "created_at": "2026-06-06T07:08:33.393135+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_vaccinology_969e45d8/classifier.json",
+      "params": {
+        "scope": "vaccinology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "9563a3b9",
+      "created_at": "2026-06-06T07:08:37.937275+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_nutritional_science_9563a3b9/classifier.json",
+      "params": {
+        "scope": "nutritional_science",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "fd052bd3",
+      "created_at": "2026-06-06T07:08:42.386144+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_nursing_fd052bd3/classifier.json",
+      "params": {
+        "scope": "nursing",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "a6f0e2e2",
+      "created_at": "2026-06-06T07:08:46.899702+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_pharmacy_a6f0e2e2/classifier.json",
+      "params": {
+        "scope": "pharmacy",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "56948dc6",
+      "created_at": "2026-06-06T07:08:51.429228+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_physical_therapy_56948dc6/classifier.json",
+      "params": {
+        "scope": "physical_therapy",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "98f94fbe",
+      "created_at": "2026-06-06T07:08:55.950712+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_occupational_therapy_98f94fbe/classifier.json",
+      "params": {
+        "scope": "occupational_therapy",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "93485112",
+      "created_at": "2026-06-06T07:09:00.603281+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_dentistry_93485112/classifier.json",
+      "params": {
+        "scope": "dentistry",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "0cbde126",
+      "created_at": "2026-06-06T07:09:05.073736+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_psychology_0cbde126/classifier.json",
+      "params": {
+        "scope": "psychology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "fc273f85",
+      "created_at": "2026-06-06T07:09:09.630122+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_traditional_chinese_medicine_fc273f85/classifier.json",
+      "params": {
+        "scope": "traditional_chinese_medicine",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "f8ae04ff",
+      "created_at": "2026-06-06T07:09:14.163391+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_ayurveda_f8ae04ff/classifier.json",
+      "params": {
+        "scope": "ayurveda",
+        "epochs": 150
+      },
+      "status": "completed"
     }
   ]
 }
