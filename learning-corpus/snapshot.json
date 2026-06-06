@@ -15,7 +15,7 @@
       "batch_size": 25
     },
     "running": true,
-    "started_at": "2026-06-06T19:52:21.278319+00:00",
+    "started_at": "2026-06-06T19:55:18.926348+00:00",
     "last_run_at": null,
     "next_run_at": null,
     "cycles_completed": 0,
@@ -111,9 +111,9 @@
     "enabled": true,
     "recent": [
       {
-        "question": "What was the last thing I asked myself?",
-        "answer": "Nothing logged yet — this may be my first reflection.",
-        "theme": "meta_cognition",
+        "question": "Do I persist between conversations?",
+        "answer": "State persists in DB + /data; this chat session is ephemeral.",
+        "theme": "continuity",
         "source": "startup",
         "grounded": false,
         "state_snapshot": {
@@ -121,12 +121,12 @@
           "cycles": 0,
           "focus": ""
         },
-        "ts": "2026-06-06T19:52:21.275983+00:00",
+        "ts": "2026-06-06T19:55:18.921384+00:00",
         "kind": "meta"
       }
     ]
   },
-  "exported_at": "2026-06-06T19:52:21.286446+00:00",
+  "exported_at": "2026-06-06T19:55:18.942793+00:00",
   "github_sync": {
     "batch_cursor": 0,
     "include_document_text": true,
