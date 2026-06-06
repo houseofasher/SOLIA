@@ -123,10 +123,9 @@ def _detect_tables_in_text(text: str) -> str:
         if stripped.count("|") >= 2:
             rows.append(stripped)
             continue
-        if len(re.findall(r"\s{2,}", line)) >= 2:
-            cells = [c.strip() for c in re.split(r"\s{2,}", line) if c.strip()]
-            if len(cells) >= 2:
-                rows.append(" | ".join(cells))
+        cells = [c.strip() for c in re.split(r"\s{2,}", line) if c.strip()]
+        if len(cells) >= 2:
+            rows.append(" | ".join(cells))
     return "\n".join(rows[:40])
 
 
