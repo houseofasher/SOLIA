@@ -16,9 +16,9 @@
     },
     "running": true,
     "started_at": "2026-06-06T04:47:24.721904+00:00",
-    "last_run_at": "2026-06-06T12:36:07.769621+00:00",
-    "next_run_at": "2026-06-06T13:36:07.769626+00:00",
-    "cycles_completed": 8,
+    "last_run_at": "2026-06-06T13:41:45.174074+00:00",
+    "next_run_at": "2026-06-06T14:41:45.174078+00:00",
+    "cycles_completed": 9,
     "last_result": {
       "batch": true,
       "targets_total": 25,
@@ -27,8 +27,8 @@
       "graduations_passed": 25,
       "last_target": {
         "domain": "religion_and_spirituality",
-        "subdomain": "ancient_religions",
-        "micro_subdomain": "canaanite_religion"
+        "subdomain": "new_religious_movements",
+        "micro_subdomain": "hare_krishna"
       },
       "last_graduation": {
         "grade": "preschool",
@@ -39,13 +39,13 @@
         "unlocked_next": "elementary"
       },
       "sample_paths": [
-        "religion_and_spirituality.dharmic_religions.jainism",
-        "religion_and_spirituality.dharmic_religions.sikhism",
-        "religion_and_spirituality.east_asian_religions.taoism",
-        "religion_and_spirituality.east_asian_religions.confucianism",
-        "religion_and_spirituality.east_asian_religions.shinto"
+        "religion_and_spirituality.ancient_religions.ancient_anatolian_religion",
+        "religion_and_spirituality.esoteric_and_occult_traditions.hermeticism",
+        "religion_and_spirituality.esoteric_and_occult_traditions.gnosticism",
+        "religion_and_spirituality.esoteric_and_occult_traditions.kabbalah",
+        "religion_and_spirituality.esoteric_and_occult_traditions.rosicrucianism"
       ],
-      "batch_cursor": 200
+      "batch_cursor": 225
     },
     "last_error": null,
     "current_target": {
@@ -58,8 +58,8 @@
     "domains": 30,
     "micro_subdomains": 862,
     "micro_agents": 6162,
-    "documents": 537,
-    "grade_levels_graduated": 200,
+    "documents": 540,
+    "grade_levels_graduated": 225,
     "grade_progress_rows": 6034
   },
   "timeline": {
@@ -138,106 +138,106 @@
     "enabled": true,
     "recent": [
       {
-        "question": "What type of Canaanite Religion, Vedic Religion, Yoruba Religion, Akan Religion, the Zulu Religion?",
-        "answer": "Pick one facet of Canaanite Religion.",
+        "question": "What type of Hare Krishna (ISKCON): Hare Krishna (ISKCON)?",
+        "answer": "We introduce a novel Longitudinal Focused Attention….",
         "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.ancient_religions.canaanite_religion",
+        "path": "religion_and_spirituality.new_religious_movements.hare_krishna",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": true,
+        "ts": "2026-06-06T13:41:45.173724+00:00"
+      },
+      {
+        "question": "What is one word I would use to describe Hare Krishna (ISKCON)?",
+        "answer": "research",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "religion_and_spirituality.new_religious_movements.hare_krishna",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-06T13:41:45.173375+00:00"
+      },
+      {
+        "question": "What type of Neopaganism: Neopaganism?",
+        "answer": "Pick one facet of Neopaganism.",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "religion_and_spirituality.new_religious_movements.neopaganism",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": false,
         "ciper": true,
-        "ts": "2026-06-06T12:36:07.769263+00:00"
+        "ts": "2026-06-06T13:41:39.835035+00:00"
       },
       {
-        "question": "What is one word I would use to describe Canaanite Religion?",
-        "answer": "religion",
+        "question": "What is Neopaganism?",
+        "answer": "No verified text for Neopaganism yet.",
         "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.ancient_religions.canaanite_religion",
+        "path": "religion_and_spirituality.new_religious_movements.neopaganism",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": false,
         "ciper": false,
-        "ts": "2026-06-06T12:36:07.769061+00:00"
+        "ts": "2026-06-06T13:41:39.834836+00:00"
       },
       {
-        "question": "What type of Ancient Persian Religion, Ancient Architecture, Ancient Egyptian History, Ancient Greek History, the Ancient Roman History?",
-        "answer": "Pick one facet of Ancient Persian Religion.",
+        "question": "What type of Spiritualism: Spiritualism?",
+        "answer": "The human presence in outer space is undergoing a….",
         "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.ancient_religions.ancient_persian_religion",
+        "path": "religion_and_spirituality.new_religious_movements.spiritualism",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": true,
+        "ts": "2026-06-06T13:41:19.398861+00:00"
+      },
+      {
+        "question": "What is Spiritualism?",
+        "answer": "The human presence in outer space is undergoing a….",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "religion_and_spirituality.new_religious_movements.spiritualism",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-06T13:41:19.398572+00:00"
+      },
+      {
+        "question": "What type of Eckankar: Eckankar?",
+        "answer": "Pick one facet of Eckankar.",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "religion_and_spirituality.new_religious_movements.eckankar",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": false,
         "ciper": true,
-        "ts": "2026-06-06T12:36:03.265772+00:00"
+        "ts": "2026-06-06T13:41:13.216225+00:00"
       },
       {
-        "question": "What is one word I would use to describe Ancient Persian Religion?",
-        "answer": "religion",
+        "question": "What is one word I would use to describe Eckankar?",
+        "answer": "eckankar",
         "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.ancient_religions.ancient_persian_religion",
+        "path": "religion_and_spirituality.new_religious_movements.eckankar",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": false,
         "ciper": false,
-        "ts": "2026-06-06T12:36:03.265558+00:00"
-      },
-      {
-        "question": "What type of Mithraism: Mithraism?",
-        "answer": "Pick one facet of Mithraism.",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.ancient_religions.mithraism",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": false,
-        "ciper": true,
-        "ts": "2026-06-06T12:35:58.692860+00:00"
-      },
-      {
-        "question": "What is Mithraism?",
-        "answer": "No verified text for Mithraism yet.",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.ancient_religions.mithraism",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": false,
-        "ciper": false,
-        "ts": "2026-06-06T12:35:58.692650+00:00"
-      },
-      {
-        "question": "What type of Zoroastrianism: Zoroastrianism?",
-        "answer": "Pick one facet of Zoroastrianism.",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.ancient_religions.zoroastrianism",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": false,
-        "ciper": true,
-        "ts": "2026-06-06T12:35:34.333327+00:00"
-      },
-      {
-        "question": "What is Zoroastrianism?",
-        "answer": "No verified text for Zoroastrianism yet.",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.ancient_religions.zoroastrianism",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": false,
-        "ciper": false,
-        "ts": "2026-06-06T12:35:34.333136+00:00"
+        "ts": "2026-06-06T13:41:13.216003+00:00"
       }
     ]
   },
-  "exported_at": "2026-06-06T12:59:32.318893+00:00",
+  "exported_at": "2026-06-06T13:41:45.174614+00:00",
   "github_sync": {
-    "batch_cursor": 200,
+    "batch_cursor": 225,
     "include_document_text": true,
     "max_documents": 5000,
     "export_version": 2
