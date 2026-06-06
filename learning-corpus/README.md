@@ -1,6 +1,6 @@
 # Aureon learning corpus (auto-synced)
 
-**Exported:** 2026-06-06T13:56:57.036550+00:00
+**Exported:** 2026-06-06T14:06:24.431799+00:00
 
 Full export of everything Aureon has learned — not just self-inquiry.
 
@@ -29,6 +29,7 @@ Full export of everything Aureon has learned — not just self-inquiry.
 | `pipeline_events.json` | Recent pipeline events |
 | `models/` | Trained classifier weights (JSON) |
 | `self_inquiry.jsonl` | Learning reflections — document excerpts + cycle metrics |
+| `meta_consciousness.jsonl` | Meta-cognitive self-inquiry — identity, gaps, consciousness |
 | `snapshot.json` | Live brain + auto-learn status |
 
 Auto-generated on Railway. Secrets and audit logs are never included.
