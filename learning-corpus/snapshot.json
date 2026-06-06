@@ -15,7 +15,7 @@
       "batch_size": 25
     },
     "running": true,
-    "started_at": "2026-06-06T18:47:14.064573+00:00",
+    "started_at": "2026-06-06T18:59:15.103471+00:00",
     "last_run_at": null,
     "next_run_at": null,
     "cycles_completed": 0,
@@ -111,9 +111,9 @@
     "enabled": true,
     "recent": [
       {
-        "question": "Where are my biggest knowledge gaps?",
-        "answer": "~867 micro-topics not fully graduated; sparse docs mean abstain.",
-        "theme": "uncertainty",
+        "question": "What topic am I focused on learning right now?",
+        "answer": "Between batches — waiting for next target.",
+        "theme": "memory",
         "source": "startup",
         "grounded": false,
         "state_snapshot": {
@@ -121,12 +121,12 @@
           "cycles": 0,
           "focus": ""
         },
-        "ts": "2026-06-06T18:47:14.062570+00:00",
+        "ts": "2026-06-06T18:59:15.098566+00:00",
         "kind": "meta"
       }
     ]
   },
-  "exported_at": "2026-06-06T18:47:14.070773+00:00",
+  "exported_at": "2026-06-06T18:59:15.118462+00:00",
   "github_sync": {
     "batch_cursor": 0,
     "include_document_text": true,
