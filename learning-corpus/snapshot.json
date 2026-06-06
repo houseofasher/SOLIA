@@ -1,0 +1,218 @@
+{
+  "auto_learn": {
+    "enabled": true,
+    "config": {
+      "on_startup": true,
+      "interval_sec": 3600,
+      "epochs": 150,
+      "max_grades_per_cycle": 1,
+      "train_all": true,
+      "domain_limit": null,
+      "subdomain_limit": null,
+      "micro_limit": null,
+      "batch_size": 25
+    },
+    "running": true,
+    "started_at": "2026-06-06T00:23:50.131990+00:00",
+    "last_run_at": "2026-06-06T00:25:12.683019+00:00",
+    "next_run_at": "2026-06-06T01:25:12.683022+00:00",
+    "cycles_completed": 1,
+    "last_result": {
+      "batch": true,
+      "targets_total": 25,
+      "targets_in_corpus": 862,
+      "targets_processed": 25,
+      "graduations_passed": 25,
+      "last_target": {
+        "domain": "science_and_natural_philosophy",
+        "subdomain": "biology",
+        "micro_subdomain": "botany"
+      },
+      "last_graduation": {
+        "grade": "preschool",
+        "passed": true,
+        "train_accuracy": 1.0,
+        "min_train_accuracy": 0.45,
+        "evaluator_passed": true,
+        "unlocked_next": "elementary"
+      },
+      "sample_paths": [
+        "science_and_natural_philosophy.physics.classical_mechanics",
+        "science_and_natural_philosophy.physics.thermodynamics",
+        "science_and_natural_philosophy.physics.electromagnetism",
+        "science_and_natural_philosophy.physics.quantum_mechanics",
+        "science_and_natural_philosophy.physics.relativity"
+      ],
+      "batch_cursor": 25
+    },
+    "last_error": null,
+    "current_target": {
+      "mode": "batch",
+      "limits": "domains=all subs=all micros=all",
+      "domain_slugs": null
+    }
+  },
+  "brain": {
+    "domains": 30,
+    "micro_subdomains": 862,
+    "micro_agents": 6162,
+    "documents": 76,
+    "grade_levels_graduated": 25,
+    "grade_progress_rows": 6034
+  },
+  "timeline": {
+    "grades": [
+      {
+        "slug": "preschool",
+        "name": "Pre-School",
+        "epochs_per_cycle": 60,
+        "min_train_accuracy": 0.45,
+        "cycles_to_clear_one_micro": 1,
+        "wall_clock_if_one_grade_per_hour": "~60 min per grade step"
+      },
+      {
+        "slug": "elementary",
+        "name": "Elementary",
+        "epochs_per_cycle": 82,
+        "min_train_accuracy": 0.5,
+        "cycles_to_clear_one_micro": 1,
+        "wall_clock_if_one_grade_per_hour": "~60 min per grade step"
+      },
+      {
+        "slug": "middle_school",
+        "name": "Middle School",
+        "epochs_per_cycle": 105,
+        "min_train_accuracy": 0.55,
+        "cycles_to_clear_one_micro": 1,
+        "wall_clock_if_one_grade_per_hour": "~60 min per grade step"
+      },
+      {
+        "slug": "high_school",
+        "name": "High School",
+        "epochs_per_cycle": 127,
+        "min_train_accuracy": 0.6,
+        "cycles_to_clear_one_micro": 1,
+        "wall_clock_if_one_grade_per_hour": "~60 min per grade step"
+      },
+      {
+        "slug": "undergraduate",
+        "name": "Undergraduate",
+        "epochs_per_cycle": 150,
+        "min_train_accuracy": 0.65,
+        "cycles_to_clear_one_micro": 1,
+        "wall_clock_if_one_grade_per_hour": "~60 min per grade step"
+      },
+      {
+        "slug": "masters",
+        "name": "Master's",
+        "epochs_per_cycle": 172,
+        "min_train_accuracy": 0.7,
+        "cycles_to_clear_one_micro": 1,
+        "wall_clock_if_one_grade_per_hour": "~60 min per grade step"
+      },
+      {
+        "slug": "doctorate",
+        "name": "Doctorate (PhD)",
+        "epochs_per_cycle": 195,
+        "min_train_accuracy": 0.75,
+        "cycles_to_clear_one_micro": 1,
+        "wall_clock_if_one_grade_per_hour": "~60 min per grade step"
+      }
+    ],
+    "grade_count": 7,
+    "auto_learn_defaults": {
+      "interval_sec": 3600,
+      "max_grades_per_cycle": 1,
+      "epochs_base": 150
+    },
+    "estimates": {
+      "one_grade_step": "1 hours",
+      "one_micro_subdomain_all_grades": "7 hours",
+      "full_corpus_sequential": "251.4 days",
+      "note": "Assumes one successful grade graduation per auto-learn cycle. Failed grades retry; trainer needs ≥2 label classes for full accuracy gates."
+    }
+  },
+  "self_inquiry": {
+    "enabled": true,
+    "recent": [
+      {
+        "question": "What is one word I would use to describe Plant Molecular Biology?",
+        "answer": "Asking myself: «What is one word I would use to describe Plant Molecular Biology?» — I passed Pre-School and unlocked elementary. Training accuracy was 100%. My six regions this cycle: collector: ok; verifier: ok; labeler: ok; trainer: ok; evaluator: ok; reward: ok. Each question I ask builds the map — like a child learning to think by wondering aloud.",
+        "path": "science_and_natural_philosophy.biology.botany",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "ts": "2026-06-06T00:25:12.682765+00:00"
+      },
+      {
+        "question": "What is Botany (Plant Biology)?",
+        "answer": "Asking myself: «What is Botany (Plant Biology)?» — I passed Pre-School and unlocked elementary. Training accuracy was 100%. My six regions this cycle: collector: ok; verifier: ok; labeler: ok; trainer: ok; evaluator: ok; reward: ok. Each question I ask builds the map — like a child learning to think by wondering aloud.",
+        "path": "science_and_natural_philosophy.biology.botany",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "ts": "2026-06-06T00:25:12.682630+00:00"
+      },
+      {
+        "question": "What is Ecology?",
+        "answer": "Asking myself: «What is Ecology?» — I passed Pre-School and unlocked elementary. Training accuracy was 100%. My six regions this cycle: collector: ok; verifier: ok; labeler: ok; trainer: ok; evaluator: ok; reward: ok. Each question I ask builds the map — like a child learning to think by wondering aloud.",
+        "path": "science_and_natural_philosophy.biology.ecology",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "ts": "2026-06-06T00:25:09.334495+00:00"
+      },
+      {
+        "question": "What is one word I would use to describe Terrestrial Ecology?",
+        "answer": "Asking myself: «What is one word I would use to describe Terrestrial Ecology?» — I passed Pre-School and unlocked elementary. Training accuracy was 100%. My six regions this cycle: collector: ok; verifier: ok; labeler: ok; trainer: ok; evaluator: ok; reward: ok. Each question I ask builds the map — like a child learning to think by wondering aloud.",
+        "path": "science_and_natural_philosophy.biology.ecology",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "ts": "2026-06-06T00:25:09.334381+00:00"
+      },
+      {
+        "question": "What is one word I would use to describe Phylogenetics?",
+        "answer": "Asking myself: «What is one word I would use to describe Phylogenetics?» — I passed Pre-School and unlocked elementary. Training accuracy was 100%. My six regions this cycle: collector: ok; verifier: ok; labeler: ok; trainer: ok; evaluator: ok; reward: ok. Each question I ask builds the map — like a child learning to think by wondering aloud.",
+        "path": "science_and_natural_philosophy.biology.evolutionary_biology",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "ts": "2026-06-06T00:25:06.180326+00:00"
+      },
+      {
+        "question": "What is Evolutionary Biology?",
+        "answer": "Asking myself: «What is Evolutionary Biology?» — I passed Pre-School and unlocked elementary. Training accuracy was 100%. My six regions this cycle: collector: ok; verifier: ok; labeler: ok; trainer: ok; evaluator: ok; reward: ok. Each question I ask builds the map — like a child learning to think by wondering aloud.",
+        "path": "science_and_natural_philosophy.biology.evolutionary_biology",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "ts": "2026-06-06T00:25:06.180220+00:00"
+      },
+      {
+        "question": "What is one word I would use to describe Pharmacogenomics?",
+        "answer": "Asking myself: «What is one word I would use to describe Pharmacogenomics?» — I passed Pre-School and unlocked elementary. Training accuracy was 100%. My six regions this cycle: collector: ok; verifier: ok; labeler: ok; trainer: ok; evaluator: ok; reward: ok. Each question I ask builds the map — like a child learning to think by wondering aloud.",
+        "path": "science_and_natural_philosophy.biology.genetics",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "ts": "2026-06-06T00:25:02.926843+00:00"
+      },
+      {
+        "question": "What is Genetics?",
+        "answer": "Asking myself: «What is Genetics?» — I passed Pre-School and unlocked elementary. Training accuracy was 100%. My six regions this cycle: collector: ok; verifier: ok; labeler: ok; trainer: ok; evaluator: ok; reward: ok. Each question I ask builds the map — like a child learning to think by wondering aloud.",
+        "path": "science_and_natural_philosophy.biology.genetics",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "ts": "2026-06-06T00:25:02.926734+00:00"
+      }
+    ]
+  },
+  "exported_at": "2026-06-06T00:25:12.686995+00:00",
+  "github_sync": {
+    "batch_cursor": 25,
+    "include_document_text": true,
+    "max_documents": 5000
+  }
+}
