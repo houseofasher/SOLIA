@@ -100,10 +100,7 @@ def _shape_curious_clarifier(reply: str) -> str:
 
 
 def _shape_grounded_direct(reply: str) -> str:
-    lower = reply.lower()
-    if lower.startswith(("from what", "here's", "from my")):
-        return reply
-    return f"From what I've collected: {reply.lstrip()}"
+    return reply.strip()
 
 
 def _shape_crisis_honest(_reply: str) -> str:
@@ -173,9 +170,11 @@ def shape_human_reply(
 
 def finalize_chat_payload(payload: dict[str, Any], user_message: str) -> dict[str, Any]:
     """Last step before chat response — psychology brain wraps algorithm output."""
+    from brain.voice_sanitizer import finalize_voice
+
     reply = str(payload.get("reply", ""))
     shaped, psych = shape_human_reply(reply, payload=payload, user_message=user_message)
-    payload["reply"] = shaped
+    payload["reply"] = finalize_voice(shaped, user_message=user_message, payload=payload)
     payload["psychology"] = psych.to_dict()
     payload["brains"] = {
         "psychology": "response_layer — how Aureon acts human",

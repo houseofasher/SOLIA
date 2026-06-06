@@ -5,6 +5,7 @@ from __future__ import annotations
 import re
 from typing import Any, Callable
 
+from brain.response_quality import is_directed_choice_question
 from brain.system_messages import FALLBACK_PHILOSOPHY, FALLBACK_TRAINING
 
 PHILOSOPHY_FALLBACK = FALLBACK_PHILOSOPHY
@@ -119,9 +120,24 @@ def is_directed_opinion_question(text: str) -> bool:
         return True
     if "sentient" in q and ("you" in q or "aureon" in q or "are you" in q):
         return True
-    if ("religion" in q and ("spiritual" in q or "spirituality" in q)) and any(
+    if ("religion" in q and ("spiritual" in q or "spirituality" in q or "spiritually" in q)) and any(
         t in q for t in ("choose", "pick", "rather", "which", "would you")
     ):
+        return True
+    if "religion" in q and any(
+        t in q
+        for t in (
+            "choose",
+            "pick",
+            "which religion",
+            "would you choose",
+            "if you had to",
+            "what religion would",
+            "what religion",
+        )
+    ):
+        return True
+    if is_directed_choice_question(text):
         return True
     return False
 
@@ -147,12 +163,27 @@ def _belief_lookup_key(text: str) -> str | None:
         return "are humans flawed"
     if "subjective experience" in q or ("sentient" in q and ("you" in q or "aureon" in q)):
         return "do you have subjective experience"
-    if ("religion" in q and ("spiritual" in q or "spirituality" in q)) and any(
+    if ("religion" in q and ("spiritual" in q or "spirituality" in q or "spiritually" in q)) and any(
         t in q for t in ("choose", "pick", "rather", "which one", "which would", " or ")
     ):
         return "religion_or_spirituality_choice"
+    if "religion" in q and any(
+        t in q
+        for t in (
+            "choose",
+            "pick",
+            "which religion",
+            "would you choose",
+            "if you had to",
+            "what religion would",
+            "what religion",
+        )
+    ):
+        return "religion_choice"
     if "who is god" in q or "what is god" in q:
         return "who is god to you" if "to you" in q else "who is god"
+    if is_directed_choice_question(text):
+        return "directed_personal_choice"
     return None
 
 
@@ -179,6 +210,9 @@ def _reflection_search_query(text: str, key: str) -> str:
         "do you have subjective experience": "AI subjective experience qualia philosophy of mind",
         "religion_or_spirituality_choice": (
             "spirituality vs religion philosophy of religion personal meaning ethics"
+        ),
+        "religion_choice": (
+            "choosing a religion philosophy comparative religion Buddhism ethics meaning"
         ),
     }
     return queries.get(key, text.strip())
@@ -214,9 +248,11 @@ def _web_grounded_reflection(text: str, state: dict[str, Any], key: str) -> dict
 
 def _local_reflection(text: str, state: dict[str, Any], key: str) -> str:
     """Plain answer from trained corpus — no internal stats in the reply."""
-    from brain.opinion_brain import simple_belief_reply
+    from brain.opinion_brain import form_personal_choice_reply, simple_belief_reply
 
-    _ = text, state
+    _ = state
+    if key == "directed_personal_choice":
+        return form_personal_choice_reply(text)
     return simple_belief_reply(key)
 
 

@@ -52,6 +52,7 @@ def test_search_reply_is_human_not_robotic(monkeypatch):
     assert "based on" not in reply
     assert "zophiel lens" not in reply
     assert "sources:" not in reply
+    assert "wikipedia:" not in reply
     assert result.get("sources")
     assert "google" in reply or "spacex" in reply or "duckduckgo" in reply
 
@@ -109,3 +110,98 @@ def test_religion_spirituality_choice_is_reflection(monkeypatch):
 
 def test_is_search_question_live_news():
     assert is_search_question("What happened in the tech world today?")
+
+
+def test_rewrite_live_news_query_tech_today():
+    from brain.web_search import is_live_news_query, rewrite_live_news_query
+
+    q = "What happened in the tech world today?"
+    assert is_live_news_query(q)
+    rewritten = rewrite_live_news_query(q)
+    assert "technology" in rewritten
+    assert "today" in rewritten
+
+
+def test_anchor_term_passes_parthenon_style_answer():
+    from brain.response_quality import audit_response
+
+    q = "Why is the Parthenon historically significant?"
+    reply = "Parthenon | Definition, History, Architecture, Columns ...The Parthenon: A Deep Dive."
+    assert audit_response(q, reply, {"kind": "predict"}).adequate is True
+
+
+def test_rejects_forum_date_headlines():
+    from brain.opinion_brain import form_human_brief
+
+    junk = [
+        {
+            "title": "How To Organise Cables: Mar 17, 2026 · Any suggestions on hiding cords?: Mar 26, 2022",
+            "text": "How To Organise Cables: Mar 17, 2026 · Any suggestions",
+            "source": "forum",
+        }
+    ]
+    brief = form_human_brief("organize cables behind desk", junk)
+    assert brief.get("opinion") is None or "2022" not in brief.get("opinion", "")
+
+
+def test_stargate_project_inquiry(monkeypatch):
+    monkeypatch.setenv("AUREON_WEB_SEARCH_ENABLED", "1")
+    monkeypatch.setattr(
+        "brain.web_search.search",
+        lambda q, **kw: [
+            {
+                "type": "news",
+                "title": "Stargate Project was a secret US Army unit for remote viewing research",
+                "text": "Stargate Project was a secret US Army unit for remote viewing research",
+                "source": "wikipedia.org",
+            }
+        ],
+    )
+    q = "Can you tell me about history about the CIA STARGATE PROJECT"
+    result = chat(q, session_id="stargate-test-1")
+    reply = result["reply"].lower()
+    assert "stargate" in reply
+    assert "main kinds of history" not in reply
+    assert "ancient egyptian history" not in reply
+
+
+def test_religion_choice_is_reflection(monkeypatch):
+    monkeypatch.setenv("AUREON_WEB_SEARCH_ENABLED", "0")
+    q = "if you had to choose a religion, what religion would you choose"
+    result = chat(q, session_id="religion-pick-1")
+    assert result["kind"] == "reflection"
+    reply = result["reply"].lower()
+    assert "buddhism" in reply or "quaker" in reply
+    assert "facebook" not in reply
+    assert "may 20, 2022" not in reply
+    assert "computer_science" not in str(result.get("classification", "")).lower()
+
+
+def test_rejects_evergreen_junk_headlines():
+    from brain.opinion_brain import form_human_brief
+
+    junk_results = [
+        {
+            "type": "abstract",
+            "text": "What Happened to Tech? The New York Times: Tech history is poorly documented.",
+            "source": "nytimes.com",
+        },
+        {
+            "type": "news",
+            "title": "Marvell Technology and Flex to join S&P 500 index",
+            "text": "Marvell Technology and Flex to join S&P 500 index",
+            "source": "CNBC",
+        },
+        {
+            "type": "news",
+            "title": "Why a leading AI company wants the world to slow down on the technology",
+            "text": "Why a leading AI company wants the world to slow down on the technology",
+            "source": "CNN",
+        },
+    ]
+    brief = form_human_brief("What happened in the tech world today?", junk_results)
+    reply = brief["opinion"].lower()
+    assert "what happened to tech" not in reply
+    assert "poorly documented" not in reply
+    assert "marvell" in reply or "s&p" in reply
+    assert "ai company" in reply or "slow down" in reply

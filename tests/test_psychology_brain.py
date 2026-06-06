@@ -16,13 +16,14 @@ def test_curious_clarifier_keeps_question():
     assert "marie_ciper_logic" in ctx.traits
 
 
-def test_grounded_direct_prefix():
+def test_grounded_direct_no_source_prefix():
     reply, ctx = shape_human_reply(
         "Botany is the study of plants.",
         payload={"ciper": {"mode": "answer", "grounded": True}, "kind": "chat"},
         user_message="What is botany?",
     )
-    assert reply.startswith("From what I've collected:")
+    assert "from what i've collected" not in reply.lower()
+    assert reply.startswith("Botany")
     assert ctx.mode == "grounded_direct"
 
 

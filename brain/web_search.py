@@ -16,6 +16,68 @@ _MAX_RESULTS = int(os.environ.get("AUREON_SEARCH_MAX_RESULTS", "5"))
 _RATE_LIMIT_SECONDS = 2.0
 _last_search: float = 0.0
 
+_LIVE_NEWS_SIGNALS = (
+    "news",
+    "today",
+    "happened",
+    "latest",
+    "current",
+    "right now",
+    "this week",
+    "going on",
+    "breaking",
+)
+_TECH_SIGNALS = (
+    "tech",
+    "technology",
+    "silicon",
+    "startup",
+    "software",
+    "chip",
+    "ai",
+    "nvidia",
+    "apple",
+    "google",
+)
+
+
+def is_live_news_query(query: str) -> bool:
+    """True when the user wants current events, not evergreen reference pages."""
+    from brain.response_quality import is_specific_topic_inquiry
+
+    if is_specific_topic_inquiry(query):
+        return False
+    q = query.strip().lower()
+    return any(s in q for s in _LIVE_NEWS_SIGNALS)
+
+
+def rewrite_topic_inquiry_query(question: str) -> str:
+    """Focus search on named projects/programs instead of broad domain words like 'history'."""
+    import re
+
+    q = question.strip()
+    acronyms = re.findall(r"\b[A-Z][A-Z0-9]+\b", q)
+    if acronyms:
+        core = " ".join(dict.fromkeys(acronyms))
+        return f"{core} program history"
+    proper = [w for w in q.split() if w[0].isupper() and len(w) > 2 and w.isalpha()]
+    if proper:
+        return f"{' '.join(proper[:5])} history"
+    cleaned = re.sub(r"(?i)\b(can you )?tell me about (the )?history about (the )?", "", q)
+    return cleaned.strip() or question.strip()
+
+
+def rewrite_live_news_query(question: str) -> str:
+    """Turn vague chat questions into news-search queries that return headlines."""
+    q = question.strip().lower()
+    if any(t in q for t in _TECH_SIGNALS) and any(n in q for n in _LIVE_NEWS_SIGNALS):
+        return "technology news today AI startups silicon valley"
+    if "stock" in q or "market" in q:
+        return "stock market technology news today"
+    if any(n in q for n in _LIVE_NEWS_SIGNALS):
+        return "latest breaking news headlines today"
+    return question.strip()
+
 
 def web_search_enabled() -> bool:
     return os.environ.get("AUREON_WEB_SEARCH_ENABLED", "0").strip().lower() in (
@@ -107,6 +169,45 @@ def _search_ddgs_text(query: str, *, max_results: int) -> list[dict[str, Any]]:
     return results[:max_results]
 
 
+def _search_ddgs_news(query: str, *, max_results: int) -> list[dict[str, Any]]:
+    """News-index search — returns dated headlines, not evergreen essays."""
+    try:
+        from ddgs import DDGS
+    except ImportError:
+        logger.debug("ddgs package not installed — news search unavailable")
+        return []
+
+    try:
+        hits = DDGS().news(query, max_results=max_results)
+    except Exception as exc:
+        logger.warning("ddgs news search failed: %s", exc)
+        return []
+
+    results: list[dict[str, Any]] = []
+    for item in hits:
+        if not isinstance(item, dict):
+            continue
+        title = str(item.get("title", "")).strip()
+        if not title:
+            continue
+        body = str(item.get("body", "")).strip()
+        href = str(item.get("url", "")).strip()
+        source = str(item.get("source", "")).strip()
+        if not source and href.startswith("http"):
+            parts = href.split("/")
+            source = parts[2] if len(parts) > 2 else "web"
+        results.append({
+            "type": "news",
+            "title": title,
+            "text": title,
+            "body": body[:400],
+            "url": href,
+            "source": source or "news",
+            "date": str(item.get("date", "")).strip(),
+        })
+    return results[:max_results]
+
+
 def search(query: str, *, max_results: int = _MAX_RESULTS) -> list[dict[str, Any]]:
     """Search DuckDuckGo and return structured results."""
     global _last_search
@@ -119,15 +220,34 @@ def search(query: str, *, max_results: int = _MAX_RESULTS) -> list[dict[str, Any
         time.sleep(_RATE_LIMIT_SECONDS - elapsed)
     _last_search = time.time()
 
+    effective = rewrite_live_news_query(query) if is_live_news_query(query) else query.strip()
+
+    if is_live_news_query(query):
+        try:
+            results = _search_ddgs_news(effective, max_results=max_results)
+            if results:
+                return results
+        except Exception as exc:
+            logger.debug("News search failed: %s", exc)
+
+        try:
+            results = _search_ddgs_text(effective, max_results=max_results)
+            if results:
+                return results
+        except Exception as exc:
+            return [{"error": str(exc), "source": "duckduckgo"}]
+
+        return []
+
     try:
-        results = _search_instant_api(query, max_results=max_results)
+        results = _search_instant_api(effective, max_results=max_results)
         if results:
             return results
     except Exception as exc:
         logger.debug("Instant API search failed: %s", exc)
 
     try:
-        results = _search_ddgs_text(query, max_results=max_results)
+        results = _search_ddgs_text(effective, max_results=max_results)
         if results:
             return results
     except Exception as exc:

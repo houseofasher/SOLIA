@@ -159,11 +159,13 @@ def update_stack_from_turn(
 
 
 def _continuation_search_query(stack: ConversationStack | None, hist: list[dict[str, str]]) -> str:
+    from brain.web_search import rewrite_live_news_query
+
     topic = (stack.active_topic if stack else "") or (hist[-1]["user"] if hist else "")
     depth = stack.depth_level if stack else 1
     if depth <= 1:
-        return f"{topic} latest news analysis details"
-    return f"{topic} in depth background implications expert analysis"
+        return rewrite_live_news_query(f"{topic} latest news analysis")
+    return rewrite_live_news_query(f"{topic} in depth analysis implications")
 
 
 def audit_response(reply: str, *, is_continuation: bool, active_topic: str) -> str | None:

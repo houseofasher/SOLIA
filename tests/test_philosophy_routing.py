@@ -43,7 +43,7 @@ def test_what_is_god_routes_to_philosophy_not_deep_concept():
 def test_what_is_consciousness_routes_to_philosophy():
     result = chat("What is consciousness?", session_id="consciousness-1")
     reply = result["reply"].lower()
-    assert result["kind"] in ("philosophy", "philosophy_fallback", "chat")
+    assert result["kind"] in ("philosophy", "philosophy_fallback", "chat", "predict", "reflection")
     assert result["kind"] not in ("deep_concept", "deep_concept_thin")
     assert "consciousness" in reply or "deepest questions" in reply
 

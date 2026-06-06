@@ -113,6 +113,77 @@ def _finalize(payload: dict[str, Any], user_message: str) -> dict[str, Any]:
     return finalize_chat_payload(apply_chat_reward(payload, user_message), user_message)
 
 
+_SKIP_QUALITY_RECOVERY_KINDS = frozenset({
+    "echo_detected",
+    "self_echo_detected",
+    "help",
+    "status",
+    "grades",
+    "self_audit",
+    "curiosity",
+    "agent",
+    "research",
+    "vitals",
+    "continuation_clarify",
+    "predict_leak_recovered",
+})
+
+
+def _quality_recovery_handlers() -> dict[Any, Any]:
+    """Handlers used by the response-quality self-correction layer."""
+    from brain.response_quality import RecoveryRoute
+
+    def directed(question: str, *, session_id: str | None = None, prior=None, audit=None):
+        _ = prior, audit
+        from brain.philosophy_handler import handle_philosophy_question
+
+        return handle_philosophy_question(
+            question,
+            session_id=session_id,
+            predict_fn=_predict_with_search_fallback,
+            classify_fn=lambda _t: None,
+            learning_snapshot_fn=learning_snapshot,
+        )
+
+    def live_search(question: str, *, session_id: str | None = None, prior=None, audit=None):
+        _ = prior, audit
+        return _search_and_opine(question, session_id=session_id)
+
+    def deep_concept(question: str, *, session_id: str | None = None, prior=None, audit=None):
+        _ = prior, audit
+        return _handle_deep_concept(question, session_id=session_id)
+
+    def named_entity(question: str, *, session_id: str | None = None, prior=None, audit=None):
+        _ = prior, audit
+        return _handle_named_entity(question, session_id=session_id)
+
+    def code(question: str, *, session_id: str | None = None, prior=None, audit=None):
+        _ = prior, audit
+        return _code_payload(question, session_id=session_id)
+
+    def predict_recover(question: str, *, session_id: str | None = None, prior=None, audit=None):
+        _ = prior, audit
+        answer = _fallback_to_predict(question, session_id=session_id)
+        if _is_weak_predict_answer(answer):
+            return None
+        return {
+            "reply": answer,
+            "kind": "predict_recovered",
+            "session_id": session_id,
+            "learning": learning_snapshot(),
+            "brain_predict": True,
+        }
+
+    return {
+        RecoveryRoute.DIRECTED_REFLECTION: directed,
+        RecoveryRoute.LIVE_SEARCH: live_search,
+        RecoveryRoute.DEEP_CONCEPT: deep_concept,
+        RecoveryRoute.NAMED_ENTITY: named_entity,
+        RecoveryRoute.CODE: code,
+        RecoveryRoute.PREDICT: predict_recover,
+    }
+
+
 def _agent_payload(text: str, *, session_id: str | None) -> dict[str, Any]:
     result = run_agent_loop(text, session_id=session_id)
     return {
@@ -656,20 +727,12 @@ def is_named_entity_question(text: str) -> bool:
     """
     Detect questions about specific named people, figures,
     characters, or concepts — not abstract domains.
-
-    Examples that return True:
-      who is Adam and Eve
-      who was John Snow
-      who is Asher Newton
-      who is Nikola Tesla
-      what is the Bible
-      tell me about Zophiel
-
-    Examples that return False:
-      what is mathematics
-      how does backpropagation work
-      what is the meaning of life
     """
+    from brain.response_quality import is_specific_topic_inquiry
+
+    if is_specific_topic_inquiry(text):
+        return True
+
     q = text.strip()
 
     question_starters = (
@@ -681,6 +744,13 @@ def is_named_entity_question(text: str) -> bool:
         "describe",
     )
     q_lower = q.lower()
+    if "tell me about" in q_lower or "can you tell me about" in q_lower:
+        words = q.split()
+        if len(words) >= 4:
+            proper = [w for w in words if w[0].isupper() and len(w) > 1 and w.isalpha()]
+            if proper or re.search(r"\b[A-Z]{2,}\b", q):
+                return True
+
     starts_with_question = any(q_lower.startswith(s) for s in question_starters)
     if not starts_with_question:
         return False
@@ -761,8 +831,15 @@ def _handle_named_entity(text: str, *, session_id: str | None) -> dict[str, Any]
     from brain.web_search import web_search_enabled
 
     if web_search_enabled():
-        search_payload = _search_and_opine(text, session_id=session_id)
+        from brain.web_search import rewrite_topic_inquiry_query
+
+        search_payload = _search_and_opine(
+            text,
+            session_id=session_id,
+            search_query=rewrite_topic_inquiry_query(text),
+        )
         if search_payload.get("kind") == "search_opinion":
+            search_payload["kind"] = "named_entity_search"
             return search_payload
 
     return {
@@ -808,12 +885,18 @@ def _search_and_opine(
     session_id: str | None,
     depth: int = 0,
     continuation: bool = False,
+    search_query: str | None = None,
 ) -> dict[str, Any]:
     """Search DuckDuckGo, form a human briefing — sources live in payload, not prose."""
     from brain.opinion_brain import form_human_brief
-    from brain.web_search import search
+    from brain.response_quality import is_specific_topic_inquiry
+    from brain.web_search import rewrite_topic_inquiry_query, search
 
-    results = search(text)
+    query = search_query or text
+    if is_specific_topic_inquiry(text) and search_query is None:
+        query = rewrite_topic_inquiry_query(text)
+
+    results = search(query)
 
     if not results or all(r.get("error") for r in results):
         return {
@@ -911,13 +994,14 @@ def _predict_with_timeout(
 def _brain_predict_payload(text: str, *, session_id: str | None) -> dict[str, Any]:
     """Attention LM — embed, attend, predict next tokens autoregressively."""
     result = _predict_with_search_fallback(text, session_id=session_id)
+    answer = str(result.get("answer", "")).strip() if result else ""
     payload: dict[str, Any] = {
-        "reply": result["answer"],
+        "reply": answer or FALLBACK_CORPUS,
         "kind": "chat",
         "session_id": session_id,
         "learning": learning_snapshot(),
         "prediction": {
-            "model": result["model"],
+            "model": result.get("model", "stacked_attention_lm") if result else "stacked_attention_lm",
             "model_version": result.get("model_version"),
             "context_window": result.get("context_window"),
             "vocab_size": result.get("vocab_size"),
@@ -927,10 +1011,10 @@ def _brain_predict_payload(text: str, *, session_id: str | None) -> dict[str, An
             "prompt": result.get("prompt"),
         },
         "brain_predict": True,
-        "abstained": result.get("abstained", False),
-        "timed_out": result.get("timed_out", False),
+        "abstained": result.get("abstained", False) if result else True,
+        "timed_out": result.get("timed_out", False) if result else False,
     }
-    if result.get("citations"):
+    if result and result.get("citations"):
         cites = result["citations"][:3]
         payload["citations"] = cites
     return payload
@@ -1027,6 +1111,11 @@ def _code_payload(text: str, *, session_id: str | None) -> dict[str, Any] | None
 
 def _ciper_chat_payload(text: str, *, session_id: str | None) -> dict[str, Any] | None:
     """Marie/Ciper decomposition + cross-domain research when applicable."""
+    from brain.response_quality import is_specific_topic_inquiry
+
+    if is_specific_topic_inquiry(text):
+        return None
+
     result = ciper_research(text)
     if not result:
         return None
@@ -1555,6 +1644,25 @@ def chat(message: str, *, session_id: str | None = None) -> dict[str, Any]:
             out["reply"] = recovered
             out["kind"] = "predict_leak_recovered"
             reply = recovered
+
+        kind = str(out.get("kind", ""))
+        if (
+            reply
+            and not out.get("quality_recovered")
+            and kind not in _SKIP_QUALITY_RECOVERY_KINDS
+        ):
+            from brain.response_quality import try_recover_response
+
+            quality_fix = try_recover_response(
+                original,
+                out,
+                session_id=session_id,
+                recover_handlers=_quality_recovery_handlers(),
+            )
+            if quality_fix:
+                out = _finalize(quality_fix, original)
+                reply = str(out.get("reply", "")).strip()
+
         if session_id and reply:
             append_turn(session_id, user=original, assistant=reply)
             from brain.conversation_engine import update_stack_from_turn
@@ -1743,12 +1851,18 @@ def chat(message: str, *, session_id: str | None = None) -> dict[str, Any]:
     ):
         return done(_search_and_opine(text, session_id=session_id))
 
-    # Rule 5 — named entity before deep concept
+    # Rule 5 — named entity / specific topic before deep concept
     if is_named_entity_question(text):
         return done(_handle_named_entity(text, session_id=session_id))
 
     # Rule 6 — deep concept last resort for unmatched "what is X"
     if is_deep_concept_question(text):
+        return done(_handle_deep_concept(text, session_id=session_id))
+
+    from brain.response_quality import QuestionIntent, infer_question_intent
+
+    intent = infer_question_intent(text)
+    if intent in (QuestionIntent.HOW_TO, QuestionIntent.HISTORICAL):
         return done(_handle_deep_concept(text, session_id=session_id))
 
     nl = _simple_nl_response(text)

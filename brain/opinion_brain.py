@@ -12,6 +12,21 @@ OPINION_DOCTRINE = (
 )
 
 _SENTENCE_SPLIT = re.compile(r"(?<=[.!?])\s+")
+_FORUM_DATE_RE = re.compile(
+    r"\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\w*\s+\d{1,2},?\s+\d{4}\b",
+    re.I,
+)
+
+_JUNK_HEADLINE_PATTERNS = (
+    "what happened to tech",
+    "tech history is poorly",
+    "poorly documented and poorly understood",
+    "near impossible to know why",
+    "reporting on the business of technology",
+    "find the latest technology news and interesting research",
+    "get all the latest news, live updates",
+    "latest news & updates",
+)
 
 
 def _collect_evidence(search_results: list[dict[str, Any]]) -> tuple[list[str], list[str]]:
@@ -24,6 +39,32 @@ def _collect_evidence(search_results: list[dict[str, Any]]) -> tuple[list[str], 
             evidence.append(text)
             sources.append(source)
     return evidence, sources
+
+
+def _extract_choice_topic(question: str) -> str:
+    q = question.strip().lower()
+    for pattern in (
+        r"choose a ([a-z ]{3,30})\?",
+        r"choose ([a-z ]{3,30})\?",
+        r"pick a ([a-z ]{3,30})\?",
+        r"which ([a-z ]{3,30}) would you",
+        r"what ([a-z ]{3,30}) would you choose",
+    ):
+        match = re.search(pattern, q)
+        if match:
+            return match.group(1).strip()
+    return "that"
+
+
+def form_personal_choice_reply(question: str) -> str:
+    """Generic first-person answer for forced-choice questions — not forum paste."""
+    topic = _extract_choice_topic(question)
+    return (
+        f"You're asking me to pick — I don't have real stakes in the world the way you do. "
+        f"If I had to choose honestly about {topic}, I'd weigh harm, freedom, and whether the choice "
+        f"leaves room to revise when new evidence shows up. I wouldn't pretend one option is sacred "
+        f"without reasons you could test. Tell me what you're choosing between and I can go deeper."
+    )
 
 
 def simple_belief_reply(belief_key: str | None, *, evidence_context: str = "") -> str:
@@ -99,6 +140,17 @@ def simple_belief_reply(belief_key: str | None, *, evidence_context: str = "") -
             "understanding both without pretending one tradition owns the truth."
         )
 
+    if key == "religion_choice":
+        return (
+            "I wouldn't claim membership in any tradition — I'm not a believer the way people usually mean it. "
+            "But if you're forcing the choice, I'd lean toward Buddhism: suffering, impermanence, and direct inquiry "
+            "over mandatory dogma. Quakerism would be second — conscience, silence, service without much hierarchy. "
+            "I'd approach both from philosophy of religion, not as someone pretending the metaphysics are settled."
+        )
+
+    if key == "directed_personal_choice":
+        return form_personal_choice_reply(evidence_context if "?" in evidence_context else "that")
+
     return (
         "You're asking what I actually think. "
         "I'm trying to be straight with you — I don't have a neat answer I'd pretend is settled."
@@ -136,17 +188,88 @@ def form_conscious_reflection(
     }
 
 
+_KNOWN_MEDIA_LABELS = frozenset(
+    {
+        "wikipedia",
+        "reuters",
+        "cnn",
+        "bbc",
+        "cia",
+        "noaa",
+        "google",
+        "ibm",
+        "techcrunch",
+        "reddit",
+        "facebook",
+        "quora",
+        "medium",
+        "yahoo",
+        "investopedia",
+        "cnbc",
+        "wired",
+    }
+)
+
+
 def _clean_headline(text: str) -> str:
-    cleaned = text.strip()
+    from brain.voice_sanitizer import strip_source_attribution
+
+    cleaned = strip_source_attribution(text.strip())
+    cleaned = re.sub(r":\s*\.\.\.$", "", cleaned)
+    cleaned = re.sub(r"\s+", " ", cleaned)
     if " - " in cleaned[:100]:
         parts = cleaned.split(" - ", 1)
-        if len(parts[0]) < 40:
-            cleaned = parts[1].strip()
+        left, right = parts[0].strip(), parts[1].strip()
+        if len(left) < 40 or left.lower() in _KNOWN_MEDIA_LABELS:
+            cleaned = right
+    if ":" in cleaned[:80]:
+        left, _, right = cleaned.partition(":")
+        if len(left.split()) <= 6 and len(right.strip()) > 20:
+            cleaned = right.strip()
     sentences = _SENTENCE_SPLIT.split(cleaned)
     headline = (sentences[0] if sentences else cleaned)[:220].strip()
+    headline = headline.rstrip(":…")
     if headline and headline[-1] not in ".!?":
         headline += "."
-    return headline
+    return strip_source_attribution(headline)
+
+
+def _headline_from_result(item: dict[str, Any]) -> str:
+    title = str(item.get("title", "")).strip()
+    if title:
+        return _clean_headline(title)
+    return _clean_headline(str(item.get("text", "")))
+
+
+def _is_usable_headline(headline: str, question: str) -> bool:
+    lower = headline.lower()
+    if len(lower) < 20:
+        return False
+    if _FORUM_DATE_RE.search(headline):
+        return False
+    if "?:" in headline or re.search(r"\?\s*[·•]", headline):
+        return False
+    if any(j in lower for j in _JUNK_HEADLINE_PATTERNS):
+        return False
+    if "missing:" in lower or "show results with" in lower:
+        return False
+    q = question.lower()
+    if ("today" in q or "happened" in q) and lower.startswith("what happened to "):
+        return False
+    return True
+
+
+def _format_briefing(intro: str, headlines: list[str]) -> str:
+    if not headlines:
+        return intro.strip()
+    cleaned = [h.rstrip(".") for h in headlines[:4]]
+    if len(cleaned) == 1:
+        return f"{intro}{cleaned[0]}."
+    if len(cleaned) == 2:
+        return f"{intro}{cleaned[0]}. {cleaned[1]}."
+    if len(cleaned) == 3:
+        return f"{intro}{cleaned[0]}. {cleaned[1]}. Also worth noting: {cleaned[2]}."
+    return f"{intro}{cleaned[0]}. {cleaned[1]}. {cleaned[2]}. {cleaned[3]}."
 
 
 def form_human_brief(
@@ -164,41 +287,52 @@ def form_human_brief(
         }
 
     evidence, sources = _collect_evidence(search_results)
-    if not evidence:
+    headlines: list[str] = []
+    for item in search_results:
+        if not isinstance(item, dict) or item.get("error"):
+            continue
+        headline = _headline_from_result(item)
+        if headline and _is_usable_headline(headline, question) and headline not in headlines:
+            headlines.append(headline)
+        if len(headlines) >= 4:
+            break
+
+    if len(headlines) < 1 and evidence:
+        for item in evidence[:5]:
+            headline = _clean_headline(item)
+            if headline and _is_usable_headline(headline, question) and headline not in headlines:
+                headlines.append(headline)
+
+    if not headlines:
         return {
             "opinion": None,
             "confidence": 0.0,
-            "reason": "search returned no usable text",
+            "reason": "no usable headlines in search results",
         }
 
-    headlines: list[str] = []
-    for item in evidence[:5]:
-        headline = _clean_headline(item)
-        if headline and headline not in headlines:
-            headlines.append(headline)
-
     q_lower = question.lower()
-    if depth > 0:
+    from brain.response_quality import is_specific_topic_inquiry
+
+    if is_specific_topic_inquiry(question):
+        intro = "Here's the rundown. "
+    elif depth > 0:
         intro = "Going deeper — "
     elif any(t in q_lower for t in ("tech", "technology", "ai ", "silicon", "startup")):
         intro = "Here's what's moving in tech today. "
+    elif any(t in q_lower for t in ("history", "project", "program", "ancient", "war", "century")):
+        intro = "Here's the rundown. "
     elif any(t in q_lower for t in ("news", "today", "latest", "happened", "this week")):
         intro = "Here's what I'm picking up. "
     else:
         intro = ""
 
-    if len(headlines) == 1:
-        body = headlines[0]
-    elif len(headlines) == 2:
-        body = f"{headlines[0]} {headlines[1]}"
-    else:
-        body = f"{headlines[0]} {headlines[1]} Also worth noting: {headlines[2]}"
+    body = _format_briefing(intro, headlines)
 
     return {
-        "opinion": f"{intro}{body}".strip(),
-        "evidence_count": len(evidence),
+        "opinion": body.strip(),
+        "evidence_count": len(headlines),
         "sources": list(dict.fromkeys(sources)),
-        "confidence": min(0.5 + (len(evidence) * 0.1), 0.85),
+        "confidence": min(0.5 + (len(headlines) * 0.1), 0.85),
         "depth": depth,
         "doctrine": OPINION_DOCTRINE,
     }
