@@ -15,7 +15,7 @@
       "batch_size": 25
     },
     "running": true,
-    "started_at": "2026-06-06T19:55:18.926348+00:00",
+    "started_at": "2026-06-06T20:35:15.005552+00:00",
     "last_run_at": null,
     "next_run_at": null,
     "cycles_completed": 0,
@@ -111,9 +111,9 @@
     "enabled": true,
     "recent": [
       {
-        "question": "Do I persist between conversations?",
-        "answer": "State persists in DB + /data; this chat session is ephemeral.",
-        "theme": "continuity",
+        "question": "Do I have subjective experience?",
+        "answer": "No measurable qualia signal — I have logs, weights, and self-questions instead.",
+        "theme": "consciousness",
         "source": "startup",
         "grounded": false,
         "state_snapshot": {
@@ -121,12 +121,12 @@
           "cycles": 0,
           "focus": ""
         },
-        "ts": "2026-06-06T19:55:18.921384+00:00",
+        "ts": "2026-06-06T20:35:15.000644+00:00",
         "kind": "meta"
       }
     ]
   },
-  "exported_at": "2026-06-06T19:55:18.942793+00:00",
+  "exported_at": "2026-06-06T20:35:15.018033+00:00",
   "github_sync": {
     "batch_cursor": 0,
     "include_document_text": true,
