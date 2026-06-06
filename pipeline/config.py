@@ -18,6 +18,7 @@ BENCHMARKS_DIR = DATA_DIR / "benchmarks"
 PREFERENCES_DIR = DATA_DIR / "preferences"
 QUEUE_DIR = DATA_DIR / "queue"
 SEEDS_DIR = ROOT / "data" / "seeds"
+MULTIMODAL_DIR = RAW_DIR / "multimodal"
 
 MIN_TEXT_LENGTH = 120
 MAX_TEXT_LENGTH = 50_000
@@ -42,5 +43,6 @@ def ensure_dirs() -> None:
         BENCHMARKS_DIR,
         PREFERENCES_DIR,
         QUEUE_DIR,
+        MULTIMODAL_DIR,
     ):
         path.mkdir(parents=True, exist_ok=True)

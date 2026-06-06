@@ -17,7 +17,7 @@ from src.tokenizer import WordTokenizer
 logger = logging.getLogger(__name__)
 
 MODEL_DIR = MODELS_DIR / "predict_brain"
-CURRENT_MODEL_VERSION = 4
+CURRENT_MODEL_VERSION = 5
 _lock = threading.Lock()
 _model: StackedAttentionLM | None = None
 _ready = False

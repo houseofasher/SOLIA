@@ -374,6 +374,7 @@
           <button type="button" class="chip" data-cmd="/mind">What are you asking yourself?</button>
           <button type="button" class="chip" data-cmd="/status">What are you learning?</button>
           <button type="button" class="chip" data-cmd="/grades">Grade timeline</button>
+          <button type="button" class="chip" data-cmd="/agent What is DNA?">Agent tool loop</button>
           <button type="button" class="chip" data-cmd="/roadmap">Roadmap</button>
           <button type="button" class="chip" data-cmd="/help">Help</button>
         </div>
@@ -586,8 +587,11 @@
           const citeLine = cites.map((c) => `#${c.document_id} ${(c.title || c.source || "").slice(0, 40)}`).join(" · ");
           addMsg(`↳ citations: ${citeLine}`, "system");
         }
-        if (data.abstained) {
-          pushLog("Abstained — low corpus confidence");
+        if (data.agent?.plan?.length) {
+          pushLog(`Agent plan: ${data.agent.plan.join(" → ")}`);
+        }
+        if (data.reward?.score != null) {
+          pushLog(`Reward score: ${Math.round(data.reward.score * 100)}%`);
         }
         if (data.classification) {
           const scope = data.classification.scope ? ` · ${data.classification.scope}` : "";

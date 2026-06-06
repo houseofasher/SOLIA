@@ -351,6 +351,58 @@ def rag_index_status() -> dict:
     return {"documents_indexed": index.document_count, "ready": index.document_count > 0}
 
 
+@app.post("/api/brain/agent")
+def api_brain_agent(body: dict[str, Any]) -> dict:
+    """Multi-step agent tool loop — search, calculate, classify, verify."""
+    from brain.agent_loop import run_agent_loop
+
+    question = str(body.get("message", "")).strip()
+    if not question:
+        raise HTTPException(status_code=400, detail="message required")
+    max_steps = int(body.get("max_steps", 5))
+    return run_agent_loop(question, max_steps=max(1, min(max_steps, 10)))
+
+
+@app.get("/api/brain/inference/profile")
+def api_inference_profile(seq_len: int = Query(default=1024, ge=1, le=1_000_000)) -> dict:
+    from src.efficient_inference import attention_window, inference_profile
+
+    return {
+        "profile": inference_profile(seq_len),
+        "attention_window": attention_window(),
+        "max_seq_config": int(__import__("os").environ.get("AUREON_PREDICT_MAX_SEQ", "1000000")),
+    }
+
+
+@app.get("/api/brain/multimodal/status")
+def api_multimodal_status() -> dict:
+    from brain.multimodal_collector import multimodal_status
+
+    return multimodal_status()
+
+
+@app.post("/api/brain/multimodal/ingest")
+def api_multimodal_ingest(_: Mutating, limit: int = Query(default=10, ge=1, le=50)) -> dict:
+    """Collect multimodal sidecars from data/raw/multimodal into the brain collector path."""
+    from brain.multimodal_collector import MultimodalCollector
+
+    docs = MultimodalCollector().collect(limit=limit)
+    return {"collected": len(docs), "sources": [d.source for d in docs]}
+
+
+@app.post("/api/chat/feedback")
+def api_chat_feedback(body: dict[str, Any], _: Mutating) -> dict:
+    """Submit preferred/rejected pair for RLHF retraining."""
+    from brain.chat_reward import record_preference
+
+    context = str(body.get("context", "")).strip()
+    preferred = str(body.get("preferred", "")).strip()
+    rejected = str(body.get("rejected", "")).strip()
+    if not context or not preferred or not rejected:
+        raise HTTPException(status_code=400, detail="context, preferred, rejected required")
+    return record_preference(context=context, preferred=preferred, rejected=rejected)
+
+
 @app.post("/api/brain/run")
 def brain_run(
     _auth: Mutating,

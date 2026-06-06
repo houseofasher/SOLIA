@@ -12,7 +12,10 @@ from brain.domains.taxonomy import total_micro_subdomains
 from brain.grades import GRADE_CURRICULUM, curriculum_public, epochs_for_grade, get_grade
 from brain.graduation import current_grade, progress_report
 from brain.ciper_logic import ciper_research
+from brain.agent_loop import is_agent_task, run_agent_loop
+from brain.brain_classifiers import classify_moe
 from brain.capability_roadmap import roadmap_snapshot, simulate_future_timeline, try_roadmap_answer
+from brain.chat_reward import apply_chat_reward
 from brain.deterministic_qa import try_arithmetic_answer
 from brain.predict_engine import is_prediction_question, predict_with_steps
 from brain.psychology_brain import finalize_chat_payload
@@ -20,10 +23,29 @@ from brain.self_inquiry import is_self_inquiry_enabled, recent_inquiries
 from brain.simple_qa import is_simple_question, to_simple_answer
 from db.models import KnowledgeDomain, KnowledgeMicroSubdomain, KnowledgeSubdomain
 from db.session import get_session
-from pipeline.step4_evaluation.benchmarks import _predict_label
-from brain.brain_classifiers import classify_moe
+from pipeline.step4_evaluation.benchmarks import _load_production_model, _predict_label
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
+
+
+def _finalize(payload: dict[str, Any], user_message: str) -> dict[str, Any]:
+    return finalize_chat_payload(apply_chat_reward(payload, user_message), user_message)
+
+
+def _agent_payload(text: str, *, session_id: str | None) -> dict[str, Any]:
+    result = run_agent_loop(text)
+    return {
+        "reply": result["answer"],
+        "kind": "agent",
+        "session_id": session_id,
+        "learning": learning_snapshot(),
+        "agent": {
+            "plan": result["plan"],
+            "steps": result["steps"],
+            "confidence": result.get("confidence"),
+        },
+        "citations": result.get("citations", []),
+    }
 
 
 def estimate_learning_timeline(
@@ -323,6 +345,7 @@ def _command_response(message: str) -> dict[str, Any] | None:
                 "• `/grades` — curriculum and time estimates\n"
                 "• `/mind` — recent learning reflections (collected docs + cycle metrics)\n"
                 "• `/roadmap` — capability matrix + path beyond frontier LLMs\n"
+                "• `/agent <task>` — multi-step tool loop (search → calculate → verify)\n"
                 "• `/research <topic>` — cross-domain taxonomy + Ciper drill-down\n"
                 "• `/vitals` — security organism (nomad stack)\n\n"
                 "**Prediction brain:** factual questions run through token embeddings → "
@@ -426,6 +449,20 @@ def _command_response(message: str) -> dict[str, Any] | None:
             "citations, abstain-when-uncertain — not hallucinated fluency."
         )
         return {"reply": "\n".join(lines), "kind": "roadmap", "roadmap": snap, "simulation": sim}
+    if cmd.startswith("/agent"):
+        topic = message.strip()[6:].strip(" :.")
+        if not topic:
+            return {
+                "reply": "Usage: `/agent What is DNA and how does it relate to genetics?`",
+                "kind": "agent",
+            }
+        agent = run_agent_loop(topic)
+        return {
+            "reply": agent["answer"],
+            "kind": "agent",
+            "agent": agent,
+            "citations": agent.get("citations", []),
+        }
     if cmd.startswith("/research"):
         topic = message.strip()[9:].strip(" ?.")
         if not topic:
@@ -459,13 +496,13 @@ def chat(message: str, *, session_id: str | None = None) -> dict[str, Any]:
     """Process a chat message — psychology brain wraps algorithm brain output."""
     text = (message or "").strip()
     if not text:
-        return finalize_chat_payload(
+        return _finalize(
             {"error": "empty message", "reply": "Send a message or try `/help`."},
             text,
         )
 
     if len(text) > 8000:
-        return finalize_chat_payload(
+        return _finalize(
             {"error": "message too long", "reply": "Please keep messages under 8000 characters."},
             text,
         )
@@ -484,11 +521,22 @@ def chat(message: str, *, session_id: str | None = None) -> dict[str, Any]:
             payload["timeline"] = cmd["timeline"]
         if "ciper" in cmd:
             payload["ciper"] = cmd["ciper"]
-        return finalize_chat_payload(payload, text)
+        if "roadmap" in cmd:
+            payload["roadmap"] = cmd["roadmap"]
+        if "simulation" in cmd:
+            payload["simulation"] = cmd["simulation"]
+        if "agent" in cmd:
+            payload["agent"] = cmd["agent"]
+        if "citations" in cmd:
+            payload["citations"] = cmd["citations"]
+        return _finalize(payload, text)
+
+    if is_agent_task(text):
+        return _finalize(_agent_payload(text, session_id=session_id), text)
 
     nl = _simple_nl_response(text)
     if nl:
-        return finalize_chat_payload(
+        return _finalize(
             {
                 "reply": to_simple_answer(nl),
                 "kind": "chat",
@@ -501,29 +549,29 @@ def chat(message: str, *, session_id: str | None = None) -> dict[str, Any]:
 
     deterministic = _deterministic_payload(text, session_id=session_id)
     if deterministic:
-        return finalize_chat_payload(deterministic, text)
+        return _finalize(deterministic, text)
 
     if is_prediction_question(text):
         predict_payload = _brain_predict_payload(text, session_id=session_id)
         if predict_payload:
-            return finalize_chat_payload(predict_payload, text)
+            return _finalize(predict_payload, text)
 
     ciper_payload = _ciper_chat_payload(text, session_id=session_id)
     if ciper_payload:
-        return finalize_chat_payload(ciper_payload, text)
+        return _finalize(ciper_payload, text)
 
     if is_simple_question(text):
         simple = _simple_chat_reply(text)
         simple["session_id"] = session_id
         simple["learning"] = learning_snapshot()
-        return finalize_chat_payload(simple, text)
+        return _finalize(simple, text)
 
     classification = _classify_message(text)
     ciper_payload = _ciper_chat_payload(text, session_id=session_id)
     if ciper_payload:
         if classification:
             ciper_payload["classification"] = classification
-        return finalize_chat_payload(ciper_payload, text)
+        return _finalize(ciper_payload, text)
 
     learning = learning_snapshot()
 
@@ -552,7 +600,7 @@ def chat(message: str, *, session_id: str | None = None) -> dict[str, Any]:
                 f"**Current focus:** `{active['path']}` @ grade **{active['current_grade']}**."
             )
 
-    return finalize_chat_payload(
+    return _finalize(
         {
             "reply": reply,
             "kind": "chat",

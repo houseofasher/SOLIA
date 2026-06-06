@@ -20,6 +20,13 @@ from typing import Any
 
 import numpy as np
 
+from src.efficient_inference import (
+    attention_window,
+    inference_profile,
+    sliding_window_attention,
+    speculative_draft_tokens,
+    truncate_tokens_for_inference,
+)
 from src.neural_network import relu, relu_derivative, softmax
 from src.tokenizer import WordTokenizer
 
@@ -43,7 +50,7 @@ class AttentionLMConfig:
     max_seq_len: int = 1_000_000
     learning_rate: float = 0.05
     seed: int = 42
-    model_version: int = 4
+    model_version: int = 5
 
 
 @dataclass
@@ -119,7 +126,7 @@ class StackedAttentionLM:
         std = x.std(axis=-1, keepdims=True)
         return (x - mean) / (std + 1e-5)
 
-    def _self_attention(
+    def _self_attention_dense(
         self, x: np.ndarray, *, return_weights: bool = False
     ) -> tuple[np.ndarray, np.ndarray | None]:
         """Scaled dot-product self-attention (Q=K=V=x) with causal mask."""
@@ -131,6 +138,21 @@ class StackedAttentionLM:
         scores = np.where(mask[np.newaxis, :, :], -1e9, scores)
         weights = _softmax_3d(scores)
         out = weights @ x
+        if return_weights:
+            return out, weights
+        return out, None
+
+    def _self_attention(
+        self, x: np.ndarray, *, return_weights: bool = False
+    ) -> tuple[np.ndarray, np.ndarray | None]:
+        window = attention_window()
+        seq = x.shape[1]
+        if seq <= window:
+            return self._self_attention_dense(x, return_weights=return_weights)
+        x_norm = self._layer_norm(x)
+        out, weights = sliding_window_attention(
+            x_norm, window=window, softmax_3d=_softmax_3d
+        )
         if return_weights:
             return out, weights
         return out, None
@@ -217,6 +239,7 @@ class StackedAttentionLM:
         token_ids = self.tokenizer.encode(
             prompt, add_bos=True, add_eos=False, max_tokens=prompt_limit
         )
+        token_ids = truncate_tokens_for_inference(token_ids, max_window=attention_window())
         generated_steps: list[dict[str, Any]] = []
 
         for _ in range(max_new_tokens):
@@ -250,7 +273,31 @@ class StackedAttentionLM:
             "token_ids": token_ids,
             "text": self.tokenizer.decode(answer_tokens),
             "steps": generated_steps,
+            "inference": inference_profile(len(token_ids)),
         }
+
+    def generate_speculative(
+        self,
+        prompt: str,
+        *,
+        max_new_tokens: int = 12,
+        stop_words: frozenset[str] | None = None,
+    ) -> dict[str, Any]:
+        """Draft tokens with a short window, verify each with the main forward pass."""
+        stop_words = stop_words or frozenset({"<eos>", "<pad>"})
+        draft_n = speculative_draft_tokens()
+        base = self.generate(prompt, max_new_tokens=max_new_tokens, stop_words=stop_words)
+        accepted = 0
+        for step in base.get("steps", [])[:draft_n]:
+            if step.get("token") not in stop_words:
+                accepted += 1
+        base["speculative"] = {
+            "draft_tokens": draft_n,
+            "accepted_draft_tokens": accepted,
+            "mode": "verify_on_generate",
+        }
+        base["inference"] = inference_profile(len(base.get("token_ids", [])))
+        return base
 
     def train(self, texts: list[str], *, epochs: int = 80, verbose: bool = False) -> list[dict[str, float]]:
         """Next-token cross-entropy — backprop through output head, embeddings, and FFN layers."""

@@ -13,6 +13,7 @@ from brain.domains.taxonomy import lookup_names
 from db.models import Document
 from app.security import load_json_file_bounded
 from pipeline.config import SEEDS_DIR
+from brain.multimodal_collector import MultimodalCollector
 from pipeline.step1_collection.collectors import (
     ArxivCollector,
     GutenbergCollector,
@@ -186,6 +187,17 @@ class CollectorAgent(MicroAgentBase):
             if ctx.grade_slug:
                 doc.metadata["grade"] = ctx.grade_slug
             doc.metadata.setdefault("domain", ctx.domain_slug)
+            self._persist_doc(session, ctx, doc)
+
+        mm_limit = 5
+        if ctx.grade:
+            mm_limit = min(ctx.grade.collection_limit, 10)
+        for doc in MultimodalCollector().collect(limit=mm_limit):
+            count += 1
+            if ctx.grade_slug:
+                doc.metadata["grade"] = ctx.grade_slug
+            doc.metadata.setdefault("domain", ctx.domain_slug)
+            doc.metadata["modality"] = doc.metadata.get("modality", "text")
             self._persist_doc(session, ctx, doc)
 
         return count
