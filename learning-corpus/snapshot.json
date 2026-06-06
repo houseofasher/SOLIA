@@ -15,7 +15,7 @@
       "batch_size": 25
     },
     "running": true,
-    "started_at": "2026-06-06T18:37:09.856146+00:00",
+    "started_at": "2026-06-06T18:41:08.904735+00:00",
     "last_run_at": null,
     "next_run_at": null,
     "cycles_completed": 0,
@@ -111,9 +111,9 @@
     "enabled": true,
     "recent": [
       {
-        "question": "What topic am I focused on learning right now?",
-        "answer": "Between batches — waiting for next target.",
-        "theme": "memory",
+        "question": "What would I verify before trusting my own reply?",
+        "answer": "Run verifier region, cite document_id, check confidence threshold.",
+        "theme": "reflection",
         "source": "startup",
         "grounded": false,
         "state_snapshot": {
@@ -121,12 +121,12 @@
           "cycles": 0,
           "focus": ""
         },
-        "ts": "2026-06-06T18:37:09.852015+00:00",
+        "ts": "2026-06-06T18:41:08.902701+00:00",
         "kind": "meta"
       }
     ]
   },
-  "exported_at": "2026-06-06T18:37:09.870084+00:00",
+  "exported_at": "2026-06-06T18:41:08.911111+00:00",
   "github_sync": {
     "batch_cursor": 0,
     "include_document_text": true,
