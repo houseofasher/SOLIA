@@ -1,0 +1,927 @@
+[
+  {
+    "path": "science_and_natural_philosophy.physics.classical_mechanics",
+    "micro_name": "Classical Mechanics",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T00:46:33.988869"
+  },
+  {
+    "path": "science_and_natural_philosophy.physics.thermodynamics",
+    "micro_name": "Thermodynamics",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T00:46:42.338665"
+  },
+  {
+    "path": "science_and_natural_philosophy.physics.electromagnetism",
+    "micro_name": "Electromagnetism",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T00:46:50.151883"
+  },
+  {
+    "path": "science_and_natural_philosophy.physics.quantum_mechanics",
+    "micro_name": "Quantum Mechanics",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T00:46:58.323813"
+  },
+  {
+    "path": "science_and_natural_philosophy.physics.relativity",
+    "micro_name": "Relativity",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T00:47:06.146332"
+  },
+  {
+    "path": "science_and_natural_philosophy.physics.astrophysics_and_cosmology",
+    "micro_name": "Astrophysics & Cosmology",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T00:47:13.988142"
+  },
+  {
+    "path": "science_and_natural_philosophy.physics.nuclear_and_particle_physics",
+    "micro_name": "Nuclear & Particle Physics",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T00:47:21.473021"
+  },
+  {
+    "path": "science_and_natural_philosophy.physics.condensed_matter_physics",
+    "micro_name": "Condensed Matter Physics",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T00:47:29.384527"
+  },
+  {
+    "path": "science_and_natural_philosophy.physics.atomic_and_molecular_physics",
+    "micro_name": "Atomic & Molecular Physics",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T00:47:36.815652"
+  },
+  {
+    "path": "science_and_natural_philosophy.physics.acoustics",
+    "micro_name": "Acoustics",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T00:47:44.167242"
+  },
+  {
+    "path": "science_and_natural_philosophy.chemistry.inorganic_chemistry",
+    "micro_name": "Inorganic Chemistry",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T00:47:51.734760"
+  },
+  {
+    "path": "science_and_natural_philosophy.chemistry.organic_chemistry",
+    "micro_name": "Organic Chemistry",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T00:47:59.228403"
+  },
+  {
+    "path": "science_and_natural_philosophy.chemistry.physical_chemistry",
+    "micro_name": "Physical Chemistry",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T00:48:07.154204"
+  },
+  {
+    "path": "science_and_natural_philosophy.chemistry.analytical_chemistry",
+    "micro_name": "Analytical Chemistry",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T00:48:14.913434"
+  },
+  {
+    "path": "science_and_natural_philosophy.chemistry.biochemistry",
+    "micro_name": "Biochemistry",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T00:48:22.370916"
+  },
+  {
+    "path": "science_and_natural_philosophy.chemistry.polymer_chemistry",
+    "micro_name": "Polymer Chemistry",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T00:48:30.173784"
+  },
+  {
+    "path": "science_and_natural_philosophy.chemistry.environmental_chemistry",
+    "micro_name": "Environmental Chemistry",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T00:48:37.968886"
+  },
+  {
+    "path": "science_and_natural_philosophy.chemistry.medicinal_chemistry",
+    "micro_name": "Medicinal Chemistry",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T00:48:45.900055"
+  },
+  {
+    "path": "science_and_natural_philosophy.chemistry.materials_chemistry",
+    "micro_name": "Materials Chemistry",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T00:48:53.842797"
+  },
+  {
+    "path": "science_and_natural_philosophy.biology.cell_biology",
+    "micro_name": "Cell Biology",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T00:49:01.753121"
+  },
+  {
+    "path": "science_and_natural_philosophy.biology.molecular_biology",
+    "micro_name": "Molecular Biology",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T00:49:09.964669"
+  },
+  {
+    "path": "science_and_natural_philosophy.biology.genetics",
+    "micro_name": "Genetics",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T00:49:17.351548"
+  },
+  {
+    "path": "science_and_natural_philosophy.biology.evolutionary_biology",
+    "micro_name": "Evolutionary Biology",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T00:49:24.838967"
+  },
+  {
+    "path": "science_and_natural_philosophy.biology.ecology",
+    "micro_name": "Ecology",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T00:49:32.388760"
+  },
+  {
+    "path": "science_and_natural_philosophy.biology.botany",
+    "micro_name": "Botany (Plant Biology)",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T00:49:39.722180"
+  }
+]
