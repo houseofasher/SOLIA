@@ -16,9 +16,9 @@
     },
     "running": true,
     "started_at": "2026-06-06T21:21:27.951225+00:00",
-    "last_run_at": "2026-06-06T22:12:01.349089+00:00",
-    "next_run_at": "2026-06-06T23:12:01.349095+00:00",
-    "cycles_completed": 1,
+    "last_run_at": "2026-06-06T23:29:13.345298+00:00",
+    "next_run_at": "2026-06-07T00:29:13.345306+00:00",
+    "cycles_completed": 2,
     "last_result": {
       "batch": true,
       "targets_total": 25,
@@ -26,9 +26,9 @@
       "targets_processed": 25,
       "graduations_passed": 25,
       "last_target": {
-        "domain": "science_and_natural_philosophy",
-        "subdomain": "biology",
-        "micro_subdomain": "botany"
+        "domain": "medicine_and_health_sciences",
+        "subdomain": "clinical_medicine",
+        "micro_subdomain": "obstetrics_and_gynecology"
       },
       "last_graduation": {
         "grade": "preschool",
@@ -39,23 +39,23 @@
         "unlocked_next": "elementary"
       },
       "sample_paths": [
-        "science_and_natural_philosophy.physics.classical_mechanics",
-        "science_and_natural_philosophy.physics.thermodynamics",
-        "science_and_natural_philosophy.physics.electromagnetism",
-        "science_and_natural_philosophy.physics.quantum_mechanics",
-        "science_and_natural_philosophy.physics.relativity"
+        "science_and_natural_philosophy.biology.zoology",
+        "science_and_natural_philosophy.biology.microbiology",
+        "science_and_natural_philosophy.biology.neuroscience",
+        "science_and_natural_philosophy.biology.physiology",
+        "science_and_natural_philosophy.biology.immunology"
       ],
-      "batch_cursor": 25,
+      "batch_cursor": 50,
       "meta_consciousness": [
         {
-          "question": "What do I actually know versus what I guess?",
-          "answer": "77 verified docs ground me; unverified text I treat as weak.",
-          "theme": "meta_cognition"
+          "question": "Where are my biggest knowledge gaps?",
+          "answer": "~817 micro-topics not fully graduated; sparse docs mean abstain.",
+          "theme": "uncertainty"
         },
         {
-          "question": "Did my last answer match my collected evidence?",
-          "answer": "I check RAG citations and verifier scores before replying.",
-          "theme": "reflection"
+          "question": "Am I a generative LLM or a supervised learning brain?",
+          "answer": "Aureon — supervised ML brain, 157 docs, 2 cycles, predict v7.",
+          "theme": "identity"
         }
       ]
     },
@@ -70,8 +70,8 @@
     "domains": 30,
     "micro_subdomains": 867,
     "micro_agents": 6192,
-    "documents": 131,
-    "grade_levels_graduated": 43,
+    "documents": 157,
+    "grade_levels_graduated": 50,
     "grade_progress_rows": 6069
   },
   "timeline": {
@@ -150,100 +150,100 @@
     "enabled": true,
     "recent": [
       {
-        "question": "What are the main kinds of Observational Astronomy — Radio Astronomy, Infrared Astronomy, Optical Astronomy, and X-ray Astronomy?",
-        "answer": "Infrared Astronomy is a core concept within Observational….",
+        "question": "What are the main kinds of Obstetrics & Gynecology — Gynecology, and Urogynecology?",
+        "answer": "Gynecology is a core concept within Obstetrics & Gynecology….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.astronomy.observational_astronomy",
+        "path": "medicine_and_health_sciences.clinical_medicine.obstetrics_and_gynecology",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-06T23:24:21.652254+00:00"
+        "ts": "2026-06-06T23:29:13.344805+00:00"
       },
       {
-        "question": "What is one word I would use to describe Infrared Astronomy?",
-        "answer": "Radio Astronomy",
+        "question": "What is one word I would use to describe Urogynecology?",
+        "answer": "research",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.astronomy.observational_astronomy",
+        "path": "medicine_and_health_sciences.clinical_medicine.obstetrics_and_gynecology",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-06T23:24:21.651834+00:00"
+        "ts": "2026-06-06T23:29:13.344326+00:00"
       },
       {
-        "question": "What are the main kinds of Soil Science (Pedology) — Soil Chemistry, Soil Physics, Soil Biology, and Soil Classification?",
-        "answer": "Soil Chemistry is a core concept within Soil Science….",
+        "question": "What are the main kinds of Psychiatry — Clinical Psychiatry, Forensic Psychiatry, Child & Adolescent Psychiatry, and Geriatric Psychiatry?",
+        "answer": "Forensic Psychiatry is a core concept within Psychiatry….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.earth_sciences.soil_science",
+        "path": "medicine_and_health_sciences.clinical_medicine.psychiatry",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-06T23:23:43.254314+00:00"
+        "ts": "2026-06-06T23:28:35.644015+00:00"
       },
       {
-        "question": "What is Soil Science (Pedology)?",
-        "answer": "Soil Chemistry is a core concept within Soil Science….",
+        "question": "What is Psychiatry?",
+        "answer": "Forensic Psychiatry is a core concept within Psychiatry….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.earth_sciences.soil_science",
+        "path": "medicine_and_health_sciences.clinical_medicine.psychiatry",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-06T23:23:43.253761+00:00"
+        "ts": "2026-06-06T23:28:35.640884+00:00"
       },
       {
-        "question": "What is one word I would use to describe Ice Sheet Dynamics?",
-        "answer": "Sea Ice Science",
+        "question": "What are the main kinds of Neurology — Stroke Neurology, and Pediatric Neurology?",
+        "answer": "Epileptology is a core concept within Neurology (CLINICAL….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.earth_sciences.glaciology",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-06T23:23:08.253618+00:00"
-      },
-      {
-        "question": "What is Glaciology?",
-        "answer": "Glacier Physics is a core concept within Glaciology (EARTH….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.earth_sciences.glaciology",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-06T23:23:08.253283+00:00"
-      },
-      {
-        "question": "What are the main kinds of Hydrology — Surface Hydrology, Groundwater Hydrology, Snow Hydrology, and Urban Hydrology?",
-        "answer": "Groundwater Hydrology is a core concept within Hydrology….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.earth_sciences.hydrology",
+        "path": "medicine_and_health_sciences.clinical_medicine.neurology",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-06T23:22:31.647310+00:00"
+        "ts": "2026-06-06T23:28:05.848078+00:00"
       },
       {
-        "question": "What is one word I would use to describe Snow Hydrology?",
-        "answer": "Surface Hydrology",
+        "question": "What is Neurology?",
+        "answer": "Epileptology is a core concept within Neurology (CLINICAL….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.earth_sciences.hydrology",
+        "path": "medicine_and_health_sciences.clinical_medicine.neurology",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-06T23:22:31.646842+00:00"
+        "ts": "2026-06-06T23:28:05.847446+00:00"
+      },
+      {
+        "question": "What are the main kinds of Surgery — General Surgery, Cardiothoracic Surgery, Orthopedic Surgery, and Vascular Surgery?",
+        "answer": "Neurosurgery is a core concept within Surgery (CLINICAL….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "medicine_and_health_sciences.clinical_medicine.surgery",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": true,
+        "ts": "2026-06-06T23:27:18.749172+00:00"
+      },
+      {
+        "question": "What is one word I would use to describe Orthopedic Surgery?",
+        "answer": "research",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "medicine_and_health_sciences.clinical_medicine.surgery",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-06T23:27:18.748459+00:00"
       }
     ]
   },
@@ -251,114 +251,114 @@
     "enabled": true,
     "recent": [
       {
-        "question": "What are the main kinds of Observational Astronomy — Radio Astronomy, Infrared Astronomy, Optical Astronomy, and X-ray Astronomy?",
-        "answer": "Infrared Astronomy is a core concept within Observational….",
+        "question": "What are the main kinds of Obstetrics & Gynecology — Gynecology, and Urogynecology?",
+        "answer": "Gynecology is a core concept within Obstetrics & Gynecology….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.astronomy.observational_astronomy",
+        "path": "medicine_and_health_sciences.clinical_medicine.obstetrics_and_gynecology",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-06T23:24:21.652254+00:00",
+        "ts": "2026-06-06T23:29:13.344805+00:00",
         "kind": "learning"
       },
       {
-        "question": "What is one word I would use to describe Infrared Astronomy?",
-        "answer": "Radio Astronomy",
+        "question": "What is one word I would use to describe Urogynecology?",
+        "answer": "research",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.astronomy.observational_astronomy",
+        "path": "medicine_and_health_sciences.clinical_medicine.obstetrics_and_gynecology",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-06T23:24:21.651834+00:00",
+        "ts": "2026-06-06T23:29:13.344326+00:00",
         "kind": "learning"
       },
       {
-        "question": "What are the main kinds of Soil Science (Pedology) — Soil Chemistry, Soil Physics, Soil Biology, and Soil Classification?",
-        "answer": "Soil Chemistry is a core concept within Soil Science….",
+        "question": "What are the main kinds of Psychiatry — Clinical Psychiatry, Forensic Psychiatry, Child & Adolescent Psychiatry, and Geriatric Psychiatry?",
+        "answer": "Forensic Psychiatry is a core concept within Psychiatry….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.earth_sciences.soil_science",
+        "path": "medicine_and_health_sciences.clinical_medicine.psychiatry",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-06T23:23:43.254314+00:00",
+        "ts": "2026-06-06T23:28:35.644015+00:00",
         "kind": "learning"
       },
       {
-        "question": "What is Soil Science (Pedology)?",
-        "answer": "Soil Chemistry is a core concept within Soil Science….",
+        "question": "What is Psychiatry?",
+        "answer": "Forensic Psychiatry is a core concept within Psychiatry….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.earth_sciences.soil_science",
+        "path": "medicine_and_health_sciences.clinical_medicine.psychiatry",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-06T23:23:43.253761+00:00",
+        "ts": "2026-06-06T23:28:35.640884+00:00",
         "kind": "learning"
       },
       {
-        "question": "What is one word I would use to describe Ice Sheet Dynamics?",
-        "answer": "Sea Ice Science",
+        "question": "What are the main kinds of Neurology — Stroke Neurology, and Pediatric Neurology?",
+        "answer": "Epileptology is a core concept within Neurology (CLINICAL….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.earth_sciences.glaciology",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-06T23:23:08.253618+00:00",
-        "kind": "learning"
-      },
-      {
-        "question": "What is Glaciology?",
-        "answer": "Glacier Physics is a core concept within Glaciology (EARTH….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.earth_sciences.glaciology",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-06T23:23:08.253283+00:00",
-        "kind": "learning"
-      },
-      {
-        "question": "What are the main kinds of Hydrology — Surface Hydrology, Groundwater Hydrology, Snow Hydrology, and Urban Hydrology?",
-        "answer": "Groundwater Hydrology is a core concept within Hydrology….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.earth_sciences.hydrology",
+        "path": "medicine_and_health_sciences.clinical_medicine.neurology",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-06T23:22:31.647310+00:00",
+        "ts": "2026-06-06T23:28:05.848078+00:00",
         "kind": "learning"
       },
       {
-        "question": "What is one word I would use to describe Snow Hydrology?",
-        "answer": "Surface Hydrology",
+        "question": "What is Neurology?",
+        "answer": "Epileptology is a core concept within Neurology (CLINICAL….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "science_and_natural_philosophy.earth_sciences.hydrology",
+        "path": "medicine_and_health_sciences.clinical_medicine.neurology",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-06T23:22:31.646842+00:00",
+        "ts": "2026-06-06T23:28:05.847446+00:00",
+        "kind": "learning"
+      },
+      {
+        "question": "What are the main kinds of Surgery — General Surgery, Cardiothoracic Surgery, Orthopedic Surgery, and Vascular Surgery?",
+        "answer": "Neurosurgery is a core concept within Surgery (CLINICAL….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "medicine_and_health_sciences.clinical_medicine.surgery",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": true,
+        "ts": "2026-06-06T23:27:18.749172+00:00",
+        "kind": "learning"
+      },
+      {
+        "question": "What is one word I would use to describe Orthopedic Surgery?",
+        "answer": "research",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "medicine_and_health_sciences.clinical_medicine.surgery",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-06T23:27:18.748459+00:00",
         "kind": "learning"
       }
     ]
   },
-  "exported_at": "2026-06-06T23:24:27.249692+00:00",
+  "exported_at": "2026-06-06T23:29:13.347299+00:00",
   "github_sync": {
-    "batch_cursor": 25,
+    "batch_cursor": 50,
     "include_document_text": true,
     "max_documents": 5000,
     "export_version": 2
