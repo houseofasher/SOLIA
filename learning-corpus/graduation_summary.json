@@ -923,5 +923,930 @@
       "status": "completed"
     },
     "graduated_at": "2026-06-06T05:05:20.488008"
+  },
+  {
+    "path": "science_and_natural_philosophy.biology.zoology",
+    "micro_name": "Zoology",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T06:05:27.293592"
+  },
+  {
+    "path": "science_and_natural_philosophy.biology.microbiology",
+    "micro_name": "Microbiology",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T06:05:31.742286"
+  },
+  {
+    "path": "science_and_natural_philosophy.biology.neuroscience",
+    "micro_name": "Neuroscience",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T06:05:36.768348"
+  },
+  {
+    "path": "science_and_natural_philosophy.biology.physiology",
+    "micro_name": "Physiology",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T06:05:41.168542"
+  },
+  {
+    "path": "science_and_natural_philosophy.biology.immunology",
+    "micro_name": "Immunology",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T06:05:45.666960"
+  },
+  {
+    "path": "science_and_natural_philosophy.biology.developmental_biology",
+    "micro_name": "Developmental Biology",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T06:05:50.123272"
+  },
+  {
+    "path": "science_and_natural_philosophy.biology.marine_biology",
+    "micro_name": "Marine Biology",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T06:05:54.440514"
+  },
+  {
+    "path": "science_and_natural_philosophy.mathematics.pure_mathematics",
+    "micro_name": "Pure Mathematics",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T06:05:58.814121"
+  },
+  {
+    "path": "science_and_natural_philosophy.mathematics.applied_mathematics",
+    "micro_name": "Applied Mathematics",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T06:06:03.290559"
+  },
+  {
+    "path": "science_and_natural_philosophy.mathematics.statistics_and_probability",
+    "micro_name": "Statistics & Probability",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T06:06:07.768782"
+  },
+  {
+    "path": "science_and_natural_philosophy.mathematics.computational_mathematics",
+    "micro_name": "Computational Mathematics",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T06:06:12.166164"
+  },
+  {
+    "path": "science_and_natural_philosophy.earth_sciences.geology",
+    "micro_name": "Geology",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T06:06:16.591842"
+  },
+  {
+    "path": "science_and_natural_philosophy.earth_sciences.atmospheric_science",
+    "micro_name": "Atmospheric Science",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T06:06:21.099608"
+  },
+  {
+    "path": "science_and_natural_philosophy.earth_sciences.oceanography",
+    "micro_name": "Oceanography",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T06:06:25.646753"
+  },
+  {
+    "path": "science_and_natural_philosophy.earth_sciences.hydrology",
+    "micro_name": "Hydrology",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T06:06:30.097920"
+  },
+  {
+    "path": "science_and_natural_philosophy.earth_sciences.glaciology",
+    "micro_name": "Glaciology",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T06:06:34.493729"
+  },
+  {
+    "path": "science_and_natural_philosophy.earth_sciences.soil_science",
+    "micro_name": "Soil Science (Pedology)",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T06:06:38.910260"
+  },
+  {
+    "path": "science_and_natural_philosophy.astronomy.observational_astronomy",
+    "micro_name": "Observational Astronomy",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T06:06:43.821696"
+  },
+  {
+    "path": "science_and_natural_philosophy.astronomy.theoretical_astronomy",
+    "micro_name": "Theoretical Astronomy",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T06:06:48.199052"
+  },
+  {
+    "path": "science_and_natural_philosophy.astronomy.planetary_science",
+    "micro_name": "Planetary Science",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T06:06:52.661611"
+  },
+  {
+    "path": "medicine_and_health_sciences.clinical_medicine.internal_medicine",
+    "micro_name": "Internal Medicine",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T06:07:05.501239"
+  },
+  {
+    "path": "medicine_and_health_sciences.clinical_medicine.surgery",
+    "micro_name": "Surgery",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T06:07:11.420088"
+  },
+  {
+    "path": "medicine_and_health_sciences.clinical_medicine.neurology",
+    "micro_name": "Neurology",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T06:07:21.182938"
+  },
+  {
+    "path": "medicine_and_health_sciences.clinical_medicine.psychiatry",
+    "micro_name": "Psychiatry",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T06:07:26.016050"
+  },
+  {
+    "path": "medicine_and_health_sciences.clinical_medicine.obstetrics_and_gynecology",
+    "micro_name": "Obstetrics & Gynecology",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T06:07:30.792474"
   }
 ]
