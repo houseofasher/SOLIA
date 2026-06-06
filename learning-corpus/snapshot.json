@@ -15,7 +15,7 @@
       "batch_size": 25
     },
     "running": true,
-    "started_at": "2026-06-06T18:59:15.103471+00:00",
+    "started_at": "2026-06-06T19:02:53.812701+00:00",
     "last_run_at": null,
     "next_run_at": null,
     "cycles_completed": 0,
@@ -111,9 +111,9 @@
     "enabled": true,
     "recent": [
       {
-        "question": "What topic am I focused on learning right now?",
-        "answer": "Between batches — waiting for next target.",
-        "theme": "memory",
+        "question": "What changed in me since my last cycle?",
+        "answer": "I am 0 docs deep on 867 micro-topics — still learning.",
+        "theme": "continuity",
         "source": "startup",
         "grounded": false,
         "state_snapshot": {
@@ -121,12 +121,12 @@
           "cycles": 0,
           "focus": ""
         },
-        "ts": "2026-06-06T18:59:15.098566+00:00",
+        "ts": "2026-06-06T19:02:53.809894+00:00",
         "kind": "meta"
       }
     ]
   },
-  "exported_at": "2026-06-06T18:59:15.118462+00:00",
+  "exported_at": "2026-06-06T19:02:53.821478+00:00",
   "github_sync": {
     "batch_cursor": 0,
     "include_document_text": true,
