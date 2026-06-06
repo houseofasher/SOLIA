@@ -1,5 +1,311 @@
 [
   {
+    "run_id": "ffc2c740",
+    "domain_id": 1,
+    "subdomain_id": 6,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_observational_astronomy_ffc2c740/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "observational_astronomy",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T23:24:21.457993"
+  },
+  {
+    "run_id": "44902e44",
+    "domain_id": 1,
+    "subdomain_id": 5,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_soil_science_44902e44/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "soil_science",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T23:23:42.951725"
+  },
+  {
+    "run_id": "08e7cff8",
+    "domain_id": 1,
+    "subdomain_id": 5,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_glaciology_08e7cff8/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "glaciology",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T23:23:07.959424"
+  },
+  {
+    "run_id": "1170d988",
+    "domain_id": 1,
+    "subdomain_id": 5,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_hydrology_1170d988/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "hydrology",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T23:22:31.054937"
+  },
+  {
+    "run_id": "c4af9047",
+    "domain_id": 1,
+    "subdomain_id": 5,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_oceanography_c4af9047/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "oceanography",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T23:21:53.740875"
+  },
+  {
+    "run_id": "bf2f51cf",
+    "domain_id": 1,
+    "subdomain_id": 5,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_atmospheric_science_bf2f51cf/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "atmospheric_science",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T23:21:09.846365"
+  },
+  {
+    "run_id": "b2439e38",
+    "domain_id": 1,
+    "subdomain_id": 5,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_geology_b2439e38/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "geology",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T23:20:28.947330"
+  },
+  {
+    "run_id": "75befead",
+    "domain_id": 1,
+    "subdomain_id": 4,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_computational_mathematics_75befead/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "computational_mathematics",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T23:19:52.045907"
+  },
+  {
+    "run_id": "eba5a4e8",
+    "domain_id": 1,
+    "subdomain_id": 4,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_statistics_and_probability_eba5a4e8/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "statistics_and_probability",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T23:19:08.348303"
+  },
+  {
+    "run_id": "3aeff9cd",
+    "domain_id": 1,
+    "subdomain_id": 4,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_applied_mathematics_3aeff9cd/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "applied_mathematics",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T23:18:38.244617"
+  },
+  {
+    "run_id": "292a8565",
+    "domain_id": 1,
+    "subdomain_id": 4,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_pure_mathematics_292a8565/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "pure_mathematics",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T23:18:02.355634"
+  },
+  {
+    "run_id": "a3b599d0",
+    "domain_id": 1,
+    "subdomain_id": 3,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_marine_biology_a3b599d0/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "marine_biology",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T23:17:16.952759"
+  },
+  {
+    "run_id": "cee57c4b",
+    "domain_id": 1,
+    "subdomain_id": 3,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_developmental_biology_cee57c4b/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "developmental_biology",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T23:16:34.877943"
+  },
+  {
+    "run_id": "4a83d8cb",
+    "domain_id": 1,
+    "subdomain_id": 3,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_immunology_4a83d8cb/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "immunology",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T23:15:48.446269"
+  },
+  {
+    "run_id": "fd3cb352",
+    "domain_id": 1,
+    "subdomain_id": 3,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_physiology_fd3cb352/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "physiology",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T23:15:11.569926"
+  },
+  {
+    "run_id": "ef1f013e",
+    "domain_id": 1,
+    "subdomain_id": 3,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_neuroscience_ef1f013e/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "neuroscience",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T23:14:28.641807"
+  },
+  {
+    "run_id": "974a2335",
+    "domain_id": 1,
+    "subdomain_id": 3,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_microbiology_974a2335/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "microbiology",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T23:13:51.848975"
+  },
+  {
+    "run_id": "cd4d68cf",
+    "domain_id": 1,
+    "subdomain_id": 3,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_zoology_cd4d68cf/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "zoology",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-06T23:13:03.541994"
+  },
+  {
     "run_id": "224a8beb",
     "domain_id": 1,
     "subdomain_id": 3,
