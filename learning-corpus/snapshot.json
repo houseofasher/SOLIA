@@ -16,9 +16,9 @@
     },
     "running": true,
     "started_at": "2026-06-06T04:47:24.721904+00:00",
-    "last_run_at": "2026-06-06T11:27:53.904991+00:00",
-    "next_run_at": "2026-06-06T12:27:53.904997+00:00",
-    "cycles_completed": 7,
+    "last_run_at": "2026-06-06T12:36:07.769621+00:00",
+    "next_run_at": "2026-06-06T13:36:07.769626+00:00",
+    "cycles_completed": 8,
     "last_result": {
       "batch": true,
       "targets_total": 25,
@@ -27,25 +27,25 @@
       "graduations_passed": 25,
       "last_target": {
         "domain": "religion_and_spirituality",
-        "subdomain": "dharmic_religions",
-        "micro_subdomain": "buddhism"
+        "subdomain": "ancient_religions",
+        "micro_subdomain": "canaanite_religion"
       },
       "last_graduation": {
         "grade": "preschool",
         "passed": true,
-        "train_accuracy": 1.0,
+        "train_accuracy": 0.0,
         "min_train_accuracy": 0.45,
         "evaluator_passed": true,
         "unlocked_next": "elementary"
       },
       "sample_paths": [
-        "philosophy.philosophy_of_science.scientific_method",
-        "philosophy.philosophy_of_science.scientific_realism",
-        "philosophy.philosophy_of_science.philosophy_of_physics",
-        "philosophy.philosophy_of_science.philosophy_of_biology",
-        "philosophy.philosophy_of_science.philosophy_of_chemistry"
+        "religion_and_spirituality.dharmic_religions.jainism",
+        "religion_and_spirituality.dharmic_religions.sikhism",
+        "religion_and_spirituality.east_asian_religions.taoism",
+        "religion_and_spirituality.east_asian_religions.confucianism",
+        "religion_and_spirituality.east_asian_religions.shinto"
       ],
-      "batch_cursor": 175
+      "batch_cursor": 200
     },
     "last_error": null,
     "current_target": {
@@ -58,8 +58,8 @@
     "domains": 30,
     "micro_subdomains": 862,
     "micro_agents": 6162,
-    "documents": 512,
-    "grade_levels_graduated": 175,
+    "documents": 537,
+    "grade_levels_graduated": 200,
     "grade_progress_rows": 6034
   },
   "timeline": {
@@ -138,106 +138,106 @@
     "enabled": true,
     "recent": [
       {
-        "question": "What type of Theosophical Buddhism, Theosophical Buddhism, the Buddhism?",
-        "answer": "Theravada is a core concept within Buddhism (DHARMIC….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "religion_and_spirituality.dharmic_religions.buddhism",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": true,
-        "ts": "2026-06-06T11:27:53.904659+00:00"
-      },
-      {
-        "question": "What is one word I would use to describe Theosophical Buddhism?",
-        "answer": "Vajrayana (Tibetan)",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "religion_and_spirituality.dharmic_religions.buddhism",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-06T11:27:53.904426+00:00"
-      },
-      {
-        "question": "What type of Folk Hinduism, Folk Hinduism, Folk Shinto, Folk Music (Global), the Folk Dance (Global)?",
-        "answer": "Vaishnavism is a core concept within Hinduism (DHARMIC….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "religion_and_spirituality.dharmic_religions.hinduism",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": true,
-        "ts": "2026-06-06T11:27:49.256247+00:00"
-      },
-      {
-        "question": "What is one word I would use to describe Folk Hinduism?",
-        "answer": "Vaishnavism",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "religion_and_spirituality.dharmic_religions.hinduism",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-06T11:27:49.256026+00:00"
-      },
-      {
-        "question": "What type of Yazidism: Yazidism?",
-        "answer": "In this paper, using altering distance functions we obtain….",
+        "question": "What type of Canaanite Religion, Vedic Religion, Yoruba Religion, Akan Religion, the Zulu Religion?",
+        "answer": "Pick one facet of Canaanite Religion.",
         "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.abrahamic_religions.yazidism",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": true,
-        "ts": "2026-06-06T11:27:44.647919+00:00"
-      },
-      {
-        "question": "What is Yazidism?",
-        "answer": "In this paper, using altering distance functions we obtain….",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.abrahamic_religions.yazidism",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-06T11:27:44.647690+00:00"
-      },
-      {
-        "question": "What type of Mandaeism: Mandaeism?",
-        "answer": "Pick one facet of Mandaeism.",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.abrahamic_religions.mandaeism",
+        "path": "religion_and_spirituality.ancient_religions.canaanite_religion",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": false,
         "ciper": true,
-        "ts": "2026-06-06T11:27:39.515678+00:00"
+        "ts": "2026-06-06T12:36:07.769263+00:00"
       },
       {
-        "question": "What is one word I would use to describe Mandaeism?",
-        "answer": "mandaeism",
+        "question": "What is one word I would use to describe Canaanite Religion?",
+        "answer": "religion",
         "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.abrahamic_religions.mandaeism",
+        "path": "religion_and_spirituality.ancient_religions.canaanite_religion",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": false,
         "ciper": false,
-        "ts": "2026-06-06T11:27:39.515427+00:00"
+        "ts": "2026-06-06T12:36:07.769061+00:00"
+      },
+      {
+        "question": "What type of Ancient Persian Religion, Ancient Architecture, Ancient Egyptian History, Ancient Greek History, the Ancient Roman History?",
+        "answer": "Pick one facet of Ancient Persian Religion.",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "religion_and_spirituality.ancient_religions.ancient_persian_religion",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": false,
+        "ciper": true,
+        "ts": "2026-06-06T12:36:03.265772+00:00"
+      },
+      {
+        "question": "What is one word I would use to describe Ancient Persian Religion?",
+        "answer": "religion",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "religion_and_spirituality.ancient_religions.ancient_persian_religion",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": false,
+        "ciper": false,
+        "ts": "2026-06-06T12:36:03.265558+00:00"
+      },
+      {
+        "question": "What type of Mithraism: Mithraism?",
+        "answer": "Pick one facet of Mithraism.",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "religion_and_spirituality.ancient_religions.mithraism",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": false,
+        "ciper": true,
+        "ts": "2026-06-06T12:35:58.692860+00:00"
+      },
+      {
+        "question": "What is Mithraism?",
+        "answer": "No verified text for Mithraism yet.",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "religion_and_spirituality.ancient_religions.mithraism",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": false,
+        "ciper": false,
+        "ts": "2026-06-06T12:35:58.692650+00:00"
+      },
+      {
+        "question": "What type of Zoroastrianism: Zoroastrianism?",
+        "answer": "Pick one facet of Zoroastrianism.",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "religion_and_spirituality.ancient_religions.zoroastrianism",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": false,
+        "ciper": true,
+        "ts": "2026-06-06T12:35:34.333327+00:00"
+      },
+      {
+        "question": "What is Zoroastrianism?",
+        "answer": "No verified text for Zoroastrianism yet.",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "religion_and_spirituality.ancient_religions.zoroastrianism",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": false,
+        "ciper": false,
+        "ts": "2026-06-06T12:35:34.333136+00:00"
       }
     ]
   },
-  "exported_at": "2026-06-06T11:57:37.732137+00:00",
+  "exported_at": "2026-06-06T12:36:07.770036+00:00",
   "github_sync": {
-    "batch_cursor": 175,
+    "batch_cursor": 200,
     "include_document_text": true,
     "max_documents": 5000,
     "export_version": 2
