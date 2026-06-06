@@ -1589,5 +1589,264 @@
       "status": "completed"
     },
     "graduated_at": "2026-06-06T23:24:21.563911"
+  },
+  {
+    "path": "science_and_natural_philosophy.astronomy.theoretical_astronomy",
+    "micro_name": "Theoretical Astronomy",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T23:25:03.862082"
+  },
+  {
+    "path": "science_and_natural_philosophy.astronomy.planetary_science",
+    "micro_name": "Planetary Science",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T23:25:48.254177"
+  },
+  {
+    "path": "medicine_and_health_sciences.clinical_medicine.internal_medicine",
+    "micro_name": "Internal Medicine",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T23:26:35.764625"
+  },
+  {
+    "path": "medicine_and_health_sciences.clinical_medicine.surgery",
+    "micro_name": "Surgery",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T23:27:18.649769"
+  },
+  {
+    "path": "medicine_and_health_sciences.clinical_medicine.neurology",
+    "micro_name": "Neurology",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T23:28:05.754821"
+  },
+  {
+    "path": "medicine_and_health_sciences.clinical_medicine.psychiatry",
+    "micro_name": "Psychiatry",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T23:28:35.551757"
+  },
+  {
+    "path": "medicine_and_health_sciences.clinical_medicine.obstetrics_and_gynecology",
+    "micro_name": "Obstetrics & Gynecology",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-06T23:29:13.240697"
   }
 ]
