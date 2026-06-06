@@ -15,51 +15,20 @@
       "batch_size": 25
     },
     "running": true,
-    "started_at": "2026-06-06T04:47:24.721904+00:00",
-    "last_run_at": "2026-06-06T13:41:45.174074+00:00",
-    "next_run_at": "2026-06-06T14:41:45.174078+00:00",
-    "cycles_completed": 9,
-    "last_result": {
-      "batch": true,
-      "targets_total": 25,
-      "targets_in_corpus": 862,
-      "targets_processed": 25,
-      "graduations_passed": 25,
-      "last_target": {
-        "domain": "religion_and_spirituality",
-        "subdomain": "new_religious_movements",
-        "micro_subdomain": "hare_krishna"
-      },
-      "last_graduation": {
-        "grade": "preschool",
-        "passed": true,
-        "train_accuracy": 0.0,
-        "min_train_accuracy": 0.45,
-        "evaluator_passed": true,
-        "unlocked_next": "elementary"
-      },
-      "sample_paths": [
-        "religion_and_spirituality.ancient_religions.ancient_anatolian_religion",
-        "religion_and_spirituality.esoteric_and_occult_traditions.hermeticism",
-        "religion_and_spirituality.esoteric_and_occult_traditions.gnosticism",
-        "religion_and_spirituality.esoteric_and_occult_traditions.kabbalah",
-        "religion_and_spirituality.esoteric_and_occult_traditions.rosicrucianism"
-      ],
-      "batch_cursor": 225
-    },
+    "started_at": "2026-06-06T13:56:57.030024+00:00",
+    "last_run_at": null,
+    "next_run_at": null,
+    "cycles_completed": 0,
+    "last_result": {},
     "last_error": null,
-    "current_target": {
-      "mode": "batch",
-      "limits": "domains=all subs=all micros=all",
-      "domain_slugs": null
-    }
+    "current_target": null
   },
   "brain": {
     "domains": 30,
     "micro_subdomains": 862,
     "micro_agents": 6162,
-    "documents": 540,
-    "grade_levels_graduated": 225,
+    "documents": 0,
+    "grade_levels_graduated": 0,
     "grade_progress_rows": 6034
   },
   "timeline": {
@@ -136,108 +105,11 @@
   },
   "self_inquiry": {
     "enabled": true,
-    "recent": [
-      {
-        "question": "What type of Hare Krishna (ISKCON): Hare Krishna (ISKCON)?",
-        "answer": "We introduce a novel Longitudinal Focused Attention….",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.new_religious_movements.hare_krishna",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": true,
-        "ts": "2026-06-06T13:41:45.173724+00:00"
-      },
-      {
-        "question": "What is one word I would use to describe Hare Krishna (ISKCON)?",
-        "answer": "research",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.new_religious_movements.hare_krishna",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-06T13:41:45.173375+00:00"
-      },
-      {
-        "question": "What type of Neopaganism: Neopaganism?",
-        "answer": "Pick one facet of Neopaganism.",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.new_religious_movements.neopaganism",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": false,
-        "ciper": true,
-        "ts": "2026-06-06T13:41:39.835035+00:00"
-      },
-      {
-        "question": "What is Neopaganism?",
-        "answer": "No verified text for Neopaganism yet.",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.new_religious_movements.neopaganism",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": false,
-        "ciper": false,
-        "ts": "2026-06-06T13:41:39.834836+00:00"
-      },
-      {
-        "question": "What type of Spiritualism: Spiritualism?",
-        "answer": "The human presence in outer space is undergoing a….",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.new_religious_movements.spiritualism",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": true,
-        "ts": "2026-06-06T13:41:19.398861+00:00"
-      },
-      {
-        "question": "What is Spiritualism?",
-        "answer": "The human presence in outer space is undergoing a….",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.new_religious_movements.spiritualism",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-06T13:41:19.398572+00:00"
-      },
-      {
-        "question": "What type of Eckankar: Eckankar?",
-        "answer": "Pick one facet of Eckankar.",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.new_religious_movements.eckankar",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": false,
-        "ciper": true,
-        "ts": "2026-06-06T13:41:13.216225+00:00"
-      },
-      {
-        "question": "What is one word I would use to describe Eckankar?",
-        "answer": "eckankar",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.new_religious_movements.eckankar",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": false,
-        "ciper": false,
-        "ts": "2026-06-06T13:41:13.216003+00:00"
-      }
-    ]
+    "recent": []
   },
-  "exported_at": "2026-06-06T13:41:45.174614+00:00",
+  "exported_at": "2026-06-06T13:56:57.036550+00:00",
   "github_sync": {
-    "batch_cursor": 225,
+    "batch_cursor": 0,
     "include_document_text": true,
     "max_documents": 5000,
     "export_version": 2
