@@ -185,6 +185,20 @@ def augment_seeds_for_question(seeds: list[str], question: str) -> list[str]:
     return list(out)
 
 
+def prioritize_seeds_for_question(seeds: list[str], question: str) -> list[str]:
+    """Topic search URLs first — encyclopedia hits before broad site roots."""
+    augmented = augment_seeds_for_question(seeds, question)
+    search_first: list[str] = []
+    rest: list[str] = []
+    for url in augmented:
+        lower = url.lower()
+        if "search?" in lower or "search/" in lower or "/topic/" in lower or "/science/" in lower:
+            search_first.append(url)
+        else:
+            rest.append(url)
+    return search_first + rest
+
+
 def resolve_seeds_for_domain(domain: str) -> list[str]:
     """Fetch whitelisted seed URLs from OmniSpider domain-seeds config."""
     if not domain.strip():
@@ -266,7 +280,7 @@ def crawl_for_question(question: str, domain: str) -> list[CrawledDocument]:
 
 def _crawl_via_jobs(question: str, domain: str) -> list[CrawledDocument]:
     """Fallback: POST /v1/jobs, poll status, GET pages with includeText."""
-    seeds = augment_seeds_for_question(resolve_seeds_for_domain(domain), question)
+    seeds = prioritize_seeds_for_question(resolve_seeds_for_domain(domain), question)
     if not seeds:
         return []
     allowed = _allowed_domains_from_seeds(seeds)
