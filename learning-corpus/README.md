@@ -1,6 +1,6 @@
 # Aureon learning corpus (auto-synced)
 
-**Exported:** 2026-06-06T23:29:13.347299+00:00
+**Exported:** 2026-06-07T00:27:42.454216+00:00
 
 Full export of everything Aureon has learned — not just self-inquiry.
 
@@ -12,7 +12,7 @@ Full export of everything Aureon has learned — not just self-inquiry.
 - **In progress:** 0
 - **Training runs:** 50
 - **Benchmarks:** 150
-- **Preference pairs (RLHF):** 0
+- **Preference pairs (RLHF):** 1
 
 ## Files
 
