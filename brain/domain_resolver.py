@@ -86,6 +86,17 @@ _DOMAIN_HINTS: list[tuple[tuple[str, ...], str]] = [
         "economics",
     ),
     (("calculus", "algebra", "geometry", "topology", "theorem", "mathematic"), "mathematics"),
+    (
+        (
+            "algorithms",
+            "data structure",
+            "sorting algorithm",
+            "computational complexity",
+            "programming language",
+            "software engineering",
+        ),
+        "computer_science",
+    ),
     (("philosophy", "ethics", "metaphysics", "epistemology"), "humanities"),
 ]
 

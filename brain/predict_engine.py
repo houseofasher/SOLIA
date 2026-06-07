@@ -278,7 +278,7 @@ class PredictCorpusNotReady(Exception):
 
 
 def _predict_min_docs() -> int:
-    return _env_int("AUREON_PREDICT_MIN_DOCS", 5, minimum=1, maximum=10_000)
+    return _env_int("AUREON_PREDICT_MIN_DOCS", 25, minimum=1, maximum=10_000)
 
 
 def _corpus_document_count() -> int:

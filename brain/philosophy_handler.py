@@ -10,6 +10,23 @@ from brain.system_messages import FALLBACK_PHILOSOPHY, FALLBACK_TRAINING
 
 PHILOSOPHY_FALLBACK = FALLBACK_PHILOSOPHY
 
+# Technical / factual topics that mention "purpose" but are not philosophy.
+_NON_PHILOSOPHY_TOPIC_TERMS = (
+    "algorithm",
+    "algorithms",
+    "computer science",
+    "programming",
+    "software",
+    "data structure",
+    "machine learning",
+    "neural network",
+    "complexity",
+    "sorting",
+    "encryption",
+    "database",
+    "operating system",
+)
+
 PHILOSOPHY_SIGNALS = (
     "god",
     "belief",
@@ -146,6 +163,8 @@ def is_philosophy_question(text: str) -> bool:
     q = text.strip().lower()
     if is_personal_belief_question(text):
         return True
+    if any(term in q for term in _NON_PHILOSOPHY_TOPIC_TERMS):
+        return False
     return any(s in q for s in PHILOSOPHY_SIGNALS)
 
 

@@ -73,6 +73,59 @@ def _max_depth() -> int:
         return 2
 
 
+_DRIFT_BLOCKED_HOSTS = frozenset(
+    {
+        "github.com",
+        "gitlab.com",
+        "bitbucket.org",
+        "youtube.com",
+        "youtu.be",
+        "twitter.com",
+        "x.com",
+        "facebook.com",
+        "instagram.com",
+        "tiktok.com",
+        "reddit.com",
+        "linkedin.com",
+    }
+)
+
+
+def _host_from_url(url: str) -> str:
+    try:
+        return (urlparse(url).hostname or "").replace("www.", "").lower()
+    except Exception:
+        return ""
+
+
+def _allowed_domains_from_seeds(seeds: list[str]) -> list[str]:
+    hosts: list[str] = []
+    for seed in seeds:
+        host = _host_from_url(seed)
+        if host:
+            hosts.append(host)
+    return list(dict.fromkeys(hosts))
+
+
+def _is_trusted_crawl_url(url: str, allowed_domains: list[str] | None = None) -> bool:
+    host = _host_from_url(url)
+    if not host:
+        return False
+    if any(host == blocked or host.endswith(f".{blocked}") for blocked in _DRIFT_BLOCKED_HOSTS):
+        return False
+    if allowed_domains:
+        return any(host == d or host.endswith(f".{d}") for d in allowed_domains)
+    return True
+
+
+def _filter_crawl_documents(
+    docs: list[CrawledDocument],
+    *,
+    allowed_domains: list[str] | None = None,
+) -> list[CrawledDocument]:
+    return [d for d in docs if _is_trusted_crawl_url(d.url, allowed_domains)]
+
+
 def _question_focus_terms(question: str) -> list[str]:
     stop = frozenset(
         {
@@ -181,19 +234,21 @@ def crawl_for_question(question: str, domain: str) -> list[CrawledDocument]:
         )
         if response.status_code == 504:
             logger.warning("OmniSpider crawl timed out for domain=%s", domain)
-            return _crawl_via_jobs(question, domain)
+            return []
         response.raise_for_status()
         body = response.json()
         docs_raw = body.get("documents") if isinstance(body, dict) else None
         if not isinstance(docs_raw, list):
             return []
+        seeds = resolve_seeds_for_domain(domain)
+        allowed = _allowed_domains_from_seeds(seeds)
         out: list[CrawledDocument] = []
         for item in docs_raw:
             if not isinstance(item, dict):
                 continue
             text = str(item.get("text") or "").strip()
             url = str(item.get("url") or "").strip()
-            if len(text) < 80:
+            if len(text) < 80 or not _is_trusted_crawl_url(url, allowed):
                 continue
             out.append(
                 CrawledDocument(
@@ -214,6 +269,7 @@ def _crawl_via_jobs(question: str, domain: str) -> list[CrawledDocument]:
     seeds = augment_seeds_for_question(resolve_seeds_for_domain(domain), question)
     if not seeds:
         return []
+    allowed = _allowed_domains_from_seeds(seeds)
 
     try:
         create = requests.post(
@@ -226,6 +282,7 @@ def _crawl_via_jobs(question: str, domain: str) -> list[CrawledDocument]:
                 "includeArchive": False,
                 "includeSitemaps": False,
                 "topicFollowRelated": False,
+                "allowedDomains": allowed,
             },
             headers=_headers(),
             timeout=30,
@@ -267,7 +324,7 @@ def _crawl_via_jobs(question: str, domain: str) -> list[CrawledDocument]:
                 continue
             text = str(row.get("text") or "").strip()
             url = str(row.get("finalUrl") or row.get("url") or "").strip()
-            if len(text) < 80:
+            if len(text) < 80 or not _is_trusted_crawl_url(url, allowed):
                 continue
             out.append(
                 CrawledDocument(
@@ -306,6 +363,8 @@ def persist_crawl_documents(docs: list[CrawledDocument], domain_slug: str) -> in
             domain_id = domain_row.id if domain_row else None
 
             for doc in docs:
+                if not _is_trusted_crawl_url(doc.url):
+                    continue
                 raw = RawDocument(
                     doc_id=f"omnispider_{hashlib.sha256(doc.url.encode()).hexdigest()[:16]}",
                     source="omnispider",

@@ -25,6 +25,22 @@ BOILERPLATE_PATTERNS = (
 )
 WORD_RE = re.compile(r"[a-zA-Z]{2,}")
 
+# Social/code hosts — never part of live educational corpus.
+_BLOCKED_URL_HOSTS = (
+    "github.com",
+    "gitlab.com",
+    "bitbucket.org",
+    "youtube.com",
+    "youtu.be",
+    "twitter.com",
+    "x.com",
+    "facebook.com",
+    "instagram.com",
+    "tiktok.com",
+    "reddit.com",
+    "linkedin.com",
+)
+
 
 def _word_count(text: str) -> int:
     return len(WORD_RE.findall(text))
@@ -63,8 +79,17 @@ def score_quality(doc: RawDocument) -> float:
     return max(0.0, min(1.0, score - boilerplate_penalty))
 
 
+def _url_blocked(url: str | None) -> bool:
+    if not url:
+        return False
+    lowered = url.lower()
+    return any(host in lowered for host in _BLOCKED_URL_HOSTS)
+
+
 def filter_document(doc: RawDocument) -> tuple[bool, float, str]:
     text = doc.text.strip()
+    if _url_blocked(doc.url):
+        return False, 0.0, "blocked_url_host"
     if len(text) < MIN_TEXT_LENGTH:
         return False, 0.0, "too_short"
     if len(text) > MAX_TEXT_LENGTH:
