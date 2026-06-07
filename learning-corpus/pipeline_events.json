@@ -2,6 +2,1844 @@
   {
     "step": "brain_reward",
     "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "distributed_systems",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-07T01:55:49.352247"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "distributed_systems",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-07T01:55:49.056103"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "distributed_systems",
+      "grade": "preschool",
+      "run_id": "a9322c0a",
+      "samples": 4,
+      "classes": 4,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-07T01:55:49.053768"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "distributed_systems",
+      "grade": "preschool",
+      "labeled": 4,
+      "auto_labeled": 4,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-07T01:55:48.959074"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "distributed_systems",
+      "grade": "preschool",
+      "documents_checked": 4,
+      "newly_verified": 4,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-07T01:55:48.945791"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "distributed_systems",
+      "grade": "preschool",
+      "collection_attempts": 5,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-07T01:55:48.855121"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "quantum_computing",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-07T01:55:12.856831"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "quantum_computing",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-07T01:55:12.653930"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "quantum_computing",
+      "grade": "preschool",
+      "run_id": "14b0b374",
+      "samples": 4,
+      "classes": 4,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-07T01:55:12.649942"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "quantum_computing",
+      "grade": "preschool",
+      "labeled": 4,
+      "auto_labeled": 4,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-07T01:55:12.458563"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "quantum_computing",
+      "grade": "preschool",
+      "documents_checked": 4,
+      "newly_verified": 4,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-07T01:55:12.258415"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "quantum_computing",
+      "grade": "preschool",
+      "collection_attempts": 5,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-07T01:55:12.256655"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "human_computer_interaction",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-07T01:54:36.360537"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "human_computer_interaction",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-07T01:54:36.158985"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "human_computer_interaction",
+      "grade": "preschool",
+      "run_id": "e161869d",
+      "samples": 3,
+      "classes": 3,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-07T01:54:36.156256"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "human_computer_interaction",
+      "grade": "preschool",
+      "labeled": 3,
+      "auto_labeled": 3,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-07T01:54:36.060670"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "human_computer_interaction",
+      "grade": "preschool",
+      "documents_checked": 3,
+      "newly_verified": 3,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-07T01:54:35.880197"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "human_computer_interaction",
+      "grade": "preschool",
+      "collection_attempts": 5,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-07T01:54:35.878395"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "software_engineering",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-07T01:54:05.655852"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "software_engineering",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-07T01:54:05.546053"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "software_engineering",
+      "grade": "preschool",
+      "run_id": "3b522ed1",
+      "samples": 4,
+      "classes": 4,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-07T01:54:05.461067"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "software_engineering",
+      "grade": "preschool",
+      "labeled": 4,
+      "auto_labeled": 4,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-07T01:54:05.358420"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "software_engineering",
+      "grade": "preschool",
+      "documents_checked": 4,
+      "newly_verified": 4,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-07T01:54:05.349087"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "software_engineering",
+      "grade": "preschool",
+      "collection_attempts": 5,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-07T01:54:05.347101"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "cybersecurity",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-07T01:53:25.353718"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "cybersecurity",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-07T01:53:25.059377"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "cybersecurity",
+      "grade": "preschool",
+      "run_id": "0a0799f4",
+      "samples": 4,
+      "classes": 4,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-07T01:53:25.052720"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "cybersecurity",
+      "grade": "preschool",
+      "labeled": 4,
+      "auto_labeled": 4,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-07T01:53:24.954609"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "cybersecurity",
+      "grade": "preschool",
+      "documents_checked": 4,
+      "newly_verified": 4,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-07T01:53:24.661012"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "cybersecurity",
+      "grade": "preschool",
+      "collection_attempts": 5,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-07T01:53:24.654196"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "artificial_intelligence",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-07T01:52:52.753411"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "artificial_intelligence",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-07T01:52:52.644206"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "artificial_intelligence",
+      "grade": "preschool",
+      "run_id": "a47bc6fb",
+      "samples": 4,
+      "classes": 4,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-07T01:52:52.554115"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "artificial_intelligence",
+      "grade": "preschool",
+      "labeled": 4,
+      "auto_labeled": 4,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-07T01:52:52.461055"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "artificial_intelligence",
+      "grade": "preschool",
+      "documents_checked": 4,
+      "newly_verified": 4,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-07T01:52:52.350117"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "artificial_intelligence",
+      "grade": "preschool",
+      "collection_attempts": 5,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-07T01:52:52.348544"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "computer_networks",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-07T01:52:19.441162"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "computer_networks",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-07T01:52:19.159576"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "computer_networks",
+      "grade": "preschool",
+      "run_id": "a15260a4",
+      "samples": 4,
+      "classes": 4,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-07T01:52:19.155601"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "computer_networks",
+      "grade": "preschool",
+      "labeled": 4,
+      "auto_labeled": 4,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-07T01:52:19.055900"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "computer_networks",
+      "grade": "preschool",
+      "documents_checked": 4,
+      "newly_verified": 4,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-07T01:52:18.857870"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "computer_networks",
+      "grade": "preschool",
+      "collection_attempts": 5,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-07T01:52:18.856291"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "databases",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-07T01:51:42.448453"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "databases",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-07T01:51:42.147447"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "databases",
+      "grade": "preschool",
+      "run_id": "4a2b50f2",
+      "samples": 4,
+      "classes": 4,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-07T01:51:42.144696"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "databases",
+      "grade": "preschool",
+      "labeled": 4,
+      "auto_labeled": 4,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-07T01:51:41.958256"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "databases",
+      "grade": "preschool",
+      "documents_checked": 4,
+      "newly_verified": 4,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-07T01:51:41.856588"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "databases",
+      "grade": "preschool",
+      "collection_attempts": 5,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-07T01:51:41.852092"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "operating_systems",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-07T01:51:02.750094"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "operating_systems",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-07T01:51:02.649546"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "operating_systems",
+      "grade": "preschool",
+      "run_id": "eb60829b",
+      "samples": 4,
+      "classes": 4,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-07T01:51:02.647031"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "operating_systems",
+      "grade": "preschool",
+      "labeled": 4,
+      "auto_labeled": 4,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-07T01:51:02.550823"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "operating_systems",
+      "grade": "preschool",
+      "documents_checked": 4,
+      "newly_verified": 4,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-07T01:51:02.447398"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "operating_systems",
+      "grade": "preschool",
+      "collection_attempts": 5,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-07T01:51:02.445716"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "programming_languages",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-07T01:50:32.549529"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "programming_languages",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-07T01:50:32.150601"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "programming_languages",
+      "grade": "preschool",
+      "run_id": "84dad3bb",
+      "samples": 4,
+      "classes": 4,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-07T01:50:32.145527"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "programming_languages",
+      "grade": "preschool",
+      "labeled": 4,
+      "auto_labeled": 4,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-07T01:50:31.946358"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "programming_languages",
+      "grade": "preschool",
+      "documents_checked": 4,
+      "newly_verified": 4,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-07T01:50:31.756088"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "programming_languages",
+      "grade": "preschool",
+      "collection_attempts": 5,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-07T01:50:31.753793"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "algorithms_and_data_structures",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-07T01:49:59.641899"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "algorithms_and_data_structures",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-07T01:49:59.356100"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "algorithms_and_data_structures",
+      "grade": "preschool",
+      "run_id": "34ad6245",
+      "samples": 4,
+      "classes": 4,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-07T01:49:59.350464"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "algorithms_and_data_structures",
+      "grade": "preschool",
+      "labeled": 4,
+      "auto_labeled": 4,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-07T01:49:59.253927"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "algorithms_and_data_structures",
+      "grade": "preschool",
+      "documents_checked": 4,
+      "newly_verified": 4,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-07T01:49:59.054464"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 3,
+    "payload": {
+      "domain": "technology_and_engineering",
+      "subdomain": "computer_science",
+      "micro_subdomain": "algorithms_and_data_structures",
+      "grade": "preschool",
+      "collection_attempts": 5,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-07T01:49:59.052169"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 2,
+    "payload": {
+      "domain": "medicine_and_health_sciences",
+      "subdomain": "traditional_and_alternative_medicine",
+      "micro_subdomain": "indigenous_healing_systems",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-07T01:49:25.855513"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 2,
+    "payload": {
+      "domain": "medicine_and_health_sciences",
+      "subdomain": "traditional_and_alternative_medicine",
+      "micro_subdomain": "indigenous_healing_systems",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-07T01:49:25.653446"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 2,
+    "payload": {
+      "domain": "medicine_and_health_sciences",
+      "subdomain": "traditional_and_alternative_medicine",
+      "micro_subdomain": "indigenous_healing_systems",
+      "grade": "preschool",
+      "run_id": "0e5f2b3f",
+      "samples": 3,
+      "classes": 3,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-07T01:49:25.650841"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 2,
+    "payload": {
+      "domain": "medicine_and_health_sciences",
+      "subdomain": "traditional_and_alternative_medicine",
+      "micro_subdomain": "indigenous_healing_systems",
+      "grade": "preschool",
+      "labeled": 3,
+      "auto_labeled": 3,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-07T01:49:25.553255"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 2,
+    "payload": {
+      "domain": "medicine_and_health_sciences",
+      "subdomain": "traditional_and_alternative_medicine",
+      "micro_subdomain": "indigenous_healing_systems",
+      "grade": "preschool",
+      "documents_checked": 3,
+      "newly_verified": 3,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-07T01:49:25.364412"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 2,
+    "payload": {
+      "domain": "medicine_and_health_sciences",
+      "subdomain": "traditional_and_alternative_medicine",
+      "micro_subdomain": "indigenous_healing_systems",
+      "grade": "preschool",
+      "collection_attempts": 4,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-07T01:49:25.362254"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 2,
+    "payload": {
+      "domain": "medicine_and_health_sciences",
+      "subdomain": "traditional_and_alternative_medicine",
+      "micro_subdomain": "african_traditional_medicine",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-07T01:48:47.856091"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 2,
+    "payload": {
+      "domain": "medicine_and_health_sciences",
+      "subdomain": "traditional_and_alternative_medicine",
+      "micro_subdomain": "african_traditional_medicine",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-07T01:48:47.559216"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "skipped",
+    "domain_id": 2,
+    "payload": {
+      "domain": "medicine_and_health_sciences",
+      "subdomain": "traditional_and_alternative_medicine",
+      "micro_subdomain": "african_traditional_medicine",
+      "grade": "preschool",
+      "reason": "insufficient labeled data",
+      "samples": 1
+    },
+    "created_at": "2026-06-07T01:48:47.556924"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 2,
+    "payload": {
+      "domain": "medicine_and_health_sciences",
+      "subdomain": "traditional_and_alternative_medicine",
+      "micro_subdomain": "african_traditional_medicine",
+      "grade": "preschool",
+      "labeled": 1,
+      "auto_labeled": 1,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-07T01:48:47.555268"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 2,
+    "payload": {
+      "domain": "medicine_and_health_sciences",
+      "subdomain": "traditional_and_alternative_medicine",
+      "micro_subdomain": "african_traditional_medicine",
+      "grade": "preschool",
+      "documents_checked": 1,
+      "newly_verified": 1,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-07T01:48:47.540818"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 2,
+    "payload": {
+      "domain": "medicine_and_health_sciences",
+      "subdomain": "traditional_and_alternative_medicine",
+      "micro_subdomain": "african_traditional_medicine",
+      "grade": "preschool",
+      "collection_attempts": 2,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-07T01:48:47.461518"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 2,
+    "payload": {
+      "domain": "medicine_and_health_sciences",
+      "subdomain": "traditional_and_alternative_medicine",
+      "micro_subdomain": "shamanic_medicine",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-07T01:48:10.949199"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 2,
+    "payload": {
+      "domain": "medicine_and_health_sciences",
+      "subdomain": "traditional_and_alternative_medicine",
+      "micro_subdomain": "shamanic_medicine",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-07T01:48:10.650421"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 2,
+    "payload": {
+      "domain": "medicine_and_health_sciences",
+      "subdomain": "traditional_and_alternative_medicine",
+      "micro_subdomain": "shamanic_medicine",
+      "grade": "preschool",
+      "run_id": "3250f272",
+      "samples": 3,
+      "classes": 3,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-07T01:48:10.647643"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 2,
+    "payload": {
+      "domain": "medicine_and_health_sciences",
+      "subdomain": "traditional_and_alternative_medicine",
+      "micro_subdomain": "shamanic_medicine",
+      "grade": "preschool",
+      "labeled": 3,
+      "auto_labeled": 3,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-07T01:48:10.457644"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 2,
+    "payload": {
+      "domain": "medicine_and_health_sciences",
+      "subdomain": "traditional_and_alternative_medicine",
+      "micro_subdomain": "shamanic_medicine",
+      "grade": "preschool",
+      "documents_checked": 3,
+      "newly_verified": 3,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-07T01:48:10.357225"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 2,
+    "payload": {
+      "domain": "medicine_and_health_sciences",
+      "subdomain": "traditional_and_alternative_medicine",
+      "micro_subdomain": "shamanic_medicine",
+      "grade": "preschool",
+      "collection_attempts": 4,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-07T01:48:10.351276"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 2,
+    "payload": {
+      "domain": "medicine_and_health_sciences",
+      "subdomain": "traditional_and_alternative_medicine",
+      "micro_subdomain": "osteopathy",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-07T01:47:39.950954"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 2,
+    "payload": {
+      "domain": "medicine_and_health_sciences",
+      "subdomain": "traditional_and_alternative_medicine",
+      "micro_subdomain": "osteopathy",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-07T01:47:39.848712"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "skipped",
+    "domain_id": 2,
+    "payload": {
+      "domain": "medicine_and_health_sciences",
+      "subdomain": "traditional_and_alternative_medicine",
+      "micro_subdomain": "osteopathy",
+      "grade": "preschool",
+      "reason": "insufficient labeled data",
+      "samples": 0
+    },
+    "created_at": "2026-06-07T01:47:39.846739"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "skipped",
+    "domain_id": 2,
+    "payload": {
+      "domain": "medicine_and_health_sciences",
+      "subdomain": "traditional_and_alternative_medicine",
+      "micro_subdomain": "osteopathy",
+      "grade": "preschool",
+      "reason": "no verified documents"
+    },
+    "created_at": "2026-06-07T01:47:39.845656"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 2,
+    "payload": {
+      "domain": "medicine_and_health_sciences",
+      "subdomain": "traditional_and_alternative_medicine",
+      "micro_subdomain": "osteopathy",
+      "grade": "preschool",
+      "documents_checked": 0,
+      "newly_verified": 0,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-07T01:47:39.844349"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 2,
+    "payload": {
+      "domain": "medicine_and_health_sciences",
+      "subdomain": "traditional_and_alternative_medicine",
+      "micro_subdomain": "osteopathy",
+      "grade": "preschool",
+      "collection_attempts": 1,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-07T01:47:39.841636"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 2,
+    "payload": {
+      "domain": "medicine_and_health_sciences",
+      "subdomain": "traditional_and_alternative_medicine",
+      "micro_subdomain": "chiropractic",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-07T01:47:04.651553"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 2,
+    "payload": {
+      "domain": "medicine_and_health_sciences",
+      "subdomain": "traditional_and_alternative_medicine",
+      "micro_subdomain": "chiropractic",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-07T01:47:04.352787"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "skipped",
+    "domain_id": 2,
+    "payload": {
+      "domain": "medicine_and_health_sciences",
+      "subdomain": "traditional_and_alternative_medicine",
+      "micro_subdomain": "chiropractic",
+      "grade": "preschool",
+      "reason": "insufficient labeled data",
+      "samples": 0
+    },
+    "created_at": "2026-06-07T01:47:04.347657"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "skipped",
+    "domain_id": 2,
+    "payload": {
+      "domain": "medicine_and_health_sciences",
+      "subdomain": "traditional_and_alternative_medicine",
+      "micro_subdomain": "chiropractic",
+      "grade": "preschool",
+      "reason": "no verified documents"
+    },
+    "created_at": "2026-06-07T01:47:04.342365"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 2,
+    "payload": {
+      "domain": "medicine_and_health_sciences",
+      "subdomain": "traditional_and_alternative_medicine",
+      "micro_subdomain": "chiropractic",
+      "grade": "preschool",
+      "documents_checked": 0,
+      "newly_verified": 0,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-07T01:47:04.340876"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 2,
+    "payload": {
+      "domain": "medicine_and_health_sciences",
+      "subdomain": "traditional_and_alternative_medicine",
+      "micro_subdomain": "chiropractic",
+      "grade": "preschool",
+      "collection_attempts": 1,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-07T01:47:04.253207"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
     "domain_id": 2,
     "payload": {
       "domain": "medicine_and_health_sciences",
@@ -7811,880 +9649,5 @@
       }
     },
     "created_at": "2026-06-06T22:00:45.548443"
-  },
-  {
-    "step": "brain_trainer",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "condensed_matter_physics",
-      "grade": "preschool",
-      "run_id": "e5ab3040",
-      "samples": 3,
-      "classes": 3,
-      "train_accuracy": 1.0,
-      "val_accuracy": 1.0,
-      "promoted": false
-    },
-    "created_at": "2026-06-06T22:00:45.462468"
-  },
-  {
-    "step": "brain_labeler",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "condensed_matter_physics",
-      "grade": "preschool",
-      "labeled": 3,
-      "auto_labeled": 3,
-      "flagged_for_review": 0,
-      "review_rate": 0.0
-    },
-    "created_at": "2026-06-06T22:00:45.452134"
-  },
-  {
-    "step": "brain_verifier",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "condensed_matter_physics",
-      "grade": "preschool",
-      "documents_checked": 3,
-      "newly_verified": 3,
-      "failed_verification": 0
-    },
-    "created_at": "2026-06-06T22:00:45.349765"
-  },
-  {
-    "step": "brain_collector",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "condensed_matter_physics",
-      "grade": "preschool",
-      "collection_attempts": 5,
-      "new_documents": 0
-    },
-    "created_at": "2026-06-06T22:00:45.347825"
-  },
-  {
-    "step": "brain_reward",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "nuclear_and_particle_physics",
-      "grade": "preschool",
-      "reward_val_accuracy": 0.125,
-      "ranking_accuracy": 0.5,
-      "preference_pairs_used": 32
-    },
-    "created_at": "2026-06-06T21:56:24.658624"
-  },
-  {
-    "step": "brain_evaluator",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "nuclear_and_particle_physics",
-      "grade": "preschool",
-      "benchmarks": {
-        "reasoning": {
-          "score": 1.0,
-          "passed": true
-        },
-        "consistency": {
-          "score": 1.0,
-          "passed": true
-        },
-        "verification": {
-          "score": 1.0,
-          "passed": true
-        }
-      },
-      "gates": {
-        "reasoning": true,
-        "consistency": true,
-        "verification": true
-      },
-      "all_passed": true,
-      "grade_slug": "preschool",
-      "thresholds": {
-        "reasoning": 0.2,
-        "consistency": 0.35,
-        "verification": 0.35
-      }
-    },
-    "created_at": "2026-06-06T21:56:21.518132"
-  },
-  {
-    "step": "brain_trainer",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "nuclear_and_particle_physics",
-      "grade": "preschool",
-      "run_id": "ce7e96ad",
-      "samples": 3,
-      "classes": 3,
-      "train_accuracy": 1.0,
-      "val_accuracy": 1.0,
-      "promoted": false
-    },
-    "created_at": "2026-06-06T21:56:21.253764"
-  },
-  {
-    "step": "brain_labeler",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "nuclear_and_particle_physics",
-      "grade": "preschool",
-      "labeled": 3,
-      "auto_labeled": 3,
-      "flagged_for_review": 0,
-      "review_rate": 0.0
-    },
-    "created_at": "2026-06-06T21:56:20.732574"
-  },
-  {
-    "step": "brain_verifier",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "nuclear_and_particle_physics",
-      "grade": "preschool",
-      "documents_checked": 3,
-      "newly_verified": 3,
-      "failed_verification": 0
-    },
-    "created_at": "2026-06-06T21:56:20.568659"
-  },
-  {
-    "step": "brain_collector",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "nuclear_and_particle_physics",
-      "grade": "preschool",
-      "collection_attempts": 5,
-      "new_documents": 0
-    },
-    "created_at": "2026-06-06T21:56:20.492804"
-  },
-  {
-    "step": "brain_reward",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "astrophysics_and_cosmology",
-      "grade": "preschool",
-      "reward_val_accuracy": 0.125,
-      "ranking_accuracy": 0.5,
-      "preference_pairs_used": 32
-    },
-    "created_at": "2026-06-06T21:51:44.833421"
-  },
-  {
-    "step": "brain_evaluator",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "astrophysics_and_cosmology",
-      "grade": "preschool",
-      "benchmarks": {
-        "reasoning": {
-          "score": 1.0,
-          "passed": true
-        },
-        "consistency": {
-          "score": 1.0,
-          "passed": true
-        },
-        "verification": {
-          "score": 1.0,
-          "passed": true
-        }
-      },
-      "gates": {
-        "reasoning": true,
-        "consistency": true,
-        "verification": true
-      },
-      "all_passed": true,
-      "grade_slug": "preschool",
-      "thresholds": {
-        "reasoning": 0.2,
-        "consistency": 0.35,
-        "verification": 0.35
-      }
-    },
-    "created_at": "2026-06-06T21:51:43.039546"
-  },
-  {
-    "step": "brain_trainer",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "astrophysics_and_cosmology",
-      "grade": "preschool",
-      "run_id": "3e6c7319",
-      "samples": 3,
-      "classes": 3,
-      "train_accuracy": 1.0,
-      "val_accuracy": 1.0,
-      "promoted": false
-    },
-    "created_at": "2026-06-06T21:51:42.871435"
-  },
-  {
-    "step": "brain_labeler",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "astrophysics_and_cosmology",
-      "grade": "preschool",
-      "labeled": 3,
-      "auto_labeled": 3,
-      "flagged_for_review": 0,
-      "review_rate": 0.0
-    },
-    "created_at": "2026-06-06T21:51:42.616033"
-  },
-  {
-    "step": "brain_verifier",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "astrophysics_and_cosmology",
-      "grade": "preschool",
-      "documents_checked": 3,
-      "newly_verified": 3,
-      "failed_verification": 0
-    },
-    "created_at": "2026-06-06T21:51:42.501304"
-  },
-  {
-    "step": "brain_collector",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "astrophysics_and_cosmology",
-      "grade": "preschool",
-      "collection_attempts": 5,
-      "new_documents": 0
-    },
-    "created_at": "2026-06-06T21:51:42.452538"
-  },
-  {
-    "step": "brain_reward",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "relativity",
-      "grade": "preschool",
-      "reward_val_accuracy": 0.125,
-      "ranking_accuracy": 0.5,
-      "preference_pairs_used": 32
-    },
-    "created_at": "2026-06-06T21:47:09.047830"
-  },
-  {
-    "step": "brain_evaluator",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "relativity",
-      "grade": "preschool",
-      "benchmarks": {
-        "reasoning": {
-          "score": 1.0,
-          "passed": true
-        },
-        "consistency": {
-          "score": 1.0,
-          "passed": true
-        },
-        "verification": {
-          "score": 1.0,
-          "passed": true
-        }
-      },
-      "gates": {
-        "reasoning": true,
-        "consistency": true,
-        "verification": true
-      },
-      "all_passed": true,
-      "grade_slug": "preschool",
-      "thresholds": {
-        "reasoning": 0.2,
-        "consistency": 0.35,
-        "verification": 0.35
-      }
-    },
-    "created_at": "2026-06-06T21:47:05.201334"
-  },
-  {
-    "step": "brain_trainer",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "relativity",
-      "grade": "preschool",
-      "run_id": "3f3b964f",
-      "samples": 3,
-      "classes": 3,
-      "train_accuracy": 1.0,
-      "val_accuracy": 1.0,
-      "promoted": false
-    },
-    "created_at": "2026-06-06T21:47:05.018447"
-  },
-  {
-    "step": "brain_labeler",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "relativity",
-      "grade": "preschool",
-      "labeled": 3,
-      "auto_labeled": 3,
-      "flagged_for_review": 0,
-      "review_rate": 0.0
-    },
-    "created_at": "2026-06-06T21:47:04.615319"
-  },
-  {
-    "step": "brain_verifier",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "relativity",
-      "grade": "preschool",
-      "documents_checked": 3,
-      "newly_verified": 3,
-      "failed_verification": 0
-    },
-    "created_at": "2026-06-06T21:47:04.404627"
-  },
-  {
-    "step": "brain_collector",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "relativity",
-      "grade": "preschool",
-      "collection_attempts": 5,
-      "new_documents": 0
-    },
-    "created_at": "2026-06-06T21:47:04.298618"
-  },
-  {
-    "step": "brain_reward",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "quantum_mechanics",
-      "grade": "preschool",
-      "reward_val_accuracy": 0.125,
-      "ranking_accuracy": 0.5,
-      "preference_pairs_used": 32
-    },
-    "created_at": "2026-06-06T21:42:30.900889"
-  },
-  {
-    "step": "brain_evaluator",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "quantum_mechanics",
-      "grade": "preschool",
-      "benchmarks": {
-        "reasoning": {
-          "score": 1.0,
-          "passed": true
-        },
-        "consistency": {
-          "score": 1.0,
-          "passed": true
-        },
-        "verification": {
-          "score": 1.0,
-          "passed": true
-        }
-      },
-      "gates": {
-        "reasoning": true,
-        "consistency": true,
-        "verification": true
-      },
-      "all_passed": true,
-      "grade_slug": "preschool",
-      "thresholds": {
-        "reasoning": 0.2,
-        "consistency": 0.35,
-        "verification": 0.35
-      }
-    },
-    "created_at": "2026-06-06T21:42:26.943384"
-  },
-  {
-    "step": "brain_trainer",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "quantum_mechanics",
-      "grade": "preschool",
-      "run_id": "5fdcae1a",
-      "samples": 3,
-      "classes": 3,
-      "train_accuracy": 1.0,
-      "val_accuracy": 1.0,
-      "promoted": false
-    },
-    "created_at": "2026-06-06T21:42:26.688102"
-  },
-  {
-    "step": "brain_labeler",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "quantum_mechanics",
-      "grade": "preschool",
-      "labeled": 3,
-      "auto_labeled": 3,
-      "flagged_for_review": 0,
-      "review_rate": 0.0
-    },
-    "created_at": "2026-06-06T21:42:26.310931"
-  },
-  {
-    "step": "brain_verifier",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "quantum_mechanics",
-      "grade": "preschool",
-      "documents_checked": 3,
-      "newly_verified": 3,
-      "failed_verification": 0
-    },
-    "created_at": "2026-06-06T21:42:26.199693"
-  },
-  {
-    "step": "brain_collector",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "quantum_mechanics",
-      "grade": "preschool",
-      "collection_attempts": 5,
-      "new_documents": 0
-    },
-    "created_at": "2026-06-06T21:42:26.130140"
-  },
-  {
-    "step": "brain_reward",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "electromagnetism",
-      "grade": "preschool",
-      "reward_val_accuracy": 0.125,
-      "ranking_accuracy": 0.5,
-      "preference_pairs_used": 32
-    },
-    "created_at": "2026-06-06T21:37:49.756696"
-  },
-  {
-    "step": "brain_evaluator",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "electromagnetism",
-      "grade": "preschool",
-      "benchmarks": {
-        "reasoning": {
-          "score": 1.0,
-          "passed": true
-        },
-        "consistency": {
-          "score": 1.0,
-          "passed": true
-        },
-        "verification": {
-          "score": 1.0,
-          "passed": true
-        }
-      },
-      "gates": {
-        "reasoning": true,
-        "consistency": true,
-        "verification": true
-      },
-      "all_passed": true,
-      "grade_slug": "preschool",
-      "thresholds": {
-        "reasoning": 0.2,
-        "consistency": 0.35,
-        "verification": 0.35
-      }
-    },
-    "created_at": "2026-06-06T21:37:45.726830"
-  },
-  {
-    "step": "brain_trainer",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "electromagnetism",
-      "grade": "preschool",
-      "run_id": "10e8f45b",
-      "samples": 4,
-      "classes": 4,
-      "train_accuracy": 1.0,
-      "val_accuracy": 1.0,
-      "promoted": false
-    },
-    "created_at": "2026-06-06T21:37:45.547038"
-  },
-  {
-    "step": "brain_labeler",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "electromagnetism",
-      "grade": "preschool",
-      "labeled": 4,
-      "auto_labeled": 4,
-      "flagged_for_review": 0,
-      "review_rate": 0.0
-    },
-    "created_at": "2026-06-06T21:37:45.188124"
-  },
-  {
-    "step": "brain_verifier",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "electromagnetism",
-      "grade": "preschool",
-      "documents_checked": 4,
-      "newly_verified": 4,
-      "failed_verification": 0
-    },
-    "created_at": "2026-06-06T21:37:44.953849"
-  },
-  {
-    "step": "brain_collector",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "electromagnetism",
-      "grade": "preschool",
-      "collection_attempts": 5,
-      "new_documents": 0
-    },
-    "created_at": "2026-06-06T21:37:44.836407"
-  },
-  {
-    "step": "brain_reward",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "thermodynamics",
-      "grade": "preschool",
-      "reward_val_accuracy": 0.125,
-      "ranking_accuracy": 0.5,
-      "preference_pairs_used": 32
-    },
-    "created_at": "2026-06-06T21:33:09.349031"
-  },
-  {
-    "step": "brain_evaluator",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "thermodynamics",
-      "grade": "preschool",
-      "benchmarks": {
-        "reasoning": {
-          "score": 1.0,
-          "passed": true
-        },
-        "consistency": {
-          "score": 1.0,
-          "passed": true
-        },
-        "verification": {
-          "score": 1.0,
-          "passed": true
-        }
-      },
-      "gates": {
-        "reasoning": true,
-        "consistency": true,
-        "verification": true
-      },
-      "all_passed": true,
-      "grade_slug": "preschool",
-      "thresholds": {
-        "reasoning": 0.2,
-        "consistency": 0.35,
-        "verification": 0.35
-      }
-    },
-    "created_at": "2026-06-06T21:33:05.826716"
-  },
-  {
-    "step": "brain_trainer",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "thermodynamics",
-      "grade": "preschool",
-      "run_id": "4ed0f982",
-      "samples": 3,
-      "classes": 3,
-      "train_accuracy": 1.0,
-      "val_accuracy": 1.0,
-      "promoted": false
-    },
-    "created_at": "2026-06-06T21:33:05.672601"
-  },
-  {
-    "step": "brain_labeler",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "thermodynamics",
-      "grade": "preschool",
-      "labeled": 3,
-      "auto_labeled": 3,
-      "flagged_for_review": 0,
-      "review_rate": 0.0
-    },
-    "created_at": "2026-06-06T21:33:05.373283"
-  },
-  {
-    "step": "brain_verifier",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "thermodynamics",
-      "grade": "preschool",
-      "documents_checked": 3,
-      "newly_verified": 3,
-      "failed_verification": 0
-    },
-    "created_at": "2026-06-06T21:33:05.240795"
-  },
-  {
-    "step": "brain_collector",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "thermodynamics",
-      "grade": "preschool",
-      "collection_attempts": 4,
-      "new_documents": 0
-    },
-    "created_at": "2026-06-06T21:33:05.160507"
-  },
-  {
-    "step": "brain_reward",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "classical_mechanics",
-      "grade": "preschool",
-      "reward_val_accuracy": 0.125,
-      "ranking_accuracy": 0.5,
-      "preference_pairs_used": 32
-    },
-    "created_at": "2026-06-06T21:28:18.139591"
-  },
-  {
-    "step": "brain_evaluator",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "classical_mechanics",
-      "grade": "preschool",
-      "benchmarks": {
-        "reasoning": {
-          "score": 1.0,
-          "passed": true
-        },
-        "consistency": {
-          "score": 1.0,
-          "passed": true
-        },
-        "verification": {
-          "score": 1.0,
-          "passed": true
-        }
-      },
-      "gates": {
-        "reasoning": true,
-        "consistency": true,
-        "verification": true
-      },
-      "all_passed": true,
-      "grade_slug": "preschool",
-      "thresholds": {
-        "reasoning": 0.2,
-        "consistency": 0.35,
-        "verification": 0.35
-      }
-    },
-    "created_at": "2026-06-06T21:28:13.432697"
-  },
-  {
-    "step": "brain_trainer",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "classical_mechanics",
-      "grade": "preschool",
-      "run_id": "cd596ec0",
-      "samples": 4,
-      "classes": 4,
-      "train_accuracy": 1.0,
-      "val_accuracy": 1.0,
-      "promoted": true
-    },
-    "created_at": "2026-06-06T21:28:13.175831"
-  },
-  {
-    "step": "brain_labeler",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "classical_mechanics",
-      "grade": "preschool",
-      "labeled": 4,
-      "auto_labeled": 4,
-      "flagged_for_review": 0,
-      "review_rate": 0.0
-    },
-    "created_at": "2026-06-06T21:28:12.658636"
-  },
-  {
-    "step": "brain_verifier",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "classical_mechanics",
-      "grade": "preschool",
-      "documents_checked": 4,
-      "newly_verified": 4,
-      "failed_verification": 0
-    },
-    "created_at": "2026-06-06T21:28:12.410314"
-  },
-  {
-    "step": "brain_collector",
-    "event_type": "completed",
-    "domain_id": 1,
-    "payload": {
-      "domain": "science_and_natural_philosophy",
-      "subdomain": "physics",
-      "micro_subdomain": "classical_mechanics",
-      "grade": "preschool",
-      "collection_attempts": 4,
-      "new_documents": 0
-    },
-    "created_at": "2026-06-06T21:28:12.319249"
   }
 ]
