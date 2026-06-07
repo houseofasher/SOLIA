@@ -75,6 +75,10 @@ def _response_mode(payload: dict[str, Any], user_message: str) -> str:
     if payload.get("classification"):
         return "classified_direct"
     kind = payload.get("kind", "chat")
+    if kind in ("corpus_grounded", "deep_concept"):
+        return "grounded_direct"
+    if kind == "corpus_pending":
+        return "conversational"
     if kind == "search_opinion":
         return "live_briefing"
     if kind in ("status", "grades", "help", "research", "mind", "think"):

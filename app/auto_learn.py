@@ -12,6 +12,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
+from brain.corpus_priority import sort_targets_by_corpus_gap
 from brain.cortex import iter_training_targets, run_batch_graduation_ladder
 from brain.domains.taxonomy import KNOWLEDGE_TAXONOMY
 
@@ -356,11 +357,13 @@ class AutoLearnScheduler:
             )
 
             with exclusive_training_lock():
-                all_targets = iter_training_targets(
-                    domain_limit=self.config.domain_limit if domain_slugs is None else None,
-                    subdomain_limit=self.config.subdomain_limit,
-                    micro_subdomain_limit=self.config.micro_limit,
-                    domain_slugs=domain_slugs,
+                all_targets = sort_targets_by_corpus_gap(
+                    iter_training_targets(
+                        domain_limit=self.config.domain_limit if domain_slugs is None else None,
+                        subdomain_limit=self.config.subdomain_limit,
+                        micro_subdomain_limit=self.config.micro_limit,
+                        domain_slugs=domain_slugs,
+                    )
                 )
                 cursor = load_target_cursor()
                 batch_targets, next_cursor = select_batch_targets(

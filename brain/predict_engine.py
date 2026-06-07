@@ -269,7 +269,41 @@ def is_prediction_question(text: str) -> bool:
     return any(q.startswith(prefix.rstrip()) for prefix in PREDICTION_STARTERS)
 
 
+def _live_only_corpus() -> bool:
+    return os.environ.get("AUREON_LIVE_ONLY", "1").strip().lower() not in ("0", "false", "no")
+
+
+class PredictCorpusNotReady(Exception):
+    """Raised when live-only mode has too few documents to train or serve predict brain."""
+
+
+def _predict_min_docs() -> int:
+    return _env_int("AUREON_PREDICT_MIN_DOCS", 5, minimum=1, maximum=10_000)
+
+
+def _corpus_document_count() -> int:
+    try:
+        from sqlalchemy import func, select
+
+        from db.models import Document
+        from db.session import get_session
+
+        with get_session() as session:
+            return int(session.scalar(select(func.count()).select_from(Document)) or 0)
+    except Exception:
+        logger.debug("Corpus document count unavailable", exc_info=True)
+        return 0
+
+
+def _predict_corpus_ready() -> bool:
+    if not _live_only_corpus():
+        return True
+    return _corpus_document_count() >= _predict_min_docs()
+
+
 def _load_seed_documents() -> list[str]:
+    if _live_only_corpus():
+        return []
     texts: list[str] = []
     for name in ("corpus_seed.json", "corpus_seed_extra.json"):
         path = SEEDS_DIR / name
@@ -306,8 +340,10 @@ def _load_db_documents() -> list[str]:
 
 
 def _load_code_training_corpus() -> list[str]:
-    """HumanEval + MBPP training lines — oversampled for code mastery."""
-    if os.environ.get("AUREON_CODE_TRAIN_IN_PREDICT", "1").strip().lower() in ("0", "false", "no"):
+    """HumanEval + MBPP training lines — disabled in live-only mode."""
+    if _live_only_corpus():
+        return []
+    if os.environ.get("AUREON_CODE_TRAIN_IN_PREDICT", "0").strip().lower() in ("0", "false", "no"):
         return []
     try:
         from brain.regions.code_collector import CodeCollector
@@ -321,6 +357,8 @@ def _load_code_training_corpus() -> list[str]:
 
 
 def _build_training_corpus() -> list[str]:
+    if _live_only_corpus():
+        return _load_db_documents()
     corpus = list(BOOTSTRAP_LINES)
     corpus.extend(REASONING_LINES)
     corpus.extend(_load_code_training_corpus())
@@ -372,6 +410,8 @@ def _format_bootstrap_answer(raw: str) -> str | None:
 
 
 def _bootstrap_answer(question: str) -> str | None:
+    if _live_only_corpus():
+        return None
     key = question.strip().lower().rstrip("?.!").strip()
     for alias in _question_aliases(key):
         prefix = f"question {alias} answer "
@@ -476,6 +516,12 @@ def _train_or_load() -> StackedAttentionLM:
     global _model, _ready
     ensure_dirs()
 
+    if _live_only_corpus() and not _predict_corpus_ready():
+        raise PredictCorpusNotReady(
+            f"predict brain needs at least {_predict_min_docs()} live documents "
+            f"(have {_corpus_document_count()})"
+        )
+
     db_model = _load_model_from_db()
     if db_model is not None:
         _model = db_model
@@ -552,6 +598,11 @@ def _train_or_load() -> StackedAttentionLM:
 
 def get_predict_model() -> StackedAttentionLM:
     global _model, _ready
+    if _live_only_corpus() and not _predict_corpus_ready():
+        raise PredictCorpusNotReady(
+            f"predict brain needs at least {_predict_min_docs()} live documents "
+            f"(have {_corpus_document_count()})"
+        )
     with _lock:
         if _model is not None and _ready:
             return _model
@@ -630,9 +681,14 @@ def predict_with_steps(
     if not force and not is_prediction_question(question):
         return None
 
+    if _live_only_corpus() and not _predict_corpus_ready():
+        return _abstain_result(confidence=0.0)
+
     try:
         model = get_predict_model()
-    except Exception as exc:
+    except PredictCorpusNotReady:
+        return _abstain_result(confidence=0.0)
+    except Exception:
         logger.exception("Predict model load failed")
         return {
             "abstained": True,
@@ -777,6 +833,11 @@ def warm_up_predict_brain(*, run_probe: bool = True) -> dict[str, Any]:
     out: dict[str, Any] = {"rag_docs": 0, "model_ready": False, "probe": False}
     if os.environ.get("AUREON_PREDICT_BRAIN", "1").strip().lower() in ("0", "false", "no"):
         return out
+    if _live_only_corpus() and not _predict_corpus_ready():
+        out["skipped"] = "corpus_not_ready"
+        out["corpus_docs"] = _corpus_document_count()
+        out["min_docs"] = _predict_min_docs()
+        return out
     try:
         from brain.vector_rag import get_rag_index
 
@@ -797,6 +858,8 @@ def warmup_predict_brain_background() -> None:
     """Train/load the predict brain without blocking the request path."""
     if os.environ.get("AUREON_PREDICT_BRAIN", "1").strip().lower() in ("0", "false", "no"):
         return
+    if _live_only_corpus() and not _predict_corpus_ready():
+        return
 
     def _job() -> None:
         try:
@@ -813,6 +876,8 @@ def warmup_predict_brain_background() -> None:
 def retrain_predict_brain_background(*, reason: str = "auto_learn") -> None:
     """Rebuild the predict brain from the latest corpus after learning cycles."""
     if os.environ.get("AUREON_PREDICT_BRAIN", "1").strip().lower() in ("0", "false", "no"):
+        return
+    if _live_only_corpus() and not _predict_corpus_ready():
         return
 
     def _job() -> None:

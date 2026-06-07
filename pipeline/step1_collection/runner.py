@@ -1,20 +1,17 @@
-"""Step 1 runner — collect, filter, publish to queue."""
+"""Step 1 runner — collect via OmniSpider only in live mode."""
 
 from __future__ import annotations
 
+import os
 from typing import Any
 
 from pipeline.config import ensure_dirs
 from pipeline.queue import PipelineEvent, get_queue
-from pipeline.step1_collection.collectors import (
-    ArxivCollector,
-    GutenbergCollector,
-    LocalFileCollector,
-    SeedCollector,
-    save_raw_batch,
-)
-from brain.regions.code_collector import CodeCollector
 from pipeline.step1_collection.filters import load_raw_batches, run_filter_pipeline
+
+
+def _live_only() -> bool:
+    return os.environ.get("AUREON_LIVE_ONLY", "1").strip().lower() not in ("0", "false", "no")
 
 
 def run_step1(
@@ -23,6 +20,22 @@ def run_step1(
     seed_limit: int = 20,
 ) -> dict[str, Any]:
     ensure_dirs()
+    if _live_only():
+        return {
+            "status": "skipped",
+            "reason": "live_only — use OmniSpider collector via brain auto-learn",
+            "collected": 0,
+        }
+
+    from pipeline.step1_collection.collectors import (
+        ArxivCollector,
+        GutenbergCollector,
+        LocalFileCollector,
+        SeedCollector,
+        save_raw_batch,
+    )
+    from brain.regions.code_collector import CodeCollector
+
     queue = get_queue()
 
     collectors = [

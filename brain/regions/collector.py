@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 import uuid
 
 from sqlalchemy import func, select
@@ -22,6 +23,11 @@ from pipeline.step1_collection.collectors import (
     RawDocument,
 )
 from pipeline.step1_collection.filters import filter_document
+
+
+def _manual_ingest_enabled() -> bool:
+    return os.environ.get("AUREON_MANUAL_INGEST", "0").strip().lower() in ("1", "true", "yes")
+
 
 DOMAIN_QUERIES: dict[str, str] = {
     "mathematics": "cat:math.AG OR all:algebra OR all:calculus",
@@ -77,22 +83,8 @@ class CollectorAgent(MicroAgentBase):
         ) or 0
         attempts = 0
 
-        attempts += self._ingest_taxonomy_topics(session, ctx)
-        attempts += self._ingest_seeds(session, ctx)
-        attempts += self._ingest_code_corpus(session, ctx)
-        attempts += self._ingest_external_sources(session, ctx)
-
-        query = _arxiv_query(ctx)
-        if query:
-            limit = 3
-            if ctx.grade:
-                limit = ctx.grade.collection_limit
-            collector = ArxivCollector(query=query)
-            for doc in collector.collect(limit=limit):
-                attempts += 1
-                if ctx.grade_slug:
-                    doc.metadata["grade"] = ctx.grade_slug
-                self._persist_doc(session, ctx, doc)
+        # Live-only corpus: OmniSpider whitelist crawls — no seeds, uploads, or benchmarks.
+        attempts += self._ingest_omnispider(session, ctx)
 
         after = session.scalar(
             select(func.count()).select_from(Document).where(Document.domain_id == ctx.domain_id)
@@ -188,7 +180,9 @@ class CollectorAgent(MicroAgentBase):
         return count
 
     def _ingest_external_sources(self, session: Session, ctx: AgentContext) -> int:
-        """Pull Gutenberg excerpts and local inbox drops (deduped by content hash)."""
+        """Legacy manual inbox — disabled unless AUREON_MANUAL_INGEST=1."""
+        if not _manual_ingest_enabled():
+            return 0
         count = 0
         gutenberg_limit = 1
         if ctx.grade:
@@ -225,6 +219,61 @@ class CollectorAgent(MicroAgentBase):
             doc.metadata["modality"] = doc.metadata.get("modality", "text")
             self._persist_doc(session, ctx, doc)
 
+        return count
+
+    def _ingest_omnispider(self, session: Session, ctx: AgentContext) -> int:
+        """Pull verified crawl text from OmniSpider whitelist — primary data path."""
+        from brain.domain_resolver import resolve_crawl_domain
+        from brain.domains.generate_micros import topics_for
+        from brain.omnispider_bridge import crawl_for_question, omnispider_enabled
+
+        if not omnispider_enabled():
+            return 0
+
+        domain_path = ctx.domain_slug
+        if ctx.subdomain_slug:
+            domain_path = f"{ctx.domain_slug}.{ctx.subdomain_slug}"
+        if ctx.micro_subdomain_slug:
+            domain_path = f"{domain_path}.{ctx.micro_subdomain_slug}"
+
+        topic_candidates = topics_for(
+            ctx.domain_slug,
+            ctx.subdomain_slug or "",
+            ctx.micro_subdomain_slug or "",
+        )
+        if topic_candidates:
+            topic = topic_candidates[0]
+        else:
+            topic_parts = [p for p in (ctx.micro_subdomain_slug, ctx.subdomain_slug, ctx.domain_slug) if p]
+            topic = " ".join(p.replace("_", " ") for p in topic_parts[:2]) or ctx.domain_slug.replace("_", " ")
+
+        seed_domain = resolve_crawl_domain(topic, domain_path) or resolve_crawl_domain(topic, ctx.domain_slug)
+        if not seed_domain:
+            seed_domain = ctx.domain_slug
+
+        crawled = crawl_for_question(topic, seed_domain)
+        if not crawled:
+            return 0
+
+        count = 0
+        for doc in crawled:
+            raw = RawDocument(
+                doc_id=f"omnispider_{doc.url or doc.title}",
+                source="omnispider",
+                title=doc.title,
+                text=doc.text,
+                url=doc.url,
+                metadata={
+                    "domain": ctx.domain_slug,
+                    "subdomain": ctx.subdomain_slug,
+                    "micro_subdomain": ctx.micro_subdomain_slug,
+                    "source_type": "omnispider_crawl",
+                },
+            )
+            if ctx.grade_slug:
+                raw.metadata["grade"] = ctx.grade_slug
+            count += 1
+            self._persist_doc(session, ctx, raw)
         return count
 
     def _persist_doc(self, session: Session, ctx: AgentContext, doc: RawDocument) -> bool:

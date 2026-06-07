@@ -79,7 +79,8 @@ def test_attention_lm_train_and_generate():
     assert len(out["steps"]) >= 1
 
 
-def test_bootstrap_philosophy_seeds():
+def test_bootstrap_philosophy_seeds(monkeypatch):
+    monkeypatch.setenv("AUREON_LIVE_ONLY", "0")
     god = _bootstrap_answer("Who is God to you?")
     assert god
     assert "deity" in god.lower() or "god" in god.lower() or "corpus" in god.lower()
@@ -97,6 +98,7 @@ def test_is_prediction_question():
 def test_predict_with_steps_capital_france(tmp_path, monkeypatch):
     import brain.predict_engine as pe
 
+    monkeypatch.setenv("AUREON_LIVE_ONLY", "0")
     monkeypatch.setenv("AUREON_DATA_DIR", str(tmp_path))
     monkeypatch.setenv("PIPELINE_DATA_DIR", str(tmp_path))
     monkeypatch.setenv("AUREON_PREDICT_EPOCHS", "80")

@@ -594,8 +594,12 @@ def _predict_with_search_fallback(
     *,
     session_id: str | None = None,
     force: bool = False,
+    allow_web_search: bool | None = None,
 ) -> dict[str, Any]:
-    """Predict brain; fall back to web search when confidence is low or predict timed out."""
+    """Predict brain; fall back to web search when confidence is low (disabled in live-only mode)."""
+    if allow_web_search is None:
+        allow_web_search = not _live_knowledge_only()
+
     result = _predict_with_timeout(text, session_id=session_id, force=force)
     confidence = float(result.get("confidence", 0) or 0) if result else 0.0
 
@@ -608,6 +612,9 @@ def _predict_with_search_fallback(
         and not result.get("timed_out")
         and not _is_weak_predict_answer(answer)
     ):
+        return result
+
+    if not allow_web_search:
         return result
 
     search_result = _try_web_search_predict(text, session_id=session_id)
@@ -672,33 +679,105 @@ def _is_weak_predict_answer(answer: str) -> bool:
     return False
 
 
-def _handle_deep_concept(text: str, *, session_id: str | None) -> dict[str, Any]:
-    """Deep single-concept questions — RAG + predict + auto-search fallback."""
-    from brain.vector_rag import retrieve_with_citations
-    from brain.web_search import web_search_enabled
+def _live_knowledge_only() -> bool:
+    """Live OmniSpider corpus — no DuckDuckGo news theater."""
+    live = os.environ.get("AUREON_LIVE_ONLY", "1").strip().lower() not in ("0", "false", "no")
+    if not live:
+        return False
+    try:
+        from brain.omnispider_bridge import omnispider_enabled
 
-    rag_context, _hits, rag_citations = retrieve_with_citations(text)
+        return omnispider_enabled()
+    except ImportError:
+        return live
+
+
+def _crawl_domain_for_query(text: str) -> str | None:
+    """Domain key for OmniSpider whitelist — keywords override classifier."""
+    from brain.domain_resolver import resolve_crawl_domain
+
+    classification = _classify_message(text)
+    label = str(classification["label"]) if classification and classification.get("label") else None
+    if not label:
+        matches = _classification_top_matches(text, top_n=1)
+        if matches and float(matches[0].get("score") or 0) >= 0.12:
+            label = str(matches[0].get("label") or "")
+    return resolve_crawl_domain(text, label)
+
+
+def _try_corpus_grounded_reply(
+    text: str,
+    *,
+    crawl_domain: str | None = None,
+) -> tuple[str | None, list[Any], list[dict[str, Any]]]:
+    """RAG + optional live crawl → extractive answer from trusted sources only."""
+    from brain.corpus_answer import answer_from_corpus_hits
+    from brain.vector_rag import retrieve_with_citations
+
+    domain = crawl_domain if crawl_domain is not None else _crawl_domain_for_query(text)
+    _ctx, hits, citations = retrieve_with_citations(text, domain=domain)
+    reply = answer_from_corpus_hits(text, hits)
+    return reply, hits, citations
+
+
+def _handle_deep_concept(text: str, *, session_id: str | None) -> dict[str, Any]:
+    """Deep single-concept questions — corpus-first, then predict; no news fallback in live mode."""
+    crawl_domain = _crawl_domain_for_query(text)
+    corpus_reply, _hits, rag_citations = _try_corpus_grounded_reply(
+        text, crawl_domain=crawl_domain
+    )
+
+    if corpus_reply:
+        return {
+            "reply": corpus_reply,
+            "kind": "corpus_grounded",
+            "session_id": session_id,
+            "learning": learning_snapshot(),
+            "brain_predict": False,
+            "citations": rag_citations[:5],
+            "crawl_domain": crawl_domain,
+        }
+
+    from brain.vector_rag import retrieve_with_citations
+
+    rag_context, _, rag_citations = retrieve_with_citations(text, domain=crawl_domain)
     enriched = f"{rag_context} question {text}" if rag_context else text
-    result = _predict_with_search_fallback(enriched, session_id=session_id, force=True)
+    result = _predict_with_search_fallback(
+        enriched,
+        session_id=session_id,
+        force=True,
+        allow_web_search=not _live_knowledge_only(),
+    )
 
     if result and result.get("answer"):
         answer = str(result["answer"]).strip()
-        if not _is_weak_predict_answer(answer):
+        if not _is_weak_predict_answer(answer) and not result.get("search_opinion"):
             citations = list(result.get("citations") or [])
             if not citations and rag_citations:
                 citations = rag_citations[:3]
-            kind = "search_opinion" if result.get("search_opinion") else "deep_concept"
-            payload: dict[str, Any] = {
+            return {
                 "reply": answer,
-                "kind": kind,
+                "kind": "deep_concept",
                 "session_id": session_id,
                 "learning": learning_snapshot(),
-                "brain_predict": not result.get("search_opinion"),
+                "brain_predict": True,
                 "citations": citations,
+                "crawl_domain": crawl_domain,
             }
-            if result.get("sources"):
-                payload["sources"] = result["sources"]
-            return payload
+
+    if _live_knowledge_only():
+        return {
+            "reply": (
+                "I don't have enough verified corpus on that yet. "
+                "I'm pulling from trusted sources now — try again shortly."
+            ),
+            "kind": "corpus_pending",
+            "session_id": session_id,
+            "learning": learning_snapshot(),
+            "crawl_domain": crawl_domain,
+        }
+
+    from brain.web_search import web_search_enabled
 
     if web_search_enabled():
         search_payload = _search_and_opine(text, session_id=session_id)
@@ -707,14 +786,6 @@ def _handle_deep_concept(text: str, *, session_id: str | None) -> dict[str, Any]
             return search_payload
 
     fallback = _fallback_to_predict(text, session_id=session_id)
-    if not _is_weak_predict_answer(fallback):
-        return {
-            "reply": fallback,
-            "kind": "deep_concept",
-            "session_id": session_id,
-            "learning": learning_snapshot(),
-        }
-
     return {
         "reply": fallback,
         "kind": "deep_concept_thin",
@@ -788,15 +859,30 @@ def is_named_entity_question(text: str) -> bool:
 def _handle_named_entity(text: str, *, session_id: str | None) -> dict[str, Any]:
     """
     Handle questions about named people, figures, characters.
-    Routes to predict brain with RAG — never to domain classifier.
+    Corpus-first; no DuckDuckGo in live-only mode.
     """
-    from brain.vector_rag import retrieve_with_citations
-    from brain.web_search import format_for_context, search
+    crawl_domain = _crawl_domain_for_query(text)
+    corpus_reply, _hits, rag_citations = _try_corpus_grounded_reply(
+        text, crawl_domain=crawl_domain
+    )
+    if corpus_reply:
+        return {
+            "reply": corpus_reply,
+            "kind": "corpus_grounded",
+            "session_id": session_id,
+            "learning": learning_snapshot(),
+            "citations": rag_citations[:5],
+            "crawl_domain": crawl_domain,
+        }
 
-    rag_context, _hits, rag_citations = retrieve_with_citations(text)
+    from brain.vector_rag import retrieve_with_citations
+
+    rag_context, _, rag_citations = retrieve_with_citations(text, domain=crawl_domain)
 
     search_context = ""
-    if not rag_context or len(rag_context) < 100:
+    if not _live_knowledge_only() and (not rag_context or len(rag_context) < 100):
+        from brain.web_search import format_for_context, search
+
         try:
             results = search(text)
             search_context = format_for_context(results)
@@ -811,26 +897,29 @@ def _handle_named_entity(text: str, *, session_id: str | None) -> dict[str, Any]
 
     enriched = " ".join(context_parts) + f" question {text}"
 
-    result = _predict_with_search_fallback(enriched, session_id=session_id, force=True)
+    result = _predict_with_search_fallback(
+        enriched,
+        session_id=session_id,
+        force=True,
+        allow_web_search=not _live_knowledge_only(),
+    )
 
     if result and result.get("answer") and len(str(result["answer"])) > 20:
-        if not _is_weak_predict_answer(str(result["answer"])):
+        if not _is_weak_predict_answer(str(result["answer"])) and not result.get("search_opinion"):
             citations = list(result.get("citations") or [])
             if not citations and rag_citations:
                 citations = rag_citations[:3]
-            kind = "search_opinion" if result.get("search_opinion") else "named_entity"
             return {
                 "reply": result["answer"],
-                "kind": kind,
+                "kind": "named_entity",
                 "session_id": session_id,
                 "learning": learning_snapshot(),
                 "citations": citations,
-                "sources": result.get("sources", []),
             }
 
     from brain.web_search import web_search_enabled
 
-    if web_search_enabled():
+    if web_search_enabled() and not _live_knowledge_only():
         from brain.web_search import rewrite_topic_inquiry_query
 
         search_payload = _search_and_opine(
@@ -1846,6 +1935,7 @@ def chat(message: str, *, session_id: str | None = None) -> dict[str, Any]:
 
     if (
         web_search_enabled()
+        and not _live_knowledge_only()
         and is_search_question(text)
         and not is_personal_belief_question(text)
     ):
@@ -1923,22 +2013,47 @@ def chat(message: str, *, session_id: str | None = None) -> dict[str, Any]:
         active = _active_micro_progress(session)
 
     if classification:
+        from brain.domain_resolver import is_knowledge_question
+
+        if is_knowledge_question(text):
+            corpus_reply, _, rag_citations = _try_corpus_grounded_reply(text)
+            if corpus_reply:
+                return done(
+                    {
+                        "reply": corpus_reply,
+                        "kind": "corpus_grounded",
+                        "session_id": session_id,
+                        "learning": learning,
+                        "classification": classification,
+                        "citations": rag_citations[:5],
+                    }
+                )
+
         enriched = f"domain context {classification['label']} question {text.strip().lower()}"
-        result = _predict_with_search_fallback(enriched, session_id=session_id, force=True)
+        result = _predict_with_search_fallback(
+            enriched,
+            session_id=session_id,
+            force=True,
+            allow_web_search=not _live_knowledge_only(),
+        )
         if result and result.get("answer") and not result.get("abstained"):
             reply = str(result["answer"]).strip()
-            if len(reply) > 20 and not _is_classification_leak(reply) and not _is_weak_predict_answer(reply):
-                kind = "search_opinion" if result.get("search_opinion") else "predict"
+            if (
+                len(reply) > 20
+                and not _is_classification_leak(reply)
+                and not _is_weak_predict_answer(reply)
+                and not result.get("search_opinion")
+            ):
                 payload: dict[str, Any] = {
                     "reply": reply,
-                    "kind": kind,
+                    "kind": "predict",
                     "session_id": session_id,
                     "learning": learning,
-                    "brain_predict": not result.get("search_opinion"),
+                    "brain_predict": True,
                     "classification": classification,
                 }
-                if result.get("sources"):
-                    payload["sources"] = result["sources"]
+                if result.get("citations"):
+                    payload["citations"] = result["citations"]
                 return done(payload)
 
         from brain.philosophy_handler import philosophy_fallback_if_needed
@@ -1951,7 +2066,11 @@ def chat(message: str, *, session_id: str | None = None) -> dict[str, Any]:
             return done(fallback)
 
         confidence = float(result.get("confidence", 0) or 0) if result else 0.0
-        if confidence < _SEARCH_CONFIDENCE_THRESHOLD and web_search_enabled():
+        if (
+            confidence < _SEARCH_CONFIDENCE_THRESHOLD
+            and web_search_enabled()
+            and not _live_knowledge_only()
+        ):
             search_payload = _search_and_opine(text, session_id=session_id)
             if search_payload.get("kind") == "search_opinion":
                 search_payload["classification"] = classification

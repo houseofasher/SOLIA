@@ -9,6 +9,8 @@ import time
 from dataclasses import dataclass
 from typing import Any
 
+import hashlib
+
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -62,7 +64,6 @@ class VectorRAGIndex:
         return len(self._hits)
 
     def rebuild(self) -> int:
-        from brain.predict_engine import _load_seed_documents
         from sqlalchemy import select
 
         from db.models import Document
@@ -90,18 +91,6 @@ class VectorRAGIndex:
                     )
         except Exception:
             logger.debug("RAG DB load skipped", exc_info=True)
-
-        for i, seed_text in enumerate(_load_seed_documents()):
-            hits.append(
-                RagHit(
-                    document_id=-(i + 1),
-                    content_hash=f"seed_{i}",
-                    title=seed_text[:80],
-                    text=seed_text,
-                    source="seeds",
-                    score=0.0,
-                )
-            )
 
         if not hits:
             self._matrix = None
@@ -189,6 +178,7 @@ def retrieve_with_citations(
     *,
     top_k: int | None = None,
     max_words: int | None = None,
+    domain: str | None = None,
 ) -> tuple[str, list[RagHit], list[dict[str, Any]]]:
     """Return context text, hits, and citation dicts for chat/predict."""
     if top_k is None:
@@ -197,7 +187,16 @@ def retrieve_with_citations(
         max_words = int(os.environ.get("AUREON_PREDICT_CONTEXT_WORDS", "1000000"))
         max_words = max(50, min(max_words, 1_000_000))
 
-    hits = get_rag_index().retrieve(query, top_k=top_k)
+    min_score = float(os.environ.get("AUREON_RAG_MIN_SCORE", "0.05"))
+    confidence_threshold = float(os.environ.get("AUREON_RAG_CONFIDENCE_THRESHOLD", "0.12"))
+
+    hits = get_rag_index().retrieve(query, top_k=top_k, min_score=min_score)
+    max_score = hits[0].score if hits else 0.0
+    corpus_thin = not hits or max_score < confidence_threshold
+
+    if corpus_thin and domain:
+        hits = _merge_live_crawl(query, domain, hits, top_k=top_k)
+
     citations = [h.citation() for h in hits]
 
     words: list[str] = []
@@ -210,6 +209,62 @@ def retrieve_with_citations(
             break
 
     return " ".join(words[:max_words]), hits, citations
+
+
+def _merge_live_crawl(
+    query: str,
+    domain: str,
+    existing: list[RagHit],
+    *,
+    top_k: int,
+) -> list[RagHit]:
+    """Call OmniSpider when local corpus confidence is below threshold."""
+    try:
+        from brain.omnispider_bridge import (
+            crawl_for_question,
+            omnispider_enabled,
+            persist_crawl_documents,
+        )
+    except ImportError:
+        return existing
+
+    if not omnispider_enabled():
+        return existing
+
+    try:
+        crawled = crawl_for_question(query, domain)
+    except Exception:
+        logger.warning("OmniSpider live crawl failed for domain=%s", domain, exc_info=True)
+        return existing
+
+    if not crawled:
+        return existing
+
+    from brain.corpus_answer import _is_junk_hit
+
+    persist_crawl_documents(crawled, domain)
+
+    live_hits: list[RagHit] = []
+    for i, doc in enumerate(crawled):
+        digest = hashlib.sha256(f"{doc.title}\n{doc.text}".encode()).hexdigest()
+        candidate = RagHit(
+            document_id=-(10_000 + i),
+            content_hash=digest,
+            title=doc.title,
+            text=doc.text,
+            source=f"omnispider:{doc.url or 'live'}",
+            score=0.35,
+        )
+        if _is_junk_hit(candidate):
+            continue
+        live_hits.append(candidate)
+
+    if not live_hits:
+        return existing
+
+    merged = live_hits + existing
+    merged.sort(key=lambda h: h.score, reverse=True)
+    return merged[:top_k]
 
 
 def invalidate_rag_index() -> None:
