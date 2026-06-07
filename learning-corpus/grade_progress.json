@@ -3903,6 +3903,48 @@
     "path": "medicine_and_health_sciences.traditional_and_alternative_medicine.chiropractic",
     "micro_name": "Chiropractic",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 0.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "skipped"
+    },
+    "graduated_at": "2026-06-07T01:47:04.650719",
+    "last_attempt_at": "2026-06-07T01:47:04.649013"
+  },
+  {
+    "path": "medicine_and_health_sciences.traditional_and_alternative_medicine.chiropractic",
+    "micro_name": "Chiropractic",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -3913,6 +3955,48 @@
     "path": "medicine_and_health_sciences.traditional_and_alternative_medicine.osteopathy",
     "micro_name": "Osteopathy",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 0.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "skipped"
+    },
+    "graduated_at": "2026-06-07T01:47:39.949944",
+    "last_attempt_at": "2026-06-07T01:47:39.949938"
+  },
+  {
+    "path": "medicine_and_health_sciences.traditional_and_alternative_medicine.osteopathy",
+    "micro_name": "Osteopathy",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -3923,6 +4007,48 @@
     "path": "medicine_and_health_sciences.traditional_and_alternative_medicine.shamanic_medicine",
     "micro_name": "Shamanic Medicine",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "completed"
+    },
+    "graduated_at": "2026-06-07T01:48:10.948359",
+    "last_attempt_at": "2026-06-07T01:48:10.948353"
+  },
+  {
+    "path": "medicine_and_health_sciences.traditional_and_alternative_medicine.shamanic_medicine",
+    "micro_name": "Shamanic Medicine",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -3933,6 +4059,48 @@
     "path": "medicine_and_health_sciences.traditional_and_alternative_medicine.african_traditional_medicine",
     "micro_name": "African Traditional Medicine",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 0.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "skipped"
+    },
+    "graduated_at": "2026-06-07T01:48:47.854375",
+    "last_attempt_at": "2026-06-07T01:48:47.854369"
+  },
+  {
+    "path": "medicine_and_health_sciences.traditional_and_alternative_medicine.african_traditional_medicine",
+    "micro_name": "African Traditional Medicine",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -3943,6 +4111,48 @@
     "path": "medicine_and_health_sciences.traditional_and_alternative_medicine.indigenous_healing_systems",
     "micro_name": "Indigenous Healing Systems",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "completed"
+    },
+    "graduated_at": "2026-06-07T01:49:25.850135",
+    "last_attempt_at": "2026-06-07T01:49:25.850129"
+  },
+  {
+    "path": "medicine_and_health_sciences.traditional_and_alternative_medicine.indigenous_healing_systems",
+    "micro_name": "Indigenous Healing Systems",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -3953,6 +4163,48 @@
     "path": "technology_and_engineering.computer_science.algorithms_and_data_structures",
     "micro_name": "Algorithms & Data Structures",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "completed"
+    },
+    "graduated_at": "2026-06-07T01:49:59.640823",
+    "last_attempt_at": "2026-06-07T01:49:59.640813"
+  },
+  {
+    "path": "technology_and_engineering.computer_science.algorithms_and_data_structures",
+    "micro_name": "Algorithms & Data Structures",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -3963,6 +4215,48 @@
     "path": "technology_and_engineering.computer_science.programming_languages",
     "micro_name": "Programming Languages",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "completed"
+    },
+    "graduated_at": "2026-06-07T01:50:32.548450",
+    "last_attempt_at": "2026-06-07T01:50:32.548444"
+  },
+  {
+    "path": "technology_and_engineering.computer_science.programming_languages",
+    "micro_name": "Programming Languages",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -3973,6 +4267,48 @@
     "path": "technology_and_engineering.computer_science.operating_systems",
     "micro_name": "Operating Systems",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "completed"
+    },
+    "graduated_at": "2026-06-07T01:51:02.749340",
+    "last_attempt_at": "2026-06-07T01:51:02.749335"
+  },
+  {
+    "path": "technology_and_engineering.computer_science.operating_systems",
+    "micro_name": "Operating Systems",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -3983,6 +4319,48 @@
     "path": "technology_and_engineering.computer_science.databases",
     "micro_name": "Databases",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "completed"
+    },
+    "graduated_at": "2026-06-07T01:51:42.446519",
+    "last_attempt_at": "2026-06-07T01:51:42.446514"
+  },
+  {
+    "path": "technology_and_engineering.computer_science.databases",
+    "micro_name": "Databases",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -3993,6 +4371,48 @@
     "path": "technology_and_engineering.computer_science.computer_networks",
     "micro_name": "Computer Networks",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "completed"
+    },
+    "graduated_at": "2026-06-07T01:52:19.354637",
+    "last_attempt_at": "2026-06-07T01:52:19.354631"
+  },
+  {
+    "path": "technology_and_engineering.computer_science.computer_networks",
+    "micro_name": "Computer Networks",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -4003,6 +4423,48 @@
     "path": "technology_and_engineering.computer_science.artificial_intelligence",
     "micro_name": "Artificial Intelligence",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "completed"
+    },
+    "graduated_at": "2026-06-07T01:52:52.751935",
+    "last_attempt_at": "2026-06-07T01:52:52.751930"
+  },
+  {
+    "path": "technology_and_engineering.computer_science.artificial_intelligence",
+    "micro_name": "Artificial Intelligence",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -4013,6 +4475,48 @@
     "path": "technology_and_engineering.computer_science.cybersecurity",
     "micro_name": "Cybersecurity",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "completed"
+    },
+    "graduated_at": "2026-06-07T01:53:25.352798",
+    "last_attempt_at": "2026-06-07T01:53:25.352793"
+  },
+  {
+    "path": "technology_and_engineering.computer_science.cybersecurity",
+    "micro_name": "Cybersecurity",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -4023,6 +4527,48 @@
     "path": "technology_and_engineering.computer_science.software_engineering",
     "micro_name": "Software Engineering",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "completed"
+    },
+    "graduated_at": "2026-06-07T01:54:05.654774",
+    "last_attempt_at": "2026-06-07T01:54:05.654768"
+  },
+  {
+    "path": "technology_and_engineering.computer_science.software_engineering",
+    "micro_name": "Software Engineering",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -4033,6 +4579,48 @@
     "path": "technology_and_engineering.computer_science.human_computer_interaction",
     "micro_name": "Human-Computer Interaction",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "completed"
+    },
+    "graduated_at": "2026-06-07T01:54:36.359456",
+    "last_attempt_at": "2026-06-07T01:54:36.359450"
+  },
+  {
+    "path": "technology_and_engineering.computer_science.human_computer_interaction",
+    "micro_name": "Human-Computer Interaction",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -4043,6 +4631,48 @@
     "path": "technology_and_engineering.computer_science.quantum_computing",
     "micro_name": "Quantum Computing",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "completed"
+    },
+    "graduated_at": "2026-06-07T01:55:12.856020",
+    "last_attempt_at": "2026-06-07T01:55:12.856014"
+  },
+  {
+    "path": "technology_and_engineering.computer_science.quantum_computing",
+    "micro_name": "Quantum Computing",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -4053,6 +4683,48 @@
     "path": "technology_and_engineering.computer_science.distributed_systems",
     "micro_name": "Distributed Systems",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "completed"
+    },
+    "graduated_at": "2026-06-07T01:55:49.351394",
+    "last_attempt_at": "2026-06-07T01:55:49.351387"
+  },
+  {
+    "path": "technology_and_engineering.computer_science.distributed_systems",
+    "micro_name": "Distributed Systems",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -4063,11 +4735,11 @@
     "path": "technology_and_engineering.computer_science.python_functions",
     "micro_name": "Python Functions (Code Generation)",
     "grade": "preschool",
-    "status": "unlocked",
-    "attempts": 0,
+    "status": "in_progress",
+    "attempts": 1,
     "metrics": null,
     "graduated_at": null,
-    "last_attempt_at": null
+    "last_attempt_at": "2026-06-07T01:56:22.146149"
   },
   {
     "path": "technology_and_engineering.computer_science.python_algorithms",
