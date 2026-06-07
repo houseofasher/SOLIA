@@ -251,6 +251,34 @@
     "enabled": true,
     "recent": [
       {
+        "question": "When should I say I do not know?",
+        "answer": "When corpus + confidence cannot cite evidence — abstain beats hallucination.",
+        "theme": "uncertainty",
+        "source": "auto_learn",
+        "grounded": true,
+        "state_snapshot": {
+          "documents": 247,
+          "cycles": 3,
+          "focus": ""
+        },
+        "ts": "2026-06-07T00:46:15.652349+00:00",
+        "kind": "meta"
+      },
+      {
+        "question": "What changed in me since my last cycle?",
+        "answer": "I am 247 docs deep on 867 micro-topics — still learning.",
+        "theme": "continuity",
+        "source": "auto_learn",
+        "grounded": true,
+        "state_snapshot": {
+          "documents": 247,
+          "cycles": 3,
+          "focus": ""
+        },
+        "ts": "2026-06-07T00:46:15.651995+00:00",
+        "kind": "meta"
+      },
+      {
         "question": "What is Naturopathy?",
         "answer": "Semantic Web of Things (SWoT) applications focus on….",
         "cycle": "Passed Pre-School, unlocked elementary",
@@ -327,36 +355,10 @@
         "ciper": false,
         "ts": "2026-06-07T00:44:57.153026+00:00",
         "kind": "learning"
-      },
-      {
-        "question": "What is one word I would use to describe Ayurvedic Herbalism?",
-        "answer": "research",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "medicine_and_health_sciences.traditional_and_alternative_medicine.ayurveda",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-07T00:44:16.140808+00:00",
-        "kind": "learning"
-      },
-      {
-        "question": "What is Ayurveda?",
-        "answer": "Panchakarma is a core concept within Ayurveda (TRADITIONAL….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "medicine_and_health_sciences.traditional_and_alternative_medicine.ayurveda",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-07T00:44:16.056125+00:00",
-        "kind": "learning"
       }
     ]
   },
-  "exported_at": "2026-06-07T00:46:15.457905+00:00",
+  "exported_at": "2026-06-07T01:31:13.553347+00:00",
   "github_sync": {
     "batch_cursor": 75,
     "include_document_text": true,
