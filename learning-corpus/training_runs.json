@@ -1,5 +1,379 @@
 [
   {
+    "run_id": "d80ab6bc",
+    "domain_id": 2,
+    "subdomain_id": 10,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_ayurveda_d80ab6bc/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "ayurveda",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-07T00:44:15.650395"
+  },
+  {
+    "run_id": "b0a53457",
+    "domain_id": 2,
+    "subdomain_id": 10,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_traditional_chinese_medicine_b0a53457/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "traditional_chinese_medicine",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-07T00:43:31.152608"
+  },
+  {
+    "run_id": "9d58a76c",
+    "domain_id": 2,
+    "subdomain_id": 9,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_psychology_9d58a76c/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "psychology",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-07T00:42:48.340519"
+  },
+  {
+    "run_id": "531862bc",
+    "domain_id": 2,
+    "subdomain_id": 9,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_dentistry_531862bc/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "dentistry",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-07T00:42:13.953773"
+  },
+  {
+    "run_id": "55059336",
+    "domain_id": 2,
+    "subdomain_id": 9,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_occupational_therapy_55059336/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "occupational_therapy",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-07T00:41:31.856214"
+  },
+  {
+    "run_id": "705ca852",
+    "domain_id": 2,
+    "subdomain_id": 9,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_physical_therapy_705ca852/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "physical_therapy",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-07T00:40:56.247232"
+  },
+  {
+    "run_id": "23b0ba4a",
+    "domain_id": 2,
+    "subdomain_id": 9,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_pharmacy_23b0ba4a/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "pharmacy",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-07T00:40:03.556830"
+  },
+  {
+    "run_id": "a5a865af",
+    "domain_id": 2,
+    "subdomain_id": 9,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_nursing_a5a865af/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "nursing",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-07T00:39:27.857811"
+  },
+  {
+    "run_id": "689cf961",
+    "domain_id": 2,
+    "subdomain_id": 8,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_nutritional_science_689cf961/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "nutritional_science",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-07T00:38:57.149663"
+  },
+  {
+    "run_id": "69012e48",
+    "domain_id": 2,
+    "subdomain_id": 8,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_vaccinology_69012e48/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "vaccinology",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-07T00:38:17.363562"
+  },
+  {
+    "run_id": "eaca2a38",
+    "domain_id": 2,
+    "subdomain_id": 8,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_public_health_eaca2a38/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "public_health",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-07T00:37:40.357545"
+  },
+  {
+    "run_id": "b856dcee",
+    "domain_id": 2,
+    "subdomain_id": 8,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_epidemiology_b856dcee/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "epidemiology",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-07T00:37:04.153064"
+  },
+  {
+    "run_id": "b8c8ce76",
+    "domain_id": 2,
+    "subdomain_id": 7,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_oncology_b8c8ce76/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "oncology",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-07T00:36:19.949009"
+  },
+  {
+    "run_id": "950b606e",
+    "domain_id": 2,
+    "subdomain_id": 7,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_radiology_950b606e/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "radiology",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-07T00:35:42.748372"
+  },
+  {
+    "run_id": "4fee3f3f",
+    "domain_id": 2,
+    "subdomain_id": 7,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_anesthesiology_4fee3f3f/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "anesthesiology",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-07T00:35:07.454839"
+  },
+  {
+    "run_id": "3f0be89f",
+    "domain_id": 2,
+    "subdomain_id": 7,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_emergency_medicine_3f0be89f/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "emergency_medicine",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-07T00:34:29.742013"
+  },
+  {
+    "run_id": "92d8cb15",
+    "domain_id": 2,
+    "subdomain_id": 7,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_ent_92d8cb15/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "ent",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-07T00:33:51.445684"
+  },
+  {
+    "run_id": "e606b0dc",
+    "domain_id": 2,
+    "subdomain_id": 7,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_urology_e606b0dc/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "urology",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-07T00:33:14.663764"
+  },
+  {
+    "run_id": "131b4eeb",
+    "domain_id": 2,
+    "subdomain_id": 7,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_orthopedics_131b4eeb/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "orthopedics",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-07T00:32:32.453916"
+  },
+  {
+    "run_id": "f564af6e",
+    "domain_id": 2,
+    "subdomain_id": 7,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_dermatology_f564af6e/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "dermatology",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-07T00:31:56.859060"
+  },
+  {
+    "run_id": "7f592012",
+    "domain_id": 2,
+    "subdomain_id": 7,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_ophthalmology_7f592012/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "ophthalmology",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-07T00:31:09.249636"
+  },
+  {
+    "run_id": "c35a5f1b",
+    "domain_id": 2,
+    "subdomain_id": 7,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_pediatrics_c35a5f1b/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "pediatrics",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-07T00:30:19.955321"
+  },
+  {
     "run_id": "7d9aadc8",
     "domain_id": 2,
     "subdomain_id": 7,
