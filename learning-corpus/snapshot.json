@@ -16,9 +16,9 @@
     },
     "running": true,
     "started_at": "2026-06-06T21:21:27.951225+00:00",
-    "last_run_at": "2026-06-06T23:29:13.345298+00:00",
-    "next_run_at": "2026-06-07T00:29:13.345306+00:00",
-    "cycles_completed": 2,
+    "last_run_at": "2026-06-07T00:46:15.457324+00:00",
+    "next_run_at": "2026-06-07T01:46:15.457331+00:00",
+    "cycles_completed": 3,
     "last_result": {
       "batch": true,
       "targets_total": 25,
@@ -27,35 +27,35 @@
       "graduations_passed": 25,
       "last_target": {
         "domain": "medicine_and_health_sciences",
-        "subdomain": "clinical_medicine",
-        "micro_subdomain": "obstetrics_and_gynecology"
+        "subdomain": "traditional_and_alternative_medicine",
+        "micro_subdomain": "naturopathy"
       },
       "last_graduation": {
         "grade": "preschool",
         "passed": true,
-        "train_accuracy": 1.0,
+        "train_accuracy": 0.0,
         "min_train_accuracy": 0.45,
         "evaluator_passed": true,
         "unlocked_next": "elementary"
       },
       "sample_paths": [
-        "science_and_natural_philosophy.biology.zoology",
-        "science_and_natural_philosophy.biology.microbiology",
-        "science_and_natural_philosophy.biology.neuroscience",
-        "science_and_natural_philosophy.biology.physiology",
-        "science_and_natural_philosophy.biology.immunology"
+        "medicine_and_health_sciences.clinical_medicine.pediatrics",
+        "medicine_and_health_sciences.clinical_medicine.ophthalmology",
+        "medicine_and_health_sciences.clinical_medicine.dermatology",
+        "medicine_and_health_sciences.clinical_medicine.orthopedics",
+        "medicine_and_health_sciences.clinical_medicine.urology"
       ],
-      "batch_cursor": 50,
+      "batch_cursor": 75,
       "meta_consciousness": [
         {
-          "question": "Where are my biggest knowledge gaps?",
-          "answer": "~817 micro-topics not fully graduated; sparse docs mean abstain.",
-          "theme": "uncertainty"
+          "question": "What changed in me since my last cycle?",
+          "answer": "I am 247 docs deep on 867 micro-topics — still learning.",
+          "theme": "continuity"
         },
         {
-          "question": "Am I a generative LLM or a supervised learning brain?",
-          "answer": "Aureon — supervised ML brain, 157 docs, 2 cycles, predict v7.",
-          "theme": "identity"
+          "question": "When should I say I do not know?",
+          "answer": "When corpus + confidence cannot cite evidence — abstain beats hallucination.",
+          "theme": "uncertainty"
         }
       ]
     },
@@ -70,8 +70,8 @@
     "domains": 30,
     "micro_subdomains": 867,
     "micro_agents": 6192,
-    "documents": 157,
-    "grade_levels_graduated": 50,
+    "documents": 247,
+    "grade_levels_graduated": 75,
     "grade_progress_rows": 6069
   },
   "timeline": {
@@ -150,100 +150,100 @@
     "enabled": true,
     "recent": [
       {
-        "question": "What are the main kinds of Obstetrics & Gynecology — Gynecology, and Urogynecology?",
-        "answer": "Gynecology is a core concept within Obstetrics & Gynecology….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "medicine_and_health_sciences.clinical_medicine.obstetrics_and_gynecology",
+        "question": "What is Naturopathy?",
+        "answer": "Semantic Web of Things (SWoT) applications focus on….",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "medicine_and_health_sciences.traditional_and_alternative_medicine.naturopathy",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-07T00:46:15.456939+00:00"
+      },
+      {
+        "question": "What is one word I would use to describe Naturopathy?",
+        "answer": "research",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "medicine_and_health_sciences.traditional_and_alternative_medicine.naturopathy",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-07T00:46:15.456668+00:00"
+      },
+      {
+        "question": "What is Homeopathy?",
+        "answer": "Randomness is a fundamental resource in quantum….",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "medicine_and_health_sciences.traditional_and_alternative_medicine.homeopathy",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-07T00:45:31.454250+00:00"
+      },
+      {
+        "question": "What is one word I would use to describe Homeopathy?",
+        "answer": "research",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "medicine_and_health_sciences.traditional_and_alternative_medicine.homeopathy",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-07T00:45:31.452185+00:00"
+      },
+      {
+        "question": "What are the main kinds of Unani Medicine — Headache Medicine, Sleep Medicine (Neuro), Maternal-Fetal Medicine, and Sports Medicine (Ortho)?",
+        "answer": "Like other fields of Traditional Medicines, Unani Medicines….",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "medicine_and_health_sciences.traditional_and_alternative_medicine.unani_medicine",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-06T23:29:13.344805+00:00"
+        "ts": "2026-06-07T00:44:57.153392+00:00"
       },
       {
-        "question": "What is one word I would use to describe Urogynecology?",
+        "question": "What is one word I would use to describe Unani Medicine?",
+        "answer": "research",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "medicine_and_health_sciences.traditional_and_alternative_medicine.unani_medicine",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-07T00:44:57.153026+00:00"
+      },
+      {
+        "question": "What is one word I would use to describe Ayurvedic Herbalism?",
         "answer": "research",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "medicine_and_health_sciences.clinical_medicine.obstetrics_and_gynecology",
+        "path": "medicine_and_health_sciences.traditional_and_alternative_medicine.ayurveda",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-06T23:29:13.344326+00:00"
+        "ts": "2026-06-07T00:44:16.140808+00:00"
       },
       {
-        "question": "What are the main kinds of Psychiatry — Clinical Psychiatry, Forensic Psychiatry, Child & Adolescent Psychiatry, and Geriatric Psychiatry?",
-        "answer": "Forensic Psychiatry is a core concept within Psychiatry….",
+        "question": "What is Ayurveda?",
+        "answer": "Panchakarma is a core concept within Ayurveda (TRADITIONAL….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "medicine_and_health_sciences.clinical_medicine.psychiatry",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": true,
-        "ts": "2026-06-06T23:28:35.644015+00:00"
-      },
-      {
-        "question": "What is Psychiatry?",
-        "answer": "Forensic Psychiatry is a core concept within Psychiatry….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "medicine_and_health_sciences.clinical_medicine.psychiatry",
+        "path": "medicine_and_health_sciences.traditional_and_alternative_medicine.ayurveda",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-06T23:28:35.640884+00:00"
-      },
-      {
-        "question": "What are the main kinds of Neurology — Stroke Neurology, and Pediatric Neurology?",
-        "answer": "Epileptology is a core concept within Neurology (CLINICAL….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "medicine_and_health_sciences.clinical_medicine.neurology",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": true,
-        "ts": "2026-06-06T23:28:05.848078+00:00"
-      },
-      {
-        "question": "What is Neurology?",
-        "answer": "Epileptology is a core concept within Neurology (CLINICAL….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "medicine_and_health_sciences.clinical_medicine.neurology",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-06T23:28:05.847446+00:00"
-      },
-      {
-        "question": "What are the main kinds of Surgery — General Surgery, Cardiothoracic Surgery, Orthopedic Surgery, and Vascular Surgery?",
-        "answer": "Neurosurgery is a core concept within Surgery (CLINICAL….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "medicine_and_health_sciences.clinical_medicine.surgery",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": true,
-        "ts": "2026-06-06T23:27:18.749172+00:00"
-      },
-      {
-        "question": "What is one word I would use to describe Orthopedic Surgery?",
-        "answer": "research",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "medicine_and_health_sciences.clinical_medicine.surgery",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-06T23:27:18.748459+00:00"
+        "ts": "2026-06-07T00:44:16.056125+00:00"
       }
     ]
   },
@@ -251,116 +251,114 @@
     "enabled": true,
     "recent": [
       {
-        "question": "Am I a generative LLM or a supervised learning brain?",
-        "answer": "Aureon — supervised ML brain, 157 docs, 2 cycles, predict v7.",
-        "theme": "identity",
+        "question": "What is Naturopathy?",
+        "answer": "Semantic Web of Things (SWoT) applications focus on….",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "medicine_and_health_sciences.traditional_and_alternative_medicine.naturopathy",
+        "grade": "preschool",
         "source": "auto_learn",
+        "graduation_passed": true,
         "grounded": true,
-        "state_snapshot": {
-          "documents": 157,
-          "cycles": 2,
-          "focus": ""
-        },
-        "ts": "2026-06-06T23:29:13.448962+00:00",
-        "kind": "meta"
+        "ciper": false,
+        "ts": "2026-06-07T00:46:15.456939+00:00",
+        "kind": "learning"
       },
       {
-        "question": "Where are my biggest knowledge gaps?",
-        "answer": "~817 micro-topics not fully graduated; sparse docs mean abstain.",
-        "theme": "uncertainty",
+        "question": "What is one word I would use to describe Naturopathy?",
+        "answer": "research",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "medicine_and_health_sciences.traditional_and_alternative_medicine.naturopathy",
+        "grade": "preschool",
         "source": "auto_learn",
+        "graduation_passed": true,
         "grounded": true,
-        "state_snapshot": {
-          "documents": 157,
-          "cycles": 2,
-          "focus": ""
-        },
-        "ts": "2026-06-06T23:29:13.448481+00:00",
-        "kind": "meta"
+        "ciper": false,
+        "ts": "2026-06-07T00:46:15.456668+00:00",
+        "kind": "learning"
       },
       {
-        "question": "What are the main kinds of Obstetrics & Gynecology — Gynecology, and Urogynecology?",
-        "answer": "Gynecology is a core concept within Obstetrics & Gynecology….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "medicine_and_health_sciences.clinical_medicine.obstetrics_and_gynecology",
+        "question": "What is Homeopathy?",
+        "answer": "Randomness is a fundamental resource in quantum….",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "medicine_and_health_sciences.traditional_and_alternative_medicine.homeopathy",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-07T00:45:31.454250+00:00",
+        "kind": "learning"
+      },
+      {
+        "question": "What is one word I would use to describe Homeopathy?",
+        "answer": "research",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "medicine_and_health_sciences.traditional_and_alternative_medicine.homeopathy",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-07T00:45:31.452185+00:00",
+        "kind": "learning"
+      },
+      {
+        "question": "What are the main kinds of Unani Medicine — Headache Medicine, Sleep Medicine (Neuro), Maternal-Fetal Medicine, and Sports Medicine (Ortho)?",
+        "answer": "Like other fields of Traditional Medicines, Unani Medicines….",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "medicine_and_health_sciences.traditional_and_alternative_medicine.unani_medicine",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-06T23:29:13.344805+00:00",
+        "ts": "2026-06-07T00:44:57.153392+00:00",
         "kind": "learning"
       },
       {
-        "question": "What is one word I would use to describe Urogynecology?",
+        "question": "What is one word I would use to describe Unani Medicine?",
+        "answer": "research",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "medicine_and_health_sciences.traditional_and_alternative_medicine.unani_medicine",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-07T00:44:57.153026+00:00",
+        "kind": "learning"
+      },
+      {
+        "question": "What is one word I would use to describe Ayurvedic Herbalism?",
         "answer": "research",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "medicine_and_health_sciences.clinical_medicine.obstetrics_and_gynecology",
+        "path": "medicine_and_health_sciences.traditional_and_alternative_medicine.ayurveda",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-06T23:29:13.344326+00:00",
+        "ts": "2026-06-07T00:44:16.140808+00:00",
         "kind": "learning"
       },
       {
-        "question": "What are the main kinds of Psychiatry — Clinical Psychiatry, Forensic Psychiatry, Child & Adolescent Psychiatry, and Geriatric Psychiatry?",
-        "answer": "Forensic Psychiatry is a core concept within Psychiatry….",
+        "question": "What is Ayurveda?",
+        "answer": "Panchakarma is a core concept within Ayurveda (TRADITIONAL….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "medicine_and_health_sciences.clinical_medicine.psychiatry",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": true,
-        "ts": "2026-06-06T23:28:35.644015+00:00",
-        "kind": "learning"
-      },
-      {
-        "question": "What is Psychiatry?",
-        "answer": "Forensic Psychiatry is a core concept within Psychiatry….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "medicine_and_health_sciences.clinical_medicine.psychiatry",
+        "path": "medicine_and_health_sciences.traditional_and_alternative_medicine.ayurveda",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-06T23:28:35.640884+00:00",
-        "kind": "learning"
-      },
-      {
-        "question": "What are the main kinds of Neurology — Stroke Neurology, and Pediatric Neurology?",
-        "answer": "Epileptology is a core concept within Neurology (CLINICAL….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "medicine_and_health_sciences.clinical_medicine.neurology",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": true,
-        "ts": "2026-06-06T23:28:05.848078+00:00",
-        "kind": "learning"
-      },
-      {
-        "question": "What is Neurology?",
-        "answer": "Epileptology is a core concept within Neurology (CLINICAL….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "medicine_and_health_sciences.clinical_medicine.neurology",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-06T23:28:05.847446+00:00",
+        "ts": "2026-06-07T00:44:16.056125+00:00",
         "kind": "learning"
       }
     ]
   },
-  "exported_at": "2026-06-07T00:27:42.454216+00:00",
+  "exported_at": "2026-06-07T00:46:15.457905+00:00",
   "github_sync": {
-    "batch_cursor": 50,
+    "batch_cursor": 75,
     "include_document_text": true,
     "max_documents": 5000,
     "export_version": 2
