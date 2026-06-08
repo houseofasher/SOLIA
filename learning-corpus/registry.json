@@ -1315,6 +1315,356 @@
         "epochs": 150
       },
       "status": "completed"
+    },
+    {
+      "run_id": "ccd6b14f",
+      "created_at": "2026-06-08T06:25:34.957055+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_communications_engineering_ccd6b14f/classifier.json",
+      "params": {
+        "scope": "communications_engineering",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "d1db25a0",
+      "created_at": "2026-06-08T06:26:12.741441+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_embedded_systems_d1db25a0/classifier.json",
+      "params": {
+        "scope": "embedded_systems",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "ebee12a2",
+      "created_at": "2026-06-08T06:26:52.863041+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_mechanics_of_materials_ebee12a2/classifier.json",
+      "params": {
+        "scope": "mechanics_of_materials",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "d8a1f98a",
+      "created_at": "2026-06-08T06:27:27.959016+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_fluid_mechanics_d8a1f98a/classifier.json",
+      "params": {
+        "scope": "fluid_mechanics",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "95cf8527",
+      "created_at": "2026-06-08T06:28:12.942128+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_heat_and_mass_transfer_95cf8527/classifier.json",
+      "params": {
+        "scope": "heat_and_mass_transfer",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "e086e4e0",
+      "created_at": "2026-06-08T06:29:02.062540+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_machine_design_e086e4e0/classifier.json",
+      "params": {
+        "scope": "machine_design",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "f5d53e6c",
+      "created_at": "2026-06-08T06:29:49.144285+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_manufacturing_engineering_f5d53e6c/classifier.json",
+      "params": {
+        "scope": "manufacturing_engineering",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "16d657a0",
+      "created_at": "2026-06-08T06:30:33.558024+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_robotics_and_automation_16d657a0/classifier.json",
+      "params": {
+        "scope": "robotics_and_automation",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "0a7785d8",
+      "created_at": "2026-06-08T06:31:12.450703+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_aerospace_and_aeronautical_engineering_0a7785d8/classifier.json",
+      "params": {
+        "scope": "aerospace_and_aeronautical_engineering",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "199213ad",
+      "created_at": "2026-06-08T06:31:56.445306+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_structural_engineering_199213ad/classifier.json",
+      "params": {
+        "scope": "structural_engineering",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "afa2a78d",
+      "created_at": "2026-06-08T06:32:25.051494+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_geotechnical_engineering_afa2a78d/classifier.json",
+      "params": {
+        "scope": "geotechnical_engineering",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "9b7c2fa6",
+      "created_at": "2026-06-08T06:33:06.156411+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_transportation_engineering_9b7c2fa6/classifier.json",
+      "params": {
+        "scope": "transportation_engineering",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "e3962d44",
+      "created_at": "2026-06-08T06:33:51.756482+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_water_resources_engineering_e3962d44/classifier.json",
+      "params": {
+        "scope": "water_resources_engineering",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "1ec27079",
+      "created_at": "2026-06-08T06:34:26.744487+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_environmental_engineering_1ec27079/classifier.json",
+      "params": {
+        "scope": "environmental_engineering",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "7f105ce9",
+      "created_at": "2026-06-08T06:35:06.566904+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_construction_engineering_7f105ce9/classifier.json",
+      "params": {
+        "scope": "construction_engineering",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "2b5a110a",
+      "created_at": "2026-06-08T06:35:54.253810+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_transport_phenomena_2b5a110a/classifier.json",
+      "params": {
+        "scope": "transport_phenomena",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "56e3d7a2",
+      "created_at": "2026-06-08T06:36:33.155535+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_reaction_engineering_56e3d7a2/classifier.json",
+      "params": {
+        "scope": "reaction_engineering",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "622bdb8b",
+      "created_at": "2026-06-08T06:37:20.746216+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_separation_processes_622bdb8b/classifier.json",
+      "params": {
+        "scope": "separation_processes",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "8537e9c9",
+      "created_at": "2026-06-08T06:37:59.353900+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_process_systems_engineering_8537e9c9/classifier.json",
+      "params": {
+        "scope": "process_systems_engineering",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "1e9f4063",
+      "created_at": "2026-06-08T06:38:40.754515+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_biochemical_engineering_1e9f4063/classifier.json",
+      "params": {
+        "scope": "biochemical_engineering",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "ab81c116",
+      "created_at": "2026-06-08T06:39:20.272510+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_petroleum_engineering_ab81c116/classifier.json",
+      "params": {
+        "scope": "petroleum_engineering",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "b66c3f8c",
+      "created_at": "2026-06-08T06:40:02.651783+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_metals_and_alloys_b66c3f8c/classifier.json",
+      "params": {
+        "scope": "metals_and_alloys",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "31efb0ac",
+      "created_at": "2026-06-08T06:40:35.350541+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_ceramics_and_glasses_31efb0ac/classifier.json",
+      "params": {
+        "scope": "ceramics_and_glasses",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "e3d4a369",
+      "created_at": "2026-06-08T06:41:19.651714+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_polymers_and_composites_e3d4a369/classifier.json",
+      "params": {
+        "scope": "polymers_and_composites",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "3ac241a8",
+      "created_at": "2026-06-08T06:41:55.351524+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_electronic_materials_3ac241a8/classifier.json",
+      "params": {
+        "scope": "electronic_materials",
+        "epochs": 150
+      },
+      "status": "completed"
     }
   ]
 }
