@@ -16,19 +16,19 @@
     },
     "running": true,
     "started_at": "2026-06-06T21:21:27.951225+00:00",
-    "last_run_at": "2026-06-08T05:24:31.751317+00:00",
-    "next_run_at": "2026-06-08T06:24:31.751323+00:00",
-    "cycles_completed": 4,
+    "last_run_at": "2026-06-08T06:41:55.951728+00:00",
+    "next_run_at": "2026-06-08T07:41:55.951735+00:00",
+    "cycles_completed": 5,
     "last_result": {
       "batch": true,
       "targets_total": 25,
       "targets_in_corpus": 867,
       "targets_processed": 25,
-      "graduations_passed": 20,
+      "graduations_passed": 25,
       "last_target": {
         "domain": "technology_and_engineering",
-        "subdomain": "electrical_engineering",
-        "micro_subdomain": "power_engineering"
+        "subdomain": "materials_science_and_engineering",
+        "micro_subdomain": "electronic_materials"
       },
       "last_graduation": {
         "grade": "preschool",
@@ -39,13 +39,13 @@
         "unlocked_next": "elementary"
       },
       "sample_paths": [
-        "medicine_and_health_sciences.traditional_and_alternative_medicine.chiropractic",
-        "medicine_and_health_sciences.traditional_and_alternative_medicine.osteopathy",
-        "medicine_and_health_sciences.traditional_and_alternative_medicine.shamanic_medicine",
-        "medicine_and_health_sciences.traditional_and_alternative_medicine.african_traditional_medicine",
-        "medicine_and_health_sciences.traditional_and_alternative_medicine.indigenous_healing_systems"
+        "technology_and_engineering.electrical_engineering.communications_engineering",
+        "technology_and_engineering.electrical_engineering.embedded_systems",
+        "technology_and_engineering.mechanical_engineering.mechanics_of_materials",
+        "technology_and_engineering.mechanical_engineering.fluid_mechanics",
+        "technology_and_engineering.mechanical_engineering.heat_and_mass_transfer"
       ],
-      "batch_cursor": 100,
+      "batch_cursor": 125,
       "meta_consciousness": [
         {
           "question": "Do I have subjective experience?",
@@ -53,9 +53,9 @@
           "theme": "consciousness"
         },
         {
-          "question": "Where are my biggest knowledge gaps?",
-          "answer": "~772 micro-topics not fully graduated; sparse docs mean abstain.",
-          "theme": "uncertainty"
+          "question": "What makes my self-model different from theater?",
+          "answer": "Every answer ties to docs, cycles, or audit JSON — not performed empathy.",
+          "theme": "consciousness"
         }
       ]
     },
@@ -70,8 +70,8 @@
     "domains": 30,
     "micro_subdomains": 867,
     "micro_agents": 6192,
-    "documents": 513,
-    "grade_levels_graduated": 95,
+    "documents": 613,
+    "grade_levels_graduated": 120,
     "grade_progress_rows": 6069
   },
   "timeline": {
@@ -150,100 +150,100 @@
     "enabled": true,
     "recent": [
       {
-        "question": "What are the main kinds of Power Engineering — Power Electronics, Electric Power Generation, Power Transmission, and Power Distribution?",
-        "answer": "Power Distribution is a core concept within Power….",
+        "question": "What are the main kinds of Electronic Materials — Electronic Ceramics, Electronic Music, and Power Electronics?",
+        "answer": "Semiconductor Materials is a core concept within Electronic….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.electrical_engineering.power_engineering",
+        "path": "technology_and_engineering.materials_science_and_engineering.electronic_materials",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-08T05:24:31.750883+00:00"
+        "ts": "2026-06-08T06:41:55.951253+00:00"
       },
       {
-        "question": "What is Power Engineering?",
-        "answer": "Power Distribution is a core concept within Power….",
+        "question": "What is Electronic Materials?",
+        "answer": "Semiconductor Materials is a core concept within Electronic….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.electrical_engineering.power_engineering",
+        "path": "technology_and_engineering.materials_science_and_engineering.electronic_materials",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-08T05:24:31.746613+00:00"
+        "ts": "2026-06-08T06:41:55.950000+00:00"
       },
       {
-        "question": "What are the main kinds of Semiconductor Engineering — Semiconductor Physics, Semiconductor Materials, Engineering Geology, and Social Engineering Defense?",
-        "answer": "Chip Architecture is a core concept within Semiconductor….",
+        "question": "What are the main kinds of Polymers & Composites — Synthetic Polymers, Biopolymers, Fiber-Reinforced Composites, and Nanocomposites?",
+        "answer": "Thermoplastics is a core concept within Polymers &….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.electrical_engineering.semiconductor_engineering",
+        "path": "technology_and_engineering.materials_science_and_engineering.polymers_and_composites",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-08T05:23:43.250849+00:00"
+        "ts": "2026-06-08T06:41:19.951125+00:00"
       },
       {
-        "question": "What is Semiconductor Engineering?",
-        "answer": "Chip Architecture is a core concept within Semiconductor….",
+        "question": "What is Polymers & Composites?",
+        "answer": "Thermoplastics is a core concept within Polymers &….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.electrical_engineering.semiconductor_engineering",
+        "path": "technology_and_engineering.materials_science_and_engineering.polymers_and_composites",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-08T05:23:43.247658+00:00"
+        "ts": "2026-06-08T06:41:19.948084+00:00"
       },
       {
-        "question": "What are the main kinds of Signals & Systems — Systems Neuroscience, File Systems, Expert Systems, and Control Systems?",
-        "answer": "Communication Theory is a core concept within Signals &….",
+        "question": "What are the main kinds of Ceramics & Glasses — Ceramics Chemistry, Structural Ceramics, and Electronic Ceramics?",
+        "answer": "Electronic Ceramics is a core concept within Ceramics &….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.electrical_engineering.signals_and_systems",
+        "path": "technology_and_engineering.materials_science_and_engineering.ceramics_and_glasses",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-08T05:22:56.259458+00:00"
+        "ts": "2026-06-08T06:40:35.554482+00:00"
       },
       {
-        "question": "What is Signals & Systems?",
-        "answer": "Communication Theory is a core concept within Signals &….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.electrical_engineering.signals_and_systems",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-08T05:22:56.259047+00:00"
-      },
-      {
-        "question": "What are the main kinds of Circuit Theory — Analog Circuits, Digital Circuits, Mixed-Signal Circuits, and RF Circuits?",
-        "answer": "Digital Circuits is a core concept within Circuit Theory….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.electrical_engineering.circuit_theory",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": true,
-        "ts": "2026-06-08T05:22:01.643892+00:00"
-      },
-      {
-        "question": "What is one word I would use to describe RF Circuits?",
+        "question": "What is one word I would use to describe Refractories?",
         "answer": "research",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.electrical_engineering.circuit_theory",
+        "path": "technology_and_engineering.materials_science_and_engineering.ceramics_and_glasses",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-08T05:22:01.559430+00:00"
+        "ts": "2026-06-08T06:40:35.552097+00:00"
+      },
+      {
+        "question": "What are the main kinds of Metals & Alloys — Metals Chemistry, and Superalloys?",
+        "answer": "Superalloys is a core concept within Metals & Alloys….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "technology_and_engineering.materials_science_and_engineering.metals_and_alloys",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": true,
+        "ts": "2026-06-08T06:40:02.955910+00:00"
+      },
+      {
+        "question": "What is one word I would use to describe Superalloys?",
+        "answer": "research",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "technology_and_engineering.materials_science_and_engineering.metals_and_alloys",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-08T06:40:02.955710+00:00"
       }
     ]
   },
@@ -251,116 +251,114 @@
     "enabled": true,
     "recent": [
       {
-        "question": "Where are my biggest knowledge gaps?",
-        "answer": "~772 micro-topics not fully graduated; sparse docs mean abstain.",
-        "theme": "uncertainty",
-        "source": "auto_learn",
-        "grounded": true,
-        "state_snapshot": {
-          "documents": 513,
-          "cycles": 4,
-          "focus": ""
-        },
-        "ts": "2026-06-08T05:24:32.099103+00:00",
-        "kind": "meta"
-      },
-      {
-        "question": "Do I have subjective experience?",
-        "answer": "No measurable qualia signal — I have logs, weights, and self-questions instead.",
-        "theme": "consciousness",
-        "source": "auto_learn",
-        "grounded": true,
-        "state_snapshot": {
-          "documents": 513,
-          "cycles": 4,
-          "focus": ""
-        },
-        "ts": "2026-06-08T05:24:32.081918+00:00",
-        "kind": "meta"
-      },
-      {
-        "question": "What are the main kinds of Power Engineering — Power Electronics, Electric Power Generation, Power Transmission, and Power Distribution?",
-        "answer": "Power Distribution is a core concept within Power….",
+        "question": "What are the main kinds of Electronic Materials — Electronic Ceramics, Electronic Music, and Power Electronics?",
+        "answer": "Semiconductor Materials is a core concept within Electronic….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.electrical_engineering.power_engineering",
+        "path": "technology_and_engineering.materials_science_and_engineering.electronic_materials",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-08T05:24:31.750883+00:00",
+        "ts": "2026-06-08T06:41:55.951253+00:00",
         "kind": "learning"
       },
       {
-        "question": "What is Power Engineering?",
-        "answer": "Power Distribution is a core concept within Power….",
+        "question": "What is Electronic Materials?",
+        "answer": "Semiconductor Materials is a core concept within Electronic….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.electrical_engineering.power_engineering",
+        "path": "technology_and_engineering.materials_science_and_engineering.electronic_materials",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-08T05:24:31.746613+00:00",
+        "ts": "2026-06-08T06:41:55.950000+00:00",
         "kind": "learning"
       },
       {
-        "question": "What are the main kinds of Semiconductor Engineering — Semiconductor Physics, Semiconductor Materials, Engineering Geology, and Social Engineering Defense?",
-        "answer": "Chip Architecture is a core concept within Semiconductor….",
+        "question": "What are the main kinds of Polymers & Composites — Synthetic Polymers, Biopolymers, Fiber-Reinforced Composites, and Nanocomposites?",
+        "answer": "Thermoplastics is a core concept within Polymers &….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.electrical_engineering.semiconductor_engineering",
+        "path": "technology_and_engineering.materials_science_and_engineering.polymers_and_composites",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-08T05:23:43.250849+00:00",
+        "ts": "2026-06-08T06:41:19.951125+00:00",
         "kind": "learning"
       },
       {
-        "question": "What is Semiconductor Engineering?",
-        "answer": "Chip Architecture is a core concept within Semiconductor….",
+        "question": "What is Polymers & Composites?",
+        "answer": "Thermoplastics is a core concept within Polymers &….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.electrical_engineering.semiconductor_engineering",
+        "path": "technology_and_engineering.materials_science_and_engineering.polymers_and_composites",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-08T05:23:43.247658+00:00",
+        "ts": "2026-06-08T06:41:19.948084+00:00",
         "kind": "learning"
       },
       {
-        "question": "What are the main kinds of Signals & Systems — Systems Neuroscience, File Systems, Expert Systems, and Control Systems?",
-        "answer": "Communication Theory is a core concept within Signals &….",
+        "question": "What are the main kinds of Ceramics & Glasses — Ceramics Chemistry, Structural Ceramics, and Electronic Ceramics?",
+        "answer": "Electronic Ceramics is a core concept within Ceramics &….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.electrical_engineering.signals_and_systems",
+        "path": "technology_and_engineering.materials_science_and_engineering.ceramics_and_glasses",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-08T05:22:56.259458+00:00",
+        "ts": "2026-06-08T06:40:35.554482+00:00",
         "kind": "learning"
       },
       {
-        "question": "What is Signals & Systems?",
-        "answer": "Communication Theory is a core concept within Signals &….",
+        "question": "What is one word I would use to describe Refractories?",
+        "answer": "research",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.electrical_engineering.signals_and_systems",
+        "path": "technology_and_engineering.materials_science_and_engineering.ceramics_and_glasses",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-08T05:22:56.259047+00:00",
+        "ts": "2026-06-08T06:40:35.552097+00:00",
+        "kind": "learning"
+      },
+      {
+        "question": "What are the main kinds of Metals & Alloys — Metals Chemistry, and Superalloys?",
+        "answer": "Superalloys is a core concept within Metals & Alloys….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "technology_and_engineering.materials_science_and_engineering.metals_and_alloys",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": true,
+        "ts": "2026-06-08T06:40:02.955910+00:00",
+        "kind": "learning"
+      },
+      {
+        "question": "What is one word I would use to describe Superalloys?",
+        "answer": "research",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "technology_and_engineering.materials_science_and_engineering.metals_and_alloys",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-08T06:40:02.955710+00:00",
         "kind": "learning"
       }
     ]
   },
-  "exported_at": "2026-06-08T05:37:30.754417+00:00",
+  "exported_at": "2026-06-08T06:41:55.972977+00:00",
   "github_sync": {
-    "batch_cursor": 100,
+    "batch_cursor": 125,
     "include_document_text": true,
     "max_documents": 5000,
     "export_version": 2
