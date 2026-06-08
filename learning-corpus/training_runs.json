@@ -1,5 +1,260 @@
 [
   {
+    "run_id": "29999383",
+    "domain_id": 4,
+    "subdomain_id": 22,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_non_classical_logic_29999383/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "non_classical_logic",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T07:58:08.946484"
+  },
+  {
+    "run_id": "feb7e9df",
+    "domain_id": 4,
+    "subdomain_id": 22,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_classical_logic_feb7e9df/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "classical_logic",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T07:57:26.555151"
+  },
+  {
+    "run_id": "9fd5d238",
+    "domain_id": 4,
+    "subdomain_id": 21,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_applied_ethics_9fd5d238/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "applied_ethics",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T07:56:51.054400"
+  },
+  {
+    "run_id": "67113e3e",
+    "domain_id": 4,
+    "subdomain_id": 21,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_metaethics_67113e3e/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "metaethics",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T07:56:16.645232"
+  },
+  {
+    "run_id": "b0ead13d",
+    "domain_id": 4,
+    "subdomain_id": 21,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_normative_ethics_b0ead13d/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "normative_ethics",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T07:55:35.647423"
+  },
+  {
+    "run_id": "7543a1c4",
+    "domain_id": 4,
+    "subdomain_id": 20,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_social_epistemology_7543a1c4/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "social_epistemology",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T07:54:59.263306"
+  },
+  {
+    "run_id": "2e03d605",
+    "domain_id": 4,
+    "subdomain_id": 20,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_skepticism_2e03d605/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "skepticism",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T07:54:23.451854"
+  },
+  {
+    "run_id": "fc2a62a1",
+    "domain_id": 4,
+    "subdomain_id": 20,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_philosophy_of_perception_fc2a62a1/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "philosophy_of_perception",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T07:53:44.654166"
+  },
+  {
+    "run_id": "cc3479e8",
+    "domain_id": 4,
+    "subdomain_id": 20,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_theory_of_knowledge_cc3479e8/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "theory_of_knowledge",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T07:53:13.658047"
+  },
+  {
+    "run_id": "38669cf1",
+    "domain_id": 4,
+    "subdomain_id": 19,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_philosophy_of_religion_38669cf1/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "philosophy_of_religion",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T07:52:35.748786"
+  },
+  {
+    "run_id": "fb0702cb",
+    "domain_id": 4,
+    "subdomain_id": 19,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_philosophy_of_mind_fb0702cb/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "philosophy_of_mind",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T07:51:56.652761"
+  },
+  {
+    "run_id": "ea1ffa8d",
+    "domain_id": 4,
+    "subdomain_id": 19,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_cosmology_ea1ffa8d/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "cosmology",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T07:51:12.650606"
+  },
+  {
+    "run_id": "20f6d6ca",
+    "domain_id": 4,
+    "subdomain_id": 19,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_ontology_20f6d6ca/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "ontology",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T07:50:37.155641"
+  },
+  {
+    "run_id": "4617e887",
+    "domain_id": 3,
+    "subdomain_id": 16,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_nanomaterials_4617e887/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "nanomaterials",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T07:43:33.051954"
+  },
+  {
+    "run_id": "604cd644",
+    "domain_id": 3,
+    "subdomain_id": 16,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_biomaterials_604cd644/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "biomaterials",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T07:42:49.757362"
+  },
+  {
     "run_id": "3ac241a8",
     "domain_id": 3,
     "subdomain_id": 16,
