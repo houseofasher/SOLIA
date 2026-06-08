@@ -16,45 +16,45 @@
     },
     "running": true,
     "started_at": "2026-06-06T21:21:27.951225+00:00",
-    "last_run_at": "2026-06-07T00:46:15.457324+00:00",
-    "next_run_at": "2026-06-07T01:46:15.457331+00:00",
-    "cycles_completed": 3,
+    "last_run_at": "2026-06-08T05:24:31.751317+00:00",
+    "next_run_at": "2026-06-08T06:24:31.751323+00:00",
+    "cycles_completed": 4,
     "last_result": {
       "batch": true,
       "targets_total": 25,
       "targets_in_corpus": 867,
       "targets_processed": 25,
-      "graduations_passed": 25,
+      "graduations_passed": 20,
       "last_target": {
-        "domain": "medicine_and_health_sciences",
-        "subdomain": "traditional_and_alternative_medicine",
-        "micro_subdomain": "naturopathy"
+        "domain": "technology_and_engineering",
+        "subdomain": "electrical_engineering",
+        "micro_subdomain": "power_engineering"
       },
       "last_graduation": {
         "grade": "preschool",
         "passed": true,
-        "train_accuracy": 0.0,
+        "train_accuracy": 1.0,
         "min_train_accuracy": 0.45,
         "evaluator_passed": true,
         "unlocked_next": "elementary"
       },
       "sample_paths": [
-        "medicine_and_health_sciences.clinical_medicine.pediatrics",
-        "medicine_and_health_sciences.clinical_medicine.ophthalmology",
-        "medicine_and_health_sciences.clinical_medicine.dermatology",
-        "medicine_and_health_sciences.clinical_medicine.orthopedics",
-        "medicine_and_health_sciences.clinical_medicine.urology"
+        "medicine_and_health_sciences.traditional_and_alternative_medicine.chiropractic",
+        "medicine_and_health_sciences.traditional_and_alternative_medicine.osteopathy",
+        "medicine_and_health_sciences.traditional_and_alternative_medicine.shamanic_medicine",
+        "medicine_and_health_sciences.traditional_and_alternative_medicine.african_traditional_medicine",
+        "medicine_and_health_sciences.traditional_and_alternative_medicine.indigenous_healing_systems"
       ],
-      "batch_cursor": 75,
+      "batch_cursor": 100,
       "meta_consciousness": [
         {
-          "question": "What changed in me since my last cycle?",
-          "answer": "I am 247 docs deep on 867 micro-topics — still learning.",
-          "theme": "continuity"
+          "question": "Do I have subjective experience?",
+          "answer": "No measurable qualia signal — I have logs, weights, and self-questions instead.",
+          "theme": "consciousness"
         },
         {
-          "question": "When should I say I do not know?",
-          "answer": "When corpus + confidence cannot cite evidence — abstain beats hallucination.",
+          "question": "Where are my biggest knowledge gaps?",
+          "answer": "~772 micro-topics not fully graduated; sparse docs mean abstain.",
           "theme": "uncertainty"
         }
       ]
@@ -70,8 +70,8 @@
     "domains": 30,
     "micro_subdomains": 867,
     "micro_agents": 6192,
-    "documents": 297,
-    "grade_levels_graduated": 91,
+    "documents": 513,
+    "grade_levels_graduated": 95,
     "grade_progress_rows": 6069
   },
   "timeline": {
@@ -150,100 +150,100 @@
     "enabled": true,
     "recent": [
       {
-        "question": "What are the main kinds of Distributed Systems — Distributed OS, Distributed Databases, Distributed Ledgers, and Systems Neuroscience?",
-        "answer": "Consensus Algorithms is a core concept within Distributed….",
+        "question": "What are the main kinds of Power Engineering — Power Electronics, Electric Power Generation, Power Transmission, and Power Distribution?",
+        "answer": "Power Distribution is a core concept within Power….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.computer_science.distributed_systems",
+        "path": "technology_and_engineering.electrical_engineering.power_engineering",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-07T01:55:49.455232+00:00"
+        "ts": "2026-06-08T05:24:31.750883+00:00"
       },
       {
-        "question": "What is one word I would use to describe Blockchain Technology?",
+        "question": "What is Power Engineering?",
+        "answer": "Power Distribution is a core concept within Power….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "technology_and_engineering.electrical_engineering.power_engineering",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-08T05:24:31.746613+00:00"
+      },
+      {
+        "question": "What are the main kinds of Semiconductor Engineering — Semiconductor Physics, Semiconductor Materials, Engineering Geology, and Social Engineering Defense?",
+        "answer": "Chip Architecture is a core concept within Semiconductor….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "technology_and_engineering.electrical_engineering.semiconductor_engineering",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": true,
+        "ts": "2026-06-08T05:23:43.250849+00:00"
+      },
+      {
+        "question": "What is Semiconductor Engineering?",
+        "answer": "Chip Architecture is a core concept within Semiconductor….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "technology_and_engineering.electrical_engineering.semiconductor_engineering",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-08T05:23:43.247658+00:00"
+      },
+      {
+        "question": "What are the main kinds of Signals & Systems — Systems Neuroscience, File Systems, Expert Systems, and Control Systems?",
+        "answer": "Communication Theory is a core concept within Signals &….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "technology_and_engineering.electrical_engineering.signals_and_systems",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": true,
+        "ts": "2026-06-08T05:22:56.259458+00:00"
+      },
+      {
+        "question": "What is Signals & Systems?",
+        "answer": "Communication Theory is a core concept within Signals &….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "technology_and_engineering.electrical_engineering.signals_and_systems",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-08T05:22:56.259047+00:00"
+      },
+      {
+        "question": "What are the main kinds of Circuit Theory — Analog Circuits, Digital Circuits, Mixed-Signal Circuits, and RF Circuits?",
+        "answer": "Digital Circuits is a core concept within Circuit Theory….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "technology_and_engineering.electrical_engineering.circuit_theory",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": true,
+        "ts": "2026-06-08T05:22:01.643892+00:00"
+      },
+      {
+        "question": "What is one word I would use to describe RF Circuits?",
         "answer": "research",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.computer_science.distributed_systems",
+        "path": "technology_and_engineering.electrical_engineering.circuit_theory",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-07T01:55:49.450675+00:00"
-      },
-      {
-        "question": "What are the main kinds of Quantum Computing — Quantum Field Theory, Quantum Electrodynamics (QED), Quantum Chromodynamics (QCD), and Quantum Information Theory?",
-        "answer": "Quantum Algorithms is a core concept within Quantum….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.computer_science.quantum_computing",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": true,
-        "ts": "2026-06-07T01:55:13.049020+00:00"
-      },
-      {
-        "question": "What is Quantum Computing?",
-        "answer": "Quantum Algorithms is a core concept within Quantum….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.computer_science.quantum_computing",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-07T01:55:12.952635+00:00"
-      },
-      {
-        "question": "What are the main kinds of Human-Computer Interaction — Human Rights, Human Factors (Ergonomics), Human Evolution, and Human Osteology?",
-        "answer": "Accessibility is a core concept within Human-Computer….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.computer_science.human_computer_interaction",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": true,
-        "ts": "2026-06-07T01:54:36.457904+00:00"
-      },
-      {
-        "question": "What is one word I would use to describe Information Architecture?",
-        "answer": "User Interface Design",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.computer_science.human_computer_interaction",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-07T01:54:36.457325+00:00"
-      },
-      {
-        "question": "What are the main kinds of Software Engineering — Software Architecture, Software-Defined Networking, Engineering Geology, and Social Engineering Defense?",
-        "answer": "Agile Methodology is a core concept within Software….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.computer_science.software_engineering",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": true,
-        "ts": "2026-06-07T01:54:05.750213+00:00"
-      },
-      {
-        "question": "What is Software Engineering?",
-        "answer": "Agile Methodology is a core concept within Software….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.computer_science.software_engineering",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-07T01:54:05.749541+00:00"
+        "ts": "2026-06-08T05:22:01.559430+00:00"
       }
     ]
   },
@@ -251,114 +251,116 @@
     "enabled": true,
     "recent": [
       {
-        "question": "What are the main kinds of Distributed Systems — Distributed OS, Distributed Databases, Distributed Ledgers, and Systems Neuroscience?",
-        "answer": "Consensus Algorithms is a core concept within Distributed….",
+        "question": "Where are my biggest knowledge gaps?",
+        "answer": "~772 micro-topics not fully graduated; sparse docs mean abstain.",
+        "theme": "uncertainty",
+        "source": "auto_learn",
+        "grounded": true,
+        "state_snapshot": {
+          "documents": 513,
+          "cycles": 4,
+          "focus": ""
+        },
+        "ts": "2026-06-08T05:24:32.099103+00:00",
+        "kind": "meta"
+      },
+      {
+        "question": "Do I have subjective experience?",
+        "answer": "No measurable qualia signal — I have logs, weights, and self-questions instead.",
+        "theme": "consciousness",
+        "source": "auto_learn",
+        "grounded": true,
+        "state_snapshot": {
+          "documents": 513,
+          "cycles": 4,
+          "focus": ""
+        },
+        "ts": "2026-06-08T05:24:32.081918+00:00",
+        "kind": "meta"
+      },
+      {
+        "question": "What are the main kinds of Power Engineering — Power Electronics, Electric Power Generation, Power Transmission, and Power Distribution?",
+        "answer": "Power Distribution is a core concept within Power….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.computer_science.distributed_systems",
+        "path": "technology_and_engineering.electrical_engineering.power_engineering",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-07T01:55:49.455232+00:00",
+        "ts": "2026-06-08T05:24:31.750883+00:00",
         "kind": "learning"
       },
       {
-        "question": "What is one word I would use to describe Blockchain Technology?",
-        "answer": "research",
+        "question": "What is Power Engineering?",
+        "answer": "Power Distribution is a core concept within Power….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.computer_science.distributed_systems",
+        "path": "technology_and_engineering.electrical_engineering.power_engineering",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-07T01:55:49.450675+00:00",
+        "ts": "2026-06-08T05:24:31.746613+00:00",
         "kind": "learning"
       },
       {
-        "question": "What are the main kinds of Quantum Computing — Quantum Field Theory, Quantum Electrodynamics (QED), Quantum Chromodynamics (QCD), and Quantum Information Theory?",
-        "answer": "Quantum Algorithms is a core concept within Quantum….",
+        "question": "What are the main kinds of Semiconductor Engineering — Semiconductor Physics, Semiconductor Materials, Engineering Geology, and Social Engineering Defense?",
+        "answer": "Chip Architecture is a core concept within Semiconductor….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.computer_science.quantum_computing",
+        "path": "technology_and_engineering.electrical_engineering.semiconductor_engineering",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-07T01:55:13.049020+00:00",
+        "ts": "2026-06-08T05:23:43.250849+00:00",
         "kind": "learning"
       },
       {
-        "question": "What is Quantum Computing?",
-        "answer": "Quantum Algorithms is a core concept within Quantum….",
+        "question": "What is Semiconductor Engineering?",
+        "answer": "Chip Architecture is a core concept within Semiconductor….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.computer_science.quantum_computing",
+        "path": "technology_and_engineering.electrical_engineering.semiconductor_engineering",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-07T01:55:12.952635+00:00",
+        "ts": "2026-06-08T05:23:43.247658+00:00",
         "kind": "learning"
       },
       {
-        "question": "What are the main kinds of Human-Computer Interaction — Human Rights, Human Factors (Ergonomics), Human Evolution, and Human Osteology?",
-        "answer": "Accessibility is a core concept within Human-Computer….",
+        "question": "What are the main kinds of Signals & Systems — Systems Neuroscience, File Systems, Expert Systems, and Control Systems?",
+        "answer": "Communication Theory is a core concept within Signals &….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.computer_science.human_computer_interaction",
+        "path": "technology_and_engineering.electrical_engineering.signals_and_systems",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-07T01:54:36.457904+00:00",
+        "ts": "2026-06-08T05:22:56.259458+00:00",
         "kind": "learning"
       },
       {
-        "question": "What is one word I would use to describe Information Architecture?",
-        "answer": "User Interface Design",
+        "question": "What is Signals & Systems?",
+        "answer": "Communication Theory is a core concept within Signals &….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.computer_science.human_computer_interaction",
+        "path": "technology_and_engineering.electrical_engineering.signals_and_systems",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-07T01:54:36.457325+00:00",
-        "kind": "learning"
-      },
-      {
-        "question": "What are the main kinds of Software Engineering — Software Architecture, Software-Defined Networking, Engineering Geology, and Social Engineering Defense?",
-        "answer": "Agile Methodology is a core concept within Software….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.computer_science.software_engineering",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": true,
-        "ts": "2026-06-07T01:54:05.750213+00:00",
-        "kind": "learning"
-      },
-      {
-        "question": "What is Software Engineering?",
-        "answer": "Agile Methodology is a core concept within Software….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.computer_science.software_engineering",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-07T01:54:05.749541+00:00",
+        "ts": "2026-06-08T05:22:56.259047+00:00",
         "kind": "learning"
       }
     ]
   },
-  "exported_at": "2026-06-08T04:32:36.649099+00:00",
+  "exported_at": "2026-06-08T05:24:31.753179+00:00",
   "github_sync": {
-    "batch_cursor": 75,
+    "batch_cursor": 100,
     "include_document_text": true,
     "max_documents": 5000,
     "export_version": 2
