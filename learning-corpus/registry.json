@@ -2085,6 +2085,160 @@
         "epochs": 150
       },
       "status": "completed"
+    },
+    {
+      "run_id": "51d9c2b2",
+      "created_at": "2026-06-08T10:15:54.551986+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_hinduism_51d9c2b2/classifier.json",
+      "params": {
+        "scope": "hinduism",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "5f85bc4e",
+      "created_at": "2026-06-08T10:16:32.544720+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_buddhism_5f85bc4e/classifier.json",
+      "params": {
+        "scope": "buddhism",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "7f96f491",
+      "created_at": "2026-06-08T10:17:04.642087+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_jainism_7f96f491/classifier.json",
+      "params": {
+        "scope": "jainism",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "2af7dbf6",
+      "created_at": "2026-06-08T10:17:41.448119+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_sikhism_2af7dbf6/classifier.json",
+      "params": {
+        "scope": "sikhism",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "8fc6a1b8",
+      "created_at": "2026-06-08T10:18:12.540421+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_taoism_8fc6a1b8/classifier.json",
+      "params": {
+        "scope": "taoism",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "2ca5333e",
+      "created_at": "2026-06-08T10:18:53.062402+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_confucianism_2ca5333e/classifier.json",
+      "params": {
+        "scope": "confucianism",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "4f7e92ca",
+      "created_at": "2026-06-08T10:19:28.454779+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_shinto_4f7e92ca/classifier.json",
+      "params": {
+        "scope": "shinto",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "b8b71c37",
+      "created_at": "2026-06-08T10:21:07.446242+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_african_traditional_religions_b8b71c37/classifier.json",
+      "params": {
+        "scope": "african_traditional_religions",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "5c85a899",
+      "created_at": "2026-06-08T10:21:33.648870+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_native_american_religions_5c85a899/classifier.json",
+      "params": {
+        "scope": "native_american_religions",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "9765d422",
+      "created_at": "2026-06-08T10:24:23.850399+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_mesoamerican_religion_9765d422/classifier.json",
+      "params": {
+        "scope": "mesoamerican_religion",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "4dd78fc7",
+      "created_at": "2026-06-08T10:24:57.760830+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_andean_religion_4dd78fc7/classifier.json",
+      "params": {
+        "scope": "andean_religion",
+        "epochs": 150
+      },
+      "status": "completed"
     }
   ]
 }
