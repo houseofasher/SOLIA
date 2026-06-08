@@ -1,5 +1,192 @@
 [
   {
+    "run_id": "4dd78fc7",
+    "domain_id": 5,
+    "subdomain_id": 30,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_andean_religion_4dd78fc7/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "andean_religion",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T10:24:57.852460"
+  },
+  {
+    "run_id": "9765d422",
+    "domain_id": 5,
+    "subdomain_id": 30,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_mesoamerican_religion_9765d422/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "mesoamerican_religion",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T10:24:23.861302"
+  },
+  {
+    "run_id": "5c85a899",
+    "domain_id": 5,
+    "subdomain_id": 30,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_native_american_religions_5c85a899/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "native_american_religions",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T10:21:33.652818"
+  },
+  {
+    "run_id": "b8b71c37",
+    "domain_id": 5,
+    "subdomain_id": 30,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_african_traditional_religions_b8b71c37/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "african_traditional_religions",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T10:21:07.449703"
+  },
+  {
+    "run_id": "4f7e92ca",
+    "domain_id": 5,
+    "subdomain_id": 29,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_shinto_4f7e92ca/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "shinto",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T10:19:28.544014"
+  },
+  {
+    "run_id": "2ca5333e",
+    "domain_id": 5,
+    "subdomain_id": 29,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_confucianism_2ca5333e/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "confucianism",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T10:18:53.146294"
+  },
+  {
+    "run_id": "8fc6a1b8",
+    "domain_id": 5,
+    "subdomain_id": 29,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_taoism_8fc6a1b8/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "taoism",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T10:18:12.545193"
+  },
+  {
+    "run_id": "2af7dbf6",
+    "domain_id": 5,
+    "subdomain_id": 28,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_sikhism_2af7dbf6/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "sikhism",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T10:17:41.452439"
+  },
+  {
+    "run_id": "7f96f491",
+    "domain_id": 5,
+    "subdomain_id": 28,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_jainism_7f96f491/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "jainism",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T10:17:04.646299"
+  },
+  {
+    "run_id": "5f85bc4e",
+    "domain_id": 5,
+    "subdomain_id": 28,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_buddhism_5f85bc4e/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "buddhism",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T10:16:32.548267"
+  },
+  {
+    "run_id": "51d9c2b2",
+    "domain_id": 5,
+    "subdomain_id": 28,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_hinduism_51d9c2b2/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "hinduism",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T10:15:54.557535"
+  },
+  {
     "run_id": "56fd7e3d",
     "domain_id": 5,
     "subdomain_id": 27,
