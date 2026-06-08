@@ -1203,6 +1203,118 @@
         "epochs": 150
       },
       "status": "completed"
+    },
+    {
+      "run_id": "afd7e4ef",
+      "created_at": "2026-06-08T05:15:27.950985+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_python_algorithms_afd7e4ef/classifier.json",
+      "params": {
+        "scope": "python_algorithms",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "a7b14b8c",
+      "created_at": "2026-06-08T05:16:53.056515+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_python_classes_a7b14b8c/classifier.json",
+      "params": {
+        "scope": "python_classes",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "161f130d",
+      "created_at": "2026-06-08T05:18:28.446220+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_javascript_functions_161f130d/classifier.json",
+      "params": {
+        "scope": "javascript_functions",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "eb79de76",
+      "created_at": "2026-06-08T05:20:09.844149+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_sql_queries_eb79de76/classifier.json",
+      "params": {
+        "scope": "sql_queries",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "d2e7394e",
+      "created_at": "2026-06-08T05:22:00.951672+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_circuit_theory_d2e7394e/classifier.json",
+      "params": {
+        "scope": "circuit_theory",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "a325ed41",
+      "created_at": "2026-06-08T05:22:55.852500+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_signals_and_systems_a325ed41/classifier.json",
+      "params": {
+        "scope": "signals_and_systems",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "78e63f70",
+      "created_at": "2026-06-08T05:23:42.755885+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_semiconductor_engineering_78e63f70/classifier.json",
+      "params": {
+        "scope": "semiconductor_engineering",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "349d97bf",
+      "created_at": "2026-06-08T05:24:31.262360+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_power_engineering_349d97bf/classifier.json",
+      "params": {
+        "scope": "power_engineering",
+        "epochs": 150
+      },
+      "status": "completed"
     }
   ]
 }
