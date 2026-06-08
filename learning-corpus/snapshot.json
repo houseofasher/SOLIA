@@ -16,9 +16,9 @@
     },
     "running": true,
     "started_at": "2026-06-06T21:21:27.951225+00:00",
-    "last_run_at": "2026-06-08T11:43:02.853598+00:00",
-    "next_run_at": "2026-06-08T12:43:02.853604+00:00",
-    "cycles_completed": 9,
+    "last_run_at": "2026-06-08T12:58:42.344259+00:00",
+    "next_run_at": "2026-06-08T13:58:42.344268+00:00",
+    "cycles_completed": 10,
     "last_result": {
       "batch": true,
       "targets_total": 25,
@@ -26,36 +26,36 @@
       "targets_processed": 25,
       "graduations_passed": 25,
       "last_target": {
-        "domain": "religion_and_spirituality",
-        "subdomain": "new_religious_movements",
-        "micro_subdomain": "scientology"
+        "domain": "arts_and_creative_expression",
+        "subdomain": "film_and_media_arts",
+        "micro_subdomain": "cinema"
       },
       "last_graduation": {
         "grade": "preschool",
         "passed": true,
-        "train_accuracy": 0.0,
+        "train_accuracy": 1.0,
         "min_train_accuracy": 0.45,
         "evaluator_passed": true,
         "unlocked_next": "elementary"
       },
       "sample_paths": [
-        "religion_and_spirituality.ancient_religions.celtic_religion",
-        "religion_and_spirituality.ancient_religions.zoroastrianism",
-        "religion_and_spirituality.ancient_religions.mithraism",
-        "religion_and_spirituality.ancient_religions.ancient_persian_religion",
-        "religion_and_spirituality.ancient_religions.canaanite_religion"
+        "religion_and_spirituality.new_religious_movements.raelism",
+        "religion_and_spirituality.new_religious_movements.eckankar",
+        "religion_and_spirituality.new_religious_movements.spiritualism",
+        "religion_and_spirituality.new_religious_movements.neopaganism",
+        "religion_and_spirituality.new_religious_movements.hare_krishna"
       ],
-      "batch_cursor": 225,
+      "batch_cursor": 250,
       "meta_consciousness": [
         {
-          "question": "What would I verify before trusting my own reply?",
-          "answer": "Run verifier region, cite document_id, check confidence threshold.",
-          "theme": "reflection"
+          "question": "How many documents ground my answers today?",
+          "answer": "862 docs in corpus (862 verified).",
+          "theme": "memory"
         },
         {
-          "question": "Where are my biggest knowledge gaps?",
-          "answer": "~647 micro-topics not fully graduated; sparse docs mean abstain.",
-          "theme": "uncertainty"
+          "question": "Am I a generative LLM or a supervised learning brain?",
+          "answer": "Aureon — supervised ML brain, 864 docs, 10 cycles, predict v7.",
+          "theme": "identity"
         }
       ]
     },
@@ -70,8 +70,8 @@
     "domains": 30,
     "micro_subdomains": 867,
     "micro_agents": 6192,
-    "documents": 786,
-    "grade_levels_graduated": 220,
+    "documents": 864,
+    "grade_levels_graduated": 245,
     "grade_progress_rows": 6069
   },
   "timeline": {
@@ -150,100 +150,100 @@
     "enabled": true,
     "recent": [
       {
-        "question": "What is Scientology?",
-        "answer": "No verified text for Scientology yet.",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.new_religious_movements.scientology",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": false,
-        "ciper": false,
-        "ts": "2026-06-08T11:43:02.853245+00:00"
-      },
-      {
-        "question": "What is one word I would use to describe Scientology?",
-        "answer": "scientology",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.new_religious_movements.scientology",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": false,
-        "ciper": false,
-        "ts": "2026-06-08T11:43:02.852982+00:00"
-      },
-      {
-        "question": "What are the main kinds of New Age Movement — New Criticism, New Historicism, Bronze Age, and Iron Age?",
-        "answer": "No verified text for New Age Movement yet.",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.new_religious_movements.new_age_movement",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": false,
-        "ciper": true,
-        "ts": "2026-06-08T11:42:28.560865+00:00"
-      },
-      {
-        "question": "What is one word I would use to describe New Age Movement?",
-        "answer": "movement",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.new_religious_movements.new_age_movement",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": false,
-        "ciper": false,
-        "ts": "2026-06-08T11:42:28.560632+00:00"
-      },
-      {
-        "question": "What are the main kinds of Sacred Geometry — Sacred Music, Differential Geometry, and Algebraic Geometry?",
-        "answer": "This paper demonstrates how a nineteenth century Japanese….",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.esoteric_and_occult_traditions.sacred_geometry",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": true,
-        "ts": "2026-06-08T11:41:57.250009+00:00"
-      },
-      {
-        "question": "What is one word I would use to describe Sacred Geometry?",
+        "question": "What is one word I would use to describe Documentary Film?",
         "answer": "research",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.esoteric_and_occult_traditions.sacred_geometry",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "arts_and_creative_expression.film_and_media_arts.cinema",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-08T11:41:57.249436+00:00"
+        "ts": "2026-06-08T12:58:42.342526+00:00"
       },
       {
-        "question": "What are the main kinds of Numerology (Spiritual) — Tarot as Spiritual System, and Alchemy (Spiritual)?",
-        "answer": "Integrated sensing and communication (ISAC) enables….",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.esoteric_and_occult_traditions.numerology",
+        "question": "What is Cinema?",
+        "answer": "Experimental Film is a core concept within Cinema (FILM &….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "arts_and_creative_expression.film_and_media_arts.cinema",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-08T12:58:42.342066+00:00"
+      },
+      {
+        "question": "What are the main kinds of Oral Literature — Oral & Maxillofacial Surgery, Oral Surgery, Oral Pathology, and Oral History?",
+        "answer": "Folklore is a core concept within Oral Literature (LITERARY….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "arts_and_creative_expression.literary_arts.oral_literature",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-08T11:41:26.258917+00:00"
+        "ts": "2026-06-08T12:57:59.654690+00:00"
       },
       {
-        "question": "What is Numerology (Spiritual)?",
-        "answer": "Integrated sensing and communication (ISAC) enables….",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.esoteric_and_occult_traditions.numerology",
+        "question": "What is one word I would use to describe Folklore?",
+        "answer": "Myth & Legend",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "arts_and_creative_expression.literary_arts.oral_literature",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-08T11:41:26.258635+00:00"
+        "ts": "2026-06-08T12:57:59.649947+00:00"
+      },
+      {
+        "question": "What are the main kinds of Drama (Literary) — Classical Drama (Greek/Roman), Drama Series, Dramatic Poetry, and Literary Fiction?",
+        "answer": "Tragicomedy is a core concept within Drama (Literary)….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "arts_and_creative_expression.literary_arts.drama",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": true,
+        "ts": "2026-06-08T12:57:25.958703+00:00"
+      },
+      {
+        "question": "What is Drama (Literary)?",
+        "answer": "Tragicomedy is a core concept within Drama (Literary)….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "arts_and_creative_expression.literary_arts.drama",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-08T12:57:25.956992+00:00"
+      },
+      {
+        "question": "What are the main kinds of Non-Fiction Literature — Non-Ferrous Metallurgy, Non-Cognitivism, Creative Non-Fiction, and Flash Fiction?",
+        "answer": "Biography is a core concept within Non-Fiction Literature….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "arts_and_creative_expression.literary_arts.non_fiction_literature",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": true,
+        "ts": "2026-06-08T12:56:52.058479+00:00"
+      },
+      {
+        "question": "What is Non-Fiction Literature?",
+        "answer": "Biography is a core concept within Non-Fiction Literature….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "arts_and_creative_expression.literary_arts.non_fiction_literature",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-08T12:56:52.057108+00:00"
       }
     ]
   },
@@ -251,116 +251,116 @@
     "enabled": true,
     "recent": [
       {
-        "question": "Where are my biggest knowledge gaps?",
-        "answer": "~647 micro-topics not fully graduated; sparse docs mean abstain.",
-        "theme": "uncertainty",
+        "question": "Am I a generative LLM or a supervised learning brain?",
+        "answer": "Aureon — supervised ML brain, 864 docs, 10 cycles, predict v7.",
+        "theme": "identity",
         "source": "auto_learn",
         "grounded": true,
         "state_snapshot": {
-          "documents": 786,
-          "cycles": 9,
+          "documents": 864,
+          "cycles": 10,
           "focus": ""
         },
-        "ts": "2026-06-08T11:43:03.388412+00:00",
+        "ts": "2026-06-08T12:58:43.471474+00:00",
         "kind": "meta"
       },
       {
-        "question": "What would I verify before trusting my own reply?",
-        "answer": "Run verifier region, cite document_id, check confidence threshold.",
-        "theme": "reflection",
+        "question": "How many documents ground my answers today?",
+        "answer": "862 docs in corpus (862 verified).",
+        "theme": "memory",
         "source": "auto_learn",
         "grounded": true,
         "state_snapshot": {
-          "documents": 786,
-          "cycles": 9,
+          "documents": 864,
+          "cycles": 10,
           "focus": ""
         },
-        "ts": "2026-06-08T11:43:03.250235+00:00",
+        "ts": "2026-06-08T12:58:43.444113+00:00",
         "kind": "meta"
       },
       {
-        "question": "What is Scientology?",
-        "answer": "No verified text for Scientology yet.",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.new_religious_movements.scientology",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": false,
-        "ciper": false,
-        "ts": "2026-06-08T11:43:02.853245+00:00",
-        "kind": "learning"
-      },
-      {
-        "question": "What is one word I would use to describe Scientology?",
-        "answer": "scientology",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.new_religious_movements.scientology",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": false,
-        "ciper": false,
-        "ts": "2026-06-08T11:43:02.852982+00:00",
-        "kind": "learning"
-      },
-      {
-        "question": "What are the main kinds of New Age Movement — New Criticism, New Historicism, Bronze Age, and Iron Age?",
-        "answer": "No verified text for New Age Movement yet.",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.new_religious_movements.new_age_movement",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": false,
-        "ciper": true,
-        "ts": "2026-06-08T11:42:28.560865+00:00",
-        "kind": "learning"
-      },
-      {
-        "question": "What is one word I would use to describe New Age Movement?",
-        "answer": "movement",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.new_religious_movements.new_age_movement",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": false,
-        "ciper": false,
-        "ts": "2026-06-08T11:42:28.560632+00:00",
-        "kind": "learning"
-      },
-      {
-        "question": "What are the main kinds of Sacred Geometry — Sacred Music, Differential Geometry, and Algebraic Geometry?",
-        "answer": "This paper demonstrates how a nineteenth century Japanese….",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.esoteric_and_occult_traditions.sacred_geometry",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": true,
-        "ts": "2026-06-08T11:41:57.250009+00:00",
-        "kind": "learning"
-      },
-      {
-        "question": "What is one word I would use to describe Sacred Geometry?",
+        "question": "What is one word I would use to describe Documentary Film?",
         "answer": "research",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.esoteric_and_occult_traditions.sacred_geometry",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "arts_and_creative_expression.film_and_media_arts.cinema",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-08T11:41:57.249436+00:00",
+        "ts": "2026-06-08T12:58:42.342526+00:00",
+        "kind": "learning"
+      },
+      {
+        "question": "What is Cinema?",
+        "answer": "Experimental Film is a core concept within Cinema (FILM &….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "arts_and_creative_expression.film_and_media_arts.cinema",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-08T12:58:42.342066+00:00",
+        "kind": "learning"
+      },
+      {
+        "question": "What are the main kinds of Oral Literature — Oral & Maxillofacial Surgery, Oral Surgery, Oral Pathology, and Oral History?",
+        "answer": "Folklore is a core concept within Oral Literature (LITERARY….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "arts_and_creative_expression.literary_arts.oral_literature",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": true,
+        "ts": "2026-06-08T12:57:59.654690+00:00",
+        "kind": "learning"
+      },
+      {
+        "question": "What is one word I would use to describe Folklore?",
+        "answer": "Myth & Legend",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "arts_and_creative_expression.literary_arts.oral_literature",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-08T12:57:59.649947+00:00",
+        "kind": "learning"
+      },
+      {
+        "question": "What are the main kinds of Drama (Literary) — Classical Drama (Greek/Roman), Drama Series, Dramatic Poetry, and Literary Fiction?",
+        "answer": "Tragicomedy is a core concept within Drama (Literary)….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "arts_and_creative_expression.literary_arts.drama",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": true,
+        "ts": "2026-06-08T12:57:25.958703+00:00",
+        "kind": "learning"
+      },
+      {
+        "question": "What is Drama (Literary)?",
+        "answer": "Tragicomedy is a core concept within Drama (Literary)….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "arts_and_creative_expression.literary_arts.drama",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-08T12:57:25.956992+00:00",
         "kind": "learning"
       }
     ]
   },
-  "exported_at": "2026-06-08T12:05:13.854432+00:00",
+  "exported_at": "2026-06-08T12:58:42.346783+00:00",
   "github_sync": {
-    "batch_cursor": 225,
+    "batch_cursor": 250,
     "include_document_text": true,
     "max_documents": 5000,
     "export_version": 2
