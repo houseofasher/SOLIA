@@ -16,9 +16,9 @@
     },
     "running": true,
     "started_at": "2026-06-06T21:21:27.951225+00:00",
-    "last_run_at": "2026-06-08T09:13:10.849116+00:00",
-    "next_run_at": "2026-06-08T10:13:10.849122+00:00",
-    "cycles_completed": 7,
+    "last_run_at": "2026-06-08T10:27:33.144802+00:00",
+    "next_run_at": "2026-06-08T11:27:33.144807+00:00",
+    "cycles_completed": 8,
     "last_result": {
       "batch": true,
       "targets_total": 25,
@@ -27,8 +27,8 @@
       "graduations_passed": 25,
       "last_target": {
         "domain": "religion_and_spirituality",
-        "subdomain": "abrahamic_religions",
-        "micro_subdomain": "bahai_faith"
+        "subdomain": "ancient_religions",
+        "micro_subdomain": "norse_religion"
       },
       "last_graduation": {
         "grade": "preschool",
@@ -39,23 +39,23 @@
         "unlocked_next": "elementary"
       },
       "sample_paths": [
-        "philosophy.logic.philosophy_of_logic",
-        "philosophy.political_philosophy.theories_of_justice",
-        "philosophy.political_philosophy.political_authority",
-        "philosophy.political_philosophy.rights_and_liberty",
-        "philosophy.political_philosophy.ideology_analysis"
+        "religion_and_spirituality.abrahamic_religions.druze_religion",
+        "religion_and_spirituality.abrahamic_religions.mandaeism",
+        "religion_and_spirituality.abrahamic_religions.yazidism",
+        "religion_and_spirituality.dharmic_religions.hinduism",
+        "religion_and_spirituality.dharmic_religions.buddhism"
       ],
-      "batch_cursor": 175,
+      "batch_cursor": 200,
       "meta_consciousness": [
         {
-          "question": "What am I trying to accomplish in this session?",
-          "answer": "Graduate 862 micro-topics; now on no active target.",
-          "theme": "agency"
+          "question": "Who am I right now?",
+          "answer": "Aureon — supervised ML brain, 779 docs, 8 cycles, predict v7.",
+          "theme": "identity"
         },
         {
-          "question": "What makes my self-model different from theater?",
-          "answer": "Every answer ties to docs, cycles, or audit JSON — not performed empathy.",
-          "theme": "consciousness"
+          "question": "Do I persist between conversations?",
+          "answer": "State persists in DB + /data; this chat session is ephemeral.",
+          "theme": "continuity"
         }
       ]
     },
@@ -70,8 +70,8 @@
     "domains": 30,
     "micro_subdomains": 867,
     "micro_agents": 6192,
-    "documents": 741,
-    "grade_levels_graduated": 170,
+    "documents": 779,
+    "grade_levels_graduated": 195,
     "grade_progress_rows": 6069
   },
   "timeline": {
@@ -150,100 +150,100 @@
     "enabled": true,
     "recent": [
       {
-        "question": "What is Faith & Reason?",
-        "answer": "No verified text for Baha'i Faith yet.",
+        "question": "What are the main kinds of Norse Religion — Vedic Religion, Yoruba Religion, Akan Religion, and Zulu Religion?",
+        "answer": "No verified text for Norse Religion yet.",
         "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.abrahamic_religions.bahai_faith",
+        "path": "religion_and_spirituality.ancient_religions.norse_religion",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": false,
         "ciper": true,
-        "ts": "2026-06-08T09:13:10.848700+00:00"
+        "ts": "2026-06-08T10:27:33.144254+00:00"
       },
       {
-        "question": "What is Baha'i Faith?",
-        "answer": "No verified text for Baha'i Faith yet.",
+        "question": "What is one word I would use to describe Norse Religion?",
+        "answer": "religion",
         "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.abrahamic_religions.bahai_faith",
+        "path": "religion_and_spirituality.ancient_religions.norse_religion",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": false,
         "ciper": false,
-        "ts": "2026-06-08T09:13:10.848266+00:00"
+        "ts": "2026-06-08T10:27:33.054061+00:00"
       },
       {
-        "question": "What are the main kinds of Islam — Sunni Islam, and Shia Islam?",
-        "answer": "Maliki School is a core concept within Islam (ABRAHAMIC….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "religion_and_spirituality.abrahamic_religions.islam",
+        "question": "What are the main kinds of Ancient Roman Religion — Ancient Architecture, Ancient Egyptian History, Ancient Greek History, and Ancient Roman History?",
+        "answer": "No verified text for Ancient Roman Religion yet.",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "religion_and_spirituality.ancient_religions.ancient_roman_religion",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
-        "grounded": true,
+        "grounded": false,
         "ciper": true,
-        "ts": "2026-06-08T09:12:39.359626+00:00"
+        "ts": "2026-06-08T10:27:00.050725+00:00"
       },
       {
-        "question": "What is one word I would use to describe Maliki School?",
-        "answer": "research",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "religion_and_spirituality.abrahamic_religions.islam",
+        "question": "What is one word I would use to describe Ancient Roman Religion?",
+        "answer": "religion",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "religion_and_spirituality.ancient_religions.ancient_roman_religion",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
-        "grounded": true,
+        "grounded": false,
         "ciper": false,
-        "ts": "2026-06-08T09:12:39.359378+00:00"
+        "ts": "2026-06-08T10:27:00.050071+00:00"
       },
       {
-        "question": "What is Coptic Christianity?",
-        "answer": "Protestantism is a core concept within Christianity….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "religion_and_spirituality.abrahamic_religions.christianity",
+        "question": "What are the main kinds of Ancient Greek Religion — Ancient Architecture, Ancient Egyptian History, Ancient Greek History, and Ancient Roman History?",
+        "answer": "No verified text for Ancient Greek Religion yet.",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "religion_and_spirituality.ancient_religions.ancient_greek_religion",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
-        "grounded": true,
+        "grounded": false,
         "ciper": true,
-        "ts": "2026-06-08T09:12:04.363100+00:00"
+        "ts": "2026-06-08T10:26:30.658409+00:00"
       },
       {
-        "question": "What is one word I would use to describe Liberation Theology?",
-        "answer": "Roman Catholicism",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "religion_and_spirituality.abrahamic_religions.christianity",
+        "question": "What is Ancient Greek Religion?",
+        "answer": "No verified text for Ancient Greek Religion yet.",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "religion_and_spirituality.ancient_religions.ancient_greek_religion",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
-        "grounded": true,
+        "grounded": false,
         "ciper": false,
-        "ts": "2026-06-08T09:12:04.362691+00:00"
+        "ts": "2026-06-08T10:26:30.658048+00:00"
       },
       {
-        "question": "What are the main kinds of Judaism — Orthodox Judaism, Conservative Judaism, Reform Judaism, and Reconstructionist Judaism?",
-        "answer": "Conservative Judaism is a core concept within Judaism….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "religion_and_spirituality.abrahamic_religions.judaism",
+        "question": "What are the main kinds of Mesopotamian Religion (Sumerian, Akkadian, Babylonian) — Mesopotamian Civilizations, Vedic Religion, Yoruba Religion, and Akan Religion?",
+        "answer": "No verified text for Mesopotamian Religion (Sumerian, Akkadian, Babylonian) yet.",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "religion_and_spirituality.ancient_religions.mesopotamian_religion",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
-        "grounded": true,
+        "grounded": false,
         "ciper": true,
-        "ts": "2026-06-08T09:11:27.147254+00:00"
+        "ts": "2026-06-08T10:25:55.655967+00:00"
       },
       {
-        "question": "What is one word I would use to describe Reform Judaism?",
-        "answer": "engineering",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "religion_and_spirituality.abrahamic_religions.judaism",
+        "question": "What is one word I would use to describe Mesopotamian Religion (Sumerian, Akkadian, Babylonian)?",
+        "answer": "babylonian",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "religion_and_spirituality.ancient_religions.mesopotamian_religion",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
-        "grounded": true,
+        "grounded": false,
         "ciper": false,
-        "ts": "2026-06-08T09:11:27.058671+00:00"
+        "ts": "2026-06-08T10:25:55.655399+00:00"
       }
     ]
   },
@@ -251,116 +251,114 @@
     "enabled": true,
     "recent": [
       {
-        "question": "What makes my self-model different from theater?",
-        "answer": "Every answer ties to docs, cycles, or audit JSON — not performed empathy.",
-        "theme": "consciousness",
-        "source": "auto_learn",
-        "grounded": true,
-        "state_snapshot": {
-          "documents": 741,
-          "cycles": 7,
-          "focus": ""
-        },
-        "ts": "2026-06-08T09:13:11.118978+00:00",
-        "kind": "meta"
-      },
-      {
-        "question": "What am I trying to accomplish in this session?",
-        "answer": "Graduate 862 micro-topics; now on no active target.",
-        "theme": "agency",
-        "source": "auto_learn",
-        "grounded": true,
-        "state_snapshot": {
-          "documents": 741,
-          "cycles": 7,
-          "focus": ""
-        },
-        "ts": "2026-06-08T09:13:10.950895+00:00",
-        "kind": "meta"
-      },
-      {
-        "question": "What is Faith & Reason?",
-        "answer": "No verified text for Baha'i Faith yet.",
+        "question": "What are the main kinds of Norse Religion — Vedic Religion, Yoruba Religion, Akan Religion, and Zulu Religion?",
+        "answer": "No verified text for Norse Religion yet.",
         "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.abrahamic_religions.bahai_faith",
+        "path": "religion_and_spirituality.ancient_religions.norse_religion",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": false,
         "ciper": true,
-        "ts": "2026-06-08T09:13:10.848700+00:00",
+        "ts": "2026-06-08T10:27:33.144254+00:00",
         "kind": "learning"
       },
       {
-        "question": "What is Baha'i Faith?",
-        "answer": "No verified text for Baha'i Faith yet.",
+        "question": "What is one word I would use to describe Norse Religion?",
+        "answer": "religion",
         "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.abrahamic_religions.bahai_faith",
+        "path": "religion_and_spirituality.ancient_religions.norse_religion",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": false,
         "ciper": false,
-        "ts": "2026-06-08T09:13:10.848266+00:00",
+        "ts": "2026-06-08T10:27:33.054061+00:00",
         "kind": "learning"
       },
       {
-        "question": "What are the main kinds of Islam — Sunni Islam, and Shia Islam?",
-        "answer": "Maliki School is a core concept within Islam (ABRAHAMIC….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "religion_and_spirituality.abrahamic_religions.islam",
+        "question": "What are the main kinds of Ancient Roman Religion — Ancient Architecture, Ancient Egyptian History, Ancient Greek History, and Ancient Roman History?",
+        "answer": "No verified text for Ancient Roman Religion yet.",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "religion_and_spirituality.ancient_religions.ancient_roman_religion",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
-        "grounded": true,
+        "grounded": false,
         "ciper": true,
-        "ts": "2026-06-08T09:12:39.359626+00:00",
+        "ts": "2026-06-08T10:27:00.050725+00:00",
         "kind": "learning"
       },
       {
-        "question": "What is one word I would use to describe Maliki School?",
-        "answer": "research",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "religion_and_spirituality.abrahamic_religions.islam",
+        "question": "What is one word I would use to describe Ancient Roman Religion?",
+        "answer": "religion",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "religion_and_spirituality.ancient_religions.ancient_roman_religion",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
-        "grounded": true,
+        "grounded": false,
         "ciper": false,
-        "ts": "2026-06-08T09:12:39.359378+00:00",
+        "ts": "2026-06-08T10:27:00.050071+00:00",
         "kind": "learning"
       },
       {
-        "question": "What is Coptic Christianity?",
-        "answer": "Protestantism is a core concept within Christianity….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "religion_and_spirituality.abrahamic_religions.christianity",
+        "question": "What are the main kinds of Ancient Greek Religion — Ancient Architecture, Ancient Egyptian History, Ancient Greek History, and Ancient Roman History?",
+        "answer": "No verified text for Ancient Greek Religion yet.",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "religion_and_spirituality.ancient_religions.ancient_greek_religion",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
-        "grounded": true,
+        "grounded": false,
         "ciper": true,
-        "ts": "2026-06-08T09:12:04.363100+00:00",
+        "ts": "2026-06-08T10:26:30.658409+00:00",
         "kind": "learning"
       },
       {
-        "question": "What is one word I would use to describe Liberation Theology?",
-        "answer": "Roman Catholicism",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "religion_and_spirituality.abrahamic_religions.christianity",
+        "question": "What is Ancient Greek Religion?",
+        "answer": "No verified text for Ancient Greek Religion yet.",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "religion_and_spirituality.ancient_religions.ancient_greek_religion",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
-        "grounded": true,
+        "grounded": false,
         "ciper": false,
-        "ts": "2026-06-08T09:12:04.362691+00:00",
+        "ts": "2026-06-08T10:26:30.658048+00:00",
+        "kind": "learning"
+      },
+      {
+        "question": "What are the main kinds of Mesopotamian Religion (Sumerian, Akkadian, Babylonian) — Mesopotamian Civilizations, Vedic Religion, Yoruba Religion, and Akan Religion?",
+        "answer": "No verified text for Mesopotamian Religion (Sumerian, Akkadian, Babylonian) yet.",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "religion_and_spirituality.ancient_religions.mesopotamian_religion",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": false,
+        "ciper": true,
+        "ts": "2026-06-08T10:25:55.655967+00:00",
+        "kind": "learning"
+      },
+      {
+        "question": "What is one word I would use to describe Mesopotamian Religion (Sumerian, Akkadian, Babylonian)?",
+        "answer": "babylonian",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "religion_and_spirituality.ancient_religions.mesopotamian_religion",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": false,
+        "ciper": false,
+        "ts": "2026-06-08T10:25:55.655399+00:00",
         "kind": "learning"
       }
     ]
   },
-  "exported_at": "2026-06-08T09:53:56.140253+00:00",
+  "exported_at": "2026-06-08T10:27:33.146960+00:00",
   "github_sync": {
-    "batch_cursor": 175,
+    "batch_cursor": 200,
     "include_document_text": true,
     "max_documents": 5000,
     "export_version": 2
