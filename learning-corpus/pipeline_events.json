@@ -2,6 +2,2883 @@
   {
     "step": "brain_reward",
     "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "literature_studies",
+      "micro_subdomain": "comparative_literature",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-08T14:14:09.953014"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "literature_studies",
+      "micro_subdomain": "comparative_literature",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-08T14:14:09.553869"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "skipped",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "literature_studies",
+      "micro_subdomain": "comparative_literature",
+      "grade": "preschool",
+      "reason": "insufficient labeled data",
+      "samples": 1
+    },
+    "created_at": "2026-06-08T14:14:09.551430"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "literature_studies",
+      "micro_subdomain": "comparative_literature",
+      "grade": "preschool",
+      "labeled": 1,
+      "auto_labeled": 1,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-08T14:14:09.547291"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "literature_studies",
+      "micro_subdomain": "comparative_literature",
+      "grade": "preschool",
+      "documents_checked": 1,
+      "newly_verified": 1,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-08T14:14:09.454248"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "literature_studies",
+      "micro_subdomain": "comparative_literature",
+      "grade": "preschool",
+      "collection_attempts": 2,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-08T14:14:09.452506"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "literature_studies",
+      "micro_subdomain": "literary_theory_and_criticism",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-08T14:13:25.855475"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "literature_studies",
+      "micro_subdomain": "literary_theory_and_criticism",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-08T14:13:25.646340"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "literature_studies",
+      "micro_subdomain": "literary_theory_and_criticism",
+      "grade": "preschool",
+      "run_id": "46c85683",
+      "samples": 3,
+      "classes": 3,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-08T14:13:25.554974"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "literature_studies",
+      "micro_subdomain": "literary_theory_and_criticism",
+      "grade": "preschool",
+      "labeled": 3,
+      "auto_labeled": 3,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-08T14:13:25.444298"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "literature_studies",
+      "micro_subdomain": "literary_theory_and_criticism",
+      "grade": "preschool",
+      "documents_checked": 3,
+      "newly_verified": 3,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-08T14:13:25.254466"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "literature_studies",
+      "micro_subdomain": "literary_theory_and_criticism",
+      "grade": "preschool",
+      "collection_attempts": 4,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-08T14:13:25.251453"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "linguistics",
+      "micro_subdomain": "applied_linguistics",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-08T14:12:50.160964"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "linguistics",
+      "micro_subdomain": "applied_linguistics",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-08T14:12:50.060178"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "linguistics",
+      "micro_subdomain": "applied_linguistics",
+      "grade": "preschool",
+      "run_id": "44057a44",
+      "samples": 4,
+      "classes": 4,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-08T14:12:50.057961"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "linguistics",
+      "micro_subdomain": "applied_linguistics",
+      "grade": "preschool",
+      "labeled": 4,
+      "auto_labeled": 4,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-08T14:12:50.048328"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "linguistics",
+      "micro_subdomain": "applied_linguistics",
+      "grade": "preschool",
+      "documents_checked": 4,
+      "newly_verified": 4,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-08T14:12:49.947928"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "linguistics",
+      "micro_subdomain": "applied_linguistics",
+      "grade": "preschool",
+      "collection_attempts": 5,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-08T14:12:49.945823"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "linguistics",
+      "micro_subdomain": "computational_linguistics",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-08T14:12:16.052182"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "linguistics",
+      "micro_subdomain": "computational_linguistics",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-08T14:12:15.752930"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "linguistics",
+      "micro_subdomain": "computational_linguistics",
+      "grade": "preschool",
+      "run_id": "f08da19c",
+      "samples": 4,
+      "classes": 4,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-08T14:12:15.746590"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "linguistics",
+      "micro_subdomain": "computational_linguistics",
+      "grade": "preschool",
+      "labeled": 4,
+      "auto_labeled": 4,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-08T14:12:15.551827"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "linguistics",
+      "micro_subdomain": "computational_linguistics",
+      "grade": "preschool",
+      "documents_checked": 4,
+      "newly_verified": 4,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-08T14:12:15.356012"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "linguistics",
+      "micro_subdomain": "computational_linguistics",
+      "grade": "preschool",
+      "collection_attempts": 5,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-08T14:12:15.348993"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "linguistics",
+      "micro_subdomain": "psycholinguistics",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-08T14:11:40.849696"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "linguistics",
+      "micro_subdomain": "psycholinguistics",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-08T14:11:40.648070"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "linguistics",
+      "micro_subdomain": "psycholinguistics",
+      "grade": "preschool",
+      "run_id": "477ed03d",
+      "samples": 4,
+      "classes": 4,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-08T14:11:40.644140"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "linguistics",
+      "micro_subdomain": "psycholinguistics",
+      "grade": "preschool",
+      "labeled": 4,
+      "auto_labeled": 4,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-08T14:11:40.546511"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "linguistics",
+      "micro_subdomain": "psycholinguistics",
+      "grade": "preschool",
+      "documents_checked": 4,
+      "newly_verified": 4,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-08T14:11:40.349534"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "linguistics",
+      "micro_subdomain": "psycholinguistics",
+      "grade": "preschool",
+      "collection_attempts": 5,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-08T14:11:40.347977"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "linguistics",
+      "micro_subdomain": "sociolinguistics",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-08T14:11:09.261369"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "linguistics",
+      "micro_subdomain": "sociolinguistics",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-08T14:11:09.054174"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "linguistics",
+      "micro_subdomain": "sociolinguistics",
+      "grade": "preschool",
+      "run_id": "bc43fe4d",
+      "samples": 4,
+      "classes": 4,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-08T14:11:09.051594"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "linguistics",
+      "micro_subdomain": "sociolinguistics",
+      "grade": "preschool",
+      "labeled": 4,
+      "auto_labeled": 4,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-08T14:11:08.953545"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "linguistics",
+      "micro_subdomain": "sociolinguistics",
+      "grade": "preschool",
+      "documents_checked": 4,
+      "newly_verified": 4,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-08T14:11:08.945386"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "linguistics",
+      "micro_subdomain": "sociolinguistics",
+      "grade": "preschool",
+      "collection_attempts": 5,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-08T14:11:08.942348"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "linguistics",
+      "micro_subdomain": "historical_linguistics",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-08T14:10:34.748352"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "linguistics",
+      "micro_subdomain": "historical_linguistics",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-08T14:10:34.552980"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "linguistics",
+      "micro_subdomain": "historical_linguistics",
+      "grade": "preschool",
+      "run_id": "bad15384",
+      "samples": 4,
+      "classes": 4,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-08T14:10:34.550060"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "linguistics",
+      "micro_subdomain": "historical_linguistics",
+      "grade": "preschool",
+      "labeled": 4,
+      "auto_labeled": 4,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-08T14:10:34.451219"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "linguistics",
+      "micro_subdomain": "historical_linguistics",
+      "grade": "preschool",
+      "documents_checked": 4,
+      "newly_verified": 4,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-08T14:10:34.258373"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "linguistics",
+      "micro_subdomain": "historical_linguistics",
+      "grade": "preschool",
+      "collection_attempts": 5,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-08T14:10:34.252575"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "linguistics",
+      "micro_subdomain": "theoretical_linguistics",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-08T14:09:52.653298"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "linguistics",
+      "micro_subdomain": "theoretical_linguistics",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-08T14:09:52.355302"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "linguistics",
+      "micro_subdomain": "theoretical_linguistics",
+      "grade": "preschool",
+      "run_id": "94248ce9",
+      "samples": 4,
+      "classes": 4,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-08T14:09:52.260784"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "linguistics",
+      "micro_subdomain": "theoretical_linguistics",
+      "grade": "preschool",
+      "labeled": 4,
+      "auto_labeled": 4,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-08T14:09:52.155200"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "linguistics",
+      "micro_subdomain": "theoretical_linguistics",
+      "grade": "preschool",
+      "documents_checked": 4,
+      "newly_verified": 4,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-08T14:09:52.059923"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "linguistics",
+      "micro_subdomain": "theoretical_linguistics",
+      "grade": "preschool",
+      "collection_attempts": 5,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-08T14:09:52.054544"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "history_by_method",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-08T14:09:10.858175"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "history_by_method",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-08T14:09:10.553653"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "history_by_method",
+      "grade": "preschool",
+      "run_id": "579638d9",
+      "samples": 4,
+      "classes": 4,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-08T14:09:10.548401"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "history_by_method",
+      "grade": "preschool",
+      "labeled": 4,
+      "auto_labeled": 4,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-08T14:09:10.355127"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "history_by_method",
+      "grade": "preschool",
+      "documents_checked": 4,
+      "newly_verified": 4,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-08T14:09:10.157055"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "history_by_method",
+      "grade": "preschool",
+      "collection_attempts": 5,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-08T14:09:10.152934"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "contemporary_history",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-08T14:08:33.044556"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "contemporary_history",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-08T14:08:32.657023"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "contemporary_history",
+      "grade": "preschool",
+      "run_id": "01feef96",
+      "samples": 4,
+      "classes": 4,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-08T14:08:32.651557"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "contemporary_history",
+      "grade": "preschool",
+      "labeled": 4,
+      "auto_labeled": 4,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-08T14:08:32.455772"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "contemporary_history",
+      "grade": "preschool",
+      "documents_checked": 4,
+      "newly_verified": 4,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-08T14:08:32.348554"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "contemporary_history",
+      "grade": "preschool",
+      "collection_attempts": 5,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-08T14:08:32.256417"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "modern_history",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-08T14:07:58.644743"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "modern_history",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-08T14:07:58.444454"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "modern_history",
+      "grade": "preschool",
+      "run_id": "3499f87b",
+      "samples": 4,
+      "classes": 4,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-08T14:07:58.354140"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "modern_history",
+      "grade": "preschool",
+      "labeled": 4,
+      "auto_labeled": 4,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-08T14:07:58.258236"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "modern_history",
+      "grade": "preschool",
+      "documents_checked": 4,
+      "newly_verified": 4,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-08T14:07:58.247758"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "modern_history",
+      "grade": "preschool",
+      "collection_attempts": 5,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-08T14:07:58.245611"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "early_modern_history",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-08T14:07:26.740851"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "early_modern_history",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-08T14:07:26.356557"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "early_modern_history",
+      "grade": "preschool",
+      "run_id": "35368801",
+      "samples": 4,
+      "classes": 4,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-08T14:07:26.349657"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "early_modern_history",
+      "grade": "preschool",
+      "labeled": 4,
+      "auto_labeled": 4,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-08T14:07:26.250028"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "early_modern_history",
+      "grade": "preschool",
+      "documents_checked": 4,
+      "newly_verified": 4,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-08T14:07:26.062601"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "early_modern_history",
+      "grade": "preschool",
+      "collection_attempts": 5,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-08T14:07:26.060752"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "medieval_history",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-08T14:06:46.946448"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "medieval_history",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-08T14:06:46.654290"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "medieval_history",
+      "grade": "preschool",
+      "run_id": "8e16bd9a",
+      "samples": 4,
+      "classes": 4,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-08T14:06:46.649497"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "medieval_history",
+      "grade": "preschool",
+      "labeled": 4,
+      "auto_labeled": 4,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-08T14:06:46.454535"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "medieval_history",
+      "grade": "preschool",
+      "documents_checked": 4,
+      "newly_verified": 4,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-08T14:06:46.340761"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "medieval_history",
+      "grade": "preschool",
+      "collection_attempts": 5,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-08T14:06:46.253219"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "ancient_history",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-08T14:06:07.348932"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "ancient_history",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-08T14:06:07.053271"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "ancient_history",
+      "grade": "preschool",
+      "run_id": "cc71c1a6",
+      "samples": 4,
+      "classes": 4,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-08T14:06:07.047045"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "ancient_history",
+      "grade": "preschool",
+      "labeled": 4,
+      "auto_labeled": 4,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-08T14:06:06.860617"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "ancient_history",
+      "grade": "preschool",
+      "documents_checked": 4,
+      "newly_verified": 4,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-08T14:06:06.755503"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "ancient_history",
+      "grade": "preschool",
+      "collection_attempts": 5,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-08T14:06:06.751225"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "prehistoric_history",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-08T14:05:29.254796"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "prehistoric_history",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-08T14:05:29.151894"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "prehistoric_history",
+      "grade": "preschool",
+      "run_id": "dd744b8a",
+      "samples": 3,
+      "classes": 3,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-08T14:05:29.149378"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "prehistoric_history",
+      "grade": "preschool",
+      "labeled": 3,
+      "auto_labeled": 3,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-08T14:05:29.054382"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "prehistoric_history",
+      "grade": "preschool",
+      "documents_checked": 3,
+      "newly_verified": 3,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-08T14:05:29.048229"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 7,
+    "payload": {
+      "domain": "humanities",
+      "subdomain": "history",
+      "micro_subdomain": "prehistoric_history",
+      "grade": "preschool",
+      "collection_attempts": 4,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-08T14:05:29.046472"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "architecture_and_design",
+      "micro_subdomain": "landscape_architecture",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-08T14:04:51.848923"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "architecture_and_design",
+      "micro_subdomain": "landscape_architecture",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-08T14:04:51.462197"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "architecture_and_design",
+      "micro_subdomain": "landscape_architecture",
+      "grade": "preschool",
+      "run_id": "22aa0f04",
+      "samples": 4,
+      "classes": 4,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-08T14:04:51.459107"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "architecture_and_design",
+      "micro_subdomain": "landscape_architecture",
+      "grade": "preschool",
+      "labeled": 4,
+      "auto_labeled": 4,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-08T14:04:51.245294"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "architecture_and_design",
+      "micro_subdomain": "landscape_architecture",
+      "grade": "preschool",
+      "documents_checked": 4,
+      "newly_verified": 4,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-08T14:04:51.057159"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "architecture_and_design",
+      "micro_subdomain": "landscape_architecture",
+      "grade": "preschool",
+      "collection_attempts": 5,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-08T14:04:51.055411"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "architecture_and_design",
+      "micro_subdomain": "fashion_design",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-08T14:04:16.846007"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "architecture_and_design",
+      "micro_subdomain": "fashion_design",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-08T14:04:16.655673"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "architecture_and_design",
+      "micro_subdomain": "fashion_design",
+      "grade": "preschool",
+      "run_id": "96334211",
+      "samples": 4,
+      "classes": 4,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-08T14:04:16.652803"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "architecture_and_design",
+      "micro_subdomain": "fashion_design",
+      "grade": "preschool",
+      "labeled": 4,
+      "auto_labeled": 4,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-08T14:04:16.555245"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "architecture_and_design",
+      "micro_subdomain": "fashion_design",
+      "grade": "preschool",
+      "documents_checked": 4,
+      "newly_verified": 4,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-08T14:04:16.547382"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "architecture_and_design",
+      "micro_subdomain": "fashion_design",
+      "grade": "preschool",
+      "collection_attempts": 5,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-08T14:04:16.545077"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "architecture_and_design",
+      "micro_subdomain": "industrial_design",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-08T14:03:44.248522"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "architecture_and_design",
+      "micro_subdomain": "industrial_design",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-08T14:03:44.054737"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "architecture_and_design",
+      "micro_subdomain": "industrial_design",
+      "grade": "preschool",
+      "run_id": "9287de31",
+      "samples": 4,
+      "classes": 4,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-08T14:03:44.051762"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "architecture_and_design",
+      "micro_subdomain": "industrial_design",
+      "grade": "preschool",
+      "labeled": 4,
+      "auto_labeled": 4,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-08T14:03:43.953674"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "architecture_and_design",
+      "micro_subdomain": "industrial_design",
+      "grade": "preschool",
+      "documents_checked": 4,
+      "newly_verified": 4,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-08T14:03:43.850774"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "architecture_and_design",
+      "micro_subdomain": "industrial_design",
+      "grade": "preschool",
+      "collection_attempts": 5,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-08T14:03:43.848800"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "architecture_and_design",
+      "micro_subdomain": "interior_design",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-08T14:03:10.659058"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "architecture_and_design",
+      "micro_subdomain": "interior_design",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-08T14:03:10.552073"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "architecture_and_design",
+      "micro_subdomain": "interior_design",
+      "grade": "preschool",
+      "run_id": "8b374d79",
+      "samples": 4,
+      "classes": 4,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-08T14:03:10.549600"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "architecture_and_design",
+      "micro_subdomain": "interior_design",
+      "grade": "preschool",
+      "labeled": 4,
+      "auto_labeled": 4,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-08T14:03:10.460867"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "architecture_and_design",
+      "micro_subdomain": "interior_design",
+      "grade": "preschool",
+      "documents_checked": 4,
+      "newly_verified": 4,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-08T14:03:10.450228"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "architecture_and_design",
+      "micro_subdomain": "interior_design",
+      "grade": "preschool",
+      "collection_attempts": 5,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-08T14:03:10.448269"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "architecture_and_design",
+      "micro_subdomain": "architecture",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-08T14:02:39.751747"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "architecture_and_design",
+      "micro_subdomain": "architecture",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-08T14:02:39.463609"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "architecture_and_design",
+      "micro_subdomain": "architecture",
+      "grade": "preschool",
+      "run_id": "a57c0120",
+      "samples": 4,
+      "classes": 4,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-08T14:02:39.459690"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "architecture_and_design",
+      "micro_subdomain": "architecture",
+      "grade": "preschool",
+      "labeled": 4,
+      "auto_labeled": 4,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-08T14:02:39.360335"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "architecture_and_design",
+      "micro_subdomain": "architecture",
+      "grade": "preschool",
+      "documents_checked": 4,
+      "newly_verified": 4,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-08T14:02:39.259383"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "architecture_and_design",
+      "micro_subdomain": "architecture",
+      "grade": "preschool",
+      "collection_attempts": 5,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-08T14:02:39.255123"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "film_and_media_arts",
+      "micro_subdomain": "virtual_reality_art",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-08T14:02:06.741076"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "film_and_media_arts",
+      "micro_subdomain": "virtual_reality_art",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-08T14:02:06.245722"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "skipped",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "film_and_media_arts",
+      "micro_subdomain": "virtual_reality_art",
+      "grade": "preschool",
+      "reason": "insufficient labeled data",
+      "samples": 1
+    },
+    "created_at": "2026-06-08T14:02:06.153966"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "film_and_media_arts",
+      "micro_subdomain": "virtual_reality_art",
+      "grade": "preschool",
+      "labeled": 1,
+      "auto_labeled": 1,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-08T14:02:06.149238"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "film_and_media_arts",
+      "micro_subdomain": "virtual_reality_art",
+      "grade": "preschool",
+      "documents_checked": 1,
+      "newly_verified": 1,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-08T14:02:05.957082"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "film_and_media_arts",
+      "micro_subdomain": "virtual_reality_art",
+      "grade": "preschool",
+      "collection_attempts": 2,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-08T14:02:05.954334"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "film_and_media_arts",
+      "micro_subdomain": "interactive_media_art",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-08T14:01:25.352884"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "film_and_media_arts",
+      "micro_subdomain": "interactive_media_art",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-08T14:01:25.047955"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "skipped",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "film_and_media_arts",
+      "micro_subdomain": "interactive_media_art",
+      "grade": "preschool",
+      "reason": "insufficient labeled data",
+      "samples": 1
+    },
+    "created_at": "2026-06-08T14:01:24.954610"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "film_and_media_arts",
+      "micro_subdomain": "interactive_media_art",
+      "grade": "preschool",
+      "labeled": 1,
+      "auto_labeled": 1,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-08T14:01:24.953208"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "film_and_media_arts",
+      "micro_subdomain": "interactive_media_art",
+      "grade": "preschool",
+      "documents_checked": 1,
+      "newly_verified": 1,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-08T14:01:24.945053"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "film_and_media_arts",
+      "micro_subdomain": "interactive_media_art",
+      "grade": "preschool",
+      "collection_attempts": 2,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-08T14:01:24.941748"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "film_and_media_arts",
+      "micro_subdomain": "digital_media_art",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-08T14:00:49.941363"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "film_and_media_arts",
+      "micro_subdomain": "digital_media_art",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-08T14:00:49.749458"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "skipped",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "film_and_media_arts",
+      "micro_subdomain": "digital_media_art",
+      "grade": "preschool",
+      "reason": "insufficient labeled data",
+      "samples": 0
+    },
+    "created_at": "2026-06-08T14:00:49.747524"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "skipped",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "film_and_media_arts",
+      "micro_subdomain": "digital_media_art",
+      "grade": "preschool",
+      "reason": "no verified documents"
+    },
+    "created_at": "2026-06-08T14:00:49.746471"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "film_and_media_arts",
+      "micro_subdomain": "digital_media_art",
+      "grade": "preschool",
+      "documents_checked": 0,
+      "newly_verified": 0,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-08T14:00:49.745454"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "film_and_media_arts",
+      "micro_subdomain": "digital_media_art",
+      "grade": "preschool",
+      "collection_attempts": 1,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-08T14:00:49.743849"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "film_and_media_arts",
+      "micro_subdomain": "video_art",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-08T14:00:17.541068"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "film_and_media_arts",
+      "micro_subdomain": "video_art",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-08T14:00:17.050961"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "skipped",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "film_and_media_arts",
+      "micro_subdomain": "video_art",
+      "grade": "preschool",
+      "reason": "insufficient labeled data",
+      "samples": 1
+    },
+    "created_at": "2026-06-08T14:00:16.956324"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "film_and_media_arts",
+      "micro_subdomain": "video_art",
+      "grade": "preschool",
+      "labeled": 1,
+      "auto_labeled": 1,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-08T14:00:16.954868"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "film_and_media_arts",
+      "micro_subdomain": "video_art",
+      "grade": "preschool",
+      "documents_checked": 1,
+      "newly_verified": 1,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-08T14:00:16.945176"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "film_and_media_arts",
+      "micro_subdomain": "video_art",
+      "grade": "preschool",
+      "collection_attempts": 2,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-08T14:00:16.855743"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "film_and_media_arts",
+      "micro_subdomain": "television_arts",
+      "grade": "preschool",
+      "reward_val_accuracy": 0.125,
+      "ranking_accuracy": 0.5,
+      "preference_pairs_used": 32
+    },
+    "created_at": "2026-06-08T13:59:44.452858"
+  },
+  {
+    "step": "brain_evaluator",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "film_and_media_arts",
+      "micro_subdomain": "television_arts",
+      "grade": "preschool",
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      }
+    },
+    "created_at": "2026-06-08T13:59:44.348539"
+  },
+  {
+    "step": "brain_trainer",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "film_and_media_arts",
+      "micro_subdomain": "television_arts",
+      "grade": "preschool",
+      "run_id": "918d3fb0",
+      "samples": 3,
+      "classes": 3,
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0,
+      "promoted": false
+    },
+    "created_at": "2026-06-08T13:59:44.345841"
+  },
+  {
+    "step": "brain_labeler",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "film_and_media_arts",
+      "micro_subdomain": "television_arts",
+      "grade": "preschool",
+      "labeled": 3,
+      "auto_labeled": 3,
+      "flagged_for_review": 0,
+      "review_rate": 0.0
+    },
+    "created_at": "2026-06-08T13:59:44.254793"
+  },
+  {
+    "step": "brain_verifier",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "film_and_media_arts",
+      "micro_subdomain": "television_arts",
+      "grade": "preschool",
+      "documents_checked": 3,
+      "newly_verified": 3,
+      "failed_verification": 0
+    },
+    "created_at": "2026-06-08T13:59:44.147618"
+  },
+  {
+    "step": "brain_collector",
+    "event_type": "completed",
+    "domain_id": 6,
+    "payload": {
+      "domain": "arts_and_creative_expression",
+      "subdomain": "film_and_media_arts",
+      "micro_subdomain": "television_arts",
+      "grade": "preschool",
+      "collection_attempts": 4,
+      "new_documents": 0
+    },
+    "created_at": "2026-06-08T13:59:44.145831"
+  },
+  {
+    "step": "brain_reward",
+    "event_type": "completed",
     "domain_id": 6,
     "payload": {
       "domain": "arts_and_creative_expression",
@@ -6554,2848 +9431,5 @@
       }
     },
     "created_at": "2026-06-08T10:23:14.854798"
-  },
-  {
-    "step": "brain_trainer",
-    "event_type": "skipped",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "indigenous_and_tribal_religions",
-      "micro_subdomain": "arctic_and_siberian_shamanism",
-      "grade": "preschool",
-      "reason": "insufficient labeled data",
-      "samples": 0
-    },
-    "created_at": "2026-06-08T10:23:14.850317"
-  },
-  {
-    "step": "brain_labeler",
-    "event_type": "skipped",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "indigenous_and_tribal_religions",
-      "micro_subdomain": "arctic_and_siberian_shamanism",
-      "grade": "preschool",
-      "reason": "no verified documents"
-    },
-    "created_at": "2026-06-08T10:23:14.848710"
-  },
-  {
-    "step": "brain_verifier",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "indigenous_and_tribal_religions",
-      "micro_subdomain": "arctic_and_siberian_shamanism",
-      "grade": "preschool",
-      "documents_checked": 0,
-      "newly_verified": 0,
-      "failed_verification": 0
-    },
-    "created_at": "2026-06-08T10:23:14.846985"
-  },
-  {
-    "step": "brain_collector",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "indigenous_and_tribal_religions",
-      "micro_subdomain": "arctic_and_siberian_shamanism",
-      "grade": "preschool",
-      "collection_attempts": 1,
-      "new_documents": 0
-    },
-    "created_at": "2026-06-08T10:23:14.845121"
-  },
-  {
-    "step": "brain_reward",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "indigenous_and_tribal_religions",
-      "micro_subdomain": "australian_aboriginal_religion",
-      "grade": "preschool",
-      "reward_val_accuracy": 0.125,
-      "ranking_accuracy": 0.5,
-      "preference_pairs_used": 32
-    },
-    "created_at": "2026-06-08T10:22:39.950579"
-  },
-  {
-    "step": "brain_evaluator",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "indigenous_and_tribal_religions",
-      "micro_subdomain": "australian_aboriginal_religion",
-      "grade": "preschool",
-      "benchmarks": {
-        "reasoning": {
-          "score": 1.0,
-          "passed": true
-        },
-        "consistency": {
-          "score": 1.0,
-          "passed": true
-        },
-        "verification": {
-          "score": 1.0,
-          "passed": true
-        }
-      },
-      "gates": {
-        "reasoning": true,
-        "consistency": true,
-        "verification": true
-      },
-      "all_passed": true,
-      "grade_slug": "preschool",
-      "thresholds": {
-        "reasoning": 0.2,
-        "consistency": 0.35,
-        "verification": 0.35
-      }
-    },
-    "created_at": "2026-06-08T10:22:39.752189"
-  },
-  {
-    "step": "brain_trainer",
-    "event_type": "skipped",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "indigenous_and_tribal_religions",
-      "micro_subdomain": "australian_aboriginal_religion",
-      "grade": "preschool",
-      "reason": "insufficient labeled data",
-      "samples": 0
-    },
-    "created_at": "2026-06-08T10:22:39.750043"
-  },
-  {
-    "step": "brain_labeler",
-    "event_type": "skipped",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "indigenous_and_tribal_religions",
-      "micro_subdomain": "australian_aboriginal_religion",
-      "grade": "preschool",
-      "reason": "no verified documents"
-    },
-    "created_at": "2026-06-08T10:22:39.748419"
-  },
-  {
-    "step": "brain_verifier",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "indigenous_and_tribal_religions",
-      "micro_subdomain": "australian_aboriginal_religion",
-      "grade": "preschool",
-      "documents_checked": 0,
-      "newly_verified": 0,
-      "failed_verification": 0
-    },
-    "created_at": "2026-06-08T10:22:39.745902"
-  },
-  {
-    "step": "brain_collector",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "indigenous_and_tribal_religions",
-      "micro_subdomain": "australian_aboriginal_religion",
-      "grade": "preschool",
-      "collection_attempts": 1,
-      "new_documents": 0
-    },
-    "created_at": "2026-06-08T10:22:39.744090"
-  },
-  {
-    "step": "brain_reward",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "indigenous_and_tribal_religions",
-      "micro_subdomain": "amazonian_shamanism",
-      "grade": "preschool",
-      "reward_val_accuracy": 0.125,
-      "ranking_accuracy": 0.5,
-      "preference_pairs_used": 32
-    },
-    "created_at": "2026-06-08T10:22:07.345718"
-  },
-  {
-    "step": "brain_evaluator",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "indigenous_and_tribal_religions",
-      "micro_subdomain": "amazonian_shamanism",
-      "grade": "preschool",
-      "benchmarks": {
-        "reasoning": {
-          "score": 1.0,
-          "passed": true
-        },
-        "consistency": {
-          "score": 1.0,
-          "passed": true
-        },
-        "verification": {
-          "score": 1.0,
-          "passed": true
-        }
-      },
-      "gates": {
-        "reasoning": true,
-        "consistency": true,
-        "verification": true
-      },
-      "all_passed": true,
-      "grade_slug": "preschool",
-      "thresholds": {
-        "reasoning": 0.2,
-        "consistency": 0.35,
-        "verification": 0.35
-      }
-    },
-    "created_at": "2026-06-08T10:22:06.959870"
-  },
-  {
-    "step": "brain_trainer",
-    "event_type": "skipped",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "indigenous_and_tribal_religions",
-      "micro_subdomain": "amazonian_shamanism",
-      "grade": "preschool",
-      "reason": "insufficient labeled data",
-      "samples": 0
-    },
-    "created_at": "2026-06-08T10:22:06.951621"
-  },
-  {
-    "step": "brain_labeler",
-    "event_type": "skipped",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "indigenous_and_tribal_religions",
-      "micro_subdomain": "amazonian_shamanism",
-      "grade": "preschool",
-      "reason": "no verified documents"
-    },
-    "created_at": "2026-06-08T10:22:06.945947"
-  },
-  {
-    "step": "brain_verifier",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "indigenous_and_tribal_religions",
-      "micro_subdomain": "amazonian_shamanism",
-      "grade": "preschool",
-      "documents_checked": 0,
-      "newly_verified": 0,
-      "failed_verification": 0
-    },
-    "created_at": "2026-06-08T10:22:06.856720"
-  },
-  {
-    "step": "brain_collector",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "indigenous_and_tribal_religions",
-      "micro_subdomain": "amazonian_shamanism",
-      "grade": "preschool",
-      "collection_attempts": 1,
-      "new_documents": 0
-    },
-    "created_at": "2026-06-08T10:22:06.854901"
-  },
-  {
-    "step": "brain_reward",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "indigenous_and_tribal_religions",
-      "micro_subdomain": "native_american_religions",
-      "grade": "preschool",
-      "reward_val_accuracy": 0.125,
-      "ranking_accuracy": 0.5,
-      "preference_pairs_used": 32
-    },
-    "created_at": "2026-06-08T10:21:33.947451"
-  },
-  {
-    "step": "brain_evaluator",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "indigenous_and_tribal_religions",
-      "micro_subdomain": "native_american_religions",
-      "grade": "preschool",
-      "benchmarks": {
-        "reasoning": {
-          "score": 1.0,
-          "passed": true
-        },
-        "consistency": {
-          "score": 1.0,
-          "passed": true
-        },
-        "verification": {
-          "score": 1.0,
-          "passed": true
-        }
-      },
-      "gates": {
-        "reasoning": true,
-        "consistency": true,
-        "verification": true
-      },
-      "all_passed": true,
-      "grade_slug": "preschool",
-      "thresholds": {
-        "reasoning": 0.2,
-        "consistency": 0.35,
-        "verification": 0.35
-      }
-    },
-    "created_at": "2026-06-08T10:21:33.654617"
-  },
-  {
-    "step": "brain_trainer",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "indigenous_and_tribal_religions",
-      "micro_subdomain": "native_american_religions",
-      "grade": "preschool",
-      "run_id": "5c85a899",
-      "samples": 3,
-      "classes": 3,
-      "train_accuracy": 1.0,
-      "val_accuracy": 1.0,
-      "promoted": false
-    },
-    "created_at": "2026-06-08T10:21:33.652697"
-  },
-  {
-    "step": "brain_labeler",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "indigenous_and_tribal_religions",
-      "micro_subdomain": "native_american_religions",
-      "grade": "preschool",
-      "labeled": 3,
-      "auto_labeled": 3,
-      "flagged_for_review": 0,
-      "review_rate": 0.0
-    },
-    "created_at": "2026-06-08T10:21:33.562543"
-  },
-  {
-    "step": "brain_verifier",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "indigenous_and_tribal_religions",
-      "micro_subdomain": "native_american_religions",
-      "grade": "preschool",
-      "documents_checked": 3,
-      "newly_verified": 3,
-      "failed_verification": 0
-    },
-    "created_at": "2026-06-08T10:21:33.553614"
-  },
-  {
-    "step": "brain_collector",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "indigenous_and_tribal_religions",
-      "micro_subdomain": "native_american_religions",
-      "grade": "preschool",
-      "collection_attempts": 4,
-      "new_documents": 0
-    },
-    "created_at": "2026-06-08T10:21:33.552139"
-  },
-  {
-    "step": "brain_reward",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "indigenous_and_tribal_religions",
-      "micro_subdomain": "african_traditional_religions",
-      "grade": "preschool",
-      "reward_val_accuracy": 0.125,
-      "ranking_accuracy": 0.5,
-      "preference_pairs_used": 32
-    },
-    "created_at": "2026-06-08T10:21:07.561107"
-  },
-  {
-    "step": "brain_evaluator",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "indigenous_and_tribal_religions",
-      "micro_subdomain": "african_traditional_religions",
-      "grade": "preschool",
-      "benchmarks": {
-        "reasoning": {
-          "score": 1.0,
-          "passed": true
-        },
-        "consistency": {
-          "score": 1.0,
-          "passed": true
-        },
-        "verification": {
-          "score": 1.0,
-          "passed": true
-        }
-      },
-      "gates": {
-        "reasoning": true,
-        "consistency": true,
-        "verification": true
-      },
-      "all_passed": true,
-      "grade_slug": "preschool",
-      "thresholds": {
-        "reasoning": 0.2,
-        "consistency": 0.35,
-        "verification": 0.35
-      }
-    },
-    "created_at": "2026-06-08T10:21:07.452305"
-  },
-  {
-    "step": "brain_trainer",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "indigenous_and_tribal_religions",
-      "micro_subdomain": "african_traditional_religions",
-      "grade": "preschool",
-      "run_id": "b8b71c37",
-      "samples": 4,
-      "classes": 4,
-      "train_accuracy": 1.0,
-      "val_accuracy": 1.0,
-      "promoted": false
-    },
-    "created_at": "2026-06-08T10:21:07.449603"
-  },
-  {
-    "step": "brain_labeler",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "indigenous_and_tribal_religions",
-      "micro_subdomain": "african_traditional_religions",
-      "grade": "preschool",
-      "labeled": 4,
-      "auto_labeled": 4,
-      "flagged_for_review": 0,
-      "review_rate": 0.0
-    },
-    "created_at": "2026-06-08T10:21:07.355817"
-  },
-  {
-    "step": "brain_verifier",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "indigenous_and_tribal_religions",
-      "micro_subdomain": "african_traditional_religions",
-      "grade": "preschool",
-      "documents_checked": 4,
-      "newly_verified": 4,
-      "failed_verification": 0
-    },
-    "created_at": "2026-06-08T10:21:07.260539"
-  },
-  {
-    "step": "brain_collector",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "indigenous_and_tribal_religions",
-      "micro_subdomain": "african_traditional_religions",
-      "grade": "preschool",
-      "collection_attempts": 5,
-      "new_documents": 0
-    },
-    "created_at": "2026-06-08T10:21:07.258550"
-  },
-  {
-    "step": "brain_reward",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "east_asian_religions",
-      "micro_subdomain": "chinese_folk_religion",
-      "grade": "preschool",
-      "reward_val_accuracy": 0.125,
-      "ranking_accuracy": 0.5,
-      "preference_pairs_used": 32
-    },
-    "created_at": "2026-06-08T10:20:34.761977"
-  },
-  {
-    "step": "brain_evaluator",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "east_asian_religions",
-      "micro_subdomain": "chinese_folk_religion",
-      "grade": "preschool",
-      "benchmarks": {
-        "reasoning": {
-          "score": 1.0,
-          "passed": true
-        },
-        "consistency": {
-          "score": 1.0,
-          "passed": true
-        },
-        "verification": {
-          "score": 1.0,
-          "passed": true
-        }
-      },
-      "gates": {
-        "reasoning": true,
-        "consistency": true,
-        "verification": true
-      },
-      "all_passed": true,
-      "grade_slug": "preschool",
-      "thresholds": {
-        "reasoning": 0.2,
-        "consistency": 0.35,
-        "verification": 0.35
-      }
-    },
-    "created_at": "2026-06-08T10:20:34.656642"
-  },
-  {
-    "step": "brain_trainer",
-    "event_type": "skipped",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "east_asian_religions",
-      "micro_subdomain": "chinese_folk_religion",
-      "grade": "preschool",
-      "reason": "insufficient labeled data",
-      "samples": 1
-    },
-    "created_at": "2026-06-08T10:20:34.654429"
-  },
-  {
-    "step": "brain_labeler",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "east_asian_religions",
-      "micro_subdomain": "chinese_folk_religion",
-      "grade": "preschool",
-      "labeled": 1,
-      "auto_labeled": 1,
-      "flagged_for_review": 0,
-      "review_rate": 0.0
-    },
-    "created_at": "2026-06-08T10:20:34.653243"
-  },
-  {
-    "step": "brain_verifier",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "east_asian_religions",
-      "micro_subdomain": "chinese_folk_religion",
-      "grade": "preschool",
-      "documents_checked": 1,
-      "newly_verified": 1,
-      "failed_verification": 0
-    },
-    "created_at": "2026-06-08T10:20:34.649640"
-  },
-  {
-    "step": "brain_collector",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "east_asian_religions",
-      "micro_subdomain": "chinese_folk_religion",
-      "grade": "preschool",
-      "collection_attempts": 2,
-      "new_documents": 0
-    },
-    "created_at": "2026-06-08T10:20:34.647996"
-  },
-  {
-    "step": "brain_reward",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "east_asian_religions",
-      "micro_subdomain": "korean_shamanism",
-      "grade": "preschool",
-      "reward_val_accuracy": 0.125,
-      "ranking_accuracy": 0.5,
-      "preference_pairs_used": 32
-    },
-    "created_at": "2026-06-08T10:20:03.545005"
-  },
-  {
-    "step": "brain_evaluator",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "east_asian_religions",
-      "micro_subdomain": "korean_shamanism",
-      "grade": "preschool",
-      "benchmarks": {
-        "reasoning": {
-          "score": 1.0,
-          "passed": true
-        },
-        "consistency": {
-          "score": 1.0,
-          "passed": true
-        },
-        "verification": {
-          "score": 1.0,
-          "passed": true
-        }
-      },
-      "gates": {
-        "reasoning": true,
-        "consistency": true,
-        "verification": true
-      },
-      "all_passed": true,
-      "grade_slug": "preschool",
-      "thresholds": {
-        "reasoning": 0.2,
-        "consistency": 0.35,
-        "verification": 0.35
-      }
-    },
-    "created_at": "2026-06-08T10:20:03.160627"
-  },
-  {
-    "step": "brain_trainer",
-    "event_type": "skipped",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "east_asian_religions",
-      "micro_subdomain": "korean_shamanism",
-      "grade": "preschool",
-      "reason": "insufficient labeled data",
-      "samples": 0
-    },
-    "created_at": "2026-06-08T10:20:03.158633"
-  },
-  {
-    "step": "brain_labeler",
-    "event_type": "skipped",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "east_asian_religions",
-      "micro_subdomain": "korean_shamanism",
-      "grade": "preschool",
-      "reason": "no verified documents"
-    },
-    "created_at": "2026-06-08T10:20:03.157386"
-  },
-  {
-    "step": "brain_verifier",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "east_asian_religions",
-      "micro_subdomain": "korean_shamanism",
-      "grade": "preschool",
-      "documents_checked": 0,
-      "newly_verified": 0,
-      "failed_verification": 0
-    },
-    "created_at": "2026-06-08T10:20:03.153027"
-  },
-  {
-    "step": "brain_collector",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "east_asian_religions",
-      "micro_subdomain": "korean_shamanism",
-      "grade": "preschool",
-      "collection_attempts": 1,
-      "new_documents": 0
-    },
-    "created_at": "2026-06-08T10:20:03.150313"
-  },
-  {
-    "step": "brain_reward",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "east_asian_religions",
-      "micro_subdomain": "shinto",
-      "grade": "preschool",
-      "reward_val_accuracy": 0.125,
-      "ranking_accuracy": 0.5,
-      "preference_pairs_used": 32
-    },
-    "created_at": "2026-06-08T10:19:28.759545"
-  },
-  {
-    "step": "brain_evaluator",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "east_asian_religions",
-      "micro_subdomain": "shinto",
-      "grade": "preschool",
-      "benchmarks": {
-        "reasoning": {
-          "score": 1.0,
-          "passed": true
-        },
-        "consistency": {
-          "score": 1.0,
-          "passed": true
-        },
-        "verification": {
-          "score": 1.0,
-          "passed": true
-        }
-      },
-      "gates": {
-        "reasoning": true,
-        "consistency": true,
-        "verification": true
-      },
-      "all_passed": true,
-      "grade_slug": "preschool",
-      "thresholds": {
-        "reasoning": 0.2,
-        "consistency": 0.35,
-        "verification": 0.35
-      }
-    },
-    "created_at": "2026-06-08T10:19:28.548404"
-  },
-  {
-    "step": "brain_trainer",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "east_asian_religions",
-      "micro_subdomain": "shinto",
-      "grade": "preschool",
-      "run_id": "4f7e92ca",
-      "samples": 4,
-      "classes": 4,
-      "train_accuracy": 1.0,
-      "val_accuracy": 1.0,
-      "promoted": false
-    },
-    "created_at": "2026-06-08T10:19:28.462611"
-  },
-  {
-    "step": "brain_labeler",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "east_asian_religions",
-      "micro_subdomain": "shinto",
-      "grade": "preschool",
-      "labeled": 4,
-      "auto_labeled": 4,
-      "flagged_for_review": 0,
-      "review_rate": 0.0
-    },
-    "created_at": "2026-06-08T10:19:28.352867"
-  },
-  {
-    "step": "brain_verifier",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "east_asian_religions",
-      "micro_subdomain": "shinto",
-      "grade": "preschool",
-      "documents_checked": 4,
-      "newly_verified": 4,
-      "failed_verification": 0
-    },
-    "created_at": "2026-06-08T10:19:28.056738"
-  },
-  {
-    "step": "brain_collector",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "east_asian_religions",
-      "micro_subdomain": "shinto",
-      "grade": "preschool",
-      "collection_attempts": 5,
-      "new_documents": 0
-    },
-    "created_at": "2026-06-08T10:19:28.054771"
-  },
-  {
-    "step": "brain_reward",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "east_asian_religions",
-      "micro_subdomain": "confucianism",
-      "grade": "preschool",
-      "reward_val_accuracy": 0.125,
-      "ranking_accuracy": 0.5,
-      "preference_pairs_used": 32
-    },
-    "created_at": "2026-06-08T10:18:53.252177"
-  },
-  {
-    "step": "brain_evaluator",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "east_asian_religions",
-      "micro_subdomain": "confucianism",
-      "grade": "preschool",
-      "benchmarks": {
-        "reasoning": {
-          "score": 1.0,
-          "passed": true
-        },
-        "consistency": {
-          "score": 1.0,
-          "passed": true
-        },
-        "verification": {
-          "score": 1.0,
-          "passed": true
-        }
-      },
-      "gates": {
-        "reasoning": true,
-        "consistency": true,
-        "verification": true
-      },
-      "all_passed": true,
-      "grade_slug": "preschool",
-      "thresholds": {
-        "reasoning": 0.2,
-        "consistency": 0.35,
-        "verification": 0.35
-      }
-    },
-    "created_at": "2026-06-08T10:18:53.148746"
-  },
-  {
-    "step": "brain_trainer",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "east_asian_religions",
-      "micro_subdomain": "confucianism",
-      "grade": "preschool",
-      "run_id": "2ca5333e",
-      "samples": 4,
-      "classes": 4,
-      "train_accuracy": 1.0,
-      "val_accuracy": 1.0,
-      "promoted": false
-    },
-    "created_at": "2026-06-08T10:18:53.146108"
-  },
-  {
-    "step": "brain_labeler",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "east_asian_religions",
-      "micro_subdomain": "confucianism",
-      "grade": "preschool",
-      "labeled": 4,
-      "auto_labeled": 4,
-      "flagged_for_review": 0,
-      "review_rate": 0.0
-    },
-    "created_at": "2026-06-08T10:18:53.056192"
-  },
-  {
-    "step": "brain_verifier",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "east_asian_religions",
-      "micro_subdomain": "confucianism",
-      "grade": "preschool",
-      "documents_checked": 4,
-      "newly_verified": 4,
-      "failed_verification": 0
-    },
-    "created_at": "2026-06-08T10:18:52.949429"
-  },
-  {
-    "step": "brain_collector",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "east_asian_religions",
-      "micro_subdomain": "confucianism",
-      "grade": "preschool",
-      "collection_attempts": 5,
-      "new_documents": 0
-    },
-    "created_at": "2026-06-08T10:18:52.947867"
-  },
-  {
-    "step": "brain_reward",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "east_asian_religions",
-      "micro_subdomain": "taoism",
-      "grade": "preschool",
-      "reward_val_accuracy": 0.125,
-      "ranking_accuracy": 0.5,
-      "preference_pairs_used": 32
-    },
-    "created_at": "2026-06-08T10:18:12.758871"
-  },
-  {
-    "step": "brain_evaluator",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "east_asian_religions",
-      "micro_subdomain": "taoism",
-      "grade": "preschool",
-      "benchmarks": {
-        "reasoning": {
-          "score": 1.0,
-          "passed": true
-        },
-        "consistency": {
-          "score": 1.0,
-          "passed": true
-        },
-        "verification": {
-          "score": 1.0,
-          "passed": true
-        }
-      },
-      "gates": {
-        "reasoning": true,
-        "consistency": true,
-        "verification": true
-      },
-      "all_passed": true,
-      "grade_slug": "preschool",
-      "thresholds": {
-        "reasoning": 0.2,
-        "consistency": 0.35,
-        "verification": 0.35
-      }
-    },
-    "created_at": "2026-06-08T10:18:12.551326"
-  },
-  {
-    "step": "brain_trainer",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "east_asian_religions",
-      "micro_subdomain": "taoism",
-      "grade": "preschool",
-      "run_id": "8fc6a1b8",
-      "samples": 4,
-      "classes": 4,
-      "train_accuracy": 1.0,
-      "val_accuracy": 1.0,
-      "promoted": false
-    },
-    "created_at": "2026-06-08T10:18:12.545098"
-  },
-  {
-    "step": "brain_labeler",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "east_asian_religions",
-      "micro_subdomain": "taoism",
-      "grade": "preschool",
-      "labeled": 4,
-      "auto_labeled": 4,
-      "flagged_for_review": 0,
-      "review_rate": 0.0
-    },
-    "created_at": "2026-06-08T10:18:12.445345"
-  },
-  {
-    "step": "brain_verifier",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "east_asian_religions",
-      "micro_subdomain": "taoism",
-      "grade": "preschool",
-      "documents_checked": 4,
-      "newly_verified": 4,
-      "failed_verification": 0
-    },
-    "created_at": "2026-06-08T10:18:12.258749"
-  },
-  {
-    "step": "brain_collector",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "east_asian_religions",
-      "micro_subdomain": "taoism",
-      "grade": "preschool",
-      "collection_attempts": 5,
-      "new_documents": 0
-    },
-    "created_at": "2026-06-08T10:18:12.252589"
-  },
-  {
-    "step": "brain_reward",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "dharmic_religions",
-      "micro_subdomain": "sikhism",
-      "grade": "preschool",
-      "reward_val_accuracy": 0.125,
-      "ranking_accuracy": 0.5,
-      "preference_pairs_used": 32
-    },
-    "created_at": "2026-06-08T10:17:41.645733"
-  },
-  {
-    "step": "brain_evaluator",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "dharmic_religions",
-      "micro_subdomain": "sikhism",
-      "grade": "preschool",
-      "benchmarks": {
-        "reasoning": {
-          "score": 1.0,
-          "passed": true
-        },
-        "consistency": {
-          "score": 1.0,
-          "passed": true
-        },
-        "verification": {
-          "score": 1.0,
-          "passed": true
-        }
-      },
-      "gates": {
-        "reasoning": true,
-        "consistency": true,
-        "verification": true
-      },
-      "all_passed": true,
-      "grade_slug": "preschool",
-      "thresholds": {
-        "reasoning": 0.2,
-        "consistency": 0.35,
-        "verification": 0.35
-      }
-    },
-    "created_at": "2026-06-08T10:17:41.455392"
-  },
-  {
-    "step": "brain_trainer",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "dharmic_religions",
-      "micro_subdomain": "sikhism",
-      "grade": "preschool",
-      "run_id": "2af7dbf6",
-      "samples": 4,
-      "classes": 4,
-      "train_accuracy": 1.0,
-      "val_accuracy": 1.0,
-      "promoted": false
-    },
-    "created_at": "2026-06-08T10:17:41.452296"
-  },
-  {
-    "step": "brain_labeler",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "dharmic_religions",
-      "micro_subdomain": "sikhism",
-      "grade": "preschool",
-      "labeled": 4,
-      "auto_labeled": 4,
-      "flagged_for_review": 0,
-      "review_rate": 0.0
-    },
-    "created_at": "2026-06-08T10:17:41.354978"
-  },
-  {
-    "step": "brain_verifier",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "dharmic_religions",
-      "micro_subdomain": "sikhism",
-      "grade": "preschool",
-      "documents_checked": 4,
-      "newly_verified": 4,
-      "failed_verification": 0
-    },
-    "created_at": "2026-06-08T10:17:41.259192"
-  },
-  {
-    "step": "brain_collector",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "dharmic_religions",
-      "micro_subdomain": "sikhism",
-      "grade": "preschool",
-      "collection_attempts": 5,
-      "new_documents": 0
-    },
-    "created_at": "2026-06-08T10:17:41.257668"
-  },
-  {
-    "step": "brain_reward",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "dharmic_religions",
-      "micro_subdomain": "jainism",
-      "grade": "preschool",
-      "reward_val_accuracy": 0.125,
-      "ranking_accuracy": 0.5,
-      "preference_pairs_used": 32
-    },
-    "created_at": "2026-06-08T10:17:04.750647"
-  },
-  {
-    "step": "brain_evaluator",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "dharmic_religions",
-      "micro_subdomain": "jainism",
-      "grade": "preschool",
-      "benchmarks": {
-        "reasoning": {
-          "score": 1.0,
-          "passed": true
-        },
-        "consistency": {
-          "score": 1.0,
-          "passed": true
-        },
-        "verification": {
-          "score": 1.0,
-          "passed": true
-        }
-      },
-      "gates": {
-        "reasoning": true,
-        "consistency": true,
-        "verification": true
-      },
-      "all_passed": true,
-      "grade_slug": "preschool",
-      "thresholds": {
-        "reasoning": 0.2,
-        "consistency": 0.35,
-        "verification": 0.35
-      }
-    },
-    "created_at": "2026-06-08T10:17:04.648851"
-  },
-  {
-    "step": "brain_trainer",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "dharmic_religions",
-      "micro_subdomain": "jainism",
-      "grade": "preschool",
-      "run_id": "7f96f491",
-      "samples": 2,
-      "classes": 2,
-      "train_accuracy": 1.0,
-      "val_accuracy": 1.0,
-      "promoted": false
-    },
-    "created_at": "2026-06-08T10:17:04.646196"
-  },
-  {
-    "step": "brain_labeler",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "dharmic_religions",
-      "micro_subdomain": "jainism",
-      "grade": "preschool",
-      "labeled": 2,
-      "auto_labeled": 2,
-      "flagged_for_review": 0,
-      "review_rate": 0.0
-    },
-    "created_at": "2026-06-08T10:17:04.352032"
-  },
-  {
-    "step": "brain_verifier",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "dharmic_religions",
-      "micro_subdomain": "jainism",
-      "grade": "preschool",
-      "documents_checked": 2,
-      "newly_verified": 2,
-      "failed_verification": 0
-    },
-    "created_at": "2026-06-08T10:17:04.346631"
-  },
-  {
-    "step": "brain_collector",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "dharmic_religions",
-      "micro_subdomain": "jainism",
-      "grade": "preschool",
-      "collection_attempts": 3,
-      "new_documents": 0
-    },
-    "created_at": "2026-06-08T10:17:04.344727"
-  },
-  {
-    "step": "brain_reward",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "dharmic_religions",
-      "micro_subdomain": "buddhism",
-      "grade": "preschool",
-      "reward_val_accuracy": 0.125,
-      "ranking_accuracy": 0.5,
-      "preference_pairs_used": 32
-    },
-    "created_at": "2026-06-08T10:16:32.745639"
-  },
-  {
-    "step": "brain_evaluator",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "dharmic_religions",
-      "micro_subdomain": "buddhism",
-      "grade": "preschool",
-      "benchmarks": {
-        "reasoning": {
-          "score": 1.0,
-          "passed": true
-        },
-        "consistency": {
-          "score": 1.0,
-          "passed": true
-        },
-        "verification": {
-          "score": 1.0,
-          "passed": true
-        }
-      },
-      "gates": {
-        "reasoning": true,
-        "consistency": true,
-        "verification": true
-      },
-      "all_passed": true,
-      "grade_slug": "preschool",
-      "thresholds": {
-        "reasoning": 0.2,
-        "consistency": 0.35,
-        "verification": 0.35
-      }
-    },
-    "created_at": "2026-06-08T10:16:32.550598"
-  },
-  {
-    "step": "brain_trainer",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "dharmic_religions",
-      "micro_subdomain": "buddhism",
-      "grade": "preschool",
-      "run_id": "5f85bc4e",
-      "samples": 3,
-      "classes": 3,
-      "train_accuracy": 1.0,
-      "val_accuracy": 1.0,
-      "promoted": false
-    },
-    "created_at": "2026-06-08T10:16:32.548158"
-  },
-  {
-    "step": "brain_labeler",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "dharmic_religions",
-      "micro_subdomain": "buddhism",
-      "grade": "preschool",
-      "labeled": 3,
-      "auto_labeled": 3,
-      "flagged_for_review": 0,
-      "review_rate": 0.0
-    },
-    "created_at": "2026-06-08T10:16:32.458430"
-  },
-  {
-    "step": "brain_verifier",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "dharmic_religions",
-      "micro_subdomain": "buddhism",
-      "grade": "preschool",
-      "documents_checked": 3,
-      "newly_verified": 3,
-      "failed_verification": 0
-    },
-    "created_at": "2026-06-08T10:16:32.352804"
-  },
-  {
-    "step": "brain_collector",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "dharmic_religions",
-      "micro_subdomain": "buddhism",
-      "grade": "preschool",
-      "collection_attempts": 5,
-      "new_documents": 0
-    },
-    "created_at": "2026-06-08T10:16:32.351209"
-  },
-  {
-    "step": "brain_reward",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "dharmic_religions",
-      "micro_subdomain": "hinduism",
-      "grade": "preschool",
-      "reward_val_accuracy": 0.125,
-      "ranking_accuracy": 0.5,
-      "preference_pairs_used": 32
-    },
-    "created_at": "2026-06-08T10:15:54.751451"
-  },
-  {
-    "step": "brain_evaluator",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "dharmic_religions",
-      "micro_subdomain": "hinduism",
-      "grade": "preschool",
-      "benchmarks": {
-        "reasoning": {
-          "score": 1.0,
-          "passed": true
-        },
-        "consistency": {
-          "score": 1.0,
-          "passed": true
-        },
-        "verification": {
-          "score": 1.0,
-          "passed": true
-        }
-      },
-      "gates": {
-        "reasoning": true,
-        "consistency": true,
-        "verification": true
-      },
-      "all_passed": true,
-      "grade_slug": "preschool",
-      "thresholds": {
-        "reasoning": 0.2,
-        "consistency": 0.35,
-        "verification": 0.35
-      }
-    },
-    "created_at": "2026-06-08T10:15:54.644764"
-  },
-  {
-    "step": "brain_trainer",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "dharmic_religions",
-      "micro_subdomain": "hinduism",
-      "grade": "preschool",
-      "run_id": "51d9c2b2",
-      "samples": 3,
-      "classes": 3,
-      "train_accuracy": 1.0,
-      "val_accuracy": 1.0,
-      "promoted": false
-    },
-    "created_at": "2026-06-08T10:15:54.557408"
-  },
-  {
-    "step": "brain_labeler",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "dharmic_religions",
-      "micro_subdomain": "hinduism",
-      "grade": "preschool",
-      "labeled": 3,
-      "auto_labeled": 3,
-      "flagged_for_review": 0,
-      "review_rate": 0.0
-    },
-    "created_at": "2026-06-08T10:15:54.542598"
-  },
-  {
-    "step": "brain_verifier",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "dharmic_religions",
-      "micro_subdomain": "hinduism",
-      "grade": "preschool",
-      "documents_checked": 3,
-      "newly_verified": 3,
-      "failed_verification": 0
-    },
-    "created_at": "2026-06-08T10:15:54.451318"
-  },
-  {
-    "step": "brain_collector",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "dharmic_religions",
-      "micro_subdomain": "hinduism",
-      "grade": "preschool",
-      "collection_attempts": 5,
-      "new_documents": 0
-    },
-    "created_at": "2026-06-08T10:15:54.448423"
-  },
-  {
-    "step": "brain_reward",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "yazidism",
-      "grade": "preschool",
-      "reward_val_accuracy": 0.125,
-      "ranking_accuracy": 0.5,
-      "preference_pairs_used": 32
-    },
-    "created_at": "2026-06-08T10:15:23.341733"
-  },
-  {
-    "step": "brain_evaluator",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "yazidism",
-      "grade": "preschool",
-      "benchmarks": {
-        "reasoning": {
-          "score": 1.0,
-          "passed": true
-        },
-        "consistency": {
-          "score": 1.0,
-          "passed": true
-        },
-        "verification": {
-          "score": 1.0,
-          "passed": true
-        }
-      },
-      "gates": {
-        "reasoning": true,
-        "consistency": true,
-        "verification": true
-      },
-      "all_passed": true,
-      "grade_slug": "preschool",
-      "thresholds": {
-        "reasoning": 0.2,
-        "consistency": 0.35,
-        "verification": 0.35
-      }
-    },
-    "created_at": "2026-06-08T10:15:23.053471"
-  },
-  {
-    "step": "brain_trainer",
-    "event_type": "skipped",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "yazidism",
-      "grade": "preschool",
-      "reason": "insufficient labeled data",
-      "samples": 1
-    },
-    "created_at": "2026-06-08T10:15:22.962674"
-  },
-  {
-    "step": "brain_labeler",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "yazidism",
-      "grade": "preschool",
-      "labeled": 1,
-      "auto_labeled": 1,
-      "flagged_for_review": 0,
-      "review_rate": 0.0
-    },
-    "created_at": "2026-06-08T10:15:22.961475"
-  },
-  {
-    "step": "brain_verifier",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "yazidism",
-      "grade": "preschool",
-      "documents_checked": 1,
-      "newly_verified": 1,
-      "failed_verification": 0
-    },
-    "created_at": "2026-06-08T10:15:22.954585"
-  },
-  {
-    "step": "brain_collector",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "yazidism",
-      "grade": "preschool",
-      "collection_attempts": 2,
-      "new_documents": 0
-    },
-    "created_at": "2026-06-08T10:15:22.953341"
-  },
-  {
-    "step": "brain_reward",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "mandaeism",
-      "grade": "preschool",
-      "reward_val_accuracy": 0.125,
-      "ranking_accuracy": 0.5,
-      "preference_pairs_used": 32
-    },
-    "created_at": "2026-06-08T10:14:45.051668"
-  },
-  {
-    "step": "brain_evaluator",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "mandaeism",
-      "grade": "preschool",
-      "benchmarks": {
-        "reasoning": {
-          "score": 1.0,
-          "passed": true
-        },
-        "consistency": {
-          "score": 1.0,
-          "passed": true
-        },
-        "verification": {
-          "score": 1.0,
-          "passed": true
-        }
-      },
-      "gates": {
-        "reasoning": true,
-        "consistency": true,
-        "verification": true
-      },
-      "all_passed": true,
-      "grade_slug": "preschool",
-      "thresholds": {
-        "reasoning": 0.2,
-        "consistency": 0.35,
-        "verification": 0.35
-      }
-    },
-    "created_at": "2026-06-08T10:14:44.649021"
-  },
-  {
-    "step": "brain_trainer",
-    "event_type": "skipped",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "mandaeism",
-      "grade": "preschool",
-      "reason": "insufficient labeled data",
-      "samples": 0
-    },
-    "created_at": "2026-06-08T10:14:44.558072"
-  },
-  {
-    "step": "brain_labeler",
-    "event_type": "skipped",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "mandaeism",
-      "grade": "preschool",
-      "reason": "no verified documents"
-    },
-    "created_at": "2026-06-08T10:14:44.556792"
-  },
-  {
-    "step": "brain_verifier",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "mandaeism",
-      "grade": "preschool",
-      "documents_checked": 0,
-      "newly_verified": 0,
-      "failed_verification": 0
-    },
-    "created_at": "2026-06-08T10:14:44.555007"
-  },
-  {
-    "step": "brain_collector",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "mandaeism",
-      "grade": "preschool",
-      "collection_attempts": 1,
-      "new_documents": 0
-    },
-    "created_at": "2026-06-08T10:14:44.551161"
-  },
-  {
-    "step": "brain_reward",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "druze_religion",
-      "grade": "preschool",
-      "reward_val_accuracy": 0.125,
-      "ranking_accuracy": 0.5,
-      "preference_pairs_used": 32
-    },
-    "created_at": "2026-06-08T10:14:07.056367"
-  },
-  {
-    "step": "brain_evaluator",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "druze_religion",
-      "grade": "preschool",
-      "benchmarks": {
-        "reasoning": {
-          "score": 1.0,
-          "passed": true
-        },
-        "consistency": {
-          "score": 1.0,
-          "passed": true
-        },
-        "verification": {
-          "score": 1.0,
-          "passed": true
-        }
-      },
-      "gates": {
-        "reasoning": true,
-        "consistency": true,
-        "verification": true
-      },
-      "all_passed": true,
-      "grade_slug": "preschool",
-      "thresholds": {
-        "reasoning": 0.2,
-        "consistency": 0.35,
-        "verification": 0.35
-      }
-    },
-    "created_at": "2026-06-08T10:14:06.851542"
-  },
-  {
-    "step": "brain_trainer",
-    "event_type": "skipped",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "druze_religion",
-      "grade": "preschool",
-      "reason": "insufficient labeled data",
-      "samples": 0
-    },
-    "created_at": "2026-06-08T10:14:06.847304"
-  },
-  {
-    "step": "brain_labeler",
-    "event_type": "skipped",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "druze_religion",
-      "grade": "preschool",
-      "reason": "no verified documents"
-    },
-    "created_at": "2026-06-08T10:14:06.844006"
-  },
-  {
-    "step": "brain_verifier",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "druze_religion",
-      "grade": "preschool",
-      "documents_checked": 0,
-      "newly_verified": 0,
-      "failed_verification": 0
-    },
-    "created_at": "2026-06-08T10:14:06.782702"
-  },
-  {
-    "step": "brain_collector",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "druze_religion",
-      "grade": "preschool",
-      "collection_attempts": 1,
-      "new_documents": 0
-    },
-    "created_at": "2026-06-08T10:14:06.758805"
-  },
-  {
-    "step": "brain_reward",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "bahai_faith",
-      "grade": "preschool",
-      "reward_val_accuracy": 0.125,
-      "ranking_accuracy": 0.5,
-      "preference_pairs_used": 32
-    },
-    "created_at": "2026-06-08T09:13:10.757705"
-  },
-  {
-    "step": "brain_evaluator",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "bahai_faith",
-      "grade": "preschool",
-      "benchmarks": {
-        "reasoning": {
-          "score": 1.0,
-          "passed": true
-        },
-        "consistency": {
-          "score": 1.0,
-          "passed": true
-        },
-        "verification": {
-          "score": 1.0,
-          "passed": true
-        }
-      },
-      "gates": {
-        "reasoning": true,
-        "consistency": true,
-        "verification": true
-      },
-      "all_passed": true,
-      "grade_slug": "preschool",
-      "thresholds": {
-        "reasoning": 0.2,
-        "consistency": 0.35,
-        "verification": 0.35
-      }
-    },
-    "created_at": "2026-06-08T09:13:10.549401"
-  },
-  {
-    "step": "brain_trainer",
-    "event_type": "skipped",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "bahai_faith",
-      "grade": "preschool",
-      "reason": "insufficient labeled data",
-      "samples": 0
-    },
-    "created_at": "2026-06-08T09:13:10.458523"
-  },
-  {
-    "step": "brain_labeler",
-    "event_type": "skipped",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "bahai_faith",
-      "grade": "preschool",
-      "reason": "no verified documents"
-    },
-    "created_at": "2026-06-08T09:13:10.457450"
-  },
-  {
-    "step": "brain_verifier",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "bahai_faith",
-      "grade": "preschool",
-      "documents_checked": 0,
-      "newly_verified": 0,
-      "failed_verification": 0
-    },
-    "created_at": "2026-06-08T09:13:10.456415"
-  },
-  {
-    "step": "brain_collector",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "bahai_faith",
-      "grade": "preschool",
-      "collection_attempts": 1,
-      "new_documents": 0
-    },
-    "created_at": "2026-06-08T09:13:10.454924"
-  },
-  {
-    "step": "brain_reward",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "islam",
-      "grade": "preschool",
-      "reward_val_accuracy": 0.125,
-      "ranking_accuracy": 0.5,
-      "preference_pairs_used": 32
-    },
-    "created_at": "2026-06-08T09:12:39.352402"
-  },
-  {
-    "step": "brain_evaluator",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "islam",
-      "grade": "preschool",
-      "benchmarks": {
-        "reasoning": {
-          "score": 1.0,
-          "passed": true
-        },
-        "consistency": {
-          "score": 1.0,
-          "passed": true
-        },
-        "verification": {
-          "score": 1.0,
-          "passed": true
-        }
-      },
-      "gates": {
-        "reasoning": true,
-        "consistency": true,
-        "verification": true
-      },
-      "all_passed": true,
-      "grade_slug": "preschool",
-      "thresholds": {
-        "reasoning": 0.2,
-        "consistency": 0.35,
-        "verification": 0.35
-      }
-    },
-    "created_at": "2026-06-08T09:12:39.164385"
-  },
-  {
-    "step": "brain_trainer",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "islam",
-      "grade": "preschool",
-      "run_id": "56fd7e3d",
-      "samples": 4,
-      "classes": 4,
-      "train_accuracy": 1.0,
-      "val_accuracy": 1.0,
-      "promoted": false
-    },
-    "created_at": "2026-06-08T09:12:39.162365"
-  },
-  {
-    "step": "brain_labeler",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "islam",
-      "grade": "preschool",
-      "labeled": 4,
-      "auto_labeled": 4,
-      "flagged_for_review": 0,
-      "review_rate": 0.0
-    },
-    "created_at": "2026-06-08T09:12:39.151049"
-  },
-  {
-    "step": "brain_verifier",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "islam",
-      "grade": "preschool",
-      "documents_checked": 4,
-      "newly_verified": 4,
-      "failed_verification": 0
-    },
-    "created_at": "2026-06-08T09:12:39.141219"
-  },
-  {
-    "step": "brain_collector",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "islam",
-      "grade": "preschool",
-      "collection_attempts": 5,
-      "new_documents": 0
-    },
-    "created_at": "2026-06-08T09:12:39.059239"
-  },
-  {
-    "step": "brain_reward",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "christianity",
-      "grade": "preschool",
-      "reward_val_accuracy": 0.125,
-      "ranking_accuracy": 0.5,
-      "preference_pairs_used": 32
-    },
-    "created_at": "2026-06-08T09:12:04.346959"
-  },
-  {
-    "step": "brain_evaluator",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "christianity",
-      "grade": "preschool",
-      "benchmarks": {
-        "reasoning": {
-          "score": 1.0,
-          "passed": true
-        },
-        "consistency": {
-          "score": 1.0,
-          "passed": true
-        },
-        "verification": {
-          "score": 1.0,
-          "passed": true
-        }
-      },
-      "gates": {
-        "reasoning": true,
-        "consistency": true,
-        "verification": true
-      },
-      "all_passed": true,
-      "grade_slug": "preschool",
-      "thresholds": {
-        "reasoning": 0.2,
-        "consistency": 0.35,
-        "verification": 0.35
-      }
-    },
-    "created_at": "2026-06-08T09:12:03.958859"
-  },
-  {
-    "step": "brain_trainer",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "christianity",
-      "grade": "preschool",
-      "run_id": "7138618c",
-      "samples": 3,
-      "classes": 3,
-      "train_accuracy": 1.0,
-      "val_accuracy": 1.0,
-      "promoted": false
-    },
-    "created_at": "2026-06-08T09:12:03.954477"
-  },
-  {
-    "step": "brain_labeler",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "christianity",
-      "grade": "preschool",
-      "labeled": 3,
-      "auto_labeled": 3,
-      "flagged_for_review": 0,
-      "review_rate": 0.0
-    },
-    "created_at": "2026-06-08T09:12:03.846252"
-  },
-  {
-    "step": "brain_verifier",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "christianity",
-      "grade": "preschool",
-      "documents_checked": 3,
-      "newly_verified": 3,
-      "failed_verification": 0
-    },
-    "created_at": "2026-06-08T09:12:03.741074"
-  },
-  {
-    "step": "brain_collector",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "christianity",
-      "grade": "preschool",
-      "collection_attempts": 5,
-      "new_documents": 0
-    },
-    "created_at": "2026-06-08T09:12:03.656367"
-  },
-  {
-    "step": "brain_reward",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "judaism",
-      "grade": "preschool",
-      "reward_val_accuracy": 0.125,
-      "ranking_accuracy": 0.5,
-      "preference_pairs_used": 32
-    },
-    "created_at": "2026-06-08T09:11:27.052274"
-  },
-  {
-    "step": "brain_evaluator",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "judaism",
-      "grade": "preschool",
-      "benchmarks": {
-        "reasoning": {
-          "score": 1.0,
-          "passed": true
-        },
-        "consistency": {
-          "score": 1.0,
-          "passed": true
-        },
-        "verification": {
-          "score": 1.0,
-          "passed": true
-        }
-      },
-      "gates": {
-        "reasoning": true,
-        "consistency": true,
-        "verification": true
-      },
-      "all_passed": true,
-      "grade_slug": "preschool",
-      "thresholds": {
-        "reasoning": 0.2,
-        "consistency": 0.35,
-        "verification": 0.35
-      }
-    },
-    "created_at": "2026-06-08T09:11:26.848379"
-  },
-  {
-    "step": "brain_trainer",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "judaism",
-      "grade": "preschool",
-      "run_id": "e33bd583",
-      "samples": 4,
-      "classes": 4,
-      "train_accuracy": 1.0,
-      "val_accuracy": 1.0,
-      "promoted": false
-    },
-    "created_at": "2026-06-08T09:11:26.845423"
-  },
-  {
-    "step": "brain_labeler",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "judaism",
-      "grade": "preschool",
-      "labeled": 4,
-      "auto_labeled": 4,
-      "flagged_for_review": 0,
-      "review_rate": 0.0
-    },
-    "created_at": "2026-06-08T09:11:26.749105"
-  },
-  {
-    "step": "brain_verifier",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "judaism",
-      "grade": "preschool",
-      "documents_checked": 4,
-      "newly_verified": 4,
-      "failed_verification": 0
-    },
-    "created_at": "2026-06-08T09:11:26.558289"
-  },
-  {
-    "step": "brain_collector",
-    "event_type": "completed",
-    "domain_id": 5,
-    "payload": {
-      "domain": "religion_and_spirituality",
-      "subdomain": "abrahamic_religions",
-      "micro_subdomain": "judaism",
-      "grade": "preschool",
-      "collection_attempts": 5,
-      "new_documents": 0
-    },
-    "created_at": "2026-06-08T09:11:26.556598"
-  },
-  {
-    "step": "brain_reward",
-    "event_type": "completed",
-    "domain_id": 4,
-    "payload": {
-      "domain": "philosophy",
-      "subdomain": "major_philosophical_traditions",
-      "micro_subdomain": "eastern_philosophy",
-      "grade": "preschool",
-      "reward_val_accuracy": 0.125,
-      "ranking_accuracy": 0.5,
-      "preference_pairs_used": 32
-    },
-    "created_at": "2026-06-08T09:10:49.557748"
-  },
-  {
-    "step": "brain_evaluator",
-    "event_type": "completed",
-    "domain_id": 4,
-    "payload": {
-      "domain": "philosophy",
-      "subdomain": "major_philosophical_traditions",
-      "micro_subdomain": "eastern_philosophy",
-      "grade": "preschool",
-      "benchmarks": {
-        "reasoning": {
-          "score": 1.0,
-          "passed": true
-        },
-        "consistency": {
-          "score": 1.0,
-          "passed": true
-        },
-        "verification": {
-          "score": 1.0,
-          "passed": true
-        }
-      },
-      "gates": {
-        "reasoning": true,
-        "consistency": true,
-        "verification": true
-      },
-      "all_passed": true,
-      "grade_slug": "preschool",
-      "thresholds": {
-        "reasoning": 0.2,
-        "consistency": 0.35,
-        "verification": 0.35
-      }
-    },
-    "created_at": "2026-06-08T09:10:49.455811"
-  },
-  {
-    "step": "brain_trainer",
-    "event_type": "completed",
-    "domain_id": 4,
-    "payload": {
-      "domain": "philosophy",
-      "subdomain": "major_philosophical_traditions",
-      "micro_subdomain": "eastern_philosophy",
-      "grade": "preschool",
-      "run_id": "6a00b79a",
-      "samples": 4,
-      "classes": 4,
-      "train_accuracy": 1.0,
-      "val_accuracy": 1.0,
-      "promoted": false
-    },
-    "created_at": "2026-06-08T09:10:49.452942"
-  },
-  {
-    "step": "brain_labeler",
-    "event_type": "completed",
-    "domain_id": 4,
-    "payload": {
-      "domain": "philosophy",
-      "subdomain": "major_philosophical_traditions",
-      "micro_subdomain": "eastern_philosophy",
-      "grade": "preschool",
-      "labeled": 4,
-      "auto_labeled": 4,
-      "flagged_for_review": 0,
-      "review_rate": 0.0
-    },
-    "created_at": "2026-06-08T09:10:49.360811"
-  },
-  {
-    "step": "brain_verifier",
-    "event_type": "completed",
-    "domain_id": 4,
-    "payload": {
-      "domain": "philosophy",
-      "subdomain": "major_philosophical_traditions",
-      "micro_subdomain": "eastern_philosophy",
-      "grade": "preschool",
-      "documents_checked": 4,
-      "newly_verified": 4,
-      "failed_verification": 0
-    },
-    "created_at": "2026-06-08T09:10:49.244762"
-  },
-  {
-    "step": "brain_collector",
-    "event_type": "completed",
-    "domain_id": 4,
-    "payload": {
-      "domain": "philosophy",
-      "subdomain": "major_philosophical_traditions",
-      "micro_subdomain": "eastern_philosophy",
-      "grade": "preschool",
-      "collection_attempts": 5,
-      "new_documents": 0
-    },
-    "created_at": "2026-06-08T09:10:49.154839"
-  },
-  {
-    "step": "brain_reward",
-    "event_type": "completed",
-    "domain_id": 4,
-    "payload": {
-      "domain": "philosophy",
-      "subdomain": "major_philosophical_traditions",
-      "micro_subdomain": "modern_western_philosophy",
-      "grade": "preschool",
-      "reward_val_accuracy": 0.125,
-      "ranking_accuracy": 0.5,
-      "preference_pairs_used": 32
-    },
-    "created_at": "2026-06-08T09:10:16.663329"
-  },
-  {
-    "step": "brain_evaluator",
-    "event_type": "completed",
-    "domain_id": 4,
-    "payload": {
-      "domain": "philosophy",
-      "subdomain": "major_philosophical_traditions",
-      "micro_subdomain": "modern_western_philosophy",
-      "grade": "preschool",
-      "benchmarks": {
-        "reasoning": {
-          "score": 1.0,
-          "passed": true
-        },
-        "consistency": {
-          "score": 1.0,
-          "passed": true
-        },
-        "verification": {
-          "score": 1.0,
-          "passed": true
-        }
-      },
-      "gates": {
-        "reasoning": true,
-        "consistency": true,
-        "verification": true
-      },
-      "all_passed": true,
-      "grade_slug": "preschool",
-      "thresholds": {
-        "reasoning": 0.2,
-        "consistency": 0.35,
-        "verification": 0.35
-      }
-    },
-    "created_at": "2026-06-08T09:10:16.549936"
-  },
-  {
-    "step": "brain_trainer",
-    "event_type": "completed",
-    "domain_id": 4,
-    "payload": {
-      "domain": "philosophy",
-      "subdomain": "major_philosophical_traditions",
-      "micro_subdomain": "modern_western_philosophy",
-      "grade": "preschool",
-      "run_id": "8c24d652",
-      "samples": 3,
-      "classes": 3,
-      "train_accuracy": 1.0,
-      "val_accuracy": 1.0,
-      "promoted": false
-    },
-    "created_at": "2026-06-08T09:10:16.547342"
-  },
-  {
-    "step": "brain_labeler",
-    "event_type": "completed",
-    "domain_id": 4,
-    "payload": {
-      "domain": "philosophy",
-      "subdomain": "major_philosophical_traditions",
-      "micro_subdomain": "modern_western_philosophy",
-      "grade": "preschool",
-      "labeled": 3,
-      "auto_labeled": 3,
-      "flagged_for_review": 0,
-      "review_rate": 0.0
-    },
-    "created_at": "2026-06-08T09:10:16.455705"
-  },
-  {
-    "step": "brain_verifier",
-    "event_type": "completed",
-    "domain_id": 4,
-    "payload": {
-      "domain": "philosophy",
-      "subdomain": "major_philosophical_traditions",
-      "micro_subdomain": "modern_western_philosophy",
-      "grade": "preschool",
-      "documents_checked": 3,
-      "newly_verified": 3,
-      "failed_verification": 0
-    },
-    "created_at": "2026-06-08T09:10:16.449192"
-  },
-  {
-    "step": "brain_collector",
-    "event_type": "completed",
-    "domain_id": 4,
-    "payload": {
-      "domain": "philosophy",
-      "subdomain": "major_philosophical_traditions",
-      "micro_subdomain": "modern_western_philosophy",
-      "grade": "preschool",
-      "collection_attempts": 4,
-      "new_documents": 0
-    },
-    "created_at": "2026-06-08T09:10:16.447433"
-  },
-  {
-    "step": "brain_reward",
-    "event_type": "completed",
-    "domain_id": 4,
-    "payload": {
-      "domain": "philosophy",
-      "subdomain": "major_philosophical_traditions",
-      "micro_subdomain": "medieval_philosophy",
-      "grade": "preschool",
-      "reward_val_accuracy": 0.125,
-      "ranking_accuracy": 0.5,
-      "preference_pairs_used": 32
-    },
-    "created_at": "2026-06-08T09:09:48.360393"
-  },
-  {
-    "step": "brain_evaluator",
-    "event_type": "completed",
-    "domain_id": 4,
-    "payload": {
-      "domain": "philosophy",
-      "subdomain": "major_philosophical_traditions",
-      "micro_subdomain": "medieval_philosophy",
-      "grade": "preschool",
-      "benchmarks": {
-        "reasoning": {
-          "score": 1.0,
-          "passed": true
-        },
-        "consistency": {
-          "score": 1.0,
-          "passed": true
-        },
-        "verification": {
-          "score": 1.0,
-          "passed": true
-        }
-      },
-      "gates": {
-        "reasoning": true,
-        "consistency": true,
-        "verification": true
-      },
-      "all_passed": true,
-      "grade_slug": "preschool",
-      "thresholds": {
-        "reasoning": 0.2,
-        "consistency": 0.35,
-        "verification": 0.35
-      }
-    },
-    "created_at": "2026-06-08T09:09:48.247265"
-  },
-  {
-    "step": "brain_trainer",
-    "event_type": "completed",
-    "domain_id": 4,
-    "payload": {
-      "domain": "philosophy",
-      "subdomain": "major_philosophical_traditions",
-      "micro_subdomain": "medieval_philosophy",
-      "grade": "preschool",
-      "run_id": "ad16b6b2",
-      "samples": 4,
-      "classes": 4,
-      "train_accuracy": 1.0,
-      "val_accuracy": 1.0,
-      "promoted": false
-    },
-    "created_at": "2026-06-08T09:09:48.240451"
-  },
-  {
-    "step": "brain_labeler",
-    "event_type": "completed",
-    "domain_id": 4,
-    "payload": {
-      "domain": "philosophy",
-      "subdomain": "major_philosophical_traditions",
-      "micro_subdomain": "medieval_philosophy",
-      "grade": "preschool",
-      "labeled": 4,
-      "auto_labeled": 4,
-      "flagged_for_review": 0,
-      "review_rate": 0.0
-    },
-    "created_at": "2026-06-08T09:09:48.052561"
-  },
-  {
-    "step": "brain_verifier",
-    "event_type": "completed",
-    "domain_id": 4,
-    "payload": {
-      "domain": "philosophy",
-      "subdomain": "major_philosophical_traditions",
-      "micro_subdomain": "medieval_philosophy",
-      "grade": "preschool",
-      "documents_checked": 4,
-      "newly_verified": 4,
-      "failed_verification": 0
-    },
-    "created_at": "2026-06-08T09:09:47.852963"
-  },
-  {
-    "step": "brain_collector",
-    "event_type": "completed",
-    "domain_id": 4,
-    "payload": {
-      "domain": "philosophy",
-      "subdomain": "major_philosophical_traditions",
-      "micro_subdomain": "medieval_philosophy",
-      "grade": "preschool",
-      "collection_attempts": 5,
-      "new_documents": 0
-    },
-    "created_at": "2026-06-08T09:09:47.846169"
-  },
-  {
-    "step": "brain_reward",
-    "event_type": "completed",
-    "domain_id": 4,
-    "payload": {
-      "domain": "philosophy",
-      "subdomain": "major_philosophical_traditions",
-      "micro_subdomain": "roman_philosophy",
-      "grade": "preschool",
-      "reward_val_accuracy": 0.125,
-      "ranking_accuracy": 0.5,
-      "preference_pairs_used": 32
-    },
-    "created_at": "2026-06-08T09:09:06.065775"
-  },
-  {
-    "step": "brain_evaluator",
-    "event_type": "completed",
-    "domain_id": 4,
-    "payload": {
-      "domain": "philosophy",
-      "subdomain": "major_philosophical_traditions",
-      "micro_subdomain": "roman_philosophy",
-      "grade": "preschool",
-      "benchmarks": {
-        "reasoning": {
-          "score": 1.0,
-          "passed": true
-        },
-        "consistency": {
-          "score": 1.0,
-          "passed": true
-        },
-        "verification": {
-          "score": 1.0,
-          "passed": true
-        }
-      },
-      "gates": {
-        "reasoning": true,
-        "consistency": true,
-        "verification": true
-      },
-      "all_passed": true,
-      "grade_slug": "preschool",
-      "thresholds": {
-        "reasoning": 0.2,
-        "consistency": 0.35,
-        "verification": 0.35
-      }
-    },
-    "created_at": "2026-06-08T09:09:05.849961"
-  },
-  {
-    "step": "brain_trainer",
-    "event_type": "completed",
-    "domain_id": 4,
-    "payload": {
-      "domain": "philosophy",
-      "subdomain": "major_philosophical_traditions",
-      "micro_subdomain": "roman_philosophy",
-      "grade": "preschool",
-      "run_id": "cb2b35c5",
-      "samples": 2,
-      "classes": 2,
-      "train_accuracy": 1.0,
-      "val_accuracy": 1.0,
-      "promoted": false
-    },
-    "created_at": "2026-06-08T09:09:05.758095"
-  },
-  {
-    "step": "brain_labeler",
-    "event_type": "completed",
-    "domain_id": 4,
-    "payload": {
-      "domain": "philosophy",
-      "subdomain": "major_philosophical_traditions",
-      "micro_subdomain": "roman_philosophy",
-      "grade": "preschool",
-      "labeled": 2,
-      "auto_labeled": 2,
-      "flagged_for_review": 0,
-      "review_rate": 0.0
-    },
-    "created_at": "2026-06-08T09:09:05.653526"
-  },
-  {
-    "step": "brain_verifier",
-    "event_type": "completed",
-    "domain_id": 4,
-    "payload": {
-      "domain": "philosophy",
-      "subdomain": "major_philosophical_traditions",
-      "micro_subdomain": "roman_philosophy",
-      "grade": "preschool",
-      "documents_checked": 2,
-      "newly_verified": 2,
-      "failed_verification": 0
-    },
-    "created_at": "2026-06-08T09:09:05.556467"
-  },
-  {
-    "step": "brain_collector",
-    "event_type": "completed",
-    "domain_id": 4,
-    "payload": {
-      "domain": "philosophy",
-      "subdomain": "major_philosophical_traditions",
-      "micro_subdomain": "roman_philosophy",
-      "grade": "preschool",
-      "collection_attempts": 3,
-      "new_documents": 0
-    },
-    "created_at": "2026-06-08T09:09:05.553029"
-  },
-  {
-    "step": "brain_reward",
-    "event_type": "completed",
-    "domain_id": 4,
-    "payload": {
-      "domain": "philosophy",
-      "subdomain": "major_philosophical_traditions",
-      "micro_subdomain": "ancient_greek_philosophy",
-      "grade": "preschool",
-      "reward_val_accuracy": 0.125,
-      "ranking_accuracy": 0.5,
-      "preference_pairs_used": 32
-    },
-    "created_at": "2026-06-08T09:08:32.859165"
-  },
-  {
-    "step": "brain_evaluator",
-    "event_type": "completed",
-    "domain_id": 4,
-    "payload": {
-      "domain": "philosophy",
-      "subdomain": "major_philosophical_traditions",
-      "micro_subdomain": "ancient_greek_philosophy",
-      "grade": "preschool",
-      "benchmarks": {
-        "reasoning": {
-          "score": 1.0,
-          "passed": true
-        },
-        "consistency": {
-          "score": 1.0,
-          "passed": true
-        },
-        "verification": {
-          "score": 1.0,
-          "passed": true
-        }
-      },
-      "gates": {
-        "reasoning": true,
-        "consistency": true,
-        "verification": true
-      },
-      "all_passed": true,
-      "grade_slug": "preschool",
-      "thresholds": {
-        "reasoning": 0.2,
-        "consistency": 0.35,
-        "verification": 0.35
-      }
-    },
-    "created_at": "2026-06-08T09:08:32.553364"
   }
 ]
