@@ -4735,56 +4735,573 @@
     "path": "technology_and_engineering.computer_science.python_functions",
     "micro_name": "Python Functions (Code Generation)",
     "grade": "preschool",
-    "status": "in_progress",
+    "status": "failed",
     "attempts": 1,
-    "metrics": null,
+    "metrics": {
+      "train_accuracy": 0.9863,
+      "evaluator": {
+        "benchmarks": {
+          "code_pass_rate": {
+            "score": 0.0,
+            "passed": false,
+            "cases": [
+              {
+                "question": "Write a function of recursion list sum.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "write python code def remove_vowels(text):\n    \"\"\"\n    remove_vowels is a function that takes string and returns string ",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a function to extract the frequency of unique tuples in the given list order irrespective.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a python function to count the number of substrings with same first and last characters.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a function to find the maximum value in a given heterogeneous list.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a function to find n’th smart number.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a python function to determine whether all the numbers are different from each other are not.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a python function to find the minimun number of subsets with distinct elements.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a function to split a string at lowercase letters.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a function to find the equilibrium index of the given array.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              }
+            ],
+            "total": 10,
+            "passed_count": 0
+          }
+        },
+        "gates": {
+          "code_pass_rate": false
+        },
+        "all_passed": false,
+        "grade_slug": "preschool",
+        "pass_rate": 0.0,
+        "thresholds": {
+          "code_pass_rate": 0.3
+        },
+        "status": "warning"
+      },
+      "trainer_status": "completed"
+    },
     "graduated_at": null,
-    "last_attempt_at": "2026-06-07T01:56:22.146149"
+    "last_attempt_at": "2026-06-08T05:14:55.949537"
   },
   {
     "path": "technology_and_engineering.computer_science.python_algorithms",
     "micro_name": "Python Algorithms (Code Generation)",
     "grade": "preschool",
-    "status": "unlocked",
-    "attempts": 0,
-    "metrics": null,
+    "status": "failed",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "evaluator": {
+        "benchmarks": {
+          "code_pass_rate": {
+            "score": 0.0,
+            "passed": false,
+            "cases": [
+              {
+                "question": "Write a function of recursion list sum.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "write python code def remove_vowels(text):\n    \"\"\"\n    remove_vowels is a function that takes string and returns string ",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a function to extract the frequency of unique tuples in the given list order irrespective.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a python function to count the number of substrings with same first and last characters.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a function to find the maximum value in a given heterogeneous list.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a function to find n’th smart number.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a python function to determine whether all the numbers are different from each other are not.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a python function to find the minimun number of subsets with distinct elements.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a function to split a string at lowercase letters.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a function to find the equilibrium index of the given array.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              }
+            ],
+            "total": 10,
+            "passed_count": 0
+          }
+        },
+        "gates": {
+          "code_pass_rate": false
+        },
+        "all_passed": false,
+        "grade_slug": "preschool",
+        "pass_rate": 0.0,
+        "thresholds": {
+          "code_pass_rate": 0.3
+        },
+        "status": "warning"
+      },
+      "trainer_status": "completed"
+    },
     "graduated_at": null,
-    "last_attempt_at": null
+    "last_attempt_at": "2026-06-08T05:16:08.840926"
   },
   {
     "path": "technology_and_engineering.computer_science.python_classes",
     "micro_name": "Python Classes (Code Generation)",
     "grade": "preschool",
-    "status": "unlocked",
-    "attempts": 0,
-    "metrics": null,
+    "status": "failed",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "evaluator": {
+        "benchmarks": {
+          "code_pass_rate": {
+            "score": 0.0,
+            "passed": false,
+            "cases": [
+              {
+                "question": "Write a function of recursion list sum.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "write python code def remove_vowels(text):\n    \"\"\"\n    remove_vowels is a function that takes string and returns string ",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a function to extract the frequency of unique tuples in the given list order irrespective.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a python function to count the number of substrings with same first and last characters.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a function to find the maximum value in a given heterogeneous list.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a function to find n’th smart number.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a python function to determine whether all the numbers are different from each other are not.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a python function to find the minimun number of subsets with distinct elements.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a function to split a string at lowercase letters.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a function to find the equilibrium index of the given array.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              }
+            ],
+            "total": 10,
+            "passed_count": 0
+          }
+        },
+        "gates": {
+          "code_pass_rate": false
+        },
+        "all_passed": false,
+        "grade_slug": "preschool",
+        "pass_rate": 0.0,
+        "thresholds": {
+          "code_pass_rate": 0.3
+        },
+        "status": "warning"
+      },
+      "trainer_status": "completed"
+    },
     "graduated_at": null,
-    "last_attempt_at": null
+    "last_attempt_at": "2026-06-08T05:17:44.442601"
   },
   {
     "path": "technology_and_engineering.computer_science.javascript_functions",
     "micro_name": "JavaScript Functions (Code Generation)",
     "grade": "preschool",
-    "status": "unlocked",
-    "attempts": 0,
-    "metrics": null,
+    "status": "failed",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "evaluator": {
+        "benchmarks": {
+          "code_pass_rate": {
+            "score": 0.0,
+            "passed": false,
+            "cases": [
+              {
+                "question": "Write a function of recursion list sum.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "write python code def remove_vowels(text):\n    \"\"\"\n    remove_vowels is a function that takes string and returns string ",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a function to extract the frequency of unique tuples in the given list order irrespective.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a python function to count the number of substrings with same first and last characters.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a function to find the maximum value in a given heterogeneous list.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a function to find n’th smart number.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a python function to determine whether all the numbers are different from each other are not.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a python function to find the minimun number of subsets with distinct elements.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a function to split a string at lowercase letters.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a function to find the equilibrium index of the given array.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              }
+            ],
+            "total": 10,
+            "passed_count": 0
+          }
+        },
+        "gates": {
+          "code_pass_rate": false
+        },
+        "all_passed": false,
+        "grade_slug": "preschool",
+        "pass_rate": 0.0,
+        "thresholds": {
+          "code_pass_rate": 0.3
+        },
+        "status": "warning"
+      },
+      "trainer_status": "completed"
+    },
     "graduated_at": null,
-    "last_attempt_at": null
+    "last_attempt_at": "2026-06-08T05:19:33.153582"
   },
   {
     "path": "technology_and_engineering.computer_science.sql_queries",
     "micro_name": "SQL Queries (Code Generation)",
     "grade": "preschool",
-    "status": "unlocked",
-    "attempts": 0,
-    "metrics": null,
+    "status": "failed",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "evaluator": {
+        "benchmarks": {
+          "code_pass_rate": {
+            "score": 0.0,
+            "passed": false,
+            "cases": [
+              {
+                "question": "Write a function of recursion list sum.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "write python code def remove_vowels(text):\n    \"\"\"\n    remove_vowels is a function that takes string and returns string ",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a function to extract the frequency of unique tuples in the given list order irrespective.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a python function to count the number of substrings with same first and last characters.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a function to find the maximum value in a given heterogeneous list.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a function to find n’th smart number.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a python function to determine whether all the numbers are different from each other are not.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a python function to find the minimun number of subsets with distinct elements.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a function to split a string at lowercase letters.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              },
+              {
+                "question": "Write a function to find the equilibrium index of the given array.",
+                "source": "predict",
+                "score": 0.0,
+                "passed_tests": false,
+                "syntax_valid": false
+              }
+            ],
+            "total": 10,
+            "passed_count": 0
+          }
+        },
+        "gates": {
+          "code_pass_rate": false
+        },
+        "all_passed": false,
+        "grade_slug": "preschool",
+        "pass_rate": 0.0,
+        "thresholds": {
+          "code_pass_rate": 0.3
+        },
+        "status": "warning"
+      },
+      "trainer_status": "completed"
+    },
     "graduated_at": null,
-    "last_attempt_at": null
+    "last_attempt_at": "2026-06-08T05:21:16.748075"
   },
   {
     "path": "technology_and_engineering.electrical_engineering.circuit_theory",
     "micro_name": "Circuit Theory",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "completed"
+    },
+    "graduated_at": "2026-06-08T05:22:01.359852",
+    "last_attempt_at": "2026-06-08T05:22:01.359846"
+  },
+  {
+    "path": "technology_and_engineering.electrical_engineering.circuit_theory",
+    "micro_name": "Circuit Theory",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -4795,6 +5312,48 @@
     "path": "technology_and_engineering.electrical_engineering.signals_and_systems",
     "micro_name": "Signals & Systems",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "completed"
+    },
+    "graduated_at": "2026-06-08T05:22:56.151825",
+    "last_attempt_at": "2026-06-08T05:22:56.151819"
+  },
+  {
+    "path": "technology_and_engineering.electrical_engineering.signals_and_systems",
+    "micro_name": "Signals & Systems",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -4805,6 +5364,48 @@
     "path": "technology_and_engineering.electrical_engineering.semiconductor_engineering",
     "micro_name": "Semiconductor Engineering",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "completed"
+    },
+    "graduated_at": "2026-06-08T05:23:43.148549",
+    "last_attempt_at": "2026-06-08T05:23:43.148544"
+  },
+  {
+    "path": "technology_and_engineering.electrical_engineering.semiconductor_engineering",
+    "micro_name": "Semiconductor Engineering",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -4815,6 +5416,48 @@
     "path": "technology_and_engineering.electrical_engineering.power_engineering",
     "micro_name": "Power Engineering",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "completed"
+    },
+    "graduated_at": "2026-06-08T05:24:31.644533",
+    "last_attempt_at": "2026-06-08T05:24:31.644526"
+  },
+  {
+    "path": "technology_and_engineering.electrical_engineering.power_engineering",
+    "micro_name": "Power Engineering",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
