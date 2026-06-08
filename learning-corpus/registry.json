@@ -2799,6 +2799,132 @@
         "epochs": 150
       },
       "status": "completed"
+    },
+    {
+      "run_id": "18e8e4f5",
+      "created_at": "2026-06-08T15:25:46.150224+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_experimental_psychology_18e8e4f5/classifier.json",
+      "params": {
+        "scope": "experimental_psychology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "7e0c7e37",
+      "created_at": "2026-06-08T15:26:22.558282+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_developmental_psychology_7e0c7e37/classifier.json",
+      "params": {
+        "scope": "developmental_psychology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "dd95bb44",
+      "created_at": "2026-06-08T15:26:54.451524+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_social_psychology_dd95bb44/classifier.json",
+      "params": {
+        "scope": "social_psychology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "5f229aac",
+      "created_at": "2026-06-08T15:27:27.954186+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_personality_psychology_5f229aac/classifier.json",
+      "params": {
+        "scope": "personality_psychology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "f54d5113",
+      "created_at": "2026-06-08T15:28:05.552075+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_abnormal_psychology_f54d5113/classifier.json",
+      "params": {
+        "scope": "abnormal_psychology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "53afdb3f",
+      "created_at": "2026-06-08T15:28:40.452094+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_psychotherapy_53afdb3f/classifier.json",
+      "params": {
+        "scope": "psychotherapy",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "6159852d",
+      "created_at": "2026-06-08T15:29:16.051304+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_neuropsychology_6159852d/classifier.json",
+      "params": {
+        "scope": "neuropsychology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "31c670af",
+      "created_at": "2026-06-08T15:29:54.157982+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_industrial_organizational_psychology_31c670af/classifier.json",
+      "params": {
+        "scope": "industrial_organizational_psychology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "98e036f6",
+      "created_at": "2026-06-08T15:30:30.348748+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_health_psychology_98e036f6/classifier.json",
+      "params": {
+        "scope": "health_psychology",
+        "epochs": 150
+      },
+      "status": "completed"
     }
   ]
 }
