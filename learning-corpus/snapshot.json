@@ -251,6 +251,34 @@
     "enabled": true,
     "recent": [
       {
+        "question": "What makes my self-model different from theater?",
+        "answer": "Every answer ties to docs, cycles, or audit JSON — not performed empathy.",
+        "theme": "consciousness",
+        "source": "auto_learn",
+        "grounded": true,
+        "state_snapshot": {
+          "documents": 741,
+          "cycles": 7,
+          "focus": ""
+        },
+        "ts": "2026-06-08T09:13:11.118978+00:00",
+        "kind": "meta"
+      },
+      {
+        "question": "What am I trying to accomplish in this session?",
+        "answer": "Graduate 862 micro-topics; now on no active target.",
+        "theme": "agency",
+        "source": "auto_learn",
+        "grounded": true,
+        "state_snapshot": {
+          "documents": 741,
+          "cycles": 7,
+          "focus": ""
+        },
+        "ts": "2026-06-08T09:13:10.950895+00:00",
+        "kind": "meta"
+      },
+      {
         "question": "What is Faith & Reason?",
         "answer": "No verified text for Baha'i Faith yet.",
         "cycle": "Passed Pre-School, unlocked elementary",
@@ -327,36 +355,10 @@
         "ciper": false,
         "ts": "2026-06-08T09:12:04.362691+00:00",
         "kind": "learning"
-      },
-      {
-        "question": "What are the main kinds of Judaism — Orthodox Judaism, Conservative Judaism, Reform Judaism, and Reconstructionist Judaism?",
-        "answer": "Conservative Judaism is a core concept within Judaism….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "religion_and_spirituality.abrahamic_religions.judaism",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": true,
-        "ts": "2026-06-08T09:11:27.147254+00:00",
-        "kind": "learning"
-      },
-      {
-        "question": "What is one word I would use to describe Reform Judaism?",
-        "answer": "engineering",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "religion_and_spirituality.abrahamic_religions.judaism",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-08T09:11:27.058671+00:00",
-        "kind": "learning"
       }
     ]
   },
-  "exported_at": "2026-06-08T09:13:10.854060+00:00",
+  "exported_at": "2026-06-08T09:53:56.140253+00:00",
   "github_sync": {
     "batch_cursor": 175,
     "include_document_text": true,
