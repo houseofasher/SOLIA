@@ -8545,5 +8545,82 @@
     "label_source": "teacher_model",
     "needs_review": false,
     "created_at": "2026-06-08T10:24:57.745650"
+  },
+  {
+    "document_id": 780,
+    "path": null,
+    "title": "The Voynich Manuscript is Written in Natural Language: The Pahlavi Hypothesis",
+    "topic": null,
+    "label": "research",
+    "confidence": 0.2,
+    "label_source": "teacher_model",
+    "needs_review": false,
+    "created_at": "2026-06-08T11:29:15.240490"
+  },
+  {
+    "document_id": 781,
+    "path": null,
+    "title": "Understanding Safety-Sensitive Expert Behavior in Mixture-of-Experts LLMs",
+    "topic": null,
+    "label": "research",
+    "confidence": 0.1667,
+    "label_source": "teacher_model",
+    "needs_review": false,
+    "created_at": "2026-06-08T11:33:00.348524"
+  },
+  {
+    "document_id": 782,
+    "path": null,
+    "title": "God ($\\equiv Elohim$), the first small world network",
+    "topic": null,
+    "label": "research",
+    "confidence": 0.3333,
+    "label_source": "teacher_model",
+    "needs_review": false,
+    "created_at": "2026-06-08T11:33:40.347743"
+  },
+  {
+    "document_id": 783,
+    "path": null,
+    "title": "Principles and Practice of Deep Representation Learning: or a Mathematical Theory of Memory",
+    "topic": null,
+    "label": "research",
+    "confidence": 0.3333,
+    "label_source": "teacher_model",
+    "needs_review": false,
+    "created_at": "2026-06-08T11:39:42.157697"
+  },
+  {
+    "document_id": 784,
+    "path": null,
+    "title": "CROCS Data Release I: Constraints on the Hubble Constant",
+    "topic": null,
+    "label": "research",
+    "confidence": 0.3333,
+    "label_source": "teacher_model",
+    "needs_review": false,
+    "created_at": "2026-06-08T11:40:17.651905"
+  },
+  {
+    "document_id": 785,
+    "path": null,
+    "title": "SNF-PRP: A Covert Integrating Sensing and Communications Framework",
+    "topic": null,
+    "label": "research",
+    "confidence": 0.3333,
+    "label_source": "teacher_model",
+    "needs_review": false,
+    "created_at": "2026-06-08T11:41:26.052835"
+  },
+  {
+    "document_id": 786,
+    "path": null,
+    "title": "Solving Sangaku: A Traditional Solution to a Nineteenth Century Japanese Temple Problem",
+    "topic": null,
+    "label": "research",
+    "confidence": 0.1667,
+    "label_source": "teacher_model",
+    "needs_review": false,
+    "created_at": "2026-06-08T11:41:56.848780"
   }
 ]
