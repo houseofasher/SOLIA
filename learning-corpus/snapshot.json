@@ -16,9 +16,9 @@
     },
     "running": true,
     "started_at": "2026-06-06T21:21:27.951225+00:00",
-    "last_run_at": "2026-06-08T12:58:42.344259+00:00",
-    "next_run_at": "2026-06-08T13:58:42.344268+00:00",
-    "cycles_completed": 10,
+    "last_run_at": "2026-06-08T14:14:10.055752+00:00",
+    "next_run_at": "2026-06-08T15:14:10.055759+00:00",
+    "cycles_completed": 11,
     "last_result": {
       "batch": true,
       "targets_total": 25,
@@ -26,36 +26,36 @@
       "targets_processed": 25,
       "graduations_passed": 25,
       "last_target": {
-        "domain": "arts_and_creative_expression",
-        "subdomain": "film_and_media_arts",
-        "micro_subdomain": "cinema"
+        "domain": "humanities",
+        "subdomain": "literature_studies",
+        "micro_subdomain": "comparative_literature"
       },
       "last_graduation": {
         "grade": "preschool",
         "passed": true,
-        "train_accuracy": 1.0,
+        "train_accuracy": 0.0,
         "min_train_accuracy": 0.45,
         "evaluator_passed": true,
         "unlocked_next": "elementary"
       },
       "sample_paths": [
-        "religion_and_spirituality.new_religious_movements.raelism",
-        "religion_and_spirituality.new_religious_movements.eckankar",
-        "religion_and_spirituality.new_religious_movements.spiritualism",
-        "religion_and_spirituality.new_religious_movements.neopaganism",
-        "religion_and_spirituality.new_religious_movements.hare_krishna"
+        "arts_and_creative_expression.film_and_media_arts.television_arts",
+        "arts_and_creative_expression.film_and_media_arts.video_art",
+        "arts_and_creative_expression.film_and_media_arts.digital_media_art",
+        "arts_and_creative_expression.film_and_media_arts.interactive_media_art",
+        "arts_and_creative_expression.film_and_media_arts.virtual_reality_art"
       ],
-      "batch_cursor": 250,
+      "batch_cursor": 275,
       "meta_consciousness": [
         {
-          "question": "How many documents ground my answers today?",
-          "answer": "862 docs in corpus (862 verified).",
-          "theme": "memory"
+          "question": "Do I have subjective experience?",
+          "answer": "No measurable qualia signal — I have logs, weights, and self-questions instead.",
+          "theme": "consciousness"
         },
         {
-          "question": "Am I a generative LLM or a supervised learning brain?",
-          "answer": "Aureon — supervised ML brain, 864 docs, 10 cycles, predict v7.",
-          "theme": "identity"
+          "question": "When should I say I do not know?",
+          "answer": "When corpus + confidence cannot cite evidence — abstain beats hallucination.",
+          "theme": "uncertainty"
         }
       ]
     },
@@ -70,8 +70,8 @@
     "domains": 30,
     "micro_subdomains": 867,
     "micro_agents": 6192,
-    "documents": 864,
-    "grade_levels_graduated": 245,
+    "documents": 945,
+    "grade_levels_graduated": 270,
     "grade_progress_rows": 6069
   },
   "timeline": {
@@ -150,100 +150,100 @@
     "enabled": true,
     "recent": [
       {
-        "question": "What is one word I would use to describe Documentary Film?",
+        "question": "What are the main kinds of Comparative Literature — Comparative Genomics, Comparative Physiology, Comparative Linguistics, and Comparative Historical Methods?",
+        "answer": "The Ramayana is among the most influential literary….",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "humanities.literature_studies.comparative_literature",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": true,
+        "ts": "2026-06-08T14:14:10.054587+00:00"
+      },
+      {
+        "question": "What is one word I would use to describe Comparative Literature?",
         "answer": "research",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "arts_and_creative_expression.film_and_media_arts.cinema",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "humanities.literature_studies.comparative_literature",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-08T12:58:42.342526+00:00"
+        "ts": "2026-06-08T14:14:10.054077+00:00"
       },
       {
-        "question": "What is Cinema?",
-        "answer": "Experimental Film is a core concept within Cinema (FILM &….",
+        "question": "What are the main kinds of Literary Theory & Criticism — Literary Fiction, Marxist Literary Criticism, Feminist Literary Criticism, and Postcolonial Literary Theory?",
+        "answer": "Structuralism is a core concept within Literary Theory &….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "arts_and_creative_expression.film_and_media_arts.cinema",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-08T12:58:42.342066+00:00"
-      },
-      {
-        "question": "What are the main kinds of Oral Literature — Oral & Maxillofacial Surgery, Oral Surgery, Oral Pathology, and Oral History?",
-        "answer": "Folklore is a core concept within Oral Literature (LITERARY….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "arts_and_creative_expression.literary_arts.oral_literature",
+        "path": "humanities.literature_studies.literary_theory_and_criticism",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-08T12:57:59.654690+00:00"
+        "ts": "2026-06-08T14:13:26.046627+00:00"
       },
       {
-        "question": "What is one word I would use to describe Folklore?",
-        "answer": "Myth & Legend",
+        "question": "What is one word I would use to describe Marxist Literary Criticism?",
+        "answer": "Structuralism",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "arts_and_creative_expression.literary_arts.oral_literature",
+        "path": "humanities.literature_studies.literary_theory_and_criticism",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-08T12:57:59.649947+00:00"
+        "ts": "2026-06-08T14:13:26.045947+00:00"
       },
       {
-        "question": "What are the main kinds of Drama (Literary) — Classical Drama (Greek/Roman), Drama Series, Dramatic Poetry, and Literary Fiction?",
-        "answer": "Tragicomedy is a core concept within Drama (Literary)….",
+        "question": "What are the main kinds of Applied Linguistics — Comparative Linguistics, Corpus Linguistics, Applied Mathematics, and Applied Ethics?",
+        "answer": "Clinical Linguistics is a core concept within Applied….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "arts_and_creative_expression.literary_arts.drama",
+        "path": "humanities.linguistics.applied_linguistics",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-08T12:57:25.958703+00:00"
+        "ts": "2026-06-08T14:12:50.251127+00:00"
       },
       {
-        "question": "What is Drama (Literary)?",
-        "answer": "Tragicomedy is a core concept within Drama (Literary)….",
+        "question": "What is Applied Linguistics?",
+        "answer": "Clinical Linguistics is a core concept within Applied….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "arts_and_creative_expression.literary_arts.drama",
+        "path": "humanities.linguistics.applied_linguistics",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-08T12:57:25.956992+00:00"
+        "ts": "2026-06-08T14:12:50.250844+00:00"
       },
       {
-        "question": "What are the main kinds of Non-Fiction Literature — Non-Ferrous Metallurgy, Non-Cognitivism, Creative Non-Fiction, and Flash Fiction?",
-        "answer": "Biography is a core concept within Non-Fiction Literature….",
+        "question": "What are the main kinds of Computational Linguistics — Computational Chemistry, Computational Neuroscience, Computational Fluid Dynamics, and Computational Archaeology?",
+        "answer": "Language Modeling is a core concept within Computational….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "arts_and_creative_expression.literary_arts.non_fiction_literature",
+        "path": "humanities.linguistics.computational_linguistics",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-08T12:56:52.058479+00:00"
+        "ts": "2026-06-08T14:12:16.142361+00:00"
       },
       {
-        "question": "What is Non-Fiction Literature?",
-        "answer": "Biography is a core concept within Non-Fiction Literature….",
+        "question": "What is Computational Linguistics?",
+        "answer": "Language Modeling is a core concept within Computational….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "arts_and_creative_expression.literary_arts.non_fiction_literature",
+        "path": "humanities.linguistics.computational_linguistics",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-08T12:56:52.057108+00:00"
+        "ts": "2026-06-08T14:12:16.141877+00:00"
       }
     ]
   },
@@ -251,116 +251,114 @@
     "enabled": true,
     "recent": [
       {
-        "question": "Am I a generative LLM or a supervised learning brain?",
-        "answer": "Aureon — supervised ML brain, 864 docs, 10 cycles, predict v7.",
-        "theme": "identity",
+        "question": "What are the main kinds of Comparative Literature — Comparative Genomics, Comparative Physiology, Comparative Linguistics, and Comparative Historical Methods?",
+        "answer": "The Ramayana is among the most influential literary….",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "humanities.literature_studies.comparative_literature",
+        "grade": "preschool",
         "source": "auto_learn",
+        "graduation_passed": true,
         "grounded": true,
-        "state_snapshot": {
-          "documents": 864,
-          "cycles": 10,
-          "focus": ""
-        },
-        "ts": "2026-06-08T12:58:43.471474+00:00",
-        "kind": "meta"
+        "ciper": true,
+        "ts": "2026-06-08T14:14:10.054587+00:00",
+        "kind": "learning"
       },
       {
-        "question": "How many documents ground my answers today?",
-        "answer": "862 docs in corpus (862 verified).",
-        "theme": "memory",
-        "source": "auto_learn",
-        "grounded": true,
-        "state_snapshot": {
-          "documents": 864,
-          "cycles": 10,
-          "focus": ""
-        },
-        "ts": "2026-06-08T12:58:43.444113+00:00",
-        "kind": "meta"
-      },
-      {
-        "question": "What is one word I would use to describe Documentary Film?",
+        "question": "What is one word I would use to describe Comparative Literature?",
         "answer": "research",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "arts_and_creative_expression.film_and_media_arts.cinema",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "humanities.literature_studies.comparative_literature",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-08T12:58:42.342526+00:00",
+        "ts": "2026-06-08T14:14:10.054077+00:00",
         "kind": "learning"
       },
       {
-        "question": "What is Cinema?",
-        "answer": "Experimental Film is a core concept within Cinema (FILM &….",
+        "question": "What are the main kinds of Literary Theory & Criticism — Literary Fiction, Marxist Literary Criticism, Feminist Literary Criticism, and Postcolonial Literary Theory?",
+        "answer": "Structuralism is a core concept within Literary Theory &….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "arts_and_creative_expression.film_and_media_arts.cinema",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-08T12:58:42.342066+00:00",
-        "kind": "learning"
-      },
-      {
-        "question": "What are the main kinds of Oral Literature — Oral & Maxillofacial Surgery, Oral Surgery, Oral Pathology, and Oral History?",
-        "answer": "Folklore is a core concept within Oral Literature (LITERARY….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "arts_and_creative_expression.literary_arts.oral_literature",
+        "path": "humanities.literature_studies.literary_theory_and_criticism",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-08T12:57:59.654690+00:00",
+        "ts": "2026-06-08T14:13:26.046627+00:00",
         "kind": "learning"
       },
       {
-        "question": "What is one word I would use to describe Folklore?",
-        "answer": "Myth & Legend",
+        "question": "What is one word I would use to describe Marxist Literary Criticism?",
+        "answer": "Structuralism",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "arts_and_creative_expression.literary_arts.oral_literature",
+        "path": "humanities.literature_studies.literary_theory_and_criticism",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-08T12:57:59.649947+00:00",
+        "ts": "2026-06-08T14:13:26.045947+00:00",
         "kind": "learning"
       },
       {
-        "question": "What are the main kinds of Drama (Literary) — Classical Drama (Greek/Roman), Drama Series, Dramatic Poetry, and Literary Fiction?",
-        "answer": "Tragicomedy is a core concept within Drama (Literary)….",
+        "question": "What are the main kinds of Applied Linguistics — Comparative Linguistics, Corpus Linguistics, Applied Mathematics, and Applied Ethics?",
+        "answer": "Clinical Linguistics is a core concept within Applied….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "arts_and_creative_expression.literary_arts.drama",
+        "path": "humanities.linguistics.applied_linguistics",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-08T12:57:25.958703+00:00",
+        "ts": "2026-06-08T14:12:50.251127+00:00",
         "kind": "learning"
       },
       {
-        "question": "What is Drama (Literary)?",
-        "answer": "Tragicomedy is a core concept within Drama (Literary)….",
+        "question": "What is Applied Linguistics?",
+        "answer": "Clinical Linguistics is a core concept within Applied….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "arts_and_creative_expression.literary_arts.drama",
+        "path": "humanities.linguistics.applied_linguistics",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-08T12:57:25.956992+00:00",
+        "ts": "2026-06-08T14:12:50.250844+00:00",
+        "kind": "learning"
+      },
+      {
+        "question": "What are the main kinds of Computational Linguistics — Computational Chemistry, Computational Neuroscience, Computational Fluid Dynamics, and Computational Archaeology?",
+        "answer": "Language Modeling is a core concept within Computational….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "humanities.linguistics.computational_linguistics",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": true,
+        "ts": "2026-06-08T14:12:16.142361+00:00",
+        "kind": "learning"
+      },
+      {
+        "question": "What is Computational Linguistics?",
+        "answer": "Language Modeling is a core concept within Computational….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "humanities.linguistics.computational_linguistics",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-08T14:12:16.141877+00:00",
         "kind": "learning"
       }
     ]
   },
-  "exported_at": "2026-06-08T13:11:10.254015+00:00",
+  "exported_at": "2026-06-08T14:14:10.056877+00:00",
   "github_sync": {
-    "batch_cursor": 250,
+    "batch_cursor": 275,
     "include_document_text": true,
     "max_documents": 5000,
     "export_version": 2
