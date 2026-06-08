@@ -1,5 +1,260 @@
 [
   {
+    "run_id": "56fd7e3d",
+    "domain_id": 5,
+    "subdomain_id": 27,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_islam_56fd7e3d/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "islam",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T09:12:39.162454"
+  },
+  {
+    "run_id": "7138618c",
+    "domain_id": 5,
+    "subdomain_id": 27,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_christianity_7138618c/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "christianity",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T09:12:03.954605"
+  },
+  {
+    "run_id": "e33bd583",
+    "domain_id": 5,
+    "subdomain_id": 27,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_judaism_e33bd583/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "judaism",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T09:11:26.845644"
+  },
+  {
+    "run_id": "6a00b79a",
+    "domain_id": 4,
+    "subdomain_id": 26,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_eastern_philosophy_6a00b79a/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "eastern_philosophy",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T09:10:49.453082"
+  },
+  {
+    "run_id": "8c24d652",
+    "domain_id": 4,
+    "subdomain_id": 26,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_modern_western_philosophy_8c24d652/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "modern_western_philosophy",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T09:10:16.547475"
+  },
+  {
+    "run_id": "ad16b6b2",
+    "domain_id": 4,
+    "subdomain_id": 26,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_medieval_philosophy_ad16b6b2/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "medieval_philosophy",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T09:09:48.240702"
+  },
+  {
+    "run_id": "cb2b35c5",
+    "domain_id": 4,
+    "subdomain_id": 26,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_roman_philosophy_cb2b35c5/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "roman_philosophy",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T09:09:05.758207"
+  },
+  {
+    "run_id": "397ff7e2",
+    "domain_id": 4,
+    "subdomain_id": 26,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_ancient_greek_philosophy_397ff7e2/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "ancient_greek_philosophy",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T09:08:32.549259"
+  },
+  {
+    "run_id": "076b56ea",
+    "domain_id": 4,
+    "subdomain_id": 24,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_scientific_realism_076b56ea/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "scientific_realism",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T09:02:31.959211"
+  },
+  {
+    "run_id": "9981d546",
+    "domain_id": 4,
+    "subdomain_id": 24,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_scientific_method_9981d546/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "scientific_method",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T09:01:59.047809"
+  },
+  {
+    "run_id": "b409ad41",
+    "domain_id": 4,
+    "subdomain_id": 23,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_ideology_analysis_b409ad41/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "ideology_analysis",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T09:01:29.063395"
+  },
+  {
+    "run_id": "1d3d9afe",
+    "domain_id": 4,
+    "subdomain_id": 23,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_rights_and_liberty_1d3d9afe/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "rights_and_liberty",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T09:00:56.760548"
+  },
+  {
+    "run_id": "84abceab",
+    "domain_id": 4,
+    "subdomain_id": 23,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_political_authority_84abceab/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "political_authority",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T09:00:16.063567"
+  },
+  {
+    "run_id": "955d19ec",
+    "domain_id": 4,
+    "subdomain_id": 23,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_theories_of_justice_955d19ec/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "theories_of_justice",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T08:59:38.457582"
+  },
+  {
+    "run_id": "61dc42f0",
+    "domain_id": 4,
+    "subdomain_id": 22,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_philosophy_of_logic_61dc42f0/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "philosophy_of_logic",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T08:59:02.055673"
+  },
+  {
     "run_id": "29999383",
     "domain_id": 4,
     "subdomain_id": 22,
