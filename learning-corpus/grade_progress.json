@@ -9368,6 +9368,48 @@
     "path": "religion_and_spirituality.abrahamic_religions.druze_religion",
     "micro_name": "Druze Religion",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 0.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "skipped"
+    },
+    "graduated_at": "2026-06-08T10:14:07.055348",
+    "last_attempt_at": "2026-06-08T10:14:07.055341"
+  },
+  {
+    "path": "religion_and_spirituality.abrahamic_religions.druze_religion",
+    "micro_name": "Druze Religion",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -9378,6 +9420,48 @@
     "path": "religion_and_spirituality.abrahamic_religions.mandaeism",
     "micro_name": "Mandaeism",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 0.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "skipped"
+    },
+    "graduated_at": "2026-06-08T10:14:45.050489",
+    "last_attempt_at": "2026-06-08T10:14:45.050483"
+  },
+  {
+    "path": "religion_and_spirituality.abrahamic_religions.mandaeism",
+    "micro_name": "Mandaeism",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -9388,6 +9472,48 @@
     "path": "religion_and_spirituality.abrahamic_religions.yazidism",
     "micro_name": "Yazidism",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 0.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "skipped"
+    },
+    "graduated_at": "2026-06-08T10:15:23.340520",
+    "last_attempt_at": "2026-06-08T10:15:23.340511"
+  },
+  {
+    "path": "religion_and_spirituality.abrahamic_religions.yazidism",
+    "micro_name": "Yazidism",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -9398,6 +9524,48 @@
     "path": "religion_and_spirituality.dharmic_religions.hinduism",
     "micro_name": "Hinduism",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "completed"
+    },
+    "graduated_at": "2026-06-08T10:15:54.749661",
+    "last_attempt_at": "2026-06-08T10:15:54.749656"
+  },
+  {
+    "path": "religion_and_spirituality.dharmic_religions.hinduism",
+    "micro_name": "Hinduism",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -9408,6 +9576,48 @@
     "path": "religion_and_spirituality.dharmic_religions.buddhism",
     "micro_name": "Buddhism",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "completed"
+    },
+    "graduated_at": "2026-06-08T10:16:32.744591",
+    "last_attempt_at": "2026-06-08T10:16:32.744585"
+  },
+  {
+    "path": "religion_and_spirituality.dharmic_religions.buddhism",
+    "micro_name": "Buddhism",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -9418,6 +9628,48 @@
     "path": "religion_and_spirituality.dharmic_religions.jainism",
     "micro_name": "Jainism",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "completed"
+    },
+    "graduated_at": "2026-06-08T10:17:04.749680",
+    "last_attempt_at": "2026-06-08T10:17:04.749673"
+  },
+  {
+    "path": "religion_and_spirituality.dharmic_religions.jainism",
+    "micro_name": "Jainism",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -9428,6 +9680,48 @@
     "path": "religion_and_spirituality.dharmic_religions.sikhism",
     "micro_name": "Sikhism",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "completed"
+    },
+    "graduated_at": "2026-06-08T10:17:41.644773",
+    "last_attempt_at": "2026-06-08T10:17:41.644765"
+  },
+  {
+    "path": "religion_and_spirituality.dharmic_religions.sikhism",
+    "micro_name": "Sikhism",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -9438,6 +9732,48 @@
     "path": "religion_and_spirituality.east_asian_religions.taoism",
     "micro_name": "Taoism",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "completed"
+    },
+    "graduated_at": "2026-06-08T10:18:12.752461",
+    "last_attempt_at": "2026-06-08T10:18:12.752456"
+  },
+  {
+    "path": "religion_and_spirituality.east_asian_religions.taoism",
+    "micro_name": "Taoism",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -9448,6 +9784,48 @@
     "path": "religion_and_spirituality.east_asian_religions.confucianism",
     "micro_name": "Confucianism",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "completed"
+    },
+    "graduated_at": "2026-06-08T10:18:53.251182",
+    "last_attempt_at": "2026-06-08T10:18:53.251176"
+  },
+  {
+    "path": "religion_and_spirituality.east_asian_religions.confucianism",
+    "micro_name": "Confucianism",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -9458,6 +9836,48 @@
     "path": "religion_and_spirituality.east_asian_religions.shinto",
     "micro_name": "Shinto",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "completed"
+    },
+    "graduated_at": "2026-06-08T10:19:28.757439",
+    "last_attempt_at": "2026-06-08T10:19:28.757434"
+  },
+  {
+    "path": "religion_and_spirituality.east_asian_religions.shinto",
+    "micro_name": "Shinto",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -9468,6 +9888,48 @@
     "path": "religion_and_spirituality.east_asian_religions.korean_shamanism",
     "micro_name": "Korean Shamanism (Musok)",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 0.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "skipped"
+    },
+    "graduated_at": "2026-06-08T10:20:03.459554",
+    "last_attempt_at": "2026-06-08T10:20:03.459548"
+  },
+  {
+    "path": "religion_and_spirituality.east_asian_religions.korean_shamanism",
+    "micro_name": "Korean Shamanism (Musok)",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -9478,6 +9940,48 @@
     "path": "religion_and_spirituality.east_asian_religions.chinese_folk_religion",
     "micro_name": "Chinese Folk Religion",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 0.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "skipped"
+    },
+    "graduated_at": "2026-06-08T10:20:34.760856",
+    "last_attempt_at": "2026-06-08T10:20:34.760850"
+  },
+  {
+    "path": "religion_and_spirituality.east_asian_religions.chinese_folk_religion",
+    "micro_name": "Chinese Folk Religion",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -9488,6 +9992,48 @@
     "path": "religion_and_spirituality.indigenous_and_tribal_religions.african_traditional_religions",
     "micro_name": "African Traditional Religions",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "completed"
+    },
+    "graduated_at": "2026-06-08T10:21:07.560175",
+    "last_attempt_at": "2026-06-08T10:21:07.560169"
+  },
+  {
+    "path": "religion_and_spirituality.indigenous_and_tribal_religions.african_traditional_religions",
+    "micro_name": "African Traditional Religions",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -9498,6 +10044,48 @@
     "path": "religion_and_spirituality.indigenous_and_tribal_religions.native_american_religions",
     "micro_name": "Native American Religions",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "completed"
+    },
+    "graduated_at": "2026-06-08T10:21:33.946410",
+    "last_attempt_at": "2026-06-08T10:21:33.946404"
+  },
+  {
+    "path": "religion_and_spirituality.indigenous_and_tribal_religions.native_american_religions",
+    "micro_name": "Native American Religions",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -9508,6 +10096,48 @@
     "path": "religion_and_spirituality.indigenous_and_tribal_religions.amazonian_shamanism",
     "micro_name": "Amazonian Shamanism",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 0.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "skipped"
+    },
+    "graduated_at": "2026-06-08T10:22:07.344626",
+    "last_attempt_at": "2026-06-08T10:22:07.344615"
+  },
+  {
+    "path": "religion_and_spirituality.indigenous_and_tribal_religions.amazonian_shamanism",
+    "micro_name": "Amazonian Shamanism",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -9518,6 +10148,48 @@
     "path": "religion_and_spirituality.indigenous_and_tribal_religions.australian_aboriginal_religion",
     "micro_name": "Australian Aboriginal Religion",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 0.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "skipped"
+    },
+    "graduated_at": "2026-06-08T10:22:39.949641",
+    "last_attempt_at": "2026-06-08T10:22:39.949636"
+  },
+  {
+    "path": "religion_and_spirituality.indigenous_and_tribal_religions.australian_aboriginal_religion",
+    "micro_name": "Australian Aboriginal Religion",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -9528,6 +10200,48 @@
     "path": "religion_and_spirituality.indigenous_and_tribal_religions.arctic_and_siberian_shamanism",
     "micro_name": "Arctic/Siberian Shamanism",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 0.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "skipped"
+    },
+    "graduated_at": "2026-06-08T10:23:15.053083",
+    "last_attempt_at": "2026-06-08T10:23:15.053078"
+  },
+  {
+    "path": "religion_and_spirituality.indigenous_and_tribal_religions.arctic_and_siberian_shamanism",
+    "micro_name": "Arctic/Siberian Shamanism",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -9538,6 +10252,48 @@
     "path": "religion_and_spirituality.indigenous_and_tribal_religions.polynesian_religion",
     "micro_name": "Polynesian Religion",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 0.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "skipped"
+    },
+    "graduated_at": "2026-06-08T10:23:49.057778",
+    "last_attempt_at": "2026-06-08T10:23:49.057773"
+  },
+  {
+    "path": "religion_and_spirituality.indigenous_and_tribal_religions.polynesian_religion",
+    "micro_name": "Polynesian Religion",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -9548,6 +10304,48 @@
     "path": "religion_and_spirituality.indigenous_and_tribal_religions.mesoamerican_religion",
     "micro_name": "Mesoamerican Religion",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "completed"
+    },
+    "graduated_at": "2026-06-08T10:24:24.160364",
+    "last_attempt_at": "2026-06-08T10:24:24.160357"
+  },
+  {
+    "path": "religion_and_spirituality.indigenous_and_tribal_religions.mesoamerican_religion",
+    "micro_name": "Mesoamerican Religion",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -9558,6 +10356,48 @@
     "path": "religion_and_spirituality.indigenous_and_tribal_religions.andean_religion",
     "micro_name": "Andean Religion",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "completed"
+    },
+    "graduated_at": "2026-06-08T10:24:58.152956",
+    "last_attempt_at": "2026-06-08T10:24:58.152949"
+  },
+  {
+    "path": "religion_and_spirituality.indigenous_and_tribal_religions.andean_religion",
+    "micro_name": "Andean Religion",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -9568,6 +10408,48 @@
     "path": "religion_and_spirituality.ancient_religions.ancient_egyptian_religion",
     "micro_name": "Ancient Egyptian Religion",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 0.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "skipped"
+    },
+    "graduated_at": "2026-06-08T10:25:24.954382",
+    "last_attempt_at": "2026-06-08T10:25:24.954376"
+  },
+  {
+    "path": "religion_and_spirituality.ancient_religions.ancient_egyptian_religion",
+    "micro_name": "Ancient Egyptian Religion",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -9578,6 +10460,48 @@
     "path": "religion_and_spirituality.ancient_religions.mesopotamian_religion",
     "micro_name": "Mesopotamian Religion (Sumerian, Akkadian, Babylonian)",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 0.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "skipped"
+    },
+    "graduated_at": "2026-06-08T10:25:55.551910",
+    "last_attempt_at": "2026-06-08T10:25:55.551903"
+  },
+  {
+    "path": "religion_and_spirituality.ancient_religions.mesopotamian_religion",
+    "micro_name": "Mesopotamian Religion (Sumerian, Akkadian, Babylonian)",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -9588,6 +10512,48 @@
     "path": "religion_and_spirituality.ancient_religions.ancient_greek_religion",
     "micro_name": "Ancient Greek Religion",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 0.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "skipped"
+    },
+    "graduated_at": "2026-06-08T10:26:30.647965",
+    "last_attempt_at": "2026-06-08T10:26:30.647959"
+  },
+  {
+    "path": "religion_and_spirituality.ancient_religions.ancient_greek_religion",
+    "micro_name": "Ancient Greek Religion",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -9598,6 +10564,48 @@
     "path": "religion_and_spirituality.ancient_religions.ancient_roman_religion",
     "micro_name": "Ancient Roman Religion",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 0.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "skipped"
+    },
+    "graduated_at": "2026-06-08T10:26:59.952216",
+    "last_attempt_at": "2026-06-08T10:26:59.952210"
+  },
+  {
+    "path": "religion_and_spirituality.ancient_religions.ancient_roman_religion",
+    "micro_name": "Ancient Roman Religion",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
@@ -9608,6 +10616,48 @@
     "path": "religion_and_spirituality.ancient_religions.norse_religion",
     "micro_name": "Norse Religion",
     "grade": "preschool",
+    "status": "graduated",
+    "attempts": 1,
+    "metrics": {
+      "train_accuracy": 0.0,
+      "evaluator": {
+        "benchmarks": {
+          "reasoning": {
+            "score": 1.0,
+            "passed": true
+          },
+          "consistency": {
+            "score": 1.0,
+            "passed": true
+          },
+          "verification": {
+            "score": 1.0,
+            "passed": true
+          }
+        },
+        "gates": {
+          "reasoning": true,
+          "consistency": true,
+          "verification": true
+        },
+        "all_passed": true,
+        "grade_slug": "preschool",
+        "thresholds": {
+          "reasoning": 0.2,
+          "consistency": 0.35,
+          "verification": 0.35
+        },
+        "status": "completed"
+      },
+      "trainer_status": "skipped"
+    },
+    "graduated_at": "2026-06-08T10:27:32.953103",
+    "last_attempt_at": "2026-06-08T10:27:32.953098"
+  },
+  {
+    "path": "religion_and_spirituality.ancient_religions.norse_religion",
+    "micro_name": "Norse Religion",
+    "grade": "elementary",
     "status": "unlocked",
     "attempts": 0,
     "metrics": null,
