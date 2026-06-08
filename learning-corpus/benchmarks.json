@@ -17,6 +17,684 @@
       ],
       "grade": "preschool"
     },
+    "created_at": "2026-06-08T05:24:31.266973"
+  },
+  {
+    "domain_id": 3,
+    "benchmark_type": "consistency_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "physics",
+          "skipped": true
+        },
+        {
+          "expected": "biology",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T05:24:31.266972"
+  },
+  {
+    "domain_id": 3,
+    "benchmark_type": "reasoning_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "text": "If all mammals breathe air and whales are mammals, whales breathe air.",
+          "expected": "biology",
+          "skipped": true
+        },
+        {
+          "text": "Matrix multiplication is associative but generally not commutative.",
+          "expected": "mathematics",
+          "skipped": true
+        },
+        {
+          "text": "Backpropagation applies the chain rule to compute gradients for weight updates.",
+          "expected": "computer_science",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T05:24:31.266971"
+  },
+  {
+    "domain_id": 3,
+    "benchmark_type": "verification_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "history",
+          "skipped": true
+        },
+        {
+          "expected": "linguistics",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T05:23:42.858506"
+  },
+  {
+    "domain_id": 3,
+    "benchmark_type": "consistency_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "physics",
+          "skipped": true
+        },
+        {
+          "expected": "biology",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T05:23:42.858506"
+  },
+  {
+    "domain_id": 3,
+    "benchmark_type": "reasoning_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "text": "If all mammals breathe air and whales are mammals, whales breathe air.",
+          "expected": "biology",
+          "skipped": true
+        },
+        {
+          "text": "Matrix multiplication is associative but generally not commutative.",
+          "expected": "mathematics",
+          "skipped": true
+        },
+        {
+          "text": "Backpropagation applies the chain rule to compute gradients for weight updates.",
+          "expected": "computer_science",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T05:23:42.858504"
+  },
+  {
+    "domain_id": 3,
+    "benchmark_type": "verification_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "history",
+          "skipped": true
+        },
+        {
+          "expected": "linguistics",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T05:22:55.859879"
+  },
+  {
+    "domain_id": 3,
+    "benchmark_type": "consistency_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "physics",
+          "skipped": true
+        },
+        {
+          "expected": "biology",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T05:22:55.859879"
+  },
+  {
+    "domain_id": 3,
+    "benchmark_type": "reasoning_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "text": "If all mammals breathe air and whales are mammals, whales breathe air.",
+          "expected": "biology",
+          "skipped": true
+        },
+        {
+          "text": "Matrix multiplication is associative but generally not commutative.",
+          "expected": "mathematics",
+          "skipped": true
+        },
+        {
+          "text": "Backpropagation applies the chain rule to compute gradients for weight updates.",
+          "expected": "computer_science",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T05:22:55.859878"
+  },
+  {
+    "domain_id": 3,
+    "benchmark_type": "verification_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "history",
+          "skipped": true
+        },
+        {
+          "expected": "linguistics",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T05:22:01.053005"
+  },
+  {
+    "domain_id": 3,
+    "benchmark_type": "consistency_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "physics",
+          "skipped": true
+        },
+        {
+          "expected": "biology",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T05:22:01.053004"
+  },
+  {
+    "domain_id": 3,
+    "benchmark_type": "reasoning_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "text": "If all mammals breathe air and whales are mammals, whales breathe air.",
+          "expected": "biology",
+          "skipped": true
+        },
+        {
+          "text": "Matrix multiplication is associative but generally not commutative.",
+          "expected": "mathematics",
+          "skipped": true
+        },
+        {
+          "text": "Backpropagation applies the chain rule to compute gradients for weight updates.",
+          "expected": "computer_science",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T05:22:01.053003"
+  },
+  {
+    "domain_id": 3,
+    "benchmark_type": "code_pass_rate_preschool",
+    "score": 0.0,
+    "passed": false,
+    "details": {
+      "cases": [
+        {
+          "question": "Write a function of recursion list sum.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "write python code def remove_vowels(text):\n    \"\"\"\n    remove_vowels is a function that takes string and returns string ",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a function to extract the frequency of unique tuples in the given list order irrespective.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a python function to count the number of substrings with same first and last characters.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a function to find the maximum value in a given heterogeneous list.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a function to find n’th smart number.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a python function to determine whether all the numbers are different from each other are not.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a python function to find the minimun number of subsets with distinct elements.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a function to split a string at lowercase letters.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a function to find the equilibrium index of the given array.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T05:21:16.648882"
+  },
+  {
+    "domain_id": 3,
+    "benchmark_type": "code_pass_rate_preschool",
+    "score": 0.0,
+    "passed": false,
+    "details": {
+      "cases": [
+        {
+          "question": "Write a function of recursion list sum.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "write python code def remove_vowels(text):\n    \"\"\"\n    remove_vowels is a function that takes string and returns string ",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a function to extract the frequency of unique tuples in the given list order irrespective.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a python function to count the number of substrings with same first and last characters.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a function to find the maximum value in a given heterogeneous list.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a function to find n’th smart number.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a python function to determine whether all the numbers are different from each other are not.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a python function to find the minimun number of subsets with distinct elements.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a function to split a string at lowercase letters.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a function to find the equilibrium index of the given array.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T05:19:32.950389"
+  },
+  {
+    "domain_id": 3,
+    "benchmark_type": "code_pass_rate_preschool",
+    "score": 0.0,
+    "passed": false,
+    "details": {
+      "cases": [
+        {
+          "question": "Write a function of recursion list sum.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "write python code def remove_vowels(text):\n    \"\"\"\n    remove_vowels is a function that takes string and returns string ",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a function to extract the frequency of unique tuples in the given list order irrespective.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a python function to count the number of substrings with same first and last characters.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a function to find the maximum value in a given heterogeneous list.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a function to find n’th smart number.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a python function to determine whether all the numbers are different from each other are not.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a python function to find the minimun number of subsets with distinct elements.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a function to split a string at lowercase letters.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a function to find the equilibrium index of the given array.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T05:17:44.251061"
+  },
+  {
+    "domain_id": 3,
+    "benchmark_type": "code_pass_rate_preschool",
+    "score": 0.0,
+    "passed": false,
+    "details": {
+      "cases": [
+        {
+          "question": "Write a function of recursion list sum.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "write python code def remove_vowels(text):\n    \"\"\"\n    remove_vowels is a function that takes string and returns string ",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a function to extract the frequency of unique tuples in the given list order irrespective.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a python function to count the number of substrings with same first and last characters.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a function to find the maximum value in a given heterogeneous list.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a function to find n’th smart number.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a python function to determine whether all the numbers are different from each other are not.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a python function to find the minimun number of subsets with distinct elements.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a function to split a string at lowercase letters.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a function to find the equilibrium index of the given array.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T05:16:08.551744"
+  },
+  {
+    "domain_id": 3,
+    "benchmark_type": "code_pass_rate_preschool",
+    "score": 0.0,
+    "passed": false,
+    "details": {
+      "cases": [
+        {
+          "question": "Write a function of recursion list sum.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "write python code def remove_vowels(text):\n    \"\"\"\n    remove_vowels is a function that takes string and returns string ",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a function to extract the frequency of unique tuples in the given list order irrespective.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a python function to count the number of substrings with same first and last characters.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a function to find the maximum value in a given heterogeneous list.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a function to find n’th smart number.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a python function to determine whether all the numbers are different from each other are not.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a python function to find the minimun number of subsets with distinct elements.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a function to split a string at lowercase letters.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        },
+        {
+          "question": "Write a function to find the equilibrium index of the given array.",
+          "source": "predict",
+          "score": 0.0,
+          "passed_tests": false,
+          "syntax_valid": false
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T05:14:55.751423"
+  },
+  {
+    "domain_id": 3,
+    "benchmark_type": "verification_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "history",
+          "skipped": true
+        },
+        {
+          "expected": "linguistics",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
     "created_at": "2026-06-07T01:55:49.055801"
   },
   {
