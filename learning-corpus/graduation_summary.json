@@ -10913,5 +10913,930 @@
       "status": "completed"
     },
     "graduated_at": "2026-06-08T15:30:30.656449"
+  },
+  {
+    "path": "social_sciences.psychology.sports_psychology",
+    "micro_name": "Sports Psychology",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-08T16:31:25.645173"
+  },
+  {
+    "path": "social_sciences.psychology.cross_cultural_psychology",
+    "micro_name": "Cross-Cultural Psychology",
+    "grade": "preschool",
+    "train_accuracy": 0.0,
+    "trainer_status": "skipped",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-08T16:32:03.150514"
+  },
+  {
+    "path": "social_sciences.psychology.environmental_psychology",
+    "micro_name": "Environmental Psychology",
+    "grade": "preschool",
+    "train_accuracy": 0.0,
+    "trainer_status": "skipped",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-08T16:32:41.246316"
+  },
+  {
+    "path": "social_sciences.psychology.educational_psychology",
+    "micro_name": "Educational Psychology",
+    "grade": "preschool",
+    "train_accuracy": 0.0,
+    "trainer_status": "skipped",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-08T16:33:19.062039"
+  },
+  {
+    "path": "social_sciences.sociology.social_theory",
+    "micro_name": "Social Theory",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-08T16:33:57.953571"
+  },
+  {
+    "path": "social_sciences.sociology.research_methods",
+    "micro_name": "Research Methods (Sociology)",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-08T16:34:38.554287"
+  },
+  {
+    "path": "social_sciences.sociology.social_stratification",
+    "micro_name": "Social Stratification",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-08T16:35:14.058772"
+  },
+  {
+    "path": "social_sciences.sociology.family_sociology",
+    "micro_name": "Family Sociology",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-08T16:35:55.140509"
+  },
+  {
+    "path": "social_sciences.sociology.sociology_of_education",
+    "micro_name": "Sociology of Education",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-08T16:36:35.952310"
+  },
+  {
+    "path": "social_sciences.sociology.urban_sociology",
+    "micro_name": "Urban Sociology",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-08T16:37:21.744974"
+  },
+  {
+    "path": "social_sciences.sociology.rural_sociology",
+    "micro_name": "Rural Sociology",
+    "grade": "preschool",
+    "train_accuracy": 0.0,
+    "trainer_status": "skipped",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-08T16:37:54.144523"
+  },
+  {
+    "path": "social_sciences.sociology.sociology_of_religion",
+    "micro_name": "Sociology of Religion",
+    "grade": "preschool",
+    "train_accuracy": 0.0,
+    "trainer_status": "skipped",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-08T16:38:29.456506"
+  },
+  {
+    "path": "social_sciences.sociology.sociology_of_work",
+    "micro_name": "Sociology of Work",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-08T16:39:07.554633"
+  },
+  {
+    "path": "social_sciences.sociology.sociology_of_culture",
+    "micro_name": "Sociology of Culture",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-08T16:39:46.641113"
+  },
+  {
+    "path": "social_sciences.sociology.political_sociology",
+    "micro_name": "Political Sociology",
+    "grade": "preschool",
+    "train_accuracy": 0.0,
+    "trainer_status": "skipped",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-08T16:40:26.449993"
+  },
+  {
+    "path": "social_sciences.sociology.medical_sociology",
+    "micro_name": "Medical Sociology",
+    "grade": "preschool",
+    "train_accuracy": 0.0,
+    "trainer_status": "skipped",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-08T16:41:04.144982"
+  },
+  {
+    "path": "social_sciences.sociology.criminology",
+    "micro_name": "Criminology",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-08T16:41:44.150041"
+  },
+  {
+    "path": "social_sciences.sociology.environmental_sociology",
+    "micro_name": "Environmental Sociology",
+    "grade": "preschool",
+    "train_accuracy": 0.0,
+    "trainer_status": "skipped",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-08T16:42:22.351888"
+  },
+  {
+    "path": "social_sciences.sociology.digital_sociology",
+    "micro_name": "Digital Sociology",
+    "grade": "preschool",
+    "train_accuracy": 0.0,
+    "trainer_status": "skipped",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-08T16:42:55.145621"
+  },
+  {
+    "path": "social_sciences.anthropology.cultural_anthropology",
+    "micro_name": "Cultural Anthropology",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-08T16:43:29.047286"
+  },
+  {
+    "path": "social_sciences.anthropology.physical_and_biological_anthropology",
+    "micro_name": "Physical/Biological Anthropology",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-08T16:44:05.948369"
+  },
+  {
+    "path": "social_sciences.anthropology.archaeology",
+    "micro_name": "Archaeology",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-08T16:44:46.352664"
+  },
+  {
+    "path": "social_sciences.anthropology.linguistic_anthropology",
+    "micro_name": "Linguistic Anthropology",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-08T16:45:20.845257"
+  },
+  {
+    "path": "social_sciences.economics.microeconomics",
+    "micro_name": "Microeconomics",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-08T16:45:52.066054"
+  },
+  {
+    "path": "social_sciences.economics.macroeconomics",
+    "micro_name": "Macroeconomics",
+    "grade": "preschool",
+    "train_accuracy": 1.0,
+    "trainer_status": "completed",
+    "evaluator": {
+      "benchmarks": {
+        "reasoning": {
+          "score": 1.0,
+          "passed": true
+        },
+        "consistency": {
+          "score": 1.0,
+          "passed": true
+        },
+        "verification": {
+          "score": 1.0,
+          "passed": true
+        }
+      },
+      "gates": {
+        "reasoning": true,
+        "consistency": true,
+        "verification": true
+      },
+      "all_passed": true,
+      "grade_slug": "preschool",
+      "thresholds": {
+        "reasoning": 0.2,
+        "consistency": 0.35,
+        "verification": 0.35
+      },
+      "status": "completed"
+    },
+    "graduated_at": "2026-06-08T16:46:24.850093"
   }
 ]
