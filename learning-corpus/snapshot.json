@@ -251,6 +251,34 @@
     "enabled": true,
     "recent": [
       {
+        "question": "Where are my biggest knowledge gaps?",
+        "answer": "~572 micro-topics not fully graduated; sparse docs mean abstain.",
+        "theme": "uncertainty",
+        "source": "auto_learn",
+        "grounded": true,
+        "state_snapshot": {
+          "documents": 985,
+          "cycles": 12,
+          "focus": ""
+        },
+        "ts": "2026-06-08T15:30:31.459757+00:00",
+        "kind": "meta"
+      },
+      {
+        "question": "What am I trying to accomplish in this session?",
+        "answer": "Graduate 862 micro-topics; now on no active target.",
+        "theme": "agency",
+        "source": "auto_learn",
+        "grounded": true,
+        "state_snapshot": {
+          "documents": 985,
+          "cycles": 12,
+          "focus": ""
+        },
+        "ts": "2026-06-08T15:30:31.355163+00:00",
+        "kind": "meta"
+      },
+      {
         "question": "What are the main kinds of Health Psychology — symptoms, diagnosis, treatment, and prevention?",
         "answer": "Psychoneuroimmunology is a core concept within Health….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
@@ -327,36 +355,10 @@
         "ciper": false,
         "ts": "2026-06-08T15:29:16.544606+00:00",
         "kind": "learning"
-      },
-      {
-        "question": "What is Psychotherapy?",
-        "answer": "Psychoanalysis is a core concept within Psychotherapy….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "social_sciences.psychology.psychotherapy",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-08T15:28:40.752754+00:00",
-        "kind": "learning"
-      },
-      {
-        "question": "What is one word I would use to describe Cognitive-Behavioral Therapy?",
-        "answer": "research",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "social_sciences.psychology.psychotherapy",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-08T15:28:40.752343+00:00",
-        "kind": "learning"
       }
     ]
   },
-  "exported_at": "2026-06-08T15:30:30.847481+00:00",
+  "exported_at": "2026-06-08T16:24:09.647318+00:00",
   "github_sync": {
     "batch_cursor": 300,
     "include_document_text": true,
