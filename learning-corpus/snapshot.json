@@ -16,9 +16,9 @@
     },
     "running": true,
     "started_at": "2026-06-06T21:21:27.951225+00:00",
-    "last_run_at": "2026-06-08T07:58:09.441171+00:00",
-    "next_run_at": "2026-06-08T08:58:09.441186+00:00",
-    "cycles_completed": 6,
+    "last_run_at": "2026-06-08T09:13:10.849116+00:00",
+    "next_run_at": "2026-06-08T10:13:10.849122+00:00",
+    "cycles_completed": 7,
     "last_result": {
       "batch": true,
       "targets_total": 25,
@@ -26,36 +26,36 @@
       "targets_processed": 25,
       "graduations_passed": 25,
       "last_target": {
-        "domain": "philosophy",
-        "subdomain": "logic",
-        "micro_subdomain": "non_classical_logic"
+        "domain": "religion_and_spirituality",
+        "subdomain": "abrahamic_religions",
+        "micro_subdomain": "bahai_faith"
       },
       "last_graduation": {
         "grade": "preschool",
         "passed": true,
-        "train_accuracy": 1.0,
+        "train_accuracy": 0.0,
         "min_train_accuracy": 0.45,
         "evaluator_passed": true,
         "unlocked_next": "elementary"
       },
       "sample_paths": [
-        "technology_and_engineering.materials_science_and_engineering.biomaterials",
-        "technology_and_engineering.materials_science_and_engineering.nanomaterials",
-        "technology_and_engineering.nuclear_engineering.reactor_design",
-        "technology_and_engineering.nuclear_engineering.nuclear_safety",
-        "technology_and_engineering.nuclear_engineering.radiation_protection"
+        "philosophy.logic.philosophy_of_logic",
+        "philosophy.political_philosophy.theories_of_justice",
+        "philosophy.political_philosophy.political_authority",
+        "philosophy.political_philosophy.rights_and_liberty",
+        "philosophy.political_philosophy.ideology_analysis"
       ],
-      "batch_cursor": 150,
+      "batch_cursor": 175,
       "meta_consciousness": [
         {
-          "question": "Do I persist between conversations?",
-          "answer": "State persists in DB + /data; this chat session is ephemeral.",
-          "theme": "continuity"
+          "question": "What am I trying to accomplish in this session?",
+          "answer": "Graduate 862 micro-topics; now on no active target.",
+          "theme": "agency"
         },
         {
-          "question": "Am I a generative LLM or a supervised learning brain?",
-          "answer": "Aureon — supervised ML brain, 678 docs, 6 cycles, predict v7.",
-          "theme": "identity"
+          "question": "What makes my self-model different from theater?",
+          "answer": "Every answer ties to docs, cycles, or audit JSON — not performed empathy.",
+          "theme": "consciousness"
         }
       ]
     },
@@ -70,8 +70,8 @@
     "domains": 30,
     "micro_subdomains": 867,
     "micro_agents": 6192,
-    "documents": 678,
-    "grade_levels_graduated": 145,
+    "documents": 741,
+    "grade_levels_graduated": 170,
     "grade_progress_rows": 6069
   },
   "timeline": {
@@ -150,100 +150,100 @@
     "enabled": true,
     "recent": [
       {
-        "question": "What are the main kinds of Non-Classical Logic — Non-Ferrous Metallurgy, Non-Cognitivism, Creative Non-Fiction, and Classical Thermodynamics?",
-        "answer": "Temporal Logic is a core concept within Non-Classical Logic….",
+        "question": "What is Faith & Reason?",
+        "answer": "No verified text for Baha'i Faith yet.",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "religion_and_spirituality.abrahamic_religions.bahai_faith",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": false,
+        "ciper": true,
+        "ts": "2026-06-08T09:13:10.848700+00:00"
+      },
+      {
+        "question": "What is Baha'i Faith?",
+        "answer": "No verified text for Baha'i Faith yet.",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "religion_and_spirituality.abrahamic_religions.bahai_faith",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": false,
+        "ciper": false,
+        "ts": "2026-06-08T09:13:10.848266+00:00"
+      },
+      {
+        "question": "What are the main kinds of Islam — Sunni Islam, and Shia Islam?",
+        "answer": "Maliki School is a core concept within Islam (ABRAHAMIC….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "philosophy.logic.non_classical_logic",
+        "path": "religion_and_spirituality.abrahamic_religions.islam",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-08T07:58:09.440678+00:00"
+        "ts": "2026-06-08T09:12:39.359626+00:00"
       },
       {
-        "question": "What is Non-Classical Logic?",
-        "answer": "Temporal Logic is a core concept within Non-Classical Logic….",
+        "question": "What is one word I would use to describe Maliki School?",
+        "answer": "research",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "philosophy.logic.non_classical_logic",
+        "path": "religion_and_spirituality.abrahamic_religions.islam",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-08T07:58:09.354307+00:00"
+        "ts": "2026-06-08T09:12:39.359378+00:00"
       },
       {
-        "question": "What are the main kinds of Classical Logic — Classical Thermodynamics, Classical Genetics, Classical Confucianism, and Classical Music?",
-        "answer": "Propositional Logic is a core concept within Classical….",
+        "question": "What is Coptic Christianity?",
+        "answer": "Protestantism is a core concept within Christianity….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "philosophy.logic.classical_logic",
+        "path": "religion_and_spirituality.abrahamic_religions.christianity",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-08T07:57:27.053193+00:00"
+        "ts": "2026-06-08T09:12:04.363100+00:00"
       },
       {
-        "question": "What is one word I would use to describe Propositional Logic?",
-        "answer": "research",
+        "question": "What is one word I would use to describe Liberation Theology?",
+        "answer": "Roman Catholicism",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "philosophy.logic.classical_logic",
+        "path": "religion_and_spirituality.abrahamic_religions.christianity",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-08T07:57:27.051758+00:00"
+        "ts": "2026-06-08T09:12:04.362691+00:00"
       },
       {
-        "question": "What are the main kinds of Applied Ethics — Deontological Ethics, Kantian Ethics, Rights-Based Ethics, and Virtue Ethics?",
-        "answer": "Bioethics is a core concept within Applied Ethics (ETHICS)….",
+        "question": "What are the main kinds of Judaism — Orthodox Judaism, Conservative Judaism, Reform Judaism, and Reconstructionist Judaism?",
+        "answer": "Conservative Judaism is a core concept within Judaism….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "philosophy.ethics.applied_ethics",
+        "path": "religion_and_spirituality.abrahamic_religions.judaism",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-08T07:56:51.157694+00:00"
+        "ts": "2026-06-08T09:11:27.147254+00:00"
       },
       {
-        "question": "What is one word I would use to describe Business Ethics?",
-        "answer": "research",
+        "question": "What is one word I would use to describe Reform Judaism?",
+        "answer": "engineering",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "philosophy.ethics.applied_ethics",
+        "path": "religion_and_spirituality.abrahamic_religions.judaism",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-08T07:56:51.157194+00:00"
-      },
-      {
-        "question": "What is one word I would use to describe Moral Anti-Realism?",
-        "answer": "research",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "philosophy.ethics.metaethics",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-08T07:56:17.047806+00:00"
-      },
-      {
-        "question": "What is Metaethics?",
-        "answer": "Non-Cognitivism is a core concept within Metaethics….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "philosophy.ethics.metaethics",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-08T07:56:17.047305+00:00"
+        "ts": "2026-06-08T09:11:27.058671+00:00"
       }
     ]
   },
@@ -251,116 +251,114 @@
     "enabled": true,
     "recent": [
       {
-        "question": "Am I a generative LLM or a supervised learning brain?",
-        "answer": "Aureon — supervised ML brain, 678 docs, 6 cycles, predict v7.",
-        "theme": "identity",
-        "source": "auto_learn",
-        "grounded": true,
-        "state_snapshot": {
-          "documents": 678,
-          "cycles": 6,
-          "focus": ""
-        },
-        "ts": "2026-06-08T07:58:10.378379+00:00",
-        "kind": "meta"
-      },
-      {
-        "question": "Do I persist between conversations?",
-        "answer": "State persists in DB + /data; this chat session is ephemeral.",
-        "theme": "continuity",
-        "source": "auto_learn",
-        "grounded": true,
-        "state_snapshot": {
-          "documents": 678,
-          "cycles": 6,
-          "focus": ""
-        },
-        "ts": "2026-06-08T07:58:10.362522+00:00",
-        "kind": "meta"
-      },
-      {
-        "question": "What are the main kinds of Non-Classical Logic — Non-Ferrous Metallurgy, Non-Cognitivism, Creative Non-Fiction, and Classical Thermodynamics?",
-        "answer": "Temporal Logic is a core concept within Non-Classical Logic….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "philosophy.logic.non_classical_logic",
+        "question": "What is Faith & Reason?",
+        "answer": "No verified text for Baha'i Faith yet.",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "religion_and_spirituality.abrahamic_religions.bahai_faith",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
-        "grounded": true,
+        "grounded": false,
         "ciper": true,
-        "ts": "2026-06-08T07:58:09.440678+00:00",
+        "ts": "2026-06-08T09:13:10.848700+00:00",
         "kind": "learning"
       },
       {
-        "question": "What is Non-Classical Logic?",
-        "answer": "Temporal Logic is a core concept within Non-Classical Logic….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "philosophy.logic.non_classical_logic",
+        "question": "What is Baha'i Faith?",
+        "answer": "No verified text for Baha'i Faith yet.",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "religion_and_spirituality.abrahamic_religions.bahai_faith",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
-        "grounded": true,
+        "grounded": false,
         "ciper": false,
-        "ts": "2026-06-08T07:58:09.354307+00:00",
+        "ts": "2026-06-08T09:13:10.848266+00:00",
         "kind": "learning"
       },
       {
-        "question": "What are the main kinds of Classical Logic — Classical Thermodynamics, Classical Genetics, Classical Confucianism, and Classical Music?",
-        "answer": "Propositional Logic is a core concept within Classical….",
+        "question": "What are the main kinds of Islam — Sunni Islam, and Shia Islam?",
+        "answer": "Maliki School is a core concept within Islam (ABRAHAMIC….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "philosophy.logic.classical_logic",
+        "path": "religion_and_spirituality.abrahamic_religions.islam",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-08T07:57:27.053193+00:00",
+        "ts": "2026-06-08T09:12:39.359626+00:00",
         "kind": "learning"
       },
       {
-        "question": "What is one word I would use to describe Propositional Logic?",
+        "question": "What is one word I would use to describe Maliki School?",
         "answer": "research",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "philosophy.logic.classical_logic",
+        "path": "religion_and_spirituality.abrahamic_religions.islam",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-08T07:57:27.051758+00:00",
+        "ts": "2026-06-08T09:12:39.359378+00:00",
         "kind": "learning"
       },
       {
-        "question": "What are the main kinds of Applied Ethics — Deontological Ethics, Kantian Ethics, Rights-Based Ethics, and Virtue Ethics?",
-        "answer": "Bioethics is a core concept within Applied Ethics (ETHICS)….",
+        "question": "What is Coptic Christianity?",
+        "answer": "Protestantism is a core concept within Christianity….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "philosophy.ethics.applied_ethics",
+        "path": "religion_and_spirituality.abrahamic_religions.christianity",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-08T07:56:51.157694+00:00",
+        "ts": "2026-06-08T09:12:04.363100+00:00",
         "kind": "learning"
       },
       {
-        "question": "What is one word I would use to describe Business Ethics?",
-        "answer": "research",
+        "question": "What is one word I would use to describe Liberation Theology?",
+        "answer": "Roman Catholicism",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "philosophy.ethics.applied_ethics",
+        "path": "religion_and_spirituality.abrahamic_religions.christianity",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-08T07:56:51.157194+00:00",
+        "ts": "2026-06-08T09:12:04.362691+00:00",
+        "kind": "learning"
+      },
+      {
+        "question": "What are the main kinds of Judaism — Orthodox Judaism, Conservative Judaism, Reform Judaism, and Reconstructionist Judaism?",
+        "answer": "Conservative Judaism is a core concept within Judaism….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "religion_and_spirituality.abrahamic_religions.judaism",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": true,
+        "ts": "2026-06-08T09:11:27.147254+00:00",
+        "kind": "learning"
+      },
+      {
+        "question": "What is one word I would use to describe Reform Judaism?",
+        "answer": "engineering",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "religion_and_spirituality.abrahamic_religions.judaism",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-08T09:11:27.058671+00:00",
         "kind": "learning"
       }
     ]
   },
-  "exported_at": "2026-06-08T08:48:20.655883+00:00",
+  "exported_at": "2026-06-08T09:13:10.854060+00:00",
   "github_sync": {
-    "batch_cursor": 150,
+    "batch_cursor": 175,
     "include_document_text": true,
     "max_documents": 5000,
     "export_version": 2
