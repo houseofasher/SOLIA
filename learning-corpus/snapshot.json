@@ -251,6 +251,34 @@
     "enabled": true,
     "recent": [
       {
+        "question": "Am I a generative LLM or a supervised learning brain?",
+        "answer": "Aureon — supervised ML brain, 678 docs, 6 cycles, predict v7.",
+        "theme": "identity",
+        "source": "auto_learn",
+        "grounded": true,
+        "state_snapshot": {
+          "documents": 678,
+          "cycles": 6,
+          "focus": ""
+        },
+        "ts": "2026-06-08T07:58:10.378379+00:00",
+        "kind": "meta"
+      },
+      {
+        "question": "Do I persist between conversations?",
+        "answer": "State persists in DB + /data; this chat session is ephemeral.",
+        "theme": "continuity",
+        "source": "auto_learn",
+        "grounded": true,
+        "state_snapshot": {
+          "documents": 678,
+          "cycles": 6,
+          "focus": ""
+        },
+        "ts": "2026-06-08T07:58:10.362522+00:00",
+        "kind": "meta"
+      },
+      {
         "question": "What are the main kinds of Non-Classical Logic — Non-Ferrous Metallurgy, Non-Cognitivism, Creative Non-Fiction, and Classical Thermodynamics?",
         "answer": "Temporal Logic is a core concept within Non-Classical Logic….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
@@ -327,36 +355,10 @@
         "ciper": false,
         "ts": "2026-06-08T07:56:51.157194+00:00",
         "kind": "learning"
-      },
-      {
-        "question": "What is one word I would use to describe Moral Anti-Realism?",
-        "answer": "research",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "philosophy.ethics.metaethics",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-08T07:56:17.047806+00:00",
-        "kind": "learning"
-      },
-      {
-        "question": "What is Metaethics?",
-        "answer": "Non-Cognitivism is a core concept within Metaethics….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "philosophy.ethics.metaethics",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-08T07:56:17.047305+00:00",
-        "kind": "learning"
       }
     ]
   },
-  "exported_at": "2026-06-08T07:58:09.446887+00:00",
+  "exported_at": "2026-06-08T08:48:20.655883+00:00",
   "github_sync": {
     "batch_cursor": 150,
     "include_document_text": true,
