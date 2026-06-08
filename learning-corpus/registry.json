@@ -2925,6 +2925,230 @@
         "epochs": 150
       },
       "status": "completed"
+    },
+    {
+      "run_id": "332164b0",
+      "created_at": "2026-06-08T16:31:25.444305+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_sports_psychology_332164b0/classifier.json",
+      "params": {
+        "scope": "sports_psychology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "dd99d16a",
+      "created_at": "2026-06-08T16:33:57.750353+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_social_theory_dd99d16a/classifier.json",
+      "params": {
+        "scope": "social_theory",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "68b26e50",
+      "created_at": "2026-06-08T16:34:38.445181+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_research_methods_68b26e50/classifier.json",
+      "params": {
+        "scope": "research_methods",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "605e93c9",
+      "created_at": "2026-06-08T16:35:13.656679+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_social_stratification_605e93c9/classifier.json",
+      "params": {
+        "scope": "social_stratification",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "3a681078",
+      "created_at": "2026-06-08T16:35:54.847841+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_family_sociology_3a681078/classifier.json",
+      "params": {
+        "scope": "family_sociology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "76d97e53",
+      "created_at": "2026-06-08T16:36:35.743864+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_sociology_of_education_76d97e53/classifier.json",
+      "params": {
+        "scope": "sociology_of_education",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "d21e6b98",
+      "created_at": "2026-06-08T16:37:21.551651+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_urban_sociology_d21e6b98/classifier.json",
+      "params": {
+        "scope": "urban_sociology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "5f60a1d8",
+      "created_at": "2026-06-08T16:39:07.350949+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_sociology_of_work_5f60a1d8/classifier.json",
+      "params": {
+        "scope": "sociology_of_work",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "d77ddf83",
+      "created_at": "2026-06-08T16:39:46.258897+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_sociology_of_culture_d77ddf83/classifier.json",
+      "params": {
+        "scope": "sociology_of_culture",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "5ab8b2b9",
+      "created_at": "2026-06-08T16:41:43.950901+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_criminology_5ab8b2b9/classifier.json",
+      "params": {
+        "scope": "criminology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "94fbe95c",
+      "created_at": "2026-06-08T16:43:28.842251+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_cultural_anthropology_94fbe95c/classifier.json",
+      "params": {
+        "scope": "cultural_anthropology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "7e958cbd",
+      "created_at": "2026-06-08T16:44:05.641398+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_physical_and_biological_anthropology_7e958cbd/classifier.json",
+      "params": {
+        "scope": "physical_and_biological_anthropology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "c753d37a",
+      "created_at": "2026-06-08T16:44:46.050163+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_archaeology_c753d37a/classifier.json",
+      "params": {
+        "scope": "archaeology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "1b5243bf",
+      "created_at": "2026-06-08T16:45:20.656751+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_linguistic_anthropology_1b5243bf/classifier.json",
+      "params": {
+        "scope": "linguistic_anthropology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "c52ad08a",
+      "created_at": "2026-06-08T16:45:51.947716+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_microeconomics_c52ad08a/classifier.json",
+      "params": {
+        "scope": "microeconomics",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "77ef5978",
+      "created_at": "2026-06-08T16:46:24.440944+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_macroeconomics_77ef5978/classifier.json",
+      "params": {
+        "scope": "macroeconomics",
+        "epochs": 150
+      },
+      "status": "completed"
     }
   ]
 }
