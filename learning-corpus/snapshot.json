@@ -251,6 +251,34 @@
     "enabled": true,
     "recent": [
       {
+        "question": "What makes my self-model different from theater?",
+        "answer": "Every answer ties to docs, cycles, or audit JSON — not performed empathy.",
+        "theme": "consciousness",
+        "source": "auto_learn",
+        "grounded": true,
+        "state_snapshot": {
+          "documents": 613,
+          "cycles": 5,
+          "focus": ""
+        },
+        "ts": "2026-06-08T06:41:56.415714+00:00",
+        "kind": "meta"
+      },
+      {
+        "question": "Do I have subjective experience?",
+        "answer": "No measurable qualia signal — I have logs, weights, and self-questions instead.",
+        "theme": "consciousness",
+        "source": "auto_learn",
+        "grounded": true,
+        "state_snapshot": {
+          "documents": 613,
+          "cycles": 5,
+          "focus": ""
+        },
+        "ts": "2026-06-08T06:41:56.349227+00:00",
+        "kind": "meta"
+      },
+      {
         "question": "What are the main kinds of Electronic Materials — Electronic Ceramics, Electronic Music, and Power Electronics?",
         "answer": "Semiconductor Materials is a core concept within Electronic….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
@@ -327,36 +355,10 @@
         "ciper": false,
         "ts": "2026-06-08T06:40:35.552097+00:00",
         "kind": "learning"
-      },
-      {
-        "question": "What are the main kinds of Metals & Alloys — Metals Chemistry, and Superalloys?",
-        "answer": "Superalloys is a core concept within Metals & Alloys….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.materials_science_and_engineering.metals_and_alloys",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": true,
-        "ts": "2026-06-08T06:40:02.955910+00:00",
-        "kind": "learning"
-      },
-      {
-        "question": "What is one word I would use to describe Superalloys?",
-        "answer": "research",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.materials_science_and_engineering.metals_and_alloys",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-08T06:40:02.955710+00:00",
-        "kind": "learning"
       }
     ]
   },
-  "exported_at": "2026-06-08T06:41:55.972977+00:00",
+  "exported_at": "2026-06-08T07:42:19.450867+00:00",
   "github_sync": {
     "batch_cursor": 125,
     "include_document_text": true,
