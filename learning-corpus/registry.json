@@ -2239,6 +2239,286 @@
         "epochs": 150
       },
       "status": "completed"
+    },
+    {
+      "run_id": "269d65ed",
+      "created_at": "2026-06-08T12:47:04.251684+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_painting_269d65ed/classifier.json",
+      "params": {
+        "scope": "painting",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "7eae2546",
+      "created_at": "2026-06-08T12:47:39.558005+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_drawing_7eae2546/classifier.json",
+      "params": {
+        "scope": "drawing",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "ecd8265d",
+      "created_at": "2026-06-08T12:48:16.851839+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_sculpture_ecd8265d/classifier.json",
+      "params": {
+        "scope": "sculpture",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "f2056db3",
+      "created_at": "2026-06-08T12:48:54.248779+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_printmaking_f2056db3/classifier.json",
+      "params": {
+        "scope": "printmaking",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "44d61b90",
+      "created_at": "2026-06-08T12:49:30.250763+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_photography_44d61b90/classifier.json",
+      "params": {
+        "scope": "photography",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "5289a9d6",
+      "created_at": "2026-06-08T12:50:06.263940+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_graphic_design_5289a9d6/classifier.json",
+      "params": {
+        "scope": "graphic_design",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "311e6dfd",
+      "created_at": "2026-06-08T12:50:45.562504+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_textile_arts_311e6dfd/classifier.json",
+      "params": {
+        "scope": "textile_arts",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "e9050a09",
+      "created_at": "2026-06-08T12:51:25.648764+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_ceramics_e9050a09/classifier.json",
+      "params": {
+        "scope": "ceramics",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "9cb7dbd8",
+      "created_at": "2026-06-08T12:52:06.059064+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_glasswork_9cb7dbd8/classifier.json",
+      "params": {
+        "scope": "glasswork",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "22d39cab",
+      "created_at": "2026-06-08T12:52:40.558047+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_jewelry_22d39cab/classifier.json",
+      "params": {
+        "scope": "jewelry",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "9375081d",
+      "created_at": "2026-06-08T12:53:15.063964+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_music_9375081d/classifier.json",
+      "params": {
+        "scope": "music",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "eff75aa7",
+      "created_at": "2026-06-08T12:53:55.666513+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_dance_eff75aa7/classifier.json",
+      "params": {
+        "scope": "dance",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "bc166a50",
+      "created_at": "2026-06-08T12:54:37.253721+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_theatre_bc166a50/classifier.json",
+      "params": {
+        "scope": "theatre",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "996f83fc",
+      "created_at": "2026-06-08T12:55:08.556932+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_circus_arts_996f83fc/classifier.json",
+      "params": {
+        "scope": "circus_arts",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "d254add0",
+      "created_at": "2026-06-08T12:55:39.952081+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_poetry_d254add0/classifier.json",
+      "params": {
+        "scope": "poetry",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "8fc93deb",
+      "created_at": "2026-06-08T12:56:13.756292+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_fiction_8fc93deb/classifier.json",
+      "params": {
+        "scope": "fiction",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "e765d93d",
+      "created_at": "2026-06-08T12:56:51.650541+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_non_fiction_literature_e765d93d/classifier.json",
+      "params": {
+        "scope": "non_fiction_literature",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "5f880db2",
+      "created_at": "2026-06-08T12:57:25.456232+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_drama_5f880db2/classifier.json",
+      "params": {
+        "scope": "drama",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "ff9ac778",
+      "created_at": "2026-06-08T12:57:59.145147+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_oral_literature_ff9ac778/classifier.json",
+      "params": {
+        "scope": "oral_literature",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "849b910b",
+      "created_at": "2026-06-08T12:58:41.853114+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_cinema_849b910b/classifier.json",
+      "params": {
+        "scope": "cinema",
+        "epochs": 150
+      },
+      "status": "completed"
     }
   ]
 }
