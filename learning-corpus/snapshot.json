@@ -16,9 +16,9 @@
     },
     "running": true,
     "started_at": "2026-06-06T21:21:27.951225+00:00",
-    "last_run_at": "2026-06-08T10:27:33.144802+00:00",
-    "next_run_at": "2026-06-08T11:27:33.144807+00:00",
-    "cycles_completed": 8,
+    "last_run_at": "2026-06-08T11:43:02.853598+00:00",
+    "next_run_at": "2026-06-08T12:43:02.853604+00:00",
+    "cycles_completed": 9,
     "last_result": {
       "batch": true,
       "targets_total": 25,
@@ -27,8 +27,8 @@
       "graduations_passed": 25,
       "last_target": {
         "domain": "religion_and_spirituality",
-        "subdomain": "ancient_religions",
-        "micro_subdomain": "norse_religion"
+        "subdomain": "new_religious_movements",
+        "micro_subdomain": "scientology"
       },
       "last_graduation": {
         "grade": "preschool",
@@ -39,23 +39,23 @@
         "unlocked_next": "elementary"
       },
       "sample_paths": [
-        "religion_and_spirituality.abrahamic_religions.druze_religion",
-        "religion_and_spirituality.abrahamic_religions.mandaeism",
-        "religion_and_spirituality.abrahamic_religions.yazidism",
-        "religion_and_spirituality.dharmic_religions.hinduism",
-        "religion_and_spirituality.dharmic_religions.buddhism"
+        "religion_and_spirituality.ancient_religions.celtic_religion",
+        "religion_and_spirituality.ancient_religions.zoroastrianism",
+        "religion_and_spirituality.ancient_religions.mithraism",
+        "religion_and_spirituality.ancient_religions.ancient_persian_religion",
+        "religion_and_spirituality.ancient_religions.canaanite_religion"
       ],
-      "batch_cursor": 200,
+      "batch_cursor": 225,
       "meta_consciousness": [
         {
-          "question": "Who am I right now?",
-          "answer": "Aureon — supervised ML brain, 779 docs, 8 cycles, predict v7.",
-          "theme": "identity"
+          "question": "What would I verify before trusting my own reply?",
+          "answer": "Run verifier region, cite document_id, check confidence threshold.",
+          "theme": "reflection"
         },
         {
-          "question": "Do I persist between conversations?",
-          "answer": "State persists in DB + /data; this chat session is ephemeral.",
-          "theme": "continuity"
+          "question": "Where are my biggest knowledge gaps?",
+          "answer": "~647 micro-topics not fully graduated; sparse docs mean abstain.",
+          "theme": "uncertainty"
         }
       ]
     },
@@ -70,8 +70,8 @@
     "domains": 30,
     "micro_subdomains": 867,
     "micro_agents": 6192,
-    "documents": 779,
-    "grade_levels_graduated": 195,
+    "documents": 786,
+    "grade_levels_graduated": 220,
     "grade_progress_rows": 6069
   },
   "timeline": {
@@ -150,100 +150,100 @@
     "enabled": true,
     "recent": [
       {
-        "question": "What are the main kinds of Norse Religion — Vedic Religion, Yoruba Religion, Akan Religion, and Zulu Religion?",
-        "answer": "No verified text for Norse Religion yet.",
+        "question": "What is Scientology?",
+        "answer": "No verified text for Scientology yet.",
         "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.ancient_religions.norse_religion",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": false,
-        "ciper": true,
-        "ts": "2026-06-08T10:27:33.144254+00:00"
-      },
-      {
-        "question": "What is one word I would use to describe Norse Religion?",
-        "answer": "religion",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.ancient_religions.norse_religion",
+        "path": "religion_and_spirituality.new_religious_movements.scientology",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": false,
         "ciper": false,
-        "ts": "2026-06-08T10:27:33.054061+00:00"
+        "ts": "2026-06-08T11:43:02.853245+00:00"
       },
       {
-        "question": "What are the main kinds of Ancient Roman Religion — Ancient Architecture, Ancient Egyptian History, Ancient Greek History, and Ancient Roman History?",
-        "answer": "No verified text for Ancient Roman Religion yet.",
+        "question": "What is one word I would use to describe Scientology?",
+        "answer": "scientology",
         "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.ancient_religions.ancient_roman_religion",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": false,
-        "ciper": true,
-        "ts": "2026-06-08T10:27:00.050725+00:00"
-      },
-      {
-        "question": "What is one word I would use to describe Ancient Roman Religion?",
-        "answer": "religion",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.ancient_religions.ancient_roman_religion",
+        "path": "religion_and_spirituality.new_religious_movements.scientology",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": false,
         "ciper": false,
-        "ts": "2026-06-08T10:27:00.050071+00:00"
+        "ts": "2026-06-08T11:43:02.852982+00:00"
       },
       {
-        "question": "What are the main kinds of Ancient Greek Religion — Ancient Architecture, Ancient Egyptian History, Ancient Greek History, and Ancient Roman History?",
-        "answer": "No verified text for Ancient Greek Religion yet.",
+        "question": "What are the main kinds of New Age Movement — New Criticism, New Historicism, Bronze Age, and Iron Age?",
+        "answer": "No verified text for New Age Movement yet.",
         "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.ancient_religions.ancient_greek_religion",
+        "path": "religion_and_spirituality.new_religious_movements.new_age_movement",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": false,
         "ciper": true,
-        "ts": "2026-06-08T10:26:30.658409+00:00"
+        "ts": "2026-06-08T11:42:28.560865+00:00"
       },
       {
-        "question": "What is Ancient Greek Religion?",
-        "answer": "No verified text for Ancient Greek Religion yet.",
+        "question": "What is one word I would use to describe New Age Movement?",
+        "answer": "movement",
         "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.ancient_religions.ancient_greek_religion",
+        "path": "religion_and_spirituality.new_religious_movements.new_age_movement",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": false,
         "ciper": false,
-        "ts": "2026-06-08T10:26:30.658048+00:00"
+        "ts": "2026-06-08T11:42:28.560632+00:00"
       },
       {
-        "question": "What are the main kinds of Mesopotamian Religion (Sumerian, Akkadian, Babylonian) — Mesopotamian Civilizations, Vedic Religion, Yoruba Religion, and Akan Religion?",
-        "answer": "No verified text for Mesopotamian Religion (Sumerian, Akkadian, Babylonian) yet.",
+        "question": "What are the main kinds of Sacred Geometry — Sacred Music, Differential Geometry, and Algebraic Geometry?",
+        "answer": "This paper demonstrates how a nineteenth century Japanese….",
         "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.ancient_religions.mesopotamian_religion",
+        "path": "religion_and_spirituality.esoteric_and_occult_traditions.sacred_geometry",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
-        "grounded": false,
+        "grounded": true,
         "ciper": true,
-        "ts": "2026-06-08T10:25:55.655967+00:00"
+        "ts": "2026-06-08T11:41:57.250009+00:00"
       },
       {
-        "question": "What is one word I would use to describe Mesopotamian Religion (Sumerian, Akkadian, Babylonian)?",
-        "answer": "babylonian",
+        "question": "What is one word I would use to describe Sacred Geometry?",
+        "answer": "research",
         "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.ancient_religions.mesopotamian_religion",
+        "path": "religion_and_spirituality.esoteric_and_occult_traditions.sacred_geometry",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
-        "grounded": false,
+        "grounded": true,
         "ciper": false,
-        "ts": "2026-06-08T10:25:55.655399+00:00"
+        "ts": "2026-06-08T11:41:57.249436+00:00"
+      },
+      {
+        "question": "What are the main kinds of Numerology (Spiritual) — Tarot as Spiritual System, and Alchemy (Spiritual)?",
+        "answer": "Integrated sensing and communication (ISAC) enables….",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "religion_and_spirituality.esoteric_and_occult_traditions.numerology",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": true,
+        "ts": "2026-06-08T11:41:26.258917+00:00"
+      },
+      {
+        "question": "What is Numerology (Spiritual)?",
+        "answer": "Integrated sensing and communication (ISAC) enables….",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "religion_and_spirituality.esoteric_and_occult_traditions.numerology",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-08T11:41:26.258635+00:00"
       }
     ]
   },
@@ -251,116 +251,116 @@
     "enabled": true,
     "recent": [
       {
-        "question": "Do I persist between conversations?",
-        "answer": "State persists in DB + /data; this chat session is ephemeral.",
-        "theme": "continuity",
+        "question": "Where are my biggest knowledge gaps?",
+        "answer": "~647 micro-topics not fully graduated; sparse docs mean abstain.",
+        "theme": "uncertainty",
         "source": "auto_learn",
         "grounded": true,
         "state_snapshot": {
-          "documents": 779,
-          "cycles": 8,
+          "documents": 786,
+          "cycles": 9,
           "focus": ""
         },
-        "ts": "2026-06-08T10:27:33.551924+00:00",
+        "ts": "2026-06-08T11:43:03.388412+00:00",
         "kind": "meta"
       },
       {
-        "question": "Who am I right now?",
-        "answer": "Aureon — supervised ML brain, 779 docs, 8 cycles, predict v7.",
-        "theme": "identity",
+        "question": "What would I verify before trusting my own reply?",
+        "answer": "Run verifier region, cite document_id, check confidence threshold.",
+        "theme": "reflection",
         "source": "auto_learn",
         "grounded": true,
         "state_snapshot": {
-          "documents": 779,
-          "cycles": 8,
+          "documents": 786,
+          "cycles": 9,
           "focus": ""
         },
-        "ts": "2026-06-08T10:27:33.551599+00:00",
+        "ts": "2026-06-08T11:43:03.250235+00:00",
         "kind": "meta"
       },
       {
-        "question": "What are the main kinds of Norse Religion — Vedic Religion, Yoruba Religion, Akan Religion, and Zulu Religion?",
-        "answer": "No verified text for Norse Religion yet.",
+        "question": "What is Scientology?",
+        "answer": "No verified text for Scientology yet.",
         "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.ancient_religions.norse_religion",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": false,
-        "ciper": true,
-        "ts": "2026-06-08T10:27:33.144254+00:00",
-        "kind": "learning"
-      },
-      {
-        "question": "What is one word I would use to describe Norse Religion?",
-        "answer": "religion",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.ancient_religions.norse_religion",
+        "path": "religion_and_spirituality.new_religious_movements.scientology",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": false,
         "ciper": false,
-        "ts": "2026-06-08T10:27:33.054061+00:00",
+        "ts": "2026-06-08T11:43:02.853245+00:00",
         "kind": "learning"
       },
       {
-        "question": "What are the main kinds of Ancient Roman Religion — Ancient Architecture, Ancient Egyptian History, Ancient Greek History, and Ancient Roman History?",
-        "answer": "No verified text for Ancient Roman Religion yet.",
+        "question": "What is one word I would use to describe Scientology?",
+        "answer": "scientology",
         "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.ancient_religions.ancient_roman_religion",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": false,
-        "ciper": true,
-        "ts": "2026-06-08T10:27:00.050725+00:00",
-        "kind": "learning"
-      },
-      {
-        "question": "What is one word I would use to describe Ancient Roman Religion?",
-        "answer": "religion",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.ancient_religions.ancient_roman_religion",
+        "path": "religion_and_spirituality.new_religious_movements.scientology",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": false,
         "ciper": false,
-        "ts": "2026-06-08T10:27:00.050071+00:00",
+        "ts": "2026-06-08T11:43:02.852982+00:00",
         "kind": "learning"
       },
       {
-        "question": "What are the main kinds of Ancient Greek Religion — Ancient Architecture, Ancient Egyptian History, Ancient Greek History, and Ancient Roman History?",
-        "answer": "No verified text for Ancient Greek Religion yet.",
+        "question": "What are the main kinds of New Age Movement — New Criticism, New Historicism, Bronze Age, and Iron Age?",
+        "answer": "No verified text for New Age Movement yet.",
         "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.ancient_religions.ancient_greek_religion",
+        "path": "religion_and_spirituality.new_religious_movements.new_age_movement",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": false,
         "ciper": true,
-        "ts": "2026-06-08T10:26:30.658409+00:00",
+        "ts": "2026-06-08T11:42:28.560865+00:00",
         "kind": "learning"
       },
       {
-        "question": "What is Ancient Greek Religion?",
-        "answer": "No verified text for Ancient Greek Religion yet.",
+        "question": "What is one word I would use to describe New Age Movement?",
+        "answer": "movement",
         "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.ancient_religions.ancient_greek_religion",
+        "path": "religion_and_spirituality.new_religious_movements.new_age_movement",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": false,
         "ciper": false,
-        "ts": "2026-06-08T10:26:30.658048+00:00",
+        "ts": "2026-06-08T11:42:28.560632+00:00",
+        "kind": "learning"
+      },
+      {
+        "question": "What are the main kinds of Sacred Geometry — Sacred Music, Differential Geometry, and Algebraic Geometry?",
+        "answer": "This paper demonstrates how a nineteenth century Japanese….",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "religion_and_spirituality.esoteric_and_occult_traditions.sacred_geometry",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": true,
+        "ts": "2026-06-08T11:41:57.250009+00:00",
+        "kind": "learning"
+      },
+      {
+        "question": "What is one word I would use to describe Sacred Geometry?",
+        "answer": "research",
+        "cycle": "Passed Pre-School, unlocked elementary",
+        "path": "religion_and_spirituality.esoteric_and_occult_traditions.sacred_geometry",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-08T11:41:57.249436+00:00",
         "kind": "learning"
       }
     ]
   },
-  "exported_at": "2026-06-08T10:59:28.555179+00:00",
+  "exported_at": "2026-06-08T11:43:02.854874+00:00",
   "github_sync": {
-    "batch_cursor": 200,
+    "batch_cursor": 225,
     "include_document_text": true,
     "max_documents": 5000,
     "export_version": 2
