@@ -10371,5 +10371,38 @@
     "label_source": "teacher_model",
     "needs_review": false,
     "created_at": "2026-06-08T14:14:09.546868"
+  },
+  {
+    "document_id": 946,
+    "path": null,
+    "title": "LLMs Know More Than Words: A Genre Study with Syntax, Metaphor & Phonetics",
+    "topic": null,
+    "label": "research",
+    "confidence": 0.5,
+    "label_source": "teacher_model",
+    "needs_review": false,
+    "created_at": "2026-06-08T15:15:35.052923"
+  },
+  {
+    "document_id": 947,
+    "path": null,
+    "title": "LitSeg: Narrative-Aware Document Segmentation for Literary RAG",
+    "topic": null,
+    "label": "research",
+    "confidence": 0.3333,
+    "label_source": "teacher_model",
+    "needs_review": false,
+    "created_at": "2026-06-08T15:16:12.552582"
+  },
+  {
+    "document_id": 948,
+    "path": null,
+    "title": "Latent Profiles of AI Risk Perception and Their Differential Association with Community Driving Safety Concerns: A Person-Centered Analysis",
+    "topic": null,
+    "label": "research",
+    "confidence": 0.5,
+    "label_source": "teacher_model",
+    "needs_review": false,
+    "created_at": "2026-06-08T15:16:53.457559"
   }
 ]
