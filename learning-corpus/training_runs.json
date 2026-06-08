@@ -1,5 +1,345 @@
 [
   {
+    "run_id": "849b910b",
+    "domain_id": 6,
+    "subdomain_id": 37,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_cinema_849b910b/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "cinema",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T12:58:41.860768"
+  },
+  {
+    "run_id": "ff9ac778",
+    "domain_id": 6,
+    "subdomain_id": 36,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_oral_literature_ff9ac778/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "oral_literature",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T12:57:59.160187"
+  },
+  {
+    "run_id": "5f880db2",
+    "domain_id": 6,
+    "subdomain_id": 36,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_drama_5f880db2/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "drama",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T12:57:25.550369"
+  },
+  {
+    "run_id": "e765d93d",
+    "domain_id": 6,
+    "subdomain_id": 36,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_non_fiction_literature_e765d93d/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "non_fiction_literature",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T12:56:51.658162"
+  },
+  {
+    "run_id": "8fc93deb",
+    "domain_id": 6,
+    "subdomain_id": 36,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_fiction_8fc93deb/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "fiction",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T12:56:13.763887"
+  },
+  {
+    "run_id": "d254add0",
+    "domain_id": 6,
+    "subdomain_id": 36,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_poetry_d254add0/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "poetry",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T12:55:40.046066"
+  },
+  {
+    "run_id": "996f83fc",
+    "domain_id": 6,
+    "subdomain_id": 35,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_circus_arts_996f83fc/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "circus_arts",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T12:55:08.650873"
+  },
+  {
+    "run_id": "bc166a50",
+    "domain_id": 6,
+    "subdomain_id": 35,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_theatre_bc166a50/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "theatre",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T12:54:37.341140"
+  },
+  {
+    "run_id": "eff75aa7",
+    "domain_id": 6,
+    "subdomain_id": 35,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_dance_eff75aa7/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "dance",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T12:53:55.746237"
+  },
+  {
+    "run_id": "9375081d",
+    "domain_id": 6,
+    "subdomain_id": 35,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_music_9375081d/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "music",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T12:53:15.066864"
+  },
+  {
+    "run_id": "22d39cab",
+    "domain_id": 6,
+    "subdomain_id": 34,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_jewelry_22d39cab/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "jewelry",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T12:52:40.561884"
+  },
+  {
+    "run_id": "9cb7dbd8",
+    "domain_id": 6,
+    "subdomain_id": 34,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_glasswork_9cb7dbd8/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "glasswork",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T12:52:06.062121"
+  },
+  {
+    "run_id": "e9050a09",
+    "domain_id": 6,
+    "subdomain_id": 34,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_ceramics_e9050a09/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "ceramics",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T12:51:25.657832"
+  },
+  {
+    "run_id": "311e6dfd",
+    "domain_id": 6,
+    "subdomain_id": 34,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_textile_arts_311e6dfd/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "textile_arts",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T12:50:45.565466"
+  },
+  {
+    "run_id": "5289a9d6",
+    "domain_id": 6,
+    "subdomain_id": 34,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_graphic_design_5289a9d6/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "graphic_design",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T12:50:06.271662"
+  },
+  {
+    "run_id": "44d61b90",
+    "domain_id": 6,
+    "subdomain_id": 34,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_photography_44d61b90/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "photography",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T12:49:30.254537"
+  },
+  {
+    "run_id": "f2056db3",
+    "domain_id": 6,
+    "subdomain_id": 34,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_printmaking_f2056db3/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "printmaking",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T12:48:54.340751"
+  },
+  {
+    "run_id": "ecd8265d",
+    "domain_id": 6,
+    "subdomain_id": 34,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_sculpture_ecd8265d/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "sculpture",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T12:48:16.941767"
+  },
+  {
+    "run_id": "7eae2546",
+    "domain_id": 6,
+    "subdomain_id": 34,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_drawing_7eae2546/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "drawing",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T12:47:39.650347"
+  },
+  {
+    "run_id": "269d65ed",
+    "domain_id": 6,
+    "subdomain_id": 34,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_painting_269d65ed/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "painting",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T12:47:04.257503"
+  },
+  {
     "run_id": "4dd78fc7",
     "domain_id": 5,
     "subdomain_id": 30,
