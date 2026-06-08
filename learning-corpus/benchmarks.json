@@ -1,5 +1,1680 @@
 [
   {
+    "domain_id": 5,
+    "benchmark_type": "verification_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "history",
+          "skipped": true
+        },
+        {
+          "expected": "linguistics",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:13:10.549008"
+  },
+  {
+    "domain_id": 5,
+    "benchmark_type": "consistency_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "physics",
+          "skipped": true
+        },
+        {
+          "expected": "biology",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:13:10.549008"
+  },
+  {
+    "domain_id": 5,
+    "benchmark_type": "reasoning_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "text": "If all mammals breathe air and whales are mammals, whales breathe air.",
+          "expected": "biology",
+          "skipped": true
+        },
+        {
+          "text": "Matrix multiplication is associative but generally not commutative.",
+          "expected": "mathematics",
+          "skipped": true
+        },
+        {
+          "text": "Backpropagation applies the chain rule to compute gradients for weight updates.",
+          "expected": "computer_science",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:13:10.549007"
+  },
+  {
+    "domain_id": 5,
+    "benchmark_type": "verification_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "history",
+          "skipped": true
+        },
+        {
+          "expected": "linguistics",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:12:39.164092"
+  },
+  {
+    "domain_id": 5,
+    "benchmark_type": "consistency_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "physics",
+          "skipped": true
+        },
+        {
+          "expected": "biology",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:12:39.164091"
+  },
+  {
+    "domain_id": 5,
+    "benchmark_type": "reasoning_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "text": "If all mammals breathe air and whales are mammals, whales breathe air.",
+          "expected": "biology",
+          "skipped": true
+        },
+        {
+          "text": "Matrix multiplication is associative but generally not commutative.",
+          "expected": "mathematics",
+          "skipped": true
+        },
+        {
+          "text": "Backpropagation applies the chain rule to compute gradients for weight updates.",
+          "expected": "computer_science",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:12:39.164090"
+  },
+  {
+    "domain_id": 5,
+    "benchmark_type": "verification_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "history",
+          "skipped": true
+        },
+        {
+          "expected": "linguistics",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:12:03.958406"
+  },
+  {
+    "domain_id": 5,
+    "benchmark_type": "consistency_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "physics",
+          "skipped": true
+        },
+        {
+          "expected": "biology",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:12:03.958405"
+  },
+  {
+    "domain_id": 5,
+    "benchmark_type": "reasoning_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "text": "If all mammals breathe air and whales are mammals, whales breathe air.",
+          "expected": "biology",
+          "skipped": true
+        },
+        {
+          "text": "Matrix multiplication is associative but generally not commutative.",
+          "expected": "mathematics",
+          "skipped": true
+        },
+        {
+          "text": "Backpropagation applies the chain rule to compute gradients for weight updates.",
+          "expected": "computer_science",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:12:03.958404"
+  },
+  {
+    "domain_id": 5,
+    "benchmark_type": "verification_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "history",
+          "skipped": true
+        },
+        {
+          "expected": "linguistics",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:11:26.848028"
+  },
+  {
+    "domain_id": 5,
+    "benchmark_type": "consistency_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "physics",
+          "skipped": true
+        },
+        {
+          "expected": "biology",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:11:26.848028"
+  },
+  {
+    "domain_id": 5,
+    "benchmark_type": "reasoning_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "text": "If all mammals breathe air and whales are mammals, whales breathe air.",
+          "expected": "biology",
+          "skipped": true
+        },
+        {
+          "text": "Matrix multiplication is associative but generally not commutative.",
+          "expected": "mathematics",
+          "skipped": true
+        },
+        {
+          "text": "Backpropagation applies the chain rule to compute gradients for weight updates.",
+          "expected": "computer_science",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:11:26.848026"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "verification_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "history",
+          "skipped": true
+        },
+        {
+          "expected": "linguistics",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:10:49.455286"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "consistency_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "physics",
+          "skipped": true
+        },
+        {
+          "expected": "biology",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:10:49.455286"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "reasoning_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "text": "If all mammals breathe air and whales are mammals, whales breathe air.",
+          "expected": "biology",
+          "skipped": true
+        },
+        {
+          "text": "Matrix multiplication is associative but generally not commutative.",
+          "expected": "mathematics",
+          "skipped": true
+        },
+        {
+          "text": "Backpropagation applies the chain rule to compute gradients for weight updates.",
+          "expected": "computer_science",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:10:49.455285"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "verification_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "history",
+          "skipped": true
+        },
+        {
+          "expected": "linguistics",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:10:16.549605"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "consistency_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "physics",
+          "skipped": true
+        },
+        {
+          "expected": "biology",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:10:16.549605"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "reasoning_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "text": "If all mammals breathe air and whales are mammals, whales breathe air.",
+          "expected": "biology",
+          "skipped": true
+        },
+        {
+          "text": "Matrix multiplication is associative but generally not commutative.",
+          "expected": "mathematics",
+          "skipped": true
+        },
+        {
+          "text": "Backpropagation applies the chain rule to compute gradients for weight updates.",
+          "expected": "computer_science",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:10:16.549604"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "verification_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "history",
+          "skipped": true
+        },
+        {
+          "expected": "linguistics",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:09:48.246898"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "consistency_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "physics",
+          "skipped": true
+        },
+        {
+          "expected": "biology",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:09:48.246898"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "reasoning_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "text": "If all mammals breathe air and whales are mammals, whales breathe air.",
+          "expected": "biology",
+          "skipped": true
+        },
+        {
+          "text": "Matrix multiplication is associative but generally not commutative.",
+          "expected": "mathematics",
+          "skipped": true
+        },
+        {
+          "text": "Backpropagation applies the chain rule to compute gradients for weight updates.",
+          "expected": "computer_science",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:09:48.246896"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "verification_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "history",
+          "skipped": true
+        },
+        {
+          "expected": "linguistics",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:09:05.848332"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "consistency_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "physics",
+          "skipped": true
+        },
+        {
+          "expected": "biology",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:09:05.848331"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "reasoning_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "text": "If all mammals breathe air and whales are mammals, whales breathe air.",
+          "expected": "biology",
+          "skipped": true
+        },
+        {
+          "text": "Matrix multiplication is associative but generally not commutative.",
+          "expected": "mathematics",
+          "skipped": true
+        },
+        {
+          "text": "Backpropagation applies the chain rule to compute gradients for weight updates.",
+          "expected": "computer_science",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:09:05.848330"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "verification_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "history",
+          "skipped": true
+        },
+        {
+          "expected": "linguistics",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:08:32.551546"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "consistency_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "physics",
+          "skipped": true
+        },
+        {
+          "expected": "biology",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:08:32.551546"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "reasoning_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "text": "If all mammals breathe air and whales are mammals, whales breathe air.",
+          "expected": "biology",
+          "skipped": true
+        },
+        {
+          "text": "Matrix multiplication is associative but generally not commutative.",
+          "expected": "mathematics",
+          "skipped": true
+        },
+        {
+          "text": "Backpropagation applies the chain rule to compute gradients for weight updates.",
+          "expected": "computer_science",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:08:32.551544"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "verification_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "history",
+          "skipped": true
+        },
+        {
+          "expected": "linguistics",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:07:53.145572"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "consistency_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "physics",
+          "skipped": true
+        },
+        {
+          "expected": "biology",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:07:53.145572"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "reasoning_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "text": "If all mammals breathe air and whales are mammals, whales breathe air.",
+          "expected": "biology",
+          "skipped": true
+        },
+        {
+          "text": "Matrix multiplication is associative but generally not commutative.",
+          "expected": "mathematics",
+          "skipped": true
+        },
+        {
+          "text": "Backpropagation applies the chain rule to compute gradients for weight updates.",
+          "expected": "computer_science",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:07:53.145570"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "verification_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "history",
+          "skipped": true
+        },
+        {
+          "expected": "linguistics",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:07:14.955274"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "consistency_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "physics",
+          "skipped": true
+        },
+        {
+          "expected": "biology",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:07:14.955273"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "reasoning_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "text": "If all mammals breathe air and whales are mammals, whales breathe air.",
+          "expected": "biology",
+          "skipped": true
+        },
+        {
+          "text": "Matrix multiplication is associative but generally not commutative.",
+          "expected": "mathematics",
+          "skipped": true
+        },
+        {
+          "text": "Backpropagation applies the chain rule to compute gradients for weight updates.",
+          "expected": "computer_science",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:07:14.955272"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "verification_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "history",
+          "skipped": true
+        },
+        {
+          "expected": "linguistics",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:06:44.448287"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "consistency_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "physics",
+          "skipped": true
+        },
+        {
+          "expected": "biology",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:06:44.448287"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "reasoning_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "text": "If all mammals breathe air and whales are mammals, whales breathe air.",
+          "expected": "biology",
+          "skipped": true
+        },
+        {
+          "text": "Matrix multiplication is associative but generally not commutative.",
+          "expected": "mathematics",
+          "skipped": true
+        },
+        {
+          "text": "Backpropagation applies the chain rule to compute gradients for weight updates.",
+          "expected": "computer_science",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:06:44.448286"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "verification_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "history",
+          "skipped": true
+        },
+        {
+          "expected": "linguistics",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:06:13.850021"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "consistency_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "physics",
+          "skipped": true
+        },
+        {
+          "expected": "biology",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:06:13.850020"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "reasoning_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "text": "If all mammals breathe air and whales are mammals, whales breathe air.",
+          "expected": "biology",
+          "skipped": true
+        },
+        {
+          "text": "Matrix multiplication is associative but generally not commutative.",
+          "expected": "mathematics",
+          "skipped": true
+        },
+        {
+          "text": "Backpropagation applies the chain rule to compute gradients for weight updates.",
+          "expected": "computer_science",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:06:13.850019"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "verification_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "history",
+          "skipped": true
+        },
+        {
+          "expected": "linguistics",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:05:33.054540"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "consistency_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "physics",
+          "skipped": true
+        },
+        {
+          "expected": "biology",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:05:33.054539"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "reasoning_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "text": "If all mammals breathe air and whales are mammals, whales breathe air.",
+          "expected": "biology",
+          "skipped": true
+        },
+        {
+          "text": "Matrix multiplication is associative but generally not commutative.",
+          "expected": "mathematics",
+          "skipped": true
+        },
+        {
+          "text": "Backpropagation applies the chain rule to compute gradients for weight updates.",
+          "expected": "computer_science",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:05:33.054538"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "verification_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "history",
+          "skipped": true
+        },
+        {
+          "expected": "linguistics",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:04:55.246185"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "consistency_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "physics",
+          "skipped": true
+        },
+        {
+          "expected": "biology",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:04:55.246185"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "reasoning_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "text": "If all mammals breathe air and whales are mammals, whales breathe air.",
+          "expected": "biology",
+          "skipped": true
+        },
+        {
+          "text": "Matrix multiplication is associative but generally not commutative.",
+          "expected": "mathematics",
+          "skipped": true
+        },
+        {
+          "text": "Backpropagation applies the chain rule to compute gradients for weight updates.",
+          "expected": "computer_science",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:04:55.246183"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "verification_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "history",
+          "skipped": true
+        },
+        {
+          "expected": "linguistics",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:04:19.650142"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "consistency_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "physics",
+          "skipped": true
+        },
+        {
+          "expected": "biology",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:04:19.650142"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "reasoning_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "text": "If all mammals breathe air and whales are mammals, whales breathe air.",
+          "expected": "biology",
+          "skipped": true
+        },
+        {
+          "text": "Matrix multiplication is associative but generally not commutative.",
+          "expected": "mathematics",
+          "skipped": true
+        },
+        {
+          "text": "Backpropagation applies the chain rule to compute gradients for weight updates.",
+          "expected": "computer_science",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:04:19.650141"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "verification_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "history",
+          "skipped": true
+        },
+        {
+          "expected": "linguistics",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:03:40.547074"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "consistency_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "physics",
+          "skipped": true
+        },
+        {
+          "expected": "biology",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:03:40.547073"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "reasoning_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "text": "If all mammals breathe air and whales are mammals, whales breathe air.",
+          "expected": "biology",
+          "skipped": true
+        },
+        {
+          "text": "Matrix multiplication is associative but generally not commutative.",
+          "expected": "mathematics",
+          "skipped": true
+        },
+        {
+          "text": "Backpropagation applies the chain rule to compute gradients for weight updates.",
+          "expected": "computer_science",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:03:40.547071"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "verification_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "history",
+          "skipped": true
+        },
+        {
+          "expected": "linguistics",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:03:07.855751"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "consistency_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "physics",
+          "skipped": true
+        },
+        {
+          "expected": "biology",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:03:07.855750"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "reasoning_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "text": "If all mammals breathe air and whales are mammals, whales breathe air.",
+          "expected": "biology",
+          "skipped": true
+        },
+        {
+          "text": "Matrix multiplication is associative but generally not commutative.",
+          "expected": "mathematics",
+          "skipped": true
+        },
+        {
+          "text": "Backpropagation applies the chain rule to compute gradients for weight updates.",
+          "expected": "computer_science",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:03:07.855749"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "verification_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "history",
+          "skipped": true
+        },
+        {
+          "expected": "linguistics",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:02:31.961005"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "consistency_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "physics",
+          "skipped": true
+        },
+        {
+          "expected": "biology",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:02:31.961005"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "reasoning_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "text": "If all mammals breathe air and whales are mammals, whales breathe air.",
+          "expected": "biology",
+          "skipped": true
+        },
+        {
+          "text": "Matrix multiplication is associative but generally not commutative.",
+          "expected": "mathematics",
+          "skipped": true
+        },
+        {
+          "text": "Backpropagation applies the chain rule to compute gradients for weight updates.",
+          "expected": "computer_science",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:02:31.961004"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "verification_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "history",
+          "skipped": true
+        },
+        {
+          "expected": "linguistics",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:01:59.054003"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "consistency_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "physics",
+          "skipped": true
+        },
+        {
+          "expected": "biology",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:01:59.054002"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "reasoning_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "text": "If all mammals breathe air and whales are mammals, whales breathe air.",
+          "expected": "biology",
+          "skipped": true
+        },
+        {
+          "text": "Matrix multiplication is associative but generally not commutative.",
+          "expected": "mathematics",
+          "skipped": true
+        },
+        {
+          "text": "Backpropagation applies the chain rule to compute gradients for weight updates.",
+          "expected": "computer_science",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:01:59.054000"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "verification_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "history",
+          "skipped": true
+        },
+        {
+          "expected": "linguistics",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:01:29.145972"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "consistency_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "physics",
+          "skipped": true
+        },
+        {
+          "expected": "biology",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:01:29.145972"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "reasoning_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "text": "If all mammals breathe air and whales are mammals, whales breathe air.",
+          "expected": "biology",
+          "skipped": true
+        },
+        {
+          "text": "Matrix multiplication is associative but generally not commutative.",
+          "expected": "mathematics",
+          "skipped": true
+        },
+        {
+          "text": "Backpropagation applies the chain rule to compute gradients for weight updates.",
+          "expected": "computer_science",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:01:29.145970"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "verification_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "history",
+          "skipped": true
+        },
+        {
+          "expected": "linguistics",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:00:56.845957"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "consistency_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "physics",
+          "skipped": true
+        },
+        {
+          "expected": "biology",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:00:56.845956"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "reasoning_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "text": "If all mammals breathe air and whales are mammals, whales breathe air.",
+          "expected": "biology",
+          "skipped": true
+        },
+        {
+          "text": "Matrix multiplication is associative but generally not commutative.",
+          "expected": "mathematics",
+          "skipped": true
+        },
+        {
+          "text": "Backpropagation applies the chain rule to compute gradients for weight updates.",
+          "expected": "computer_science",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:00:56.845955"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "verification_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "history",
+          "skipped": true
+        },
+        {
+          "expected": "linguistics",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:00:16.146298"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "consistency_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "physics",
+          "skipped": true
+        },
+        {
+          "expected": "biology",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:00:16.146298"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "reasoning_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "text": "If all mammals breathe air and whales are mammals, whales breathe air.",
+          "expected": "biology",
+          "skipped": true
+        },
+        {
+          "text": "Matrix multiplication is associative but generally not commutative.",
+          "expected": "mathematics",
+          "skipped": true
+        },
+        {
+          "text": "Backpropagation applies the chain rule to compute gradients for weight updates.",
+          "expected": "computer_science",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T09:00:16.146297"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "verification_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "history",
+          "skipped": true
+        },
+        {
+          "expected": "linguistics",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T08:59:38.548333"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "consistency_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "physics",
+          "skipped": true
+        },
+        {
+          "expected": "biology",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T08:59:38.548332"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "reasoning_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "text": "If all mammals breathe air and whales are mammals, whales breathe air.",
+          "expected": "biology",
+          "skipped": true
+        },
+        {
+          "text": "Matrix multiplication is associative but generally not commutative.",
+          "expected": "mathematics",
+          "skipped": true
+        },
+        {
+          "text": "Backpropagation applies the chain rule to compute gradients for weight updates.",
+          "expected": "computer_science",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T08:59:38.548331"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "verification_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "history",
+          "skipped": true
+        },
+        {
+          "expected": "linguistics",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T08:59:02.143848"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "consistency_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "expected": "physics",
+          "skipped": true
+        },
+        {
+          "expected": "biology",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T08:59:02.143847"
+  },
+  {
+    "domain_id": 4,
+    "benchmark_type": "reasoning_preschool",
+    "score": 1.0,
+    "passed": true,
+    "details": {
+      "cases": [
+        {
+          "text": "If all mammals breathe air and whales are mammals, whales breathe air.",
+          "expected": "biology",
+          "skipped": true
+        },
+        {
+          "text": "Matrix multiplication is associative but generally not commutative.",
+          "expected": "mathematics",
+          "skipped": true
+        },
+        {
+          "text": "Backpropagation applies the chain rule to compute gradients for weight updates.",
+          "expected": "computer_science",
+          "skipped": true
+        }
+      ],
+      "grade": "preschool"
+    },
+    "created_at": "2026-06-08T08:59:02.143845"
+  },
+  {
     "domain_id": 4,
     "benchmark_type": "verification_preschool",
     "score": 1.0,
@@ -9788,340 +11463,5 @@
       "grade": "preschool"
     },
     "created_at": "2026-06-06T21:51:43.028786"
-  },
-  {
-    "domain_id": 1,
-    "benchmark_type": "verification_preschool",
-    "score": 1.0,
-    "passed": true,
-    "details": {
-      "cases": [
-        {
-          "expected": "history",
-          "skipped": true
-        },
-        {
-          "expected": "linguistics",
-          "skipped": true
-        }
-      ],
-      "grade": "preschool"
-    },
-    "created_at": "2026-06-06T21:47:05.164702"
-  },
-  {
-    "domain_id": 1,
-    "benchmark_type": "consistency_preschool",
-    "score": 1.0,
-    "passed": true,
-    "details": {
-      "cases": [
-        {
-          "expected": "physics",
-          "skipped": true
-        },
-        {
-          "expected": "biology",
-          "skipped": true
-        }
-      ],
-      "grade": "preschool"
-    },
-    "created_at": "2026-06-06T21:47:05.164701"
-  },
-  {
-    "domain_id": 1,
-    "benchmark_type": "reasoning_preschool",
-    "score": 1.0,
-    "passed": true,
-    "details": {
-      "cases": [
-        {
-          "text": "If all mammals breathe air and whales are mammals, whales breathe air.",
-          "expected": "biology",
-          "skipped": true
-        },
-        {
-          "text": "Matrix multiplication is associative but generally not commutative.",
-          "expected": "mathematics",
-          "skipped": true
-        },
-        {
-          "text": "Backpropagation applies the chain rule to compute gradients for weight updates.",
-          "expected": "computer_science",
-          "skipped": true
-        }
-      ],
-      "grade": "preschool"
-    },
-    "created_at": "2026-06-06T21:47:05.164699"
-  },
-  {
-    "domain_id": 1,
-    "benchmark_type": "verification_preschool",
-    "score": 1.0,
-    "passed": true,
-    "details": {
-      "cases": [
-        {
-          "expected": "history",
-          "skipped": true
-        },
-        {
-          "expected": "linguistics",
-          "skipped": true
-        }
-      ],
-      "grade": "preschool"
-    },
-    "created_at": "2026-06-06T21:42:26.891476"
-  },
-  {
-    "domain_id": 1,
-    "benchmark_type": "consistency_preschool",
-    "score": 1.0,
-    "passed": true,
-    "details": {
-      "cases": [
-        {
-          "expected": "physics",
-          "skipped": true
-        },
-        {
-          "expected": "biology",
-          "skipped": true
-        }
-      ],
-      "grade": "preschool"
-    },
-    "created_at": "2026-06-06T21:42:26.891476"
-  },
-  {
-    "domain_id": 1,
-    "benchmark_type": "reasoning_preschool",
-    "score": 1.0,
-    "passed": true,
-    "details": {
-      "cases": [
-        {
-          "text": "If all mammals breathe air and whales are mammals, whales breathe air.",
-          "expected": "biology",
-          "skipped": true
-        },
-        {
-          "text": "Matrix multiplication is associative but generally not commutative.",
-          "expected": "mathematics",
-          "skipped": true
-        },
-        {
-          "text": "Backpropagation applies the chain rule to compute gradients for weight updates.",
-          "expected": "computer_science",
-          "skipped": true
-        }
-      ],
-      "grade": "preschool"
-    },
-    "created_at": "2026-06-06T21:42:26.891474"
-  },
-  {
-    "domain_id": 1,
-    "benchmark_type": "verification_preschool",
-    "score": 1.0,
-    "passed": true,
-    "details": {
-      "cases": [
-        {
-          "expected": "history",
-          "skipped": true
-        },
-        {
-          "expected": "linguistics",
-          "skipped": true
-        }
-      ],
-      "grade": "preschool"
-    },
-    "created_at": "2026-06-06T21:37:45.680055"
-  },
-  {
-    "domain_id": 1,
-    "benchmark_type": "consistency_preschool",
-    "score": 1.0,
-    "passed": true,
-    "details": {
-      "cases": [
-        {
-          "expected": "physics",
-          "skipped": true
-        },
-        {
-          "expected": "biology",
-          "skipped": true
-        }
-      ],
-      "grade": "preschool"
-    },
-    "created_at": "2026-06-06T21:37:45.680054"
-  },
-  {
-    "domain_id": 1,
-    "benchmark_type": "reasoning_preschool",
-    "score": 1.0,
-    "passed": true,
-    "details": {
-      "cases": [
-        {
-          "text": "If all mammals breathe air and whales are mammals, whales breathe air.",
-          "expected": "biology",
-          "skipped": true
-        },
-        {
-          "text": "Matrix multiplication is associative but generally not commutative.",
-          "expected": "mathematics",
-          "skipped": true
-        },
-        {
-          "text": "Backpropagation applies the chain rule to compute gradients for weight updates.",
-          "expected": "computer_science",
-          "skipped": true
-        }
-      ],
-      "grade": "preschool"
-    },
-    "created_at": "2026-06-06T21:37:45.680053"
-  },
-  {
-    "domain_id": 1,
-    "benchmark_type": "verification_preschool",
-    "score": 1.0,
-    "passed": true,
-    "details": {
-      "cases": [
-        {
-          "expected": "history",
-          "skipped": true
-        },
-        {
-          "expected": "linguistics",
-          "skipped": true
-        }
-      ],
-      "grade": "preschool"
-    },
-    "created_at": "2026-06-06T21:33:05.785177"
-  },
-  {
-    "domain_id": 1,
-    "benchmark_type": "consistency_preschool",
-    "score": 1.0,
-    "passed": true,
-    "details": {
-      "cases": [
-        {
-          "expected": "physics",
-          "skipped": true
-        },
-        {
-          "expected": "biology",
-          "skipped": true
-        }
-      ],
-      "grade": "preschool"
-    },
-    "created_at": "2026-06-06T21:33:05.785176"
-  },
-  {
-    "domain_id": 1,
-    "benchmark_type": "reasoning_preschool",
-    "score": 1.0,
-    "passed": true,
-    "details": {
-      "cases": [
-        {
-          "text": "If all mammals breathe air and whales are mammals, whales breathe air.",
-          "expected": "biology",
-          "skipped": true
-        },
-        {
-          "text": "Matrix multiplication is associative but generally not commutative.",
-          "expected": "mathematics",
-          "skipped": true
-        },
-        {
-          "text": "Backpropagation applies the chain rule to compute gradients for weight updates.",
-          "expected": "computer_science",
-          "skipped": true
-        }
-      ],
-      "grade": "preschool"
-    },
-    "created_at": "2026-06-06T21:33:05.785175"
-  },
-  {
-    "domain_id": 1,
-    "benchmark_type": "verification_preschool",
-    "score": 1.0,
-    "passed": true,
-    "details": {
-      "cases": [
-        {
-          "expected": "history",
-          "skipped": true
-        },
-        {
-          "expected": "linguistics",
-          "skipped": true
-        }
-      ],
-      "grade": "preschool"
-    },
-    "created_at": "2026-06-06T21:28:13.374812"
-  },
-  {
-    "domain_id": 1,
-    "benchmark_type": "consistency_preschool",
-    "score": 1.0,
-    "passed": true,
-    "details": {
-      "cases": [
-        {
-          "expected": "physics",
-          "skipped": true
-        },
-        {
-          "expected": "biology",
-          "skipped": true
-        }
-      ],
-      "grade": "preschool"
-    },
-    "created_at": "2026-06-06T21:28:13.374812"
-  },
-  {
-    "domain_id": 1,
-    "benchmark_type": "reasoning_preschool",
-    "score": 1.0,
-    "passed": true,
-    "details": {
-      "cases": [
-        {
-          "text": "If all mammals breathe air and whales are mammals, whales breathe air.",
-          "expected": "biology",
-          "skipped": true
-        },
-        {
-          "text": "Matrix multiplication is associative but generally not commutative.",
-          "expected": "mathematics",
-          "skipped": true
-        },
-        {
-          "text": "Backpropagation applies the chain rule to compute gradients for weight updates.",
-          "expected": "computer_science",
-          "skipped": true
-        }
-      ],
-      "grade": "preschool"
-    },
-    "created_at": "2026-06-06T21:28:13.374810"
   }
 ]
