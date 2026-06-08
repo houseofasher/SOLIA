@@ -1,5 +1,277 @@
 [
   {
+    "run_id": "77ef5978",
+    "domain_id": 8,
+    "subdomain_id": 47,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_macroeconomics_77ef5978/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "macroeconomics",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T16:46:24.451221"
+  },
+  {
+    "run_id": "c52ad08a",
+    "domain_id": 8,
+    "subdomain_id": 47,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_microeconomics_c52ad08a/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "microeconomics",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T16:45:51.953077"
+  },
+  {
+    "run_id": "1b5243bf",
+    "domain_id": 8,
+    "subdomain_id": 46,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_linguistic_anthropology_1b5243bf/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "linguistic_anthropology",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T16:45:20.661095"
+  },
+  {
+    "run_id": "c753d37a",
+    "domain_id": 8,
+    "subdomain_id": 46,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_archaeology_c753d37a/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "archaeology",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T16:44:46.057345"
+  },
+  {
+    "run_id": "7e958cbd",
+    "domain_id": 8,
+    "subdomain_id": 46,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_physical_and_biological_anthropology_7e958cbd/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "physical_and_biological_anthropology",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T16:44:05.646325"
+  },
+  {
+    "run_id": "94fbe95c",
+    "domain_id": 8,
+    "subdomain_id": 46,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_cultural_anthropology_94fbe95c/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "cultural_anthropology",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T16:43:28.848351"
+  },
+  {
+    "run_id": "5ab8b2b9",
+    "domain_id": 8,
+    "subdomain_id": 45,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_criminology_5ab8b2b9/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "criminology",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T16:41:43.955485"
+  },
+  {
+    "run_id": "d77ddf83",
+    "domain_id": 8,
+    "subdomain_id": 45,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_sociology_of_culture_d77ddf83/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "sociology_of_culture",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T16:39:46.353622"
+  },
+  {
+    "run_id": "5f60a1d8",
+    "domain_id": 8,
+    "subdomain_id": 45,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_sociology_of_work_5f60a1d8/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "sociology_of_work",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T16:39:07.355990"
+  },
+  {
+    "run_id": "d21e6b98",
+    "domain_id": 8,
+    "subdomain_id": 45,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_urban_sociology_d21e6b98/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "urban_sociology",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T16:37:21.554659"
+  },
+  {
+    "run_id": "76d97e53",
+    "domain_id": 8,
+    "subdomain_id": 45,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_sociology_of_education_76d97e53/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "sociology_of_education",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T16:36:35.753242"
+  },
+  {
+    "run_id": "3a681078",
+    "domain_id": 8,
+    "subdomain_id": 45,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_family_sociology_3a681078/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "family_sociology",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T16:35:54.852586"
+  },
+  {
+    "run_id": "605e93c9",
+    "domain_id": 8,
+    "subdomain_id": 45,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_social_stratification_605e93c9/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "social_stratification",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T16:35:13.758520"
+  },
+  {
+    "run_id": "68b26e50",
+    "domain_id": 8,
+    "subdomain_id": 45,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_research_methods_68b26e50/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "research_methods",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T16:34:38.449594"
+  },
+  {
+    "run_id": "dd99d16a",
+    "domain_id": 8,
+    "subdomain_id": 45,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_social_theory_dd99d16a/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "social_theory",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T16:33:57.755728"
+  },
+  {
+    "run_id": "332164b0",
+    "domain_id": 8,
+    "subdomain_id": 44,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_sports_psychology_332164b0/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "sports_psychology",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T16:31:25.448839"
+  },
+  {
     "run_id": "98e036f6",
     "domain_id": 8,
     "subdomain_id": 44,
