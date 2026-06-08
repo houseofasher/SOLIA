@@ -1875,6 +1875,216 @@
         "epochs": 150
       },
       "status": "completed"
+    },
+    {
+      "run_id": "61dc42f0",
+      "created_at": "2026-06-08T08:59:02.051704+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_philosophy_of_logic_61dc42f0/classifier.json",
+      "params": {
+        "scope": "philosophy_of_logic",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "955d19ec",
+      "created_at": "2026-06-08T08:59:38.454869+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_theories_of_justice_955d19ec/classifier.json",
+      "params": {
+        "scope": "theories_of_justice",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "84abceab",
+      "created_at": "2026-06-08T09:00:16.056437+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_political_authority_84abceab/classifier.json",
+      "params": {
+        "scope": "political_authority",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "1d3d9afe",
+      "created_at": "2026-06-08T09:00:56.754356+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_rights_and_liberty_1d3d9afe/classifier.json",
+      "params": {
+        "scope": "rights_and_liberty",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "b409ad41",
+      "created_at": "2026-06-08T09:01:29.059603+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_ideology_analysis_b409ad41/classifier.json",
+      "params": {
+        "scope": "ideology_analysis",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "9981d546",
+      "created_at": "2026-06-08T09:01:58.958877+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_scientific_method_9981d546/classifier.json",
+      "params": {
+        "scope": "scientific_method",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "076b56ea",
+      "created_at": "2026-06-08T09:02:31.953926+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_scientific_realism_076b56ea/classifier.json",
+      "params": {
+        "scope": "scientific_realism",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "397ff7e2",
+      "created_at": "2026-06-08T09:08:32.457842+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_ancient_greek_philosophy_397ff7e2/classifier.json",
+      "params": {
+        "scope": "ancient_greek_philosophy",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "cb2b35c5",
+      "created_at": "2026-06-08T09:09:05.750105+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_roman_philosophy_cb2b35c5/classifier.json",
+      "params": {
+        "scope": "roman_philosophy",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "ad16b6b2",
+      "created_at": "2026-06-08T09:09:48.152605+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_medieval_philosophy_ad16b6b2/classifier.json",
+      "params": {
+        "scope": "medieval_philosophy",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "8c24d652",
+      "created_at": "2026-06-08T09:10:16.461806+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_modern_western_philosophy_8c24d652/classifier.json",
+      "params": {
+        "scope": "modern_western_philosophy",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "6a00b79a",
+      "created_at": "2026-06-08T09:10:49.449518+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_eastern_philosophy_6a00b79a/classifier.json",
+      "params": {
+        "scope": "eastern_philosophy",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "e33bd583",
+      "created_at": "2026-06-08T09:11:26.760360+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_judaism_e33bd583/classifier.json",
+      "params": {
+        "scope": "judaism",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "7138618c",
+      "created_at": "2026-06-08T09:12:03.945997+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_christianity_7138618c/classifier.json",
+      "params": {
+        "scope": "christianity",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "56fd7e3d",
+      "created_at": "2026-06-08T09:12:39.159158+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_islam_56fd7e3d/classifier.json",
+      "params": {
+        "scope": "islam",
+        "epochs": 150
+      },
+      "status": "completed"
     }
   ]
 }
