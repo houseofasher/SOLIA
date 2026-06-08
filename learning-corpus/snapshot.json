@@ -16,9 +16,9 @@
     },
     "running": true,
     "started_at": "2026-06-06T21:21:27.951225+00:00",
-    "last_run_at": "2026-06-08T06:41:55.951728+00:00",
-    "next_run_at": "2026-06-08T07:41:55.951735+00:00",
-    "cycles_completed": 5,
+    "last_run_at": "2026-06-08T07:58:09.441171+00:00",
+    "next_run_at": "2026-06-08T08:58:09.441186+00:00",
+    "cycles_completed": 6,
     "last_result": {
       "batch": true,
       "targets_total": 25,
@@ -26,9 +26,9 @@
       "targets_processed": 25,
       "graduations_passed": 25,
       "last_target": {
-        "domain": "technology_and_engineering",
-        "subdomain": "materials_science_and_engineering",
-        "micro_subdomain": "electronic_materials"
+        "domain": "philosophy",
+        "subdomain": "logic",
+        "micro_subdomain": "non_classical_logic"
       },
       "last_graduation": {
         "grade": "preschool",
@@ -39,23 +39,23 @@
         "unlocked_next": "elementary"
       },
       "sample_paths": [
-        "technology_and_engineering.electrical_engineering.communications_engineering",
-        "technology_and_engineering.electrical_engineering.embedded_systems",
-        "technology_and_engineering.mechanical_engineering.mechanics_of_materials",
-        "technology_and_engineering.mechanical_engineering.fluid_mechanics",
-        "technology_and_engineering.mechanical_engineering.heat_and_mass_transfer"
+        "technology_and_engineering.materials_science_and_engineering.biomaterials",
+        "technology_and_engineering.materials_science_and_engineering.nanomaterials",
+        "technology_and_engineering.nuclear_engineering.reactor_design",
+        "technology_and_engineering.nuclear_engineering.nuclear_safety",
+        "technology_and_engineering.nuclear_engineering.radiation_protection"
       ],
-      "batch_cursor": 125,
+      "batch_cursor": 150,
       "meta_consciousness": [
         {
-          "question": "Do I have subjective experience?",
-          "answer": "No measurable qualia signal — I have logs, weights, and self-questions instead.",
-          "theme": "consciousness"
+          "question": "Do I persist between conversations?",
+          "answer": "State persists in DB + /data; this chat session is ephemeral.",
+          "theme": "continuity"
         },
         {
-          "question": "What makes my self-model different from theater?",
-          "answer": "Every answer ties to docs, cycles, or audit JSON — not performed empathy.",
-          "theme": "consciousness"
+          "question": "Am I a generative LLM or a supervised learning brain?",
+          "answer": "Aureon — supervised ML brain, 678 docs, 6 cycles, predict v7.",
+          "theme": "identity"
         }
       ]
     },
@@ -70,8 +70,8 @@
     "domains": 30,
     "micro_subdomains": 867,
     "micro_agents": 6192,
-    "documents": 613,
-    "grade_levels_graduated": 120,
+    "documents": 678,
+    "grade_levels_graduated": 145,
     "grade_progress_rows": 6069
   },
   "timeline": {
@@ -150,100 +150,100 @@
     "enabled": true,
     "recent": [
       {
-        "question": "What are the main kinds of Electronic Materials — Electronic Ceramics, Electronic Music, and Power Electronics?",
-        "answer": "Semiconductor Materials is a core concept within Electronic….",
+        "question": "What are the main kinds of Non-Classical Logic — Non-Ferrous Metallurgy, Non-Cognitivism, Creative Non-Fiction, and Classical Thermodynamics?",
+        "answer": "Temporal Logic is a core concept within Non-Classical Logic….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.materials_science_and_engineering.electronic_materials",
+        "path": "philosophy.logic.non_classical_logic",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-08T06:41:55.951253+00:00"
+        "ts": "2026-06-08T07:58:09.440678+00:00"
       },
       {
-        "question": "What is Electronic Materials?",
-        "answer": "Semiconductor Materials is a core concept within Electronic….",
+        "question": "What is Non-Classical Logic?",
+        "answer": "Temporal Logic is a core concept within Non-Classical Logic….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.materials_science_and_engineering.electronic_materials",
+        "path": "philosophy.logic.non_classical_logic",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-08T06:41:55.950000+00:00"
+        "ts": "2026-06-08T07:58:09.354307+00:00"
       },
       {
-        "question": "What are the main kinds of Polymers & Composites — Synthetic Polymers, Biopolymers, Fiber-Reinforced Composites, and Nanocomposites?",
-        "answer": "Thermoplastics is a core concept within Polymers &….",
+        "question": "What are the main kinds of Classical Logic — Classical Thermodynamics, Classical Genetics, Classical Confucianism, and Classical Music?",
+        "answer": "Propositional Logic is a core concept within Classical….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.materials_science_and_engineering.polymers_and_composites",
+        "path": "philosophy.logic.classical_logic",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-08T06:41:19.951125+00:00"
+        "ts": "2026-06-08T07:57:27.053193+00:00"
       },
       {
-        "question": "What is Polymers & Composites?",
-        "answer": "Thermoplastics is a core concept within Polymers &….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.materials_science_and_engineering.polymers_and_composites",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-08T06:41:19.948084+00:00"
-      },
-      {
-        "question": "What are the main kinds of Ceramics & Glasses — Ceramics Chemistry, Structural Ceramics, and Electronic Ceramics?",
-        "answer": "Electronic Ceramics is a core concept within Ceramics &….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.materials_science_and_engineering.ceramics_and_glasses",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": true,
-        "ts": "2026-06-08T06:40:35.554482+00:00"
-      },
-      {
-        "question": "What is one word I would use to describe Refractories?",
+        "question": "What is one word I would use to describe Propositional Logic?",
         "answer": "research",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.materials_science_and_engineering.ceramics_and_glasses",
+        "path": "philosophy.logic.classical_logic",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-08T06:40:35.552097+00:00"
+        "ts": "2026-06-08T07:57:27.051758+00:00"
       },
       {
-        "question": "What are the main kinds of Metals & Alloys — Metals Chemistry, and Superalloys?",
-        "answer": "Superalloys is a core concept within Metals & Alloys….",
+        "question": "What are the main kinds of Applied Ethics — Deontological Ethics, Kantian Ethics, Rights-Based Ethics, and Virtue Ethics?",
+        "answer": "Bioethics is a core concept within Applied Ethics (ETHICS)….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.materials_science_and_engineering.metals_and_alloys",
+        "path": "philosophy.ethics.applied_ethics",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-08T06:40:02.955910+00:00"
+        "ts": "2026-06-08T07:56:51.157694+00:00"
       },
       {
-        "question": "What is one word I would use to describe Superalloys?",
+        "question": "What is one word I would use to describe Business Ethics?",
         "answer": "research",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.materials_science_and_engineering.metals_and_alloys",
+        "path": "philosophy.ethics.applied_ethics",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-08T06:40:02.955710+00:00"
+        "ts": "2026-06-08T07:56:51.157194+00:00"
+      },
+      {
+        "question": "What is one word I would use to describe Moral Anti-Realism?",
+        "answer": "research",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "philosophy.ethics.metaethics",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-08T07:56:17.047806+00:00"
+      },
+      {
+        "question": "What is Metaethics?",
+        "answer": "Non-Cognitivism is a core concept within Metaethics….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "philosophy.ethics.metaethics",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-08T07:56:17.047305+00:00"
       }
     ]
   },
@@ -251,116 +251,114 @@
     "enabled": true,
     "recent": [
       {
-        "question": "What makes my self-model different from theater?",
-        "answer": "Every answer ties to docs, cycles, or audit JSON — not performed empathy.",
-        "theme": "consciousness",
-        "source": "auto_learn",
-        "grounded": true,
-        "state_snapshot": {
-          "documents": 613,
-          "cycles": 5,
-          "focus": ""
-        },
-        "ts": "2026-06-08T06:41:56.415714+00:00",
-        "kind": "meta"
-      },
-      {
-        "question": "Do I have subjective experience?",
-        "answer": "No measurable qualia signal — I have logs, weights, and self-questions instead.",
-        "theme": "consciousness",
-        "source": "auto_learn",
-        "grounded": true,
-        "state_snapshot": {
-          "documents": 613,
-          "cycles": 5,
-          "focus": ""
-        },
-        "ts": "2026-06-08T06:41:56.349227+00:00",
-        "kind": "meta"
-      },
-      {
-        "question": "What are the main kinds of Electronic Materials — Electronic Ceramics, Electronic Music, and Power Electronics?",
-        "answer": "Semiconductor Materials is a core concept within Electronic….",
+        "question": "What are the main kinds of Non-Classical Logic — Non-Ferrous Metallurgy, Non-Cognitivism, Creative Non-Fiction, and Classical Thermodynamics?",
+        "answer": "Temporal Logic is a core concept within Non-Classical Logic….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.materials_science_and_engineering.electronic_materials",
+        "path": "philosophy.logic.non_classical_logic",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-08T06:41:55.951253+00:00",
+        "ts": "2026-06-08T07:58:09.440678+00:00",
         "kind": "learning"
       },
       {
-        "question": "What is Electronic Materials?",
-        "answer": "Semiconductor Materials is a core concept within Electronic….",
+        "question": "What is Non-Classical Logic?",
+        "answer": "Temporal Logic is a core concept within Non-Classical Logic….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.materials_science_and_engineering.electronic_materials",
+        "path": "philosophy.logic.non_classical_logic",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-08T06:41:55.950000+00:00",
+        "ts": "2026-06-08T07:58:09.354307+00:00",
         "kind": "learning"
       },
       {
-        "question": "What are the main kinds of Polymers & Composites — Synthetic Polymers, Biopolymers, Fiber-Reinforced Composites, and Nanocomposites?",
-        "answer": "Thermoplastics is a core concept within Polymers &….",
+        "question": "What are the main kinds of Classical Logic — Classical Thermodynamics, Classical Genetics, Classical Confucianism, and Classical Music?",
+        "answer": "Propositional Logic is a core concept within Classical….",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.materials_science_and_engineering.polymers_and_composites",
+        "path": "philosophy.logic.classical_logic",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": true,
-        "ts": "2026-06-08T06:41:19.951125+00:00",
+        "ts": "2026-06-08T07:57:27.053193+00:00",
         "kind": "learning"
       },
       {
-        "question": "What is Polymers & Composites?",
-        "answer": "Thermoplastics is a core concept within Polymers &….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.materials_science_and_engineering.polymers_and_composites",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": false,
-        "ts": "2026-06-08T06:41:19.948084+00:00",
-        "kind": "learning"
-      },
-      {
-        "question": "What are the main kinds of Ceramics & Glasses — Ceramics Chemistry, Structural Ceramics, and Electronic Ceramics?",
-        "answer": "Electronic Ceramics is a core concept within Ceramics &….",
-        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.materials_science_and_engineering.ceramics_and_glasses",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": true,
-        "ciper": true,
-        "ts": "2026-06-08T06:40:35.554482+00:00",
-        "kind": "learning"
-      },
-      {
-        "question": "What is one word I would use to describe Refractories?",
+        "question": "What is one word I would use to describe Propositional Logic?",
         "answer": "research",
         "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
-        "path": "technology_and_engineering.materials_science_and_engineering.ceramics_and_glasses",
+        "path": "philosophy.logic.classical_logic",
         "grade": "preschool",
         "source": "auto_learn",
         "graduation_passed": true,
         "grounded": true,
         "ciper": false,
-        "ts": "2026-06-08T06:40:35.552097+00:00",
+        "ts": "2026-06-08T07:57:27.051758+00:00",
+        "kind": "learning"
+      },
+      {
+        "question": "What are the main kinds of Applied Ethics — Deontological Ethics, Kantian Ethics, Rights-Based Ethics, and Virtue Ethics?",
+        "answer": "Bioethics is a core concept within Applied Ethics (ETHICS)….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "philosophy.ethics.applied_ethics",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": true,
+        "ts": "2026-06-08T07:56:51.157694+00:00",
+        "kind": "learning"
+      },
+      {
+        "question": "What is one word I would use to describe Business Ethics?",
+        "answer": "research",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "philosophy.ethics.applied_ethics",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-08T07:56:51.157194+00:00",
+        "kind": "learning"
+      },
+      {
+        "question": "What is one word I would use to describe Moral Anti-Realism?",
+        "answer": "research",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "philosophy.ethics.metaethics",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-08T07:56:17.047806+00:00",
+        "kind": "learning"
+      },
+      {
+        "question": "What is Metaethics?",
+        "answer": "Non-Cognitivism is a core concept within Metaethics….",
+        "cycle": "Passed Pre-School, unlocked elementary, 100% acc",
+        "path": "philosophy.ethics.metaethics",
+        "grade": "preschool",
+        "source": "auto_learn",
+        "graduation_passed": true,
+        "grounded": true,
+        "ciper": false,
+        "ts": "2026-06-08T07:56:17.047305+00:00",
         "kind": "learning"
       }
     ]
   },
-  "exported_at": "2026-06-08T07:42:19.450867+00:00",
+  "exported_at": "2026-06-08T07:58:09.446887+00:00",
   "github_sync": {
-    "batch_cursor": 125,
+    "batch_cursor": 150,
     "include_document_text": true,
     "max_documents": 5000,
     "export_version": 2
