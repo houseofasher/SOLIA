@@ -251,6 +251,34 @@
     "enabled": true,
     "recent": [
       {
+        "question": "Do I persist between conversations?",
+        "answer": "State persists in DB + /data; this chat session is ephemeral.",
+        "theme": "continuity",
+        "source": "auto_learn",
+        "grounded": true,
+        "state_snapshot": {
+          "documents": 779,
+          "cycles": 8,
+          "focus": ""
+        },
+        "ts": "2026-06-08T10:27:33.551924+00:00",
+        "kind": "meta"
+      },
+      {
+        "question": "Who am I right now?",
+        "answer": "Aureon — supervised ML brain, 779 docs, 8 cycles, predict v7.",
+        "theme": "identity",
+        "source": "auto_learn",
+        "grounded": true,
+        "state_snapshot": {
+          "documents": 779,
+          "cycles": 8,
+          "focus": ""
+        },
+        "ts": "2026-06-08T10:27:33.551599+00:00",
+        "kind": "meta"
+      },
+      {
         "question": "What are the main kinds of Norse Religion — Vedic Religion, Yoruba Religion, Akan Religion, and Zulu Religion?",
         "answer": "No verified text for Norse Religion yet.",
         "cycle": "Passed Pre-School, unlocked elementary",
@@ -327,36 +355,10 @@
         "ciper": false,
         "ts": "2026-06-08T10:26:30.658048+00:00",
         "kind": "learning"
-      },
-      {
-        "question": "What are the main kinds of Mesopotamian Religion (Sumerian, Akkadian, Babylonian) — Mesopotamian Civilizations, Vedic Religion, Yoruba Religion, and Akan Religion?",
-        "answer": "No verified text for Mesopotamian Religion (Sumerian, Akkadian, Babylonian) yet.",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.ancient_religions.mesopotamian_religion",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": false,
-        "ciper": true,
-        "ts": "2026-06-08T10:25:55.655967+00:00",
-        "kind": "learning"
-      },
-      {
-        "question": "What is one word I would use to describe Mesopotamian Religion (Sumerian, Akkadian, Babylonian)?",
-        "answer": "babylonian",
-        "cycle": "Passed Pre-School, unlocked elementary",
-        "path": "religion_and_spirituality.ancient_religions.mesopotamian_religion",
-        "grade": "preschool",
-        "source": "auto_learn",
-        "graduation_passed": true,
-        "grounded": false,
-        "ciper": false,
-        "ts": "2026-06-08T10:25:55.655399+00:00",
-        "kind": "learning"
       }
     ]
   },
-  "exported_at": "2026-06-08T10:27:33.146960+00:00",
+  "exported_at": "2026-06-08T10:59:28.555179+00:00",
   "github_sync": {
     "batch_cursor": 200,
     "include_document_text": true,
