@@ -1665,6 +1665,216 @@
         "epochs": 150
       },
       "status": "completed"
+    },
+    {
+      "run_id": "604cd644",
+      "created_at": "2026-06-08T07:42:49.753548+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_biomaterials_604cd644/classifier.json",
+      "params": {
+        "scope": "biomaterials",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "4617e887",
+      "created_at": "2026-06-08T07:43:32.960337+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_nanomaterials_4617e887/classifier.json",
+      "params": {
+        "scope": "nanomaterials",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "20f6d6ca",
+      "created_at": "2026-06-08T07:50:37.148783+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_ontology_20f6d6ca/classifier.json",
+      "params": {
+        "scope": "ontology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "ea1ffa8d",
+      "created_at": "2026-06-08T07:51:12.647339+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_cosmology_ea1ffa8d/classifier.json",
+      "params": {
+        "scope": "cosmology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "fb0702cb",
+      "created_at": "2026-06-08T07:51:56.648351+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_philosophy_of_mind_fb0702cb/classifier.json",
+      "params": {
+        "scope": "philosophy_of_mind",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "38669cf1",
+      "created_at": "2026-06-08T07:52:35.745552+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_philosophy_of_religion_38669cf1/classifier.json",
+      "params": {
+        "scope": "philosophy_of_religion",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "cc3479e8",
+      "created_at": "2026-06-08T07:53:13.648681+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_theory_of_knowledge_cc3479e8/classifier.json",
+      "params": {
+        "scope": "theory_of_knowledge",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "fc2a62a1",
+      "created_at": "2026-06-08T07:53:44.644967+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_philosophy_of_perception_fc2a62a1/classifier.json",
+      "params": {
+        "scope": "philosophy_of_perception",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "2e03d605",
+      "created_at": "2026-06-08T07:54:23.443992+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_skepticism_2e03d605/classifier.json",
+      "params": {
+        "scope": "skepticism",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "7543a1c4",
+      "created_at": "2026-06-08T07:54:59.260367+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_social_epistemology_7543a1c4/classifier.json",
+      "params": {
+        "scope": "social_epistemology",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "b0ead13d",
+      "created_at": "2026-06-08T07:55:35.555993+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_normative_ethics_b0ead13d/classifier.json",
+      "params": {
+        "scope": "normative_ethics",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "67113e3e",
+      "created_at": "2026-06-08T07:56:16.554238+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_metaethics_67113e3e/classifier.json",
+      "params": {
+        "scope": "metaethics",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "9fd5d238",
+      "created_at": "2026-06-08T07:56:51.051044+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_applied_ethics_9fd5d238/classifier.json",
+      "params": {
+        "scope": "applied_ethics",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "feb7e9df",
+      "created_at": "2026-06-08T07:57:26.545328+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_classical_logic_feb7e9df/classifier.json",
+      "params": {
+        "scope": "classical_logic",
+        "epochs": 150
+      },
+      "status": "completed"
+    },
+    {
+      "run_id": "29999383",
+      "created_at": "2026-06-08T07:58:08.853873+00:00",
+      "metrics": {
+        "train_accuracy": 1.0,
+        "val_accuracy": 1.0
+      },
+      "artifact_path": "/app/data/models/brain_non_classical_logic_29999383/classifier.json",
+      "params": {
+        "scope": "non_classical_logic",
+        "epochs": 150
+      },
+      "status": "completed"
     }
   ]
 }
