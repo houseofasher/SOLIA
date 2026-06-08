@@ -1,5 +1,158 @@
 [
   {
+    "run_id": "349d97bf",
+    "domain_id": 3,
+    "subdomain_id": 12,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_power_engineering_349d97bf/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "power_engineering",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T05:24:31.264997"
+  },
+  {
+    "run_id": "78e63f70",
+    "domain_id": 3,
+    "subdomain_id": 12,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_semiconductor_engineering_78e63f70/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "semiconductor_engineering",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T05:23:42.849779"
+  },
+  {
+    "run_id": "a325ed41",
+    "domain_id": 3,
+    "subdomain_id": 12,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_signals_and_systems_a325ed41/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "signals_and_systems",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T05:22:55.855559"
+  },
+  {
+    "run_id": "d2e7394e",
+    "domain_id": 3,
+    "subdomain_id": 12,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_circuit_theory_d2e7394e/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "circuit_theory",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T05:22:01.046129"
+  },
+  {
+    "run_id": "eb79de76",
+    "domain_id": 3,
+    "subdomain_id": 11,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_sql_queries_eb79de76/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "sql_queries",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T05:20:09.855097"
+  },
+  {
+    "run_id": "161f130d",
+    "domain_id": 3,
+    "subdomain_id": 11,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_javascript_functions_161f130d/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "javascript_functions",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T05:18:28.453364"
+  },
+  {
+    "run_id": "a7b14b8c",
+    "domain_id": 3,
+    "subdomain_id": 11,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_python_classes_a7b14b8c/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "python_classes",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T05:16:53.146152"
+  },
+  {
+    "run_id": "afd7e4ef",
+    "domain_id": 3,
+    "subdomain_id": 11,
+    "metrics": {
+      "train_accuracy": 1.0,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_python_algorithms_afd7e4ef/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "python_algorithms",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-08T05:15:27.957522"
+  },
+  {
+    "run_id": "2c12a025",
+    "domain_id": 3,
+    "subdomain_id": 11,
+    "metrics": {
+      "train_accuracy": 0.9863,
+      "val_accuracy": 1.0
+    },
+    "artifact_path": "/app/data/models/brain_python_functions_2c12a025/classifier.json",
+    "params": {
+      "epochs": 60,
+      "scope": "python_functions",
+      "grade": "preschool"
+    },
+    "promoted": false,
+    "created_at": "2026-06-07T01:56:24.754975"
+  },
+  {
     "run_id": "a9322c0a",
     "domain_id": 3,
     "subdomain_id": 11,
